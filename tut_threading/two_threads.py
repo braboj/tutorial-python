@@ -5,9 +5,9 @@ import logging
 
 def my_func(name):
 
-    logging.info(f"func : Starting {name}")
+    logging.info("func : Starting {0}".format(name))
     time.sleep(10)
-    logging.info(f'func : Finishing {name}')
+    logging.info('func : Finishing {0}'.format(name))
 
 
 if __name__ == "__main__":
