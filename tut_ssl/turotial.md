@@ -1,7 +1,7 @@
 # Digital Security Tutorial
 
-## I. Secure Communication
-Digital communication is the usually a process of sending and receiving data
+## Secure Communication
+Digital communication is the process of sending and receiving data
 over public infrastructures like the Internet. The majority of the early
 protocols send data in plaintext, like HTTP or SMTP. With time it was
 realized that more secure ways of transferring data were needed by addressing
@@ -11,15 +11,13 @@ the following problems:
 2. How to ensure communication with the right partner (Authentication)?
 3. How to verify if the data was modified in the delivery process (Integrity)?
 
-The following section will give short insights how to address the
+The following section will give short insights on how to address the
 aforementioned issues.
 
 ### 1. Encryption
 
 Cryptography is a way to secure communications by converting taking normal
-information, called plaintext to a scrambled text, called ciphertext. The 
-encoding process is called **encryption** and the algorithm use to encode the 
-text is called **cipher**. Modern categorization of ciphers divides them
+information, called plaintext to a scrambled text, called ciphertext. The encoding process is called **encryption** and the algorithm used to encode the text is called **cipher**. Modern categorization of ciphers divides them
 into two major groups:
 
 
@@ -80,17 +78,17 @@ TTP signing your visa.
 visa in the mail.
 
 The communication with the partner requires verification of the exchanged
-certificates. This can be a local or remote certificate database. In the 
-latter case the remote machine is also called "Validation Authority" or
+certificates. This can be a local or remote certificate database. In the latter case, the remote machine is also called "Validation Authority" or
 simply VA.
 
 ### 3. Data Integrity
 Digital signature of the digital content, which allows for detection of data
 manipulation. The digital signature is the calculation of the hash value
 of the digital certificate encrypted with the private key.
- 
-## X.509 : Digital Certificates
-The digital certificate is a combination encryption, authentication and
+
+## Standards 
+### X.509: Digital Certificates
+The digital certificate is combination encryption, authentication and
 signature information into an electronic document. The basic structure
 of the document is the following:
 
@@ -100,22 +98,22 @@ of the document is the following:
 * Public Key
 * Signature
 
-## Transport Layer Security Protocol (TLS)
+### Transport Layer Security Protocol (TLS)
 The TLS protocol defines the steps required to establish a secure connection
-using digital certificates. It is a OSI L6 protocol (L6), responsible for
+using digital certificates. It is an OSI L6 protocol (L6), responsible for
 the encoding and decoding of data. The protocol itself defines a structural
-entity called TLS Record, whereby depending on the situation we can have
-different types of records:
+entity called TLS Record. Depending on the context different types of records
+are available:
 
 * Handshake Record
 * Alert Record
 * CipherChange Record
 * Application Record
 
-### Handshake
+#### Handshake
 
 
-      Client                                               Server
+      Client-Server
 
       ClientHello                  -------->
                                                       ServerHello
@@ -139,12 +137,12 @@ different types of records:
 
 
 
-## II. Public Key Infrastructure 
+## Public Key Infrastructure 
 
-The PKI is the combination of encryption, authentication and data security 
-into a process of requesting, issuing and verification of digital certificates.
+The PKI is the combination of encryption, authentication, and data security 
+into a process of requesting, issuing, and verification of digital certificates.
 
-## III. References
+## References
 
     https://realpython.com/python-https/
     https://www.youtube.com/watch?v=heacxYUnFHA
@@ -153,4 +151,3 @@ into a process of requesting, issuing and verification of digital certificates.
     
 * Key management
 * Key generation
-
