@@ -1,2 +1,6 @@
-cryptography~=3.4.7
-idna~=3.2
+cryptography~=3.3.2
+idna~=2.10
+pyDHE~=1.0.0
+enum34~=1.1.10
+configparser~=4.0.2
+crypto~=1.4.1

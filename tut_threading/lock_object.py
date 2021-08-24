@@ -21,7 +21,7 @@ def main():
     ##############################################################################################
     # Test 01 : Another thread releases lock
     ##############################################################################################
-    print("@test_01")
+    print("@test_01 : Another thread releases the lock")
     lock = threading.Lock()
     result = lock.acquire()
     print(result)
@@ -33,7 +33,7 @@ def main():
     ##############################################################################################
     # Test 02 : Another thread tries to acquire with timeout (only Python 3+)
     ##############################################################################################
-    print("@test_02")
+    print("@test_02 : Another thread tries to acquire the lock")
     lock = threading.Lock()
     result = lock.acquire()
     print(result)
