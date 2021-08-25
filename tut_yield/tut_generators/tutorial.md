@@ -1,5 +1,6 @@
-Table of contents
-=================
+# GENERATOR TUTORIAL
+
+## Table of contents
 
 <!--ts-->
    * [Overview](#overview)
@@ -11,11 +12,11 @@ Table of contents
 <!--te-->
    
 
-# Overview
+## Overview
 <a id="overview"></a>
 _______________________________________________________________________________________________________________________
 
-## Generator Syntax
+### Generator Syntax
 <a id="generator-syntax"></a>
 
 The **yield** statement suspends the function’s execution and sends a value back to the caller, but retains its 
@@ -44,7 +45,7 @@ exhausted. The `__iter()__` method of the iterator protocol can be implemented a
 The advantages of generators are mainly the reduced memory footprint and the lazy evaluation of of an expression. 
 Values in generator expressions are calculated only on-demand.
 
-## Generator Comprehension
+### Generator Comprehension
 <a id="generator-comprehension"></a>
 
 The general syntax for generator comprehensions is
@@ -86,7 +87,7 @@ Another more complex example
 
 In the generic syntax of generator comrehensions `<expression>` is any single line of Python code returning an object.
 
-## Generator Performance
+### Generator Performance
 <a id="generator-performance"></a>
 
 Generators are used mainly for memory efficiency but at the cost of increased complexity and overhead required to 
@@ -94,7 +95,7 @@ save the current state of the generator function.
 
 ![Memory Consumption](./assets/images/Mem_Consumption_Generator.png)
 
-# Usecases
+## Usecases
 <a id="usecases"></a>
 _______________________________________________________________________________________________________________________
 
@@ -102,11 +103,10 @@ ________________________________________________________________________________
 2. Infinite sequences
 3. Reduced memory
 
-import os
-See os.path.walk() vs os.walk()
+See `os.path.walk()` vs `os.walk()`
 
 
-# Resources
+## Resources
 <a id="resources"></a>
 _______________________________________________________________________________________________________________________
 * <https://www.python-course.eu/python3_generators.php>

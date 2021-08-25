@@ -1,20 +1,20 @@
-Table of contents
-=================
+# COROUTINE TUTORIAL
+
+## Table of contents
+_______________________________________________________________________________________________________________________
 
 <!--ts-->
    * [Overview](#overview)
-     * [Syntax](#syntax)
-     * [Chaining](#chaining)
+     * [Coroutine Execution](#coroutine-syntax)
+     * [Coroutine Chaining](#coroutine-chaining)
    * [Comparison](#python-coroutine)
       * [Coroutine vs Subroutine](#coroutine-vs-subroutine)
       * [Coroutine vs Thread](#coroutine-vs-thread)
-      * [Coroutine vs Handler Class](#coroutine-vs-handler-class)
    * [Usecases](#usecases)
    * [Resources](#resources)
 <!--te-->
 
-# Overview
-<a id="overview"></a>
+## Overview
 _______________________________________________________________________________________________________________________
 
 Coroutines are a special type of generator functions and represent generalizations of subroutines. They are used for 
@@ -22,91 +22,116 @@ Coroutines are a special type of generator functions and represent generalizatio
 order to enable multiple applications to be run simultaneously. Typically they are used to wait for a signal from 
 another subroutine or coroutine to resume its execution.
 
-The execution of the coroutine is similar to the generator. The coroutine runs only in response to the `next` and 
-`send` methods. The first `next` or `send` activates the coroutine and runs untils it reaches the first **yield** 
-statement.
 
-## Syntax
-<a id="syntax"></a>
-
-Coroutines can produce and consume data. A typical usecase with both operations is
-
-     def coroutine(...):
-          input = yield output
-          ...
-
-Here the coroutine will read the input value with `input = yield` and generate an output value with `yield output`. 
-Typically coroutines are used mainly to read values sent by the user application. Data can be sent to the couritine 
-using the `send()` method of the generator functions.
-
-Example:
+### Coroutine Execution
 
      def coroutine():
         print("Coroutine has been started!")
         output = "foo"
         while True:
             text = yield output
-            print("Coroutine received :", text)
+            print("Coroutine input :", text)
             output = text[::-1] if text else "boo"
      
      
      cr = coroutine()
-     print("Coroutine sent : {0}".format(next(cr)))
-     print("Coroutine sent : {0}".format(next(cr)))        
-     print("Coroutine sent : {0}".format(cr.send("abc")))    
+
+     # First usage of next to activate the coroutine and generate a default value
+     print("Coroutine оutput : {0}".format(next(cr)))
+     
+     # Second usage of next to generate a new value
+     print("Coroutine оutput : {0}".format(next(cr)))
+
+     # Send data to the coroutine and generate a new value
+     print("Coroutine оutput : {0}".format(cr.send("abc"))) 
 
 
-The first usage of next will activate the coroutine, activate the loop and generate the first result. The second 
-usage of next will activate the coroutine, evaluate data received with **text = yield ...**, generate the desired output and then send the data with 
-**... yield output**. It must be noted that `next()` will send `None` as data to the coroutine and it is used mainly 
-to generate values.
+     # Output:
+     # -------------------------------
+     # Coroutine has been started!
+     # Coroutine оutput : foo
+     # ('Coroutine received :', None)
+     # Coroutine оutput : boo
+     # ('Coroutine received :', 'abc')
+     # Coroutine оutput : cba
 
 
-## Chaining
-<a id="chaining"></a>
+The first usage of `next()` will activate the coroutine, print `Coroutine has been started!`, initialize the 
+output and start the loop. The first result will be generated when the loop reaches the `yield output` expression. 
 
-Coroutines can be used to set pipes. We can chain together coroutines and push data through the pipe using send() 
-method. A pipe needs :
+The second usage of next will resume the coroutine with the first statement after `yield`. As `next()` doesn't 
+send any data the couroutine will print `('Coroutine received :', None)`. Next the output value is changed and the 
+while loop is executed again. When the coroutine reaches the yield statment it will generate an output with the 
+`yield output` expression.
 
-1. An initial source(producer) derives the whole pipeline.
-2. A sink, which is the endpoint of the pipe. A sink might collect all data and display it.
+Next the send method of generator functions is used to send data to the coroutine. The `text = yield ...` captures 
+the value sent and the first statement after yield is executed. In this case the coroutine will print `
+('Coroutine received :', 'abc')`. The output is then changed to take the reverse value of the input. Then the while 
+loop is executed again and the new output is generated with the `yield output` expression.
 
 
-# Comparions
-<a id="comparison"></a>
+### Coroutine Chaining
+
+Coroutines can be used to set pipes. We can chain together coroutines and push data through the pipe using the `send()` 
+method. A pipe needs at least the following
+
+1. An initial source or producer
+2. A sink or consumer
+
+
+     def producer(string, next_coroutine):
+         tokens = string.split(" ")
+         for token in tokens:
+             next_coroutine.send(token)
+         next_coroutine.close()
+     
+     
+     def consumer():
+         print("I'm sink, i'll print tokens")
+         try:
+             while True:
+                 token = (yield)
+                 print(token)
+         except GeneratorExit:
+             print("Done with printing!")
+     
+     
+     sentence = "Hello world!"
+     print(sentence)
+     
+     # Define token printer (sink) and activate
+     printer = consumer()
+     next(printer)
+     
+     # Define token splitter (producer)
+     producer(string=sentence, next_coroutine=printer)
+
+     # Output
+     # ---------------------------
+     # Hello world!
+     # I'm sink, i'll print tokens
+     # Hello
+     # world!
+     # Done with printing!
+
+
+## Comparions
 _______________________________________________________________________________________________________________________
 
+### Coroutine vs Subroutine
 
-## Coroutine vs Subroutine
-<a id="coroutine-vs-subroutine"></a>
-
-| Subroutine                               | Coroutine                                |
-| ------------------------------------     | ---------------------------------------- |
-| ![](assets/images/subroutine.png)      | ![](assets/images/coroutine.png)       |
-
-
-
-* Coroutines can suspend and resume its execution
+* Coroutines can be suspended and resumed
 * Couritines can be resumed from many places
 * Coroutines require cooperation by the calling application
 
 
-## Coroutine vs Thread
-<a id="coroutine-vs-thread"></a>
+### Coroutine vs Thread
 
 * Threads are managed by the operating system
 * Coroutines are managed by the program and the programming language
 
 
-## Coroutine vs Handler Class
-<a id="coroutine-vs-handler-class"></a>
-
-* Handler Objects need a class and methods
-* Handler Objects are slower
-
-
-# Usecases
-<a id="usecases"></a>
+## Usecases
 _______________________________________________________________________________________________________________________
 
 1. Pipelines used to filter or to map objects
@@ -115,8 +140,7 @@ ________________________________________________________________________________
 4. Milti-tasking
 5. Callbacks replacement
 
-# Excercises
-<a id="excercises"></a>
+## Excercises
 _______________________________________________________________________________________________________________________
 
 1. Write a simple coroutine which sends and receives data
@@ -130,8 +154,8 @@ ________________________________________________________________________________
 10. Write a simple multi-tasking OS using coroutines
 
 
-# Resources
-<a id="resources"></a>
+## Resources
+_______________________________________________________________________________________________________________________
 
 * https://www.geeksforgeeks.org/coroutine-in-python/
 * https://www.python-course.eu/python3_generators.php

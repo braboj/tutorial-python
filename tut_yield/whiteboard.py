@@ -1,6 +1,30 @@
-generator = ((i, ("apple" if i % 2 == 0 else "pie")) for i in range(6))
-for x in generator:
-    print(x)
+def producer(string, next_coroutine):
+    tokens = string.split(" ")
+    for token in tokens:
+        next_coroutine.send(token)
+    next_coroutine.close()
+
+
+def consumer():
+    print("I'm sink, i'll print tokens")
+    try:
+        while True:
+            token = (yield)
+            print(token)
+    except GeneratorExit:
+        print("Done with printing!")
+
+
+sentence = "Hello world!"
+print(sentence)
+
+# Define token printer (sink) and activate
+printer = consumer()
+next(printer)
+
+# Define token splitter (producer)
+producer(string=sentence, next_coroutine=printer)
+
 
 # # Implementation with a colllection
 # def evens_A(stream):

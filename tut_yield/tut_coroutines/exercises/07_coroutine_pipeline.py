@@ -16,7 +16,7 @@ def pattern_filter(pattern="ing", next_coroutine=None):
         print("Done with filtering!!")
 
 
-def print_token():
+def consumer():
     print("I'm sink, i'll print tokens")
     try:
         while True:
@@ -26,14 +26,14 @@ def print_token():
         print("Done with printing!")
 
 
-# Define token printer (sink)
-pt = print_token()
-next(pt)
+# Define token printer (sink) and activate
+printer = consumer()
+next(printer)
 
-# # Define token filterer (middle)
-pf = pattern_filter(next_coroutine=pt)
-next(pf)
+# Define token filterer (middle) and activate
+filterer = pattern_filter(next_coroutine=printer)
+next(filterer)
 
-# # Define token splitter (producer)
+# Define token splitter (producer)
 sentence = "Bob is running behind a fast moving car"
-producer(string=sentence, next_coroutine=pf)
+producer(string=sentence, next_coroutine=filterer)
