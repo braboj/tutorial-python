@@ -13,11 +13,9 @@
    
 
 ## Overview
-<a id="overview"></a>
 _______________________________________________________________________________________________________________________
 
 ### Generator Syntax
-<a id="generator-syntax"></a>
 
 The **yield** statement suspends the function’s execution and sends a value back to the caller, but retains its 
 state so that it can be resumed. When resumed, the function continues execution immediately after the last yield run.
@@ -46,7 +44,6 @@ The advantages of generators are mainly the reduced memory footprint and the laz
 Values in generator expressions are calculated only on-demand.
 
 ### Generator Comprehension
-<a id="generator-comprehension"></a>
 
 The general syntax for generator comprehensions is
     
@@ -88,15 +85,14 @@ Another more complex example
 In the generic syntax of generator comrehensions `<expression>` is any single line of Python code returning an object.
 
 ### Generator Performance
-<a id="generator-performance"></a>
 
 Generators are used mainly for memory efficiency but at the cost of increased complexity and overhead required to 
 save the current state of the generator function.
 
 ![Memory Consumption](./assets/images/Mem_Consumption_Generator.png)
 
+
 ## Usecases
-<a id="usecases"></a>
 _______________________________________________________________________________________________________________________
 
 1. Increased readability
@@ -107,8 +103,8 @@ See `os.path.walk()` vs `os.walk()`
 
 
 ## Resources
-<a id="resources"></a>
 _______________________________________________________________________________________________________________________
+
 * <https://www.python-course.eu/python3_generators.php>
 * <https://www.youtube.com/watch?v=EnSu9hHGq5o>
 * <https://www.python.org/dev/peps/pep-0255>
