@@ -2,14 +2,12 @@
 
 ## Table of contents
 
-<!--ts-->
-   * [Overview](#overview)
-     * [Generator Syntax](#generator-syntax)
-     * [Generator Comprehension](#generator-comprehension)
-     * [Generator Performance](#generator-performance)
-   * [Usecases](#usecases)
-   * [Resources](#resources)
-<!--te-->
+* [Overview](#overview)
+  * [Generator Syntax](#generator-syntax)
+  * [Generator Comprehension](#generator-comprehension)
+  * [Generator Performance](#generator-performance)
+* [Usecases](#usecases)
+* [Resources](#resources)
    
 
 ## Overview

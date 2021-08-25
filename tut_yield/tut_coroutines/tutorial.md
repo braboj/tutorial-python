@@ -3,16 +3,15 @@
 ## Table of contents
 _______________________________________________________________________________________________________________________
 
-<!--ts-->
-   * [Overview](#overview)
-     * [Coroutine Execution](#coroutine-syntax)
-     * [Coroutine Chaining](#coroutine-chaining)
-   * [Comparison](#python-coroutine)
-      * [Coroutine vs Subroutine](#coroutine-vs-subroutine)
-      * [Coroutine vs Thread](#coroutine-vs-thread)
-   * [Usecases](#usecases)
-   * [Resources](#resources)
-<!--te-->
+* [Overview](#overview)
+  * [Coroutine Execution](#coroutine-syntax)
+  * [Coroutine Chaining](#coroutine-chaining)
+* [Comparison](#python-coroutine)
+   * [Coroutine vs Subroutine](#coroutine-vs-subroutine)
+   * [Coroutine vs Thread](#coroutine-vs-thread)
+* [Usecases](#usecases)
+* [Resources](#resources)
+
 
 ## Overview
 _______________________________________________________________________________________________________________________
