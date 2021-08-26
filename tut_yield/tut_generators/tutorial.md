@@ -43,7 +43,7 @@ Values in generator expressions are calculated only on-demand.
 
 ### Generator Comprehension
 
-The general syntax for generator comprehensions is
+The generator comprehension is a short syntax for a simple generator function.
     
     (<expression> for <var> in <iterable> if <condition>
 

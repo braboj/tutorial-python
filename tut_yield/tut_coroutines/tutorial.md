@@ -68,6 +68,64 @@ the value sent and the first statement after yield is executed. In this case the
 ('Coroutine received :', 'abc')`. The output is then changed to take the reverse value of the input. Then the while 
 loop is executed again and the new output is generated with the `yield output` expression.
 
+### Coroutine Interface
+
+| Method | Example             | Description                                          |
+|--------|---------------------|------------------------------------------------------|
+| next   |   next(coroutine)   | Generate value from the coroutine                    |
+| send   |  coroutine.send(..) | Send value to the coroutine                          |
+| close  | coroutine.close(..) | Stop the coroutine by sending a GeneratorExit signal |
+| throw  | coroutine.throw(..) | Throw exception to the coroutine for the next yield  |
+
+    def letter_generator(text):
+        print("Started")
+        position = 0
+        try:
+            while True:
+                try:
+                    offset = yield text[position]
+    
+                    if offset is None:
+                        position += 1
+                    else:
+                        position = offset
+    
+                except ValueError:
+                    print("Value error on position = " + str(position))
+    
+        except GeneratorExit:
+            print("Terminated")
+    
+    
+    letter = letter_generator("abc")
+    
+    # Generate letters
+    print(next(letter))
+    print(next(letter))
+    
+    # Reset generator and generate letter
+    print(letter.send(0))
+    
+    # Generate next letter
+    print(next(letter))
+    
+    # Throw an exception to the generator
+    print(letter.throw(ValueError))
+    
+    # Throw GeneratorExit to the generator
+    letter.close()
+
+    # Output
+    # ----------------------
+    # Started
+    # a
+    # b
+    # a
+    # b
+    # Value error on position = 1
+    # b
+    # Terminated
+
 
 ### Coroutine Chaining
 
@@ -98,7 +156,7 @@ method. A pipe needs at least the following
      sentence = "Hello world!"
      print(sentence)
      
-     # Define token printer (sink) and activate
+     # Define token printer (consumer) and activate
      printer = consumer()
      next(printer)
      
@@ -142,15 +200,14 @@ ________________________________________________________________________________
 ## Excercises
 _______________________________________________________________________________________________________________________
 
-1. Write a simple coroutine which sends and receives data
-2. Write a program which stops a coroutine
-3. Write a simple decorator to activate a coroutine
-4. Write a coroutine which computes the running average
-6. Write a random bitstream generator 
-7. Write a pipeline
-8. Write simple finite state machine
-9. Write a program to generate permutations using recursive coroutines
-10. Write a simple multi-tasking OS using coroutines
+1. Write a coroutine usage template
+2. Write a simple decorator to activate a coroutine
+3. Write a coroutine which computes the running average
+4. Write a random configurable bytestream generator 
+5. Write a pipeline
+6. Write simple finite state machine
+7. Write a program to generate permutations using recursive coroutines
+8. Write a simple multi-tasking OS using coroutines
 
 
 ## Resources

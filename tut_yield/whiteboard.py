@@ -1,53 +1,37 @@
-def producer(string, next_coroutine):
-    tokens = string.split(" ")
-    for token in tokens:
-        next_coroutine.send(token)
-    next_coroutine.close()
-
-
-def consumer():
-    print("I'm sink, i'll print tokens")
+def letter_generator(text):
+    print("Started")
+    position = 0
     try:
         while True:
-            token = (yield)
-            print(token)
+            try:
+                offset = yield text[position]
+
+                if offset is None:
+                    position += 1
+                else:
+                    position = offset
+
+            except ValueError:
+                print("Value error on position = " + str(position))
+
     except GeneratorExit:
-        print("Done with printing!")
+        print("Terminated")
 
 
-sentence = "Hello world!"
-print(sentence)
+letter = letter_generator("abc")
 
-# Define token printer (sink) and activate
-printer = consumer()
-next(printer)
+# Generate letters
+print(next(letter))
+print(next(letter))
 
-# Define token splitter (producer)
-producer(string=sentence, next_coroutine=printer)
+# Reset generator and generate letter
+print(letter.send(0))
 
+# Generate a next letter
+print(next(letter))
 
-# # Implementation with a colllection
-# def evens_A(stream):
-#     them = []
-#     for n in stream:
-#         if n % 2 == 0:
-#             them.append(n)
-#     return them
-#
-#
-# # Implementaton with a generator
-# def evens_B(stream):
-#     for n in stream:
-#         if n % 2 == 0:
-#             yield n
-#
-#
-# num = [x for x in range(10)]
-#
-# print("-" * 80)
-# for x in evens_A(num):
-#     print(x)
-#
-# print("-" * 80)
-# for x in evens_B(num):
-#     print(x)
+# Throw an exception to the generator
+print(letter.throw(ValueError))
+
+# Throw GeneratorExit to the generator
+letter.close()
