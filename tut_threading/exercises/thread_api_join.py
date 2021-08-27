@@ -6,7 +6,7 @@ import logging
 def my_func(id):
 
     logging.info("func : Starting {id}".format(id=id))
-    time.sleep(10)
+    time.sleep(5)
     logging.info('func : Finishing {id}'.format(id=id))
 
 
@@ -31,7 +31,8 @@ if __name__ == "__main__":
     )
 
     logging.info('main : Create thread')
-    t = threading.Thread(target=my_func, args=[1], daemon=True)
+    t = threading.Thread(target=my_func, args=[1])
+    t.daemon = True
 
     logging.info('main : Starting thread')
     t.start()
