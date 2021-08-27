@@ -2,7 +2,7 @@ import timeit
 
 
 def test():
-    """Stupid test function"""
+    """ Test function"""
     l = []
     for i in range(100):
         l.append(i)
