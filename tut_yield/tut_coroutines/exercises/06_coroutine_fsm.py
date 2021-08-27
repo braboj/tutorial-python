@@ -10,14 +10,20 @@ class RegexFSM(object):
         self.current_state = None
         self.output = False
 
+    ##############################################################################################
+
     def __call__(self, *args, **kwargs):
         return self.match(*args, **kwargs)
+
+    ##############################################################################################
 
     def send(self, char):
         try:
             self.current_state.send(char)
         except StopIteration:
             self.output = False
+
+    ##############################################################################################
 
     def match(self, text):
 
@@ -44,6 +50,8 @@ class RegexFSM(object):
         finally:
             return self.output
 
+    ##############################################################################################
+
     def start(self):
         self.output = False
         while True:
@@ -52,6 +60,8 @@ class RegexFSM(object):
                 self.current_state = self.q1()
             else:
                 break
+
+    ##############################################################################################
 
     def q1(self):
         self.output = False
@@ -64,6 +74,8 @@ class RegexFSM(object):
             else:
                 break
 
+    ##############################################################################################
+
     def q2(self):
         self.output = False
         while True:
@@ -75,6 +87,8 @@ class RegexFSM(object):
             else:
                 break
 
+    ##############################################################################################
+
     def q3(self):
         self.output = True
         while True:
@@ -83,6 +97,8 @@ class RegexFSM(object):
                 self.output = False
             else:
                 break
+
+    ##############################################################################################
 
     def stop(self):
         self.current_state.close()
