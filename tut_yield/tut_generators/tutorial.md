@@ -99,6 +99,13 @@ ________________________________________________________________________________
 
 See `os.path.walk()` vs `os.walk()`
 
+## Exercises
+
+1. Write an infinite counter generator using the generator API
+2. Write a program to compare memory size of list and generator comprehensions
+3. Write a generator which calculates fibonacci numbers up to a given limit
+4. Write a city ranking generator with delegation (split in city and limit generators)
+5. Write a recursive odd number generator
 
 ## Resources
 _______________________________________________________________________________________________________________________
