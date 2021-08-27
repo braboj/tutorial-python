@@ -1,27 +1,26 @@
 import sys
 import trace
 
-##################################################################################################
-# GENERATORS
-##################################################################################################
-
 
 # Using recursion in generator function
-def oddnum(start):
-    yield start
-    start += 2
-    while True:
-        yield next(oddnum(start))
-        start += 2
+def oddnum(offset=1, limit=10):
+
+    if (offset % 2) == 0:
+        offset += 1
+
+    if offset < limit:
+        yield offset
+    else:
+        return
+
+    for x in range(offset + 2, limit, 2):
+        yield next(oddnum(x, limit))
 
 
 def test():
     # Using for loop to print odd numbers till 10 from 1
-    for nums in oddnum(1):
-        if nums < 10:
-            print (nums)
-        else:
-            break
+    for nums in oddnum(limit=10):
+        print (nums)
 
 
 ##################################################################################################
