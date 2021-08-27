@@ -8,16 +8,12 @@ def permutations(items):
         yield []
     else:
         for i in range(len(items)):
+
+            # We have to use next() to activate the recursive generator
             for cc in permutations(items[:i] + items[i + 1:]):
                 yield [items[i]] + cc
 
 
-text = ['r', 'e']
-for p in permutations(text):
-    print(''.join(p), end=", ")
-
-print("\r")
-
-text = "game"
-for p in permutations(text):
-    print(''.join(p), end=", ")
+text = "abc"
+for i in permutations(text):
+    print(i)
