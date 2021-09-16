@@ -7,11 +7,11 @@ class ChatServer(object):
     def __init__(self, port):
 
         self.port = port
-        self.srvsock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.srvsock.bind(("", port))
-        self.srvsock.listen(5)
+        self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.sock.bind(("", port))
+        self.sock.listen(5)
 
-        self.descriptors = [self.srvsock]
+        self.descriptors = [self.sock]
         print('ChatServer started on port %s' % port)
 
     def run(self):
@@ -25,7 +25,7 @@ class ChatServer(object):
             for sock in sread:
 
                 # Received a connect to the server (listening) socket
-                if sock == self.srvsock:
+                if sock == self.sock:
                     self.accept_new_connection()
 
                 else:
@@ -47,7 +47,7 @@ class ChatServer(object):
                         self.broadcast_string(newstr, sock)
 
     def accept_new_connection(self):
-        newsock, (remhost, remport) = self.srvsock.accept()
+        newsock, (remhost, remport) = self.sock.accept()
         self.descriptors.append(newsock)
 
         newsock.send(b"You're connected to the Python chatserver\r\n")
@@ -59,10 +59,8 @@ class ChatServer(object):
         print(data)
         data = bytearray(data.encode('utf-8'))
         for sock in self.descriptors:
-            if sock != self.srvsock and sock != omit_sock:
+            if sock != self.sock and sock != omit_sock:
                 sock.send(data)
-
-
 
 
 if __name__ == "__main__":

@@ -12,7 +12,7 @@ from cryptography.x509.oid import NameOID
 import idna
 
 from socket import socket
-from collections import namedtuple
+from tut_collections import namedtuple
 
 HostInfo = namedtuple(field_names='cert hostname peername', typename='HostInfo')
 

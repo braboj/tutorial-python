@@ -4,9 +4,7 @@ import threading
 import time
 
 
-##############################################################################################
-
-def process(period, lock, stop):
+def worker(period, lock, stop):
 
     while True:
 
@@ -20,8 +18,6 @@ def process(period, lock, stop):
         with lock:
             print(period, end=", ")
 
-
-##############################################################################################
 
 def main():
 
@@ -37,14 +33,14 @@ def main():
     # Start workers
     for i in range(1, 4):
 
-        worker = threading.Thread(
-            target=process,
+        process = threading.Thread(
+            target=worker,
             args=(i, print_lock, stop_event),
             # kwargs={'period': i, 'lock': print_lock, 'stop': stop_event}
         )
-        worker.daemon = True
-        worker.start()
-        pool.append(worker)
+        process.daemon = True
+        process.start()
+        pool.append(process)
 
     # Run program for a specific amount of time and then stop everything
     time_start = time.clock()
@@ -57,8 +53,8 @@ def main():
             break
 
     # Wait for workers to finish (relevant for daemon threads)
-    for worker in pool:
-        worker.join()
+    for process in pool:
+        process.join()
 
     # Check if threads are alive
     status = [x.is_alive() for x in pool]

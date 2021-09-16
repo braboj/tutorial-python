@@ -11,17 +11,6 @@ def my_func(id):
 
 
 if __name__ == "__main__":
-    """
-    Threads that are daemons, however, are just killed wherever they are when 
-    the program is exiting. With join the daemon thread will not be killed 
-    and the main program will wait for the thread termination.
-    
-    Output:
-    18:46:54: main : Create thread
-    18:46:54: main : Starting thread
-    18:46:54: func : Starting 1
-    18:46:54: main : End
-    """
 
     f = "%(asctime)s: %(message)s"
     logging.basicConfig(
@@ -37,5 +26,6 @@ if __name__ == "__main__":
     logging.info('main : Starting thread')
     t.start()
 
-    logging.info('main : End')
+    logging.info("Waiting for my_func to finish...")
     t.join()
+    logging.info('main : End')

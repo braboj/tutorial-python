@@ -1,108 +1,140 @@
 # THREADING TUTORIAL
 
-## Table of Contents
-* [Thread](#thread)
-* [Queue](#queue)
-* [Event](#event)
-* [Lock](#lock)
-* [RLock](#rlock)
-* [Semaphore](#semaphore)
-* [Condition](#resources)
-* [Barrier](#barrier)
+* [Objects](#objects)
+  * [Thread](#thread)
+    * [daemon](#daemon)
+    * [start()](#daemon)
+    * [run()](#run)
+    * [join()](#join)
+  * [local](#local)
+  * [Queue](#queue)
+  * [Event](#event)
+  * [Lock](#lock)
+  * [RLock](#rlock)
+  * [Semaphore](#semaphore)
+  * [Condition](#resources)
+  * [Barrier](#barrier)
+* [Functions](#functions)
+  * [currentThread()](#current_thread)
+  * [enumerate()](#enumerate)
 
+## Objects
 
-## Thread
+### Thread
 __________________________________________________________________________________________________
 
-### daemon
-__________________________________________________________________________________________________
+
+| API        | Description                                             |
+|------------|---------------------------------------------------------|
+| daemon     | If true the all threads are killed with the main thread |
+| ident      | Thread identifier                                       |
+| name       | Thread symbolic name                                    |
+| start()    | Start the thread and mark it as active                  |
+| run()      | Activity performed by the thread.                       |
+| join()     | Wait for the thread to finish before the next statement |
+| is_alive() | Check if the run function is still active               |
 
 If non-daemon threads are used, the main thread has to wait for all its children threads to finish. However, using 
-daemon all children threads will either completed or killed by the operating system when main thread exits.
+daemon all children threads will either completed or killed by the operating system when main thread exits. This is  
+useful in the following scenarios:
 
-Usecases:
-
-1. Collecting statistics and performing the status monitoring tasks - Sending and receiving network heartbeats,
+1. Collecting statistics and performing the status monitoring tasks - Sending and receiving network heartbeats, 
 supplying the services to monitoring tools, and so on.
-
-2. Performing asynchronous I/O tasks - You can create a queue of I/O requests, and set up a group of daemon threads
+2. Performing asynchronous I/O tasks - You can create a queue of I/O requests, and set up a group of daemon threads 
 servicing these requests asynchronously.
+3. Listening for incoming connections - daemon threads are very convenient in situations like this, because they let 
+you program a simple "forever" loop, rather than creating a setup that pays attention to exit requests from the main thread.
 
-3. Listening for incoming connections - daemon threads are very convenient in situations like this, because they let
-you program a simple "forever" loop, rather than creating a setup that pays attention to exit requests from the main
-thread.
+#### daemon
 
+      import threading
+      import time
+      import logging
+
+      def daemon():
+          logging.info('Starting')
+          for i in range(10):
+              logging.info(".")
+              time.sleep(1)
+          logging.info('Exiting')
+      
+      
+      def non_daemon():
+          logging.info('Starting')
+          time.sleep(2)
+          logging.info('Exiting')
+      
+      
+      def main():
+      
+          logging.info('Starting')
+      
+          # Daemon task which will be killed before finishing execution (non-critical)
+          d = threading.Thread(name='daemon', target=daemon)
+          d.daemon = True
+          d.start()
+      
+          # Main thread waiting for non-daemon task to finish (critical)
+          t = threading.Thread(name="non-daemon", target=non_daemon)
+          t.daemon = False
+          t.start()
+      
+          logging.info('Exiting')
+      
+      
+      # Configure logger
+      log_format = '(%(threadName)-10s) %(message)s'
+      logging.basicConfig(level=logging.DEBUG, format=log_format)
+      
+      
+      if __name__ == "__main__":
+          main()
+      
+      # At this point the main program finishes. The daemon will be terminated too.
+	
+
+
+#### start()
+	
+      import time
+      import threading
+      
+      
+      def my_func():
+      
+          print("func : Starting {id}".format(id=id))
+          time.sleep(5)
+          print('func : Finishing {id}'.format(id=id))
+      
+      
+      if __name__ == "__main__":
+      
+          t = threading.Thread(target=my_func)
+          t.start()
+	
+
+
+#### run()
 
     import threading
-    import time
-    import logging
     
     
-    def daemon():
-        logging.info('Starting')
-        for i in range(10):
-            logging.info(".")
-            time.sleep(1)
-        logging.info('Exiting')
+    class MyThread(threading.Thread):
+    
+        def __init__(self, *args, **kwargs):
+            super(MyThread, self).__init__(*args, **kwargs)
+    
+        def run(self):
+            print("Called by threading.Thread.start()")
     
     
-    def non_daemon():
-        logging.info('Starting')
-        time.sleep(2)
-        logging.info('Exiting')
-    
-    
-    def main():
-    
-        logging.info('Starting')
-    
-        # Daemon task which will be killed before finishing execution (non-critical)
-        d = threading.Thread(name='daemon', target=daemon)
-        d.daemon = True
-        d.start()
-    
-        # Main thread waiting for non-daemon task to finish (critical)
-        t = threading.Thread(name="non-daemon", target=non_daemon)
-        t.daemon = False
-        t.start()
-    
-        logging.info('Exiting')
-    
-    
-    # Configure logger
-    log_format = '(%(threadName)-10s) %(message)s'
-    logging.basicConfig(level=logging.DEBUG, format=log_format)
-    
-    
-    if __name__ == "__main__":
-        main()
-    
-    # At this point the main program finishes. The daemon will be terminated too.
+    if __name__ == '__main__':
+        mythread = MyThread()
+        mythread.start()
+        mythread.join()
 
 
-### start()
-__________________________________________________________________________________________________
-
-    import time
-    import threading
-    
-    
-    def my_func():
-    
-        print("func : Starting {id}".format(id=id))
-        time.sleep(5)
-        print('func : Finishing {id}'.format(id=id))
-    
-    
-    if __name__ == "__main__":
-    
-        t = threading.Thread(target=my_func)
-        t.start()
-
-### join()
-__________________________________________________________________________________________________
-
-Waits for the target thread to finish its execution before the next statement of the inquiring thread.
+#### join()
 
     import time
     import threading
@@ -132,176 +164,13 @@ Waits for the target thread to finish its execution before the next statement of
         logging.info('main : Starting thread')
         t.start()
     
-        logging.info('main : End')
+        logging.info('Waiting for my_func to finish its execution...')
         t.join()
+        
+        logging.info("main : End")
 
 
-### currentThread()
-__________________________________________________________________________________________________
-
-Get the current thread running by the operating system. 
-
-    import threading
-    import logging
-    import time
-    
-    
-    def worker():
-        logging.info("{0} {1}".format(threading.currentThread().getName(), 'Starting'))
-        time.sleep(2)
-        logging.info("{0} {1}".format(threading.currentThread().getName(), 'Exiting'))
-    
-    
-    def my_service():
-        logging.info("{0} {1}".format(threading.currentThread().getName(), 'Starting'))
-        time.sleep(3)
-        logging.info("{0} {1}".format(threading.currentThread().getName(), 'Exiting'))
-    
-    
-    if __name__ == "__main__":
-    
-        f = "%(asctime)s: %(message)s"
-        logging.basicConfig(format=f, level=logging.INFO, datefmt=b"%H:%M:%S")
-    
-        # Named service thread
-        s = threading.Thread(name='my_service', target=my_service)
-    
-        # Named worker thread
-        w1 = threading.Thread(name='worker', target=worker)
-    
-        # Start thread with default name
-        w2 = threading.Thread(target=worker)
-    
-        w1.start()
-        w2.start()
-        s.start()
-
-
-### enumerate()
-__________________________________________________________________________________________________
-
-Returns a list of all the threads started by the current program. 
-
-    def worker():
-        pause = random.randint(1,5)
-        logging.info('sleeping %s', pause)
-        time.sleep(pause)
-        logging.info('ending')
-        return
-    
-    
-    def main():
-        for i in range(3):
-            t = threading.Thread(target=worker)
-            t.setDaemon(True)
-            t.start()
-    
-        main_thread = threading.currentThread()
-        for t in threading.enumerate():
-            if t is main_thread:
-                continue
-            logging.info('joining %s', t.getName())
-            t.join()
-    
-    
-    if __name__ == "__main__":
-    
-        logging.basicConfig(level=logging.INFO, format='(%(threadName)-10s) %(message)s')
-        main()
-
-
-### local()
-__________________________________________________________________________________________________
-
-Defines a variable as local for the target thread.
-
-    import random
-    import threading
-    import logging
-    
-    logging.basicConfig(level=logging.DEBUG,
-                        format='(%(threadName)-10s) %(message)s',
-                        )
-    
-    
-    def show_value(data):
-        try:
-            val = data.value
-        except AttributeError:
-            logging.debug('No value yet')
-        else:
-            logging.debug('value=%s', val)
-    
-    
-    def worker(data):
-        # Show local data for this thread before and after change
-        show_value(data)
-        data.value = random.randint(1, 100)
-        show_value(data)
-    
-    
-    # Define local data for each thread
-    local_data = threading.local()
-    
-    # Show value in main thread before and after change
-    show_value(local_data)
-    local_data.value = 1000
-    show_value(local_data)
-    
-    for i in range(2):
-        t = threading.Thread(target=worker, args=(local_data,))
-        t.start()
-
-
-## Queue
-__________________________________________________________________________________________________
-
-    import threading
-    import logging
-    import time
-    
-    try:
-        import Queue as queue
-    except ImportError:
-        import queue
-    
-    
-    def worker(stream):
-        while True:
-            item = stream.get()
-            logging.info(item)
-            time.sleep(0.2)
-            stream.task_done()
-    
-    
-    def process(data):
-    
-        stream = queue.Queue()
-    
-        # Start parallel workers to work on stream (increase workers to speed-up)
-        for i in range(10):
-             t = threading.Thread(target=worker, args=(stream, ))
-             t.daemon = True
-             t.start()
-    
-        # Read data (for example a file object)
-        for item in data:
-            stream.put(item)
-    
-        # Wait until all items in stream processed
-        stream.join()
-    
-    
-    if __name__ == "__main__":
-    
-        f = "[%(levelname)s]:(%(threadName)-10s): %(message)s"
-        logging.basicConfig(format=f, level=logging.INFO, datefmt="%H:%M:%S")
-    
-        data = range(100)
-        process(data)
-
-
-## Timer
+### Timer
 __________________________________________________________________________________________________
 A Timer starts its work after a delay, and can be canceled at any point within that delay time period.
 
@@ -330,7 +199,7 @@ A Timer starts its work after a delay, and can be canceled at any point within t
     
         test()
 
-## Event
+### Event
 __________________________________________________________________________________________________
     def worker(start):
         if start.wait(timeout=None):
@@ -361,7 +230,7 @@ ________________________________________________________________________________
         logging.basicConfig(format=f, level=logging.INFO, datefmt="%H:%M:%S")
         test()
 
-## Lock
+### Lock
 __________________________________________________________________________________________________
 Once a thread has acquired a lock, subsequent attempts to acquire it block, until it is released. Any thread may
 release the acquired lock.
@@ -409,7 +278,7 @@ release the acquired lock.
     if __name__ == "__main__":
         main()
 
-## RLock
+### RLock
 __________________________________________________________________________________________________
 A reentrant lock is a synchronization primitive that may be acquired multiple times by the same thread. Internally,
 it uses the concepts of “owning thread” and “recursion level” in addition to the locked/unlocked state used by
@@ -494,7 +363,7 @@ The acquiring can be nested so that only the final release changes the lock's st
         main()
 
 
-## Semaphore
+### Semaphore
 __________________________________________________________________________________________________
 
 Semaphore:
@@ -552,7 +421,7 @@ the number of acquire() operations.
         t.start()
 
 
-## Condition
+### Condition
 __________________________________________________________________________________________________
 
 This class implements condition variable objects. A condition variable allows one or more threads to wait until
@@ -611,5 +480,117 @@ Methods:
 * notify()
 * notify_all()
 
-## Barrier
+### Barrier
 __________________________________________________________________________________________________
+Only with versions 3.2+
+
+### local
+__________________________________________________________________________________________________
+
+Defines a variable as local for the target thread.
+
+    import random
+    import threading
+    import logging
+    
+    logging.basicConfig(level=logging.DEBUG,
+                        format='(%(threadName)-10s) %(message)s',
+                        )
+    
+    
+    def show_value(data):
+        try:
+            val = data.value
+        except AttributeError:
+            logging.debug('No value yet')
+        else:
+            logging.debug('value=%s', val)
+    
+    
+    def worker(data):
+        # Show local data for this thread before and after change
+        show_value(data)
+        data.value = random.randint(1, 100)
+        show_value(data)
+    
+    
+    # Define local data for each thread
+    local_data = threading.local()
+    
+    # Show value in main thread before and after change
+    show_value(local_data)
+    local_data.value = 1000
+    show_value(local_data)
+    
+    for i in range(2):
+        t = threading.Thread(target=worker, args=(local_data,))
+        t.start()
+
+
+## Functions
+
+| API              | Description                                   |
+|------------------|-----------------------------------------------|
+| active_count()   | Return the number of currently active threads |
+| current_thread() | Return the thread currently executing         |
+| enumerate()      | Return all active thread objects              |
+| setprofile()     | Set a profile function for all threads        |
+| settrace()       | Set a trace function for all threads          |
+
+
+### current_thread()
+__________________________________________________________________________________________________
+
+
+### enumerate()
+__________________________________________________________________________________________________
+
+
+## Examples
+
+### Queued threads
+__________________________________________________________________________________________________
+
+    import threading
+    import logging
+    import time
+    
+    try:
+        import Queue as queue
+    except ImportError:
+        import queue
+    
+    
+    def worker(stream):
+        while True:
+            item = stream.get()
+            logging.info(item)
+            time.sleep(0.2)
+            stream.task_done()
+    
+    
+    def process(data):
+    
+        stream = queue.Queue()
+    
+        # Start parallel workers to work on stream (increase workers to speed-up)
+        for i in range(10):
+             t = threading.Thread(target=worker, args=(stream, ))
+             t.daemon = True
+             t.start()
+    
+        # Read data (for example a file object)
+        for item in data:
+            stream.put(item)
+    
+        # Wait until all items in stream processed
+        stream.join()
+    
+    
+    if __name__ == "__main__":
+    
+        f = "[%(levelname)s]:(%(threadName)-10s): %(message)s"
+        logging.basicConfig(format=f, level=logging.INFO, datefmt="%H:%M:%S")
+    
+        data = range(100)
+        process(data)
