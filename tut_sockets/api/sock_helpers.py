@@ -10,6 +10,7 @@ host_name = socket.gethostbyname("www.google.com")
 print(host_name)
 
 # Create socket object from an existing file descriptor
+# -> Only Python 3+
 s1 = socket.socket()
 s2 = socket.fromfd(s1.fileno(), s1.family, s1.type)
 print(s1)
