@@ -10,13 +10,14 @@ is received the socket will be closed.
 clisock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # 2. In case the adapter has more than one address we can bind to a specific IP
-clisock.bind(('192.168.210.2', 0))
+clisock.bind(('localhost', 0))
 
 # 3. Connect to the server port
-clisock.connect(('192.168.210.1', 23000))
+clisock.connect(('localhost', 2525))
 
 # 4. Send some data
-clisock.send(b"Hello World\n")
+for _ in range(2):
+    clisock.send(bytearray([0xFF] * 8))
 
 # 5. Receive some data
 print(clisock.recv(1024))

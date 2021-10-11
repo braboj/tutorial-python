@@ -133,7 +133,7 @@ are available:
     * Indicates optional or situation-dependent messages that are not
      always sent.
 
-![TLS Handshake](images/tls_handshake.gif "Logo Title Text 1")
+![TLS Handshake](assets/images/tls_handshake.gif "Logo Title Text 1")
 
 
 
@@ -151,3 +151,9 @@ into a process of requesting, issuing, and verification of digital certificates.
     
 * Key management
 * Key generation
+
+## Libraries
+* ssl
+* pyopenssl
+* cryptopgrahy
+* scapy

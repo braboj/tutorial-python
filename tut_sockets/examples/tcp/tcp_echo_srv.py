@@ -10,7 +10,7 @@ then close the connection.
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # 2. Bind socket to a specific address and service port
-sock.bind(('192.168.210.1', 23000))
+sock.bind(('localhost', 2525))
 
 # 3. Start listening on socket
 sock.listen(5)
@@ -24,7 +24,7 @@ while True:
     data = client.recv(1024)
 
     # 6. Send data
-    client.send(data)
+    # client.send(data)
 
     # 7. Close connection
     client.close()

@@ -1,4 +1,6 @@
-# import socket
+import socket
+import psutil
+
 # import struct
 #
 #
@@ -17,3 +19,7 @@
 # getTCPInfo(s)
 # s.recv(1024)
 # getTCPInfo(s)
+
+from scapy.arch.windows import get_windows_if_list
+a = get_windows_if_list()
+pass

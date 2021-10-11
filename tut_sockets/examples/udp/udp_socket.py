@@ -1,13 +1,13 @@
 # encoding: utf-8
 import socket
 
-# Socket factory
+# TCP socket
 tcp_socket = socket.socket(
     family=socket.AF_INET,
     type=socket.SOCK_STREAM
 )
 
-# Socket factory
+# UDP socket
 udp_socket = socket.socket(
     family=socket.AF_INET,
     type=socket.SOCK_DGRAM
