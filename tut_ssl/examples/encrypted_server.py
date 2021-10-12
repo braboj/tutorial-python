@@ -17,13 +17,13 @@ SERVER_CIPHERS = (
 
 def run():
 
-    # context = ssl.create_default_context(purpose=ssl.Purpose.CLIENT_AUTH, cafile="m2mqtt_ca.crt")
+    # context = ssl.create_default_context(purpose=ssl.Purpose.CLIENT_AUTH, cafile="ca.crt")
     context = ssl.SSLContext(protocol=ssl.PROTOCOL_TLS)
 
     # Configure certificates
-    context.load_cert_chain(certfile="m2mqtt_srv.crt", keyfile="m2mqtt_srv.key")
+    context.load_cert_chain(certfile="server.crt", keyfile="server.key")
     context.load_default_certs(purpose=ssl.Purpose.CLIENT_AUTH)
-    context.load_verify_locations(cafile="m2mqtt_ca.crt")
+    context.load_verify_locations(cafile="ca.crt")
     context.set_ciphers(SERVER_CIPHERS)
 
     # Configure server side options
@@ -34,7 +34,7 @@ def run():
 
     # Create and bind server socket
     server_socket = socket.socket()
-    server_socket.bind(('172.20.10.114', 10023))
+    server_socket.bind(('localhost', 10023))
     server_socket.listen(5)
 
     # Print info
@@ -42,7 +42,6 @@ def run():
     print(context.get_ca_certs())
     print(ssl.get_protocol_name(context.protocol))
     print(ssl.OPENSSL_VERSION)
-    print(ssl.HAS_TLSv1_3)
 
     # Server loop
     while True:
@@ -53,18 +52,18 @@ def run():
             connection, fromaddr = server_socket.accept()
 
             # Encrypt connection
-            encrypted_connection = context.wrap_socket(connection, server_side=True)
+            encrypted = context.wrap_socket(connection, server_side=True)
 
             # Wait for data and send it back to the client
-            data = encrypted_connection.recv(1)
-            while data:
-                encrypted_connection.sendall(data)
-                data = encrypted_connection.recv(1)
+            request = encrypted.recv(1024)
+            while request:
+                encrypted.sendall(request)
+                request = encrypted.recv(1024)
 
             # Close encrypted connection
-            encrypted_connection.unwrap()
-            # encrypted_connection.shutdown(socket.SHUT_RDWR)
-            # encrypted_connection.close()
+            encrypted.unwrap()
+            encrypted.shutdown(socket.SHUT_RDWR)
+            encrypted.close()
 
         except ssl.SSLError as e:
             print(e)

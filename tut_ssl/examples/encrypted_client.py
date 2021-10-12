@@ -35,9 +35,9 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
 
 # Configure client certificate
-context.load_cert_chain(certfile="m2mqtt_client.crt", keyfile="m2mqtt_client.key")
+context.load_cert_chain(certfile="client.crt", keyfile="client.key")
 context.load_default_certs(purpose=ssl.Purpose.SERVER_AUTH)
-context.load_verify_locations("m2mqtt_ca.crt")
+context.load_verify_locations("ca.crt")
 context.set_ciphers(CLIENT_CIPHERS)
 
 # Configure client side options
@@ -46,25 +46,25 @@ context.check_hostname = False
 context.options |= ssl.OP_NO_TLSv1_1
 
 # Encrypt socket
-ssl_sock = context.wrap_socket(
+encrypted = context.wrap_socket(
     sock,
     do_handshake_on_connect=False,
     # server_hostname=""
 )
 
 # Connect using TLS socket and manual handshake
-ssl_sock.connect(("172.20.10.114", 10023))
-ssl_sock.do_handshake()
+encrypted.connect(("localhost", 10023))
+encrypted.do_handshake()
 
-print(ssl_sock.cipher())
-print(ssl_sock.getpeercert())
+print(encrypted.cipher())
+print(encrypted.getpeercert())
 
 # Exchange encrypted data
 for i in range(1):
-    ssl_sock.send(b".")
-    print(ssl_sock.recv(1))
+    encrypted.send(b".")
+    print(encrypted.recv(1024))
     time.sleep(1)
 
-sock = ssl_sock.unwrap()
-# sock.shutdown(socket.SHUT_RDWR)
-# sock.close()
+sock = encrypted.unwrap()
+sock.shutdown(socket.SHUT_RDWR)
+sock.close()

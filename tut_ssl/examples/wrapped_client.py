@@ -17,9 +17,9 @@ ssl_sock = ssl.wrap_socket(
     sock,
     cert_reqs=ssl.CERT_REQUIRED,
     do_handshake_on_connect=False,
-    ca_certs="..\\..\\cert\\m2mqtt_ca.crt",
-    certfile="..\\..\\cert\\m2mqtt_client.crt",
-    keyfile="..\\..\\cert\\m2mqtt_client.key",
+    ca_certs="..\\..\\cert\\ca.crt",
+    certfile="..\\..\\cert\\client.crt",
+    keyfile="..\\..\\cert\\client.key",
 )
 print(ssl_sock)
 

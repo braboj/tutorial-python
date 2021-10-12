@@ -16,9 +16,9 @@ def run():
             client,
             server_side=True,
             cert_reqs=ssl.CERT_REQUIRED,
-            ca_certs="..\\..\\cert\\m2mqtt_ca.crt",
-            certfile="..\\..\\cert\\m2mqtt_srv.crt",
-            keyfile="..\\..\\cert\\m2mqtt_srv.key"
+            ca_certs="..\\..\\cert\\ca.crt",
+            certfile="..\\..\\cert\\server.crt",
+            keyfile="..\\..\\cert\\server.key"
         )
 
         try:
