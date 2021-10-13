@@ -5,10 +5,9 @@ https://en.wikipedia.org/wiki/Differentiated_services
 https://en.wikipedia.org/wiki/Explicit_Congestion_Notification
 """
 
-import socket
 from scapy.sendrecv import sendp
 from scapy.packet import Raw
-from scapy.layers.inet import IP, in4_chksum
+from scapy.layers.inet import IP
 from scapy.layers.l2 import Ether
 from scapy.utils import hexdump
 

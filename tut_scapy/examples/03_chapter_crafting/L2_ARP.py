@@ -1,4 +1,19 @@
-# TODO: Short description of the protocol with references
+"""
+LAN protocol based on hardware addresses
+--------------------------------------------------------------------------------------------------
+
+Attacks:
+    ARP poisoning   :
+    ARP spoofing    :
+
+Protection:
+    Dynamic ARP inspection
+    Private VLAN
+
+References:
+    https://www.sanog.org/resources/sanog7/yusuf-L2-attack-mitigation.pdf
+
+"""
 
 from scapy.sendrecv import sendp
 from scapy.layers.l2 import Ether, ARP
