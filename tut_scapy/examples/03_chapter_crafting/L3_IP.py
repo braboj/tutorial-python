@@ -40,10 +40,10 @@ ip_header.chksum = result
 data = '\xAA' * 60
 
 # Combine raw ethernet frame with the payload bytes
-datagram = eth_header / ip_header / data
+packet = eth_header / ip_header / data
 
 # Print raw bytes
-hexdump(datagram)
+hexdump(packet)
 
-# Send the frame
-sendp(datagram, iface='Business Network')
+# Send L2 datagram
+sendp(packet, iface='Business Network')
