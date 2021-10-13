@@ -5,18 +5,19 @@ and/or there is very little traffic) the process/thread will wait and exit only 
 the next captured packet when stop_filter is applied.
 """
 
-import time, threading
+import time
+import threading
 from scapy.all import sniff
 
 
 e = threading.Event()
 
 
-def _sniff(e):
+def _sniff(x):
     packets = sniff(
         # iface=None,
         filter="tcp port 80",
-        stop_filter=lambda p: e.is_set(),
+        stop_filter=lambda p: x.is_set(),
         # timeout=10
     )
     print("Stopped after {0} packets".format(len(packets)))
