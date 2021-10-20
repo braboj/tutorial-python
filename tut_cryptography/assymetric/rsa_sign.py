@@ -31,9 +31,9 @@ for i in range(1000):
     hasher.update(message)
 digest = hasher.finalize()
 
-# Digest must be 32 bytes
+# Digest must be 256 bits (see hash size)
 print([hex(x) for x in bytearray(digest)])
-print(len(digest))
+print(len(digest) * 8)
 
 # Sign the message digest
 signature = private_key.sign(
@@ -45,9 +45,9 @@ signature = private_key.sign(
     utils.Prehashed(SHA256())
 )
 
-# Signature must be 256 bytes
+# Signature must be 2048 bits (see RSA key length)
 print([hex(x) for x in bytearray(signature)])
-print(len(signature))
+print(len(signature) * 8)
 
 
 ##################################################################################################

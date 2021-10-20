@@ -9,14 +9,16 @@ from cryptography.x509 import NameOID
 import datetime
 
 ##################################################################################################
+# A. KEY GENERATION
+##################################################################################################
 
-# Generate own private key
+# Generate private key
 private_key = rsa.generate_private_key(
     public_exponent=65537,
     key_size=2048,
 )
 
-# Generate own public key
+# Generate public key
 public_key = private_key.public_key()
 
 # Serialize own private key
@@ -26,15 +28,16 @@ pem = private_key.private_bytes(
         encryption_algorithm=serialization.NoEncryption(),
     )
 
-# Save own private key
+# Save private key
 with open("../assymetric/ca.key", "wb") as f:
     f.write(pem)
 
 ##################################################################################################
-
-one_day = datetime.timedelta(1, 0, 0)
+# B. BUILD THE CERTIFICATE
+##################################################################################################
 
 cert = x509.CertificateBuilder()
+one_day = datetime.timedelta(1, 0, 0)
 
 # Subject
 DN = list()
@@ -64,6 +67,10 @@ ert_builder = cert.add_extension(x509.SubjectAlternativeName([x509.DNSName(u'loc
 # Sign the certificate
 cert = cert.sign(private_key=private_key, algorithm=SHA256())
 isinstance(cert, x509.Certificate)
+
+##################################################################################################
+# C. SAVE THE CERTIFICATE
+##################################################################################################
 
 # Serialize the certificate
 pem = cert.public_bytes(encoding=Encoding(serialization.Encoding.PEM))
