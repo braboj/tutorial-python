@@ -61,7 +61,7 @@ isinstance(csr, x509.Certificate)
 pem = csr.public_bytes(encoding=Encoding(serialization.Encoding.PEM))
 
 # Write our certificate request
-with open("../assymetric/ca.csr", "wb") as f:
+with open("ca.csr", "wb") as f:
     f.write(pem)
 
 ##################################################################################################

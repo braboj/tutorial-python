@@ -1,4 +1,5 @@
 # coding: utf-8
+import time
 
 from scapy.layers.tls.automaton_cli import TLSClientAutomaton
 from scapy.layers.tls.handshake import TLSClientHello, TLS13ClientHello
@@ -31,9 +32,3 @@ t = TLSClientAutomaton(server='192.168.210.240',
                        )
 
 t.run()
-
-t.cmdin.r(t.INITIAL)
-t.cmdin.send(t.INIT_TLS_SESSION)
-t.cmdin.send(t.CONNECT)
-t.cmdin.send(t.PREPARE_CLIENTFLIGHT1)
-t.cmdin.send(t.SENT_CLIENTFLIGHT1)

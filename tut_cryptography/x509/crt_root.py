@@ -29,7 +29,7 @@ pem = private_key.private_bytes(
     )
 
 # Save private key
-with open("../assymetric/ca.key", "wb") as f:
+with open("ca.key", "wb") as f:
     f.write(pem)
 
 ##################################################################################################
@@ -76,11 +76,11 @@ isinstance(cert, x509.Certificate)
 pem = cert.public_bytes(encoding=Encoding(serialization.Encoding.PEM))
 
 # Write our certificate out to disk.
-with open("../assymetric/ca.crt", "wb") as f:
+with open("ca.crt", "wb") as f:
     f.write(pem)
 
 # Load the certificate
-with open("../assymetric/ca.crt", "rb") as f:
+with open("ca.crt", "rb") as f:
     data = f.read()
     test = x509.load_pem_x509_certificate(data=data)
 

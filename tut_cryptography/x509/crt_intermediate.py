@@ -29,7 +29,7 @@ pem = private_key.private_bytes(
     )
 
 # Save own private key
-with open("../assymetric/ia.key", "wb") as f:
+with open("ia.key", "wb") as f:
     f.write(pem)
 
 ##################################################################################################
@@ -51,7 +51,7 @@ csr = csr.subject_name(x509.Name(DN))
 
 # Extensions
 csr = csr.add_extension(x509.BasicConstraints(ca=True, path_length=None), critical=True)
-ert_builder = csr.add_extension(x509.SubjectAlternativeName([x509.DNSName(u'localhost')]), critical=False)
+csr = csr.add_extension(x509.SubjectAlternativeName([x509.DNSName(u'localhost')]), critical=False)
 
 # Sign the certificate
 csr = csr.sign(private_key=private_key, algorithm=SHA256())
@@ -61,14 +61,14 @@ isinstance(csr, x509.Certificate)
 pem = csr.public_bytes(encoding=Encoding(serialization.Encoding.PEM))
 
 # Write our certificate request
-with open("../assymetric/ca.csr", "wb") as f:
+with open("ia.csr", "wb") as f:
     f.write(pem)
 
 ##################################################################################################
 # C. SIGN THE CSR BY THE ISSUER
 ##################################################################################################
 
-# Load issuer certificate
+# Load issuer certificate to obtain information about the issuer
 with open(name='ca.crt', mode='rb') as f:
     issuer = x509.load_pem_x509_certificate(data=f.read())
 

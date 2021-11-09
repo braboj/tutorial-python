@@ -1,3 +1,0 @@
-https://www.toptal.com/python/python-class-attributes-an-overly-thorough-guide
-https://www.educative.io/edpresso/what-is-mro-in-python
-http://www.srikanthtechnologies.com/blog/python/mro.aspx

@@ -1,25 +1,4 @@
 import socket
-import psutil
 
-# import struct
-#
-#
-# def getTCPInfo(s):
-#     fmt = "B" * 7 + "I" * 21
-#     x = struct.unpack(fmt,
-#                       s.getsockopt(socket.IPPROTO_TCP, socket.TCP_INFO, 92))
-#     print(x)
-#
-#
-# s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-# getTCPInfo(s)
-# s.connect(('www.google.com', 80))
-# getTCPInfo(s)
-# s.send(b"hi\n\n")
-# getTCPInfo(s)
-# s.recv(1024)
-# getTCPInfo(s)
-
-from scapy.arch.windows import get_windows_if_list
-a = get_windows_if_list()
-pass
+client = socket.socket()
+client.connect(('localhost', 502))

@@ -17,9 +17,9 @@ ssl_sock = ssl.wrap_socket(
     sock,
     cert_reqs=ssl.CERT_REQUIRED,
     do_handshake_on_connect=False,
-    ca_certs="..\\..\\cert\\ca.crt",
-    certfile="..\\..\\cert\\client.crt",
-    keyfile="..\\..\\cert\\client.key",
+    ca_certs="ca.crt",
+    certfile="client.crt",
+    keyfile="client.key",
 )
 print(ssl_sock)
 

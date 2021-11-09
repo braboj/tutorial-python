@@ -34,7 +34,7 @@ def run():
 
     # Create and bind server socket
     server_socket = socket.socket()
-    server_socket.bind(('192.168.210.240', 10023))
+    server_socket.bind(('localhost', 10023))
     server_socket.listen(5)
 
     # Print info
@@ -56,14 +56,13 @@ def run():
 
             # Wait for data and send it back to the client
             request = encrypted.recv(1024)
-            while request:
-                encrypted.sendall(request)
-                request = encrypted.recv(1024)
+            encrypted.sendall(request)
+            print(request)
 
             # Close encrypted connection
-            encrypted.unwrap()
-            encrypted.shutdown(socket.SHUT_RDWR)
-            encrypted.close()
+            sock = encrypted.unwrap()
+            sock.shutdown(socket.SHUT_RDWR)
+            sock.close()
 
         except ssl.SSLError as e:
             print(e)

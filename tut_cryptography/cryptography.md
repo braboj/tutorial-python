@@ -32,9 +32,8 @@ is defined in the following way:
     a = b * q + r
 
 Some definitions allow r to be negative (Truncation, Knuth), some define r as only positive (Euclidian, Flooring). 
-In the scope of the document r will be defined to be always positive.
-
-#### Algorithm
+In the scope of the document r will be defined to be always positive. The algorithm for the calculation of the 
+modulo is 
 
     1. Calculate q = truncate(a/b)
     2. Calculate r = b * q - a 
@@ -48,9 +47,9 @@ In the scope of the document r will be defined to be always positive.
         > -17 mod 10  → q = -1 → r = -7 → r = 10 - 7 → r = 3
         > +17 mod -10 → q = -1 → r = 7
 
-#### Congruence
+Two numbers can be congruent or equal in respect to their modulo if the follwing relationships are true 
 
-    A ≡ B (mod C)
+    A ≡ B (mod C)       → A is congruent to B modulo
     A mod C = B mod C
     A - B = K * C
 
@@ -60,12 +59,18 @@ In the scope of the document r will be defined to be always positive.
         > 14 mod 12 = 2   → 12 + 0 
         > 2 mod 12 = 2    → 0 + 12
 
-#### Arithmetic
+Relations
 
-    Addition : (A + B) mod C = (A mod C + B mod C) mod C
-    Subtraction : (A - B) mod C = (A mod C - B mod C) mod C
-    Multiplication : (A * B) mod C = (A mod C * B mod C) mod C
-    Exponentiation : A^B mod C = ( (A mod C) ^ B ) mod C
+    Reflexivity     : A ≡ A mod n
+    Symmetry        : A ≡ B mod n is the same as B ≡ A mod n
+    Transitivity    : A ≡ B mod n and A ≡ C mod n then A ≡ C mod n
+
+The basic arithmetic operations are defined as following
+
+    Addition        : (A + B) mod C = (A mod C + B mod C) mod C
+    Subtraction     : (A - B) mod C = (A mod C - B mod C) mod C
+    Multiplication  : (A * B) mod C = (A mod C * B mod C) mod C
+    Exponentiation  : A^B mod C = ( (A mod C) ^ B ) mod C
 
 #### References
 * https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/what-is-modular-arithmetic
