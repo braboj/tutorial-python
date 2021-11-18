@@ -4,12 +4,15 @@ from scapy.layers.tls.all import *
 from scapy.automaton import *
 
 
-class MyTlsClientAutomaton(TLSClientAutomaton):
+class TestTlsAutomaton(TLSClientAutomaton):
 
     def __init__(self, resume=False, *args, **kargs):
-        super(MyTlsClientAutomaton, self).__init__(*args, **kargs)
+        super(TestTlsAutomaton, self).__init__(*args, **kargs)
         self.resume = resume
+        # self.advertised_tls_version = None
         self.session_id = None
+        self.cur_session = None
+        self.old_session = None
 
     @ATMT.state()
     def PREPARE_CLIENTFLIGHT1(self):
@@ -45,16 +48,68 @@ class MyTlsClientAutomaton(TLSClientAutomaton):
 
     @ATMT.state()
     def RECEIVED_SERVERFLIGHT1(self):
-        self.session_id = self.buffer_in[0].sid
+        p = self.buffer_in[0]
+        if p.sid == self.session_id:
+            raise self.RESUME_TLS_SESSION()
+        else:
+            self.session_id = p.sid
+
+    @ATMT.state()
+    def WAIT_CLIENTDATA(self):
+        pass
+
+    @ATMT.condition(WAIT_CLIENTDATA, prio=1)
+    def add_ClientData(self):
+
+        data = (self.data_to_send.pop()).strip('\r\n')
+
+        if data in (b'reconnect', 'tcennocer'):
+            raise self.RECONNECT()
+
+        if data == b"quit":
+            return
+
+        if self.linebreak:
+            data += b"\n"
+
+        self.add_record()
+        self.add_msg(TLSApplicationData(data=data))
+        raise self.ADDED_CLIENTDATA()
+
+    @ATMT.state()
+    def RESUME_TLS_SESSION(self):
+        self.add_record()
+        self.add_msg(TLSChangeCipherSpec())
+        raise self.ADDED_CHANGECIPHERSPEC()
+
+    @ATMT.state()
+    def RECONNECT(self):
+        self.old_session = self.cur_session
+
+        self.cur_session = tlsSession(connection_end="client")
+        self.cur_session.sid = self.session_id
+
+        self.cur_session.client_kx_ffdh_params = self.old_session.client_kx_ffdh_params
+        self.cur_session.client_kx_privkey = self.old_session.client_kx_privkey
+
+        self.cur_session.client_certs = self.mycert
+        self.cur_session.client_key = self.mykey
+
+        self.cur_session.server_certs = self.old_session.server_certs
+        self.cur_session.server_key = self.old_session.server_key
+
+        self.cur_session.advertised_tls_version = self.old_session.advertised_tls_version
+
+        raise self.CONNECT()
 
 
-t = MyTlsClientAutomaton(server='192.168.210.240',
-                         dport=4433,
-                         server_name=None,
-                         mycert="./pki/cli_cert.pem",
-                         mykey="./pki/cli_key.pem",
-                         data=['hello', 'quit'],
-                         resume=True,
-                         )
+t = TestTlsAutomaton(server='192.168.210.240',
+                     dport=4433,
+                     server_name=None,
+                     mycert="./pki/cli_cert.pem",
+                     mykey="./pki/cli_key.pem",
+                     data=['reconnect', 'quit'],
+                     resume=True,
+                     )
 
 t.run()
