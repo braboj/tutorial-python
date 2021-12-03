@@ -1,10 +1,15 @@
+# coding: utf-8
+from __future__ import unicode_literals
+from __future__ import absolute_import
+from __future__ import print_function
 from __future__ import print_function
 
 import socket
 import ssl
 
-HOST = '192.168.210.12'
-PORT = 502
+HOST = 'localhost'
+PORT = 4433
+
 
 # Create TLS context
 context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
@@ -26,8 +31,6 @@ print(sock.session_reused)
 # Save the current session
 ssr = sock.session
 
-sock.sendall(b'a')
-
 # Close the connection
 # sock = sock.unwrap()
 sock.shutdown(socket.SHUT_RDWR)
@@ -40,6 +43,6 @@ sock.connect((HOST, PORT))
 print(sock.session_reused)
 
 # Close the connection
-sock = sock.unwrap()
+# sock = sock.unwrap()
 sock.shutdown(socket.SHUT_RDWR)
 sock.close()

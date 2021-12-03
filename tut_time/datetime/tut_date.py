@@ -1,10 +1,10 @@
-import tut_time.datetime
+import datetime
 import time
 import logging
 
 logging.basicConfig(level=logging.INFO)
 
-today = tut_time.datetime.date.today()
+today = datetime.date.today()
 logging.info(today)
 
 timestamp = time.time()

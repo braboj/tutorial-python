@@ -87,7 +87,7 @@ In the generic syntax of generator comrehensions `<expression>` is any single li
 Generators are used mainly for memory efficiency but at the cost of increased complexity and overhead required to 
 save the current state of the generator function.
 
-![Memory Consumption](./assets/images/Mem_Consumption_Generator.png)
+![Memory Consumption](assets/images/Mem_Consumption_Generator.png)
 
 
 ## Usecases

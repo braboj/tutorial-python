@@ -107,7 +107,7 @@ _______________________________________________________________________________
 * [Number as reference][1]
 * [Link name]
 * [Local anchor](#local-anchor)
-* [Reference to a file](./assets/LICENSE.txt)
+* [Reference to a file](assets/LICENSE.txt)
 
 ### Image Rendering and Linking
 <a id="image-rendering-and-linking"></a>
@@ -115,7 +115,7 @@ _______________________________________________________________________________
 
 Render image
 
-![Inline-style link to an image](./assets/tux.png)
+![Inline-style link to an image](assets/tux.png)
 
 Render image and click it to open a resource
 

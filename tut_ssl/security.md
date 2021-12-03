@@ -1,8 +1,102 @@
-# Digital Security with SSL/TLS
+# Tutorial TLS and PKI
 
 ## OpenSSL
+______________________________________________________________________________
 
-### Select Ciphers
+### Secure Client Simulation
+
+    openssl s_client 
+        -cert ... 
+        -key ...
+        -connect host:port          : 
+        -showcerts                  : 
+        -no_ticket                  :
+        -sess_in ...                :
+        -sess_out ...               :
+
+### Secure Server Simulation
+
+    openssl s_server
+        -accept     ...             : ???
+        -port       ...             : Port to listen to
+        -verify     ...             : Verification depth of the certificate chain
+        -cert       ...             : File for the server certificate
+        -cert_chain ...             :
+        -CAfile
+        -CApath
+        -cert_form  ...             : DER or PEM
+        -key        ...             : File for the private key
+        -key_form   ...             : DER or PEM
+        -debug
+        -msg
+        -state
+        -[ssl2, tls1_2, no_ssl2...] : Select specific protocol version
+        -no_ticket
+        -no_resumption_on_reneg
+        -cipher
+        -ciphersuites
+
+
+### Generate Keys
+
+    # Generate private key
+    openssl genrsa 
+        -out private_key.pem 
+        1024
+    
+    # Generate public key
+    openssl rsa 
+        -in private_key.pem 
+        -out public_key.pem 
+        -pubout 
+        -outform PEM
+
+### Generate Certificates
+
+    # Create a self-signed certificate
+    openssl req 
+        -new 
+        -x509 
+        -days 3650 
+        -key private_key.pem 
+        -out ca_cert.pem 
+        -sha256
+    
+    # Create a new certificate signature request
+    openssl req 
+        -new 
+        -out device_cert.csr 
+        -key private_key.pem 
+        -sha256
+
+### Sign Certificates
+
+    # Sign a certificate request
+    openssl x509 
+        -req -in device_csr.pem 
+        -CA ca_cert.pem 
+        -CAkey private_key.pem 
+        -CAcreateserial
+        -out device_cert.pem 
+        -days 3650 
+        -sha256
+        
+
+### Convert Formats
+
+    openssl x509 -inform pem -in Certificate.pem -outform der -out Certificate.der
+    openssl rsa -inform pem -in PrivateKey.pem -outform der -out PrivateKey.der
+
+### Ciphers
+    
+```
+openssl ciphers
+    -[ssl3, tls1, ... , tls1_3]     : Ciphers used for negotiation
+    -v                              : Verbose with openssl names 
+    -V                              : Verbose with official names
+```
+
+### Cipher Strings
 
     Operators
         +   : Logical AND
@@ -57,8 +151,9 @@
         > openssl ciphers - V 'AES'
 
 ## Python
+______________________________________________________________________________
 
-### OpenSSL Wrapper
+### ssl
 
     ssl.wrap_socket()               : Create ad-hock encrypted socket
     ssl.create_default_context()    : Create a pre-configured SSL context
@@ -103,9 +198,9 @@
     .verify_flags                   : Certificate verification control flags
     .verify_mode                    : Certificate verification mode (none, optional, required)
 
-### Scapy
+### scapy
     automaton_cli.py, automaton_srv.py
     cert.py, x509.py
 
-### Certificates
+### cryptography
     criptograpy
