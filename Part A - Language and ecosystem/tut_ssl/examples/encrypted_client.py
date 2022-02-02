@@ -53,7 +53,7 @@ encrypted = context.wrap_socket(
 )
 
 # Connect using TLS socket and manual handshake
-encrypted.connect(("localhost", 10023))
+encrypted.connect(("192.168.210.240", 4433))
 encrypted.do_handshake()
 
 print(encrypted.cipher())

@@ -5,11 +5,12 @@ from scapy.automaton import *
 
 class MyServerAutomaton(TLSServerAutomaton):
 
-    @ATMT.state()
-    def ADDED_SERVERHELLO(self):
-        sid = 'B' * 32
-        self.buffer_out[0].msg[0].sid = sid
-        self.buffer_out[0].msg[0].sidlen = len(sid)
+    pass
+    # @ATMT.state()
+    # def ADDED_SERVERHELLO(self):
+    #     sid = 'B' * 32
+    #     self.buffer_out[0].msg[0].sid = sid
+    #     self.buffer_out[0].msg[0].sidlen = len(sid)
 
 
 t = MyServerAutomaton(server='192.168.210.240',

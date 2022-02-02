@@ -8,16 +8,16 @@ from scapy.layers.tls.crypto.suites import *
 from cryptography.x509 import Certificate
 from scapy.automaton import Message
 
-# ciphersuite = [TLS_RSA_WITH_RC4_128_MD5, ]
+ciphersuite = [TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, ]
 # ch = SSLv2ClientHello(ciphers=ciphersuite)
-# ch = TLSClientHello(ciphers=ciphersuite)
+ch = TLSClientHello(ciphers=ciphersuite)
 # ch = TLS13ClientHello(ciphers=ciphersuite)
 
 
 t = TLSClientAutomaton(server='192.168.210.240',
                        dport=4433,
                        server_name=None,
-                       # client_hello=ch,
+                       client_hello=ch,
                        mycert="./pki/cli_cert.pem",
                        mykey="./pki/cli_key.pem",
                        version='sslv3',
