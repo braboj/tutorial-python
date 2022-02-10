@@ -41,7 +41,7 @@ one_day = datetime.timedelta(1, 0, 0)
 
 # Subject
 DN = list()
-DN.append(x509.NameAttribute(NameOID.COMMON_NAME, u'local.root'))
+DN.append(x509.NameAttribute(NameOID.COMMON_NAME, u'Root'))
 DN.append(x509.NameAttribute(NameOID.COUNTRY_NAME, u'BG'))
 DN.append(x509.NameAttribute(NameOID.STATE_OR_PROVINCE_NAME, u'Varna'))
 DN.append(x509.NameAttribute(NameOID.LOCALITY_NAME, u'Varna'))
@@ -54,7 +54,7 @@ cert = cert.issuer_name(x509.Name(DN))
 
 # Validation period
 cert = cert.not_valid_before(datetime.datetime.today() - one_day)
-cert = cert.not_valid_after(datetime.datetime.today() + (one_day * 30))
+cert = cert.not_valid_after(datetime.datetime.today() + (one_day * 3600))
 
 # Cryptographic primitives
 cert = cert.serial_number(x509.random_serial_number())

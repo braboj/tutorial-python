@@ -73,7 +73,7 @@ with open(name='ca.crt', mode='rb') as f:
     issuer = x509.load_pem_x509_certificate(data=f.read())
 
 # Load issuer private key
-with open(name='ca.key', mode='rb') as f:
+with open(name='key-ca.key', mode='rb') as f:
     issuer_key = serialization.load_pem_private_key(data=f.read(), password=None)
 
 # Create Intermediate Authority Certificate

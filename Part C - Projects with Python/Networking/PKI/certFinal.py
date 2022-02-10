@@ -23,13 +23,13 @@ public_key = private_key.public_key()
 
 # Serialize own private key
 pem = private_key.private_bytes(
-        encoding=Encoding(serialization.Encoding.DER),
+        encoding=Encoding(serialization.Encoding.PEM),
         format=PrivateFormat(serialization.PrivateFormat.TraditionalOpenSSL),
         encryption_algorithm=serialization.NoEncryption(),
     )
 
 # Save own private key
-with open("client.key.der", "wb") as f:
+with open("client.key", "wb") as f:
     f.write(pem)
 
 ##################################################################################################
@@ -41,7 +41,7 @@ one_day = datetime.timedelta(1, 0, 0)
 
 # Subject
 DN = list()
-DN.append(x509.NameAttribute(NameOID.COMMON_NAME, u'local.omb.server'))
+DN.append(x509.NameAttribute(NameOID.COMMON_NAME, u'Client'))
 DN.append(x509.NameAttribute(NameOID.COUNTRY_NAME, u'BG'))
 DN.append(x509.NameAttribute(NameOID.STATE_OR_PROVINCE_NAME, u'Varna'))
 DN.append(x509.NameAttribute(NameOID.LOCALITY_NAME, u'Varna'))
@@ -58,10 +58,10 @@ csr = csr.sign(private_key=private_key, algorithm=SHA256())
 isinstance(csr, x509.Certificate)
 
 # Serialize the certificate
-pem = csr.public_bytes(encoding=Encoding(serialization.Encoding.DER))
+pem = csr.public_bytes(encoding=Encoding(serialization.Encoding.PEM))
 
 # Write our certificate request
-with open("client.csr.der", "wb") as f:
+with open("client.csr", "wb") as f:
     f.write(pem)
 
 ##################################################################################################
@@ -82,12 +82,12 @@ builder = builder.subject_name(csr.subject)
 builder = builder.public_key(csr.public_key())
 builder = builder.serial_number(x509.random_serial_number())
 builder = builder.not_valid_before(datetime.datetime.utcnow())
-builder = builder.not_valid_after(datetime.datetime.utcnow() + datetime.timedelta(days=365 * 5))
+builder = builder.not_valid_after(datetime.datetime.utcnow() + datetime.timedelta(days=365 * 10))
 builder = builder.issuer_name(issuer.subject)
 builder = builder.add_extension(x509.BasicConstraints(ca=False, path_length=None), critical=False)
 
 crt = builder.sign(private_key=issuer_key, algorithm=issuer.signature_hash_algorithm)
 
 # Save the device certificate
-with open(name='server.crt.der', mode='wb') as f:
-    f.write(crt.public_bytes(Encoding(serialization.Encoding.DER)))
+with open(name='client.crt', mode='wb') as f:
+    f.write(crt.public_bytes(Encoding(serialization.Encoding.PEM)))

@@ -1,0 +1,4 @@
+- https://docs.python.org/3/library/random.html
+- https://www.youtube.com/watch?v=Iq9DzN6mvYA
+- https://nbviewer.org/url/norvig.com/ipython/Economics.ipynb
+- https://nbviewer.org/url/norvig.com/ipython/Probability.ipynb
