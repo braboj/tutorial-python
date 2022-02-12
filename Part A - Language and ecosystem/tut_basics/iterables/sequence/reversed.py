@@ -14,7 +14,7 @@ print(test)
 print(list(test))
 
 
-class Vowels:
+class Vowels(object):
     vowels = ['a', 'e', 'i', 'o', 'u']
 
     def __reversed__(self):
