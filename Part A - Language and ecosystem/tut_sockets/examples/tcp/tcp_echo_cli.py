@@ -13,7 +13,7 @@ clisock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 clisock.bind(('localhost', 0))
 
 # 3. Connect to the server port
-clisock.connect(('localhost', 2525))
+clisock.connect(('localhost', 503))
 
 # 4. Send some data
 for _ in range(2):

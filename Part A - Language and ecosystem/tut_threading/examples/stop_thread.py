@@ -4,7 +4,7 @@ import ctypes
 
 
 ##############################################################################
-# Case 1 : Using function object as stop flag
+# Case 1 : Function object as a stop flag
 ##############################################################################
 
 class ExitThreadCase1(object):
@@ -44,7 +44,7 @@ class ExitThreadCase1(object):
 
 
 ##############################################################################
-# Case 2 : Using polling of event to stop the thread
+# Case 2 :  Polling of an event to stop the thread
 ##############################################################################
 
 class ExitThreadCase2(threading.Thread):
@@ -83,7 +83,7 @@ class ExitThreadCase2(threading.Thread):
 
 
 ##############################################################################
-# Case 3 : Using polling internal property to terminate thread
+# Case 3 : Polling of internal property to terminate the thread
 ##############################################################################
 
 class ExitThreadCase3(threading.Thread):
@@ -104,6 +104,7 @@ class ExitThreadCase3(threading.Thread):
 
     @staticmethod
     def test():
+
         # Create worker object and start worker
         t = ExitThreadCase3()
         t.start()

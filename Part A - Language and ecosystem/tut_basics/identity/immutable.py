@@ -1,15 +1,16 @@
 """
+Immutable types
+int, float, string, tuple
+
 https://stackoverflow.com/questions/306313/is-operator-behaves-unexpectedly-with-integers
 
 Immutalbe objects are allocated and never changed. A variable is a reference or pointer to the
 memory of the immutable object.
 
-Immutable types: int, float, string, tuple
 """
 
-# An integer object is created in memory and the variable points to it
-from __future__ import print_function
 
+# An integer object is created in memory and the variable points to it
 test = 1
 print(id(test))
 

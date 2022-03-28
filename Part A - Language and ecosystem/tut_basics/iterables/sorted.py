@@ -17,7 +17,7 @@ print(test)
 
 iterable = {'b': 1, 'a': 2, 'd': 3, 'c': 4}
 
-# Dictionary are converted to list of keys
+# Dictionary is converted to list of keys
 test = sorted(iterable, reverse=True)
 print(test)
 

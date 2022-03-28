@@ -18,6 +18,7 @@ def fun(a, b, c, d):
 my_list = [1, 2, 3, 4]
 
 # Unpacking list into four arguments
+# a-> 1, b->2, c->3, d->4
 fun(*my_list)
 
 # Error when len(args) != no of actual arguments

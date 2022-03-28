@@ -13,7 +13,7 @@ class MyServerAutomaton(TLSServerAutomaton):
     #     self.buffer_out[0].msg[0].sidlen = len(sid)
 
 
-t = MyServerAutomaton(server='192.168.210.240',
+t = MyServerAutomaton(server='192.168.210.122',
                       sport=4433,
                       mycert='./pki/srv_cert.pem',
                       mykey='./pki/srv_key.pem',
