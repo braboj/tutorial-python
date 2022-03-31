@@ -77,8 +77,10 @@ print(SO_KEEPALIVE.getsockopt(socket.SOL_SOCKET, socket.SO_KEEPALIVE))
 # ----------------------------------------------------------------------------
 # SO_LINGER : Linux/Windows, TCP
 # ----------------------------------------------------------------------------
+import struct
 SO_LINGER = socket.socket()
 print("SO_LINGER=", end="")
+SO_LINGER.setsockopt(socket.SOL_SOCKET, socket.SO_LINGER, struct.pack('ii', 1, 2))
 print(SO_LINGER.getsockopt(socket.SOL_SOCKET, socket.SO_LINGER))
 
 

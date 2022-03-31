@@ -1,4 +1,0 @@
-cryptography~=3.1.1
-enum34~=1.1.10
-configparser~=4.0.2
-scapy~=2.4.4
