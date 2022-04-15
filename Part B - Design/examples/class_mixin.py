@@ -6,6 +6,7 @@ https://www.residentmar.io/2019/07/07/python-mixins.html
 
 """
 
+
 class Base(object):
     def __init__(self, a):
         self.a = a
