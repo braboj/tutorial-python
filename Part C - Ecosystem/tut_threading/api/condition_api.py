@@ -1,6 +1,6 @@
 """
-This class implements condition variable objects. A condition variable allows one or more threads to wait until
-they are notified by another thread.
+This class implements condition variable objects. A condition variable allows
+one or more threads to wait until they are notified by another thread.
 
 Methods:
     acquire()
