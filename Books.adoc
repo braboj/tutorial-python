@@ -1,0 +1,9 @@
+- Effective Computation in Physics
+- Advanced Python Programming: Build high performance, concurrent, and multi-threaded apps with Python using proven
+design patterns
+- Learning Concurrency in Python: Build highly efficient, robust, and concurrent applications
+- Python Cookbook: No. 3
+- Learn Python 3 the Hard Way: A Very Simple Introduction to the Terrifyingly Beautiful World of Computers and Code
+- Effective Python: 59 Specific Ways to Write Better Python
+- Fluent Python: Clear, Concise, and Effective Programming
+- Python Tricks: A Buffet of Awesome Python Features
