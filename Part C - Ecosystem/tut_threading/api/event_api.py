@@ -13,9 +13,15 @@ def worker(start):
 
 
 def test():
+
     start = threading.Event()
-    t = threading.Thread(target=worker, args=(start, ))
-    t.start()
+
+    threads = []
+    for t in range(2):
+        t = threading.Thread(target=worker, args=(start, ))
+        threads.append(t)
+        t.start()
+
 
     for i in range(3):
         logging.info(".")
@@ -24,6 +30,9 @@ def test():
     start.set()
     time.sleep(3)
     start.clear()
+
+    for t in threads:
+        t.join()
 
 
 if __name__ == "__main__":
