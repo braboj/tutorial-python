@@ -1,23 +1,22 @@
-from __future__ import annotations
-from abc import ABC, abstractmethod
+from abc import abstractmethod
 
 
 # Interface used by both Leaf and Composite
-class IChannel(ABC):
+class IChannel(object):
 
     @abstractmethod
     def configure(self):
         raise NotImplementedError
 
 
-# Concrete implementation of Leaf
+# Concrete implementation of the leaf class
 class Channel(IChannel):
 
     def configure(self):
         return "Channel configured"
 
 
-# Concrete implementation of Composite
+# Concrete implementation of the composite class
 class Device(IChannel):
 
     def __init__(self):
@@ -37,13 +36,12 @@ class Device(IChannel):
     def configure(self):
         # Delegate work to all the children
         for index, child in enumerate(self.children):
-            print(f"{index} : {child.configure()}")
+            print("{0} : {1}".format(index, child.configure()))
 
         return "Device configured"
 
 
 if __name__ == "__main__":
-
     # Define composite product
     product = Device()
 

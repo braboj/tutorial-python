@@ -5,7 +5,7 @@ print('\nReturn Value from empty dir()')
 print(dir())
 
 
-class Person:
+class Person(object):
     def __dir__(self):
         return ['age', 'name', 'salary']
 

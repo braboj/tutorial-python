@@ -7,12 +7,13 @@ object - object whose attribute has to be set
 name - attribute name
 value - value given to the attribute
 
-If the attribute is not found, setattr() creates a new attribute an assigns value to it. However, this is only possible if the object implements the __dict__() method.
-You can check all the attributes of an object by using the dir() function.
+If the attribute is not found, setattr() creates a new attribute an assigns value to it. However,
+this is only possible if the object implements the __dict__() method. You can check all the
+attributes of an object by using the dir() function.
 """
 
 
-class Person:
+class Person(object):
     name = 'Adam'
 
 
@@ -25,7 +26,7 @@ setattr(p, 'name', 'John')
 print('After modification:', p.name)
 
 
-class Person:
+class Person(object):
     name = 'Adam'
 
 

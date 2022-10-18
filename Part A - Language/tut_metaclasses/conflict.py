@@ -1,3 +1,6 @@
+from six import with_metaclass
+
+
 class MetaClassA(type):
     pass
 
@@ -6,11 +9,11 @@ class MetaClassB(type):
     pass
 
 
-class A(object, metaclass=MetaClassA):
+class A(object, with_metaclass(MetaClassA)):
     pass
 
 
-class B(object, metaclass=MetaClassB):
+class B(object, with_metaclass(MetaClassB)):
     pass
 
 
@@ -26,6 +29,6 @@ class MetaClassC(MetaClassA, MetaClassB):
     pass
 
 
-class C2(A, B, metaclass=MetaClassC):
+class C2(A, B, with_metaclass(MetaClassC)):
     pass
 

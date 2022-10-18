@@ -34,7 +34,7 @@ def run():
 
     # Create and bind server socket
     server_socket = socket.socket()
-    server_socket.bind(('192.168.210.240', 4433))
+    server_socket.bind(('192.168.210.122', 4433))
     server_socket.listen(5)
 
     # Print info

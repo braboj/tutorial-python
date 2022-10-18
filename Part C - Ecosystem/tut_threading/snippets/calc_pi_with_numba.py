@@ -6,7 +6,7 @@ import os
 from numba import jit
 
 
-class MonteCarloSim(object):
+class CalcObject(object):
 
     def __init__(self, iterations=1000000):
         self.iterations = iterations
@@ -16,12 +16,12 @@ class MonteCarloSim(object):
         self.pi = 0
         self.delay = 0
 
-    def calc_pi(self):
-        self.i, self.n, self.pi = self.calc_pi_static(self.iterations)
+    def generate_points(self):
+        self.i, self.n, self.pi = self.generate_points_static(self.iterations)
 
     @staticmethod
     @jit(nopython=True, nogil=True)
-    def calc_pi_static(iterations):
+    def generate_points_static(iterations):
 
         i = 0
         n = 0
@@ -36,19 +36,19 @@ class MonteCarloSim(object):
         return i, n, pi
 
 
-def main(N=1e6):
+def main():
 
     print("Number of CPUs", os.cpu_count())
 
     threads = []
-    sim_objects = []
+    calc_objects = []
     for _ in range(os.cpu_count()):
 
-        sim = MonteCarloSim(iterations=int(N))
-        t = threading.Thread(target=sim.calc_pi)
+        calc = CalcObject()
+        t = threading.Thread(target=calc.generate_points)
 
         threads.append(t)
-        sim_objects.append(sim)
+        calc_objects.append(calc)
 
     time_start = time.time()
 
@@ -64,7 +64,7 @@ def main(N=1e6):
     i = 0
     n = 0
     pi = 0
-    for o in sim_objects:
+    for o in calc_objects:
         i += o.i
         n += o.n
         pi = 4 * float(i) / float(n)
@@ -75,4 +75,4 @@ def main(N=1e6):
 
 
 if __name__ == "__main__":
-    main(N=1e6)
+    main()

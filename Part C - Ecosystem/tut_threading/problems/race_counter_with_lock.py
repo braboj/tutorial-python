@@ -1,18 +1,6 @@
 import threading
 import time
 
-"""
-Solution 01: Use critical section primitives to access the shared state
-
-Lock the access to the shared state by using synchronization primitives such 
-as mutex or semaphore. It is critical to apply it on ALL read and write 
-operations.
-
-The local variables of a function are unique to each thread that runs the 
-function.
-
-"""
-
 
 class BankAccount(object):
 
@@ -26,10 +14,10 @@ class BankAccount(object):
         # process and delay to desynchronize the threads.
 
         with self.lock:
-            local_copy = self.balance
-            local_copy += 1
+            local_copy = self.balance               # READ
+            local_copy += 1                         # MODIFY
             time.sleep(delay)
-            self.balance = local_copy
+            self.balance = local_copy               # WRITE
 
     def spend(self, delay=0):
 
@@ -37,10 +25,10 @@ class BankAccount(object):
         # process and delay to desynchronize the threads.
 
         with self.lock:
-            local_copy = self.balance
-            local_copy -= 1
+            local_copy = self.balance               # READ
+            local_copy -= 1                         # MODIFY
             time.sleep(delay)
-            self.balance = local_copy
+            self.balance = local_copy               # WRITE
 
     def get_balance(self):
         with self.lock:

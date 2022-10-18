@@ -1,12 +1,13 @@
 # https://cleverdevil.io/2009/python-metaclasses-demystified
 
 import inspect
+from six import with_metaclass
 
 
 class AutoDecorateMeta(type):
 
     def __init__(cls, name, bases, namespace):
-        super().__init__(name, bases, namespace)
+        super(AutoDecorateMeta, cls).__init__(name, bases, namespace)
 
         deco = namespace.get('decorator', lambda f: f)
         for key, value in namespace.items():
@@ -23,7 +24,7 @@ class AutoDecorateMeta(type):
             setattr(cls, key, deco(value))
 
 
-class Person(object, metaclass=AutoDecorateMeta):
+class Person(object, with_metaclass(AutoDecorateMeta)):
 
     # Decorator selector
     decorator = property

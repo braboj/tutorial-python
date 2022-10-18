@@ -1,11 +1,6 @@
 import threading
 import time
 
-"""
-The local variables of a function are unique to each thread that runs the 
-function.
-"""
-
 
 class BankAccount(object):
 
@@ -17,20 +12,20 @@ class BankAccount(object):
         # Use local copy and time sleep to de-synchronize the threads
         # and simulate a racing condition.
 
-        local_copy = self.balance
-        local_copy += 1
+        local_copy = self.balance                   # READ
+        local_copy += 1                             # MODIFY
         time.sleep(delay)
-        self.balance = local_copy
+        self.balance = local_copy                   # WRITE
 
     def spend(self, delay=0):
 
         # Use local copy and time sleep to de-synchronize the threads
         # and simulate a racing condition.
 
-        local_copy = self.balance
-        local_copy -= 1
+        local_copy = self.balance                   # READ
+        local_copy -= 1                             # MODIFY
         time.sleep(delay)
-        self.balance = local_copy
+        self.balance = local_copy                   # WRITE
 
     def get_balance(self):
         return self.balance

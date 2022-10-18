@@ -11,9 +11,10 @@
 # 4
 
 from collections import OrderedDict
+from six import with_metaclass
 
 
-class MyStore:
+class MyStore(object):
     """Store keeping track of singleton instances."""
 
     def __init__(self):
@@ -40,10 +41,10 @@ class MyMeta(type):
     """
 
     @staticmethod
-    def __prepare__(class_name: str, class_bases: tuple):
+    def __prepare__():
         return OrderedDict()
 
-    def __new__(mcs, class_name: str, class_bases: tuple, class_attrs: OrderedDict):
+    def __new__(mcs, class_name, class_bases, class_attrs):
 
         # Reorganizing attributes:
         reorganized_attrs = OrderedDict([('_fields', OrderedDict()),
@@ -86,7 +87,7 @@ class MyMeta(type):
             return cls._obj
 
 
-class MyClass(metaclass=MyMeta):
+class MyClass(with_metaclass(MyMeta)):
     """Example of a user-defined (client) class that makes use of MyMeta."""
 
     # Demo attributes (mixed fields and constants)

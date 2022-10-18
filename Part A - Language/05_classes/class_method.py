@@ -17,10 +17,10 @@ ClassMethodTest.test_method()
 
 
 ##############################################################################
-# Example B : Classmethod as factory method
+# Example B : Classmethod as a named constructor
 ##############################################################################
 
-class Person:
+class Person(object):
     def __init__(self, name, age):
         self.name = name
         self.age = age

@@ -13,7 +13,8 @@ Note: __dict__ is a dictionary or a mapping object. It stores object's (writable
 
 from pprint import pprint
 
-class Foo:
+
+class Foo(object):
     def __init__(self, a=5, b=10):
         self.a = a
         self.b = b
@@ -25,4 +26,3 @@ print(vars(test))
 pprint(vars(list))
 pprint(vars(str))
 pprint(vars(dict))
-

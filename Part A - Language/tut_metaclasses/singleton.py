@@ -1,3 +1,5 @@
+# coding=utf-8
+
 """
 By overriding __call__() in the metaclass, the creation of instances are
 intercepted. Instance creation is bypassed if one already exists.

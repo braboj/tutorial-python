@@ -1,9 +1,10 @@
-import abc
+from abc import ABCMeta, abstractmethod
+from six import with_metaclass
 
 
-class DeviceAbc(abc.ABC):
+class DeviceAbc(with_metaclass(ABCMeta)):
 
-    @abc.abstractmethod
+    @abstractmethod
     def foo(self):
         pass
 

@@ -2,7 +2,7 @@
 # Integer is callable?
 ##############################################################################
 test = 5
-print(callable(test))
+print("Integer callable? : {0}".format(callable(test)))
 
 
 ##############################################################################
@@ -13,7 +13,7 @@ def test_func(x):
 
 
 test = test_func
-print(callable(test))
+print("Function callable? : {0}".format(callable(test)))
 
 
 ##############################################################################
@@ -25,7 +25,7 @@ class TestClass(object):
 
 
 test = TestClass
-print(callable(test))
+print("Class callable? : {0}".format(callable(test)))
 
 
 ##############################################################################
@@ -39,7 +39,7 @@ class TestClass(object):
 
 
 test = TestClass()
-print(callable(test))
+print("Instance callable? : {0}".format(callable(test)))
 
 
 # B: With __call__
@@ -52,5 +52,5 @@ class TestClass(object):
 
 
 test = TestClass()
-print(callable(test))
+print("Instance with _call_ callable? : {0}".format(callable(test)))
 test()

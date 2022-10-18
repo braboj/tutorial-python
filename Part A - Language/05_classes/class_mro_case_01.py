@@ -1,5 +1,7 @@
 class A(object):
-    def process(self):
+
+    @staticmethod
+    def process():
         print('A process()')
 
 

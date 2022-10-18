@@ -1,3 +1,6 @@
+from six import with_metaclass
+
+
 ##############################################################################
 # EXAMPLE 1 : Register leaf classes and count them
 ##############################################################################
@@ -29,23 +32,42 @@ class RegisterLeafClasses(type):
 
 
 # 2. Custom root class
-class Color(object, metaclass=RegisterLeafClasses):
+class Color(object, with_metaclass(RegisterLeafClasses)):
     pass
 
 
 # 3. Derived classes
-class Blue(Color): pass
-class Red(Color): pass
-class Green(Color): pass
-class Yellow(Color): pass
+class Blue(Color):
+    pass
+
+
+class Red(Color):
+    pass
+
+
+class Green(Color):
+    pass
+
+
+class Yellow(Color):
+    pass
+
+
 print(Color)
+
 
 # 4. Tests
-class PhthaloBlue(Blue): pass
-class CeruleanBlue(Blue): pass
+class PhthaloBlue(Blue):
+    pass
+
+
+class CeruleanBlue(Blue):
+    pass
+
+
 print(Color)
 
-for c in Color: # Iterate over subclasses
+for c in Color:  # Iterate over subclasses
     print(c)
 
 print(Color.count)
@@ -55,8 +77,8 @@ print(Color.count)
 # EXAMPLE 2 : Example from Hilscher Framework
 ##############################################################################
 class Registrar(type):
-
     """ A meta class used to generate a list of all subclasses of a class """
+
     def __init__(cls, name, bases, dct):
         super(Registrar, cls).__init__(name, bases, dct)
         cls.register(cls)
@@ -83,14 +105,16 @@ class Registrar(type):
         classes.append(cls)
 
 
-class ClassToRegister1(object, metaclass=Registrar): pass
-class ClassToRegister2(ClassToRegister1): pass
+class ClassToRegister1(object, with_metaclass(Registrar)):
+    pass
+
+
+class ClassToRegister2(ClassToRegister1):
+    pass
+
 
 a = ClassToRegister1()
 b = ClassToRegister2()
 
 for x in Registrar.list():
     print(x)
-
-
-

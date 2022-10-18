@@ -1,9 +1,9 @@
 # The delattr() deletes an attribute from the object (if the object allows it).
 
-class Coordinate:
-  x = 10
-  y = -5
-  z = 0
+class Coordinate(object):
+    x = 10
+    y = 10
+    z = 10
 
 
 point1 = Coordinate()

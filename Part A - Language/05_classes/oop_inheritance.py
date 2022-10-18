@@ -1,6 +1,3 @@
-import pprint
-import re
-
 
 # Create root class (use args and kwargs in case subclass have more parameters than the parent)
 class Root(object):

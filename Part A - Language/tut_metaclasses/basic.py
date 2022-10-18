@@ -1,4 +1,6 @@
 # Two-step metaclass creation in Python 3.x
+from six import with_metaclass
+
 
 class SimpleMeta1(type):
     def __init__(cls, name, bases, namespace):
@@ -7,7 +9,7 @@ class SimpleMeta1(type):
         cls.uses_metaclass = lambda self: "Yes!"
 
 
-class Simple1(object, metaclass=SimpleMeta1):
+class Simple1(object, with_metaclass(SimpleMeta1)):
 
     def foo(self):
         pass

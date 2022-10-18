@@ -1,10 +1,12 @@
 class A(object):
-    def process(self):
+    @staticmethod
+    def process():
         print("A.process()")
 
 
 class B(object):
-    def method(self):
+    @staticmethod
+    def method():
         print("B.process()")
 
 
@@ -18,4 +20,4 @@ class D(C, B):
 
 d = D()
 d.process()
-print(D.mro())   # print MRO for class C
+print(D.mro())  # print MRO for class C

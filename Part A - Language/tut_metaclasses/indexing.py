@@ -1,3 +1,6 @@
+from six import with_metaclass
+
+
 ##############################################################################
 # Metaclass definition
 ##############################################################################
@@ -24,7 +27,7 @@ class Indexer(type):
 # First base class and subclasses
 ##############################################################################
 
-class A(metaclass=Indexer):
+class A(with_metaclass(Indexer)):
     pass
 
 
@@ -43,7 +46,7 @@ print(A.index, A1.index, A2.index)
 # Second base class and subclasses
 ##############################################################################
 
-class B(metaclass=Indexer):
+class B(with_metaclass(Indexer)):
     pass
 
 

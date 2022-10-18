@@ -1,4 +1,4 @@
-class Polygon:
+class Polygon(object):
     def __init__(self):
         print('Polygon is a ', self)
 

@@ -9,7 +9,8 @@ doc (optional) - A string that contains the documentation (docstring) for the at
 
 """
 
-class Person:
+
+class Person(object):
     def __init__(self, name):
         self._name = name
 
@@ -36,7 +37,7 @@ p.name = 'John'
 del p.name
 
 
-class Person:
+class Person(object):
     def __init__(self, name):
         self._name = name
 

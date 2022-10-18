@@ -1,3 +1,6 @@
+from six import with_metaclass
+
+
 # Create metaclass
 class MyMetaClass(type):
     def __init__(cls, name, bases, namespace):
@@ -5,7 +8,7 @@ class MyMetaClass(type):
 
 
 # Create first custom class from metaclass
-class A(object, metaclass=MyMetaClass):
+class A(object, with_metaclass(MyMetaClass)):
     A = 1
 
     def __init__(self, param=1):
@@ -17,7 +20,7 @@ class A(object, metaclass=MyMetaClass):
 
 
 # Create second custom class from metaclass
-class B(object, metaclass=MyMetaClass):
+class B(object, with_metaclass(MyMetaClass)):
     B = 2
 
     def __init__(self, param=1):
@@ -47,4 +50,3 @@ test.configure()
 # Recast class type
 test = B(test)
 pass
-

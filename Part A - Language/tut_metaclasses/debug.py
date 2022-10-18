@@ -1,3 +1,5 @@
+# coding=utf-8
+
 """
 __new__ is called for the creation of a new class, while __init__ is called
 after the class is created, to perform additional initialization before the

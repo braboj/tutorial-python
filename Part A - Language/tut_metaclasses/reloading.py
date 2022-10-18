@@ -1,3 +1,5 @@
+from six import with_metaclass
+
 """
 Scenario : At Hilscher the test framework uses meta-classes to scan for devices with open channels. If 2 or more
 device classes are found, then the network creates a new class with all device classes as base classes. This leads
@@ -49,7 +51,7 @@ class ReloadMeta(type):
 if __name__ == '__main__':
 
     # First class with method test
-    class C(object, metaclass=ReloadMeta):
+    class C(object, with_metaclass(ReloadMeta)):
 
         def test(self):
             print('first {0}'.format(self))
@@ -59,7 +61,7 @@ if __name__ == '__main__':
     c.test()
 
     # Second class with new method test
-    class C(object, metaclass=ReloadMeta):
+    class C(object, with_metaclass(ReloadMeta)):
 
         def test(self):
             print('second {0}'.format(self))

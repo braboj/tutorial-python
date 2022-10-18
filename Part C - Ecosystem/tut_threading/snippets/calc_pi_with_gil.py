@@ -5,14 +5,14 @@ import time
 import os
 
 
-class MonteCarloPi(object):
+class CalcObject(object):
 
     def __init__(self, iterations=1000000):
         self.iterations = iterations
         self.i = 0
         self.n = 0
 
-    def calc_pi(self):
+    def generate_points(self):
 
         i = 0
         n = 0
@@ -31,14 +31,14 @@ def main():
     print("Number of CPUs", os.cpu_count())
 
     threads = []
-    sim_objects = []
-    for _ in range(6):
+    calc_objects = []
+    for _ in range(os.cpu_count()):
 
-        sim = MonteCarloPi()
-        t = threading.Thread(target=sim.calc_pi)
+        calc = CalcObject()
+        t = threading.Thread(target=calc.generate_points)
 
         threads.append(t)
-        sim_objects.append(sim)
+        calc_objects.append(calc)
 
     start_time = time.time()
     for t in threads:
@@ -53,7 +53,7 @@ def main():
     i = 0
     n = 0
     pi = 0
-    for o in sim_objects:
+    for o in calc_objects:
         i += o.i
         n += o.n
         pi = 4 * float(i) / float(n)

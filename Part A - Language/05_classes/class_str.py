@@ -1,3 +1,5 @@
+# coding=utf-8
+
 """
 str(object, encoding='utf-8', errors='strict')
 
@@ -40,7 +42,6 @@ class Test(object):
 test = Test()
 print(str(test))
 
-b = bytes('pythön', encoding='utf-8')
-test = str(b, encoding='ascii', errors='ignore')
+b = bytes('pythön')
+test = str(b)
 print(test)
-
