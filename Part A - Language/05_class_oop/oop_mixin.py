@@ -7,46 +7,82 @@ https://www.residentmar.io/2019/07/07/python-mixins.html
 """
 
 
-class Base(object):
-    def __init__(self, a):
-        self.a = a
+class Device(object):
+    def __init__(self, color, price):
+        self.color = color
+        self.price = price
 
-    def this(self):
-        pass
+    def on(self):
+        print("Turn on...")
 
-    def that(self):
-        pass
-
-
-class FirstMixin(object):
-
-    @staticmethod
-    def first_feature():
-        print("First feature")
+    def off(self):
+        print("Turn off...")
 
 
-class SecondMixin(object):
+class Camera(object):
 
     @staticmethod
-    def second_feature():
-        print("Second feature")
+    def take_picture():
+        print("Shoot picture...")
+
+    @staticmethod
+    def record_video():
+        print("Record video...")
 
 
-class Specific1(Base, FirstMixin):
-    def __init__(self, a, b):
-        super(Specific1, self).__init__(a)
-        self.b = b
+class Keyboard(object):
+
+    @staticmethod
+    def press_key():
+        print("Press a key...")
 
 
-class Specific2(Base, FirstMixin, SecondMixin):
-    def __init__(self, a, c):
-        super(Specific2, self).__init__(a)
-        self.c = c
+class Mouse(object):
+
+    @staticmethod
+    def move_mouse():
+        print("Move the mouse...")
 
 
-a = Specific1(1, 2)
-a.first_feature()
+class Monitor(object):
 
-b = Specific2(1, 2)
-b.first_feature()
-b.second_feature()
+    @staticmethod
+    def display_content():
+        print("Display content...")
+
+
+class TouchScreen(Monitor):
+
+    @staticmethod
+    def touch_screen():
+        print("Touch the screen...")
+
+
+class PC(Device, Keyboard, Mouse, Monitor, Camera):
+    def __init__(self, color, price):
+        super(PC, self).__init__(color, price)
+        self.price = price
+
+
+class Tablet(Device, TouchScreen, Camera):
+    def __init__(self, color, price, weight):
+        super(Tablet, self).__init__(color, price)
+        self.weight = weight
+
+
+pc = PC(color='black', price=1000)
+ipad = Tablet(color='white', price=1000, weight=200)
+
+pc.on()
+pc.move_mouse()
+pc.display_content()
+pc.press_key()
+pc.off()
+
+ipad.on()
+ipad.touch_screen()
+ipad.record_video()
+ipad.take_picture()
+ipad.display_content()
+ipad.off()
+
