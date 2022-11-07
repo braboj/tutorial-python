@@ -28,13 +28,13 @@ class DeviceAbc(with_metaclass(ABCMeta)):
     def __init__(self):
         self._bar = "bar"
 
-    @abstractmethod
-    def foo(self):
-        pass
-
     @property
     @abstractmethod
     def bar(self):
+        pass
+
+    @abstractmethod
+    def foo(self):
         pass
 
 

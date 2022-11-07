@@ -3,6 +3,7 @@ Mixins are an alternative class design pattern that avoids both single-inheritan
 multiple-inheritance diamond dependencies.
 
 https://www.residentmar.io/2019/07/07/python-mixins.html
+https://www.pythontutorial.net/python-oop/python-mixin/
 
 """
 
