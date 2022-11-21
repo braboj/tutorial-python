@@ -1,7 +1,7 @@
 # COROUTINE TUTORIAL
 
 ## Table of contents
-_______________________________________________________________________________________________________________________
+____________________________________________________________________________________________________
 
 * [Overview](#overview)
   * [Coroutine Execution](#coroutine-syntax)
@@ -13,13 +13,14 @@ ________________________________________________________________________________
 * [Resources](#resources)
 
 
-## Overview
-_______________________________________________________________________________________________________________________
+## Concept
+____________________________________________________________________________________________________
 
-Coroutines are a special type of generator functions and represent generalizations of subroutines. They are used for 
-**cooperative multitasking** where a process voluntarily yields (gives away) control periodically or when idle in 
-order to enable multiple applications to be run simultaneously. Typically they are used to wait for a signal from 
-another subroutine or coroutine to resume its execution.
+Coroutines are a particular type of generator function and represent generalizations of 
+subroutines.They are used for cooperative multitasking where a process voluntarily yields (gives 
+away) control periodically or when idle to enable multiple applications to run simultaneously.
+ Typically they are used to waiting for a signal from another subroutine or coroutine to resume 
+its execution.
 
 
 ### Coroutine Execution
@@ -47,35 +48,41 @@ another subroutine or coroutine to resume its execution.
 
      # Output:
      # -------------------------------
-     # Coroutine has been started!
-     # Coroutine оutput : foo
-     # ('Coroutine received :', None)
-     # Coroutine оutput : boo
-     # ('Coroutine received :', 'abc')
-     # Coroutine оutput : cba
+     # 1. Coroutine has been started!
+     # 2. Coroutine оutput : foo
+     # 3. ('Coroutine received :', None)
+     # 4. Coroutine оutput : boo
+     # 5. ('Coroutine received :', 'abc')
+     # 6. Coroutine оutput : cba
 
 
-The first usage of `next()` will activate the coroutine, print `Coroutine has been started!`, initialize the 
-output and start the loop. The first result will be generated when the loop reaches the `yield output` expression. 
+1. The first usage of next() will activate the coroutine, print, initialize the output 
+and start the loop. 
 
-The second usage of next will resume the coroutine with the first statement after `yield`. As `next()` doesn't 
-send any data the couroutine will print `('Coroutine received :', None)`. Next the output value is changed and the 
-while loop is executed again. When the coroutine reaches the yield statment it will generate an output with the 
-`yield output` expression.
+2. The first result will be generated when the loop reaches the yield 
+output expression.
 
-Next the send method of generator functions is used to send data to the coroutine. The `text = yield ...` captures 
-the value sent and the first statement after yield is executed. In this case the coroutine will print `
-('Coroutine received :', 'abc')`. The output is then changed to take the reverse value of the input. Then the while 
-loop is executed again and the new output is generated with the `yield output` expression.
+3. The second usage of next will resume the coroutine with the first statement after yield. 
+As next() doesn't send any data the coroutine will print ('Coroutine received :', None).
+
+4. The output value is changed and the while loop is executed again. When the coroutine reaches 
+   the yield statement it will generate an output with the yield output expression.
+
+5. The send method of generator functions is used to send data to the coroutine.The `text = yield 
+   output` statement captures the value sent and the first statement after yield is executed. In 
+   this case, the coroutine will print('Coroutine received :', 'abc').
+
+6. The output is then changed to take the reverse value of the input. Then the while loop is 
+   executed again and the new output is generated with the yield output expression.
 
 ### Coroutine Interface
 
-| Method | Example             | Description                                          |
-|--------|---------------------|------------------------------------------------------|
-| next   |   next(coroutine)   | Generate value from the coroutine                    |
-| send   |  coroutine.send(..) | Send value to the coroutine                          |
-| close  | coroutine.close(..) | Stop the coroutine by sending a GeneratorExit signal |
-| throw  | coroutine.throw(..) | Throw exception to the coroutine for the next yield  |
+| Method | Example             | Description                                            |
+|--------|---------------------|--------------------------------------------------------|
+| next   |   next(coroutine)   | Generate value from the coroutine                      |
+| send   |  coroutine.send(..) | Send a value to the coroutine                          |
+| close  | coroutine.close(..) | Stop the coroutine by sending a GeneratorExit signal   |
+| throw  | coroutine.throw(..) | Throw an exception to the coroutine for the next yield |
 
     def letter_generator(text):
         print("Started")
@@ -129,8 +136,8 @@ loop is executed again and the new output is generated with the `yield output` e
 
 ### Coroutine Chaining
 
-Coroutines can be used to set pipes. We can chain together coroutines and push data through the pipe using the `send()` 
-method. A pipe needs at least the following
+Coroutines can be used to set pipes. We can chain together coroutines and push data through the 
+ipe using the `send()` method. A pipe needs at least the following
 
 1. An initial source or producer
 2. A sink or consumer
@@ -144,7 +151,7 @@ method. A pipe needs at least the following
      
      
      def consumer():
-         print("I'm sink, i'll print tokens")
+         print("I'm the sink, I'll print tokens")
          try:
              while True:
                  token = (yield)
@@ -153,7 +160,7 @@ method. A pipe needs at least the following
              print("Done with printing!")
      
      
-     sentence = "Hello world!"
+     sentence = "Hello, world!"
      print(sentence)
      
      # Define token printer (consumer) and activate
@@ -165,20 +172,20 @@ method. A pipe needs at least the following
 
      # Output
      # ---------------------------
-     # Hello world!
-     # I'm sink, i'll print tokens
+     # Hello, world!
+     # I'm the sink, i'll print tokens
      # Hello
      # world!
      # Done with printing!
 
 
-## Comparions
-_______________________________________________________________________________________________________________________
+## Comparisons
+____________________________________________________________________________________________________
 
 ### Coroutine vs Subroutine
 
 * Coroutines can be suspended and resumed
-* Couritines can be resumed from many places
+* Coroutines can be resumed from many places
 * Coroutines require cooperation by the calling application
 
 
@@ -189,21 +196,21 @@ ________________________________________________________________________________
 
 
 ## Usecases
-_______________________________________________________________________________________________________________________
+____________________________________________________________________________________________________
 
-1. Pipelines used to filter or to map objects
+1. Pipelines used to filter or map objects
 2. Finite state machines
 3. Event handling
-4. Milti-tasking
+4. Multi-tasking
 5. Callbacks replacement
 
-## Excercises
-_______________________________________________________________________________________________________________________
+## Exercises
+____________________________________________________________________________________________________
 
 1. Write a coroutine usage template
 2. Write a simple decorator to activate a coroutine
-3. Write a coroutine which computes the running average
-4. Write a random configurable bytestream generator 
+3. Write a coroutine that computes the running average
+4. Write a random configurable byte stream generator 
 5. Write a pipeline
 6. Write simple finite state machine
 7. Write a program to generate permutations using recursive coroutines
@@ -211,7 +218,7 @@ ________________________________________________________________________________
 
 
 ## Resources
-_______________________________________________________________________________________________________________________
+____________________________________________________________________________________________________
 
 * https://www.geeksforgeeks.org/coroutine-in-python/
 * https://www.python-course.eu/python3_generators.php

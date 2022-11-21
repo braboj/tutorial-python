@@ -1,24 +1,27 @@
-# GENERATOR TUTORIAL
-
 ## Table of contents
 
-* [Overview](#overview)
-  * [Generator Syntax](#generator-syntax)
-  * [Generator Comprehension](#generator-comprehension)
-  * [Generator Performance](#generator-performance)
+* [Concept](#concept)
+* [Comprehension](#generator-comprehension)
+* [Performance](#generator-performance)
 * [Usecases](#usecases)
 * [Resources](#resources)
    
 
-## Overview
+## Concept
 ___________________________________________________________________________________________________
 
-### Generator Syntax
+The yield statement suspends the function’s execution and sends a value back to the caller, but 
+retains its state so that it can be resumed. When resumed, the function continues execution 
+immediately after the last yield run. This allows its code to produce a series of values over 
+time, rather than computing them at once and sending them back like a single list.
 
-The **yield** statement suspends the function’s execution and sends a value back to the caller, but retains its 
-state so that it can be resumed. When resumed, the function continues execution immediately after the last yield run.
-This allows its code to produce a series of values over time, rather than computing them at once and sending them 
-back like a single list.
+A generator is a function that can stop whatever it is doing at an arbitrary point in its body, 
+return a value back to the caller, and, later on, resume from the point it had `frozen' and 
+merrily proceed as if nothing had happened. It produces a sequence of results instead of a 
+single value. The other important aspect of generators is that they can be consumed only once 
+and cannot be reused.
+
+Example:
 
     # Subroutine returning a collection object
     def evens(stream):
@@ -34,16 +37,38 @@ back like a single list.
             if n % 2 == 0:
                 yield n
 
-Generators are a subtype of iterators as they implement the iterator protocol. An iterator object stores its current 
-state of iteration and “yields” each of its members in order, on demand via the `__next__()` method until it is 
-exhausted. The `__iter()__` method of the iterator protocol can be implemented as a generator. 
+Generators are a subtype of iterators as they implement the iterator protocol. An iterator 
+object stores its current state of iteration and “yields” each of its members in order, 
+on-demand via the __next__() method until it is exhausted. 
 
-The advantages of generators are mainly the reduced memory footprint and the lazy evaluation of of an expression. 
-Values in generator expressions are calculated only on-demand.
+The __iter()__ method of the iterator protocol can be implemented as a generator. The advantages 
+of generators are mainly the reduced memory footprint and the lazy evaluation of an expression. 
+Values in generator expressions are calculated only on demand.
 
-### Generator Comprehension
+Example:
 
-The generator comprehension is a short syntax for a simple generator function.
+    def infinite_sequence():
+        i=0
+        while True:
+            yield i
+            i+=1
+    
+    gen = infinite_sequence()
+    
+    print(next(gen))
+    >>> 0
+    
+    print(next(gen))
+    >>> 1
+    
+    print(next(gen))
+    >>> 2
+
+### Comprehension
+
+The generator comprehension is a short syntax for a simple generator function. In the generic 
+syntax of generator comprehensions <expression> is any single line of Python code returning an 
+object.
     
     (<expression> for <var> in <iterable> if <condition>
 
@@ -82,7 +107,7 @@ Another more complex example
 
 In the generic syntax of generator comrehensions `<expression>` is any single line of Python code returning an object.
 
-### Generator Performance
+### Performance
 
 Generators are used mainly for memory efficiency but at the cost of increased complexity and overhead required to 
 save the current state of the generator function.
