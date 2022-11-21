@@ -25,7 +25,7 @@ Attributes:
         with it.
 
 Todo:
-    * For module TODOs
+    * Module TODOs
     * You have to also use ``sphinx.ext.todo`` extension
 
 .. _Google Python Style Guide:
@@ -62,18 +62,8 @@ def function_with_types_in_docstring(param1, param2):
 
     """
 
-
-# def function_with_pep484_type_annotations(param1: int, param2: str) -> bool:
-#     """Example function with PEP 484 type annotations.
-#
-#     Args:
-#         param1: The first parameter.
-#         param2: The second parameter.
-#
-#     Returns:
-#         The return value. True for success, False otherwise.
-#
-#     """
+    result = True if param1 == param2 else False
+    return result
 
 
 def module_level_function(param1, param2=None, *args, **kwargs):
@@ -275,9 +265,6 @@ class ExampleClass(object):
         """
         pass
 
-    def __special_without_docstring__(self):
-        pass
-
     def _private(self):
         """By default private members are not included.
 
@@ -291,7 +278,4 @@ class ExampleClass(object):
             napoleon_include_private_with_doc = True
 
         """
-        pass
-
-    def _private_without_docstring(self):
         pass
