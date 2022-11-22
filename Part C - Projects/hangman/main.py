@@ -16,10 +16,10 @@ class GameError(Exception):
 # TODO: Add abstract class
 class GameSession(object):
 
-    def __init__(self):
+    def __init__(self, player_name='ANONYMOUS'):
         self.quit = False
         self.show_guessed = False
-        self.player_name = 'Nemo'
+        self.player_name = player_name
         self.difficulty = 0
         self.attempts = 10
         self.category = 'animals'
@@ -27,10 +27,17 @@ class GameSession(object):
         self.word = []
         self.guess = []
 
-    @classmethod
-    def from_json(cls, player_name):
-        # TODO: Read session from JSON file using player name
-        return cls()
+    def exists(self):
+        # TODO: Check if a file with the player name exists
+        pass
+
+    def load(self):
+        # TODO: Load the player session from a file
+        pass
+
+    def store(self):
+        # TODO: Save the player session in a file
+        pass
 
 
 # TODO: Add abstract class
@@ -89,13 +96,10 @@ class GameOutput(object):
 class GameApp(object):
 
     def __init__(self,
-                 session: GameSession = None  # Session used to store the player details
+                 player_name: str
                  ):
 
-        # Create game session
-        if not session:
-            session = GameSession()
-
+        session = GameSession(player_name)
         self.game_input = GameInput(session)
         self.game_engine = GameEngine(session)
         self.game_output = GameOutput(session)
