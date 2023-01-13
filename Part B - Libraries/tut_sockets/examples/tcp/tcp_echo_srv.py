@@ -1,51 +1,51 @@
 # encoding: utf-8
 import socket
 import struct
-import threading
 import time
 
 
-def srv():
-
+def run_server(ip_addr='127.0.0.1', port=503):
     """
-    Simple echo server which will wait for a new client to send data, receive data from the client, send the data back and
-    then close the connection.
+    Simple echo server that will wait for a new client to send a connect request, wait for data from the client and
+    send the data received back to the client.
     """
 
-    # 1. Create socket
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    print('Server started on port {0}...'.format(port))
 
-    # 2. Bind socket to a specific address and service port
-    sock.bind(('localhost', 503))
+    # 1. Create the server socket object (AF_INET -> IPv4, SOCK_STREAM -> TCP)
+    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+    # 2. Bind the server socket to a specific address and service port
+    server.bind((ip_addr, port))
 
     # 3. Start listening on socket
-    sock.listen(5)
-    # sock.setsockopt(socket.SOL_SOCKET, socket.SO_LINGER, struct.pack('ii', 1, 0))
+    server.listen(5)
 
-    start = time.time()
+    # 4. Optionally configure the server port (linger option)
+    server.setsockopt(socket.SOL_SOCKET, socket.SO_LINGER, struct.pack('ii', 1, 0))
+
     while True:
 
-        if time.time() - start > 3:
-            break
+        # 5. The server waits until the remote client tries to connect to the server. This step represents the TCP
+        # 3-way handshake. If the handshake is successful a local copy of the client socket is returned.
+        client, addr_info = server.accept()
 
-        print('.')
+        # 6. Wait for data from the client
+        message = client.recv(1024)
+
+        # 7. Send data back to the client
+        response = message[::-1]
+        client.send(response)
+
+        # 8. Close the client connection
+        client.close()
+
+        # Poll frequence
         time.sleep(1)
 
-        # # 4. Blocks until client is connected
-        # client, addr_info = sock.accept()
-        #
-        # # 5. Receive data
-        # data = client.recv(1024)
-        #
-        # # 6. Send data
-        # client.send(data)
-        #
-        # # 7. Close connection
-        # client.close()
-
-    sock.close()
+        # Print some debug info
+        print('.')
 
 
-t = threading.Thread(target=srv)
-t.start()
-t.join()
+if __name__ == '__main__':
+    run_server()
