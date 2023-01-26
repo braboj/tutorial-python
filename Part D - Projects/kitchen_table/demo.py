@@ -31,11 +31,16 @@ class Metal(Material):
     price = 20
 
 
+class Glass(Material):
+    symbol = "G"
+    price = 30
+
+
 ###################################################################################################
 # TABLE LOGIC                                                                                   100
 ###################################################################################################
 
-class Table(object):
+class KitchenTable(object):
 
     def __init__(self, template):
         self.template = template
@@ -101,7 +106,7 @@ class Printer(object):
                     # Use string name to get the attribute value
                     value = getattr(element, attribute)
                     line += str(value) + " "
-                result += line
+                result += line + "\n"
 
             print(result)
 
@@ -117,8 +122,12 @@ class Printer(object):
 pp = Printer()
 
 # Demonstrate usage of the default constructor
-table_design = [[Wood, Wood, Wood], ]
-table1 = Table(template=table_design)
+table_design = [
+    [Wood, Wood, Wood],
+    [Wood, Metal, Wood],
+    [Wood, Wood, Wood]
+]
+table1 = KitchenTable(template=table_design)
 
 print('-' * 40)
 pp.print(table1.table, "symbol")
@@ -126,10 +135,10 @@ pp.print(table1.table, "price")
 print(table1.price)
 
 # Demonstrate the usage of a named constructor
-table_design[-1][-1] = Metal
-table2 = Table.from_list(template=table_design)
-
-print('-' * 40)
-pp.print(table2.table, "symbol")
-pp.print(table2.table, "price")
-print(table2.price)
+# table_design[-1][-1] = Metal
+# table2 = KitchenTable.from_list(template=table_design)
+#
+# print('-' * 40)
+# pp.print(table2.table, "symbol")
+# pp.print(table2.table, "price")
+# print(table2.price)
