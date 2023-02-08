@@ -1,7 +1,7 @@
 # encoding: utf-8
+from session import *
 import socket
 import threading
-from session import *
 
 
 class Server(object):
@@ -29,6 +29,7 @@ class Server(object):
 
             # Save the current sessiono in the session pool
             self.session_pool.append(t)
+
 
 if __name__ == "__main__":
     server = Server(ip_addr='localhost', port=65432, session_type=EchoSession)

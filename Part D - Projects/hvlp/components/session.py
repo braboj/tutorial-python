@@ -4,117 +4,243 @@ from __future__ import absolute_import
 from __future__ import unicode_literals
 
 from components.packets import *
+from components.defines import *
+
 import threading
 import socket
-
-WAIT_CONNECT = 0
-CONNECTED = 1
-
-STATE_NAME = {
-    WAIT_CONNECT: "WAIT_CONNECT",
-    CONNECTED: "CONNECTED",
-}
+import logging
 
 
-class HVLPSession(threading.Thread):
+class HvlpSession(threading.Thread):
+    """ Hilscher Variable Protocol Length Session Class
 
-    def __init__(self, broker, connection, addr_info):
-        super(HVLPSession, self).__init__()
+    The session is a thread that works with a specific protocol version and handles the incoming
+    packets from the client. The session is also responsible to forward incoming publish packets
+    to all the subscribers of the topic in the publish packet.
+
+    Args:
+          broker        : Broker instance that created the session
+          client        : Client connection
+          name          : Thread name
+
+    Attributes:
+        self.broker     : Broker instance that created the session
+        self.client     : Client connection
+        self.register   : Reference to the broker register
+        self.state      : Session state
+        self.terminate  : Stop signal for all threads in the session
+        self.log        : Logger instance
+        self.lock       : Lock instance for shared resources
+        self.stream_in  : Input byte stream
+
+    """
+
+    WAIT_CONNECT = 0
+    CONNECTED = 1
+    ERROR_NO_DATA = 10035
+
+    def __init__(self, broker, client, name=""):
+        super(HvlpSession, self).__init__(name=name)
+
+        # Logging configuration
+        self.log = logging.getLogger(self.__class__.__name__)
+        self.log.addHandler(logging.NullHandler())
+
+        # Connection
         self.broker = broker
-        self.connection = connection
-        self.addr_info = addr_info
+        self.client = client
 
-        self.state = WAIT_CONNECT
-        self.stop = threading.Event()
+        # Session state management
+        self.state = self.WAIT_CONNECT
+        self.register = self.broker.register
+        self.terminate = threading.Event()
 
-    def on_subscribe(self, topics):
+        # Shared resources
+        self.lock = threading.Lock()
+        self.stream_in = b""
 
-        # Check whether the topic exists and add the client to the list
-        for topic in topics:
-            self.broker.register.setdefault(topic, [])
-            self.broker.register[topic].append(self.connection)
+    ###############################################################################################
 
-    def on_unsubscribe(self, topics):
+    def __on_subscribe(self, topics):
+        """ Subscribe the client on subscribe request """
 
-        # Check whether the topic exists and remove the client from the list
-        for topic in topics:
-            self.broker.register[topic].remove(self.connection)
+        self.register.append(topics=topics, client=self.client)
+        self.log.debug(self.register)
 
-    def on_publish(self, topic, data):
+    ###############################################################################################
 
-        # Scan the topic register and re-send the publish packet to all subscribers
-        for registered, clients in self.broker.register.items():
+    def __on_unsubscribe(self, topics):
+        """ Unsubscribe the client on subscribe request """
 
-            # Scan the register for the desired topic
-            if topic == registered:
-                message = PublishPacket(topic, data).to_bytes()
+        self.register.remove(topics=topics, client=self.client)
+        self.log.debug(self.register)
 
-                # Send the message to all the registered clients except the sender
-                for client in clients:
-                    if client != self.connection:
-                        print("PUBLISH to {0}".format(client.getpeername()))
-                        try:
-                            client.sendall(message)
-                        except socket.error:
-                            print("Client not accessible, deleting fromt the register")
-                            self.broker.register[topic].remove(client)
+    ###############################################################################################
 
-    def handle_packet(self, packet):
+    def __on_publish(self, packet):
+        """ Forward publosh packets to the topic subscribers """
 
+        # Get all subscribers and remove the publisher
+        subscribers = self.register.get_subscribers(packet.topic)
+
+        # Publish to all subscribers
+        for subscriber in subscribers:
+
+            # Skip the sender of the message
+            if self.client == subscriber:
+                continue
+
+            # Send the message to the rest of the subscribers
+            try:
+                self.log.debug("PUBLISH to {0} with topic='{1}', data={2}".format(
+                                subscriber.getpeername(),
+                                packet.topic,
+                                tuple(packet.data)
+                            ))
+                subscriber.sendall(packet.to_bytes())
+
+            except socket.error:
+                self.log.debug("Client not accessible, deleting fromt the register")
+                self.register[packet.topic].remove(subscriber)
+
+    ###############################################################################################
+
+    def __handle_packet(self, packet):
+        """ Handle the packet by calling the corresponding event handlers """
+
+        self.log.debug("{0} from {1}".format(packet, self.client.getpeername()))
+
+        # Handle subscribe packets
         if packet.id == SubscribePacket.ID:
-            print("SUBSCRIBE from {0}".format(self.connection.getsockname()))
-            self.on_subscribe(packet.topics)
+            self.__on_subscribe(packet.topics)
 
+        # Handle unsubscribe packets
         elif packet.id == UnsubscribePacket.ID:
-            print("UNSUBSCRIBE from {0}".format(self.connection.getsockname()))
-            self.on_unsubscribe(packet.topics)
+            self.__on_unsubscribe(packet.topics)
 
+        # Handle publish packets
         elif packet.id == PublishPacket.ID:
-            print("PUBLISH from {0}".format(self.connection.getsockname()))
-            self.on_publish(packet.topic, packet.data)
+            self.__on_publish(packet)
 
+        # Handle unknown packets
         else:
-            print("UNEXPECTED PACKET")
+            self.log.debug("UNEXPECTED PACKET: {0}".format(packet))
 
-    def update_state(self, packet):
+    ###############################################################################################
+
+    def __update_state(self, packet):
+        """ Update the session state """
 
         # STATE: WAIT_CONNECT
-        if self.state == WAIT_CONNECT:
+        if self.state == self.WAIT_CONNECT:
+
+            # Request to connect to the broker
             if packet.id == ConnectPacket.ID:
-                print('CONNECT from {0}'.format(self.addr_info))
-                self.state = 1
+                self.log.debug('CONNECT from {0}'.format(self.client.getpeername()))
+                self.state = self.CONNECTED
+
+            # Ignore packets until the connect packet is detected
             else:
-                print("UNEXPECTED PACKET")
+                self.log.debug("UNEXPECTED PACKET: {0}".format(packet))
 
         # STATE: CONNECTED
-        elif self.state == CONNECTED:
+        elif self.state == self.CONNECTED:
+
+            # Request to disconnect from the broker
             if packet.id == DisconnectPacket.ID:
-                print('DISCONNECT from {0}'.format(self.addr_info))
-                self.stop.set()
+                self.log.debug('DISCONNECT from {0}'.format(self.client.getpeername()))
+                self.terminate.set()
+
+            # Perform the required operations on other packets
             else:
-                self.handle_packet(packet)
+                self.__handle_packet(packet)
+
+    ###############################################################################################
+
+    def __listen(self):
+        """ Wait for new data and write it to the input stream """
+
+        while not self.terminate.is_set():
+
+            try:
+                if len(self.stream_in) < STREAM_SIZE:
+                    data = self.client.recv(BUFFER_SIZE)
+                    with self.lock:
+                        self.stream_in += data
+
+            # Ingore errors when the recv call did not return data on time
+            except socket.error as e:
+                if e.errno != self.ERROR_NO_DATA:
+                    self.stop()
+
+    ###############################################################################################
 
     def run(self):
+        """ Session activity required by threading.Thread on start()
 
-        while not self.stop.is_set():
+         1. Register the current session
+         2. Start the message sniffer
+         3. While stop signal not active
+             3.1. Copy the input buffer
+             3.2. Parse a packet from the buffer
+             3.3. Update the session state
+
+        """
+
+        self.log.debug("SESSION START")
+        self.register.subscribe(self)
+
+        # Start the data capture thread
+        listener = threading.Thread(target=self.__listen)
+        listener.start()
+
+        while not self.terminate.is_set():
             try:
-                message = self.connection.recv(1024)
-                if message:
-                    packet = Packet.from_bytes(message)
-                    self.update_state(packet)
+                with self.lock:
+                    # Parse a packet from the stream
+                    packet = Packet.from_bytes(self.stream_in)
 
-            except socket.error as e:
-                self.stop.set()
+                    # Remove the packet bytes from the stream
+                    self.stream_in = self.stream_in[len(packet):]
 
-        # Close the connection socket
-        print("SESSION CLOSED")
-        self.connection.close()
+                # Update the session state
+                self.__update_state(packet)
 
-        # Remove connection from the registry
-        print(self.broker.register)
-        for topic, clients in self.broker.register.items():
-            if self.connection in self.broker.register[topic]:
-                self.broker.register[topic].remove(self.connection)
+            except HvlpParsingError:
+                pass
 
-        print(self.broker.register)
+        self.cleanup()
+        self.log.debug("SESSION END")
 
+    ###############################################################################################
+
+    def stop(self):
+        """ Stop the current thread """
+        self.terminate.set()
+
+    ###############################################################################################
+
+    def cleanup(self):
+        """ Close the client connection and remove the session from the register """
+
+        try:
+            # Close the client connection
+            self.client.shutdown(socket.SHUT_RDWR)
+            self.client.close()
+
+            # Remove session from the register
+            self.register.unsubscribe(self)
+
+            # Show the register before
+            self.log.debug("Register before : {0}".format(self.register.get_sessions()))
+
+            # Remove the client connection from the registry
+            for topic in self.register.keys():
+                if self.client in self.register[topic]:
+                    self.register[topic].remove(self.client)
+
+            # Show the register after
+            self.log.debug("Register after : {0}".format(self.register.get_sessions()))
+
+        except socket.error:
+            pass
