@@ -9,6 +9,7 @@ from components.defines import *
 
 import socket
 import threading
+import logging
 
 
 class HvlpClient(threading.Thread):
@@ -55,6 +56,10 @@ class HvlpClient(threading.Thread):
 
     def __init__(self, srv_addr='localhost', port=DEFAULT_PORT):
         super(HvlpClient, self).__init__()
+
+        # Logging configuration
+        self.log = logging.getLogger(self.__class__.__name__)
+        self.log.addHandler(logging.NullHandler())
 
         # Connection related attributes
         self.srv_addr = srv_addr
@@ -131,7 +136,7 @@ class HvlpClient(threading.Thread):
 
     ###############################################################################################
 
-    def connect(self, payload=b""):
+    def connect(self, payload=""):
         """ Send a connect request packet to the broker
 
         Args:
@@ -150,12 +155,12 @@ class HvlpClient(threading.Thread):
         try:
 
             # Send the connect packet to the broker
+            payload = payload.encode('utf-8')
             request = ConnectPacket(payload=payload).to_bytes()
             self.sock.sendall(request)
 
-        # Payload related errors
-        except (LookupError, ValueError):
-            raise HvlpPayloadFormatError
+        except AttributeError:
+            raise HvlpConnectionError
 
         # Socket related errors
         except socket.error:
@@ -163,7 +168,7 @@ class HvlpClient(threading.Thread):
 
     ###############################################################################################
 
-    def disconnect(self, payload=b""):
+    def disconnect(self, payload=""):
         """ Send a connect request packet to the broker
 
         Args:
@@ -182,12 +187,9 @@ class HvlpClient(threading.Thread):
         try:
 
             # Send the packet
+            payload = payload.encode('utf-8')
             request = DisconnectPacket(payload).to_bytes()
             self.sock.sendall(request)
-
-        # Payload related errors
-        except (LookupError, ValueError):
-            raise HvlpPayloadFormatError
 
         # Socket related errors
         except (AttributeError, socket.error):
@@ -214,10 +216,6 @@ class HvlpClient(threading.Thread):
         try:
             request = SubscribePacket(topics=topics).to_bytes()
             self.sock.sendall(request)
-
-        # Payload related errors
-        except (LookupError, ValueError):
-            raise HvlpPayloadFormatError
 
         # Socket related errors
         except (AttributeError, socket.error):
@@ -287,67 +285,66 @@ class HvlpClient(threading.Thread):
     ###############################################################################################
 
     def listen(self, stop):
-        """ Save raw messages from the borker into the input buffer  """
+        """ Save raw messages from the borker into the input buffer
+
+        Args:
+            stop     : Threading event to stop the listener loop
+
+        Example:
+
+            # Create the client object
+            client = HvlpClient()
+
+            # Create the stop event
+            stop = threading.Event()
+
+            # Start the listener thread
+            listener = threading.Thread(target=client.listen, args=[stop, ])
+
+        """
 
         while not stop.is_set():
             try:
+                data = self.sock.recv(BUFFER_SIZE)
+                while data:
+                    packet = Packet.from_bytes(data)
+                    self.on_packet(packet)
+                    data = data[len(packet):]
 
-                if len(self.stream_in) < STREAM_SIZE:
-                    data = self.sock.recv(BUFFER_SIZE)
-                    with self.lock:
-                        self.stream_in += data
+            # Protocol related errors
+            except HvlpError as e:
+                self.log.error(e)
 
+            # Connection related errors
+            except (socket.error, AttributeError) as e:
+                self.log.error(e)
+
+            # Socket timed out in case it is non-blocking
             except socket.timeout:
                 pass
 
-            # Connection related errors
-            except (socket.error, AttributeError):
-                raise HvlpConnectionError
+    ###############################################################################################
 
+    def on_packet(self, packet):
+        """ Default packet handler that can be overriden by a custom application
 
-# ####################################################################################################
-# #
-# ####################################################################################################
-#
-# def producer():
-#
-#     test_client = HvlpClient()
-#     test_client.open()
-#     test_client.connect()
-#     test_client.subscribe('a')
-#
-#     i = 0
-#     while True:
-#         test_client.publish('a', (i % 256))
-#         time.sleep(1)
-#         i += 1
-#
-#
-# def consumer():
-#
-#     test_client = HvlpClient()
-#
-#     test_client.open()
-#     test_client.connect()
-#     test_client.subscribe('a')
-#
-#     stop = threading.Event()
-#     t = threading.Thread(target=test_client.listen, args=(stop,))
-#     t.start()
-#
-#     while True:
-#         try:
-#             packet = Packet.from_bytes(test_client.stream_in)
-#             test_client.stream_in = test_client.stream_in[len(packet):]
-#             print(packet)
-#         except HvlpParsingError:
-#             pass
-#
-#
-# if __name__ == "__main__":
-#
-#     p = threading.Thread(target=producer)
-#     p.start()
-#
-#     c = threading.Thread(target=consumer)
-#     c.start()
+        Args:
+            packet     : Packet object
+
+        Example:
+
+            class MyHvlpClient(HvlpClient):
+
+                def on_packet(self, packet):
+
+                    if packet.id == PublishPacket.ID:
+                        self.on_publish(packet)
+
+                    elif packet.id == SomeCustomPacket.ID:
+                        self.on_custom_packet(packet)
+
+                    ...
+
+        """
+
+        self.log.info("{0} from {1}:{2}".format(packet, self.srv_addr, self.port))

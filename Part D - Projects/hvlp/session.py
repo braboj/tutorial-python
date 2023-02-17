@@ -1,17 +1,54 @@
 # encoding: utf-8
+
 from __future__ import print_function
-from __future__ import absolute_import
 from __future__ import unicode_literals
 
-from components.packets import *
-from components.defines import *
+import sys
+sys.path.append(str('.'))
+
+from packets import *
+from defines import *
+
+from abc import ABCMeta, abstractmethod
+from six import with_metaclass
 
 import threading
 import socket
 import logging
 
 
-class HvlpSession(threading.Thread):
+class Session(with_metaclass(ABCMeta)):
+    """ Template class for all sessions types """
+
+    def __init__(self, *args, **kwargs):
+        super(Session, self).__init__()
+        self.args = args
+        self.kwargs = kwargs
+
+    @abstractmethod
+    def run(self):
+        raise NotImplementedError
+
+
+class EchoSession(Session):
+    """ Demo session that will return back any message sent by the client """
+
+    def __init__(self, client, *args, **kwargs):
+        self.client = client
+        super(EchoSession, self).__init__(client, *args, **kwargs)
+
+    def run(self):
+        print('Connection from {0}'.format(self.client.getpeername()))
+        while True:
+            try:
+                data = self.client.recv(1024)
+                self.client.sendall(data)
+
+            except socket.error:
+                pass
+
+
+class HvlpSession(Session):
     """ Hilscher Variable Protocol Length Session Class
 
     The session is a thread that works with a specific protocol version and handles the incoming
@@ -19,12 +56,10 @@ class HvlpSession(threading.Thread):
     to all the subscribers of the topic in the publish packet.
 
     Args:
-          broker        : Broker instance that created the session
           client        : Client connection
-          name          : Thread name
+          register      : Register instance that created the broker
 
     Attributes:
-        self.broker     : Broker instance that created the session
         self.client     : Client connection
         self.register   : Reference to the broker register
         self.state      : Session state
@@ -39,30 +74,36 @@ class HvlpSession(threading.Thread):
     CONNECTED = 1
     ERROR_NO_DATA = 10035
 
-    def __init__(self, broker, client, name=""):
-        super(HvlpSession, self).__init__(name=name)
+    def __init__(self, client, register, *args, **kwargs):
 
         # Logging configuration
         self.log = logging.getLogger(self.__class__.__name__)
         self.log.addHandler(logging.NullHandler())
 
-        # Connection
-        self.broker = broker
+        # Connection attributes
         self.client = client
 
-        # Session state management
+        # Session management
+        self.register = register
         self.state = self.WAIT_CONNECT
-        self.register = self.broker.register
         self.terminate = threading.Event()
 
         # Shared resources
         self.lock = threading.Lock()
         self.stream_in = b""
 
+        # Call the parent constructor
+        super(HvlpSession, self).__init__(client, register, *args, **kwargs)
+
     ###############################################################################################
 
     def on_packet(self, packet):
-        """ Handle the packet by calling the corresponding event handlers """
+        """ Packet handler that might be overriden by a custom session implementation
+
+        Args:
+            packet  : A packet object
+
+        """
 
         self.log.debug("{0} from {1}".format(packet, self.client.getpeername()))
 
@@ -85,7 +126,12 @@ class HvlpSession(threading.Thread):
     ###############################################################################################
 
     def on_subscribe(self, topics):
-        """ Subscribe the client on subscribe request """
+        """ Subscribe the client on subscribe request
+
+        Args:
+            topics  : List of topic names
+
+        """
 
         self.register.append(topics=topics, client=self.client)
         self.log.debug(self.register)
@@ -93,7 +139,12 @@ class HvlpSession(threading.Thread):
     ###############################################################################################
 
     def on_unsubscribe(self, topics):
-        """ Unsubscribe the client on subscribe request """
+        """ Unsubscribe the client on subscribe request
+
+        Args:
+            topics  : List of topic names
+
+        """
 
         self.register.remove(topics=topics, client=self.client)
         self.log.debug(self.register)
@@ -101,7 +152,12 @@ class HvlpSession(threading.Thread):
     ###############################################################################################
 
     def on_publish(self, packet):
-        """ Forward publosh packets to the topic subscribers """
+        """ Forward publosh packets to the topic subscribers
+
+        Args:
+            packet  : Packet object
+
+        """
 
         # Get all subscribers and remove the publisher
         subscribers = self.register.get_subscribers(packet.topic)
@@ -129,7 +185,12 @@ class HvlpSession(threading.Thread):
     ###############################################################################################
 
     def update(self, packet):
-        """ Update the session state """
+        """ Update the session state
+
+        Args:
+            packet  : Packet object
+
+        """
 
         # STATE: WAIT_CONNECT
         if self.state == self.WAIT_CONNECT:
@@ -162,8 +223,13 @@ class HvlpSession(threading.Thread):
 
         while not self.terminate.is_set():
 
+            with self.lock:
+                stream_length = len(self.stream_in)
+
+            # self.log.debug("STREAM LENGT = {0}".format(stream_length))
+
             try:
-                if len(self.stream_in) < STREAM_SIZE:
+                if stream_length < MAX_STREAM_SIZE:
                     data = self.client.recv(BUFFER_SIZE)
                     with self.lock:
                         self.stream_in += data
@@ -197,6 +263,7 @@ class HvlpSession(threading.Thread):
         while not self.terminate.is_set():
             try:
                 with self.lock:
+
                     # Parse a packet from the stream
                     packet = Packet.from_bytes(self.stream_in)
 

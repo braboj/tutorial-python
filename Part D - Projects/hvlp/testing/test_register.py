@@ -1,10 +1,14 @@
-# encoding: utf-8
+# coding: utf-8
 from __future__ import print_function
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-from components.register import HvlpBrokerRegister
-import logging
+import sys
+sys.path.append(str('.'))
+sys.path.append(str('..'))
+
+from register import HvlpBrokerRegister
+from logger import *
 
 
 ###################################################################################################
@@ -123,7 +127,7 @@ def test_get_sessions(register):
 
 if __name__ == "__main__":
 
-    logging.basicConfig(format=b'%(asctime)s - %(funcName)-30s: %(message)s', level=logging.INFO)
+    configure_logger()
 
     r = HvlpBrokerRegister()
     test_reset(r)

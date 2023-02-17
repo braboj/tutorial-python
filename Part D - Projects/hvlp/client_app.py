@@ -3,7 +3,8 @@ from __future__ import print_function
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-from components.client import HvlpClient
+from components.client import *
+from components.logger import *
 from components.errors import *
 from six.moves import input
 
@@ -106,22 +107,17 @@ class HvlpClientApp(HvlpClient):
 
     ###############################################################################################
 
-    def sniffer(self, state=""):
+    def sniffer(self, command=""):
         """ Start a sniiffer thread to capture packets from the broker """
 
         try:
-            if state == "start":
-
-                # Stop the active listener
-                if self.listener:
-                    self.terminate.set()
-                    self.listener.join()
+            if command == "start":
 
                 # Activate the new listener
-                self.listener = threading.Thread(target=self.listen)
+                self.listener = threading.Thread(target=self.listen, args=[self.terminate, ])
                 self.listener.start()
 
-            elif state == "stop":
+            elif command == "stop":
 
                 # Stop the active listener
                 self.terminate.set()
@@ -138,10 +134,23 @@ class HvlpClientApp(HvlpClient):
 
     ###############################################################################################
 
-    def on_publish(self, packet):
-        """ Event handler for PUBLISH packets """
+    def connect(self, payload=""):
+        self.open()
+        self.sniffer(command="start")
+        super(HvlpClientApp, self).connect(payload)
 
-        self.show("[@EVENT]: {0}:{1} sent {2}".format(self.srv_addr, self.port, packet))
+    ###############################################################################################
+
+    def disconnect(self, payload=""):
+        self.sniffer(command="stop")
+        super(HvlpClientApp, self).disconnect(payload)
+        self.close()
+
+    ###############################################################################################
+
+    def on_packet(self, packet):
+        super(HvlpClientApp, self).on_packet(packet)
+        self.show(self.PROMPT, end='')
 
     ###############################################################################################
 
@@ -225,4 +234,5 @@ def main(server_addr='localhost', port=65432):
 
 
 if __name__ == "__main__":
+    configure_logger(level=logging.DEBUG)
     main(*sys.argv[1:])

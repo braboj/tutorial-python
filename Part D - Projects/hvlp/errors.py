@@ -1,9 +1,12 @@
-# encoding: utf-8
+# coding: utf-8
+
 from __future__ import print_function
-from __future__ import absolute_import
 from __future__ import unicode_literals
 
-import logging
+import sys
+sys.path.append(str('.'))
+
+import logger
 
 
 class HvlpError(Exception):
@@ -81,4 +84,4 @@ class HvlpArgumentsError(HvlpError):
 
 
 if __name__ == "__main__":
-    logging.basicConfig(format=b'%(asctime)s - %(funcName)-30s: %(message)s', level=logging.INFO)
+    logger.configure_logger()

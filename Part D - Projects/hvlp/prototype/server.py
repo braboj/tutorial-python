@@ -1,4 +1,4 @@
-# encoding: utf-8
+# coding: utf-8
 from session import *
 import socket
 import threading

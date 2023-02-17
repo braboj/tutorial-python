@@ -1,9 +1,14 @@
-# encoding: utf-8
+# coding: utf-8
 from __future__ import print_function
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-from components.errors import *
+import sys
+sys.path.append(str('.'))
+sys.path.append(str('..'))
+
+from errors import *
+from logger import *
 
 
 ###################################################################################################
@@ -51,7 +56,7 @@ def test_error_reason():
 
 if __name__ == "__main__":
 
-    logging.basicConfig(format=b'%(asctime)s - %(funcName)-25s: %(message)s', level=logging.INFO)
+    configure_logger()
     test_error()
     test_error_message()
     test_error_reason()

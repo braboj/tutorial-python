@@ -1,10 +1,15 @@
-# encoding: utf-8
+# coding: utf-8
 from __future__ import print_function
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-from components.broker import *
-from components.client import *
+import sys
+sys.path.append(str('.'))
+sys.path.append(str('..'))
+
+from broker import *
+from client import *
+from logger import *
 import time
 
 
@@ -109,7 +114,7 @@ def test_subscribe():
 ###################################################################################################
 
 if __name__ == "__main__":
-    logging.basicConfig(format=b'%(asctime)s - %(funcName)-30s: %(message)s', level=logging.INFO)
+    configure_logger()
     test_connect()
     test_disconnect()
     test_subscribe()

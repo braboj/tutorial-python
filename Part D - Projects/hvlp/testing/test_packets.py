@@ -1,10 +1,13 @@
-# encoding: utf-8
+# coding: utf-8
 from __future__ import print_function
-from __future__ import absolute_import
 from __future__ import unicode_literals
 
-from components.packets import *
-import logging
+import sys
+sys.path.append(str('.'))
+sys.path.append(str('..'))
+
+from packets import *
+from logger import *
 
 
 ###################################################################################################
@@ -62,7 +65,7 @@ def test_disconnect(payload=(1, 2, 3, 4, 5)):
     assert(packet == deserialized)
 
 
-def test_subscribe(topics=('welcome', 'home')):
+def test_subscribe(topics=('здравей', 'home')):
 
     packet = SubscribePacket(topics)
     logging.info("@SUBSCRIBE")
@@ -79,7 +82,7 @@ def test_subscribe(topics=('welcome', 'home')):
     assert(packet == deserialized)
 
 
-def test_unsubscribe(topics=('welcome', 'home')):
+def test_unsubscribe(topics=('здравей', 'home')):
 
     packet = UnsubscribePacket(topics)
     logging.info("@UNSUBSCRIBE")
@@ -96,7 +99,7 @@ def test_unsubscribe(topics=('welcome', 'home')):
     assert(packet == deserialized)
 
 
-def test_publish(topic='welcome', data=(0xAA, 0x55)):
+def test_publish(topic='здравей', data=(0xAA, 0x55)):
 
     packet = PublishPacket(topic, data)
     logging.info("@PUBLISH")
@@ -119,8 +122,7 @@ def test_publish(topic='welcome', data=(0xAA, 0x55)):
 
 if __name__ == "__main__":
 
-    logging.basicConfig(format=b'%(asctime)s - %(funcName)-25s: %(message)s', level=logging.INFO)
-
+    configure_logger()
     test_packet()
     test_connect()
     test_disconnect()

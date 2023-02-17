@@ -12,7 +12,7 @@
 4. The Session uses the register from the broker for subscribe, unsubscribe and publish
 5. Both the Session and the client create packet objects 
 
-## Client
+## Client API
 The client is a custom thread. The function of the client is to send packets to the broker and 
 to handle incoming publish packets forwarded by the broker.
 
@@ -85,7 +85,7 @@ broker.stop()
 
 ```
 
-## Broker
+## Broker API
 The broker is a custom thread, which spawns session threads on incoming TCP connections. The broker
 is protocol agnostic and only offers tools for topic and client registration.
 
@@ -115,7 +115,7 @@ for broker in brokers:
 
 ```
 
-## Session
+## Session API
 The session is a thread that works with a specific protocol version and handles the incoming 
 packets from the client. The session is also responsible to forward incoming publish packets to all
 the subscribers of the topic in the publish packet. 
@@ -163,7 +163,7 @@ def test_connect():
 ```
 
 
-## Register
+## Register API
 The register class is a helper class used to store information about topics and clients 
 subscribed to these topics. As the register object is shared among all sessions, the read and write
 operations should be protected.
@@ -271,7 +271,7 @@ def test_get_sessions(register):
 ```
 
 
-## Packet
+## Packet API
 The packet class is the parent of all protocol packets and offers method for serialization and 
 deserialization. The serialization is the process of transfoming an object into bytes, which 
 then can be send over the connection. The deserialization is the oposite process that reads and 

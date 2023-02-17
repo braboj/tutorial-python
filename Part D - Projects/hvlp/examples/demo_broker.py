@@ -1,8 +1,16 @@
-from components.broker import *
-import logging
+from __future__ import print_function
+from __future__ import unicode_literals
+
+import sys
+sys.path.append(str('.'))
+sys.path.append(str('..'))
+
+from broker import *
+from logger import *
+
 import socket
 
-logging.basicConfig(format=b'%(asctime)s - %(funcName)-25s: %(message)s', level=logging.INFO)
+configure_logger()
 
 # Spawn several brokers as threads
 brokers = []

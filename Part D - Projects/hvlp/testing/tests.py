@@ -32,7 +32,7 @@ HVLPSRV_API_
 HVLPCLI_API_
 """
 
-from broker_app import *
+from ..broker import *
 import logging
 import time
 
