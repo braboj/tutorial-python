@@ -1,0 +1,864 @@
+# Part A - Python
+
+## Setup
+
+### Python
+### PyCharm
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+## Introduction
+
+### Keywords
+
+- **Statement**
+- **Comment**
+- **Expression**
+- **Function**
+- **Parameter**
+- **Variable**
+- **Class**
+
+### Hello, world!
+
+The very first program we will write is the more or less the traditional 'Hello world'. It will
+just print the favorite phrase of all software developers on the screen.
+
+```python
+print("Hello world!")
+print(1 + 1)
+```
+
+Now if after evaluation of the code we will see that
+
+- we tell the computer what to do
+- and `print` is a pre-defined code ready to be used by the developer
+- and `print` uses a value to show it on the screen
+- and the value used by print can be either pre-defined such as `'Hello, world!'`
+- or take the result of operations such as `1 + 1`
+
+If we elaborate further we will see that a program generally is a
+
+- Sequence of commands called **statements**
+- Each statement might consist of operations returning results called **expressions**
+- Or each statement might use pre-defined code blocks called **functions**
+- And each function may be configurable by the user through **parameters**
+
+The final goal of a software product is then ...
+
+- To work the intended way
+- To be testable
+- To be easily usable
+- To be easily maintainable
+
+### Comments
+
+The code can be documented using comments. Python offers single-line comments for quick
+clarifications beginning with the symbol `#`.
+
+```python
+# This code will print a message and the sum of two numbers
+print("Hello world!")
+print(1 + 1)
+```
+
+There is also an option for multi-line comments for more elaborate explanations. The comment in
+this case must be enclosed in tipple quotes.
+
+```python
+"""
+This is a multi-line comment.
+
+The following code will print the message `Hello, world!`
+and then print the sum of two numbers.
+"""
+
+print("Hello world!")
+print(1 + 1)
+```
+
+### Declaring variables
+
+Now let's modify our program a little bit to be more reusable. Now we make print to work with any
+text possible. For this purpose we will use a variable. A variable is a container for data,
+which can be reused many times in the program.
+
+```python
+# The variable text holds `Hello, world!`
+text = 'Hello world!'
+print(text)
+```
+
+In the code above the variable `text` is declared and initialized. After this it may be used
+many times in the program. Now you might ask that this is absolutely unnecessary to use 2
+lines of code instead of one. Let's give another example to demonstrate why variables are useful.
+Let's print 5 identical messages on the screen ...
+
+```python
+print("Hello world")
+print("Hello world")
+print("Hello world")
+print("Hello world")
+print("Hello world")
+```
+
+Now if we want to change the message on the screen we have to change all the statements in the
+program above. If we use a variable to store the text, the changes will be only in first statement.
+
+```python
+text = 'Hello world!'
+print(text)
+print(text)
+print(text)
+print(text)
+print(text)
+```
+
+
+### Variable types
+Python has several pre-defined variables types such as
+
+- Strings which holds characters
+- Numbers which hold integers, complex and floating point numbers
+- Booleans which can be either true or false
+- None used to signify that a variable is declared but not initialized
+
+The following code will print all variables values and their types supported by Python at the
+time of speaking. Remember that the language is constantly evolving and it might be necessary to
+check the official documentation for changes. The type of the variable in Python can be checked
+by using `type()`.
+
+```python
+# String
+var = "Hello world!"
+print(type(var), var)
+
+# Integer number
+var = 1
+print(type(var), var)
+
+# Real number
+var = 3.14
+print(type(var), var)
+
+# Complex number
+var = 1 + 1j
+print(type(var), var)
+
+# Boolean
+var = False
+print(type(var), var)
+
+# Not initialized
+var = None
+print(type(var), var)
+```
+
+In the code above we can see that `print()` is configured with two parameters. The first one
+tells print to show the variable type on the screen and the second one the variable value. In
+Python `print()` supports an infinite amount of parameters. The output of the script is:
+
+    <class 'str'> Hello world!
+    <class 'int'> 1
+    <class 'float'> 3.14
+    <class 'complex'> (1+1j)
+    <class 'bool'> False
+    <class 'NoneType'> None
+    Process finished with exit code 0
+
+We see the types of the variables, but they are preceeded by **class**. We defined earlier that
+variables are data containers, which can hold values. The **class** tells Python what type of data
+the variable stores and how Python can operate with the data.
+
+The class concept can be demonstrated by first working with numbers of different types. In the
+example below Python analyses the code and deducts that a and b are integers and uses the integer class to check how to add them.
+
+```python
+# The operator + adds two integer numbers
+a = 1
+b = 1
+print(a + b)
+```
+
+In the same way in the next example the code is analysed Python and deducts that now a and b are
+complex numbers and thus another type of data. In this case Python will use the addition
+operation for this data class.
+
+```python
+# The operator + adds two complex numbers
+a = 1 + 1j
+b = 1 + 1j
+print(a + b)
+```
+
+### User Input
+
+Wait for user input, use the six library to make it portable.
+
+### Practice
+
+1. Print your name on the screen
+2. Make the program in such a way that you can print different names 10 times
+3. Add an integer and a floating point number
+4. Show the type of the result of the addition of floating point number and an integer
+5. Check the type of `print`
+6. Check the type of `type`
+7. Add two integer, float and complex numbers and print the results
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+## Operator
+
+### Arithmetic
+
+The arithmetic operators are the most basic expressions in Python.
+
+```
+Addition        :   5 + 3   = 8         :   Addition of two numbers
+Substraction    :   5 - 3   = 2         :   Substraction of two numbers
+Multiplication  :   5 * 3   = 15        :   Multiplication of two numbers
+Division        :   5 / 3   = 1         :   Float division of two numbers
+Floor division  :   5 // 2  = 2         :   Integer division of two numbers
+Modulus         :   5 % 3   = 2         :   Remainder after divison of two numbers
+Exponentiation  :   5 ** 3  = 125       :   Exponentiation with base and exponent
+
+```
+
+Examples:
+
+```python
+
+x = 5.0
+y = 3.0
+print(x / y)
+print(x // y)
+print(x % y)
+
+print('-' * 80)
+
+x = -5.0
+y = 3.0
+print(x / y)
+print(x // y)
+print(x % y)
+```
+
+
+### Comparison
+
+The comparision operators are used in expressions comparing different values. The result will be
+either `True` or `False`.
+
+```
+Equal                       :   x == 1
+Not equal                   :   x != 1
+Greater than                :   x > 1
+Greater than or equal to    :   x >= 1
+Less than                   :   x < 1
+Less than or equal to       :   x <= 1
+Between                     :   1 < x < 2
+```
+
+Examples:
+
+```python
+x = 1
+y = 2
+print(x > y)
+print(x < y)
+print(1 < x < 3)
+```
+
+### Logical
+
+The logical operators are used to control the flow of the program. The result will be either
+`True` or `False`.
+
+```
+NOT     :   not x
+AND     :   x and y
+OR      :   x or y
+```
+
+Examples:
+
+```python
+x = 1
+y = 2
+
+print(not x)
+print(x and y)
+print(x or y)
+```
+
+### Identity
+
+The identity operators are used to compare objects and check if two objects are identical.
+
+```
+is          :   x is y      :   True if x and y are the same object
+is not      :   x is not y  :   True if x and y are different objects
+```
+
+### Membership
+
+The membership operators are used check if an object is part of a collection of objects.
+
+```
+in          :   x in y      :   True if x is present in y
+not in      :   x not in y  :   True if x is not present in y
+```
+
+### Bitwise
+
+The bitwise operators are used for setting individual bits in a byte, word and other integer
+types.
+
+```
+AND             :   x & y   :   1010 & 0101 = 0000, 1001 & 1111 = 1001
+OR              :   x | y   :   1010 & 0101 = 1111, 1001 & 1111 = 1111
+XOR             :   x ^ y   :   1010 & 0101 = 0000, 1001 & 1111 = 0110
+NOT             :   ~x      :   ~1010 = 0101
+Left shift      :   x << 1  :   1010 << 1 = 0100
+Right shift     :   x >> 1  :   1010 >> 1 = 0101
+```
+
+```python
+x = int('1010', 2)
+print(bin(x >> 1))
+```
+
+### Conditional
+
+The only ternary conditional statement in Python allows quick verification of a given condition and
+performing an action depending on the result of the check.
+
+```python
+a, b = 10, 20
+
+# Copy value of a in min if a < b else copy b
+min = a if a < b else b
+print(min)
+```
+
+### Assignement
+
+The assignement operator is used to change the value of a given variable. Python offers a variety
+of assignement operators, often combining arithmetic or bitwise operations and assignement in
+one statement.
+
+```python
+x = 1       x = 1
+x += 1      x = x + 1
+x -= 1      x = x - 1
+x *= 1      x = x * 1
+x /= 1      x = x / 1
+x %= 1      x = x % 1
+x //= 1     x = x // 1
+x **= 1     x = x ** 1
+x &= 1      x = x & 1
+x |= 1      x = x | 1
+x ^= 1      x = x ^ 1
+x >>= 1     x = x >> 1
+x <<= 1     x = x << 1
+```
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+## Control Flow
+TODO
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+## Function
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+## Class
+
+### What is a class?
+
+Classes are instructions on how to build an object. They answer the following questions:
+
+What does the object HAVE as parts? (HAVE WHAT?)
+What does the object DO? (DO WHAT?)
+
+Example:
+
+A person has a name and age
+A person sleeps, eats, and breaths
+
+Classes are actually custom types. By creating a new class we define also a new type and define
+what to do with it.
+
+
+```python
+
+class Python(object):
+
+    def __init__(self, name, age):
+       self.name = name
+       self.age = age
+
+    def sleep(self):
+        print("{0} sleeping...".format(self.name))
+
+    def eat(self):
+        print("{0} eating...".format(self.name))
+
+```
+
+### What is an instance of a class?
+
+The instance is the object after its construction using the class. Each instance is uniquely
+identifiable and exists separately from other instances.
+
+Example:
+
+- Branimir Georgiev is 40 years old
+- Dimitar Ivanov is 45 years old
+
+The construction of the instance is as simple as defining a variable and then assigning it to
+the constructor. The default constructor is the class name with parenthesis.
+
+Example:
+
+```python
+
+class Python(object):
+
+    def __init__(self, name="Nemo", age=0):
+       self.name = name
+       self.age = age
+
+    def sleep(self):
+        print("{0} sleeping...".format(self.name))
+
+    def eat(self):
+        print("{0} eating...".format(self.name))
+
+
+
+default = Person()
+p1 = Person(name='Branimir', age=40)
+p2 = Person(name='Dimitar', age=18)
+
+```
+
+### What is an instance variable?
+
+Instance variables make up the composition of the object and define the parts of the object.
+Instance variables are also called properties.
+
+> WHAT does the instance HAVE? (HAVE WHAT?)
+
+Example:
+
+```python
+
+class Python(object):
+
+    def __init__(name="Nemo", age=0):
+       self.name = name
+       self.age = age
+
+    def sleep(self):
+        print("{0} sleeping...".format(self.name))
+
+    def eat(self):
+        print("{0} eating...".format(self.name))
+
+
+p = Person(name='Branimir', age=40)
+print(p.name)
+print(p.age)
+
+```
+
+### What is an instance method?
+
+An instance method is a function, which belong only to the instances of a class. Instance
+methods can only be used when the instance of the class has been created.
+
+> WHAT does the instance DO? (DO WHAT?)
+
+Example:
+
+```python
+
+class Python(object):
+
+    def __init__(self, name="Nemo", age=0):
+       self.name = name
+       self.age = age
+
+    def sleep(self):
+        print("{0} sleeping...".format(self.name))
+
+    def eat(self):
+        print("{0} eating...".format(self.name))
+
+
+p = Person(name='Branimir', age=40)
+p.sleep()
+p.eat()
+
+```
+
+### What is inheritance?
+
+Inheritance is a way to transfer class members from a parent class to a child class. The child
+class can override or extend the parent members. The relationship the inheritance represent is a **"IS A"** relationship.
+
+Example:
+
+    Specialization --------> Generalization
+    A Student is a Person and a Person is an Object.
+
+```python
+
+class Person(object):
+    def __init__(self, name="Nemo", age=0):
+        self.name = name
+        self.age = age
+
+    def sleep(self):
+        print("{0} sleeping...".format(self.name))
+
+    def eat(self):
+        print("{0} eating...".format(self.name))
+
+
+class Student(Person):
+
+    def sleep(self):
+        print("{0} sleeping for 4 hours ...".format(self.name))
+
+    def study(self):
+        print("{0} studying...".format(self.name))
+
+
+p = Student(name='Branimir', age=40)
+p.sleep()
+p.eat()
+p.study()
+
+```
+
+The direction from the parent to the child is called specialization. The
+opposite direction is called generalization or abstraction.
+
+
+### What is a constructor?
+
+Classes define objects and we can create many instances by using a constructor. The constructor
+is like a factory, which allocates the needed resources to create the object.
+
+Example:
+
+```python
+
+class Person(object):
+    def __init__(self, name="Nemo", age=0):
+        self.name = name
+        self.age = age
+
+    def sleep(self):
+        print("{0} sleeping...".format(self.name))
+
+    def eat(self):
+        print("{0} eating...".format(self.name))
+
+p = Person()
+print(p.name, p.age)
+
+```
+
+Constructors are special methods inside a class, which are responsible for the initialization of
+the instance variables. Typically when a new instance is created, Python will call first
+`__new__` and then `__init__`.
+
+The method `__new__` is used to control how a new instance is created. Tbe method `__init__`
+determines how the instance variables are initialized.
+
+```python
+
+class Person(object):
+
+    def __new__(cls, *args):
+        print("__new__ called")
+        return object.__new__(cls)
+
+    def __init__(self):
+        print("__init__ called")
+
+d = Person()
+
+```
+
+A simple usecase for `__new__` is when trying to guarantee that only one instance of the class
+will be created.
+
+```python
+
+class Singleton(object):
+
+    __instance = None
+
+    def __new__(cls):
+        if cls.__instance is None:
+            print("creating...")
+            cls.__instance = object.__new__(cls)
+        return cls.__instance
+
+s1 = Singleton()
+s2 = Singleton()
+
+print(s1)
+print(s2)
+```
+
+Or simply using `__new__` to return a specific class depending on the confiruation of the parent
+class.
+
+```python
+
+class Animal(object):
+    def __new__(cls, legs):
+        if legs == 2:
+            return Biped()
+        else:
+            return Quadruped()
+
+
+class Biped(object):
+    def __init__(self):
+        print("Initializing 2-legged animal")
+
+
+class Quadruped(object):
+    def __init__(self):
+        print("Initializing 4-legged animal")
+
+
+anim1 = Animal(legs=4)
+anim2 = Animal(legs=2)
+
+```
+
+### What are getters and setters?
+
+The getters and setters are special methods, which can be used as if they are properties. Getters
+and setters are used  mainly in two scenarios:
+
+1. To allow to use method as if they are properties
+2. To perform a conversion or check before using the property
+3. To encapsulate the internal state of the object from external modification
+
+```python
+
+class Person(object):
+
+    def __init__(self, name="Nemo"):
+
+        # Protect the internal object state by making it protected
+        self.__name = name
+
+    @property
+    def name(self):
+        print("Getter called...")
+        return self.__name
+
+    @name.setter
+    def name(self, value):
+        print("Setter called...")
+        if len(value) > 255:
+            print("Maximum name length is 255 symbols...")
+        else:
+            self.__name = value
+
+
+# Get property value
+p = Person()
+print(p.name)
+print("")
+
+# Set the property value
+p.name = 'Branimir'
+print(p.name)
+print("")
+
+# Check and protect the property value
+p.name = '*' * 256
+print(p.name)
+print("")
+
+```
+
+### What is a super class?
+
+The super class is the parent with all its properties and methods. In some scenarios the child
+class might require to access the super class constructors or its methods. In Python the access
+to the parent class is enabled with the `super()`.
+
+
+
+### What are class variables?
+
+Class variables don't belong to a specific instance, they can be accessed
+by all instances. Usually useful to define constants available to all
+instances of the class.
+
+> WHAT does the class HAVE?
+
+Example:
+
+A doctor is a person, who can operate (specialization) and all doctors
+have the Hippocratic Oath.
+
+### What are class methods?
+
+Class methods like class variables are not bound to the instance but to the class itself.
+
+> WHAT does the class DO? (DO WHAT?) *
+
+Class methods are usually used to:
+
+1. Manipulate class variables
+2. Encapsulate methods in a namespace
+
+Example:
+
+    Math.abs(x)
+    Math.sin(x)
+    Math.cos(x)
+
+
+### What are private and protected variables and classes?
+
+- protected variables and classes can be accessed within the same package
+- private variables and classes can be accessed only within inside the class
+
+
+    TODO: Examples
+
+### What are abstract classes?
+
+Abstract classes are special type of classes used to define an set of methods with missing or
+partial implementation. Abstract classes are used mainly as templates for other classes. This
+way a program might use the interface of the abstract class without being aware of the concrete
+implementations.
+
+> "What the subclass MUST HAVE AND DO?"
+
+
+### What are interfaces?
+
+Interfaces are special type of abstract classes, whose methods MUST be
+overridden by the inheriting class. A given class can have many
+interfaces in contrast to abstract classes, which can be inherited only
+once.
+
+Notes
+- A class can have many interfaces
+- All of the members MUST be overridden
+
+### What are mixins?
+
+Mixins are used to group functionality into logical groups and add it to
+classes which require it. It basically solves the problem with exploding
+hierarchy. They are like LEGO pieces, which can be used in many places.
+
+Example:
+
+- A Server has keyboard, mouse, display
+- A Computer has keyboard, mouse, display and sound
+- A Tablet has display and sound
+
+Separate components as mixins and used them whenever required.
+
+Mixins don't have constructors and cannot be instantiated. They operate in  the same namespace
+of the calling class. This means that all variables and methods combined MUST have unique
+names in order to  avoid name collisions.
+
+Example:
+
+    class A(object):
+        test = false;
+
+    class B(object)
+        test = true;
+
+
+    class C(A, B):
+        pass
+
+
+The calling class sees test as one variable and will have the last value assigned to it.
+
+### What is an extension?
+
+Extensions add new functionality into existing classes. The classes are not aware of the extensions
+as they are not modified. Extensions are very useful for modifying build-in classes.
+
+Comparison:
+- Mixin      : Class is aware of the mixin
+- Extension  : Class is not aware of the extension
+
+
+### What is the object class?
+
+The object class is the root of all classes. New classes inherit form Object by default. It has
+several useful methods, which can be overridden and which affect how the object is represented
+and compared.
+
+Important features:
+
+- Hash code to uniquely identify the object
+- Method for the object representation
+- Equality operator
+
+The method __str__ provides the human friendly representation of the class. The new class can
+override it to give more information about the object.
+
+The __hash__ getter is a hash value returned from a hash function. Hash functions take arbitrary
+sizes and convert them to a data set of a fixed size. A small change in the input data set leads
+to a big change in the output data set. This is why they are used to identify objects. To
+objects are considered equal if they have the same hash code.
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+## Exception
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+## Collection
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+## Iterator
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+## Generator
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+## Coroutine
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+## Meta-Class
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+## Module
+
+What is a module, how to import modules, absolute and relative imports, differences between Python 2
+and Python 3.
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+## Dunder
+
+__str__, __rpr__, __new__, __eq__,

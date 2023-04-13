@@ -7,7 +7,7 @@ import time
 def run_server(ip_addr='127.0.0.1', port=503):
     """
     Simple echo server that will wait for a new client to send a connect request, wait for data from the client and
-    send the data received back to the client.
+    send the reversed data back to the client.
     """
 
     print('Server started on port {0}...'.format(port))
@@ -15,10 +15,10 @@ def run_server(ip_addr='127.0.0.1', port=503):
     # 1. Create the server socket object (AF_INET -> IPv4, SOCK_STREAM -> TCP)
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-    # 2. Bind the server socket to a specific address and service port
+    # 2. Bind the server socket to a specific address:port
     server.bind((ip_addr, port))
 
-    # 3. Start listening on socket
+    # 3. Start listening (SYN packet from the client)
     server.listen(5)
 
     # 4. Optionally configure the server port (linger option)
@@ -26,24 +26,20 @@ def run_server(ip_addr='127.0.0.1', port=503):
 
     while True:
 
-        # 5. The server waits until the remote client tries to connect to the server. This step represents the TCP
-        # 3-way handshake. If the handshake is successful a local copy of the client socket is returned.
-        client, addr_info = server.accept()
+        # 5. Wait for client connections (Wait for SYN and perform handshake)
+        session, addr_info = server.accept()
 
-        # 6. Wait for data from the client
-        message = client.recv(1024)
+        # 6. Handshake successful, wait for data from the client
+        message = session.recv(1024)
 
         # 7. Send data back to the client
         response = message[::-1]
-        client.send(response)
+        session.send(response)
 
-        # 8. Close the client connection
-        client.close()
+        # 8. Close the connection (send FIN to the client)
+        session.close()
 
-        # Poll frequence
         time.sleep(1)
-
-        # Print some debug info
         print('.')
 
 

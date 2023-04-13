@@ -10,7 +10,9 @@ class DeviceAbc(with_metaclass(ABCMeta)):
 
 
 class Device(DeviceAbc):
-    pass
+
+    def foo(self):
+        pass
 
 
 a = Device()
