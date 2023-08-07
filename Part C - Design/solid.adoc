@@ -1,0 +1,25 @@
+# SOLID
+
+The SOLID principles are a set of design principles for software development that aim to improve the maintainability, scalability, and extensibility of software systems.
+
+## Single Responsibility Principle (SRP)
+A class or function should have only one reason to change. In Python, you can create small and focused classes and functions that do one thing and do it well. For example, you can create a class that handles database operations, and another class that handles logging. By keeping each class focused on one responsibility, you can easily modify and test each class without affecting other parts of the system.
+
+## Open/Closed Principle (OCP)
+
+A class or function should be open for extension but closed for modification.
+In Python, you can use inheritance and composition to achieve this principle. Instead of modifying existing classes or functions, you can extend their behavior by creating new subclasses or wrapping them in decorators. For example, you can create a class that extends the behavior of an existing class by adding new methods, without modifying the existing class.
+
+## Liskov Substitution Principle (LSP)
+Subtypes must be substitutable for their base types.
+In Python, you can use type hints and abstract base classes (ABCs) to ensure that subtypes can be used interchangeably with their base types. For example, you can define an ABC that defines a common interface for a set of related classes. Subclasses can then implement this interface to ensure that they can be used interchangeably with the base class.
+
+## Interface Segregation Principle (ISP)
+Clients should not be forced to depend on interfaces they do not use.
+In Python, you can define narrow interfaces that are tailored to specific clients, instead of using a single, broad interface. This helps to reduce the complexity and coupling of the system. For example, you can define a small interface that provides a specific set of methods, instead of using a large interface that provides many methods that are not needed by the client.
+
+## Dependency Inversion Principle (DIP)
+
+High-level modules should not depend on low-level modules. Both should depend
+on abstractions.
+In Python, you can use dependency injection to achieve this principle. Instead of directly instantiating dependencies in a class or function, you can pass them in as parameters or inject them using a framework. This helps to decouple the system and makes it easier to test and maintain. For example, you can define a class that depends on an abstract interface, and then inject a concrete implementation of that interface at runtime.
