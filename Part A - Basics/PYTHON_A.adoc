@@ -1,0 +1,1449 @@
+= Module A: Basic Python Level
+:sectnums:
+:docinfo:
+:toc:
+// :hardbreaks:
+
+
+== Requirements
+The following pre-requisites are required to complete this module:
+
+=== Python Installation
+- Python 3.7 or higher (*_recommended_*)
+- Python 2.7 or higher
+
+
+=== Python IDE
+- PyCharm (*_recommended_*)
+- Visual Studio Code
+
+
+=== Version Control
+- Git Client with GitHub account (*_recommended_*)
+- SVN Client with SVN account
+
+
+== Introduction
+
+=== Hello, world!
+
+Our first program will greet us and tell us the result of the operation 1+1 .
+
+[source,python]
+----
+include::02_introduction/hello_world.py[]
+----
+
+
+Now if after evaluation of the code, we will see that...
+
+- we tell the computer what to do
+- print() is a pre-defined code ready to be used by the developer
+- print() uses a value to show it on the screen
+- print() can be used with pre-defined values such as 'Hello, world!'
+- print() can be used with the result of operations such as 1 + 1
+
+If we elaborate further we will see that a program generally is a...
+
+ - A sequence of instructions called statements
+ - Each statement might have expressions that return results
+ - Each statement might use pre-defined code blocks called functions
+
+=== Statements
+
+Statements are instructions that perform an action. It is executed for its side effects, such as
+modifying variables, controlling the flow of execution, or producing output. Statements do not
+have a value or result that can be used further in the code.
+
+[source,python]
+----
+include::02_introduction/statements.py[]
+----
+
+In the above example, we have two statements. The first statement assigns the value 5 to the
+variable x. The second statement prints the value of x to the screen. The first statement does
+not produce any output, but it does have a side effect of changing the value of x. The second
+statement produces output, but it does not have a side effect.
+
+=== Expressions
+Expressions are a combination of values, variables, operators, and function calls that produce a
+value when evaluated. Expressions can be used wherever a value is expected in Python, such as
+assigning a value, passing arguments to a function, or printing a value.
+
+[source,python]
+----
+include::02_introduction/expressions.py[]
+----
+
+In the above example, the first line is an expression that evaluates to the value 6. The second
+line is a statement that assigns the value of the expression 3 * (x + y) to the variable result.
+
+== Variables
+
+Let’s print the same text 5 times on the screen using the print function.
+
+[source,python]
+----
+include::03_variables/variables_start_condition.py[]
+----
+
+Now if we want to modify the text we have to change all 5 lines. Let’s modify our program a
+little bit to be more reusable. Now we make the function print to work with any text possible.
+For this purpose, we will use a variable. A variable is a data container that can be reused many
+times in the program.
+
+[source,python]
+----
+include::03_variables/variables_as_container.py[]
+----
+
+In the code above the variable text is declared and initialized. After this, it may be used many
+times in the program. Now we have to change only one line of code in case we need to change the
+message printed on the screen.
+
+Python has several pre-defined variable types. Let’s use a more complex example with the print
+function and see how it works:
+
+[source,python]
+----
+include::03_variables/variables_types.py[]
+----
+
+[source,console]
+----
+$ 100 <class 'int'>
+----
+
+We see that the variable is from type integer, but they are preceded by the word class. The class
+tells Python what type of data the variable stores and how Python can operate with the data. This
+can be demonstrated by using numbers of different types.
+
+[source,python]
+----
+include::03_variables/variables_float_sum.py[]
+----
+
+[source,console]
+----
+$ 2.0
+----
+
+In the example above Python analyses the code and deducts that a and b are integers and uses the
+integer class to check how to add them. Now let’s change the variable types to float:
+
+[source,python]
+----
+include::03_variables/variables_complex_sum.py[]
+----
+
+[source,console]
+----
+$ (2+2j)
+----
+
+The code is analyzed and Python deducts that now a and b are complex numbers andthus another
+type of data. In this case, Python will use the addition operation for this data class.
+
+=== Numerics
+
+Numeric variables are variables that hold numeric values. Python supports three types of numeric
+values:
+
+- Integer numbers
+- Floating-point numbers
+- Complex numbers
+
+==== Integers
+Integers are whole numbers, such as 1, 2, 3, 4, 5, etc. They can be positive or negative. They
+can also be written in binary, octal, or hexadecimal notation. Binary numbers are prefixed with
+`0b`, octal numbers are prefixed with `0o`, and hexadecimal numbers are prefixed with `0x`.
+
+[source,python]
+----
+include::03_variables/integer_variables.py[]
+----
+
+==== Floating-point numbers
+Floating-point numbers are numbers with a fractional part, such as 1.0, 2.0, 3.0, etc. They can
+also be written in scientific notation, with `e` indicating the power of 10.
+
+[source,python]
+----
+include::03_variables/float_variables.py[]
+----
+
+==== Complex numbers
+Complex numbers are numbers with a real and imaginary part, such as 1+2j, 2+4j, 3+6j, etc.
+
+[source,python]
+----
+include::03_variables/complex_numbers.py[]
+----
+
+=== Booleans
+The boolean type is a special type that can only have two values: `True` and `False`. It is used
+to represent the truth values of logic and comparison operations. In Python, boolean values are
+written as `True` and `False` (the first letter is capitalized).
+
+[source,python]
+----
+include::03_variables/boolean_variables.py[]
+----
+
+=== Lists
+A list is a collection of items that are ordered and changeable. Lists are written with square
+brackets `[]`. Each item in a list is separated by a comma `,`. Lists can contain items of any
+data type, including other lists. Lists are mutable, meaning that you can change the values of
+items in a list. You can also add and remove items from a list. Lists are zero-indexed, meaning
+that the first item in a list has index 0.
+
+[source,python]
+----
+include::03_variables/list_variables.py[]
+----
+
+[source,console]
+----
+[1, 2, 3]
+[[1, 2, 3], [1, 2, 3]]
+----
+
+=== Tuples
+A tuple is a collection of items that are ordered and unchangeable. Tuples are written with
+parentheses `()`. Each item in a tuple is separated by a comma `,`. Tuples can contain items of
+any data type, including other tuples. Tuples are immutable, meaning that you cannot change the
+values of items in a tuple. Tuples are zero-indexed, meaning that the first item in a tuple has
+index 0.
+
+[source,python]
+----
+include::03_variables/tuple_variables.py[]
+----
+
+[source,console]
+----
+(1, 2, 3)
+((1, 2, 3), (1, 2, 3))
+----
+
+=== Sets
+A set is a collection of items that are unordered and unindexed. Sets are written with curly
+braces `{}`. Each item in a set is separated by a comma `,`. Sets can contain items of any data
+type, but they cannot contain duplicate items. Sets are mutable, meaning that you can change the
+values of items in a set.
+
+[source,python]
+----
+include::03_variables/set_variables.py[]
+----
+
+[source,console]
+----
+{1, 2, 3}
+{{1, 2, 3}, {1, 2, 3}}
+----
+
+=== Dictionaries
+A dictionary is a collection of items that are unordered, changeable, and indexed. Dictionaries
+are written with curly braces `{}`. Each item in a dictionary is written as a key-value pair,
+separated by a colon `:`. Each key-value pair is separated by a comma `,`. Dictionaries can
+contain items of any data type, but they cannot contain duplicate keys. Dictionaries are mutable,
+meaning that you can change the values of items in a dictionary.
+
+[source,python]
+----
+include::03_variables/dictionary_variables.py[]
+----
+
+[source,console]
+----
+{'a': 1, 'b': 2, 'c': 3}
+{'a': {'a': 1, 'b': 2, 'c': 3}, 'b': {'a': 1, 'b': 2, 'c': 3}}
+----
+
+=== Strings
+
+String variables are variables that hold string values. A string is a sequence of characters
+enclosed in single quotes ' or double quotes ".
+
+[source,python]
+----
+include::03_variables/string_variables.py[]
+----
+
+==== Concatenation
+String concatenation refers to the process of combining two or more strings into a single string.
+
+[source,python]
+----
+include::03_variables/string_concatenation.py[]
+----
+
+==== Interpolation
+String interpolation refers to the process of embedding expressions or variables within string
+literals to create formatted strings. It allows you to dynamically insert values into a string.
+
+[source,python]
+----
+include::03_variables/string_interpolation.py[]
+----
+
+==== Escaping
+Escaping refers to the process of inserting a special character into a string to change the
+meaning of the string literal (usually reserved by the language itself). It is done by prefixing
+the special character with a backslash \.
+
+[source,python]
+----
+include::03_variables/string_escaping.py[]
+----
+
+Some of the most common escape sequences are:
+
+- \n - newline
+- \\ - backslash
+- \' - single quote
+- \" - double quote
+
+
+==== Indexing
+Indexing refers to the process of accessing individual characters in a string by their position.
+The position of a character in a string is called its index. The first character in a string has
+index 0, the second character has index 1, and so on.
+
+[source,python]
+----
+include::03_variables/string_indexing.py[]
+----
+
+==== Slicing
+String slicing in Python allows you to extract a portion of a string by specifying a range of
+indices. The format of the slice operator is `[<start>: <end>: <step>]`.
+
+In slicing, the start index is inclusive, and the end index is exclusive. If the start index is
+not specified, it defaults to the beginning of the string. If the end index is not specified, it
+defaults to the end of the string. The step value indicates the stride or the number of
+characters to skip between each character in the slice.
+
+[source,python]
+----
+include::03_variables/string_slicing.py[]
+----
+
+==== Case
+Python provides several methods for changing the case of a string. The most common ones are:
+
+- `upper()` - converts all characters to uppercase
+- `lower()` - converts all characters to lowercase
+- `title()` - converts the first character of each word to uppercase and the rest to lowercase
+- `capitalize()` - converts the first character to uppercase and the rest to lowercase
+- `swapcase()` - converts uppercase characters to lowercase and vice versa
+
+[source,python]
+----
+include::03_variables/string_cases.py[]
+----
+
+==== Length
+The length of a string is the number of characters in the string. You can use the `len()` function
+to get the length of a string.
+
+[source,python]
+----
+include::03_variables/string_length.py[]
+----
+
+==== Splitting
+The `split()` method splits a string into a list of strings based on a delimiter. The delimiter
+is a string that separates the individual strings in the list. If no delimiter is specified, the
+string is split on whitespace. The `splitlines()` method splits a string into a list of strings
+based on the line break character `\n`.
+
+[source,python]
+----
+include::03_variables/string_splitting.py[]
+----
+
+[source,console]
+----
+['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+['1', '2', '3 4 5 6 7 8 9 10']
+[' First line', 'Second line', 'Third line']
+----
+
+==== Joining
+The `join()` method joins a list of strings into a single string using the specified delimiter. It
+is the inverse of the `split()` method. The `join()` method is called on the delimiter and takes
+the list of strings as an argument.
+
+[source,python]
+----
+include::03_variables/string_joining.py[]
+----
+
+[source,console]
+----
+['1', '2', '3', '4', '5', '6', '7', '8', '9']
+123456789
+1 2 3 4 5 6 7 8 9
+1,2,3,4,5,6,7,8,9
+----
+
+
+=== None
+The None type is a special type that can only have one value: `None`. It is used to represent
+the absence of a value. None is often used as a placeholder value when you need to initialize a
+variable but don't have a value for it yet. None is also returned by functions that don't explicitly
+return a value. For example, the `print()` function returns None.
+
+[source,python]
+----
+include::03_variables/none_variables.py[]
+----
+
+=== Mutable vs Immutable
+
+Mutable objects are objects whose values can be changed after they are created and immutable objects
+are objects whose values cannot be changed after they are created.
+
+In Python, the following types are mutable:
+
+- Lists
+- Sets
+- Dictionaries
+
+[source,python]
+----
+include::03_variables/variable_mutable.py[]
+----
+
+
+The following types are immutable:
+
+- Integers
+- Floating-point numbers
+- Complex numbers
+- Booleans
+- Tuples
+- Strings
+
+[source,python]
+----
+include::03_variables/variable_immutable.py[]
+----
+
+
+== Comments
+Comments are lines of text that are ignored by the Python interpreter. They are used to document
+code and make it easier to understand. Comments can be single-line or multi-line. Single-line
+comments start with a hash `#` and continue until the end of the line. Multi-line comments start
+and end with three quotes `"""`.
+
+=== Single-line comments
+
+[source,python]
+----
+include::04_comments/comment_single_line.py[]
+----
+
+=== Multi-line comments
+
+[source,python]
+----
+include::04_comments/comment_multi_line.py[]
+----
+
+== Operators
+Operators are special symbols that perform operations on one or more operands. Python supports
+the following types of operators:
+
+- Arithmetic operators
+- Assignment operators
+- Comparison operators
+- Logical operators
+- Identity operators
+- Membership operators
+- Bitwise operators
+
+=== Arithmetic operators
+Arithmetic operators are used to perform arithmetic operations on numeric operands. Bear in mind
+that different major versions of Python may have different operators. For example, Python 2 uses
+`/` for integer division, while Python 3 uses `//` for integer division. For simplicity, we will
+only use Python 3 operators in this book.
+
+- `+`   - addition
+- `-`   - subtraction
+- `*`   - multiplication
+- `/`   - division (Note: Python 2 uses `/` for integer division)
+- `//`  - floor division (quotient)
+- `%`   - modulus (remainder)
+- `**`  - exponentiation (power)
+
+
+=== Comparison operators
+Comparison operators are used to compare the values of two operands. They return a boolean value
+(`True` or `False`) depending on whether the comparison is true or false. The following comparison
+operators are supported in Python:
+
+- `==` - equal to
+- `!=` - not equal to
+- `>`  - greater than
+- `<`  - less than
+- `>=` - greater than or equal to
+- `<=` - less than or equal to
+
+=== Logical operators
+Logical operators are used to combine the results of two or more comparison operations. They
+return a boolean value (`True` or `False`) depending on whether the result of the logical
+operation is true or false. The following logical operators are supported in Python:
+
+- `and` - logical AND
+- `or`  - logical OR
+- `not` - logical NOT
+
+=== Identity operators
+Identity operators are used to compare the memory addresses of two operands. They return a
+boolean value (`True` or `False`) depending on whether the memory addresses are equal or not.
+The following identity operators are supported in Python:
+
+- `is`  - is equal to
+- `is not` - is not equal to
+
+=== Membership operators
+Membership operators are used to check whether a value is a member of a collection. They return
+a boolean value (`True` or `False`) depending on whether the value is a member of the collection
+or not. The following membership operators are supported in Python:
+
+- `in`     - is a member of
+- `not in` - is not a member of
+
+=== Bitwise operators
+Bitwise operators are used to perform bitwise operations on the binary representations of integer
+operands. They return an integer value depending on the result of the bitwise operation. The
+following bitwise operators are supported in Python:
+
+- `&`  - bitwise AND
+- `|`  - bitwise OR
+- `^`  - bitwise XOR
+- `~`  - bitwise NOT
+- `<<` - bitwise left shift
+- `>>` - bitwise right shift
+
+=== Assignment operators
+Assignment operators are used in programming languages, including Python, to assign values to
+variables. They combine the assignment operation with an arithmetic or logical operation, making
+it possible to perform an operation and assign the result to a variable in a single statement. The
+following assignment operators are supported in Python:
+
+- `=`   - assign
+- `+=`  - add and assign
+- `-=`  - subtract and assign
+- `*=`  - multiply and assign
+- `/=`  - divide and assign
+- `//=` - floor divide and assign
+- `%=`  - modulus and assign
+- `**=` - exponentiate and assign
+- `&=`  - bitwise AND and assign
+- `|=`  - bitwise OR and assign
+- `^=`  - bitwise XOR and assign
+- `>>=` - bitwise right shift and assign
+- `<<=` - bitwise left shift and assign
+
+
+=== Conditional operators
+Conditional operators or also ternary operators are used to evaluate a condition and return one
+of two values depending on whether the condition is true or false. The following conditional
+operators are supported in Python:
+
+- `a if condition else b` - if condition is true, return a, otherwise return b
+
+[source,python]
+----
+include::05_operators/operators_conditional.py[]
+----
+
+
+== User input
+The `input()` function is used to get user input from the keyboard. It takes a single argument,
+which is the prompt to display to the user. The prompt is optional. If no prompt is specified,
+the user will not see anything when they are prompted to enter input.
+
+=== User input in Python 2
+In Python 2, the `input()` function evaluates the user input as a Python expression and returns
+the result. This is a security risk because it allows the user to execute arbitrary Python code.
+To avoid this, use the `raw_input()` function instead. The `raw_input()` function returns the
+user input as a string.
+
+[source,python]
+----
+include::06_user_input/user_input_python2.py[]
+----
+
+=== User input in Python 3
+In Python 3, the `input()` function returns the user input as a string. To evaluate the user
+input as a Python expression, use the `eval()` function. The `eval()` function takes a string
+as an argument and evaluates it as a Python expression. It returns the result of the expression.
+
+[source,python]
+----
+include::06_user_input/user_input_python3.py[]
+----
+
+
+=== Writing compatible code
+To write code that is compatible with both Python 2 and Python 3, use the `six` module. The
+`six` module provides a function called `input()` that works the same way in both Python 2 and
+Python 3. The `six` module is not part of the Python standard library. It must be installed
+separately. To install the `six` module, run the following command:
+
+[source,bash]
+----
+pip install six
+----
+
+An example of using the `six` module to get user input is shown below.
+
+[source,python]
+----
+include::06_user_input/user_input_with_six.py[]
+----
+
+
+== Control flow
+Control flow statements are used to control the order in which statements are executed in a
+program. They are used to make decisions and repeat statements. Python supports the following
+types of control flow statements:
+
+- `if` statement
+- `for` statement
+- `while` statement
+- `break` statement
+- `continue` statement
+- `pass` statement
+
+=== if statement
+The `if` statement is used to make decisions in a program. It evaluates a condition and executes
+a block of code if the condition is true. The `if` statement can also be combined with an `elif`
+statement to execute a block of code if  the condition is false and another condition is true.
+The `elif` statement can be used multiple times to check multiple conditions. The `if` statement
+can also be combined with an `else` statement to execute a block of code if all conditions are
+false.
+
+[source,python]
+----
+include::07_control_flow/if_statement.py[]
+----
+
+=== for statement
+The `for` statement is used to iterate over the items in a collection. It can also be used to
+iterate over a range of numbers. The `for` statement can be combined with an `else` statement to
+execute a block of code when the loop is finished without breaking out of the loop.
+
+[source,python]
+----
+include::07_control_flow/for_statement.py[]
+----
+
+=== while statement
+The `while` statement is used to execute a block of code while a condition is true. The `while`
+statement can be combined with an `else` statement to execute a block of code when the loop is
+finished without breaking out of the loop.
+
+[source,python]
+----
+include::07_control_flow/while_statement.py[]
+----
+
+=== break statement
+The `break` statement inside a loop to stop the loop from executing any further. The `break`
+statement can be used inside a `for` or `while` loop.
+
+[source,python]
+----
+include::07_control_flow/break_statement.py[]
+----
+
+=== continue statement
+The `continue` statement inside a loop to skip the rest of the statements in the loop and continue
+with the next iteration of the loop. The `continue` statement can be used inside a `for` or
+`while` loop.
+
+[source,python]
+----
+include::07_control_flow/continue_statement.py[]
+----
+
+=== pass statement
+The `pass` statement is used as a placeholder for code that has not been implemented yet. It is
+used to prevent a syntax error when a statement is required syntactically but you do not want to
+execute any code.
+
+[source,python]
+----
+include::07_control_flow/pass_statement.py[]
+----
+
+== Functions
+Functions are used to group statements together and give them a name. They are used to make code
+more readable and reusable. Functions are defined using the `def` keyword. The `def` keyword is
+followed by the name of the function, a list of parameters in parentheses, and a colon. The
+statements that make up the body of the function are indented.
+
+[source,python]
+----
+include::08_functions/function_structure.py[]
+----
+
+Let's break down the different components of a function:
+
+- *Function name*: This is the name you give to your function. It should be descriptive and
+follow the Python naming conventions (lowercase with words separated by underscores).
+
+- *Parameters*: These are optional input variables that you can define in the function signature.
+They act as placeholders for values that will be passed into the function when it is called. You
+can have multiple parameters separated by commas.
+
+- *Docstring*: This is an optional string enclosed in triple quotes immediately after the function
+definition. It provides a description of the function's purpose, parameters, and return value.
+It is good practice to include docstrings to document your functions.
+
+- *Function body*: This is the block of code that gets executed when the function is called. It can
+contain any valid Python code, such as variable assignments, conditional statements, loops, and
+other function calls.
+
+- *Return statement*: This is an optional statement that specifies the value or values that the
+function should return when it finishes executing. If no return statement is provided, the
+function returns None by default. You can return a single value or multiple values as a tuple.
+
+=== Positional arguments
+Positional arguments are arguments that are passed to a function by position. The first argument
+is assigned to the first parameter, the second argument is assigned to the second parameter, and
+so on. Positional arguments are the default type of arguments in Python.
+
+[source,python]
+----
+include::08_functions/positional_arguments.py[]
+----
+
+=== Named arguments
+Named or also keyword arguments are arguments that are passed to a function by name. They are used
+to specify which parameter each argument should be assigned to. Keyword arguments are optional
+and can be specified in any order. They are useful when a function has many parameters and you
+want to specify only a few of them.
+
+[source,python]
+----
+include::08_functions/named_arguments.py[]
+----
+
+=== Default arguments
+Default arguments are arguments that have a default value specified in the function signature.
+They are used when a function has optional parameters. If a default argument is not specified
+when the function is called, the default value is used instead. Default arguments must be
+specified after all the required arguments.
+
+[source,python]
+----
+include::08_functions/default_arguments.py[]
+----
+
+=== Variable number of arguments
+Variable number of arguments are arguments that can take a variable number of values. They are
+used when you do not know how many arguments will be passed to a function. Variable number of
+arguments are specified using the `\*` operator in the function signature. The arguments are
+collected into a tuple. You can also use the `**` operator to collect keyword arguments into a
+dictionary.
+
+**Python 2**
+
+[source,python]
+----
+include::08_functions/variable_arguments_2.py[]
+----
+
+**Python 3**
+
+[source,python]
+----
+include::08_functions/variable_arguments_3.py[]
+----
+
+
+=== Unpacking arguments
+Unpacking arguments are arguments that are unpacked from a list or tuple. They are used when you
+want to pass the elements of a list or tuple as arguments to a function. Unpacking arguments are
+specified using the `\*` operator in the function call. The elements of the list or tuple are
+assigned to the parameters in the function signature.
+
+[source,python]
+----
+include::08_functions/unpacking_arguments.py[]
+----
+
+=== Lambda functions
+Lambda functions are anonymous functions that are defined using the `lambda` keyword. They are
+used when you need a function for a short period of time. Lambda functions can only contain a
+single expression. The expression is evaluated and the result is returned when the function is
+called. Lambda functions can be assigned to a variable or passed as an argument to another
+function.
+
+[source,python]
+----
+include::08_functions/lambda_functions.py[]
+----
+
+=== Docstrings
+Docstrings are optional strings enclosed in triple quotes immediately after the function definition.
+They provide a description of the function's purpose, parameters, and return value. Docstrings are
+used to document your functions. They can be accessed using the `__doc__` attribute of the function.
+
+[source,python]
+----
+include::08_functions/function_docstrings.py[]
+----
+
+=== Function scope
+The scope of a variable is the region of the program where it is defined. The scope of a variable
+is determined by where it is defined. Variables defined inside a function are local to that
+function. They can only be accessed inside the function. Variables defined outside a function are
+global to the entire program. They can be accessed anywhere in the program. Local variables can
+have the same name as global variables. However, they are completely separate variables and are
+not related in any way. Local variables take precedence over global variables inside a function.
+
+[source,python]
+----
+include::08_functions/function_scope.py[]
+----
+
+=== Recursion
+Recursion is the process of calling a function from within itself. It is used to solve problems
+that can be broken down into smaller problems of the same type. Recursion is used to solve
+problems that can be broken down into smaller problems of the same type. It is important to note
+that recursion can lead to infinite loops if not implemented correctly. You must ensure that the
+base case is reached at some point. The base case is the case where the function does not call
+itself. It is used to stop the recursion. The base case is usually the simplest case that can be
+solved without recursion. The recursive case is the case where the function calls itself.
+
+[source,python]
+----
+include::08_functions/function_recursion.py[]
+----
+
+=== Nested functions
+Nested functions are functions that are defined inside another function. They are used to
+encapsulate functionality that is only used inside the function. Nested functions can access
+variables defined in the enclosing function. However, they cannot modify them. If you want to
+modify a variable defined in the enclosing function, you must use the `nonlocal` keyword.
+
+[source,python]
+----
+include::08_functions/nested_functions.py[]
+----
+
+=== Closures
+Closures are functions that return another function. They are used to create functions that can
+access variables defined in the enclosing function. The enclosing function must return the nested
+function. The nested function can access variables defined in the enclosing function. However, it
+cannot modify them.
+
+[source,python]
+----
+include::08_functions/function_closures.py[]
+----
+
+
+=== Function decorators
+Function decorators are functions that take a function as an argument and return a new function.
+They are used to modify the behavior of a function without changing the function itself. Function
+decorators are specified using the `@` operator before the function definition. The function
+decorator is called when the function is defined.
+
+[source,python]
+----
+include::08_functions/function_decorator.py[]
+----
+
+=== Factory functions
+The function factory pattern is a design pattern that is used to create functions dynamically.
+It is used to create functions that have similar functionality but different parameters. The
+function factory pattern is used to create functions that have similar functionality but different
+parameters.
+
+[source,python]
+----
+include::08_functions/function_factory.py[]
+----
+
+=== Callback functions
+Callbacks with closures involve passing a function as an argument to another function and
+executing that function within the outer function's scope.
+
+=== Memoization
+Memoization is a technique used to optimize function calls by caching the results of expensive
+computations and reusing them when the same inputs occur again. Closures can be leveraged to
+implement memoization by creating a wrapper function that encapsulates the memoization logic. It
+is important to note that memoization can lead to memory leaks if not implemented correctly. You
+must ensure that the cache is cleared when it is no longer needed.
+
+[source,python]
+----
+include::08_functions/function_memoization.py[]
+----
+
+=== Function annotations
+For Python 3.0 and above, you can specify the types of the parameters and return value of a
+Function annotations are optional type hints that can be added to function parameters and
+the return value. They are used to specify the types of the parameters and return value. Function
+annotations are specified using the `:` operator after the parameter name or return value. The
+type is specified after the `:` operator. You can also specify the type of the return value using
+the `->` operator after the closing parenthesis of the parameter list.
+
+[source,python]
+----
+include::08_functions/function_annotations.py[]
+----
+
+=== Function attributes
+Function attributes are attributes that are defined on a function. They are used to store
+information about a function.
+
+[source,python]
+----
+include::08_functions/function_attributes.py[]
+----
+
+=== Function introspection
+Function introspection is the process of examining a function's attributes. It is used to get
+information about a function.
+
+- use `dir()` to get a list of all the attributes
+- use `__name__` to get the name of a function
+- use `__doc__`  to get the docstring of a function
+- use `__code__` to get the code object of a function
+- use `__defaults__` to get the default values of a function's parameter
+- use `__kwdefaults__` to get the default values of a function's keyword parameters
+- use `__annotations__` to get the annotations of a function's parameters and return value
+
+[source,python]
+----
+include::08_functions/function_introspection.py[]
+----
+
+
+== Classes
+
+Classes are blueprints or instructions on how to build an object running on the computer and
+using the required memory resources. Classes provide a way to structure and organize code,
+promoting reusability (the code is written once and used many times) and maintainability (the
+code can be changed easily).
+
+The class answers the following questions:
+
+- What parts does the object HAVE? (HAVE WHAT?)
+- What does the object DO? (DO WHAT?)
+
+
+
+=== Constructor and Initializer
+
+Constructors are special methods inside a class that create and initialize the objects of a class.
+In Python the object is created wih the special method `\__new__` and then initialized with the
+special method `\__init__`.
+
+[source,python]
+----
+include::09_classes/class_constructors.py[]
+----
+
+This method is rarely used in Python because it is not needed in most cases. It is used when you
+want to customize the creation of an instance. Some of the most common use cases for the
+`\__new__` method are:
+
+- Create a class that inherits from a different class depending on some condition
+- Limit the number of instances that can be created for this class (e.g. Singleton)
+- Create a class factory
+
+
+[source,python]
+----
+include::09_classes/method_new_singleton.py[]
+----
+
+[source,python]
+----
+include::09_classes/method_new_class_factory.py[]
+----
+
+
+[source,python]
+----
+include::09_classes/method_new_conditional_inheritance.py[]
+----
+
+
+The `\__init__` method is called automatically when the instance is created. It is used to
+initialize the instance variables of the class. It is also sometimes wrongly called the
+constructor method as it is the most commonly used method when declaring the class. Some of
+the most common use cases or the `\__init__` method are:
+
+- Initialize the instance variables of the class
+- Validate the values of the instance variables
+- Perform any other initialization steps
+
+
+[source,python]
+----
+include::09_classes/method_init.py[]
+----
+
+=== Instance
+The constructor returns a class instance (object) as a concrete realization of the class. This
+means that the object has well-defined values for all the instance variables. Each instance is
+unique and has its own identity. It is a unique number that is assigned to the object when it is
+created. The identity of an object never changes during its lifetime. It is used mainly to compare
+objects using the `is` operator. The `is` operator returns `True` if the identity of the two
+objects is the same and `False` otherwise. The identity of an object is obtained by the `id()`
+function.
+
+[source,python]
+----
+include::09_classes/class_instance.py[]
+----
+
+
+=== Instance Attributes
+Each instance has its own set of variables called also attributes. They represent the internal
+state of the object. The instance variables are defined inside __init__.
+
+[source,python]
+----
+include::09_classes/instance_attributes.py[]
+----
+
+=== Instance Methods
+Instance methods are functions that are defined inside an instance of a class. The first
+parameter of an instance method is always a reference to the current instance. It is usually
+called `self`. Instance methods can  only be used when the instance of the class has been created.
+
+[source,python]
+----
+include::09_classes/instance_methods.py[]
+----
+
+
+=== Class Attributes
+Class attributes are variables that are defined inside a class. They represent the internal state
+of the class. Class attributes are shared by all instances of the class. They are defined outside
+the `__init__` method. Class attributes can be accessed using the class name or an instance of
+the class. If you try to access a class attribute that does not exist, Python will look for it in
+the parent classes until it reaches the top of the inheritance tree. Some of the most common use
+cases for class attributes are:
+
+- Define constants
+- Define default values for class attributes
+- Define class attributes that are shared by all instances of the class
+
+
+[source,python]
+----
+include::09_classes/class_attributes.py[]
+----
+
+It is important to note that if the class attribute is used with self in any of the instance methods,
+it will be treated as an instance attribute and will be accessible only from the instance of the
+class. This might introduce bugs in your code if you are not careful.
+
+[source,python]
+----
+include::09_classes/class_variables_pitfalls.py[]
+----
+
+
+=== Class Methods
+Class methods are functions that are defined inside a class. The first parameter of a class method
+is always a reference to the class. It is usually called `cls`. Class methods can be used before
+the instance of the class has been created. Class methods are defined using the `@classmethod`
+decorator. Some of the most common use cases for class methods are:
+
+- Create new instances of the class
+- Modify existing instances of the class
+- Modify the class itself
+
+
+[source,python]
+----
+include::09_classes/class_method_create_instance.py[]
+----
+
+[source,python]
+----
+include::09_classes/class_method_modify_itself.py[]
+----
+
+
+[source,python]
+----
+include::09_classes/class_method_modify_instances.py[]
+----
+
+
+=== Static Methods
+
+Static methods are functions that are defined inside a class. They are not bound to the class or
+any instances of the class. They are defined using the `@staticmethod` decorator. Static methods
+can be used before the instance of the class has been created. The static method are used mainly
+to group functions that have some logical connection to the class but do not require access to
+the class itself.
+
+[source,python]
+----
+include::09_classes/static_methods.py[]
+----
+
+
+=== Properties
+The properties are special methods that are used to access and modify the instance attributes of
+a class. They are defined using the `@property` decorator. The properties enapsulate the internal
+state of the object and provide a public interface for accessing and modifying it. For example,
+the setter property can be used to validate the value of an instance attribute before setting it.
+
+When to use properties:
+
+- When you want to validate the value of an instance attribute before setting it
+- When you want to compute the value of an instance attribute when it is accessed
+- When you want to hide the internal implementation details of an instance attribute
+
+
+[source,python]
+----
+include::09_classes/properties.py[]
+----
+
+=== Superclass
+A superclass in Python is a reference to the parent class of a class. It is used to access the
+attributes and methods of the parent class. The superclass is specified using the `super()`.
+
+When to use super:
+
+- When you want to call the methods of the parent class
+- When you want to access the attributes the parent class
+
+[source,python]
+----
+include::09_classes/superclass_attributes.py[]
+----
+
+[source,python]
+----
+include::09_classes/superclass_constructor.py[]
+----
+
+
+=== Class Inheritance
+Class inheritance is the process of creating a new class from one or more base classes. The new
+class is called the subclass or the derived class. The base class is called the superclass or the
+parent class.
+
+The subclass inherits the attributes and methods of the superclass. It can also override the
+attributes and methods of the superclass. Class inheritance is used to reuse code and to
+represent an is-a relationship. The subclass is a specialized version of the superclass.
+
+Python supports single inheritance and multiple inheritance. Some of the most common use cases for
+inheritance are:
+
+- Reuse code (a student inherits name and age from a person)
+- Represent an is-a relationship (a student is a person)
+
+[source,python]
+----
+include::09_classes/inheritance_single.py[]
+----
+
+[source,python]
+----
+include::09_classes/inheritance_multiple.py[]
+----
+
+
+
+=== Method Resolution Order
+
+Method Resolution Order (MRO) is a critical concept in Python's object-oriented programming,
+especially when dealing with inheritance and classes. It defines the order in which methods are
+searched and executed in a class hierarchy. The MRO ensures that when you call a method on an
+object, Python knows which method to execute.
+
+The algorithm used to determine the MRO of a class is called the C3 linearization algorithm. It
+searches the class hierarchy depth first and for  each depth level it searches from left to right
+. The MRO of a class can be accessed using the `mro()` method.
+
+The MRO algorithm is the unique algorithm that achieves several desirable properties:
+
+1. Each ancestor class appears exactly once
+2. A derived class always appears before its ancestor ("monotonicity")
+3. Direct parents of the same class should appear in the same order as they are listed in class
+definition ("consistent local precedence order")
+4. If children of class A always appear before children of class B, then A should appear before B
+("consistent extended precedence order")
+
+For more information about the C3 linearization algorithm, see the following resources:
+
+- https://en.wikipedia.org/wiki/C3_linearization
+- https://www.python.org/download/releases/2.3/mro/
+
+
+[source,python]
+----
+include::09_classes/mro_bottom_first.py[]
+----
+
+
+[source,python]
+----
+include::09_classes/mro_left_first.py[]
+----
+
+[source,python]
+----
+include::09_classes/mro_complex.py[]
+----
+
+[source,python]
+----
+include::09_classes/mro_diamond.py[]
+----
+
+[source,python]
+----
+include::09_classes/mro_unresolved.py[]
+----
+
+=== Abstract Class
+In Python, an abstract class is a class that cannot be instantiated directly. It is meant to
+serve as a blueprint for other classes and is designed to be subclassed. Abstract classes often
+contain abstract methods, which are methods declared but not implemented in the abstract class.
+Subclasses of the abstract class are then required to provide concrete implementations for these
+abstract methods.
+
+It is also possible for an abstract class to have concrete methods that are implemented in the
+abstract class itself. This is useful when you want to provide a default implementation that can
+be overridden by subclasses. In this case, the abstract class can be instantiated directly and
+the class is also called a *template class*.
+
+Python does not have a built-in abstract class keyword. However, you can create an abstract class
+using the `abc` module. The `abc` module provides a metaclass called `ABCMeta` that allows you to
+create abstract classes. An abstract class is created by inheriting from the `ABCMeta` metaclass
+and specifying one or more abstract methods using the `@abstractmethod` decorator.
+
+The `@abstractmethod` decorator can be stacked with other decorators, such as `@classmethod` and
+`@staticmethod`, on the abstract method.
+
+In case you have to write code that is compatible with both Python 2 and Python 3, you can use the
+`six` module. The `six` module provides all the functionality of the `abc` module in a way that
+is compatible with both Python 2 and Python 3. The `six` module is not part of the Python standard
+library. It must be installed separately. To install the `six` module, run the following command:
+
+[source,bash]
+----
+pip install six
+----
+
+Some examples of using the `abc` module to create abstract classes are shown below:
+
+[source,python]
+----
+include::09_classes/abstract_class_python2.py[]
+----
+
+[source,python]
+----
+include::09_classes/abstract_class_python3.py[]
+----
+
+[source,python]
+----
+include::09_classes/abstract_class_stacked_properties.py[]
+----
+
+=== Interface Class
+An interface is a class that contains only abstract methods. It is used to define the interface
+of a class without providing an implementation. An interface is a contract that a class must
+implement. Python does not offer direct support for interfaces. However, you can create an
+abstract class that emulates an interface (see the previous section for more information).
+
+
+=== Mixin Class
+A mixin is a class that contains methods that can be used by other classes without having to be
+the parent class of those classes. It is used to provide a common set of methods to multiple
+classes. Mixins are not meant to be instantiated directly. They are meant to be inherited by
+other classes. Mixins are usually named with the suffix "Mixin" to indicate that they are not
+meant to be instantiated directly. Some examples of mixins are shown below.
+
+[source,python]
+----
+include::09_classes/mixin.py[]
+----
+
+=== Class as a decorator
+A class can be used as a decorator by implementing the `__call__` method. The `__call__` method
+is called when the class is used as a decorator. It takes a function as an argument and returns
+a new function. The new function is called when the decorated function is called. The `__call__`
+method can be used to add functionality to a function without modifying the function itself.
+
+
+
+[source,python]
+----
+include::09_classes/class_decorator.py[]
+----
+
+
+=== Introspection
+The class introspection is the process of examining a class's attributes. It is used to get
+information about a class.
+
+- use `dir()` to get a list of all the attributes
+- use `\__class__` to get the class of an object
+- use `\__bases__` to get the base classes of a class
+- use `\__subclasses__` to get the subclasses of a class
+- use `\__mro__` to get the method resolution order of a class
+- use `\__name__` to get the name of a class
+- use `\__doc__`  to get the docstring of a class
+- use `\__dict__` to get the attributes of a class
+- use `\__slots__` to get the slots of a class
+- use `\__annotations__` to get the annotations of a class
+
+== OOP
+
+=== Abstraction
+Abstract means a concept or an Idea which is not associated with any particular instance. Using
+abstract class/Interface we express the intent of the class rather than the actual implementation
+. In a way, one class should not know the inner details of another in order to use it, just
+knowing the interfaces should be good enough.
+
+Abstraction is the process of simplifying complex reality by modeling classes based on the
+essential properties and behaviors relevant to the problem at hand. It involves hiding
+unnecessary details while exposing only the relevant features of an object.
+
+Key points about abstraction:
+
+- Abstraction focuses on the "what" an object does rather than "how" it does it.
+- It allows you to define a clear and high-level interface for interacting with objects.
+- Abstract classes or interfaces provide a blueprint for other classes to follow.
+- Abstraction helps manage complexity and enhances code readability.
+
+=== Inheritance
+Inheritance is the process of creating a new class from an existing class. The new class is called
+the subclass or derived class. The existing class is called the superclass or base class. The
+subclass inherits the attributes and methods of the superclass. Inheritance is used to reuse code
+and to represent an is-a relationship.
+
+[source,python]
+----
+include::10_oop/inheritance.py[]
+----
+
+
+=== Encapsulation
+Encapsulation is the process of hiding the internal implementation details of an object from the
+outside world. Encapsulation is achieved by making the internal state of an object private and
+providing public access to it using methods. Python offers no mechanism for making attributes
+private and relies on naming conventions to distinguish between public and private attributes.
+Protected attributes are prefixed with a single underscore and private attributes are prefixed
+with a double underscore.
+
+Key points about encapsulation:
+
+- Encapsulation involves bundling data (attributes) and methods that operate on that data within a
+single unit (class).
+- Access to the internal state is controlled by providing public methods (getters and setters).
+- Encapsulation helps maintain data integrity and provides a clear boundary between an object and
+its external environment.
+
+==== Pulbic attributes and methods
+Public attributes and methods are accessible from outside the class. They are used to define the
+interface of the class.
+
+==== Protected attributes and methods
+Protected attributes and methods are accessible from outside the class but only in a subclass. They
+are used to define the interface of the class. Protected attributes and methods are prefixed with
+a single underscore.
+
+==== Private attributes and methods
+Private attributes and methods are not accessible from outside the class. They are used to hide the
+internal implementation details of a class. Private attributes and methods are prefixed with a
+double underscore.
+
+=== Polymorphism
+Polymorphism is the ability of an object to take on many forms. It is used to represent an is-a
+relationship. Polymorphism is achieved by using inheritance and overriding or overload the
+methods of the superclass in the subclass.
+
+Overriding is the process of redefining a method in the subclass. The method in the subclass has
+the same name and signature as the method in the superclass. Overriding is used to implement the
+is-a relationship.
+
+Overloading is the process of defining multiple methods with the same name but different signatures
+in the same class. Overloading is used to implement the has-a relationship. Python does not support
+method overloading.
+
+=== Association
+Association is a fundamental concept in object-oriented programming (OOP) that represents a
+relationship between classes. It describes how objects from different classes interact and
+collaborate to achieve a certain functionality. Associations define the ways in which objects can
+relate to each other and exchange information.
+
+Types of associations:
+
+- CREATE WHAT?      (Dependency)
+- USE WHAT?         (Dependency)
+- DEPEND ON WHAT?   (Dependency)
+- MANAGE WHAT?      (Dependency)
+- STORE WHAT?       (Dependency)
+- HOLD WHAT?        (Dependency)
+- HAVE WHAT?        (Dependency)
+- CONTAIN WHAT?     (Aggregation)
+- BELONG TO WHAT?   (Composition)
+
+=== Dependency
+Dependency is a relationship between two classes in which one class depends on the other. It is
+used to represent a "uses-a" relationship.
+
+=== Composition
+Composition is a fundamental concept in object-oriented programming (OOP) that allows you to
+build complex objects by combining simpler objects. It involves creating a class that contains
+one or more objects of other classes as its members. Composition promotes code reusability,
+modularity, and the creation of well-structured and maintainable code.
+
+In composition, the containing class is responsible for creating and managing the objects it
+contains, and it can delegate certain responsibilities to those contained objects.
+
+While both composition and inheritance facilitate code reuse, composition is often preferred over
+inheritance when you want to avoid tight coupling between classes or when the "is-a" relationship
+isn't appropriate. Composition offers more flexibility and allows you to create more maintainable
+code in complex scenarios.
+
+- "Has-A" Relationship
+- Delegate Responsibilities
+- Strong Coupling
+- Single Ownership
+- Shared Lifetime
+
+=== Aggregation
+
+Aggregation is another concept in object-oriented programming (OOP) that involves a "whole-part"
+relationship between classes. It's a form of association where one class represents a larger
+structure (the whole), and it contains or is composed of other classes (the parts). Aggregation
+is a more specialized form of composition, emphasizing a looser relationship between the whole
+and its parts.
+
+While both aggregation and composition involve relationships between classes, composition implies
+a stronger relationship, where the contained objects are owned and managed by the containing
+object. Aggregation, on the other hand, represents a looser relationship where the parts can
+exist independently.
+
+- "Has-A" Relationship
+- Delegate Responsibilities
+- Looser Coupling
+- Shared Ownership
+- Independent Lifetimes
