@@ -1,0 +1,172 @@
+= PART B: Advanced Python
+:sectnums:
+:docinfo:
+:toc:
+
+== OOP
+
+=== Abstraction (Modeling)
+Abstraction is a fundamental concept in object-oriented programming (OOP) that refers to the
+process of exposing only the relevant and essential data and behavior to the users without
+showing the internal implementation details. It is used to manage complexity and reduce
+dependencies between classes. Abstraction is achieved by using abstract classes or interfaces.
+
+They key points about abstraction are:
+
+- Focuses on the "what" an object does rather than "how" it does it
+- Allows you to define a clear and high-level interface for interacting with objects
+- Uses abstract classes or interfaces provide a blueprint for other classes to follow
+- Manages complexity and enhances code readability
+
+=== Encapsulation (Data Hiding)
+Encapsulation is the process of hiding the internal implementation details of an object from the
+outside world. Encapsulation is achieved by making the internal state of an object private and
+providing public access to it using methods. Python offers no mechanism for making attributes
+private and relies on naming conventions to distinguish between public and private attributes.
+Protected attributes are prefixed with a single underscore and private attributes are prefixed
+with a double underscore.
+
+The key points about encapsulation are:
+
+- Focuses on how to protect the internal state of an object from the outside world
+- Uses access modifiers to hide the internal implementation details of an object
+- Controlls the access to the internal state by providing getters and setters
+
+
+Key points about encapsulation:
+
+- Encapsulation involves bundling data (attributes) and methods that operate on that data within a
+single unit (class).
+- Access to the internal state is controlled by providing public methods (getters and setters).
+- Encapsulation helps maintain data integrity and provides a clear boundary between an object and
+its external environment.
+
+==== Pulbic attributes and methods
+Public attributes and methods are accessible from outside the class. They are used to define the
+interface of the class.
+
+==== Protected attributes and methods
+Protected attributes and methods are accessible from outside the class but only in a subclass. They
+are used to define the interface of the class. Protected attributes and methods are prefixed with
+a single underscore.
+
+==== Private attributes and methods
+Private attributes and methods are not accessible from outside the class. They are used to hide the
+internal implementation details of a class. Private attributes and methods are prefixed with a
+double underscore.
+
+=== Inheritance (Code Reuse)
+Inheritance is the process of creating a new class from an existing class. The new class is called
+the subclass or derived class. The existing class is called the superclass or base class. The
+subclass inherits the attributes and methods of the superclass. Inheritance is used to reuse code
+and to represent an is-a relationship.
+
+
+=== Polymorphism (Flexibility)
+Polymorphism is the ability of an object to take on many forms. It is used to represent an is-a
+relationship. Polymorphism is achieved by using inheritance and overriding or overload the
+methods of the superclass in the subclass.
+
+Overriding is the process of redefining a method in the subclass. The method in the subclass has
+the same name and signature as the method in the superclass. Overriding is used to implement the
+is-a relationship.
+
+Overloading is the process of defining multiple methods with the same name but different signatures
+in the same class. Overloading is used to implement the has-a relationship. Python does not support
+method overloading.
+
+=== Association (Relationship)
+Association is a fundamental concept in object-oriented programming (OOP) that represents a
+relationship between classes. It describes how objects from different classes interact and
+collaborate to achieve a certain functionality. Associations define the ways in which objects can
+relate to each other and exchange information.
+
+Types of associations:
+
+- CREATE WHAT?      (Dependency)
+- USE WHAT?         (Dependency)
+- DEPEND ON WHAT?   (Dependency)
+- MANAGE WHAT?      (Dependency)
+- STORE WHAT?       (Dependency)
+- HOLD WHAT?        (Dependency)
+- HAVE WHAT?        (Dependency)
+- CONTAIN WHAT?     (Aggregation)
+- BELONG TO WHAT?   (Composition)
+
+==== Dependency
+Dependency is a relationship between two classes in which one class depends on the other. It is
+used to represent a "uses-a" relationship.
+
+==== Composition
+Composition is a fundamental concept in object-oriented programming (OOP) that allows you to
+build complex objects by combining simpler objects. It involves creating a class that contains
+one or more objects of other classes as its members. Composition promotes code reusability,
+modularity, and the creation of well-structured and maintainable code.
+
+In composition, the containing class is responsible for creating and managing the objects it
+contains, and it can delegate certain responsibilities to those contained objects.
+
+While both composition and inheritance facilitate code reuse, composition is often preferred over
+inheritance when you want to avoid tight coupling between classes or when the "is-a" relationship
+isn't appropriate. Composition offers more flexibility and allows you to create more maintainable
+code in complex scenarios.
+
+- "Has-A" Relationship
+- Delegate Responsibilities
+- Strong Coupling
+- Single Ownership
+- Shared Lifetime
+
+==== Aggregation
+
+Aggregation is another concept in object-oriented programming (OOP) that involves a "whole-part"
+relationship between classes. It's a form of association where one class represents a larger
+structure (the whole), and it contains or is composed of other classes (the parts). Aggregation
+is a more specialized form of composition, emphasizing a looser relationship between the whole
+and its parts.
+
+While both aggregation and composition involve relationships between classes, composition implies
+a stronger relationship, where the contained objects are owned and managed by the containing
+object. Aggregation, on the other hand, represents a looser relationship where the parts can
+exist independently.
+
+- "Has-A" Relationship
+- Delegate Responsibilities
+- Looser Coupling
+- Shared Ownership
+- Independent Lifetimes
+
+== SOLID
+
+The SOLID principles are a set of design principles for software development that aim to improve the maintainability, scalability, and extensibility of software systems.
+
+=== Single Responsibility Principle
+A class or function should have only one reason to change. In Python, you can create small and focused classes and functions that do one thing and do it well. For example, you can create a class that handles database operations, and another class that handles logging. By keeping each class focused on one responsibility, you can easily modify and test each class without affecting other parts of the system.
+
+=== Open/Closed Principle
+
+A class or function should be open for extension but closed for modification.
+In Python, you can use inheritance and composition to achieve this principle. Instead of modifying existing classes or functions, you can extend their behavior by creating new subclasses or wrapping them in decorators. For example, you can create a class that extends the behavior of an existing class by adding new methods, without modifying the existing class.
+
+=== Liskov Substitution Principle
+Subtypes must be substitutable for their base types.
+In Python, you can use type hints and abstract base classes (ABCs) to ensure that subtypes can be used interchangeably with their base types. For example, you can define an ABC that defines a common interface for a set of related classes. Subclasses can then implement this interface to ensure that they can be used interchangeably with the base class.
+
+=== Interface Segregation Principle
+Clients should not be forced to depend on interfaces they do not use.
+In Python, you can define narrow interfaces that are tailored to specific clients, instead of using a single, broad interface. This helps to reduce the complexity and coupling of the system. For example, you can define a small interface that provides a specific set of methods, instead of using a large interface that provides many methods that are not needed by the client.
+
+=== Dependency Inversion Principle
+
+High-level modules should not depend on low-level modules. Both should depend
+on abstractions.
+In Python, you can use dependency injection to achieve this principle. Instead of directly instantiating dependencies in a class or function, you can pass them in as parameters or inject them using a framework. This helps to decouple the system and makes it easier to test and maintain. For example, you can define a class that depends on an abstract interface, and then inject a concrete implementation of that interface at runtime.
+
+
+== Design Patterns
+
+=== Creational Patterns
+=== Structural Patterns
+=== Behavioral Patterns
+
+
