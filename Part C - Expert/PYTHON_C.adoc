@@ -1,6 +1,8 @@
 = PART C: Expert Python
+:doctype: book
 :sectnums:
 :docinfo:
 :toc:
 
-
+== Generators
+== Coroutines

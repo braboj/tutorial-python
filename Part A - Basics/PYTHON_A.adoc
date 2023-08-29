@@ -1,4 +1,5 @@
-= PART A: Basic Python Concepts
+= PART A: Basic Python
+:doctype: book
 :sectnums:
 :docinfo:
 :toc:
@@ -9,21 +10,125 @@
 The following pre-requisites are required to complete this module:
 
 === Python Installation
-- Python 3.7 or higher (*_recommended_*)
-- Python 2.7 or higher
+- https://www.python.org/downloads[Python 3.7 or higher] (*_recommended_*)
+- https://www.python.org/downloads/release/python-2718[Python 2.7.18]
 
 
 === Python IDE
-- PyCharm (*_recommended_*)
-- Visual Studio Code
+- https://www.jetbrains.com/pycharm/[PyCharm] (*_recommended_*)
+- https://code.visualstudio.com/[Visual Studio Code]
 
 
 === Version Control
-- Git Client with GitHub account (*_recommended_*)
-- SVN Client with SVN account
+- https://git-scm.com/[Git Client] (*_recommended_*)
+- https://github.com[GitHub Account] (*_recommended_*)
+- https://tortoisesvn.net/[SVN Client]
 
+=== Style Guide
+- https://peps.python.org/pep-0008/[PEP-08] (*_mandatory_*)
+- https://google.github.io/styleguide/pyguide.html[Google Style Guide] (*_mandatory_*)
 
 == Introduction
+Python is a high-level, interpreted, interactive, and object-oriented scripting language. Python
+is designed to be highly readable. It uses English keywords frequently where other languages use
+punctuation. It has fewer syntactical constructions than other languages.
+
+Some key features of Python are:
+
+- Python is a dynamically typed language. This means that you do not need to declare variables
+before using them, or declare their type. Every variable in Python is an object.
+- Python is well suited to object-oriented programming in that it allows the definition of classes
+along with composition and inheritance. Python does not have access specifiers (like C++'s public,
+private).
+- In Python, functions are first-class objects. This means that they can be assigned to variables,
+returned from other functions, and passed into functions as arguments.
+- Python has a large and comprehensive standard library.
+- Python supports multiple programming paradigms, including procedural, object-oriented, and
+functional programming. It features a fully dynamic type system and automatic memory management,
+similar to that of Scheme, Ruby, Perl, and Tcl.
+- Python supports multiple programming paradigms, including procedural, object-oriented, and
+functional programming. It features a fully dynamic type system and automatic memory management,
+
+=== History
+Python was conceived in the late 1980s by Guido van Rossum at Centrum Wiskunde & Informatica
+(CWI) in the Netherlands as a successor to the ABC language (itself inspired by SETL), capable of
+exception handling and interfacing with the Amoeba operating system. Python itself is written in C,
+Cython, and the Python programming language. Python was named after the BBC TV show Monty Python's
+Flying Circus.
+
+Python 2 and Python 3 are two different versions of the Python programming language. Python 3 was
+released in 2008, and Python 2 was released in 2000. Python 3 is not backward compatible with
+Python 2. This means that code written in Python 2 may not work in Python 3 and vice versa.
+Python 2 reached its end of life on January 1, 2020. Python 2 should only be used if you need to
+maintain legacy code written in Python 2.
+
+Python ranks consistently as one of the most popular programming languages. In January 2021, it
+ranked third in the TIOBE index, a measure of popularity of programming languages, behind C and
+Java. It was selected Programming Language of the Year in 2007, 2010, and 2018. Python is used in
+many application domains. It is used extensively in the scientific and financial industry, and for
+web development and software development. Python is also used in artificial intelligence and data
+science.
+
+=== Characteristics
+
+- Python is a *general-purpose language*. This means that you can use Python to write any type of
+program, from simple command-line scripts to complex web applications.
+
+- Python is an *interpreted language*. This means that you do not need to compile your program
+before executing it. The Python interpreter reads your program and executes it one line at a time
+until the end of the file. This makes it easier to test your code and debug it.
+
+- Python is a *high-level language*. When you write programs in Python, you do not need to worry
+about the low-level details such as managing the memory used by your program. This makes it easier
+to focus on the solution to the problem you are trying to solve.
+
+- Python is an *object-oriented language*. This means that you can define classes and create
+objects that encapsulate data and functionality. This makes it easier to write reusable code.
+
+- Python is a *dynamically typed language*. This means that you do not need to declare variables
+before using them, or declare their type. Every variable in Python is an object.
+
+- Python is a *multi-paradigm language*. This means that it supports multiple programming paradigms,
+including procedural, object-oriented, and functional programming. It features a fully dynamic type
+system and automatic memory management, similar to that of Scheme, Ruby, Perl, and Tcl.
+
+- Python is a *cross-platform language*. This means that you can write Python code on one platform
+and run it on any other platform without making any changes to the code. This makes it easier to
+develop and deploy your code on multiple platforms.
+
+
+=== Use Cases
+
+- Google (one of the three main languages used for development)
+- Facebook (backend development)
+- Instagram (written entirely in Python)
+- Netflix (recommendation engine)
+- Spotify (data analysis)
+- Dropbox (desktop client)
+- Reddit (rewritten in Python in 2005)
+- Quora (web backend)
+- Pinterest (analytics platform)
+- YouTube (wvideo transcoding system)
+- IBM (cloud computing platform)
+- Nokia (cloud computing platform)
+- NASA (Integrated Planning System)
+- CERN (Large Hadron Collider)
+- Mozilla (Firefox browser)
+- and many more...
+
+=== Packages
+
+- Django, a web framework
+- Flask, a micro web framework
+- Matplotlib, a popular plotting library
+- NumPy, a package for scientific computing
+- Pandas, a package for data analysis
+- Pygame, a set of Python modules designed for writing games
+- PyTorch, a machine learning library
+- SciPy, a library of scientific and numerical tools
+- TensorFlow, a machine learning library
+- requests, a package for making HTTP requests
+- and many more...
 
 === Hello, world!
 
@@ -31,7 +136,7 @@ Our first program will greet us and tell us the result of the operation 1+1 .
 
 [source,python]
 ----
-include::02_introduction/hello_world.py[]
+include::02_introduction/examples/hello_world.py[]
 ----
 
 
@@ -57,7 +162,7 @@ have a value or result that can be used further in the code.
 
 [source,python]
 ----
-include::02_introduction/statements.py[]
+include::02_introduction/examples/statements.py[]
 ----
 
 In the above example, we have two statements. The first statement assigns the value 5 to the
@@ -72,11 +177,54 @@ assigning a value, passing arguments to a function, or printing a value.
 
 [source,python]
 ----
-include::02_introduction/expressions.py[]
+include::02_introduction/examples/expressions.py[]
 ----
 
 In the above example, the first line is an expression that evaluates to the value 6. The second
 line is a statement that assigns the value of the expression 3 * (x + y) to the variable result.
+
+=== Zen of Python
+
+The Zen of Python is a collection of 19 "guiding principles" for writing computer programs that
+influence the design of the Python programming language. It is written as a poem, with each line
+of the poem corresponding to one of the principles. The Zen of Python is included in the Python
+interpreter as an Easter egg. You can view it by typing `import this` in the Python interpreter.
+
+[source,python]
+----
+include::02_introduction/examples/zen_of_python.py[]
+----
+
+[source,console]
+----
+
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+
+----
+
+The statement `import this` imports the `this` module and prints the contents of the `this.s`. By
+importing a module, you can access the variables, functions, and classes defined in that module.
+
 
 == Variables
 
@@ -84,7 +232,7 @@ Let’s print the same text 5 times on the screen using the print function.
 
 [source,python]
 ----
-include::03_variables/variables_start_condition.py[]
+include::03_variables/examples/var_preconditions.py[]
 ----
 
 Now if we want to modify the text we have to change all 5 lines. Let’s modify our program a
@@ -94,7 +242,7 @@ times in the program.
 
 [source,python]
 ----
-include::03_variables/variables_as_container.py[]
+include::03_variables/examples/var_as_container.py[]
 ----
 
 In the code above the variable text is declared and initialized. After this, it may be used many
@@ -106,7 +254,7 @@ function and see how it works:
 
 [source,python]
 ----
-include::03_variables/variables_types.py[]
+include::03_variables/examples/var_types.py[]
 ----
 
 [source,console]
@@ -120,7 +268,7 @@ can be demonstrated by using numbers of different types.
 
 [source,python]
 ----
-include::03_variables/variables_float_sum.py[]
+include::03_variables/examples/var_float_sum.py[]
 ----
 
 [source,console]
@@ -133,7 +281,7 @@ integer class to check how to add them. Now let’s change the variable types to
 
 [source,python]
 ----
-include::03_variables/variables_complex_sum.py[]
+include::03_variables/examples/var_complex_sum.py[]
 ----
 
 [source,console]
@@ -160,7 +308,7 @@ can also be written in binary, octal, or hexadecimal notation. Binary numbers ar
 
 [source,python]
 ----
-include::03_variables/integer_variables.py[]
+include::03_variables/examples/var_integer_type.py[]
 ----
 
 ==== Floating-point numbers
@@ -169,7 +317,7 @@ also be written in scientific notation, with `e` indicating the power of 10.
 
 [source,python]
 ----
-include::03_variables/float_variables.py[]
+include::03_variables/examples/var_float_type.py[]
 ----
 
 ==== Complex numbers
@@ -177,7 +325,7 @@ Complex numbers are numbers with a real and imaginary part, such as 1+2j, 2+4j, 
 
 [source,python]
 ----
-include::03_variables/complex_numbers.py[]
+include::03_variables/examples/var_complex_type.py[]
 ----
 
 === Booleans
@@ -187,7 +335,7 @@ written as `True` and `False` (the first letter is capitalized).
 
 [source,python]
 ----
-include::03_variables/boolean_variables.py[]
+include::03_variables/examples/var_bool_type.py[]
 ----
 
 === Lists
@@ -199,7 +347,7 @@ that the first item in a list has index 0.
 
 [source,python]
 ----
-include::03_variables/list_variables.py[]
+include::03_variables/examples/var_list_type.py[]
 ----
 
 [source,console]
@@ -217,7 +365,7 @@ index 0.
 
 [source,python]
 ----
-include::03_variables/tuple_variables.py[]
+include::03_variables/examples/var_tuple_type.py[]
 ----
 
 [source,console]
@@ -234,7 +382,7 @@ values of items in a set.
 
 [source,python]
 ----
-include::03_variables/set_variables.py[]
+include::03_variables/examples/var_set_type.py[]
 ----
 
 [source,console]
@@ -252,7 +400,7 @@ meaning that you can change the values of items in a dictionary.
 
 [source,python]
 ----
-include::03_variables/dictionary_variables.py[]
+include::03_variables/examples/var_dict_types.py[]
 ----
 
 [source,console]
@@ -268,7 +416,7 @@ enclosed in single quotes ' or double quotes ".
 
 [source,python]
 ----
-include::03_variables/string_variables.py[]
+include::03_variables/examples/var_string_type.py[]
 ----
 
 ==== Concatenation
@@ -276,7 +424,7 @@ String concatenation refers to the process of combining two or more strings into
 
 [source,python]
 ----
-include::03_variables/string_concatenation.py[]
+include::03_variables/examples/string_concatenation.py[]
 ----
 
 ==== Interpolation
@@ -285,7 +433,7 @@ literals to create formatted strings. It allows you to dynamically insert values
 
 [source,python]
 ----
-include::03_variables/string_interpolation.py[]
+include::03_variables/examples/string_interpolation.py[]
 ----
 
 ==== Escaping
@@ -295,7 +443,7 @@ the special character with a backslash \.
 
 [source,python]
 ----
-include::03_variables/string_escaping.py[]
+include::03_variables/examples/string_escaping.py[]
 ----
 
 Some of the most common escape sequences are:
@@ -313,7 +461,7 @@ index 0, the second character has index 1, and so on.
 
 [source,python]
 ----
-include::03_variables/string_indexing.py[]
+include::03_variables/examples/string_indexing.py[]
 ----
 
 ==== Slicing
@@ -327,7 +475,7 @@ characters to skip between each character in the slice.
 
 [source,python]
 ----
-include::03_variables/string_slicing.py[]
+include::03_variables/examples/string_slicing.py[]
 ----
 
 ==== Case
@@ -341,7 +489,7 @@ Python provides several methods for changing the case of a string. The most comm
 
 [source,python]
 ----
-include::03_variables/string_cases.py[]
+include::03_variables/examples/string_cases.py[]
 ----
 
 ==== Length
@@ -350,7 +498,7 @@ to get the length of a string.
 
 [source,python]
 ----
-include::03_variables/string_length.py[]
+include::03_variables/examples/string_length.py[]
 ----
 
 ==== Splitting
@@ -361,7 +509,7 @@ based on the line break character `\n`.
 
 [source,python]
 ----
-include::03_variables/string_splitting.py[]
+include::03_variables/examples/string_splitting.py[]
 ----
 
 [source,console]
@@ -378,7 +526,7 @@ the list of strings as an argument.
 
 [source,python]
 ----
-include::03_variables/string_joining.py[]
+include::03_variables/examples/string_joining.py[]
 ----
 
 [source,console]
@@ -398,15 +546,12 @@ return a value. For example, the `print()` function returns None.
 
 [source,python]
 ----
-include::03_variables/none_variables.py[]
+include::03_variables/examples/var_none_type.py[]
 ----
 
-=== Mutable vs Immutable
+=== Mutable
 
-Mutable objects are objects whose values can be changed after they are created and immutable objects
-are objects whose values cannot be changed after they are created.
-
-In Python, the following types are mutable:
+Mutable variables are objects whose values can be changed after they are created. In Python, the following types are mutable:
 
 - Lists
 - Sets
@@ -414,11 +559,13 @@ In Python, the following types are mutable:
 
 [source,python]
 ----
-include::03_variables/variable_mutable.py[]
+include::03_variables/examples/var_mutable.py[]
 ----
 
 
-The following types are immutable:
+=== Immutable
+
+Immutable objects are objects whose values cannot be changed after they are created. In Python, the following types are immutable:
 
 - Integers
 - Floating-point numbers
@@ -429,9 +576,8 @@ The following types are immutable:
 
 [source,python]
 ----
-include::03_variables/variable_immutable.py[]
+include::03_variables/examples/var_immutable.py[]
 ----
-
 
 == Comments
 Comments are lines of text that are ignored by the Python interpreter. They are used to document
@@ -439,18 +585,18 @@ code and make it easier to understand. Comments can be single-line or multi-line
 comments start with a hash `#` and continue until the end of the line. Multi-line comments start
 and end with three quotes `"""`.
 
-=== Single-line comments
+=== Single-line Comments
 
 [source,python]
 ----
-include::04_comments/comment_single_line.py[]
+include::04_comments/examples/comment_single_line.py[]
 ----
 
-=== Multi-line comments
+=== Multi-line Comments
 
 [source,python]
 ----
-include::04_comments/comment_multi_line.py[]
+include::04_comments/examples/comment_multi_line.py[]
 ----
 
 == Operators
@@ -465,7 +611,7 @@ the following types of operators:
 - Membership operators
 - Bitwise operators
 
-=== Arithmetic operators
+=== Arithmetic Operators
 Arithmetic operators are used to perform arithmetic operations on numeric operands. Bear in mind
 that different major versions of Python may have different operators. For example, Python 2 uses
 `/` for integer division, while Python 3 uses `//` for integer division. For simplicity, we will
@@ -479,8 +625,13 @@ only use Python 3 operators in this book.
 - `%`   - modulus (remainder)
 - `**`  - exponentiation (power)
 
+[source,python]
+----
+include::05_operators/examples/operators_arithmetic.py[]
+----
 
-=== Comparison operators
+
+=== Comparison Operators
 Comparison operators are used to compare the values of two operands. They return a boolean value
 (`True` or `False`) depending on whether the comparison is true or false. The following comparison
 operators are supported in Python:
@@ -490,9 +641,15 @@ operators are supported in Python:
 - `>`  - greater than
 - `<`  - less than
 - `>=` - greater than or equal to
-- `<=` - less than or equal to
+- `\<=` - less than or equal to
 
-=== Logical operators
+[source,python]
+----
+include::05_operators/examples/operators_comparison.py[]
+----
+
+
+=== Logical Operators
 Logical operators are used to combine the results of two or more comparison operations. They
 return a boolean value (`True` or `False`) depending on whether the result of the logical
 operation is true or false. The following logical operators are supported in Python:
@@ -501,7 +658,13 @@ operation is true or false. The following logical operators are supported in Pyt
 - `or`  - logical OR
 - `not` - logical NOT
 
-=== Identity operators
+[source,python]
+----
+include::05_operators/examples/operators_logical.py[]
+----
+
+
+=== Identity Operators
 Identity operators are used to compare the memory addresses of two operands. They return a
 boolean value (`True` or `False`) depending on whether the memory addresses are equal or not.
 The following identity operators are supported in Python:
@@ -509,7 +672,12 @@ The following identity operators are supported in Python:
 - `is`  - is equal to
 - `is not` - is not equal to
 
-=== Membership operators
+[source,python]
+----
+include::05_operators/examples/operators_identity.py[]
+----
+
+=== Membership Operators
 Membership operators are used to check whether a value is a member of a collection. They return
 a boolean value (`True` or `False`) depending on whether the value is a member of the collection
 or not. The following membership operators are supported in Python:
@@ -517,7 +685,13 @@ or not. The following membership operators are supported in Python:
 - `in`     - is a member of
 - `not in` - is not a member of
 
-=== Bitwise operators
+[source,python]
+----
+include::05_operators/examples/operators_membership.py[]
+----
+
+
+=== Bitwise Operators
 Bitwise operators are used to perform bitwise operations on the binary representations of integer
 operands. They return an integer value depending on the result of the bitwise operation. The
 following bitwise operators are supported in Python:
@@ -529,7 +703,13 @@ following bitwise operators are supported in Python:
 - `<<` - bitwise left shift
 - `>>` - bitwise right shift
 
-=== Assignment operators
+[source,python]
+----
+include::05_operators/examples/operators_bitwise.py[]
+----
+
+
+=== Assignment Operators
 Assignment operators are used in programming languages, including Python, to assign values to
 variables. They combine the assignment operation with an arithmetic or logical operation, making
 it possible to perform an operation and assign the result to a variable in a single statement. The
@@ -549,8 +729,14 @@ following assignment operators are supported in Python:
 - `>>=` - bitwise right shift and assign
 - `<<=` - bitwise left shift and assign
 
+[source,python]
+----
+include::05_operators/examples/operators_assignment.py[]
+----
 
-=== Conditional operators
+
+
+=== Conditional Operators
 Conditional operators or also ternary operators are used to evaluate a condition and return one
 of two values depending on whether the condition is true or false. The following conditional
 operators are supported in Python:
@@ -559,16 +745,16 @@ operators are supported in Python:
 
 [source,python]
 ----
-include::05_operators/operators_conditional.py[]
+include::05_operators/examples/operators_conditional.py[]
 ----
 
 
-== User input
+== User Input
 The `input()` function is used to get user input from the keyboard. It takes a single argument,
 which is the prompt to display to the user. The prompt is optional. If no prompt is specified,
 the user will not see anything when they are prompted to enter input.
 
-=== User input in Python 2
+=== User Input in Python 2
 In Python 2, the `input()` function evaluates the user input as a Python expression and returns
 the result. This is a security risk because it allows the user to execute arbitrary Python code.
 To avoid this, use the `raw_input()` function instead. The `raw_input()` function returns the
@@ -576,21 +762,21 @@ user input as a string.
 
 [source,python]
 ----
-include::06_user_input/user_input_python2.py[]
+include::06_user_input/examples/user_input_python2.py[]
 ----
 
-=== User input in Python 3
+=== User Input in Python 3
 In Python 3, the `input()` function returns the user input as a string. To evaluate the user
 input as a Python expression, use the `eval()` function. The `eval()` function takes a string
 as an argument and evaluates it as a Python expression. It returns the result of the expression.
 
 [source,python]
 ----
-include::06_user_input/user_input_python3.py[]
+include::06_user_input/examples/user_input_python3.py[]
 ----
 
 
-=== Writing compatible code
+=== Writing Compatible Code
 To write code that is compatible with both Python 2 and Python 3, use the `six` module. The
 `six` module provides a function called `input()` that works the same way in both Python 2 and
 Python 3. The `six` module is not part of the Python standard library. It must be installed
@@ -605,11 +791,11 @@ An example of using the `six` module to get user input is shown below.
 
 [source,python]
 ----
-include::06_user_input/user_input_with_six.py[]
+include::06_user_input/examples/user_input_with_six.py[]
 ----
 
 
-== Control flow
+== Control Flow
 Control flow statements are used to control the order in which statements are executed in a
 program. They are used to make decisions and repeat statements. Python supports the following
 types of control flow statements:
@@ -621,7 +807,7 @@ types of control flow statements:
 - `continue` statement
 - `pass` statement
 
-=== if statement
+=== if Statement
 The `if` statement is used to make decisions in a program. It evaluates a condition and executes
 a block of code if the condition is true. The `if` statement can also be combined with an `elif`
 statement to execute a block of code if  the condition is false and another condition is true.
@@ -631,56 +817,56 @@ false.
 
 [source,python]
 ----
-include::07_control_flow/if_statement.py[]
+include::07_control_flow/examples/control_with_if_statement.py[]
 ----
 
-=== for statement
+=== for Statement
 The `for` statement is used to iterate over the items in a collection. It can also be used to
 iterate over a range of numbers. The `for` statement can be combined with an `else` statement to
 execute a block of code when the loop is finished without breaking out of the loop.
 
 [source,python]
 ----
-include::07_control_flow/for_statement.py[]
+include::07_control_flow/examples/control_with_for_statement.py[]
 ----
 
-=== while statement
+=== while Statement
 The `while` statement is used to execute a block of code while a condition is true. The `while`
 statement can be combined with an `else` statement to execute a block of code when the loop is
 finished without breaking out of the loop.
 
 [source,python]
 ----
-include::07_control_flow/while_statement.py[]
+include::07_control_flow/examples/control_with_while_statement.py[]
 ----
 
-=== break statement
+=== break Statement
 The `break` statement inside a loop to stop the loop from executing any further. The `break`
 statement can be used inside a `for` or `while` loop.
 
 [source,python]
 ----
-include::07_control_flow/break_statement.py[]
+include::07_control_flow/examples/control_with_break_statement.py[]
 ----
 
-=== continue statement
+=== continue Statement
 The `continue` statement inside a loop to skip the rest of the statements in the loop and continue
 with the next iteration of the loop. The `continue` statement can be used inside a `for` or
 `while` loop.
 
 [source,python]
 ----
-include::07_control_flow/continue_statement.py[]
+include::07_control_flow/examples/control_with_continue_statement.py[]
 ----
 
-=== pass statement
+=== pass Statement
 The `pass` statement is used as a placeholder for code that has not been implemented yet. It is
 used to prevent a syntax error when a statement is required syntactically but you do not want to
 execute any code.
 
 [source,python]
 ----
-include::07_control_flow/pass_statement.py[]
+include::07_control_flow/examples/control_with_pass_statement.py[]
 ----
 
 == Functions
@@ -691,7 +877,7 @@ statements that make up the body of the function are indented.
 
 [source,python]
 ----
-include::08_functions/function_structure.py[]
+include::08_functions/examples/func_structure.py[]
 ----
 
 Let's break down the different components of a function:
@@ -715,17 +901,17 @@ other function calls.
 function should return when it finishes executing. If no return statement is provided, the
 function returns None by default. You can return a single value or multiple values as a tuple.
 
-=== Positional arguments
+=== Positional Arguments
 Positional arguments are arguments that are passed to a function by position. The first argument
 is assigned to the first parameter, the second argument is assigned to the second parameter, and
 so on. Positional arguments are the default type of arguments in Python.
 
 [source,python]
 ----
-include::08_functions/positional_arguments.py[]
+include::08_functions/examples/func_positional_arguments.py[]
 ----
 
-=== Named arguments
+=== Named Arguments
 Named or also keyword arguments are arguments that are passed to a function by name. They are used
 to specify which parameter each argument should be assigned to. Keyword arguments are optional
 and can be specified in any order. They are useful when a function has many parameters and you
@@ -733,10 +919,10 @@ want to specify only a few of them.
 
 [source,python]
 ----
-include::08_functions/named_arguments.py[]
+include::08_functions/examples/func_keyword_arguments.py[]
 ----
 
-=== Default arguments
+=== Default Arguments
 Default arguments are arguments that have a default value specified in the function signature.
 They are used when a function has optional parameters. If a default argument is not specified
 when the function is called, the default value is used instead. Default arguments must be
@@ -744,10 +930,10 @@ specified after all the required arguments.
 
 [source,python]
 ----
-include::08_functions/default_arguments.py[]
+include::08_functions/examples/func_default_arguments.py[]
 ----
 
-=== Variable number of arguments
+=== Variable Arguments
 Variable number of arguments are arguments that can take a variable number of values. They are
 used when you do not know how many arguments will be passed to a function. Variable number of
 arguments are specified using the `\*` operator in the function signature. The arguments are
@@ -758,18 +944,18 @@ dictionary.
 
 [source,python]
 ----
-include::08_functions/variable_arguments_2.py[]
+include::08_functions/examples/func_variable_arguments_python2.py[]
 ----
 
 **Python 3**
 
 [source,python]
 ----
-include::08_functions/variable_arguments_3.py[]
+include::08_functions/examples/func_variable_arguments_python3.py[]
 ----
 
 
-=== Unpacking arguments
+=== Unpacking Arguments
 Unpacking arguments are arguments that are unpacked from a list or tuple. They are used when you
 want to pass the elements of a list or tuple as arguments to a function. Unpacking arguments are
 specified using the `\*` operator in the function call. The elements of the list or tuple are
@@ -777,59 +963,27 @@ assigned to the parameters in the function signature.
 
 [source,python]
 ----
-include::08_functions/unpacking_arguments.py[]
+include::08_functions/examples/func_unpacking_arguments.py[]
 ----
 
-=== Lambda functions
-Lambda functions are anonymous functions that are defined using the `lambda` keyword. They are
-used when you need a function for a short period of time. Lambda functions can only contain a
-single expression. The expression is evaluated and the result is returned when the function is
-called. Lambda functions can be assigned to a variable or passed as an argument to another
-function.
+=== Variable Scope
+The scope of a variable is the region of the program where the variable can be accessed. Python has
+two types of variables: global variables and local variables.
 
-[source,python]
-----
-include::08_functions/lambda_functions.py[]
-----
+Variables defined inside a function are local to that function. They can only be accessed inside
+the function. Variables defined outside a function are  global to the entire program. They can be
+accessed anywhere in the program.
 
-=== Docstrings
-Docstrings are optional strings enclosed in triple quotes immediately after the function definition.
-They provide a description of the function's purpose, parameters, and return value. Docstrings are
-used to document your functions. They can be accessed using the `__doc__` attribute of the function.
+Local variables can have the same name as global variables. However, they are completely separate
+variables and are not related in any way. Local variables take precedence over global variables
+inside a function.
 
 [source,python]
 ----
-include::08_functions/function_docstrings.py[]
+include::08_functions/examples/func_scope.py[]
 ----
 
-=== Function scope
-The scope of a variable is the region of the program where it is defined. The scope of a variable
-is determined by where it is defined. Variables defined inside a function are local to that
-function. They can only be accessed inside the function. Variables defined outside a function are
-global to the entire program. They can be accessed anywhere in the program. Local variables can
-have the same name as global variables. However, they are completely separate variables and are
-not related in any way. Local variables take precedence over global variables inside a function.
-
-[source,python]
-----
-include::08_functions/function_scope.py[]
-----
-
-=== Recursion
-Recursion is the process of calling a function from within itself. It is used to solve problems
-that can be broken down into smaller problems of the same type. Recursion is used to solve
-problems that can be broken down into smaller problems of the same type. It is important to note
-that recursion can lead to infinite loops if not implemented correctly. You must ensure that the
-base case is reached at some point. The base case is the case where the function does not call
-itself. It is used to stop the recursion. The base case is usually the simplest case that can be
-solved without recursion. The recursive case is the case where the function calls itself.
-
-[source,python]
-----
-include::08_functions/function_recursion.py[]
-----
-
-=== Nested functions
+=== Nested Functions
 Nested functions are functions that are defined inside another function. They are used to
 encapsulate functionality that is only used inside the function. Nested functions can access
 variables defined in the enclosing function. However, they cannot modify them. If you want to
@@ -837,7 +991,7 @@ modify a variable defined in the enclosing function, you must use the `nonlocal`
 
 [source,python]
 ----
-include::08_functions/nested_functions.py[]
+include::08_functions/examples/func_nested.py[]
 ----
 
 === Closures
@@ -848,71 +1002,150 @@ cannot modify them.
 
 [source,python]
 ----
-include::08_functions/function_closures.py[]
+include::08_functions/examples/func_closures.py[]
 ----
 
+=== Function Decorators
+Python offers a concise way to define closures using function decorators. Function decorators are
+functions that take a function as an argument and return a modified version of the function. They
+are used to modify the behavior of a function without changing the function itself.
 
-=== Function decorators
-Function decorators are functions that take a function as an argument and return a new function.
-They are used to modify the behavior of a function without changing the function itself. Function
-decorators are specified using the `@` operator before the function definition. The function
+Function decorators are specified using the `@` operator before the function definition. The function
 decorator is called when the function is defined.
 
 [source,python]
 ----
-include::08_functions/function_decorator.py[]
+include::08_functions/examples/func_decorator.py[]
 ----
 
-=== Factory functions
-The function factory pattern is a design pattern that is used to create functions dynamically.
-It is used to create functions that have similar functionality but different parameters. The
-function factory pattern is used to create functions that have similar functionality but different
-parameters.
+=== Factory Functions
+The function factory pattern is a special function used to create other functions dynamically.
+Typically, a factory function takes a set of parameters and returns a function that uses those
+parameters. The returned function can then be called with different arguments to get different
+results.
+
 
 [source,python]
 ----
-include::08_functions/function_factory.py[]
+include::08_functions/examples/func_factory.py[]
 ----
 
-=== Callback functions
-Callbacks with closures involve passing a function as an argument to another function and
-executing that function within the outer function's scope.
 
 === Memoization
 Memoization is a technique used to optimize function calls by caching the results of expensive
-computations and reusing them when the same inputs occur again. Closures can be leveraged to
+computations and reusing them when the same inputs occur again. Closures can be used to
 implement memoization by creating a wrapper function that encapsulates the memoization logic. It
 is important to note that memoization can lead to memory leaks if not implemented correctly. You
 must ensure that the cache is cleared when it is no longer needed.
 
 [source,python]
 ----
-include::08_functions/function_memoization.py[]
+include::08_functions/examples/func_memoization.py[]
 ----
 
-=== Function annotations
-For Python 3.0 and above, you can specify the types of the parameters and return value of a
-Function annotations are optional type hints that can be added to function parameters and
-the return value. They are used to specify the types of the parameters and return value. Function
-annotations are specified using the `:` operator after the parameter name or return value. The
-type is specified after the `:` operator. You can also specify the type of the return value using
-the `->` operator after the closing parenthesis of the parameter list.
+=== Function Annotations
+For Python 3.0 and above, you can specify the types of the parameters and return value of a function
+using annotations. Function annotations are optional type hints that can be added to function
+parameters and the return value.
 
-[source,python]
-----
-include::08_functions/function_annotations.py[]
-----
-
-=== Function attributes
-Function attributes are attributes that are defined on a function. They are used to store
-information about a function.
+- Use the `:` operator to specify the type of a parameter
+- Use the `->` operator to specify the type of the return value
 
 [source,python]
 ----
-include::08_functions/function_attributes.py[]
+include::08_functions/examples/func_annotations.py[]
 ----
 
-=== Function introspection
+=== Function Attributes
+In Python everything is an object, including functions. This means that functions can have
+attributes just like any other object. Function attributes are used to store information about a
+function. Some typical use cases for function attributes are:
+
+- Storing metadata about a function (e.g name, author, version, etc.)
+- Conditional execution of a function (e.g. `__test__` attribute in the `unittest` module)
+- Storing cached results of a function (e.g. `__cache__` attribute in the `functools` module)
+- Multiple forms of documentation with a method optimized for various platforms
+
+Typically the attributes will be added by a decorator. However, you can also add them manually
+using the `setattr()` function or directly on the function object.
+
+[source,python]
+----
+include::08_functions/examples/func_attributes.py[]
+----
+
+CAUTION: It is not recommended to add attributes to functions manually because it can lead to
+unexpected behavior. It is better to use a decorator to add the attributes or use a class instead.
+
+=== Callback Functions
+Callback functions are functions that are passed as arguments to other functions. They are used
+to implement event handlers and asynchronous callbacks. Callback functions are specified using
+the function name without the parentheses. The function is called when the callback is executed.
+
+
+[source,python]
+----
+include::08_functions/examples/func_callback.py[]
+----
+
+
+=== Recursive Functions
+Recursion is the process of calling a function from within itself. It is used to solve problems
+that can be broken down into smaller problems of the same type. It is important to note that
+recursion can lead to infinite loops if not implemented correctly. You must ensure that the base
+case is reached at some point. The base case is the case where the function does not call itself.
+It is used to stop the recursion. The base case is usually the simplest case that can be solved
+without recursion. The recursive case is the case where the function calls itself.
+
+[source,python]
+----
+include::08_functions/examples/func_recursion.py[]
+----
+
+
+=== Lambda Functions
+Lambda functions are anonymous functions that are defined using the `lambda` keyword. They are
+used when you need a temporary function during the program execution. Lambda functions can only
+contain a single expression. The expression is evaluated and the result is returned when the
+function is called. Lambda functions can be assigned to a variable or passed as an argument to
+another function.
+
+[source,python]
+----
+include::08_functions/examples/func_lambda_syntax.py[]
+----
+
+[source,python]
+----
+include::08_functions/examples/func_lambda_assignment.py[]
+----
+
+[source,python]
+----
+include::08_functions/examples/func_lambda_arguments.py[]
+----
+
+[source,python]
+----
+include::08_functions/examples/func_lambda_bytecodes.py[]
+----
+
+[source,python]
+----
+include::08_functions/examples/func_lambda_conditional.py[]
+----
+
+[source,python]
+----
+include::08_functions/examples/func_lambda_nested_conditions.py[]
+----
+
+[source,python]
+----
+include::08_functions/examples/func_lambda_recursive.py[]
+----
+
+=== Function Introspection
 Function introspection is the process of examining a function's attributes. It is used to get
 information about a function.
 
@@ -926,65 +1159,101 @@ information about a function.
 
 [source,python]
 ----
-include::08_functions/function_introspection.py[]
+include::08_functions/examples/func_introspection.py[]
 ----
 
 
+=== Positional-Only Arguments
+Positional-only arguments are arguments that can only be passed by position and not by name. They
+are used when you want to prevent users from passing arguments by name.
+
+- Positional-only arguments are specified using the `/` operator in the function signature.
+- The arguments before the `/` operator are positional-only arguments.
+- The arguments after the `/` operator can be passed by position or by name.
+- This feature was introduced in Python 3.8.
+
+[source,python]
+----
+include::08_functions/examples/func_positional_only_arguments.py[]
+----
+
+=== Keyword-Only Arguments
+Keyword-only arguments are arguments that can only be passed by name and not by position. They
+are used when you want to prevent users from passing arguments by position.
+
+- Keyword-only arguments are specified using the `*` operator in the function signature.
+- The arguments after the `*` operator are keyword-only arguments.
+- This feature was introduced in Python 3.0.
+
+[source,python]
+----
+include::08_functions/examples/func_keyword_only_arguments.py[]
+----
+
 == Classes
 
-Classes are blueprints or instructions on how to build an object running on the computer and
-using the required memory resources. Classes provide a way to structure and organize code,
-promoting reusability (the code is written once and used many times) and maintainability (the
-code can be changed easily).
+A class is a blueprint for creating objects. It defines the properties and methods that all
+objects of the class will have. An object is an instance of a class. It is a concrete realization
+of the class. It has well-defined values or all the properties defined in the class.
 
 The class answers the following questions:
 
 - What parts does the object HAVE? (HAVE WHAT?)
 - What does the object DO? (DO WHAT?)
 
+The object answers the following questions:
 
+- What is the object? (WHAT IS IT?)
+- What is the object's state? (WHAT IS IT LIKE?)
 
-=== Constructor and Initializer
-
-Constructors are special methods inside a class that create and initialize the objects of a class.
-In Python the object is created wih the special method `\__new__` and then initialized with the
-special method `\__init__`.
-
-[source,python]
-----
-include::09_classes/class_constructors.py[]
-----
-
-This method is rarely used in Python because it is not needed in most cases. It is used when you
-want to customize the creation of an instance. Some of the most common use cases for the
-`\__new__` method are:
-
-- Create a class that inherits from a different class depending on some condition
-- Limit the number of instances that can be created for this class (e.g. Singleton)
-- Create a class factory
-
+Let's take a look at an example of a class and an object. The class is called `Person` and it
+defines the properties and methods that all people have. The class answers the question "What
+does a person have?" and in this case the answer is "A person has a name and an age". The class
+also answers the question "What does a person do?" and in this case the answer is "A person can
+say hello".
 
 [source,python]
 ----
-include::09_classes/method_new_singleton.py[]
+include::09_classes/examples/class_as_blueprint.py[]
 ----
+
+The object is called `John` and it is an instance of the `Person` class. It answers the question
+"What is John?" and in this case the answer is "John is a person". It also answers the question
+"What is John's state?" and in this case the answer is "John is 30 years old and his name is John".
 
 [source,python]
 ----
-include::09_classes/method_new_class_factory.py[]
+include::09_classes/examples/class_as_concrete_object.py[]
 ----
 
+=== Class structure
+
+The class is defined using the `class` keyword and the name of the class. The class name should
+follow the Python naming conventions (CamelCase with the first letter capitalized). It shall always
+inherit from the `object` or a class that inherits from the `object` due to reasons explained in
+later chapters.
+
+- Initializer           (`\__init__`)
+- Constructor           (`\__new__`)
+- Instance variables    (inside `\__init__`)
+- Instance methods      (inside class body)
+- Class attributes      (outside any method)
+- Class methods         (@classmethod)
+- Static methods        (@staticmethod)
 
 [source,python]
 ----
-include::09_classes/method_new_conditional_inheritance.py[]
+include::09_classes/examples/class_structure.py[]
 ----
 
+
+
+=== Initializer
 
 The `\__init__` method is called automatically when the instance is created. It is used to
-initialize the instance variables of the class. It is also sometimes wrongly called the
-constructor method as it is the most commonly used method when declaring the class. Some of
-the most common use cases or the `\__init__` method are:
+initialize the instance state. It is also sometimes wrongly called the constructor method as it
+is the most commonly used method when declaring the class. Some of the most common use cases or
+the `\__init__` method are:
 
 - Initialize the instance variables of the class
 - Validate the values of the instance variables
@@ -993,60 +1262,129 @@ the most common use cases or the `\__init__` method are:
 
 [source,python]
 ----
-include::09_classes/method_init.py[]
+include::09_classes/examples/class_init_state.py[]
 ----
 
-=== Instance
+[source,python]
+----
+include::09_classes/examples/class_init_validate.py[]
+----
+
+[source,python]
+----
+include::09_classes/examples/class_init_steps.py[]
+----
+
+
+
+=== Constructor
+
+Constructors are special methods inside a class that create and initialize the objects of a class.
+In Python the object is created wih the special method `\__new__` and then initialized with the
+special method `\__init__`.
+
+[source,python]
+----
+include::09_classes/examples/class_constructors.py[]
+----
+
+The `\__new__` used rarely as Python handles the construction of the object automatically. Some
+of the most common use cases for the `\__new__` method are:
+
+- Create a class that inherits from a different class depending on some condition
+- Limit the number of instances that can be created for this class (e.g. Singleton)
+- Create a class factory
+
+
+[source,python]
+----
+include::09_classes/examples/class_constructor_singleton.py[]
+----
+
+[source,python]
+----
+include::09_classes/examples/class_constructor_factory.py[]
+----
+
+
+[source,python]
+----
+include::09_classes/examples/class_constructor_conditional_inheritance.py[]
+----
+
+
+
+=== Class instance
+
 The constructor returns a class instance (object) as a concrete realization of the class. This
 means that the object has well-defined values for all the instance variables. Each instance is
-unique and has its own identity. It is a unique number that is assigned to the object when it is
-created. The identity of an object never changes during its lifetime. It is used mainly to compare
-objects using the `is` operator. The `is` operator returns `True` if the identity of the two
-objects is the same and `False` otherwise. The identity of an object is obtained by the `id()`
-function.
+unique and has its own identity.
+
+Some of the most common use cases for the class instance are:
+
+- Unique identity of the object (e.g. id)
+- Unique state of the object (e.g. name and age)
+- Unique behavior of the object based on the state (e.g. say hello)
+
+
+==== Instance identity
+The identity is a unique number that is assigned to the object when it is created. The identity
+of an object never changes during its lifetime. It is used mainly to compare objects using the
+`is` operator. The `is` operator returns `True` if the identity of the two objects is the same
+and `False` otherwise. The identity of an object is obtained by the `id()` function.
 
 [source,python]
 ----
-include::09_classes/class_instance.py[]
+include::09_classes/examples/class_instance.py[]
 ----
 
 
-=== Instance Attributes
-Each instance has its own set of variables called also attributes. They represent the internal
-state of the object. The instance variables are defined inside __init__.
+==== Instance variables
+The instance has its own set of variables called also attributes. They represent the internal
+state of the object. The instance variables are defined inside `\__init__` method.
 
 [source,python]
 ----
-include::09_classes/instance_attributes.py[]
+include::09_classes/examples/class_instance_attributes.py[]
 ----
 
-=== Instance Methods
-Instance methods are functions that are defined inside an instance of a class. The first
-parameter of an instance method is always a reference to the current instance. It is usually
-called `self`. Instance methods can  only be used when the instance of the class has been created.
+==== Instance methods
+Instance methods are functions that are part of the instance of a class. The first parameter of
+an instance method is always a reference to the current instance. It is usually called `self`.
+Instance methods can  only be used when the instance of the class has been created.
 
 [source,python]
 ----
-include::09_classes/instance_methods.py[]
+include::09_classes/examples/class_instance_methods.py[]
 ----
 
 
-=== Class Attributes
+=== Class as an object
+In Python, everything is an object. This means that classes are also objects. They are instances
+of the `type` class. This means that classes can be assigned to variables, passed as arguments to
+functions, and returned from functions. This is a very powerful feature of Python that allows you
+to write very flexible code. Some of the most common use cases for classes as objects are:
+
+- Assign a class to a variable
+- Pass a class as an argument to a function
+- Return a class from a function
+
+
+==== Class variables
 Class attributes are variables that are defined inside a class. They represent the internal state
 of the class. Class attributes are shared by all instances of the class. They are defined outside
-the `__init__` method. Class attributes can be accessed using the class name or an instance of
-the class. If you try to access a class attribute that does not exist, Python will look for it in
-the parent classes until it reaches the top of the inheritance tree. Some of the most common use
-cases for class attributes are:
+the `__init__` method. If you try to access a class attribute that does not exist, Python will
+look for it in the parent classes until it reaches the top of the inheritance tree. Some of the
+most common use cases for class attributes are:
 
-- Define constants
-- Define default values for class attributes
-- Define class attributes that are shared by all instances of the class
+- Constants
+- Default values for class attributes
+- Class attributes that are shared by all instances of the class
 
 
 [source,python]
 ----
-include::09_classes/class_attributes.py[]
+include::09_classes/examples/class_variables.py[]
 ----
 
 It is important to note that if the class attribute is used with self in any of the instance methods,
@@ -1055,11 +1393,11 @@ class. This might introduce bugs in your code if you are not careful.
 
 [source,python]
 ----
-include::09_classes/class_variables_pitfalls.py[]
+include::09_classes/examples/class_variables_pitfalls.py[]
 ----
 
 
-=== Class Methods
+==== Class methods
 Class methods are functions that are defined inside a class. The first parameter of a class method
 is always a reference to the class. It is usually called `cls`. Class methods can be used before
 the instance of the class has been created. Class methods are defined using the `@classmethod`
@@ -1072,32 +1410,40 @@ decorator. Some of the most common use cases for class methods are:
 
 [source,python]
 ----
-include::09_classes/class_method_create_instance.py[]
+include::09_classes/examples/class_method_create_instance.py[]
 ----
 
 [source,python]
 ----
-include::09_classes/class_method_modify_itself.py[]
+include::09_classes/examples/class_method_modify_itself.py[]
 ----
 
 
 [source,python]
 ----
-include::09_classes/class_method_modify_instances.py[]
+include::09_classes/examples/class_method_modify_instances.py[]
 ----
 
 
-=== Static Methods
+=== Class as a namespace
+
+A namespace is a mapping from names to objects. It is used to avoid name collisions and to make
+it easier to find the names you are looking for. In Python, classes are namespaces. This means
+that you can define variables and functions inside a class. They will be accessible using the
+class name. Some of the most common use cases for classes as namespaces are:
+
+- Group related variables and functions together
+- Avoid name collisions
+- Make it easier to find the names you are looking for
 
 Static methods are functions that are defined inside a class. They are not bound to the class or
-any instances of the class. They are defined using the `@staticmethod` decorator. Static methods
-can be used before the instance of the class has been created. The static method are used mainly
-to group functions that have some logical connection to the class but do not require access to
-the class itself.
+any instances of the class and use the class name as a namespace to be accessed. They are defined
+using the `@staticmethod` decorator. Static methods can be used before the instance of the class
+has been created.
 
 [source,python]
 ----
-include::09_classes/static_methods.py[]
+include::09_classes/examples/class_static_methods.py[]
 ----
 
 
@@ -1116,7 +1462,7 @@ When to use properties:
 
 [source,python]
 ----
-include::09_classes/properties.py[]
+include::09_classes/examples/class_properties.py[]
 ----
 
 === Superclass
@@ -1130,16 +1476,16 @@ When to use super:
 
 [source,python]
 ----
-include::09_classes/superclass_attributes.py[]
+include::09_classes/examples/class_superclass_attributes.py[]
 ----
 
 [source,python]
 ----
-include::09_classes/superclass_constructor.py[]
+include::09_classes/examples/class_superclass_constructor.py[]
 ----
 
 
-=== Class Inheritance
+=== Class inheritance
 Class inheritance is the process of creating a new class from one or more base classes. The new
 class is called the subclass or the derived class. The base class is called the superclass or the
 parent class.
@@ -1156,17 +1502,17 @@ inheritance are:
 
 [source,python]
 ----
-include::09_classes/inheritance_single.py[]
+include::09_classes/examples/class_single_inheritance.py[]
 ----
 
 [source,python]
 ----
-include::09_classes/inheritance_multiple.py[]
+include::09_classes/examples/class_multiple_inheritance.py[]
 ----
 
 
 
-=== Method Resolution Order
+=== Method resolution order
 
 Method Resolution Order (MRO) is a critical concept in Python's object-oriented programming,
 especially when dealing with inheritance and classes. It defines the order in which methods are
@@ -1194,31 +1540,31 @@ For more information about the C3 linearization algorithm, see the following res
 
 [source,python]
 ----
-include::09_classes/mro_bottom_first.py[]
+include::09_classes/examples/class_mro_bottom_first.py[]
 ----
 
 
 [source,python]
 ----
-include::09_classes/mro_left_first.py[]
+include::09_classes/examples/class_mro_left_first.py[]
 ----
 
 [source,python]
 ----
-include::09_classes/mro_complex.py[]
+include::09_classes/examples/class_mro_complex.py[]
 ----
 
 [source,python]
 ----
-include::09_classes/mro_diamond.py[]
+include::09_classes/examples/class_mro_diamond.py[]
 ----
 
 [source,python]
 ----
-include::09_classes/mro_unresolved.py[]
+include::09_classes/examples/class_mro_unresolved.py[]
 ----
 
-=== Abstract Class
+=== Abstract class
 In Python, an abstract class is a class that cannot be instantiated directly. It is meant to
 serve as a blueprint for other classes and is designed to be subclassed. Abstract classes often
 contain abstract methods, which are methods declared but not implemented in the abstract class.
@@ -1252,27 +1598,27 @@ Some examples of using the `abc` module to create abstract classes are shown bel
 
 [source,python]
 ----
-include::09_classes/abstract_class_python2.py[]
+include::09_classes/examples/class_abstract_python2.py[]
 ----
 
 [source,python]
 ----
-include::09_classes/abstract_class_python3.py[]
+include::09_classes/examples/class_abstract_python3.py[]
 ----
 
 [source,python]
 ----
-include::09_classes/abstract_class_stacked_properties.py[]
+include::09_classes/examples/class_abstract_properties.py[]
 ----
 
-=== Interface Class
+=== Interface class
 An interface is a class that contains only abstract methods. It is used to define the interface
 of a class without providing an implementation. An interface is a contract that a class must
 implement. Python does not offer direct support for interfaces. However, you can create an
 abstract class that emulates an interface (see the previous section for more information).
 
 
-=== Mixin Class
+=== Mixin class
 A mixin is a class that contains methods that can be used by other classes without having to be
 the parent class of those classes. It is used to provide a common set of methods to multiple
 classes. Mixins are not meant to be instantiated directly. They are meant to be inherited by
@@ -1281,22 +1627,37 @@ meant to be instantiated directly. Some examples of mixins are shown below.
 
 [source,python]
 ----
-include::09_classes/mixin.py[]
+include::09_classes/examples/class_mixin.py[]
 ----
 
 === Class as a decorator
-A class can be used as a decorator by implementing the `__call__` method. The `__call__` method
-is called when the class is used as a decorator. It takes a function as an argument and returns
-a new function. The new function is called when the decorated function is called. The `__call__`
-method can be used to add functionality to a function without modifying the function itself.
 
-
+A class can be used to decorate a function or a class. It is used to add functionality to an
+existing function or class without modifying the function or class itself. A class decorator is
+specified using the `@` operator before the function or class definition.
 
 [source,python]
 ----
-include::09_classes/class_decorator.py[]
+@decorator(arg1=..., arg2=...)
+def function():
+    pass
+
+@decorator(arg1=..., arg2=...)
+class MyClass:
+    pass
 ----
 
+[source,python]
+----
+include::09_classes/examples/class_decorator_for_functions.py[]
+----
+
+[source,python]
+----
+include::09_classes/examples/class_decorator_for_classes.py[]
+----
+
+=== Nested classes
 
 === Introspection
 The class introspection is the process of examining a class's attributes. It is used to get
@@ -1313,7 +1674,273 @@ information about a class.
 - use `\__slots__` to get the slots of a class
 - use `\__annotations__` to get the annotations of a class
 
-== Documentation
+== Dunder Methods
+Dunder methods are special methods that are defined using the double underscore notation. They are
+used to emulate the behavior of built-in types and provide a way to customize the behavior of
+classes. Dunder methods are also called magic methods. Some of the most common use cases for
+dunder methods are:
+
+- Emulate the behavior of built-in types
+- Customize the behavior of classes
+- Object representation
+- Implement operator overloading
+- Implement iterators
+- Implement context managers
+
+=== Object representation
+
+[options="header"]
+|====
+|Representation | Dunder method | Notes
+
+|Human-readable | `\\__str__` | If you want to provide a human-readable string representation of an
+object, use the `\__str__` method. This method should return a string that is easy for a human to
+understand.
+
+|Unambiguous | `\\__repr__` | If you want to provide an unambiguous string representation of an
+object, use the `\__repr__` method. This method should return a string that can be used to
+recreate the object.
+
+|Custom formatting | `\\__format__` | If you want to provide custom string formatting of an object, use
+the `\__format__` method. This method should return a string that is formatted according to the
+format specification.
+
+|Raw byte string | `\\__bytes__` | If you want to provide a raw byte string representation of an
+object, use the `\__bytes__` method. This method should return a byte string that can be used to
+recreate the object. This method is used by the bytes() function.
+
+|Unique | `\\__hash__` | If you want to compute the hash of an object, use the `\__hash__` method.
+This method should return an integer that is used to compare objects in dictionaries and sets.
+This method is used by the hash() function.
+
+|====
+
+[source,python]
+----
+include::10_dunder/examples/dunder_object_representation.py[]
+----
+
+
+=== Custom behavior of classes and instances
+
+[options="header"]
+|====
+|Behavior | Dunder method | Notes
+
+|Customize creation | `\\__new__` | If you want to customize the creation of an instance, use the
+`\__new__` method. This method should return an instance of the class. It is used to create the
+instance before it is initialized.
+
+|Customize initialization | `\\__init__` | If you want to customize the initialization of an
+instance, use the `\__init__` method. This method is called right after the instance has been
+created. It is used to initialize the instance variables of the class.
+
+|Customize calling | `\\__call__` | If you want to customize the behavior of calling an instance,
+use the `\__call__` method. This method is called when the instance is called like a function.
+
+|Customize deletion | `\\__del__` | If you want to customize the deletion of an instance, use the
+`\__del__` method. This method is called when the instance is deleted. It is used by the del
+statement.
+
+|====
+
+
+[source,python]
+----
+include::10_dunder/examples/dunder_customize_behavior.py[]
+----
+
+
+=== Custom behavior of built-in types
+
+[options="header"]
+|====
+|Built-in type | Dunder method | Notes
+
+|`int()` | `\\__int__` | If you want to convert an object to an integer, use the `\__int__`
+method. This method should return an integer. It is used by the int() function.
+
+|`float()` | `\\__float__` | If you want to convert an object to a float, use the `\__float__`
+method. This method should return a float. It is used by the float() function.
+
+|`complex()` | `\\__complex__` | If you want to convert an object to a complex number, use the
+`\__complex__` method. This method should return a complex number. It is used by the complex()
+function.
+
+|`bool()` | `\\__bool__` | If you want to evaluate the truth value of an object, use the
+`\__bool__` method. This method should return a boolean. It is used by the bool() function.
+
+|====
+
+
+[source,python]
+----
+include::10_dunder/examples/dunder_builtin_types.py[]
+----
+
+
+
+
+
+
+
+
+=== Operator overloading
+
+[options="header"]
+|===================
+|Operator | Dunder method
+
+|`==` | `\\__eq__`
+|`!=` | `\\__ne__`
+|`<` | `\\__lt__`
+|`<=` | `\\__le__`
+|`>` | `\\__gt__`
+|`>=` | `\\__ge__`
+|`+` | `\\__add__`
+|`-` | `\\__sub__`
+|`*` | `\\__mul__`
+|`/` | `\\__truediv__`
+|`//` | `\\__floordiv__`
+|`%` | `\\__mod__`
+|`**` | `\\__pow__`
+|`&` | `\\__and__`
+|`|` | `\\__or__`
+|`^` | `\\__xor__`
+|`<<` | `\\__lshift__`
+|`>>` | `\\__rshift__`
+|`+=` | `\\__iadd__`
+|`-=` | `\\__isub__`
+|`*=` | `\\__imul__`
+|`/=` | `\\__itruediv__`
+|`//=` | `\\__ifloordiv__`
+|`%=` | `\\__imod__`
+|`**=` | `\\__ipow__`
+|`&=` | `\\__iand__`
+|`|=` | `\\__ior__`
+|`^=` | `\\__ixor__`
+|`<<=` | `\\__ilshift__`
+|`>>=` | `\\__irshift__`
+|`-` | `\\__neg__`
+|`+` | `\\__pos__`
+|`~` | `\\__invert__`
+|===================
+
+[source,python]
+----
+include::10_dunder/examples/dunder_operator_overloading.py[]
+----
+
+=== Iterator protocol
+
+[options="header"]
+|====
+|Function | Dunder method | Notes
+
+|Create iterator | `\\__iter__` | If you want to iterate over an object, use the `\__iter__` method.
+This method should return an iterator. It is used by the iter() function.
+
+|Get next item  | `\\__next__` | If you want to get the next value of an iterator, use the
+`\__next__`
+method. This method should return the next value of the iterator. It is used by the next().
+
+|====
+
+[source,python]
+----
+include::10_dunder/examples/dunder_iterator_protocol.py[]
+----
+
+=== Context manager protocol
+
+[options="header"]
+|====
+|Function | Dunder method | Notes
+
+|Enter context | `\\__enter__` | If you want to customize the behavior of the `with` statement
+when entering the block, use the `\__enter__` method. This method should return an object that
+will be assigned to the variable in the `with` statement.
+
+|Exit context  | `\\__exit__` | If you want to customize the behavior of the `with` statement
+when exiting the block, use the `\__exit__` method. This method should return a boolean that
+indicates whether the exception was handled or not.
+
+|====
+
+[source,python]
+----
+include::10_dunder/examples/dunder_context_manager.py[]
+----
+
+
+== Docstrings
+
+Docstrings are optional strings enclosed in triple quotes immediately after the class, function,
+or method definition. They provide a description of the class, function, or method. Docstrings are
+used to document your code. They can be accessed using the `__doc__` attribute of the class,
+function, or method.
+
+=== Class docstrings
+
+[source,python]
+----
+include::11_docstrings/examples/docstring_class.py[]
+----
+
+
+=== Function docstrings
+
+[source,python]
+----
+include::11_docstrings/examples/docstring_function.py[]
+----
+
+=== Module docstrings
+A python module is a file that contains python code. It is used to organize related code into a
+single file. A module can contain typically contains classes, functions, and variables.  The
+docstring of a module is the first string in the module.
+
+[source,python]
+----
+include::11_docstrings/examples/docstring_module.py[]
+----
+
+
 == Debugging
-== Decorators
+
+=== Breakpoints
+
+image::12_debugging/breakpoint.png[Python A breakpoint, 600, 400]
+
+A breakpoint is a point in the program where the execution stops. It is used to pause the program
+and inspect the state of the program at that point. Breakpoints are used to debug programs. They
+are used to find bugs in the program. Breakpoints can be set in the following ways:
+
+- Using any IDE (see red dot in the image above)
+- Using the `breakpoint()` function (only in Python 3.7 and above)
+- Using the `pdb` module
+
+=== Conditional breakpoints
+
+image::12_debugging/conditional_breakpoint.png[Python A conditional breakpoint, 600, 400]
+
+A conditional breakpoint is a breakpoint that is only triggered when a condition is met. It is
+used to pause the program and inspect the state of the program when a condition is met. Conditional
+breakpoints are used to debug programs. They are used to find bugs in the program. Conditional
+breakpoints can be set in the following ways:
+
+- Using an IDE (right click on the breakpoint and edit the conditions)
+- Using the `breakpoint()` function (only in Python 3.7 and above)
+- Using the `pdb` module
+
+=== Watchlists
+
+image::12_debugging/watchlist.png[Python A watch, 600, 400]
+
+A watchlist is a list of variables that are monitored while the program is running. It is used to
+inspect the values of variables while the program is running. Watchlists are used to debug programs.
+They are used to find bugs in the program. Watchlists can be set in the following ways:
+
+- Using any IDE (while in debug mode)
+- Using the `pdb` module
 

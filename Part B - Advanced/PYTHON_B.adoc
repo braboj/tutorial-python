@@ -1,4 +1,5 @@
 = PART B: Advanced Python
+:doctype: book
 :sectnums:
 :docinfo:
 :toc:
@@ -168,5 +169,145 @@ In Python, you can use dependency injection to achieve this principle. Instead o
 === Creational Patterns
 === Structural Patterns
 === Behavioral Patterns
+
+== Software Architecture
+
+=== Multilayered Architecture
+This pattern can be used to structure programs that can be decomposed into groups of subtasks,
+each of which is at a particular level of abstraction. Each layer provides services to the next
+higher layer.
+
+Examples:
+
+- OSI model
+- Model-View-Controller (MVC)
+- Model-View-ViewModel (MVVM)
+- Model-View-Presenter (MVP)
+- Model-View-Intent (MVI)
+- Model-View-Update (MVU)
+
+=== Monolithic Architecture
+This pattern can be used to structure programs that can be decomposed into a set of modules that
+are tightly coupled and run in the same process. Monolithic applications are typically deployed as
+a single unit.
+
+Links:
+
+- https://en.wikipedia.org/wiki/Monolithic_application[Monolithic application]
+- https://en.wikipedia.org/wiki/Monolithic_kernel[Monolithic kernel]
+
+
+=== Service-Oriented Architecture
+This pattern can be used to structure programs that can be decomposed into a set of services that
+are independently deployable and scalable. Each service is self-contained and implements a single
+business capability. Services communicate with each other using a protocol such as HTTP/HTTPS or
+gRPC. Services can be deployed as containers in a container orchestration platform such as
+Kubernetes. Microservices are typically implemented using a framework such as Spring Boot. The
+https://microservices.io/[microservices.io] website provides a good overview of microservices.
+
+Examples:
+
+- https://spring.io/projects/spring-boot[Spring Boot]
+- https://quarkus.io/[Quarkus]
+- https://micronaut.io/[Micronaut]
+- https://helidon.io/[Helidon]
+- https://www.mulesoft.com/platform/mule[MuleSoft]
+- https://www.ibm.com/cloud/microservices[IBM Cloud Microservices]
+- https://www.redhat.com/en/technologies/jboss-middleware/microservices[Red Hat JBoss Middleware]
+- https://www.nginx.com/products/nginx/kubernetes-ingress-controller/[NGINX Kubernetes Ingress Controller]
+
+
+=== Client-Server Architecture
+This pattern can be used to structure programs that can be decomposed into two parts: a server
+that provides a service, and a client that requests services from the server. The server component
+is usually designed to be reusable. The client and server communicate with each other using a
+protocol.
+
+Examples:
+
+- Web service (SOAP, REST)
+- Remote procedure call (RPC)
+
+=== Publish-Subscribe Architecture
+This pattern can be used to structure programs that can be decomposed into a set of publishers
+and subscribers that communicate with each other using a message broker. Publishers publish events
+to the message broker, and subscribers subscribe to events of interest to them. The message broker
+acts as an intermediary between publishers and subscribers.
+
+Examples:
+
+- https://kafka.apache.org/[Apache Kafka] (event streaming platform)
+- https://pulsar.apache.org/[Apache Pulsar] (event streaming platform)
+- https://www.confluent.io/[Confluent] (event streaming platform)
+- https://nats.io/[NATS] (event streaming platform)
+- https://www.rabbitmq.com/[RabbitMQ] (message broker)
+- https://mosquitto.org/[Mosquitto] (message broker)
+- https://zeromq.org/[ZeroMQ] (messaging library)
+- https://redis.io/[Redis] (in-memory data structure store)
+
+Links:
+
+- https://en.wikipedia.org/wiki/Event_loop[Event loop]
+- https://en.wikipedia.org/wiki/Event-driven_architecture[Event-driven architecture]
+- https://en.wikipedia.org/wiki/Event-driven_programming[Event-driven programming]
+- https://en.wikipedia.org/wiki/Event_stream_processing[Event stream processing]
+- https://en.wikipedia.org/wiki/Event-driven_SOA[Event-driven SOA]
+- https://luckyresistor.me/2019/07/05/event-based-firmware-1/[Event-driven firmware]
+
+
+=== Peer-to-Peer Architecture
+This pattern can be used to structure programs that can be decomposed into a set of peers
+that are symmetric in terms of their functionality, and each peer may act as both a client
+and a server. Blockchains or torrents are examples of peer-to-peer networks.
+
+Examples:
+
+- Blockchain
+- BitTorrent
+
+
+=== Pipe-Filter Architecture
+This pattern can be used to structure programs that can be decomposed into a set of filters
+that process a stream of data, and a set of pipes that connect the filters together. Each
+filter has a single input and a single output. Pipes can be used to connect the filters
+together and to connect a filter to a data source or data sink.
+
+Examples:
+
+- https://en.wikipedia.org/wiki/Pipeline_(Unix)[Unix pipelines]
+- https://beam.apache.org/documentation/programming-guide/[Apache Beam]
+
+== Advanced Collections
+
+
+=== Counter
+=== defaultdict
+=== OrderedDict
+=== deque
+=== namedtuple
+=== ChainMap
+=== UserDict
+=== UserList
+=== UserString
+=== UserInt
+=== UserFloat
+=== Enum
+=== queue
+=== heapq
+=== bisect
+=== array
+=== weakref
+=== types
+=== copy
+=== enum
+=== dataclasses
+
+
+
+
+
+
+
+
 
 
