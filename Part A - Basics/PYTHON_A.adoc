@@ -136,7 +136,7 @@ Our first program will greet us and tell us the result of the operation 1+1 .
 
 [source,python]
 ----
-include::02_introduction/examples/hello_world.py[]
+include::02_introduction/examples/intro_hello_world.py[]
 ----
 
 
@@ -162,7 +162,7 @@ have a value or result that can be used further in the code.
 
 [source,python]
 ----
-include::02_introduction/examples/statements.py[]
+include::02_introduction/examples/intro_statements.py[]
 ----
 
 In the above example, we have two statements. The first statement assigns the value 5 to the
@@ -177,7 +177,7 @@ assigning a value, passing arguments to a function, or printing a value.
 
 [source,python]
 ----
-include::02_introduction/examples/expressions.py[]
+include::02_introduction/examples/intro_expressions.py[]
 ----
 
 In the above example, the first line is an expression that evaluates to the value 6. The second
@@ -192,7 +192,7 @@ interpreter as an Easter egg. You can view it by typing `import this` in the Pyt
 
 [source,python]
 ----
-include::02_introduction/examples/zen_of_python.py[]
+include::02_introduction/examples/intro_zen_of_python.py[]
 ----
 
 [source,console]
@@ -222,9 +222,29 @@ Namespaces are one honking great idea -- let's do more of those!
 
 ----
 
-The statement `import this` imports the `this` module and prints the contents of the `this.s`. By
-importing a module, you can access the variables, functions, and classes defined in that module.
+=== Importing Modules
 
+Python modules are files that contain Python code. They can be used to organize code into logical
+units. Modules can be imported into other modules using the `import` statement. The `import`
+statement takes the name of the module to import as an argument.
+
+Another way to import modules is to use the `from <module> import <object>` statement. This allows
+you to import specific objects from a module into the current namespace. You can also import all
+objects from a module into the current namespace using the `from <module> import *` statement.
+
+For example, if you have a module named `math.py`, you can import it using the statement `import
+math`. You can also import specific objects from a module using the `from` statement.
+
+
+[source,python]
+----
+include::02_introduction/examples/intro_import.py[]
+----
+
+The statement import this will do the following:
+
+- It will provide all elements of the this module
+- If there is executable code in the module, it will be executed
 
 == Variables
 
@@ -1005,10 +1025,10 @@ cannot modify them.
 include::08_functions/examples/func_closures.py[]
 ----
 
-=== Function Decorators
-Python offers a concise way to define closures using function decorators. Function decorators are
-functions that take a function as an argument and return a modified version of the function. They
-are used to modify the behavior of a function without changing the function itself.
+=== Decorator Functions
+Function decorators are functions that take a function as an argument and return a modified
+version of the function. They are used to modify the behavior of a function without changing the
+function itself.
 
 Function decorators are specified using the `@` operator before the function definition. The function
 decorator is called when the function is defined.

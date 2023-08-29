@@ -303,7 +303,22 @@ Examples:
 === dataclasses
 
 
+== Decorators
 
+=== Function Decorators
+Python offers a concise way to define closures using function decorators. Function decorators are
+functions that take a function as an argument and return a modified version of the function. They
+are used to modify the behavior of a function without changing the function itself.
+
+Function decorators are specified using the `@` operator before the function definition. The function
+decorator is called when the function is defined.
+
+[source,python]
+----
+include::08_decorators/examples/func_decorator.py[]
+----
+
+=== Class Decorators
 
 
 
