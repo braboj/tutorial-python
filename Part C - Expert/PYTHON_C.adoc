@@ -6,3 +6,5 @@
 
 == Generators
 == Coroutines
+== Descriptors
+== Accelerated Python

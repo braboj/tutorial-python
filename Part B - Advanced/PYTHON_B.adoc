@@ -10,7 +10,8 @@
 Abstraction is a fundamental concept in object-oriented programming (OOP) that refers to the
 process of exposing only the relevant and essential data and behavior to the users without
 showing the internal implementation details. It is used to manage complexity and reduce
-dependencies between classes. Abstraction is achieved by using abstract classes or interfaces.
+dependencies between classes. Abstraction is achieved by using **abstract classes** or
+**interfaces**.
 
 They key points about abstraction are:
 
@@ -146,29 +147,57 @@ A class or function should have only one reason to change. In Python, you can cr
 
 === Open/Closed Principle
 
-A class or function should be open for extension but closed for modification.
-In Python, you can use inheritance and composition to achieve this principle. Instead of modifying existing classes or functions, you can extend their behavior by creating new subclasses or wrapping them in decorators. For example, you can create a class that extends the behavior of an existing class by adding new methods, without modifying the existing class.
+A class or function should be open for extension but closed for modification. In Python, you can
+use inheritance and composition to achieve this principle. Instead of modifying existing classes or functions, you can extend their behavior by creating new subclasses or wrapping them in decorators. For example, you can create a class that extends the behavior of an existing class by adding new methods, without modifying the existing class.
 
 === Liskov Substitution Principle
-Subtypes must be substitutable for their base types.
-In Python, you can use type hints and abstract base classes (ABCs) to ensure that subtypes can be used interchangeably with their base types. For example, you can define an ABC that defines a common interface for a set of related classes. Subclasses can then implement this interface to ensure that they can be used interchangeably with the base class.
+Subtypes must be substitutable for their base types. In Python, you can use type hints and
+abstract base classes (ABCs) to ensure that subtypes can be used interchangeably with their base types. For example, you can define an ABC that defines a common interface for a set of related classes. Subclasses can then implement this interface to ensure that they can be used interchangeably with the base class.
 
 === Interface Segregation Principle
-Clients should not be forced to depend on interfaces they do not use.
-In Python, you can define narrow interfaces that are tailored to specific clients, instead of using a single, broad interface. This helps to reduce the complexity and coupling of the system. For example, you can define a small interface that provides a specific set of methods, instead of using a large interface that provides many methods that are not needed by the client.
+Clients should not be forced to depend on interfaces they do not use. In Python, you can define
+narrow interfaces that are tailored to specific clients, instead of using a single, broad interface. This helps to reduce the complexity and coupling of the system. For example, you can define a small interface that provides a specific set of methods, instead of using a large interface that provides many methods that are not needed by the client.
 
 === Dependency Inversion Principle
 
-High-level modules should not depend on low-level modules. Both should depend
-on abstractions.
+High-level modules should not depend on low-level modules. Both should depend on abstractions.
 In Python, you can use dependency injection to achieve this principle. Instead of directly instantiating dependencies in a class or function, you can pass them in as parameters or inject them using a framework. This helps to decouple the system and makes it easier to test and maintain. For example, you can define a class that depends on an abstract interface, and then inject a concrete implementation of that interface at runtime.
 
 
 == Design Patterns
 
 === Creational Patterns
+
+==== Abstract Factory
+==== Builder
+==== Factory Method
+==== Prototype
+==== Singleton
+
 === Structural Patterns
+
+==== Adapter
+==== Bridge
+==== Composite
+==== Decorator
+==== Facade
+==== Flyweight
+==== Proxy
+
 === Behavioral Patterns
+
+==== Chain of Responsibility
+==== Command
+==== Interpreter
+==== Iterator
+==== Mediator
+==== Memento
+==== Observer
+==== State
+==== Strategy
+==== Template Method
+==== Visitor
+
 
 == Software Architecture
 
@@ -186,7 +215,7 @@ Examples:
 - Model-View-Intent (MVI)
 - Model-View-Update (MVU)
 
-=== Monolithic Architecture
+=== Monolithic
 This pattern can be used to structure programs that can be decomposed into a set of modules that
 are tightly coupled and run in the same process. Monolithic applications are typically deployed as
 a single unit.
@@ -197,7 +226,7 @@ Links:
 - https://en.wikipedia.org/wiki/Monolithic_kernel[Monolithic kernel]
 
 
-=== Service-Oriented Architecture
+=== Service-Oriented
 This pattern can be used to structure programs that can be decomposed into a set of services that
 are independently deployable and scalable. Each service is self-contained and implements a single
 business capability. Services communicate with each other using a protocol such as HTTP/HTTPS or
@@ -217,7 +246,7 @@ Examples:
 - https://www.nginx.com/products/nginx/kubernetes-ingress-controller/[NGINX Kubernetes Ingress Controller]
 
 
-=== Client-Server Architecture
+=== Client-Server
 This pattern can be used to structure programs that can be decomposed into two parts: a server
 that provides a service, and a client that requests services from the server. The server component
 is usually designed to be reusable. The client and server communicate with each other using a
@@ -228,7 +257,7 @@ Examples:
 - Web service (SOAP, REST)
 - Remote procedure call (RPC)
 
-=== Publish-Subscribe Architecture
+=== Publish-Subscribe
 This pattern can be used to structure programs that can be decomposed into a set of publishers
 and subscribers that communicate with each other using a message broker. Publishers publish events
 to the message broker, and subscribers subscribe to events of interest to them. The message broker
@@ -255,7 +284,7 @@ Links:
 - https://luckyresistor.me/2019/07/05/event-based-firmware-1/[Event-driven firmware]
 
 
-=== Peer-to-Peer Architecture
+=== Peer-to-Peer
 This pattern can be used to structure programs that can be decomposed into a set of peers
 that are symmetric in terms of their functionality, and each peer may act as both a client
 and a server. Blockchains or torrents are examples of peer-to-peer networks.
@@ -266,7 +295,7 @@ Examples:
 - BitTorrent
 
 
-=== Pipe-Filter Architecture
+=== Pipe-Filter
 This pattern can be used to structure programs that can be decomposed into a set of filters
 that process a stream of data, and a set of pipes that connect the filters together. Each
 filter has a single input and a single output. Pipes can be used to connect the filters
@@ -277,48 +306,267 @@ Examples:
 - https://en.wikipedia.org/wiki/Pipeline_(Unix)[Unix pipelines]
 - https://beam.apache.org/documentation/programming-guide/[Apache Beam]
 
+
+== Logging
+
+=== Logger Objects
+=== Logging Configuration
+=== Logging Levels
+=== Logging Handlers
+=== Logging Formatters
+=== Logging Filters
+=== Logging Best Practices
+
+
+== Exception Handling
+
+=== Exception Hierarchy
+=== Exception Handling
+=== Exception Propagation
+=== Exception Chaining
+=== Exception Best Practices
+
+
 == Advanced Collections
 
 
 === Counter
-=== defaultdict
+=== ChainMap
 === OrderedDict
+=== defaultdict
 === deque
 === namedtuple
-=== ChainMap
+
+=== weakref
+=== struct
+=== enum
+=== queue
+=== heapq
+=== bisect
+=== array
+=== types
+=== copy
+=== dataclasses
+
 === UserDict
 === UserList
 === UserString
 === UserInt
 === UserFloat
-=== Enum
-=== queue
-=== heapq
-=== bisect
-=== array
-=== weakref
-=== types
-=== copy
-=== enum
-=== dataclasses
+
+== Import System
+
+=== Absolute Imports
+
+Absolute imports are imports that use the full path of a module. Absolute imports are the
+preferred way of importing modules. Absolute imports are more readable and less error-prone than
+relative imports. Absolute imports are also faster than relative imports. Absolute imports are
+enabled by default in Python 3.
+
+The disadvantage of absolute imports is that they are not portable. Absolute imports are not
+suitable for code that needs to run from different folder locations.
+
+=== Relative Imports
+
+The advantage of relative imports is that they are portable. Relative imports are suitable for
+code that needs to run from different folder locations.
+
+=== Modules
+
+A module is a file that contains Python code. A module can be imported using the import statement.
+The import statement searches for modules in the following locations:
+
+- The current directory
+- The PYTHONPATH environment variable
+- The installation-dependent default
+
+The search path can be modified at runtime using the sys.path variable. The sys.path variable is
+a list of strings that specifies the search path for modules.
+
+=== Packages
+
+A package is a collection of modules that are grouped together in a directory. A package is a
+module with a __path__ attribute. The __path__ attribute is a list of strings that specifies the
+search path for modules in the package. The search path is initialized from the following sources:
+
+- The __path__ attribute of the parent package
+- The PYTHONPATH environment variable
+- The installation-dependent default
 
 
-== Decorators
+=== Namespace Packages
 
-=== Function Decorators
-Python offers a concise way to define closures using function decorators. Function decorators are
-functions that take a function as an argument and return a modified version of the function. They
-are used to modify the behavior of a function without changing the function itself.
+A namespace package is a package that is split across multiple directories. A namespace package
+is a package with a __path__ attribute that is a list of strings. Each string in the __path__
+attribute is the path to a directory that contains a part of the package. A namespace package
+is created by placing a __init__.py file in each directory that contains a part of the package.
+The __path__ attribute is initialized from the following sources:
 
-Function decorators are specified using the `@` operator before the function definition. The function
-decorator is called when the function is defined.
+- The __path__ attribute of the parent package
+- The PYTHONPATH environment variable
+- The installation-dependent default
 
-[source,python]
-----
-include::08_decorators/examples/func_decorator.py[]
-----
 
-=== Class Decorators
+=== Importlib
+
+The importlib module provides functions for programmatically importing modules. The importlib
+module also provides functions for creating custom importers. An importer is an object that is
+responsible for finding and loading modules.
+
+=== Import Hooks
+
+An import hook is a function that is called when a module is imported. An import hook can be used
+to customize the import process. The importlib module provides functions for registering import
+hooks. The importlib module also provides functions for creating custom importers. An importer
+is an object that is responsible for finding and loading modules. The importlib module provides
+the following importers:
+
+- BuiltinImporter
+- FrozenImporter
+- MetaPathFinder
+- PathEntryFinder
+- FileFinder
+- SourceFileLoader
+- SourcelessFileLoader
+- ExtensionFileLoader
+- FileLoader
+- SourcelessFileLoader
+
+== Metaprogramming
+
+Metaprogramming is a programming technique where a program is designed to manipulate or generate code during runtime. It allows a program to treat code as data and work with it programmatically. Metaprogramming can be a powerful tool in a developer's toolbox, but it should be used judiciously, as it can make code more complex and harder to understand.
+
+Here are some common forms and examples of metaprogramming:
+
+- Code Generation: In this form of metaprogramming, code is generated programmatically. For
+example, you might have a template for generating database access code based on a data model. Instead of writing the code manually for each table, you use metaprogramming to generate it automatically.
+
+- Reflection: Reflection is the ability of a program to inspect and manipulate its own structure,
+classes, methods, and properties at runtime. In languages like Java or C#, you can use reflection to examine and modify classes, invoke methods, or access fields dynamically.
+
+- Dynamic Loading: This involves loading and unloading code modules dynamically at runtime. For
+example, in Python, you can use the importlib module to load Python files dynamically as modules.
+
+- Code Evaluation: Languages like Python and Ruby allow you to execute dynamically generated code
+using eval() or exec() functions. However, using these functions can be risky if the input is not properly sanitized, as it can lead to security vulnerabilities.
+
+Aspect-Oriented Programming (AOP): AOP is a metaprogramming technique that allows you to define cross-cutting concerns such as logging, security, and transactions separately from your core application logic. AOP frameworks can inject these concerns into your code at runtime.
+
+
+// - Oject-relational mapping (ORM) frameworks such as SQLAlchemy and Django ORM.
+// - Serialization and deserialization frameworks such as JSON, YAML, and pickle.
+// - Dependency injection frameworks such as Dagger and Spring.
+// - Testing frameworks such as pytest and unittest.
+// - Mocking frameworks such as unittest.mock and mockito.
+// - Code generation tools such as ANTLR and Yacc.
+// - Static analysis tools such as pylint and mypy.
+
+=== Metaclasses
+
+A metaclass is a class whose instances are classes. A metaclass is used to customize the creation
+of classes. A metaclass is defined by inheriting from the type metaclass. The type metaclass is a
+class that is used to create all classes in Python. A metaclass can be used to customize the class
+creation process by overriding the __new__() method. The __new__() method is called when a class
+is created. The __new__() method is responsible for creating and returning the class object. The
+__new__() method takes the following arguments:
+
+- cls: The class object
+- name: The name of the class
+- bases: A tuple of base classes
+- attrs: A dictionary of class attributes
+
+=== Abstract Base Classes
+
+The abc module provides the ABCMeta metaclass for creating abstract base classes (ABCs). An ABC is
+a class that cannot be instantiated directly and is used to define a common interface for a set of
+related classes. Subclasses can then implement this interface to ensure that they can be used
+interchangeably with the base class. ABCs are useful for defining APIs and enforcing class
+contracts.
+
+
+
+
+== Testing
+
+Python has a rich ecosystem of testing frameworks and tools. The following are some of the most
+popular testing frameworks and tools:
+
+- https://docs.pytest.org/[pytest]
+- https://docs.python.org/3/library/unittest.html[unittest]
+- https://docs.python.org/3/library/doctest.html[doctest]
+- https://docs.python.org/3/library/unittest.mock.html[unittest.mock]
+- https://coverage.readthedocs.io/[Coverage]
+- https://hypothesis.readthedocs.io/[Hypothesis]
+- https://tox.readthedocs.io/[tox]
+
+=== pytest
+
+pytest is a popular testing framework that makes it easy to write simple and scalable tests. It
+provides a rich set of features for writing and running tests, including: fixtures, parameterized
+tests, test discovery, test collection, test execution, test reporting, and test debugging.
+
+=== unittest
+
+unittest is a testing framework that is part of the Python standard library. It provides a rich
+set of features for writing and running tests, including: fixtures, parameterized tests, test
+discovery, test collection, test execution, test reporting, and test debugging.
+
+=== doctest
+
+doctest is a testing framework that is part of the Python standard library. It provides a simple
+and lightweight way of testing code by embedding tests in docstrings. It is useful for testing
+examples in documentation.
+
+=== unittest.mock
+
+unittest.mock is a testing framework that is part of the Python standard library. It provides a
+rich set of features for mocking objects and functions, including: mocking, patching, stubbing,
+spying, and faking.
+
+=== Coverage
+
+Coverage is a tool for measuring code coverage of Python programs. It can be used to identify
+untested parts of a program. It can also be used to measure the effectiveness of a test suite. It
+can be used as a command-line tool or as a library. It can be used with pytest, unittest, and
+doctest.
+
+=== Hypothesis
+
+Hypothesis is a library for property-based testing. It can be used to generate test data and
+assertions. It can be used with pytest, unittest, and doctest.
+
+=== tox
+
+tox is a tool for testing Python programs in multiple environments. It can be used to test
+programs in different versions of Python and different operating systems. It can be used as a
+command-line tool or as a library. It can be used with pytest, unittest, and doctest
+
+
+== Tracing
+
+The tracing module provides functions for tracing the execution of Python programs. It can be used
+to trace the execution of functions, methods, and classes. How to use the tracing module:
+
+- Import the tracing module
+- Create a tracer object
+- Register the tracer object with the tracing module
+- Run the program
+- View the trace output
+
+
+== Profiling
+
+Profiling is a technique for measuring the performance of a program. It can be used to identify the
+bottlenecks in a program and to optimize the performance of a program. The profiling module provides
+functions for profiling the execution of Python programs. It can be used to profile the execution
+of functions, methods, and classes. How to use the profiling module:
+
+- Import the profiling module
+- Create a profiler object
+- Register the profiler object with the profiling module
+- Run the program
+- View the profile output
+
 
 
 
