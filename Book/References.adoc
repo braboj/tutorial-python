@@ -1,24 +1,72 @@
-- Effective Computation in Physics
-- Advanced Python Programming: Build high performance, concurrent, and multi-threaded apps with Python using proven
-design patterns
-- Learning Concurrency in Python: Build highly efficient, robust, and concurrent applications
-- Python Cookbook: No. 3
-- Learn Python 3 the Hard Way: A Very Simple Introduction to the Terrifyingly Beautiful World of Computers and Code
-- Effective Python: 59 Specific Ways to Write Better Python
+= Annex
+
+== Bibliography
+
+- Clean Code: A Handbook of Agile Software Craftsmanship
+- The Complete Python Manual: Learn how to master Python and expand your programming skills
+- Python Pocket Reference
+- Mastering Python
 - Fluent Python: Clear, Concise, and Effective Programming
+- Python Cookbook: Recipes for Mastering Python 3
 - Python Tricks: A Buffet of Awesome Python Features
+- Advanced Python Programming: Build high performance, concurrent, and multi-threaded apps with
+Python using proven design patterns
+- Learn Python 3 the Hard Way: A Very Simple Introduction to the Terrifyingly Beautiful World of Computers and Code
+- Advanced Python Programming: Build high performance, concurrent, and multi-threaded apps with
+Python using proven design patterns
+- Effective Python: 59 Specific Ways to Write Better Python
+- Python Tricks: A Buffet of Awesome Python Features
+- Effective Computation in Physics: Field Guide to Research with Python
+- The big book of small Python projects
+- Competetive Programming in Python
+- Python Penetration Testing Essentials
+- Learning Penertration Testing with Python
+- Python Data Analytics
+- Numerical Python: A Practical Techniques Approach for Industry
+
+
+== Links
+
+=== Beginner
+- https://www.python.org/
+- https://www.python.org/dev/peps/pep-0008/
+- https://www.python.org/dev/peps/pep-0020/
+- https://www.python.org/dev/peps/pep-0257/
+
+- https://www.w3schools.com/python/
+- https://realpython.com/
+- https://www.geeksforgeeks.org/python-programming-language/
+
 - http://p-nand-q.com/python/lambda.html
-- https://www.residentmar.io/2019/07/07/python-mixins.html
-- https://www.pythontutorial.net/python-oop/python-mixin/
-- https://www.toptal.com/python/python-class-attributes-an-overly-thorough-guide
 - https://www.educative.io/edpresso/what-is-mro-in-python
 - http://www.srikanthtechnologies.com/blog/python/mro.aspx
-- https://realpython.com/python-iterators-iterables/
-- https://www.pythontutorial.net/advanced-python/python-iterator-vs-iterable/
-- https://github.com/jsbueno/metapython/blob/main/static.py
-- https://commons.wikimedia.org/wiki/File:W3sDesign_Dependency_Injection_Design_Pattern_UML.jpg
-- https://maximilienandile.github.io/2019/10/20/Dependency-injection-what-is-it-how-to-do-it-in-Java-and-why-to-use-it/
-- https://www.youtube.com/watch?v=IKD2-MAkXyQ
+- https://www.toptal.com/python/python-class-attributes-an-overly-thorough-guide
+- https://www.residentmar.io/2019/07/07/python-mixins.html
+- https://www.pythontutorial.net/python-oop/python-mixin
 - https://tinyurl.com/pylinters
 - https://codilime.com/blog/python-code-quality-linters/
 - https://dsstream.com/improve-your-python-code-quality/
+
+=== Intermediate
+
+- https://python101.pythonlibrary.org/index.html
+- https://book.pythontips.com/en/latest/index.html
+- https://realpython.com/python-iterators-iterables/
+- https://www.pythontutorial.net/advanced-python/python-iterator-vs-iterable/
+- https://commons.wikimedia.org/wiki/File:W3sDesign_Dependency_Injection_Design_Pattern_UML.jpg
+- https://maximilienandile.github.io/2019/10/20/Dependency-injection-what-is-it-how-to-do-it-in-Java-and-why-to-use-it/
+- https://www.youtube.com/watch?v=IKD2-MAkXyQ
+
+
+=== Expert
+- https://python-3-patterns-idioms-test.readthedocs.io/en/latest/index.html
+- https://www.dabeaz.com/tutorials.html
+- https://python-future.org/compatible_idioms.html
+- https://github.com/jsbueno/metapython/blob/main/static.py
+
+
+=== Libraries
+
+- https://pymotw.com/2/contents.html
+- https://pymotw.com/3/index.html
+
