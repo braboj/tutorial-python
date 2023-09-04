@@ -1,6 +1,7 @@
 # Example: Singleton using the __new__ method
 
 class Singleton(object):
+
     __instance = None
 
     def __new__(cls):
@@ -16,3 +17,5 @@ class Singleton(object):
 
 s1 = Singleton()
 s2 = Singleton()
+print(s1 == s2)
+print(s1 is s2)

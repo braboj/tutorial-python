@@ -3,8 +3,6 @@
 :sectnums:
 :docinfo:
 :toc:
-// :hardbreaks:
-
 
 == Requirements
 The following pre-requisites are required to complete this module:
@@ -153,6 +151,16 @@ If we elaborate further we will see that a program generally is a...
  - A sequence of instructions called statements
  - Each statement might have expressions that return results
  - Each statement might use pre-defined code blocks called functions
+
+=== print() under the hood
+
+The print() function is used to print a value to the screen. The print() function is a built-in
+function, which means that it is available by default.
+
+[source,python]
+----
+include::02_introduction/examples/intro_print.py[]
+----
 
 === Statements
 
@@ -1694,204 +1702,6 @@ information about a class.
 - use `\__slots__` to get the slots of a class
 - use `\__annotations__` to get the annotations of a class
 
-== Dunder Methods
-Dunder methods are special methods that are defined using the double underscore notation. They are
-used to emulate the behavior of built-in types and provide a way to customize the behavior of
-classes. Dunder methods are also called magic methods. Some of the most common use cases for
-dunder methods are:
-
-- Emulate the behavior of built-in types
-- Customize the behavior of classes
-- Object representation
-- Implement operator overloading
-- Implement iterators
-- Implement context managers
-
-=== Object representation
-
-[options="header"]
-|====
-|Representation | Dunder method | Notes
-
-|Human-readable | `\\__str__` | If you want to provide a human-readable string representation of an
-object, use the `\__str__` method. This method should return a string that is easy for a human to
-understand.
-
-|Unambiguous | `\\__repr__` | If you want to provide an unambiguous string representation of an
-object, use the `\__repr__` method. This method should return a string that can be used to
-recreate the object.
-
-|Custom formatting | `\\__format__` | If you want to provide custom string formatting of an object, use
-the `\__format__` method. This method should return a string that is formatted according to the
-format specification.
-
-|Raw byte string | `\\__bytes__` | If you want to provide a raw byte string representation of an
-object, use the `\__bytes__` method. This method should return a byte string that can be used to
-recreate the object. This method is used by the bytes() function.
-
-|Unique | `\\__hash__` | If you want to compute the hash of an object, use the `\__hash__` method.
-This method should return an integer that is used to compare objects in dictionaries and sets.
-This method is used by the hash() function.
-
-|====
-
-[source,python]
-----
-include::10_dunder/examples/dunder_object_representation.py[]
-----
-
-
-=== Custom behavior of classes and instances
-
-[options="header"]
-|====
-|Behavior | Dunder method | Notes
-
-|Customize creation | `\\__new__` | If you want to customize the creation of an instance, use the
-`\__new__` method. This method should return an instance of the class. It is used to create the
-instance before it is initialized.
-
-|Customize initialization | `\\__init__` | If you want to customize the initialization of an
-instance, use the `\__init__` method. This method is called right after the instance has been
-created. It is used to initialize the instance variables of the class.
-
-|Customize calling | `\\__call__` | If you want to customize the behavior of calling an instance,
-use the `\__call__` method. This method is called when the instance is called like a function.
-
-|Customize deletion | `\\__del__` | If you want to customize the deletion of an instance, use the
-`\__del__` method. This method is called when the instance is deleted. It is used by the del
-statement.
-
-|====
-
-
-[source,python]
-----
-include::10_dunder/examples/dunder_customize_behavior.py[]
-----
-
-
-=== Custom behavior of built-in types
-
-[options="header"]
-|====
-|Built-in type | Dunder method | Notes
-
-|`int()` | `\\__int__` | If you want to convert an object to an integer, use the `\__int__`
-method. This method should return an integer. It is used by the int() function.
-
-|`float()` | `\\__float__` | If you want to convert an object to a float, use the `\__float__`
-method. This method should return a float. It is used by the float() function.
-
-|`complex()` | `\\__complex__` | If you want to convert an object to a complex number, use the
-`\__complex__` method. This method should return a complex number. It is used by the complex()
-function.
-
-|`bool()` | `\\__bool__` | If you want to evaluate the truth value of an object, use the
-`\__bool__` method. This method should return a boolean. It is used by the bool() function.
-
-|====
-
-
-[source,python]
-----
-include::10_dunder/examples/dunder_builtin_types.py[]
-----
-
-
-
-
-
-
-
-
-=== Operator overloading
-
-[options="header"]
-|===================
-|Operator | Dunder method
-
-|`==` | `\\__eq__`
-|`!=` | `\\__ne__`
-|`<` | `\\__lt__`
-|`<=` | `\\__le__`
-|`>` | `\\__gt__`
-|`>=` | `\\__ge__`
-|`+` | `\\__add__`
-|`-` | `\\__sub__`
-|`*` | `\\__mul__`
-|`/` | `\\__truediv__`
-|`//` | `\\__floordiv__`
-|`%` | `\\__mod__`
-|`**` | `\\__pow__`
-|`&` | `\\__and__`
-|`|` | `\\__or__`
-|`^` | `\\__xor__`
-|`<<` | `\\__lshift__`
-|`>>` | `\\__rshift__`
-|`+=` | `\\__iadd__`
-|`-=` | `\\__isub__`
-|`*=` | `\\__imul__`
-|`/=` | `\\__itruediv__`
-|`//=` | `\\__ifloordiv__`
-|`%=` | `\\__imod__`
-|`**=` | `\\__ipow__`
-|`&=` | `\\__iand__`
-|`|=` | `\\__ior__`
-|`^=` | `\\__ixor__`
-|`<<=` | `\\__ilshift__`
-|`>>=` | `\\__irshift__`
-|`-` | `\\__neg__`
-|`+` | `\\__pos__`
-|`~` | `\\__invert__`
-|===================
-
-[source,python]
-----
-include::10_dunder/examples/dunder_operator_overloading.py[]
-----
-
-=== Iterator protocol
-
-[options="header"]
-|====
-|Function | Dunder method | Notes
-
-|Create iterator | `\\__iter__` | If you want to iterate over an object, use the `\__iter__` method.
-This method should return an iterator. It is used by the iter() function.
-
-|Get next item  | `\\__next__` | If you want to get the next value of an iterator, use the
-`\__next__`
-method. This method should return the next value of the iterator. It is used by the next().
-
-|====
-
-[source,python]
-----
-include::10_dunder/examples/dunder_iterator_protocol.py[]
-----
-
-=== Context manager protocol
-
-[options="header"]
-|====
-|Function | Dunder method | Notes
-
-|Enter context | `\\__enter__` | If you want to customize the behavior of the `with` statement
-when entering the block, use the `\__enter__` method. This method should return an object that
-will be assigned to the variable in the `with` statement.
-
-|Exit context  | `\\__exit__` | If you want to customize the behavior of the `with` statement
-when exiting the block, use the `\__exit__` method. This method should return a boolean that
-indicates whether the exception was handled or not.
-
-|====
-
-[source,python]
-----
-include::10_dunder/examples/dunder_context_manager.py[]
-----
-
 
 == Docstrings
 
@@ -1904,7 +1714,7 @@ function, or method.
 
 [source,python]
 ----
-include::11_docstrings/examples/docstring_class.py[]
+include::10_docstrings/examples/docstring_class.py[]
 ----
 
 
@@ -1912,7 +1722,7 @@ include::11_docstrings/examples/docstring_class.py[]
 
 [source,python]
 ----
-include::11_docstrings/examples/docstring_function.py[]
+include::10_docstrings/examples/docstring_function.py[]
 ----
 
 === Module docstrings
@@ -1922,7 +1732,7 @@ docstring of a module is the first string in the module.
 
 [source,python]
 ----
-include::11_docstrings/examples/docstring_module.py[]
+include::10_docstrings/examples/docstring_module.py[]
 ----
 
 
@@ -1930,7 +1740,7 @@ include::11_docstrings/examples/docstring_module.py[]
 
 === Breakpoints
 
-image::12_debugging/breakpoint.png[Python A breakpoint, 600, 400]
+image::11_debugging/breakpoint.png[Python A breakpoint, 600, 400]
 
 A breakpoint is a point in the program where the execution stops. It is used to pause the program
 and inspect the state of the program at that point. Breakpoints are used to debug programs. They
@@ -1942,7 +1752,7 @@ are used to find bugs in the program. Breakpoints can be set in the following wa
 
 === Conditional breakpoints
 
-image::12_debugging/conditional_breakpoint.png[Python A conditional breakpoint, 600, 400]
+image::11_debugging/conditional_breakpoint.png[Python A conditional breakpoint, 600, 400]
 
 A conditional breakpoint is a breakpoint that is only triggered when a condition is met. It is
 used to pause the program and inspect the state of the program when a condition is met. Conditional
@@ -1955,7 +1765,7 @@ breakpoints can be set in the following ways:
 
 === Watchlists
 
-image::12_debugging/watchlist.png[Python A watch, 600, 400]
+image::11_debugging/watchlist.png[Python A watch, 600, 400]
 
 A watchlist is a list of variables that are monitored while the program is running. It is used to
 inspect the values of variables while the program is running. Watchlists are used to debug programs.
@@ -1963,4 +1773,29 @@ They are used to find bugs in the program. Watchlists can be set in the followin
 
 - Using any IDE (while in debug mode)
 - Using the `pdb` module
+
+== Code Analysis
+
+The static code analysis process (linting for short) is the process of checking the source code for
+type errors, syntax errors, and styling errors. It is used to ensure that the code is correct
+and follows the Python style guide. In this tutorial we will use the integrated tools in PyCharm
+but further reading is recommended on the topic.
+
+The following resources are a good starting point:
+
+- https://realpython.com/python-code-quality/
+- https://realpython.com/python-type-checking/
+
+The following list contains some of the most popular code analysis tools:
+
+- *mypy* (type checking)
+- *pylint* (error and style checking)
+- *flake8* (error, style and complexity checking)
+- *pycodestyle* (style checking)
+- *mccabe* (complexity checking)
+- *bandit* (security checking)
+- *pyroma* (project checking)
+- *pydocstyle* (docstring checking)
+- *docformatter* (docstring formatting)
+- *pydocstringformatter* (docstring formatting)
 

@@ -3,6 +3,7 @@
 :sectnums:
 :docinfo:
 :toc:
+:hardbreaks:
 
 include::Front.adoc[]
 include::../Part A - Basics/PYTHON_A.adoc[]

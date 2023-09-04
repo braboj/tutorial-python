@@ -7,6 +7,7 @@
 == OOP
 
 === Abstraction (Modeling)
+
 Abstraction is a fundamental concept in object-oriented programming (OOP) that refers to the
 process of exposing only the relevant and essential data and behavior to the users without
 showing the internal implementation details. It is used to manage complexity and reduce
@@ -20,92 +21,134 @@ They key points about abstraction are:
 - Uses abstract classes or interfaces provide a blueprint for other classes to follow
 - Manages complexity and enhances code readability
 
+[source,python]
+----
+include::01_oop/examples/abstraction.py[]
+----
+
+=== Inheritance (Code Reuse)
+
+Inheritance is the process of creating a new class from an existing class. The new class is called
+the subclass or derived class. The existing class is called the superclass or base class. The
+subclass inherits the attributes and methods of the superclass. Inheritance is used to reuse code
+and to represent an is-a relationship, e.g a student is a person.
+
+Key points about inheritance:
+
+- Reuses code from an existing class
+- Represents an is-a relationship
+
+[source,python]
+----
+include::01_oop/examples/inheritance.py[]
+----
+
+
+
 === Encapsulation (Data Hiding)
-Encapsulation is the process of hiding the internal implementation details of an object from the
-outside world. Encapsulation is achieved by making the internal state of an object private and
-providing public access to it using methods. Python offers no mechanism for making attributes
-private and relies on naming conventions to distinguish between public and private attributes.
-Protected attributes are prefixed with a single underscore and private attributes are prefixed
-with a double underscore.
 
-The key points about encapsulation are:
+This is a fundamental concept in object-oriented programming (OOP) that refers to the hinding of
+data through the use of access modifiers and special methods called getters and setters. It is
+used to protect the internal state of an object from the outside world.
 
-- Focuses on how to protect the internal state of an object from the outside world
-- Uses access modifiers to hide the internal implementation details of an object
-- Controlls the access to the internal state by providing getters and setters
-
+Python offers no mechanism for making attributes private and relies on naming conventions to
+distinguish between public and private attributes. Protected attributes are prefixed with a single
+underscore and private attributes are prefixed with a double underscore.
 
 Key points about encapsulation:
 
-- Encapsulation involves bundling data (attributes) and methods that operate on that data within a
-single unit (class).
-- Access to the internal state is controlled by providing public methods (getters and setters).
-- Encapsulation helps maintain data integrity and provides a clear boundary between an object and
-its external environment.
+- Uses access modifiers to hide the internal state of an object
+- Provides getters and setters to access and modify the internal state of an object
+- Defines protection logic for invalid values in the setters
 
-==== Pulbic attributes and methods
+[source,python]
+----
+include::01_oop/examples/encapsulation.py[]
+----
+
+
 Public attributes and methods are accessible from outside the class. They are used to define the
-interface of the class.
+interface of the class. Typcially all getter and setter methods are public. Public attributes and
+methods are not prefixed with an underscore.
 
-==== Protected attributes and methods
 Protected attributes and methods are accessible from outside the class but only in a subclass. They
-are used to define the interface of the class. Protected attributes and methods are prefixed with
+may or may not have a getter or setter method. Protected attributes and methods are prefixed with
 a single underscore.
 
-==== Private attributes and methods
 Private attributes and methods are not accessible from outside the class. They are used to hide the
 internal implementation details of a class. Private attributes and methods are prefixed with a
 double underscore.
 
-=== Inheritance (Code Reuse)
-Inheritance is the process of creating a new class from an existing class. The new class is called
-the subclass or derived class. The existing class is called the superclass or base class. The
-subclass inherits the attributes and methods of the superclass. Inheritance is used to reuse code
-and to represent an is-a relationship.
+[source,python]
+----
+include::01_oop/examples/access_modifiers.py[]
+----
 
 
 === Polymorphism (Flexibility)
-Polymorphism is the ability of an object to take on many forms. It is used to represent an is-a
-relationship. Polymorphism is achieved by using inheritance and overriding or overload the
-methods of the superclass in the subclass.
 
-Overriding is the process of redefining a method in the subclass. The method in the subclass has
-the same name and signature as the method in the superclass. Overriding is used to implement the
-is-a relationship.
+*Polymorphism* is the ability of an object to take on many forms. It is used to represent an is-a
+relationship. Polymorphism is achieved by using inheritance and overriding or overloading the
+methods of the superclass.
 
-Overloading is the process of defining multiple methods with the same name but different signatures
-in the same class. Overloading is used to implement the has-a relationship. Python does not support
-method overloading.
+*Overriding* is the process of redefining a method in the subclass. The method in the subclass has
+the same name and signature as the method in the superclass.
 
-=== Association (Relationship)
-Association is a fundamental concept in object-oriented programming (OOP) that represents a
-relationship between classes. It describes how objects from different classes interact and
-collaborate to achieve a certain functionality. Associations define the ways in which objects can
-relate to each other and exchange information.
+*Overloading* is the process of defining multiple methods with the same name but different
+signatures in the same class.
 
-Types of associations:
+[source,python]
+----
+include::01_oop/examples/polymorphism.py[]
+----
 
-- CREATE WHAT?      (Dependency)
-- USE WHAT?         (Dependency)
-- DEPEND ON WHAT?   (Dependency)
-- MANAGE WHAT?      (Dependency)
-- STORE WHAT?       (Dependency)
-- HOLD WHAT?        (Dependency)
-- HAVE WHAT?        (Dependency)
-- CONTAIN WHAT?     (Aggregation)
-- BELONG TO WHAT?   (Composition)
+
+=== Association (Relationships)
+
+Association represents a relationship between classes. It describes how objects from different
+classes interact and collaborate to achieve a certain functionality. Associations define the ways
+in which objects can relate to each other and exchange information.
+
+Associations may have also have a direction. For example, a car has an engine, but an engine does
+not have a car. This is a unidirectional association. Possible directions for associations are:
+
+- non-directional
+- uni-directional
+- bi-directional
+
+Associations may also have a multiplicity. For example, a car has one engine, but an engine may
+belong multiple cars. In this case, the association is one-to-many. Possible multiplicities for
+associations are:
+
+- one-to-one
+- one-to-many
+- many-to-many
+
+Key points about associations:
+
+- Defines the ways in which objects can relate to each other and exchange information
+- May have a direction (non-directional, uni-directional, bi-directional)
+- May have a multiplicity (one-to-one, one-to-many, many-to-many)
+
 
 ==== Dependency
 Dependency is a relationship between two classes in which one class depends on the other. It is
-used to represent a "uses-a" relationship.
+used to represent a "uses-a" relationship. For example a car can be ignited only if the owner has
+the right key. In abstract terms the key is the interface and if its implementation is changed
+then the car will not be able to start.
+
+Key points about dependency:
+
+- "Uses-A" Relationship
+- Unidirectional
+- Weak Coupling
+- Short Lifetime
+
 
 ==== Composition
-Composition is a fundamental concept in object-oriented programming (OOP) that allows you to
-build complex objects by combining simpler objects. It involves creating a class that contains
-one or more objects of other classes as its members. Composition promotes code reusability,
-modularity, and the creation of well-structured and maintainable code.
-
-In composition, the containing class is responsible for creating and managing the objects it
+Composition allows you to build complex objects by combining simpler objects. It involves
+creating a class that contains one or more objects of other classes as its members. In
+composition, the containing class is responsible for creating and managing the objects it
 contains, and it can delegate certain responsibilities to those contained objects.
 
 While both composition and inheritance facilitate code reuse, composition is often preferred over
@@ -113,11 +156,13 @@ inheritance when you want to avoid tight coupling between classes or when the "i
 isn't appropriate. Composition offers more flexibility and allows you to create more maintainable
 code in complex scenarios.
 
-- "Has-A" Relationship
-- Delegate Responsibilities
-- Strong Coupling
-- Single Ownership
-- Shared Lifetime
+Key points about composition:
+
+- "Has-A", "Composed-Of" Relationship
+- Delegate Responsibilities (the whole delegates responsibilities to the parts)
+- Strong Coupling (the whole is responsible for the parts)
+- Single Ownership (if the whole is destroyed, the parts are destroyed)
+- Shared Lifetime (if one part is destroyed, the whole is destroyed)
 
 ==== Aggregation
 
@@ -133,51 +178,290 @@ object. Aggregation, on the other hand, represents a looser relationship where t
 exist independently.
 
 - "Has-A" Relationship
-- Delegate Responsibilities
-- Looser Coupling
-- Shared Ownership
-- Independent Lifetimes
+- Delegate Responsibilities (the whole delegates responsibilities to the parts)
+- Looser Coupling (the whole is not responsible for the parts)
+- Shared Ownership (if the whole is destroyed, the parts are not destroyed)
+- Independent Lifetimes (if one part is destroyed, the whole is not destroyed)
+
+
 
 == SOLID
 
-The SOLID principles are a set of design principles for software development that aim to improve the maintainability, scalability, and extensibility of software systems.
+The SOLID principles are a set of design principles for software development that aim to improve
+the quality of software by making it more maintainable, flexible, understandable and scalable.
+They were introduced by Robert C. Martin (Uncle Bob) in his 2000 paper, Design Principles and
+Design Patterns. The SOLID acronym was introduced later by Michael Feathers.
+
+The SOLID principles are:
+
+- Single Responsibility Principle
+- Open/Closed Principle
+- Liskov Substitution Principle
+- Interface Segregation Principle
+- Dependency Inversion Principle
+
 
 === Single Responsibility Principle
-A class or function should have only one reason to change. In Python, you can create small and focused classes and functions that do one thing and do it well. For example, you can create a class that handles database operations, and another class that handles logging. By keeping each class focused on one responsibility, you can easily modify and test each class without affecting other parts of the system.
+The single responsibility principle states that a class or function should have a single reason
+to change. Simply put it means that a class or function should combine just one set of related
+behaviors.
+
+For example, instead of creating a single class to handle all possible protocol packet types, with
+their associated parsing, validation, and serialization logic, you can create a separate class for
+each packet type. This makes it easier to understand and maintain the code.
+
+[source,python]
+----
+include::02_solid/examples/single_responsibility_bad.py[]
+----
+
+With some refactoring, you can split the class into several classes, each of which has a single
+responsibility.
+
+[source,python]
+----
+include::02_solid/examples/single_responsibility_good.py[]
+----
+
 
 === Open/Closed Principle
 
-A class or function should be open for extension but closed for modification. In Python, you can
-use inheritance and composition to achieve this principle. Instead of modifying existing classes or functions, you can extend their behavior by creating new subclasses or wrapping them in decorators. For example, you can create a class that extends the behavior of an existing class by adding new methods, without modifying the existing class.
+A module, class or function should be open for extension but closed for modification. In Python, you
+can use inheritance and composition to achieve this principle.
+
+This can be achiieved through:
+
+- Subclassing (extending existing functionality of a parent class)
+- Mixin (adding new functionality to a class through multiple inheritance)
+- Polymorphism (overriding existing functionality)
+- Monkey patching (adding new functionality at runtime)
+
+[source,python]
+----
+include::02_solid/examples/open_closed_bad.py[]
+----
+
+[source,python]
+----
+include::02_solid/examples/open_closed_good.py[]
+----
+
 
 === Liskov Substitution Principle
-Subtypes must be substitutable for their base types. In Python, you can use type hints and
-abstract base classes (ABCs) to ensure that subtypes can be used interchangeably with their base types. For example, you can define an ABC that defines a common interface for a set of related classes. Subclasses can then implement this interface to ensure that they can be used interchangeably with the base class.
+The derived classes must be substitutable for their base classes. Derived classes only extend the
+functionality of base classes, they do not remove any functionality. A method that behaves in a
+different way for a parent class and its child classes violates this principle.
+
+The Liskov substitution is used to ensure that class hierarchies are well designed and to prevent
+unexpected behavior when using polymorphism. Some bad examples of violating this principle are:
+
+- Base class depends on its subtype
+- The code has to check the type of an object before calling a method
+- Override a method of a base class to do nothing
+- Overriden methods change their behavior
+
+
+[source,python]
+----
+include::02_solid/examples/liskov_substitution_bad.py[]
+----
+
+
+[source,python]
+----
+include::02_solid/examples/liskov_substitution_good.py[]
+----
+
 
 === Interface Segregation Principle
-Clients should not be forced to depend on interfaces they do not use. In Python, you can define
-narrow interfaces that are tailored to specific clients, instead of using a single, broad interface. This helps to reduce the complexity and coupling of the system. For example, you can define a small interface that provides a specific set of methods, instead of using a large interface that provides many methods that are not needed by the client.
+The seggregation principles is applied when a class has many subtypes and sometimes only a few
+of them need to use a particular method. In this case, it is better to split the interface into
+several smaller interfaces so that each subtype only implements the methods that it needs.
+
+Code smells that indicate that the interface segregation principle is being violated:
+
+- A class has a large number of methods
+- A class has a large number of methods that are not used by all subtypes
+
+[source,python]
+----
+include::02_solid/examples/interface_segregation_bad.py[]
+----
+
+
+[source,python]
+----
+include::02_solid/examples/interface_segregation_good.py[]
+----
+
 
 === Dependency Inversion Principle
 
-High-level modules should not depend on low-level modules. Both should depend on abstractions.
-In Python, you can use dependency injection to achieve this principle. Instead of directly instantiating dependencies in a class or function, you can pass them in as parameters or inject them using a framework. This helps to decouple the system and makes it easier to test and maintain. For example, you can define a class that depends on an abstract interface, and then inject a concrete implementation of that interface at runtime.
+High-level modules should not depend on low-level modules. Both should depend
+on abstractions. Abstractions should not depend on details. Details should
+depend on abstractions.
 
+[source,python]
+----
+include::02_solid/examples/dependency_inversion_bad.py[]
+----
+
+[source,python]
+----
+include::02_solid/examples/dependency_inversion_good.py[]
+----
 
 == Design Patterns
 
 === Creational Patterns
 
-==== Abstract Factory
-==== Builder
+The creational patterns are a set of design patterns that deal with the creation of objects. They
+are used to create objects in a systematic way that promotes reusability and flexibility. The
+creational patterns are:
+
+- Factory Method
+- Abstract Factory
+- Builder
+- Prototype
+- Singleton
+
+
 ==== Factory Method
+
+The factory method pattern is a creational pattern that uses factory methods to create objects.
+A factory method is a method that returns an object of a class and can be called at runtime. It
+provides a way to hide the creation logic of an object. In Python the factory method is usually
+implemented as a static method or a class method.
+
+[source,python]
+----
+include::03_patterns/examples/factory_static_method.py[]
+----
+
+[source,python]
+----
+include::03_patterns/examples/factory_class_method.py[]
+----
+
+
+==== Abstract Factory
+
+The abstract factory pattern is a creational pattern that extends the factory method pattern. It
+is an abstract class that provides an interface consisting of a set of factory methods for creating
+objects that are somehow related. The methods themselves are abstract and are specified to return
+abstract objects.
+
+
+[source,python]
+----
+include::03_patterns/examples/abstract_factory.py[]
+----
+
+==== Builder
+
+The builder pattern is a creational pattern that is used to create complex objects. It provides a
+way to create an object step by step and allows you to produce different types and
+representations of an object using the same construction code.
+
+In Python the builder pattern is usually implemented using a class with a **_fluent_
+_interface_**. A fluent interface is an object-oriented API that aims to provide more readable code.
+
+Typically it involves method chaining and replaces multi-parameter functions, such as complex
+constructors, with multiple methods that each take a single parameter.
+
+[source,python]
+----
+# Complex constructor
+person = Person(
+    age = 40,
+    name = "John Doe",
+)
+
+# Builder with fluent interface
+person = Person().name("John Doe").age(40)
+----
+
+It is implemented by using method chaining to invoke multiple methods on the same object. The
+methods return the object itself which allows the calls to be chained together in a single
+statement.
+
+[source,python]
+----
+include::03_patterns/examples/builder.py[]
+----
+
+
 ==== Prototype
+The prototype pattern is a creational pattern that is used to create objects by cloning existing
+objects. The new object will have the same properties as the cloned object but will be a separate
+instance. It provides a way to hide the creation logic of an object.
+
+In Python the prototype may be implemented using the copy module or the copy() and deepcopy()
+methods. The copy() method creates a shallow copy of an object. A shallow copy of an object is a
+copy of the object without cloning any of its internal references. The deepcopy() method creates a
+deep copy of an object. A deep copy of an object is a copy of the object that clones all of its
+internal references.
+
+For simplicity the following will not use the copy methods and instead will show the logic of the
+prototype pattern.
+
+[source,python]
+----
+include::03_patterns/examples/prototype.py[]
+----
+
+
 ==== Singleton
+The singleton pattern is a creational pattern that is used to create a single instance of a class.
+It provides a way to hide the creation logic of an object.
+
+In Python the singleton pattern can be implemented in many ways, for example by using the __new__
+method.
+
+[source,python]
+----
+include::03_patterns/examples/singleton.py[]
+----
+
 
 === Structural Patterns
 
+Structural patterns are a set of design patterns that deal with the composition of classes and
+objects. They are used to create larger structures from smaller ones. The structural patterns are:
+
+- Adapter
+- Bridge
+- Composite
+- Decorator
+- Facade
+- Flyweight
+- Proxy
+
 ==== Adapter
+The adapter pattern is a structural pattern that is used to adapt the interface of a class to
+another interface. It provides a way to hide the incompatibility between two interfaces.  Typically
+the adapter will implement the required interface and use an instance of the incompatible class
+to delegate the calls to.
+
+[source,python]
+----
+include::03_patterns/examples/adapter.py[]
+----
+
+
 ==== Bridge
+The bridge pattern is a structural pattern that is used to decouple an abstraction from its
+implementation so that the two can vary independently. It provides a way to hide the
+implementation details of a class from its clients. Typically the abstraction will define an
+interface and the implementation will provide concrete classes that implement the interface. The
+abstraction will then use an instance of the implementation to delegate the calls to.
+
+[source,python]
+----
+include::03_patterns/examples/bridge.py[]
+----
+
+
 ==== Composite
 ==== Decorator
 ==== Facade
@@ -185,6 +469,22 @@ In Python, you can use dependency injection to achieve this principle. Instead o
 ==== Proxy
 
 === Behavioral Patterns
+
+Behavioral patterns are a set of design patterns that deal with the communication between classes
+and objects. They are used to define how objects interact with each other. The behavioral patterns
+are:
+
+- Chain of Responsibility
+- Command
+- Interpreter
+- Iterator
+- Mediator
+- Memento
+- Observer
+- State
+- Strategy
+- Template Method
+- Visitor
 
 ==== Chain of Responsibility
 ==== Command
@@ -201,7 +501,7 @@ In Python, you can use dependency injection to achieve this principle. Instead o
 
 == Software Architecture
 
-=== Multilayered Architecture
+=== Multilayered
 This pattern can be used to structure programs that can be decomposed into groups of subtasks,
 each of which is at a particular level of abstraction. Each layer provides services to the next
 higher layer.
@@ -326,33 +626,247 @@ Examples:
 === Exception Chaining
 === Exception Best Practices
 
+== Dunder Methods
+Dunder methods are special methods that are defined using the double underscore notation. They are
+used to emulate the behavior of built-in types and provide a way to customize the behavior of
+classes. Dunder methods are also called magic methods. Some of the most common use cases for
+dunder methods are:
+
+- Emulate the behavior of built-in types
+- Customize the behavior of classes
+- Object representation
+- Implement operator overloading
+- Implement iterators
+- Implement context managers
+
+=== Object representation
+
+[options="header"]
+|====
+|Representation | Dunder method | Notes
+
+|Human-readable | `\\__str__` | If you want to provide a human-readable string representation of an
+object, use the `\__str__` method. This method should return a string that is easy for a human to
+understand.
+
+|Unambiguous | `\\__repr__` | If you want to provide an unambiguous string representation of an
+object, use the `\__repr__` method. This method should return a string that can be used to
+recreate the object.
+
+|Custom formatting | `\\__format__` | If you want to provide custom string formatting of an object, use
+the `\__format__` method. This method should return a string that is formatted according to the
+format specification.
+
+|Raw byte string | `\\__bytes__` | If you want to provide a raw byte string representation of an
+object, use the `\__bytes__` method. This method should return a byte string that can be used to
+recreate the object. This method is used by the bytes() function.
+
+|Unique | `\\__hash__` | If you want to compute the hash of an object, use the `\__hash__` method.
+This method should return an integer that is used to compare objects in dictionaries and sets.
+This method is used by the hash() function.
+
+|====
+
+[source,python]
+----
+include::07_dunder/examples/dunder_object_representation.py[]
+----
+
+
+=== Custom behavior of classes and instances
+
+[options="header"]
+|====
+|Behavior | Dunder method | Notes
+
+|Customize creation | `\\__new__` | If you want to customize the creation of an instance, use the
+`\__new__` method. This method should return an instance of the class. It is used to create the
+instance before it is initialized.
+
+|Customize initialization | `\\__init__` | If you want to customize the initialization of an
+instance, use the `\__init__` method. This method is called right after the instance has been
+created. It is used to initialize the instance variables of the class.
+
+|Customize calling | `\\__call__` | If you want to customize the behavior of calling an instance,
+use the `\__call__` method. This method is called when the instance is called like a function.
+
+|Customize deletion | `\\__del__` | If you want to customize the deletion of an instance, use the
+`\__del__` method. This method is called when the instance is deleted. It is used by the del
+statement.
+
+|====
+
+
+[source,python]
+----
+include::07_dunder/examples/dunder_customize_behavior.py[]
+----
+
+
+=== Custom behavior of built-in types
+
+[options="header"]
+|====
+|Built-in type | Dunder method | Notes
+
+|`int()` | `\\__int__` | If you want to convert an object to an integer, use the `\__int__`
+method. This method should return an integer. It is used by the int() function.
+
+|`float()` | `\\__float__` | If you want to convert an object to a float, use the `\__float__`
+method. This method should return a float. It is used by the float() function.
+
+|`complex()` | `\\__complex__` | If you want to convert an object to a complex number, use the
+`\__complex__` method. This method should return a complex number. It is used by the complex()
+function.
+
+|`bool()` | `\\__bool__` | If you want to evaluate the truth value of an object, use the
+`\__bool__` method. This method should return a boolean. It is used by the bool() function.
+
+|====
+
+
+[source,python]
+----
+include::07_dunder/examples/dunder_builtin_types.py[]
+----
+
+
+=== Operator overloading
+
+[options="header"]
+|===================
+|Operator | Dunder method
+
+|`==` | `\\__eq__`
+|`!=` | `\\__ne__`
+|`<` | `\\__lt__`
+|`<=` | `\\__le__`
+|`>` | `\\__gt__`
+|`>=` | `\\__ge__`
+|`+` | `\\__add__`
+|`-` | `\\__sub__`
+|`*` | `\\__mul__`
+|`/` | `\\__truediv__`
+|`//` | `\\__floordiv__`
+|`%` | `\\__mod__`
+|`**` | `\\__pow__`
+|`&` | `\\__and__`
+|`|` | `\\__or__`
+|`^` | `\\__xor__`
+|`<<` | `\\__lshift__`
+|`>>` | `\\__rshift__`
+|`+=` | `\\__iadd__`
+|`-=` | `\\__isub__`
+|`*=` | `\\__imul__`
+|`/=` | `\\__itruediv__`
+|`//=` | `\\__ifloordiv__`
+|`%=` | `\\__imod__`
+|`**=` | `\\__ipow__`
+|`&=` | `\\__iand__`
+|`|=` | `\\__ior__`
+|`^=` | `\\__ixor__`
+|`<<=` | `\\__ilshift__`
+|`>>=` | `\\__irshift__`
+|`-` | `\\__neg__`
+|`+` | `\\__pos__`
+|`~` | `\\__invert__`
+|===================
+
+[source,python]
+----
+include::07_dunder/examples/dunder_operator_overloading.py[]
+----
+
+=== Iterator protocol
+
+[options="header"]
+|====
+|Function | Dunder method | Notes
+
+|Create iterator | `\\__iter__` | If you want to iterate over an object, use the `\__iter__` method.
+This method should return an iterator. It is used by the iter() function.
+
+|Get next item  | `\\__next__` | If you want to get the next value of an iterator, use the
+`\__next__`
+method. This method should return the next value of the iterator. It is used by the next().
+
+|====
+
+[source,python]
+----
+include::07_dunder/examples/dunder_iterator_protocol.py[]
+----
+
+=== Context manager protocol
+
+[options="header"]
+|====
+|Function | Dunder method | Notes
+
+|Enter context | `\\__enter__` | If you want to customize the behavior of the `with` statement
+when entering the block, use the `\__enter__` method. This method should return an object that
+will be assigned to the variable in the `with` statement.
+
+|Exit context  | `\\__exit__` | If you want to customize the behavior of the `with` statement
+when exiting the block, use the `\__exit__` method. This method should return a boolean that
+indicates whether the exception was handled or not.
+
+|====
+
+[source,python]
+----
+include::07_dunder/examples/dunder_context_manager.py[]
+----
 
 == Advanced Collections
 
+=== Data Manipulation
 
-=== Counter
-=== ChainMap
-=== OrderedDict
-=== defaultdict
-=== deque
-=== namedtuple
+==== map
+==== filter
+==== reduce
+==== reverse
+==== sort
 
-=== weakref
-=== struct
-=== enum
-=== queue
-=== heapq
-=== bisect
-=== array
-=== types
-=== copy
-=== dataclasses
 
-=== UserDict
-=== UserList
-=== UserString
-=== UserInt
-=== UserFloat
+==== pack
+The packing is done by using the zip() function. The zip() function is used to pack two or more
+iterables into a single iterable. It is used to pack two or more lists into a single list. It is
+used to pack two or more tuples into a single tuple. It is used to pack two or more dictionaries
+into a single dictionary.
+
+
+==== unpack
+The unpacking is done by using the `*` operator. The `*` operator is used to unpack an iterable into
+a sequence of arguments. It is used to unpack a list into a sequence of arguments. It is used to
+unpack a tuple into a sequence of arguments. It is used to unpack a dictionary into a sequence of
+arguments.
+
+==== bisect
+Bisect is a module that provides functions for manipulating sorted lists. It provides functions for inserting items into a sorted list and for finding items in a sorted list. It also provides functions for manipulating sorted lists in place.
+
+==== copy
+Copy is a module that provides functions for copying objects. It provides functions for copying objects by value and by reference. It also provides functions for copying objects by value and by reference.
+
+==== struct
+Struct is a module that provides functions for converting between strings and binary data. It provides functions for packing and unpacking binary data. It also provides functions for converting between strings and binary data.
+
+=== Data Structures
+
+==== array
+==== namedtuple
+==== defaultdict
+==== types
+==== queue
+==== deque
+==== enum
+==== weakref
+==== heapq
+==== dataclasses
+
+==== Counter
+==== ChainMap
+==== OrderedDict
 
 == Import System
 
@@ -431,59 +945,6 @@ the following importers:
 - ExtensionFileLoader
 - FileLoader
 - SourcelessFileLoader
-
-== Metaprogramming
-
-Metaprogramming is a programming technique where a program is designed to manipulate or generate code during runtime. It allows a program to treat code as data and work with it programmatically. Metaprogramming can be a powerful tool in a developer's toolbox, but it should be used judiciously, as it can make code more complex and harder to understand.
-
-Here are some common forms and examples of metaprogramming:
-
-- Code Generation: In this form of metaprogramming, code is generated programmatically. For
-example, you might have a template for generating database access code based on a data model. Instead of writing the code manually for each table, you use metaprogramming to generate it automatically.
-
-- Reflection: Reflection is the ability of a program to inspect and manipulate its own structure,
-classes, methods, and properties at runtime. In languages like Java or C#, you can use reflection to examine and modify classes, invoke methods, or access fields dynamically.
-
-- Dynamic Loading: This involves loading and unloading code modules dynamically at runtime. For
-example, in Python, you can use the importlib module to load Python files dynamically as modules.
-
-- Code Evaluation: Languages like Python and Ruby allow you to execute dynamically generated code
-using eval() or exec() functions. However, using these functions can be risky if the input is not properly sanitized, as it can lead to security vulnerabilities.
-
-Aspect-Oriented Programming (AOP): AOP is a metaprogramming technique that allows you to define cross-cutting concerns such as logging, security, and transactions separately from your core application logic. AOP frameworks can inject these concerns into your code at runtime.
-
-
-// - Oject-relational mapping (ORM) frameworks such as SQLAlchemy and Django ORM.
-// - Serialization and deserialization frameworks such as JSON, YAML, and pickle.
-// - Dependency injection frameworks such as Dagger and Spring.
-// - Testing frameworks such as pytest and unittest.
-// - Mocking frameworks such as unittest.mock and mockito.
-// - Code generation tools such as ANTLR and Yacc.
-// - Static analysis tools such as pylint and mypy.
-
-=== Metaclasses
-
-A metaclass is a class whose instances are classes. A metaclass is used to customize the creation
-of classes. A metaclass is defined by inheriting from the type metaclass. The type metaclass is a
-class that is used to create all classes in Python. A metaclass can be used to customize the class
-creation process by overriding the __new__() method. The __new__() method is called when a class
-is created. The __new__() method is responsible for creating and returning the class object. The
-__new__() method takes the following arguments:
-
-- cls: The class object
-- name: The name of the class
-- bases: A tuple of base classes
-- attrs: A dictionary of class attributes
-
-=== Abstract Base Classes
-
-The abc module provides the ABCMeta metaclass for creating abstract base classes (ABCs). An ABC is
-a class that cannot be instantiated directly and is used to define a common interface for a set of
-related classes. Subclasses can then implement this interface to ensure that they can be used
-interchangeably with the base class. ABCs are useful for defining APIs and enforcing class
-contracts.
-
-
 
 
 == Testing

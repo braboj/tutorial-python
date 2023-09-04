@@ -15,3 +15,10 @@ design patterns
 - http://www.srikanthtechnologies.com/blog/python/mro.aspx
 - https://realpython.com/python-iterators-iterables/
 - https://www.pythontutorial.net/advanced-python/python-iterator-vs-iterable/
+- https://github.com/jsbueno/metapython/blob/main/static.py
+- https://commons.wikimedia.org/wiki/File:W3sDesign_Dependency_Injection_Design_Pattern_UML.jpg
+- https://maximilienandile.github.io/2019/10/20/Dependency-injection-what-is-it-how-to-do-it-in-Java-and-why-to-use-it/
+- https://www.youtube.com/watch?v=IKD2-MAkXyQ
+- https://tinyurl.com/pylinters
+- https://codilime.com/blog/python-code-quality-linters/
+- https://dsstream.com/improve-your-python-code-quality/
