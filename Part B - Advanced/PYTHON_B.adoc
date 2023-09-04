@@ -450,11 +450,8 @@ include::03_patterns/examples/adapter.py[]
 
 
 ==== Bridge
-The bridge pattern is a structural pattern that is used to decouple an abstraction from its
-implementation so that the two can vary independently. It provides a way to hide the
-implementation details of a class from its clients. Typically the abstraction will define an
-interface and the implementation will provide concrete classes that implement the interface. The
-abstraction will then use an instance of the implementation to delegate the calls to.
+The bridge pattern provides a way to hide the implementation details of a class from the clients
+using it.
 
 [source,python]
 ----
@@ -463,10 +460,60 @@ include::03_patterns/examples/bridge.py[]
 
 
 ==== Composite
+The composite pattern is a structural pattern that is used to compose objects into tree structures
+to represent part-whole hierarchies. It provides a way to treat both individual objects and groups
+of objects in a uniform way. It is used to create a tree structure of objects where each node in
+the tree structure can be either an individual object or a group of objects.
+
+[source,python]
+----
+include::03_patterns/examples/composite.py[]
+----
+
 ==== Decorator
+The decorator pattern is a structural pattern that is used to add new functionality to an existing
+object without changing its structure. It provides a way to extend the functionality of an object
+at runtime.
+
+[source,python]
+----
+include::03_patterns/examples/decorator.py[]
+----
+
+
 ==== Facade
+The facade pattern is a structural pattern that is used to provide a unified interface to a set of
+interfaces in a subsystem. It provides a way to hide the complexity of a subsystem from its
+clients. It is used to create a simplified interface to a complex system.
+
+[source,python]
+----
+include::03_patterns/examples/facade.py[]
+----
+
+
 ==== Flyweight
+The flyweight pattern is a structural pattern that is used to minimize memory usage and improve
+the performance of an application by sharing as much data as possible with other similar objects.
+It provides a way to share objects that are used in multiple contexts at the same time. It is used
+to create a large number of similar objects efficiently.
+
+[source,python]
+----
+include::03_patterns/examples/flyweight.py[]
+----
+
+
 ==== Proxy
+The proxy pattern is a structural pattern that is used to provide a surrogate or placeholder for
+another object to control access to it. It provides a way to add extra functionality to an object
+without changing its structure.
+
+[source,python]
+----
+include::03_patterns/examples/proxy.py[]
+----
+
 
 === Behavioral Patterns
 
