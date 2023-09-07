@@ -2,6 +2,6 @@
 a = [1, 2, 3]
 print(a)
 
-# Change the second element
+# Create a list of lists
 b = [a, a]
 print(b)

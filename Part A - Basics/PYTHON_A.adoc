@@ -44,8 +44,6 @@ returned from other functions, and passed into functions as arguments.
 - Python supports multiple programming paradigms, including procedural, object-oriented, and
 functional programming. It features a fully dynamic type system and automatic memory management,
 similar to that of Scheme, Ruby, Perl, and Tcl.
-- Python supports multiple programming paradigms, including procedural, object-oriented, and
-functional programming. It features a fully dynamic type system and automatic memory management,
 
 === History
 Python was conceived in the late 1980s by Guido van Rossum at Centrum Wiskunde & Informatica
@@ -55,12 +53,12 @@ Cython, and the Python programming language. Python was named after the BBC TV s
 Flying Circus.
 
 Python 2 and Python 3 are two different versions of the Python programming language. Python 3 was
-released in 2008, and Python 2 was released in 2000. Python 3 is not backward compatible with
+released in 2008 and Python 2 was released in 2000. Python 3 is not backward compatible with
 Python 2. This means that code written in Python 2 may not work in Python 3 and vice versa.
 Python 2 reached its end of life on January 1, 2020. Python 2 should only be used if you need to
 maintain legacy code written in Python 2.
 
-Python ranks consistently as one of the most popular programming languages. In January 2021, it
+Python ranks consistently as one of the most popular programming languages. In January 2021 it
 ranked third in the TIOBE index, a measure of popularity of programming languages, behind C and
 Java. It was selected Programming Language of the Year in 2007, 2010, and 2018. Python is used in
 many application domains. It is used extensively in the scientific and financial industry, and for
@@ -189,7 +187,7 @@ include::02_introduction/examples/intro_expressions.py[]
 ----
 
 In the above example, the first line is an expression that evaluates to the value 6. The second
-line is a statement that assigns the value of the expression 3 * (x + y) to the variable result.
+line is a statement that assigns the value of the expression 1 + 2 + 3 to the variable result.
 
 === Zen of Python
 
@@ -202,6 +200,11 @@ interpreter as an Easter egg. You can view it by typing `import this` in the Pyt
 ----
 include::02_introduction/examples/intro_zen_of_python.py[]
 ----
+
+The statement `import this` will do the following:
+
+- It will provide all elements of the `this` module
+- If there is executable code in the module, it will be executed
 
 [source,console]
 ----
@@ -249,11 +252,6 @@ math`. You can also import specific objects from a module using the `from` state
 include::02_introduction/examples/intro_import.py[]
 ----
 
-The statement import this will do the following:
-
-- It will provide all elements of the this module
-- If there is executable code in the module, it will be executed
-
 == Variables
 
 Let’s print the same text 5 times on the screen using the print function.
@@ -263,7 +261,7 @@ Let’s print the same text 5 times on the screen using the print function.
 include::03_variables/examples/var_preconditions.py[]
 ----
 
-Now if we want to modify the text we have to change all 5 lines. Let’s modify our program a
+Now if we want to modify the text, we have to change all five lines. Let’s modify our program a
 little bit to be more reusable. Now we make the function print to work with any text possible.
 For this purpose, we will use a variable. A variable is a data container that can be reused many
 times in the program.
@@ -285,11 +283,6 @@ function and see how it works:
 include::03_variables/examples/var_types.py[]
 ----
 
-[source,console]
-----
-$ 100 <class 'int'>
-----
-
 We see that the variable is from type integer, but they are preceded by the word class. The class
 tells Python what type of data the variable stores and how Python can operate with the data. This
 can be demonstrated by using numbers of different types.
@@ -299,25 +292,15 @@ can be demonstrated by using numbers of different types.
 include::03_variables/examples/var_float_sum.py[]
 ----
 
-[source,console]
-----
-$ 2.0
-----
-
-In the example above Python analyses the code and deducts that a and b are integers and uses the
-integer class to check how to add them. Now let’s change the variable types to float:
+In the example above Python analyses the code and deducts that a and b are floating point numbers and uses the
+float class to check how to add them. Now let’s change the variable types to complex:
 
 [source,python]
 ----
 include::03_variables/examples/var_complex_sum.py[]
 ----
 
-[source,console]
-----
-$ (2+2j)
-----
-
-The code is analyzed and Python deducts that now a and b are complex numbers andthus another
+The code is analyzed and Python deducts that now a and b are complex numbers and thus another
 type of data. In this case, Python will use the addition operation for this data class.
 
 === Numerics
@@ -376,12 +359,6 @@ that the first item in a list has index 0.
 [source,python]
 ----
 include::03_variables/examples/var_list_type.py[]
-----
-
-[source,console]
-----
-[1, 2, 3]
-[[1, 2, 3], [1, 2, 3]]
 ----
 
 === Tuples
