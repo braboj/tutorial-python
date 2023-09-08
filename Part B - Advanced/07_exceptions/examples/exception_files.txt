@@ -1,0 +1,11 @@
+src/
+ ├─ socket
+ │  ├─ __init__.py
+ │  ├─ settings.py
+ │  └─ errors.py    # <-- Exceptions for the core package
+ │
+ └─ io
+    ├─ __init__.py
+    ├─ settings.py
+    ├─ handlers.py
+    └─ errors.py    # <-- Exceptions for the api package
