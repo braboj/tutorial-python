@@ -1,7 +1,7 @@
 # Example: Conditional inheritance using the __new__ method
 
 class WindowsCalculator(object):
-    """ Windows calculator class opeations """
+    """ Windows calculator class operations """
 
     @staticmethod
     def do():
@@ -9,7 +9,7 @@ class WindowsCalculator(object):
 
 
 class LinuxCalculator(object):
-    """ Linux calculator class opeations """
+    """ Linux calculator class operations """
 
     @staticmethod
     def do():
@@ -18,7 +18,7 @@ class LinuxCalculator(object):
 
 class Calculator(object):
 
-    def __new__(cls: type, os="windows"):
+    def __new__(cls, os="windows"):
 
         # Windows base class
         if os == "windows":
@@ -48,4 +48,3 @@ print("Is subclass of WindowsCalculator? [{}]".format(test))
 
 # Call the do method
 calc.do()
-

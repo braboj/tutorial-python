@@ -373,12 +373,6 @@ index 0.
 include::03_variables/examples/var_tuple_type.py[]
 ----
 
-[source,console]
-----
-(1, 2, 3)
-((1, 2, 3), (1, 2, 3))
-----
-
 === Sets
 A set is a collection of items that are unordered and unindexed. Sets are written with curly
 braces `{}`. Each item in a set is separated by a comma `,`. Sets can contain items of any data
@@ -388,12 +382,6 @@ values of items in a set.
 [source,python]
 ----
 include::03_variables/examples/var_set_type.py[]
-----
-
-[source,console]
-----
-{1, 2, 3}
-{{1, 2, 3}, {1, 2, 3}}
 ----
 
 === Dictionaries
@@ -406,12 +394,6 @@ meaning that you can change the values of items in a dictionary.
 [source,python]
 ----
 include::03_variables/examples/var_dict_types.py[]
-----
-
-[source,console]
-----
-{'a': 1, 'b': 2, 'c': 3}
-{'a': {'a': 1, 'b': 2, 'c': 3}, 'b': {'a': 1, 'b': 2, 'c': 3}}
 ----
 
 === Strings
@@ -444,7 +426,7 @@ include::03_variables/examples/string_interpolation.py[]
 ==== Escaping
 Escaping refers to the process of inserting a special character into a string to change the
 meaning of the string literal (usually reserved by the language itself). It is done by prefixing
-the special character with a backslash \.
+the special character with a backslash `\`.
 
 [source,python]
 ----
@@ -517,13 +499,6 @@ based on the line break character `\n`.
 include::03_variables/examples/string_splitting.py[]
 ----
 
-[source,console]
-----
-['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
-['1', '2', '3 4 5 6 7 8 9 10']
-[' First line', 'Second line', 'Third line']
-----
-
 ==== Joining
 The `join()` method joins a list of strings into a single string using the specified delimiter. It
 is the inverse of the `split()` method. The `join()` method is called on the delimiter and takes
@@ -533,15 +508,6 @@ the list of strings as an argument.
 ----
 include::03_variables/examples/string_joining.py[]
 ----
-
-[source,console]
-----
-['1', '2', '3', '4', '5', '6', '7', '8', '9']
-123456789
-1 2 3 4 5 6 7 8 9
-1,2,3,4,5,6,7,8,9
-----
-
 
 === None
 The None type is a special type that can only have one value: `None`. It is used to represent
@@ -732,7 +698,7 @@ following assignment operators are supported in Python:
 - `|=`  - bitwise OR and assign
 - `^=`  - bitwise XOR and assign
 - `>>=` - bitwise right shift and assign
-- `<<=` - bitwise left shift and assign
+- `<\<=` - bitwise left shift and assign
 
 [source,python]
 ----
@@ -846,7 +812,7 @@ include::07_control_flow/examples/control_with_while_statement.py[]
 ----
 
 === break Statement
-The `break` statement inside a loop to stop the loop from executing any further. The `break`
+The `break` statement is used inside a loop to stop the loop from executing any further. The `break`
 statement can be used inside a `for` or `while` loop.
 
 [source,python]
@@ -855,7 +821,7 @@ include::07_control_flow/examples/control_with_break_statement.py[]
 ----
 
 === continue Statement
-The `continue` statement inside a loop to skip the rest of the statements in the loop and continue
+Use the `continue` statement inside a loop to skip the rest of the statements in the loop and proceed
 with the next iteration of the loop. The `continue` statement can be used inside a `for` or
 `while` loop.
 
@@ -866,7 +832,7 @@ include::07_control_flow/examples/control_with_continue_statement.py[]
 
 === pass Statement
 The `pass` statement is used as a placeholder for code that has not been implemented yet. It is
-used to prevent a syntax error when a statement is required syntactically but you do not want to
+used to prevent a syntax error when a statement is required syntactically, but you do not want to
 execute any code.
 
 [source,python]
@@ -961,9 +927,8 @@ include::08_functions/examples/func_variable_arguments_python3.py[]
 
 
 === Unpacking Arguments
-Unpacking arguments are arguments that are unpacked from a list or tuple. They are used when you
-want to pass the elements of a list or tuple as arguments to a function. Unpacking arguments are
-specified using the `\*` operator in the function call. The elements of the list or tuple are
+Arguments that are unpacked from a list or tuple are used when you
+want to pass the elements of a list or tuple as arguments to a function. Unpacking arguments is done using the `*` operator in the function call. The elements of the list or tuple are
 assigned to the parameters in the function signature.
 
 [source,python]
@@ -1054,7 +1019,7 @@ using annotations. Function annotations are optional type hints that can be adde
 parameters and the return value.
 
 - Use the `:` operator to specify the type of a parameter
-- Use the `->` operator to specify the type of the return value
+- Use the `\->` operator to specify the type of the return value
 
 [source,python]
 ----
@@ -1197,7 +1162,7 @@ include::08_functions/examples/func_keyword_only_arguments.py[]
 
 == Classes
 
-A class is a blueprint for creating objects. It defines the properties and methods that all
+A    class is a blueprint for creating objects. It defines the properties and methods that all
 objects of the class will have. An object is an instance of a class. It is a concrete realization
 of the class. It has well-defined values or all the properties defined in the class.
 
@@ -1238,13 +1203,13 @@ follow the Python naming conventions (CamelCase with the first letter capitalize
 inherit from the `object` or a class that inherits from the `object` due to reasons explained in
 later chapters.
 
-- Initializer           (`\__init__`)
-- Constructor           (`\__new__`)
-- Instance variables    (inside `\__init__`)
+- Initializer           (`\\__init__`)
+- Constructor           (`\\__new__`)
+- Instance variables    (inside `\\__init__`)
 - Instance methods      (inside class body)
 - Class attributes      (outside any method)
-- Class methods         (@classmethod)
-- Static methods        (@staticmethod)
+- Class methods         (`@classmethod`)
+- Static methods        (`@staticmethod`)
 
 [source,python]
 ----
@@ -1255,10 +1220,10 @@ include::09_classes/examples/class_structure.py[]
 
 === Initializer
 
-The `\__init__` method is called automatically when the instance is created. It is used to
+The `\\__init__` method is called automatically when the instance is created. It is used to
 initialize the instance state. It is also sometimes wrongly called the constructor method as it
 is the most commonly used method when declaring the class. Some of the most common use cases or
-the `\__init__` method are:
+the `\\__init__` method are:
 
 - Initialize the instance variables of the class
 - Validate the values of the instance variables
@@ -1281,20 +1246,19 @@ include::09_classes/examples/class_init_steps.py[]
 ----
 
 
-
 === Constructor
 
 Constructors are special methods inside a class that create and initialize the objects of a class.
-In Python the object is created wih the special method `\__new__` and then initialized with the
-special method `\__init__`.
+In Python the object is created wih the special method `\\__new__` and then initialized with the
+special method `\\__init__`.
 
 [source,python]
 ----
 include::09_classes/examples/class_constructors.py[]
 ----
 
-The `\__new__` used rarely as Python handles the construction of the object automatically. Some
-of the most common use cases for the `\__new__` method are:
+The `\\__new__` used rarely as Python handles the construction of the object automatically. Some
+of the most common use cases for the `\\__new__` method are:
 
 - Create a class that inherits from a different class depending on some condition
 - Limit the number of instances that can be created for this class (e.g. Singleton)
@@ -1346,7 +1310,7 @@ include::09_classes/examples/class_instance.py[]
 
 ==== Instance variables
 The instance has its own set of variables called also attributes. They represent the internal
-state of the object. The instance variables are defined inside `\__init__` method.
+state of the object. The instance variables are defined inside `\\__init__` method.
 
 [source,python]
 ----
@@ -1378,7 +1342,7 @@ to write very flexible code. Some of the most common use cases for classes as ob
 ==== Class variables
 Class attributes are variables that are defined inside a class. They represent the internal state
 of the class. Class attributes are shared by all instances of the class. They are defined outside
-the `__init__` method. If you try to access a class attribute that does not exist, Python will
+the `\\__init__` method. If you try to access a class attribute that does not exist, Python will
 look for it in the parent classes until it reaches the top of the inheritance tree. Some of the
 most common use cases for class attributes are:
 
@@ -1669,22 +1633,22 @@ The class introspection is the process of examining a class's attributes. It is 
 information about a class.
 
 - use `dir()` to get a list of all the attributes
-- use `\__class__` to get the class of an object
-- use `\__bases__` to get the base classes of a class
-- use `\__subclasses__` to get the subclasses of a class
-- use `\__mro__` to get the method resolution order of a class
-- use `\__name__` to get the name of a class
-- use `\__doc__`  to get the docstring of a class
-- use `\__dict__` to get the attributes of a class
-- use `\__slots__` to get the slots of a class
-- use `\__annotations__` to get the annotations of a class
+- use `\\__class__` to get the class of an object
+- use `\\__bases__` to get the base classes of a class
+- use `\\__subclasses__` to get the subclasses of a class
+- use `\\__mro__` to get the method resolution order of a class
+- use `\\__name__` to get the name of a class
+- use `\\__doc__`  to get the docstring of a class
+- use `\\__dict__` to get the attributes of a class
+- use `\\__slots__` to get the slots of a class
+- use `\\__annotations__` to get the annotations of a class
 
 
 == Docstrings
 
 Docstrings are optional strings enclosed in triple quotes immediately after the class, function,
 or method definition. They provide a description of the class, function, or method. Docstrings are
-used to document your code. They can be accessed using the `__doc__` attribute of the class,
+used to document your code. They can be accessed using the `\\__doc__` attribute of the class,
 function, or method.
 
 === Class docstrings
@@ -1704,7 +1668,7 @@ include::10_docstrings/examples/docstring_function.py[]
 
 === Module docstrings
 A python module is a file that contains python code. It is used to organize related code into a
-single file. A module can contain typically contains classes, functions, and variables.  The
+single file. A module typically contains classes, functions, and variables. The
 docstring of a module is the first string in the module.
 
 [source,python]

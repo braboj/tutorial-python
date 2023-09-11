@@ -16,7 +16,7 @@ class LinuxCalculator(object):
 
 class Calculator(object):
 
-    def __new__(cls: type, os="windows"):
+    def __new__(cls, os="windows"):
 
         # An instance of the WindowsCalculator class is returned
         if os == "windows":

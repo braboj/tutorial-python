@@ -1,7 +1,7 @@
-# Create a list of 3 elements
+# Create a tuple of 3 elements
 a = (1, 2, 3)
 print(a)
 
-# Change the second element
+# Create a tuple of tuples
 b = (a, a)
 print(b)

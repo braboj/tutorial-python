@@ -1,5 +1,6 @@
 def greet(name, age):
-    print(f"Hello, {name}! You are {age} years old.")
+    print("Hello, {0}! You are {1} years old.".format(name, age))
+
 
 # Calling the greet() function with positional arguments
 greet("Alice", 25)
