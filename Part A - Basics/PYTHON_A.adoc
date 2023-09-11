@@ -936,7 +936,13 @@ assigned to the parameters in the function signature.
 include::08_functions/examples/func_unpacking_arguments.py[]
 ----
 
-=== Variable Scope
+=== Namespace and Scope
+
+By creating a variable and assigning value to it, you create a key-value pair like in a dictionary.
+The value is available under this name only in a specific region of the program called namespace.
+Python runs multiple namespaces simultaneously, so variables with the same name from different namespaces do not
+influence each other. The namespace defines the scope of the variable.
+
 The scope of a variable is the region of the program where the variable can be accessed. Python has
 two types of variables: global variables and local variables.
 
