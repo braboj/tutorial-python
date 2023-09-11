@@ -1,18 +1,19 @@
-from api.submodule1 import *
-from core.submodule2 import *
-from comp.submodule3 import *
+# Example: Import Statements
 
-# Namespace api.submodule1
-func1()
-print(f"Module {func1.__module__} my_id set to {func1.__globals__['my_id']}")
-print()
+# Importing the package
+import product
+print('version =', product.__version__)
 
-# Namespace core.submodule2
-func2()
-print(f"Module {func2.__module__} my_id set to {func2.__globals__['my_id']}")
-print()
+# Importing a submodule
+import product.api.submodule1
+print('api.submodule1.my_id =', product.api.submodule1.my_id)
 
-# Namespace comp.submodule3
-func3()
-print(f"Module {func3.__module__} my_id set to {func3.__globals__['my_id']}")
-print()
+# Importing the entire module with an alias
+import product.api.submodule1 as sm1
+print('sm1.my_id =', sm1.my_id)
+
+from product.api import submodule1
+print('submodule1.my_id =', submodule1.my_id)
+
+from product.api.submodule1 import my_id
+print('my_id =', my_id)

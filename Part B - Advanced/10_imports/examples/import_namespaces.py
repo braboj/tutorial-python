@@ -1,31 +1,92 @@
 # Example: Namespace of the builtins module
 
-# Get the list of all built-in functions
-print(dir(__builtins__))
+import pprint
 
 
 class MyClass(object):
-    pass
+
+    def __init__(self):
+        self.a = 1
+        self.b = 2
+
+    def instance_method(self):
+        pprint.pprint("INSTANCE GLOBALS: {}".format(globals().keys()))
+        pprint.pprint("INSTANCE LOCALS: {}".format(locals().keys()))
+        print()
+
+    @classmethod
+    def class_method(cls):
+        pprint.pprint("CLASS GLOBALS: {}".format(globals().keys()))
+        pprint.pprint("CLASS LOCALS: {}".format(locals().keys()))
+        print()
+
+    def func1(self):
+
+        print("@FUNC1: Before the assignment of a")
+        pprint.pprint("FUNC1 GLOBALS: {}".format(globals().keys()))
+        pprint.pprint("FUNC1 LOCALS: {}".format(locals().keys()))
+        print()
+
+        a = 1
+
+        print("@FUNC1: After the assignment of a")
+        pprint.pprint("FUNC1 GLOBALS: {}".format(globals().keys()))
+        pprint.pprint("FUNC1 LOCALS: {}".format(locals().keys()))
+        print()
+
+        def func2():
+
+            print("@FUNC2: Before the assignment of b")
+            pprint.pprint("FUNC2 GLOBALS: {}".format(globals().keys()))
+            pprint.pprint("FUNC2 LOCALS: {}".format(locals().keys()))
+            print()
+
+            b = a + 1
+
+            print("@FUNC2: After the assignment of b")
+            pprint.pprint("FUNC2 GLOBALS: {}".format(globals().keys()))
+            pprint.pprint("FUNC2 LOCALS: {}".format(locals().keys()))
+            print()
+
+        func2()
+
+        print("@FUNC1: After the call to func2")
+        pprint.pprint("FUNC1 GLOBALS: {}".format(globals().keys()))
+        pprint.pprint("FUNC1 LOCALS: {}".format(locals().keys()))
+        print()
 
 
-def func1():
-    a = 1
-    print(locals())         # Expected: {'a': 1}
-    print(a)                # Expected: 1
+# Builtins level
+print("===== Builtins namespace =====")
+print()
+pprint.pprint("BUILTINS VARS: {}".format(vars(__builtins__).keys()))
+print()
 
-    def func2():
-        b = 2
-        print(locals())     # Expected: {'b': 2}
-        print(a, b)         # Expected: 1 2
-        print(locals())     # Expected: {'b': 2, 'a': 1}
+# Module level
+print("===== Module namespace =====")
+print()
+pprint.pprint("MODULE GLOBALS VARS: {}".format(globals().keys()))
+pprint.pprint("MODULE LOCALS VARS: {}".format(locals().keys()))
+print()
 
-    func2()
-    print(locals())  # Expected: {'a': 1, 'func2': ...}
+# Class level
+print("===== Class namespace =====")
+print()
+pprint.pprint("CLASS VARS: {}".format(vars(MyClass).keys()))
+MyClass.class_method()
+print()
 
+# Instance level
+print("===== Instance namespace =====")
+print()
+my_instance = MyClass()
+print(vars(my_instance))
+my_instance.instance_method()
+print()
 
-# Get the global namespace
-print(globals())
-func1()
-print(locals())  # Expected: {'func1': ...}
-print(dir())
-print(dir(MyClass))
+# Function level
+print("===== Function namespace =====")
+print()
+my_instance.func1()
+print(vars(my_instance.func1))
+print()
