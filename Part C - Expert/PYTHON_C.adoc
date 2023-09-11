@@ -233,4 +233,30 @@ Keywords: Cython, Numba, PyPy, C Extensions, CFFI, Static Compilers, JIT Compile
 
 == Distribution
 
+- https://pypi.org/[PyPI]
+- https://packaging.python.org/[Python Packaging User Guide]
+- .egg files
+- .pth import hack
+- .whl files
+- hacks with the sys.prefix variable
+- package managers (pip, conda, etc.)
+- import hooks, path hooks, meta path hooks
 
+
+
+=== Namespace Packages
+
+From Python 3.3 onwards, namespace packages are supported. A namespace package is a package that
+is split across multiple directories. Each subpackage has its own variable `\__path__` that
+contains the path to the subpackage directory.
+
+Namespace packages are useful when you want write a framework with a plugin system. Each plugin
+can be a namespace package and can be installed separately. This allows you to extend the framework
+without having to modify the framework code.
+
+
+A namespace package is a package that is split across multiple directories. A namespace package
+is a package with a __path__ attribute that is a list of strings. Each string in the __path__
+attribute is the path to a directory that contains a part of the package. A namespace package
+is created by placing a __init__.py file in each directory that contains a part of the package.
+The __path__ attribute is initialized from the following sources:
