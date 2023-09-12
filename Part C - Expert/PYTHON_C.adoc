@@ -4,7 +4,18 @@
 :docinfo:
 :toc:
 
-== Metaprogramming
+== Requirements
+
+== Descriptors
+https://realpython.com/python-descriptors/
+
+== Generators
+
+== Coroutines
+
+== Functional Programming
+
+== Meta Programming
 
 Metaprogramming is a programming technique where a program is designed to manipulate or generate
 code during runtime. It allows a program to treat code as data and work with it programmatically.
@@ -42,13 +53,9 @@ core application logic. AOP frameworks can inject these concerns into your code 
 // - Code generation tools such as ANTLR and Yacc.
 // - Static analysis tools such as pylint and mypy.
 
-=== Abstract Base Classes
+=== types
 
-The abc module provides the ABCMeta metaclass for creating abstract base classes (ABCs). An ABC is
-a class that cannot be instantiated directly and is used to define a common interface for a set of
-related classes. Subclasses can then implement this interface to ensure that they can be used
-interchangeably with the base class. ABCs are useful for defining APIs and enforcing class
-contracts.
+
 
 === Metaclasses
 
@@ -64,16 +71,192 @@ __new__() method takes the following arguments:
 - bases: A tuple of base classes
 - attrs: A dictionary of class attributes
 
-=== Aspects
+== Aspect Oriented Programming
+https://softwareengineering.stackexchange.com/questions/99433/aop-concepts-explained-for-the-dummy
 
 Aspects are cross-cutting concerns that are not related to the core functionality of an application.
 Examples of aspects include logging, security, and transactions. AOP is a programming paradigm that
 allows you to define aspects separately from the core application logic and inject them into your
-code at runtime. AOP frameworks use metaprogramming to inject aspects into your code. AOP is
-supported by many languages, including Java, C#, and Python.
+code at runtime. AOP frameworks use metaprogramming and decorators to inject aspects into your
+code.
+
+- *Cross cutting concern*: Something that bothers you (concern) everywhere (cross-cutting) across
+you application. e.g logging or security
+
+- *Aspect*: The chunk of code that is automatically added before, after, or both (around) your
+existing code.
+
+- *Pointcut*: The point in your code where you want to add your aspect. e.g. before a method is
+called, after a method is called, or both.
+
+- *JoinPoint*: The point where your aspect "joins" the pointcut. At a "before" joinPoint you will
+have access to parameters, at "after" joinPoint you will have access to the return value. If an
+exception is thrown, you mayneed a "try-catch-finally" to handle or re-throw it.
+
+- *Weaving*: The process of adding aspects around a pointcut
 
 
-== Generators
-== Coroutines
-== Descriptors
-== Accelerated Python
+[source, console]
+----
+                  Application code
+                           |
+                           |
+                           |
+                           |
+                          \|/
+                           |
+JoinPoint  ----------->("before" aspect, on the way in)     // pre-processing
+Pointcut start--------> public String myMethod(params ...)  // your application code
+Pointcut finish-------> return (foo)                        // your application code
+JoinPoint  ----------->("after" aspect, on the way out)     // post-processing
+                           |
+                          \|/
+                           |
+                           |
+                           |
+                  Application code
+----
+
+
+
+
+== Extending Python
+=== C Extensions
+=== CFFI
+
+== Code Execution
+
+=== Interpreters
+
+An interpreter is a program that executes code written in a programming language. Python is an
+interpreted language, which means that Python code is executed by an interpreter. The Python
+interpreter is written in C and is called CPython. CPython is the reference implementation of
+Python. It is the most widely used Python interpreter.
+
+Before executing Python code, the interpreter first compiles it into bytecode. Bytecode is a
+low-level representation of the Python code. The bytecode is then executed by the Python virtual
+machine (PVM). The PVM is a stack-based virtual machine that executes the bytecode. The PVM is
+implemented in C and is part of the CPython interpreter. The PVM is responsible for loading the
+bytecode, executing it, and managing the memory. The PVM is also responsible for garbage
+collection.
+
+There are other Python interpreters such as Jython, IronPython, and MicroPython. These
+interpreters are written in Java, C#, and C, respectively. These interpreters are used in
+specific environments such as the Java Virtual Machine (JVM) and the Common Language Runtime
+(CLR).
+
+Links to python interpreters:
+
+- https://www.python.org/downloads/[CPython]
+- https://www.jython.org/[Jython]
+- https://ironpython.net/[IronPython]
+- https://micropython.org/[MicroPython]
+
+// TODO: Explain how interpreters work in details and explain the main features of CPython, Jython,
+// IronPython, and MicroPython.
+
+=== Static Compilers
+
+Alternatively to an interpreter, a compiler can be used to execute Python code. A compiler is a
+program that translates code written in a programming language into machine code. The machine code
+is then executed by the CPU. This is called native code execution.
+
+There are several Python compilers available, such as Nuitka and Cython. These compilers compile
+Python code into C code. The C code is then compiled into machine code. The compiled code can then
+be executed directly by the CPU. This is called native code execution.
+
+Links:
+
+- https://nuitka.net[Nuitka]
+- https://cython.org[Cython]
+- https://codon.readthedocs.io[Codon]
+
+// TODO: Explain how static compilers work explain the main features of Nuitka, Cython and Codon.
+
+
+=== JIT Compilers
+
+A JIT compiler is a compiler that compiles code at runtime. A JIT compiler can be used to compile
+Python code into machine code. The compiled code can then be executed directly by the CPU.  There
+are several Python JIT compilers available, such as PyPy and Numba.
+
+Links to Python JIT compilers:
+
+- https://pypy.org/[PyPy]
+- https://numba.pydata.org/[Numba]
+
+// TODO: Explain how JIT compilers work, compare them to static compilers and explain the main
+// features of PyPy and Numba.
+
+
+== Threading
+
+Keywords: Global Interpreter Lock, Threads, Processes, Asyncio, Multiprocessing, Synchrionization
+Problems, Synchronization Primitives
+
+
+== Memory Management
+
+Keywords: Garbage Collection, Reference Counting, Generational Garbage Collection, Tracing Garbage
+Collection, Cyclic Garbage Collection, Weak References, Finalizers, Memory Profiling
+
+
+== Tracing
+
+The tracing module provides functions for tracing the execution of Python programs. It can be used
+to trace the execution of functions, methods, and classes. How to use the tracing module:
+
+- Import the tracing module
+- Create a tracer object
+- Register the tracer object with the tracing module
+- Run the program
+- View the trace output
+
+
+== Profiling
+
+Profiling is a technique for measuring the performance of a program. It can be used to identify the
+bottlenecks in a program and to optimize the performance of a program. The profiling module provides
+functions for profiling the execution of Python programs. It can be used to profile the execution
+of functions, methods, and classes. How to use the profiling module:
+
+- Import the profiling module
+- Create a profiler object
+- Register the profiler object with the profiling module
+- Run the program
+- View the profile output
+
+
+== Accelerating Python
+
+Keywords: Cython, Numba, PyPy, C Extensions, CFFI, Static Compilers, JIT Compilers
+
+== Distribution
+
+- https://pypi.org/[PyPI]
+- https://packaging.python.org/[Python Packaging User Guide]
+- .egg files
+- .pth import hack
+- .whl files
+- hacks with the sys.prefix variable
+- package managers (pip, conda, etc.)
+- import hooks, path hooks, meta path hooks
+
+
+
+=== Namespace Packages
+
+From Python 3.3 onwards, namespace packages are supported. A namespace package is a package that
+is split across multiple directories. Each subpackage has its own variable `\__path__` that
+contains the path to the subpackage directory.
+
+Namespace packages are useful when you want write a framework with a plugin system. Each plugin
+can be a namespace package and can be installed separately. This allows you to extend the framework
+without having to modify the framework code.
+
+
+A namespace package is a package that is split across multiple directories. A namespace package
+is a package with a __path__ attribute that is a list of strings. Each string in the __path__
+attribute is the path to a directory that contains a part of the package. A namespace package
+is created by placing a __init__.py file in each directory that contains a part of the package.
+The __path__ attribute is initialized from the following sources:

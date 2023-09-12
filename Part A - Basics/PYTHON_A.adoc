@@ -239,6 +239,8 @@ Python modules are files that contain Python code. They can be used to organize 
 units. Modules can be imported into other modules using the `import` statement. The `import`
 statement takes the name of the module to import as an argument.
 
+// TODO: Introduction to namespaces or skip alltogether?
+
 Another way to import modules is to use the `from <module> import <object>` statement. This allows
 you to import specific objects from a module into the current namespace. You can also import all
 objects from a module into the current namespace using the `from <module> import *` statement.
@@ -1721,7 +1723,7 @@ They are used to find bugs in the program. Watchlists can be set in the followin
 - Using any IDE (while in debug mode)
 - Using the `pdb` module
 
-== Code Analysis
+== Linting
 
 The static code analysis process (linting for short) is the process of checking the source code for
 type errors, syntax errors, and styling errors. It is used to ensure that the code is correct

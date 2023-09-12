@@ -1,0 +1,12 @@
+package/
+ ├─ subpackage1/
+ │  ├─ module1.py
+ │  └─ __init__.py
+ │
+ └─ subpackage2/
+ │  ├─ module2.py
+ │  └─ __init__.py
+ │
+ └─ subpackage3/
+    ├─ module3.py
+    └─ __init__.py
