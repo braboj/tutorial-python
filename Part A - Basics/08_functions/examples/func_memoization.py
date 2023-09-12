@@ -13,5 +13,6 @@ def fibonacci(n):
 
     return memoized_fibonacci(n)
 
+
 print(fibonacci(5))
 print(fibonacci(10))

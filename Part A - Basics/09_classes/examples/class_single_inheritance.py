@@ -1,4 +1,4 @@
-# Example: Multiple inheritance
+# Example: Multilevel inheritance
 
 class A(object):
 
@@ -15,6 +15,6 @@ class C(B):
     pass
 
 
-# The method process until the first class having the method is found (here A)
+# The method process is searched for until the first class having the method is found (here A)
 test = C()
 test.process()

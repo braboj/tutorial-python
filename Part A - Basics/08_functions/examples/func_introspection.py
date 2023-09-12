@@ -2,6 +2,7 @@ def foo(a, b=10, *args, c=20, **kwargs):
     """This is a function that does nothing."""
     return a + b + c
 
+
 print(foo(1))
 print(dir(foo))
 print(foo.__name__)

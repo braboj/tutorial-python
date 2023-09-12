@@ -1,6 +1,6 @@
 """
-The statement self.<variable> may refers to two things at different times. When no instance
-variable exists for a name, Python will lookup the variable in the class. So the value retrieved
+The statement self.<variable> may refer to two things at different times. When no instance
+variable exists for a name, Python will look up the variable in the class. So the value retrieved
 for self.<variable> will be the class variable.
 
 But when setting an attribute via self, Python will always set an instance variable. So now
@@ -21,7 +21,7 @@ class Test(TestOp):
     def __init__(self):
         super(Test, self).__init__()
 
-    def test_mutable(self):
+    def test_immutable(self):
 
         print("#" * 80)
         print("Testing immutable class variable")
@@ -36,7 +36,7 @@ class Test(TestOp):
 
         # self creates and references an instance variable (shadows the class variable)
         print("")
-        print("Change mutable type using self...")
+        print("Change immutable type using self...")
 
         self.immutable = 2
         print("CLS  => {0}:{1}".format(id(TestOp.immutable), TestOp.immutable))
@@ -44,7 +44,7 @@ class Test(TestOp):
 
         # Changing the value of immutable class variable will create a new object
         print("")
-        print("Change the value of the class mutalbe variable...")
+        print("Change the value of the class immutable variable...")
 
         TestOp.immutable = 3
         print("CLS  => {0}:{1}".format(id(TestOp.immutable), TestOp.immutable))
@@ -52,7 +52,7 @@ class Test(TestOp):
 
         print("")
 
-    def test_immutable(self):
+    def test_mutable(self):
         print("#" * 80)
         print("Testing mutable class variable")
         print("#" * 80)
@@ -74,7 +74,7 @@ class Test(TestOp):
 
         # self
         print("")
-        print("Change the value of the class mutalbe variable...")
+        print("Change the value of the class mutable variable...")
 
         TestOp.mutable.append(3)
         print("CLS  => {0}:{1}".format(id(TestOp.mutable), TestOp.mutable))

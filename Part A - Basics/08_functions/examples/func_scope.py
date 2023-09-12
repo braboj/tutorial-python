@@ -12,5 +12,5 @@ def myfunction():
 # Call the function
 myfunction()
 
-# Check that the functiono did not change the value of the global variable
+# Check that the function did not change the value of the global variable
 print(var)
