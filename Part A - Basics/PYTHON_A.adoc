@@ -236,10 +236,17 @@ Namespaces are one honking great idea -- let's do more of those!
 === Importing Modules
 
 Python modules are files that contain Python code. They can be used to organize code into logical
-units. Modules can be imported into other modules using the `import` statement. The `import`
+units.
+
+Each module has its own namespace - a region of code where the defined objects can access the given values using
+their names. Python can run multiple namespaces simultaneously, so objects with the same name from different
+namespaces (modules) do not influence each other.
+
+Modules can be imported into other modules using the `import` statement. The `import`
 statement takes the name of the module to import as an argument.
 
-// TODO: Introduction to namespaces or skip alltogether?
+Using `import` statement still does not import the names of the objects in the importing module namespace,
+but makes them accessible calling them via their module name.
 
 Another way to import modules is to use the `from <module> import <object>` statement. This allows
 you to import specific objects from a module into the current namespace. You can also import all
@@ -938,12 +945,7 @@ assigned to the parameters in the function signature.
 include::08_functions/examples/func_unpacking_arguments.py[]
 ----
 
-=== Namespace and Scope
-
-By creating a variable and assigning value to it, you create a key-value pair like in a dictionary.
-The value is available under this name only in a specific region of the program called namespace.
-Python runs multiple namespaces simultaneously, so variables with the same name from different namespaces do not
-influence each other. The namespace defines the scope of the variable.
+=== Variable Scope
 
 The scope of a variable is the region of the program where the variable can be accessed. Python has
 two types of variables: global variables and local variables.
