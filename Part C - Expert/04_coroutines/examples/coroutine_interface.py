@@ -1,3 +1,5 @@
+# Example: Coroutine Interface
+
 def letter_generator(text):
     print("Started")
     position = 0
@@ -27,7 +29,7 @@ print(next(letter))
 # Reset generator and generate letter
 print(letter.send(0))
 
-# Generate a next letter
+# Generate next letter
 print(next(letter))
 
 # Throw an exception to the generator
@@ -36,3 +38,13 @@ print(letter.throw(ValueError))
 # Throw GeneratorExit to the generator
 letter.close()
 
+# Output
+# ----------------------
+# Started
+# a
+# b
+# a
+# b
+# Value error on position = 1
+# b
+# Terminated
