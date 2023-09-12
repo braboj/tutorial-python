@@ -12,8 +12,8 @@ print("ID after reassignment: {}".format(id(test)))
 test.append(5)
 print("ID after append: {}".format(id(test)))
 
-# This statement is not a copy, it is a reference. This is especially important when passing
-# variables to functions.
+# This statement is not a copy, it is a reference.
+# This is especially important when passing variables to functions.
 reference = test
 print("ID of reference: {}".format(id(reference)))
 

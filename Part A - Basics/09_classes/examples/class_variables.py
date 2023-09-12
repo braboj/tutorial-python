@@ -3,23 +3,23 @@
 class Person(object):
 
     # Class attributes are defined outside of any method and are shared by all instances
-    male_prefix = "Mr."
-    female_prefix = "Ms."
+    MALE_PREFIX = "Mr."
+    FEMALE_PREFIX = "Ms."
 
     def __init__(self, name, sex):
         self.name = name
         self.sex = sex
 
     def get_prefix(self):
-        """ Demostrate how to access class attributes from instance methods """
+        """ Demonstrate how to access class attributes from instance methods """
 
         # The person is male
         if self.sex == "male":
-            prefix = self.male_prefix
+            prefix = self.MALE_PREFIX
 
         # The person is female
         elif self.sex == "female":
-            prefix = self.female_prefix
+            prefix = self.FEMALE_PREFIX
 
         # Others
         else:
@@ -42,6 +42,6 @@ for male in males:
 
 # Class attributes are accessible from the class itself and a change will affect all instances
 print("Prefix changed...")
-Person.male_prefix = "Sir"
+Person.MALE_PREFIX = "Sir"
 for male in males:
     print(male.get_name())

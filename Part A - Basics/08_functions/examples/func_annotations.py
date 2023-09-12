@@ -15,15 +15,14 @@ def add(x: int, y: int) -> int:
 
 # Function annotations for parameters and return value
 def sub(x: int, y: int) -> int:
-    """ Add two numbers.
+    """ Subtract two numbers.
 
     Args:
         x (int): First number.
         y (int): Second number.
 
-
     Returns:
-        int: Sum of the two numbers.
+        int: Difference between the two numbers.
 
     """
-    return x + y
+    return x - y

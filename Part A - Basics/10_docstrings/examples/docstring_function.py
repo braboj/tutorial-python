@@ -22,3 +22,6 @@ def myfunction(a, b, c):
         raise ValueError('a must be greater than 0')
 
     return a + b + c
+
+
+print(myfunction.__doc__)

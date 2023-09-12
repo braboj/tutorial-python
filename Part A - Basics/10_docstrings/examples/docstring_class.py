@@ -37,3 +37,7 @@ class TestClass(object):
             raise ValueError("test cannot be None")
 
         return "This is a test function with argument {}".format(test)
+
+
+print(TestClass.__doc__)
+print(TestClass.test_function.__doc__)
