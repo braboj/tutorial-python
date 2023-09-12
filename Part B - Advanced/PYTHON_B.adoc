@@ -11,15 +11,31 @@
 Abstraction is a fundamental concept in object-oriented programming (OOP) that refers to the
 process of exposing only the relevant and essential data and behavior to the users without
 showing the internal implementation details. It is used to manage complexity and reduce
-dependencies between classes. Abstraction is achieved by using **abstract classes** or
-**interfaces**.
+dependencies between classes.
+
+Now let's look at an example of abstraction in Python. Let's say you want to model a person. You
+look around you and see that each person is unique, e.g. name, age, height, weight, etc. However,
+there are some common characteristics that all people share, e.g. they can walk, talk, eat, etc.
+You can use abstraction to model a person by focusing on the common characteristics and ignoring
+the unique characteristics.
+
+In abstract terms, a person is an object that has a name, an age, a height, a weight, etc. It can
+walk, talk, eat, etc. The name, age, height, weight, etc. are the attributes of the person. The
+walk, talk, eat, etc. are the methods of the person. The attributes and methods of a person are
+called the interface of the person. The interface of a person defines the ways in which you can
+interact with a person.
+
+In complex software development abstraction is achieved by using **abstract classes** or
+**interfaces**. The latter is not available in Python but can be emulated using abstract classes
+with abstract methods only.
 
 They key points about abstraction are:
 
-- Focuses on the "what" an object does rather than "how" it does it
+- Focuses on the "what an object does" rather than "how it does it"
 - Allows you to define a clear and high-level interface for interacting with objects
 - Uses abstract classes or interfaces provide a blueprint for other classes to follow
 - Manages complexity and enhances code readability
+
 
 [source,python]
 ----
@@ -28,15 +44,14 @@ include::02_oop/examples/abstraction.py[]
 
 === Inheritance (Code Reuse)
 
-Inheritance is the process of creating a new class from an existing class. The new class is called
-the subclass or derived class. The existing class is called the superclass or base class. The
-subclass inherits the attributes and methods of the superclass. Inheritance is used to reuse code
-and to represent an is-a relationship, e.g a student is a person.
+Inheritance is the process of creating a new class from an existing class. The subclass inherits
+the attributes and methods of the superclass and can add its own attributes and methods. The inheritance is the opposite process of abstraction and is used to represent an is-a relationship, e.g a student is a person.
 
 Key points about inheritance:
 
 - Reuses code from an existing class
 - Represents an is-a relationship
+- Focuses on the "what" an object is and does
 
 [source,python]
 ----
@@ -1666,22 +1681,22 @@ dunder methods are:
 |Representation | Dunder method | Notes
 
 |Human-readable | `\\__str__` | If you want to provide a human-readable string representation of an
-object, use the `\__str__` method. This method should return a string that is easy for a human to
+object, use the `\\__str__` method. This method should return a string that is easy for a human to
 understand.
 
 |Unambiguous | `\\__repr__` | If you want to provide an unambiguous string representation of an
-object, use the `\__repr__` method. This method should return a string that can be used to
+object, use the `\\__repr__` method. This method should return a string that can be used to
 recreate the object.
 
-|Custom formatting | `\\__format__` | If you want to provide custom string formatting of an object, use
-the `\__format__` method. This method should return a string that is formatted according to the
-format specification.
+|Custom formatting | `\\__format__` | If you want to provide custom string formatting of an
+object, use the `\\__format__` method. This method should return a string that is formatted
+according to the format specification.
 
 |Raw byte string | `\\__bytes__` | If you want to provide a raw byte string representation of an
-object, use the `\__bytes__` method. This method should return a byte string that can be used to
+object, use the `\\__bytes__` method. This method should return a byte string that can be used to
 recreate the object. This method is used by the bytes() function.
 
-|Unique | `\\__hash__` | If you want to compute the hash of an object, use the `\__hash__` method.
+|Unique | `\\__hash__` | If you want to compute the hash of an object, use the `\\__hash__` method.
 This method should return an integer that is used to compare objects in dictionaries and sets.
 This method is used by the hash() function.
 
@@ -1701,18 +1716,18 @@ include::08_dunder/examples/dunder_object_representation.py[]
 |Behavior | Dunder method | Notes
 
 |Customize creation | `\\__new__` | If you want to customize the creation of an instance, use the
-`\__new__` method. This method should return an instance of the class. It is used to create the
+`\\__new__` method. This method should return an instance of the class. It is used to create the
 instance before it is initialized.
 
 |Customize initialization | `\\__init__` | If you want to customize the initialization of an
-instance, use the `\__init__` method. This method is called right after the instance has been
+instance, use the `\\__init__` method. This method is called right after the instance has been
 created. It is used to initialize the instance variables of the class.
 
 |Customize calling | `\\__call__` | If you want to customize the behavior of calling an instance,
-use the `\__call__` method. This method is called when the instance is called like a function.
+use the `\\__call__` method. This method is called when the instance is called like a function.
 
 |Customize deletion | `\\__del__` | If you want to customize the deletion of an instance, use the
-`\__del__` method. This method is called when the instance is deleted. It is used by the del
+`\\__del__` method. This method is called when the instance is deleted. It is used by the del
 statement.
 
 |====
@@ -1730,18 +1745,18 @@ include::08_dunder/examples/dunder_customize_behavior.py[]
 |====
 |Built-in type | Dunder method | Notes
 
-|`int()` | `\\__int__` | If you want to convert an object to an integer, use the `\__int__`
+|`int()` | `\\__int__` | If you want to convert an object to an integer, use the `\\__int__`
 method. This method should return an integer. It is used by the int() function.
 
-|`float()` | `\\__float__` | If you want to convert an object to a float, use the `\__float__`
+|`float()` | `\\__float__` | If you want to convert an object to a float, use the `\\__float__`
 method. This method should return a float. It is used by the float() function.
 
 |`complex()` | `\\__complex__` | If you want to convert an object to a complex number, use the
-`\__complex__` method. This method should return a complex number. It is used by the complex()
+`\\__complex__` method. This method should return a complex number. It is used by the complex()
 function.
 
 |`bool()` | `\\__bool__` | If you want to evaluate the truth value of an object, use the
-`\__bool__` method. This method should return a boolean. It is used by the bool() function.
+`\\__bool__` method. This method should return a boolean. It is used by the bool() function.
 
 |====
 
@@ -1804,11 +1819,11 @@ include::08_dunder/examples/dunder_operator_overloading.py[]
 |====
 |Function | Dunder method | Notes
 
-|Create iterator | `\\__iter__` | If you want to iterate over an object, use the `\__iter__` method.
+|Create iterator | `\\__iter__` | If you want to iterate over an object, use the `\\__iter__` method.
 This method should return an iterator. It is used by the iter() function.
 
 |Get next item  | `\\__next__` | If you want to get the next value of an iterator, use the
-`\__next__`
+`\\__next__`
 method. This method should return the next value of the iterator. It is used by the next().
 
 |====
@@ -1825,11 +1840,11 @@ include::08_dunder/examples/dunder_iterator_protocol.py[]
 |Function | Dunder method | Notes
 
 |Enter context | `\\__enter__` | If you want to customize the behavior of the `with` statement
-when entering the block, use the `\__enter__` method. This method should return an object that
+when entering the block, use the `\\__enter__` method. This method should return an object that
 will be assigned to the variable in the `with` statement.
 
 |Exit context  | `\\__exit__` | If you want to customize the behavior of the `with` statement
-when exiting the block, use the `\__exit__` method. This method should return a boolean that
+when exiting the block, use the `\\__exit__` method. This method should return a boolean that
 indicates whether the exception was handled or not.
 
 |====
@@ -2452,7 +2467,7 @@ print(random.randint(1, 10))
 
 In a Python program, there are four types of namespaces:
 
-- Built-In  (accessed using vars(`\__builtins__`) or dir(`\__builtins__`))
+- Built-In  (accessed using vars(`\\__builtins__`) or dir(`\\__builtins__`))
 - Class     (accessed using vars(<class_name>) or dir(<class_name>)
 - Global    (accessed using globals())
 - Local     (accessed using locals())
@@ -2489,7 +2504,7 @@ The search path is constructed in the following order:
 === Packages
 
 A package is a collection of modules that are grouped together in a directory. A package should have
-a `\__init__`.py file in the directory. The `\__init__.py` file is executed when the package is
+a `\\__init__`.py file in the directory. The `\\__init__.py` file is executed when the package is
 imported. It can be empty or can contain code that initializes the package.
 
 [source, console]
@@ -2507,14 +2522,14 @@ implementation details of the package.
 include::10_imports/examples/product/__init__.py[]
 ----
 
-The `\__init`__.py` file is also used to define the API of the package. The API is the set of
+The `\\__init__.py` file is also used to define the API of the package. The API is the set of
 modules, classes, functions, and variables that are available to the user of the package. The API
 should only contain the objects that are intended to be used by the user of the package. All other
 objects should be hidden from the user.
 
-This is achieved by using the  `\__all__` variable. It is a  list of strings that contains the
+This is achieved by using the  `\\__all__` variable. It is a  list of strings that contains the
 names of the modules, classes, functions, and variables that are available to the user of the
-package. The `\__all__` variable is optional. If it is not defined, all objects in the package are
+package. The `\\__all__` variable is optional. If it is not defined, all objects in the package are
 available to the user.
 
 Best practice for packages:
@@ -2588,7 +2603,7 @@ include::10_imports/examples/import_absolute.py[]
 === Main Modules
 
 A main module is a module that is executed directly by the Python interpreter. The main module
-is the first module that is executed in a Python program. The attribute `\__name__` from the
+is the first module that is executed in a Python program. The attribute `\\__name__` from the
 globals dictionary is set to `__main__`.
 
 [source,python]
@@ -2596,7 +2611,7 @@ globals dictionary is set to `__main__`.
 include::10_imports/examples/import_main_module.py[]
 ----
 
-If a module is imported and executed, the attribute `\__name__` is set to the name of the module.
+If a module is imported and executed, the attribute `\\__name__` is set to the name of the module.
 This allows you to distinguish between the main module and imported modules. This is useful when
 you want to execute code only when the module is executed directly by the Python interpreter.
 
@@ -2627,8 +2642,8 @@ you want to dynamically import a module or when you want to import a module cond
 include::10_imports/examples/import_module_objects.py[]
 ----
 
-A package in this context is just a module object whose `\__path__` attribute is set to a list of
-directory names and the `\__package_` attribute is set to the name of the package.
+A package in this context is just a module object whose `\\__path__` attribute is set to a list of
+directory names and the `\\__package_` attribute is set to the name of the package.
 
 The import statement actually creates a module object and assigns it to a variable. The module
 object can then be used to access the functions and classes defined in the module.
@@ -2677,7 +2692,7 @@ scenarios where compatibility is important:
 The following are some of the most common compatibility rules and tools:
 
 - Writing Python code that is compatible with Python 2 and Python 3
-- Using the `\__future__` and `future`
+- Using the `\\__future__` and `future`
 - Using the `six`
 
 
@@ -2704,11 +2719,11 @@ represents a Unicode string. In Python 3, the str type represents a Unicode stri
 - *raw_input() vs input()* : The `input` in Python 3 is equivalent to `raw_input` in Python 2
 
 - *__metaclass__ vs metaclass=*  : Python 3 uses the metaclass keyword argument instead of the
-`\__metaclass__` attribute
+`\\__metaclass__` attribute
 
 - *map, filter, reduce, zip*: These built-in functions return iterators in Python 3 instead of lists
 
-=== Using `\__futures__`
+=== Using `\\__futures__`
 
 The most common way to write code that is compatible with Python 2 and Python 3 is to use the
 __future__ library. The __future__ library provides features that will be standard in future
