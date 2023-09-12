@@ -268,6 +268,7 @@ include::03_solid/examples/open_closed_good.py[]
 
 
 === Liskov Substitution Principle
+
 The derived classes must be substitutable for their base classes. Derived classes only extend the
 functionality of base classes, they do not remove any functionality. A method that behaves in a
 different way for a parent class and its child classes violates this principle.
@@ -275,8 +276,7 @@ different way for a parent class and its child classes violates this principle.
 The Liskov substitution is used to ensure that class hierarchies are well designed and to prevent
 unexpected behavior when using polymorphism. Some bad examples of violating this principle are:
 
-- Base class depends on its subtype
-- The code has to check the type of an object before calling a method
+- The code has to check the type of an object before using it
 - Override a method of a base class to do nothing
 - Overriden methods change their behavior
 
