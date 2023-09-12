@@ -28,6 +28,7 @@ Python using proven design patterns
 == Links
 
 === Beginner
+
 - https://www.python.org/
 - https://www.python.org/dev/peps/pep-0008/
 - https://www.python.org/dev/peps/pep-0020/
@@ -62,14 +63,22 @@ Python using proven design patterns
 - https://guicommits.com/how-to-structure-exception-in-python-like-a-pro/
 - https://docs.python.org/2.7/tutorial/errors.html#tut-userexceptions
 - https://docs.python.org/3.10/tutorial/errors.html#tut-userexceptions
+- https://realpython.com/pytest-python-testing/
+- https://pytest-with-eric.com/comparisons/pytest-vs-unittest/
+- https://python-future.org/compatible_idioms.html
+- https://realpython.com/python-import/
+- https://peps.python.org/pep-0366/
 
 === Expert
+
 - https://python-3-patterns-idioms-test.readthedocs.io/en/latest/index.html
 - https://www.dabeaz.com/tutorials.html
 - https://python-future.org/compatible_idioms.html
 - https://github.com/jsbueno/metapython/blob/main/static.py
 - https://stackoverflow.com/questions/12356713/aspect-oriented-programming-aop-in-python
 - https://softwareengineering.stackexchange.com/questions/99433/aop-concepts-explained-for-the-dummy
+- https://peps.python.org/pep-0420/
+- https://packaging.python.org/en/latest/guides/packaging-namespace-packages/
 
 
 === Libraries
