@@ -15,7 +15,7 @@ Examples:
 
 ## Issue Rules
 
-- [<part>, <chapter>] - Use optionally as a reference to a source in a document
+- [`<part>, <chapter>`] - Use optionally as a reference to a source in a document
   
 - The issues will typically refer to parts of the document that have to be changed
 - Issues are created either in GitHub or in JIRA
