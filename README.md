@@ -29,3 +29,23 @@ Examples:
 
 - Follow the guideline on [https://blog.montrealanalytics.com/4-tips-for-effective-pull-request-naming-f60793998f04]
 
+
+## Folder structure
+
+```
+ROOT
+
+  Part A
+    Chapter 01 - ...
+      assets
+      examples
+      snippets
+
+  Part B
+    Chapter 01 - ...
+      assets
+      examples
+      snippets
+
+```
+
