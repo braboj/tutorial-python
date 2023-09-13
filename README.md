@@ -1,6 +1,10 @@
 # tutorial-python
 Awesome Python!
 
+## Common Guidelines
+
+- Use CamelCase syntaxis
+
 ## Commit Rules
 
 * [`#####`] - No issue defined for this commit
