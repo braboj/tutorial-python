@@ -728,6 +728,35 @@ operators are supported in Python:
 include::05_operators/examples/operators_conditional.py[]
 ----
 
+=== Operator Precedence
+
+Expressions in Python can make use of multiple operators. The order in which the separate operations are executed
+is defined by the level of precedence for the operator. Operators with higher level are executed first. If operators
+have the same level of precedence the associated operations are executed from left to right as they appear in the
+expression.
+
+image::05_operators/operator_precedence.png[]
+
+[source,python]
+----
+include::05_operators/examples/operators_precedence_math.py[]
+----
+
+image::05_operators/operator_precedence_example.png[]
+
+[source,python]
+----
+include::05_operators/examples/operators_precedence_boolean.py[]
+----
+
+
+The order of precedence can be manipulated using `()`.
+
+[source,python]
+----
+include::05_operators/examples/operators_precedence_parantheses.py[]
+----
+
 
 == User Input
 The `input()` function is used to get user input from the keyboard. It takes a single argument,
