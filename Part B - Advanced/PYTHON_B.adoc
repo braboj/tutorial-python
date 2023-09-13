@@ -957,8 +957,6 @@ Links:
 - https://en.wikipedia.org/wiki/Event-driven_SOA[Event-driven SOA]
 - https://luckyresistor.me/2019/07/05/event-based-firmware-1/[Event-driven firmware]
 
-=== Serverless
-
 == Logging
 
 Logging is a crucial concept in software development and system administration. It involves the
