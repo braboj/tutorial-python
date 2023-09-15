@@ -38,12 +38,14 @@ ROOT
   Part A
     Chapter 01 - ...
       assets
+      exercises
       examples
       snippets
 
   Part B
     Chapter 01 - ...
       assets
+      exercises
       examples
       snippets
 
