@@ -735,14 +735,14 @@ is defined by the level of precedence for the operator. Operators with higher le
 have the same level of precedence the associated operations are executed from left to right as they appear in the
 expression.
 
-image::05_operators/operator_precedence.png[]
+image::05_operators/assets/operator_precedence.png[]
 
 [source,python]
 ----
 include::05_operators/examples/operators_precedence_math.py[]
 ----
 
-image::05_operators/operator_precedence_example.png[]
+image::05_operators/assets/operator_precedence_example.png[]
 
 [source,python]
 ----
@@ -1720,7 +1720,7 @@ include::10_docstrings/examples/docstring_module.py[]
 
 === Breakpoints
 
-image::11_debugging/breakpoint.png[]
+image::11_debugging/assets/breakpoint.png[]
 
 A breakpoint is a point in the program where the execution stops. It is used to pause the program
 and inspect the state of the program at that point. Breakpoints are used to debug programs. They
@@ -1732,7 +1732,7 @@ are used to find bugs in the program. Breakpoints can be set in the following wa
 
 === Conditional breakpoints
 
-image::11_debugging/conditional_breakpoint.png[]
+image::11_debugging/assets/conditional_breakpoint.png[]
 
 A conditional breakpoint is a breakpoint that is only triggered when a condition is met. It is
 used to pause the program and inspect the state of the program when a condition is met. Conditional
@@ -1745,7 +1745,7 @@ breakpoints can be set in the following ways:
 
 === Watchlists
 
-image::11_debugging/watchlist.png[]
+image::11_debugging/assets/watchlist.png[]
 
 A watchlist is a list of variables that are monitored while the program is running. It is used to
 inspect the values of variables while the program is running. Watchlists are used to debug programs.

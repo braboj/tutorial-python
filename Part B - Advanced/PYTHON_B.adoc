@@ -268,6 +268,7 @@ include::03_solid/examples/open_closed_good.py[]
 
 
 === Liskov Substitution Principle
+
 The derived classes must be substitutable for their base classes. Derived classes only extend the
 functionality of base classes, they do not remove any functionality. A method that behaves in a
 different way for a parent class and its child classes violates this principle.
@@ -275,8 +276,7 @@ different way for a parent class and its child classes violates this principle.
 The Liskov substitution is used to ensure that class hierarchies are well designed and to prevent
 unexpected behavior when using polymorphism. Some bad examples of violating this principle are:
 
-- Base class depends on its subtype
-- The code has to check the type of an object before calling a method
+- The code has to check the type of an object before using it
 - Override a method of a base class to do nothing
 - Overriden methods change their behavior
 
@@ -829,8 +829,8 @@ Typically the layers are organized in a hierarchical manner, with each layer pro
 to the next higher layer. Almost all software applications are multi-layered. The most common
 layers are:
 
-- Presentation layer (the frontend)
-- Business layer (the backend)
+- Presentation layer (the frontend layer)
+- Application layer (the backend layer)
 - Data layer (the data access layer)
 
 Examples:
@@ -2821,13 +2821,6 @@ indefinitely. This is helpful for detecting test cases that get stuck.
 provides a rich set of features for mocking objects and functions, including: mocking, patching,
 stubbing, spying, and faking. See https://docs.python.org/3/library/unittest.mock.html[unittest.mock] for more information.
 
-
-
-=== doctest
-
-doctest is a testing framework that is part of the Python standard library. It provides a simple
-and lightweight way of testing code by embedding tests in docstrings. It is useful for testing
-examples in documentation.
 
 === pytest
 
