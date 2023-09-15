@@ -7,11 +7,9 @@ Awesome Python!
 
 ## Commit Rules
 
-* [`#####`] - No issue defined for this commit
 * (`#<id>`) - Use as a reference to a concrete issue number (either GitHub or JIRA)
-  
+* [`#####`] - No issue or ticket defined for this commit  
 * Use a concrete reference of the issue whenever possible (see common guidelines)
-* If no issue is present use [#####]
 
 Examples:
 * (`#19`) - Add the operator precedence examples
@@ -19,15 +17,18 @@ Examples:
 
 ## Issue Rules
 
-- [`<part>, <chapter>`] - Use optionally as a reference to a source in a document
-  
-- The issues will typically refer to parts of the document that have to be changed
-- Issues are created either in GitHub or in JIRA
-- If no context is desired then the prefix is ommitted 
+* [`<part>, <chapter>`] - <message>
+* The square brackets define the context (optional)
+* The context is connected to a place in the document
+* If no context is desired then the prefix with the square brackets is omitted altogether
+
+Examples:
+* [Part A, Ch. 1] - Do this (with context)
+* Do that (without context)
 
 ## Pull Request Rules
 
-- Follow the guideline on [https://blog.montrealanalytics.com/4-tips-for-effective-pull-request-naming-f60793998f04]
+- Follow the guidelines on [https://blog.montrealanalytics.com/4-tips-for-effective-pull-request-naming-f60793998f04]
 
 
 ## Folder structure
