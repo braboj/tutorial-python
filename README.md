@@ -1,4 +1,5 @@
-# tutorial-python
+# Python Tutorial
+
 Awesome Python!
 
 ## Common Guidelines
