@@ -1,8 +1,10 @@
-= Annex
+= References
 
 == Bibliography
 
 - Clean Code: A Handbook of Agile Software Craftsmanship
+- Fundamentals of Software Architecture: An Engineering Approach
+- Dive into Design Patterns
 - The Complete Python Manual: Learn how to master Python and expand your programming skills
 - Python Pocket Reference
 - Mastering Python

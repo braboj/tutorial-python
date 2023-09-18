@@ -1004,6 +1004,7 @@ include::08_functions/examples/func_nested.py[]
 ----
 
 === Closures
+
 Closures are functions that return another function. They are used to create functions that can
 access variables defined in the enclosing function. The enclosing function must return the nested
 function. The nested function can access variables defined in the enclosing function. However, it
@@ -1015,17 +1016,35 @@ include::08_functions/examples/func_closures.py[]
 ----
 
 === Decorator Functions
+
 Function decorators are functions that take a function as an argument and return a modified
 version of the function. They are used to modify the behavior of a function without changing the
 function itself.
 
-Function decorators are specified using the `@` operator before the function definition. The function
-decorator is called when the function is defined.
+Function decorators are specified using the `@` operator before the function definition. The
+function decorator is called when the function is defined.
+
+*Example: Simple decorator function*
 
 [source,python]
 ----
 include::08_functions/examples/func_decorator.py[]
 ----
+
+*Example: Decorator function with arguments*
+
+[source,python]
+----
+include::08_functions/examples/func_decorator_with_arguments.py[]
+----
+
+*Example: Decorator function used on classes*
+
+[source,python]
+----
+include::08_functions/examples/func_decorator_for_classes.py[]
+----
+
 
 === Factory Functions
 The function factory pattern is a special function used to create other functions dynamically.
@@ -1155,16 +1174,20 @@ include::08_functions/examples/func_lambda_recursive.py[]
 ----
 
 === Function Introspection
-Function introspection is the process of examining a function's attributes. It is used to get
-information about a function.
 
-- use `dir()` to get a list of all the attributes
-- use `__name__` to get the name of a function
-- use `__doc__`  to get the docstring of a function
-- use `__code__` to get the code object of a function
-- use `__defaults__` to get the default values of a function's parameter
-- use `__kwdefaults__` to get the default values of a function's keyword parameters
-- use `__annotations__` to get the annotations of a function's parameters and return value
+Function introspection is the process of examining a function's attributes. It is used to get
+information about the state variables and code of a function after it is created and initialized.
+In Python a function is a first class object, which means that it can be handled and manipulated
+like any other object.
+
+- use `<func>.\\__name__` to get the name of a function
+- use `<func>.\\__doc__`  to get the docstring of a function
+- use `<func>.\\__defaults__` to get the default values of a function's parameter
+- use `<func>.\\__kwdefaults__` to get the default values of a function's keyword parameters
+- use `<func>.\\__globals__` to get the global variables outside the function
+- use `<func>.\\__closure__`  to get the parent objects of a nested function
+- use `<func>.\\__dict__` to get the attributes and their values of a function
+- use `<func>.\\__code__` to get the code object of a function
 
 [source,python]
 ----
@@ -1646,26 +1669,46 @@ specified using the `@` operator before the function or class definition.
 
 [source,python]
 ----
-@decorator(arg1=..., arg2=...)
+# A class decorator for functions
+@ClassDecorator(arg1=..., arg2=...)
 def function():
     pass
 
-@decorator(arg1=..., arg2=...)
+# A class decorator for classes
+@ClassDecorator(arg1=..., arg2=...)
 class MyClass:
     pass
 ----
+
+*Example: Class decorator for functions*
 
 [source,python]
 ----
 include::09_classes/examples/class_decorator_for_functions.py[]
 ----
 
+*Example: Class decorator for classes*
+
 [source,python]
 ----
 include::09_classes/examples/class_decorator_for_classes.py[]
 ----
 
+
 === Nested classes
+
+In Python, you can define a class inside another class, creating what's known as a nested or
+inner class. Nested classes can be a useful way to organize and encapsulate related functionality
+and it is very often used to create namespaces for constants, settings and helper classes. A
+namespace is a dictionary that maps names to objects. It is used to avoid name collisions and to
+make it easier to find the names you are looking for.
+
+[source,python]
+----
+include::09_classes/examples/class_nested.py[]
+----
+
+
 
 === Introspection
 The class introspection is the process of examining a class's attributes. It is used to get
