@@ -1,35 +1,32 @@
-# Example: Class as decorator for other classes
+# Example: Class as a decorator for a class
+class Counter(object):
 
-def Counter(cls=None, start=0):
-    """Class decorator for counting instances of a class. """
+    # The constructor accepts the parameter passed to the decorator
+    def __init__(self, start_value):
+        self.counter = start_value
 
-    def wrap(class_to_decorate):
-        class_to_decorate.counter = start
-        return class_to_decorate
+    # The __call__ method is called when the class is used as a decorator
+    def __call__(self, cls):
 
-    # If we're called with parens, return a decorator function.
-    if cls is None:
-        # We're called with parens.
-        return wrap
+        # Modify the class by adding an attribute with the specified value
+        cls.counter = self.counter
 
-    # We're called without parens.
-    return wrap(cls)
-
-
-@Counter
-class A(object):
-
-    def __init__(self):
-        print(self.counter)
+        # Return the modified class
+        return cls
 
 
-A()
+# Apply the class decorator with a parameter
+@Counter(start_value=1)
+class DecoratedClass(object):
+    pass
 
 
-@Counter(start=101)
-class B(object):
-    def __init__(self):
-        print(self.counter)
+# Use the explicit decorator syntax
+DecoratedClass = Counter(start_value=1)(DecoratedClass)
+obj = DecoratedClass()
+print(obj.counter)  # Output: 1
 
 
-B()
+# Use Python's decorator syntax
+obj = DecoratedClass()
+print(obj.counter)  # Output: Custom Value

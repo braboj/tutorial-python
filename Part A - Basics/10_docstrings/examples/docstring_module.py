@@ -34,11 +34,11 @@ Usage:
         'math_operations.multiply()', and 'math_operations.divide()'.
 
 Example:
-    >>> import math_operations
-    >>> math_operations.add(5, 3)
-    8
-    >>> math_operations.subtract(5, 3)
-    2
+    >>> import math
+    >>> math.sin(1)
+    1
+    >>> math.cos(1)
+    0
 """
 
 

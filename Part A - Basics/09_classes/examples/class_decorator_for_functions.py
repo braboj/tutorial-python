@@ -1,4 +1,4 @@
-# Example: Class as decorator for functions
+# Example: Class as a decorator for functions and methods
 
 
 class Counter(object):
@@ -23,10 +23,26 @@ class Counter(object):
         return wrapper
 
 
-@Counter(0)
 def f():
     print("Hello World")
 
 
+@Counter(0)
+def g():
+    print("Hello World")
+
+
+print("#" * 80)
+
+# Use the explicit decorator syntax
+f = Counter(0)(f)
+
+# Call the decorated functions
 for _ in range(10):
     f()
+
+print("#" * 80)
+
+# Use Python's decorator syntax
+for _ in range(10):
+    g()
