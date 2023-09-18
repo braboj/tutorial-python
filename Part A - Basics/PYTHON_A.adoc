@@ -1173,27 +1173,6 @@ include::08_functions/examples/func_lambda_nested_conditions.py[]
 include::08_functions/examples/func_lambda_recursive.py[]
 ----
 
-=== Function Introspection
-
-Function introspection is the process of examining a function's attributes. It is used to get
-information about the state variables and code of a function after it is created and initialized.
-In Python a function is a first class object, which means that it can be handled and manipulated
-like any other object.
-
-- use `<func>.\\__name__` to get the name of a function
-- use `<func>.\\__doc__`  to get the docstring of a function
-- use `<func>.\\__defaults__` to get the default values of a function's parameter
-- use `<func>.\\__kwdefaults__` to get the default values of a function's keyword parameters
-- use `<func>.\\__globals__` to get the global variables outside the function
-- use `<func>.\\__closure__`  to get the parent objects of a nested function
-- use `<func>.\\__dict__` to get the attributes and their values of a function
-- use `<func>.\\__code__` to get the code object of a function
-
-[source,python]
-----
-include::08_functions/examples/func_introspection.py[]
-----
-
 
 === Positional-Only Arguments
 Positional-only arguments are arguments that can only be passed by position and not by name. They
@@ -1222,9 +1201,31 @@ are used when you want to prevent users from passing arguments by position.
 include::08_functions/examples/func_keyword_only_arguments.py[]
 ----
 
+=== Function Introspection
+
+Function introspection is the process of examining a function's attributes. It is used to get
+information about the state variables and code of a function after it is created and initialized.
+In Python a function is a first class object, which means that it can be handled and manipulated
+like any other object.
+
+- use `\\__name__` to get the name of a function
+- use `\\__doc__`  to get the docstring of a function
+- use `\\__defaults__` to get the default values of a function's positional parameters
+- use `\\__kwdefaults__` to get the default values of a function's keyword parameters
+- use `\\__globals__` to get the global variables outside the function
+- use `\\__closure__`  to get the parent objects of a nested function
+- use `\\__dict__` to get the attributes and their values of a function
+- use `\\__code__` to get the code object of a function
+
+[source,python]
+----
+include::08_functions/examples/func_introspection.py[]
+----
+
+
 == Classes
 
-A    class is a blueprint for creating objects. It defines the properties and methods that all
+A class is a blueprint for creating objects. It defines the properties and methods that all
 objects of the class will have. An object is an instance of a class. It is a concrete realization
 of the class. It has well-defined values or all the properties defined in the class.
 
@@ -1714,17 +1715,16 @@ include::09_classes/examples/class_nested.py[]
 The class introspection is the process of examining a class's attributes. It is used to get
 information about a class.
 
-- use `dir()` to get a list of all the attributes
+- use `\\__doc__`  to get the docstring of a class
 - use `\\__class__` to get the class of an object
 - use `\\__bases__` to get the base classes of a class
 - use `\\__subclasses__` to get the subclasses of a class
 - use `\\__mro__` to get the method resolution order of a class
 - use `\\__name__` to get the name of a class
-- use `\\__doc__`  to get the docstring of a class
 - use `\\__dict__` to get the attributes of a class
 - use `\\__slots__` to get the slots of a class
 - use `\\__annotations__` to get the annotations of a class
-
+- use `\\__code__` to get the code object of a class
 
 == Docstrings
 
