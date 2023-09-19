@@ -4,9 +4,10 @@
 :docinfo:
 :toc:
 :hardbreaks:
+:imagesdir: ./Assets/images
 
 include::Front.adoc[]
-include::./Part A - Basics/PYTHON_A.adoc[]
+include::PYTHON_A.adoc[]
 include::./Part B - Advanced/PYTHON_B.adoc[]
 // include::./Part C - Expert/PYTHON_C.adoc[]
 include::References.adoc[]

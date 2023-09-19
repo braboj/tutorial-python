@@ -3,6 +3,7 @@
 :sectnums:
 :docinfo:
 :toc:
+:imagesdir: ./Assets/images
 
 == Requirements
 The following pre-requisites are required to complete this module:
@@ -132,7 +133,7 @@ Our first program will greet us and tell us the result of the operation 1+1 .
 
 [source,python]
 ----
-include::02_introduction/examples/intro_hello_world.py[]
+include::Part A - Basics/02_introduction/examples/intro_hello_world.py[]
 ----
 
 
@@ -157,7 +158,7 @@ function, which means that it is available by default.
 
 [source,python]
 ----
-include::02_introduction/examples/intro_print.py[]
+include::Part A - Basics/02_introduction/examples/intro_print.py[]
 ----
 
 === Statements
@@ -168,7 +169,7 @@ have a value or result that can be used further in the code.
 
 [source,python]
 ----
-include::02_introduction/examples/intro_statements.py[]
+include::Part A - Basics/02_introduction/examples/intro_statements.py[]
 ----
 
 In the above example, we have two statements. The first statement assigns the value 5 to the
@@ -183,7 +184,7 @@ assigning a value, passing arguments to a function, or printing a value.
 
 [source,python]
 ----
-include::02_introduction/examples/intro_expressions.py[]
+include::Part A - Basics/02_introduction/examples/intro_expressions.py[]
 ----
 
 In the above example, the first line is an expression that evaluates to the value 6. The second
@@ -198,7 +199,7 @@ interpreter as an Easter egg. You can view it by typing `import this` in the Pyt
 
 [source,python]
 ----
-include::02_introduction/examples/intro_zen_of_python.py[]
+include::Part A - Basics/02_introduction/examples/intro_zen_of_python.py[]
 ----
 
 The statement `import this` will do the following:
@@ -258,7 +259,7 @@ math`. You can also import specific objects from a module using the `from` state
 
 [source,python]
 ----
-include::02_introduction/examples/intro_import.py[]
+include::Part A - Basics/02_introduction/examples/intro_import.py[]
 ----
 
 == Variables
@@ -267,7 +268,7 @@ Let’s print the same text 5 times on the screen using the print function.
 
 [source,python]
 ----
-include::03_variables/examples/var_preconditions.py[]
+include::Part A - Basics/03_variables/examples/var_preconditions.py[]
 ----
 
 Now if we want to modify the text, we have to change all five lines. Let’s modify our program a
@@ -277,7 +278,7 @@ times in the program.
 
 [source,python]
 ----
-include::03_variables/examples/var_as_container.py[]
+include::Part A - Basics/03_variables/examples/var_as_container.py[]
 ----
 
 In the code above the variable text is declared and initialized. After this, it may be used many
@@ -289,7 +290,7 @@ function and see how it works:
 
 [source,python]
 ----
-include::03_variables/examples/var_types.py[]
+include::Part A - Basics/03_variables/examples/var_types.py[]
 ----
 
 We see that the variable is from type integer, but they are preceded by the word class. The class
@@ -298,7 +299,7 @@ can be demonstrated by using numbers of different types.
 
 [source,python]
 ----
-include::03_variables/examples/var_float_sum.py[]
+include::Part A - Basics/03_variables/examples/var_float_sum.py[]
 ----
 
 In the example above Python analyses the code and deducts that a and b are floating point numbers and uses the
@@ -306,7 +307,7 @@ float class to check how to add them. Now let’s change the variable types to c
 
 [source,python]
 ----
-include::03_variables/examples/var_complex_sum.py[]
+include::Part A - Basics/03_variables/examples/var_complex_sum.py[]
 ----
 
 The code is analyzed and Python deducts that now a and b are complex numbers and thus another
@@ -328,7 +329,7 @@ can also be written in binary, octal, or hexadecimal notation. Binary numbers ar
 
 [source,python]
 ----
-include::03_variables/examples/var_integer_type.py[]
+include::Part A - Basics/03_variables/examples/var_integer_type.py[]
 ----
 
 ==== Floating-point numbers
@@ -337,7 +338,7 @@ also be written in scientific notation, with `e` indicating the power of 10.
 
 [source,python]
 ----
-include::03_variables/examples/var_float_type.py[]
+include::Part A - Basics/03_variables/examples/var_float_type.py[]
 ----
 
 ==== Complex numbers
@@ -345,7 +346,7 @@ Complex numbers are numbers with a real and imaginary part, such as 1+2j, 2+4j, 
 
 [source,python]
 ----
-include::03_variables/examples/var_complex_type.py[]
+include::Part A - Basics/03_variables/examples/var_complex_type.py[]
 ----
 
 === Booleans
@@ -355,7 +356,7 @@ written as `True` and `False` (the first letter is capitalized).
 
 [source,python]
 ----
-include::03_variables/examples/var_bool_type.py[]
+include::Part A - Basics/03_variables/examples/var_bool_type.py[]
 ----
 
 === Lists
@@ -367,7 +368,7 @@ that the first item in a list has index 0.
 
 [source,python]
 ----
-include::03_variables/examples/var_list_type.py[]
+include::Part A - Basics/03_variables/examples/var_list_type.py[]
 ----
 
 === Tuples
@@ -379,7 +380,7 @@ index 0.
 
 [source,python]
 ----
-include::03_variables/examples/var_tuple_type.py[]
+include::Part A - Basics/03_variables/examples/var_tuple_type.py[]
 ----
 
 === Sets
@@ -390,7 +391,7 @@ values of items in a set.
 
 [source,python]
 ----
-include::03_variables/examples/var_set_type.py[]
+include::Part A - Basics/03_variables/examples/var_set_type.py[]
 ----
 
 === Dictionaries
@@ -402,7 +403,7 @@ meaning that you can change the values of items in a dictionary.
 
 [source,python]
 ----
-include::03_variables/examples/var_dict_types.py[]
+include::Part A - Basics/03_variables/examples/var_dict_types.py[]
 ----
 
 === Strings
@@ -412,7 +413,7 @@ enclosed in single quotes ' or double quotes ".
 
 [source,python]
 ----
-include::03_variables/examples/var_string_type.py[]
+include::Part A - Basics/03_variables/examples/var_string_type.py[]
 ----
 
 ==== Concatenation
@@ -420,7 +421,7 @@ String concatenation refers to the process of combining two or more strings into
 
 [source,python]
 ----
-include::03_variables/examples/string_concatenation.py[]
+include::Part A - Basics/03_variables/examples/string_concatenation.py[]
 ----
 
 ==== Interpolation
@@ -429,7 +430,7 @@ literals to create formatted strings. It allows you to dynamically insert values
 
 [source,python]
 ----
-include::03_variables/examples/string_interpolation.py[]
+include::Part A - Basics/03_variables/examples/string_interpolation.py[]
 ----
 
 ==== Escaping
@@ -439,7 +440,7 @@ the special character with a backslash `\`.
 
 [source,python]
 ----
-include::03_variables/examples/string_escaping.py[]
+include::Part A - Basics/03_variables/examples/string_escaping.py[]
 ----
 
 Some of the most common escape sequences are:
@@ -457,7 +458,7 @@ index 0, the second character has index 1, and so on.
 
 [source,python]
 ----
-include::03_variables/examples/string_indexing.py[]
+include::Part A - Basics/03_variables/examples/string_indexing.py[]
 ----
 
 ==== Slicing
@@ -471,7 +472,7 @@ characters to skip between each character in the slice.
 
 [source,python]
 ----
-include::03_variables/examples/string_slicing.py[]
+include::Part A - Basics/03_variables/examples/string_slicing.py[]
 ----
 
 ==== Case
@@ -485,7 +486,7 @@ Python provides several methods for changing the case of a string. The most comm
 
 [source,python]
 ----
-include::03_variables/examples/string_cases.py[]
+include::Part A - Basics/03_variables/examples/string_cases.py[]
 ----
 
 ==== Length
@@ -494,7 +495,7 @@ to get the length of a string.
 
 [source,python]
 ----
-include::03_variables/examples/string_length.py[]
+include::Part A - Basics/03_variables/examples/string_length.py[]
 ----
 
 ==== Splitting
@@ -505,7 +506,7 @@ based on the line break character `\n`.
 
 [source,python]
 ----
-include::03_variables/examples/string_splitting.py[]
+include::Part A - Basics/03_variables/examples/string_splitting.py[]
 ----
 
 ==== Joining
@@ -515,7 +516,7 @@ the list of strings as an argument.
 
 [source,python]
 ----
-include::03_variables/examples/string_joining.py[]
+include::Part A - Basics/03_variables/examples/string_joining.py[]
 ----
 
 === None
@@ -526,7 +527,7 @@ return a value. For example, the `print()` function returns None.
 
 [source,python]
 ----
-include::03_variables/examples/var_none_type.py[]
+include::Part A - Basics/03_variables/examples/var_none_type.py[]
 ----
 
 === Mutable
@@ -539,7 +540,7 @@ Mutable variables are objects whose values can be changed after they are created
 
 [source,python]
 ----
-include::03_variables/examples/var_mutable.py[]
+include::Part A - Basics/03_variables/examples/var_mutable.py[]
 ----
 
 
@@ -556,7 +557,7 @@ Immutable objects are objects whose values cannot be changed after they are crea
 
 [source,python]
 ----
-include::03_variables/examples/var_immutable.py[]
+include::Part A - Basics/03_variables/examples/var_immutable.py[]
 ----
 
 == Comments
@@ -569,14 +570,14 @@ and end with three quotes `"""`.
 
 [source,python]
 ----
-include::04_comments/examples/comment_single_line.py[]
+include::Part A - Basics/04_comments/examples/comment_single_line.py[]
 ----
 
 === Multi-line Comments
 
 [source,python]
 ----
-include::04_comments/examples/comment_multi_line.py[]
+include::Part A - Basics/04_comments/examples/comment_multi_line.py[]
 ----
 
 == Operators
@@ -607,7 +608,7 @@ only use Python 3 operators in this book.
 
 [source,python]
 ----
-include::05_operators/examples/operators_arithmetic.py[]
+include::Part A - Basics/05_operators/examples/operators_arithmetic.py[]
 ----
 
 
@@ -625,7 +626,7 @@ operators are supported in Python:
 
 [source,python]
 ----
-include::05_operators/examples/operators_comparison.py[]
+include::Part A - Basics/05_operators/examples/operators_comparison.py[]
 ----
 
 
@@ -640,7 +641,7 @@ operation is true or false. The following logical operators are supported in Pyt
 
 [source,python]
 ----
-include::05_operators/examples/operators_logical.py[]
+include::Part A - Basics/05_operators/examples/operators_logical.py[]
 ----
 
 
@@ -654,7 +655,7 @@ The following identity operators are supported in Python:
 
 [source,python]
 ----
-include::05_operators/examples/operators_identity.py[]
+include::Part A - Basics/05_operators/examples/operators_identity.py[]
 ----
 
 === Membership Operators
@@ -667,7 +668,7 @@ or not. The following membership operators are supported in Python:
 
 [source,python]
 ----
-include::05_operators/examples/operators_membership.py[]
+include::Part A - Basics/05_operators/examples/operators_membership.py[]
 ----
 
 
@@ -685,7 +686,7 @@ following bitwise operators are supported in Python:
 
 [source,python]
 ----
-include::05_operators/examples/operators_bitwise.py[]
+include::Part A - Basics/05_operators/examples/operators_bitwise.py[]
 ----
 
 
@@ -711,7 +712,7 @@ following assignment operators are supported in Python:
 
 [source,python]
 ----
-include::05_operators/examples/operators_assignment.py[]
+include::Part A - Basics/05_operators/examples/operators_assignment.py[]
 ----
 
 
@@ -725,7 +726,7 @@ operators are supported in Python:
 
 [source,python]
 ----
-include::05_operators/examples/operators_conditional.py[]
+include::Part A - Basics/05_operators/examples/operators_conditional.py[]
 ----
 
 === Operator Precedence
@@ -735,18 +736,18 @@ is defined by the level of precedence for the operator. Operators with higher le
 have the same level of precedence the associated operations are executed from left to right as they appear in the
 expression.
 
-image::05_operators/assets/operator_precedence.png[]
+image::part_a/ch_05/operator_precedence.png[]
 
 [source,python]
 ----
-include::05_operators/examples/operators_precedence_math.py[]
+include::Part A - Basics/05_operators/examples/operators_precedence_math.py[]
 ----
 
-image::05_operators/assets/operator_precedence_example.png[]
+image::part_a/ch_05//operator_precedence_example.png[]
 
 [source,python]
 ----
-include::05_operators/examples/operators_precedence_boolean.py[]
+include::Part A - Basics/05_operators/examples/operators_precedence_boolean.py[]
 ----
 
 
@@ -754,7 +755,7 @@ The order of precedence can be manipulated using `()`.
 
 [source,python]
 ----
-include::05_operators/examples/operators_precedence_parantheses.py[]
+include::Part A - Basics/05_operators/examples/operators_precedence_parantheses.py[]
 ----
 
 
@@ -771,7 +772,7 @@ user input as a string.
 
 [source,python]
 ----
-include::06_user_input/examples/user_input_python2.py[]
+include::Part A - Basics/06_user_input/examples/user_input_python2.py[]
 ----
 
 === User Input in Python 3
@@ -781,7 +782,7 @@ as an argument and evaluates it as a Python expression. It returns the result of
 
 [source,python]
 ----
-include::06_user_input/examples/user_input_python3.py[]
+include::Part A - Basics/06_user_input/examples/user_input_python3.py[]
 ----
 
 
@@ -800,7 +801,7 @@ An example of using the `six` module to get user input is shown below.
 
 [source,python]
 ----
-include::06_user_input/examples/user_input_with_six.py[]
+include::Part A - Basics/06_user_input/examples/user_input_with_six.py[]
 ----
 
 
@@ -826,7 +827,7 @@ false.
 
 [source,python]
 ----
-include::07_control_flow/examples/control_with_if_statement.py[]
+include::Part A - Basics/07_control_flow/examples/control_with_if_statement.py[]
 ----
 
 === for Statement
@@ -836,7 +837,7 @@ execute a block of code when the loop is finished without breaking out of the lo
 
 [source,python]
 ----
-include::07_control_flow/examples/control_with_for_statement.py[]
+include::Part A - Basics/07_control_flow/examples/control_with_for_statement.py[]
 ----
 
 === while Statement
@@ -846,7 +847,7 @@ finished without breaking out of the loop.
 
 [source,python]
 ----
-include::07_control_flow/examples/control_with_while_statement.py[]
+include::Part A - Basics/07_control_flow/examples/control_with_while_statement.py[]
 ----
 
 === break Statement
@@ -855,7 +856,7 @@ statement can be used inside a `for` or `while` loop.
 
 [source,python]
 ----
-include::07_control_flow/examples/control_with_break_statement.py[]
+include::Part A - Basics/07_control_flow/examples/control_with_break_statement.py[]
 ----
 
 === continue Statement
@@ -865,7 +866,7 @@ with the next iteration of the loop. The `continue` statement can be used inside
 
 [source,python]
 ----
-include::07_control_flow/examples/control_with_continue_statement.py[]
+include::Part A - Basics/07_control_flow/examples/control_with_continue_statement.py[]
 ----
 
 === pass Statement
@@ -875,7 +876,7 @@ execute any code.
 
 [source,python]
 ----
-include::07_control_flow/examples/control_with_pass_statement.py[]
+include::Part A - Basics/07_control_flow/examples/control_with_pass_statement.py[]
 ----
 
 == Functions
@@ -886,7 +887,7 @@ statements that make up the body of the function are indented.
 
 [source,python]
 ----
-include::08_functions/examples/func_structure.py[]
+include::Part A - Basics/08_functions/examples/func_structure.py[]
 ----
 
 Let's break down the different components of a function:
@@ -917,7 +918,7 @@ so on. Positional arguments are the default type of arguments in Python.
 
 [source,python]
 ----
-include::08_functions/examples/func_positional_arguments.py[]
+include::Part A - Basics/08_functions/examples/func_positional_arguments.py[]
 ----
 
 === Named Arguments
@@ -928,7 +929,7 @@ want to specify only a few of them.
 
 [source,python]
 ----
-include::08_functions/examples/func_keyword_arguments.py[]
+include::Part A - Basics/08_functions/examples/func_keyword_arguments.py[]
 ----
 
 === Default Arguments
@@ -939,7 +940,7 @@ specified after all the required arguments.
 
 [source,python]
 ----
-include::08_functions/examples/func_default_arguments.py[]
+include::Part A - Basics/08_functions/examples/func_default_arguments.py[]
 ----
 
 === Variable Arguments
@@ -953,14 +954,14 @@ dictionary.
 
 [source,python]
 ----
-include::08_functions/examples/func_variable_arguments_python2.py[]
+include::Part A - Basics/08_functions/examples/func_variable_arguments_python2.py[]
 ----
 
 **Python 3**
 
 [source,python]
 ----
-include::08_functions/examples/func_variable_arguments_python3.py[]
+include::Part A - Basics/08_functions/examples/func_variable_arguments_python3.py[]
 ----
 
 
@@ -971,7 +972,7 @@ assigned to the parameters in the function signature.
 
 [source,python]
 ----
-include::08_functions/examples/func_unpacking_arguments.py[]
+include::Part A - Basics/08_functions/examples/func_unpacking_arguments.py[]
 ----
 
 === Variable Scope
@@ -989,7 +990,7 @@ inside a function.
 
 [source,python]
 ----
-include::08_functions/examples/func_scope.py[]
+include::Part A - Basics/08_functions/examples/func_scope.py[]
 ----
 
 === Nested Functions
@@ -1000,7 +1001,7 @@ modify a variable defined in the enclosing function, you must use the `nonlocal`
 
 [source,python]
 ----
-include::08_functions/examples/func_nested.py[]
+include::Part A - Basics/08_functions/examples/func_nested.py[]
 ----
 
 === Closures
@@ -1012,7 +1013,7 @@ cannot modify them.
 
 [source,python]
 ----
-include::08_functions/examples/func_closures.py[]
+include::Part A - Basics/08_functions/examples/func_closures.py[]
 ----
 
 === Decorator Functions
@@ -1028,21 +1029,21 @@ function decorator is called when the function is defined.
 
 [source,python]
 ----
-include::08_functions/examples/func_decorator.py[]
+include::Part A - Basics/08_functions/examples/func_decorator.py[]
 ----
 
 *Example: Decorator function with arguments*
 
 [source,python]
 ----
-include::08_functions/examples/func_decorator_with_arguments.py[]
+include::Part A - Basics/08_functions/examples/func_decorator_with_arguments.py[]
 ----
 
 *Example: Decorator function used on classes*
 
 [source,python]
 ----
-include::08_functions/examples/func_decorator_for_classes.py[]
+include::Part A - Basics/08_functions/examples/func_decorator_for_classes.py[]
 ----
 
 
@@ -1055,7 +1056,7 @@ results.
 
 [source,python]
 ----
-include::08_functions/examples/func_factory.py[]
+include::Part A - Basics/08_functions/examples/func_factory.py[]
 ----
 
 
@@ -1068,7 +1069,7 @@ must ensure that the cache is cleared when it is no longer needed.
 
 [source,python]
 ----
-include::08_functions/examples/func_memoization.py[]
+include::Part A - Basics/08_functions/examples/func_memoization.py[]
 ----
 
 === Function Annotations
@@ -1081,7 +1082,7 @@ parameters and the return value.
 
 [source,python]
 ----
-include::08_functions/examples/func_annotations.py[]
+include::Part A - Basics/08_functions/examples/func_annotations.py[]
 ----
 
 === Function Attributes
@@ -1099,7 +1100,7 @@ using the `setattr()` function or directly on the function object.
 
 [source,python]
 ----
-include::08_functions/examples/func_attributes.py[]
+include::Part A - Basics/08_functions/examples/func_attributes.py[]
 ----
 
 CAUTION: It is not recommended to add attributes to functions manually because it can lead to
@@ -1113,7 +1114,7 @@ the function name without the parentheses. The function is called when the callb
 
 [source,python]
 ----
-include::08_functions/examples/func_callback.py[]
+include::Part A - Basics/08_functions/examples/func_callback.py[]
 ----
 
 
@@ -1127,7 +1128,7 @@ without recursion. The recursive case is the case where the function calls itsel
 
 [source,python]
 ----
-include::08_functions/examples/func_recursion.py[]
+include::Part A - Basics/08_functions/examples/func_recursion.py[]
 ----
 
 
@@ -1140,37 +1141,37 @@ another function.
 
 [source,python]
 ----
-include::08_functions/examples/func_lambda_syntax.py[]
+include::Part A - Basics/08_functions/examples/func_lambda_syntax.py[]
 ----
 
 [source,python]
 ----
-include::08_functions/examples/func_lambda_assignment.py[]
+include::Part A - Basics/08_functions/examples/func_lambda_assignment.py[]
 ----
 
 [source,python]
 ----
-include::08_functions/examples/func_lambda_arguments.py[]
+include::Part A - Basics/08_functions/examples/func_lambda_arguments.py[]
 ----
 
 [source,python]
 ----
-include::08_functions/examples/func_lambda_bytecodes.py[]
+include::Part A - Basics/08_functions/examples/func_lambda_bytecodes.py[]
 ----
 
 [source,python]
 ----
-include::08_functions/examples/func_lambda_conditional.py[]
+include::Part A - Basics/08_functions/examples/func_lambda_conditional.py[]
 ----
 
 [source,python]
 ----
-include::08_functions/examples/func_lambda_nested_conditions.py[]
+include::Part A - Basics/08_functions/examples/func_lambda_nested_conditions.py[]
 ----
 
 [source,python]
 ----
-include::08_functions/examples/func_lambda_recursive.py[]
+include::Part A - Basics/08_functions/examples/func_lambda_recursive.py[]
 ----
 
 
@@ -1185,7 +1186,7 @@ are used when you want to prevent users from passing arguments by name.
 
 [source,python]
 ----
-include::08_functions/examples/func_positional_only_arguments.py[]
+include::Part A - Basics/08_functions/examples/func_positional_only_arguments.py[]
 ----
 
 === Keyword-Only Arguments
@@ -1198,7 +1199,7 @@ are used when you want to prevent users from passing arguments by position.
 
 [source,python]
 ----
-include::08_functions/examples/func_keyword_only_arguments.py[]
+include::Part A - Basics/08_functions/examples/func_keyword_only_arguments.py[]
 ----
 
 === Function Introspection
@@ -1219,7 +1220,7 @@ like any other object.
 
 [source,python]
 ----
-include::08_functions/examples/func_introspection.py[]
+include::Part A - Basics/08_functions/examples/func_introspection.py[]
 ----
 
 
@@ -1247,7 +1248,7 @@ say hello".
 
 [source,python]
 ----
-include::09_classes/examples/class_as_blueprint.py[]
+include::Part A - Basics/09_classes/examples/class_as_blueprint.py[]
 ----
 
 The object is called `John` and it is an instance of the `Person` class. It answers the question
@@ -1256,7 +1257,7 @@ The object is called `John` and it is an instance of the `Person` class. It answ
 
 [source,python]
 ----
-include::09_classes/examples/class_as_concrete_object.py[]
+include::Part A - Basics/09_classes/examples/class_as_concrete_object.py[]
 ----
 
 === Class structure
@@ -1276,7 +1277,7 @@ later chapters.
 
 [source,python]
 ----
-include::09_classes/examples/class_structure.py[]
+include::Part A - Basics/09_classes/examples/class_structure.py[]
 ----
 
 
@@ -1295,17 +1296,17 @@ the `\\__init__` method are:
 
 [source,python]
 ----
-include::09_classes/examples/class_init_state.py[]
+include::Part A - Basics/09_classes/examples/class_init_state.py[]
 ----
 
 [source,python]
 ----
-include::09_classes/examples/class_init_validate.py[]
+include::Part A - Basics/09_classes/examples/class_init_validate.py[]
 ----
 
 [source,python]
 ----
-include::09_classes/examples/class_init_steps.py[]
+include::Part A - Basics/09_classes/examples/class_init_steps.py[]
 ----
 
 
@@ -1317,7 +1318,7 @@ special method `\\__init__`.
 
 [source,python]
 ----
-include::09_classes/examples/class_constructors.py[]
+include::Part A - Basics/09_classes/examples/class_constructors.py[]
 ----
 
 The method `\\__new__` is used rarely as Python handles the construction of the object automatically. Some
@@ -1330,18 +1331,18 @@ of the most common use cases for the `\\__new__` method are:
 
 [source,python]
 ----
-include::09_classes/examples/class_constructor_singleton.py[]
+include::Part A - Basics/09_classes/examples/class_constructor_singleton.py[]
 ----
 
 [source,python]
 ----
-include::09_classes/examples/class_constructor_factory.py[]
+include::Part A - Basics/09_classes/examples/class_constructor_factory.py[]
 ----
 
 
 [source,python]
 ----
-include::09_classes/examples/class_constructor_conditional_inheritance.py[]
+include::Part A - Basics/09_classes/examples/class_constructor_conditional_inheritance.py[]
 ----
 
 
@@ -1367,7 +1368,7 @@ and `False` otherwise. The identity of an object is obtained by the `id()` funct
 
 [source,python]
 ----
-include::09_classes/examples/class_instance.py[]
+include::Part A - Basics/09_classes/examples/class_instance.py[]
 ----
 
 
@@ -1377,7 +1378,7 @@ state of the object. The instance variables are defined inside `\\__init__` meth
 
 [source,python]
 ----
-include::09_classes/examples/class_instance_attributes.py[]
+include::Part A - Basics/09_classes/examples/class_instance_attributes.py[]
 ----
 
 ==== Instance methods
@@ -1387,7 +1388,7 @@ Instance methods can  only be used when the instance of the class has been creat
 
 [source,python]
 ----
-include::09_classes/examples/class_instance_methods.py[]
+include::Part A - Basics/09_classes/examples/class_instance_methods.py[]
 ----
 
 
@@ -1416,7 +1417,7 @@ most common use cases for class attributes are:
 
 [source,python]
 ----
-include::09_classes/examples/class_variables.py[]
+include::Part A - Basics/09_classes/examples/class_variables.py[]
 ----
 
 It is important to note that if the class attribute is used with self in any of the instance methods,
@@ -1425,7 +1426,7 @@ class. This might introduce bugs in your code if you are not careful.
 
 [source,python]
 ----
-include::09_classes/examples/class_variables_pitfalls.py[]
+include::Part A - Basics/09_classes/examples/class_variables_pitfalls.py[]
 ----
 
 
@@ -1442,18 +1443,18 @@ decorator. Some of the most common use cases for class methods are:
 
 [source,python]
 ----
-include::09_classes/examples/class_method_create_instance.py[]
+include::Part A - Basics/09_classes/examples/class_method_create_instance.py[]
 ----
 
 [source,python]
 ----
-include::09_classes/examples/class_method_modify_itself.py[]
+include::Part A - Basics/09_classes/examples/class_method_modify_itself.py[]
 ----
 
 
 [source,python]
 ----
-include::09_classes/examples/class_method_modify_instances.py[]
+include::Part A - Basics/09_classes/examples/class_method_modify_instances.py[]
 ----
 
 
@@ -1475,7 +1476,7 @@ has been created.
 
 [source,python]
 ----
-include::09_classes/examples/class_static_methods.py[]
+include::Part A - Basics/09_classes/examples/class_static_methods.py[]
 ----
 
 
@@ -1494,7 +1495,7 @@ When to use properties:
 
 [source,python]
 ----
-include::09_classes/examples/class_properties.py[]
+include::Part A - Basics/09_classes/examples/class_properties.py[]
 ----
 
 === Superclass
@@ -1508,12 +1509,12 @@ When to use super:
 
 [source,python]
 ----
-include::09_classes/examples/class_superclass_attributes.py[]
+include::Part A - Basics/09_classes/examples/class_superclass_attributes.py[]
 ----
 
 [source,python]
 ----
-include::09_classes/examples/class_superclass_constructor.py[]
+include::Part A - Basics/09_classes/examples/class_superclass_constructor.py[]
 ----
 
 
@@ -1534,12 +1535,12 @@ inheritance are:
 
 [source,python]
 ----
-include::09_classes/examples/class_single_inheritance.py[]
+include::Part A - Basics/09_classes/examples/class_single_inheritance.py[]
 ----
 
 [source,python]
 ----
-include::09_classes/examples/class_multiple_inheritance.py[]
+include::Part A - Basics/09_classes/examples/class_multiple_inheritance.py[]
 ----
 
 
@@ -1572,28 +1573,28 @@ For more information about the C3 linearization algorithm, see the following res
 
 [source,python]
 ----
-include::09_classes/examples/class_mro_bottom_first.py[]
+include::Part A - Basics/09_classes/examples/class_mro_bottom_first.py[]
 ----
 
 
 [source,python]
 ----
-include::09_classes/examples/class_mro_left_first.py[]
+include::Part A - Basics/09_classes/examples/class_mro_left_first.py[]
 ----
 
 [source,python]
 ----
-include::09_classes/examples/class_mro_complex.py[]
+include::Part A - Basics/09_classes/examples/class_mro_complex.py[]
 ----
 
 [source,python]
 ----
-include::09_classes/examples/class_mro_diamond.py[]
+include::Part A - Basics/09_classes/examples/class_mro_diamond.py[]
 ----
 
 [source,python]
 ----
-include::09_classes/examples/class_mro_unresolved.py[]
+include::Part A - Basics/09_classes/examples/class_mro_unresolved.py[]
 ----
 
 === Abstract class
@@ -1630,17 +1631,17 @@ Some examples of using the `abc` module to create abstract classes are shown bel
 
 [source,python]
 ----
-include::09_classes/examples/class_abstract_python2.py[]
+include::Part A - Basics/09_classes/examples/class_abstract_python2.py[]
 ----
 
 [source,python]
 ----
-include::09_classes/examples/class_abstract_python3.py[]
+include::Part A - Basics/09_classes/examples/class_abstract_python3.py[]
 ----
 
 [source,python]
 ----
-include::09_classes/examples/class_abstract_properties.py[]
+include::Part A - Basics/09_classes/examples/class_abstract_properties.py[]
 ----
 
 === Interface class
@@ -1659,7 +1660,7 @@ meant to be instantiated directly. Some examples of mixins are shown below.
 
 [source,python]
 ----
-include::09_classes/examples/class_mixin.py[]
+include::Part A - Basics/09_classes/examples/class_mixin.py[]
 ----
 
 === Class as a decorator
@@ -1685,14 +1686,14 @@ class MyClass:
 
 [source,python]
 ----
-include::09_classes/examples/class_decorator_for_functions.py[]
+include::Part A - Basics/09_classes/examples/class_decorator_for_functions.py[]
 ----
 
 *Example: Class decorator for classes*
 
 [source,python]
 ----
-include::09_classes/examples/class_decorator_for_classes.py[]
+include::Part A - Basics/09_classes/examples/class_decorator_for_classes.py[]
 ----
 
 
@@ -1706,7 +1707,7 @@ make it easier to find the names you are looking for.
 
 [source,python]
 ----
-include::09_classes/examples/class_nested.py[]
+include::Part A - Basics/09_classes/examples/class_nested.py[]
 ----
 
 
@@ -1737,7 +1738,7 @@ function, or method.
 
 [source,python]
 ----
-include::10_docstrings/examples/docstring_class.py[]
+include::Part A - Basics/10_docstrings/examples/docstring_class.py[]
 ----
 
 
@@ -1745,7 +1746,7 @@ include::10_docstrings/examples/docstring_class.py[]
 
 [source,python]
 ----
-include::10_docstrings/examples/docstring_function.py[]
+include::Part A - Basics/10_docstrings/examples/docstring_function.py[]
 ----
 
 === Module docstrings
@@ -1755,7 +1756,7 @@ docstring of a module is the first string in the module.
 
 [source,python]
 ----
-include::10_docstrings/examples/docstring_module.py[]
+include::Part A - Basics/10_docstrings/examples/docstring_module.py[]
 ----
 
 
@@ -1763,7 +1764,7 @@ include::10_docstrings/examples/docstring_module.py[]
 
 === Breakpoints
 
-image::11_debugging/assets/breakpoint.png[]
+image::part_a/ch_11/breakpoint.png[]
 
 A breakpoint is a point in the program where the execution stops. It is used to pause the program
 and inspect the state of the program at that point. Breakpoints are used to debug programs. They
@@ -1775,7 +1776,7 @@ are used to find bugs in the program. Breakpoints can be set in the following wa
 
 === Conditional breakpoints
 
-image::11_debugging/assets/conditional_breakpoint.png[]
+image::part_a/ch_11/conditional_breakpoint.png[]
 
 A conditional breakpoint is a breakpoint that is only triggered when a condition is met. It is
 used to pause the program and inspect the state of the program when a condition is met. Conditional
@@ -1788,7 +1789,7 @@ breakpoints can be set in the following ways:
 
 === Watchlists
 
-image::11_debugging/assets/watchlist.png[]
+image::part_a/ch_11/watchlist.png[]
 
 A watchlist is a list of variables that are monitored while the program is running. It is used to
 inspect the values of variables while the program is running. Watchlists are used to debug programs.
