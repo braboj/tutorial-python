@@ -19,5 +19,5 @@ class Person(object):
             print("Hello, my name is {} and my age is {}".format(self.name, self.age))
 
 
-John = Person("John", 32)
-John.say_hello()
+john = Person("John", 32)
+john.say_hello()

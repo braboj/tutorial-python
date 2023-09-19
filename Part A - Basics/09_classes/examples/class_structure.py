@@ -2,7 +2,7 @@
 
 class ClassStructure(object):
 
-    class_variable = "Hi, I am "
+    CLASS_VARIABLE = "Hi, I am "
 
     def __new__(cls, *args, **kwargs):
         print("This is the constructor method")

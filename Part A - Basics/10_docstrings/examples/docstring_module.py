@@ -35,10 +35,10 @@ Usage:
 
 Example:
     >>> import math
-    >>> math.sin(1)
-    1
-    >>> math.cos(1)
-    0
+    >>> "{:.2f}".format(math.sin(math.radians(90)))
+    '1.00'
+    >>> "{:.2f}".format(math.cos(math.radians(90)))
+    '0.00'
 """
 
 

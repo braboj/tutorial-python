@@ -2,8 +2,6 @@
 
 class Packet(object):
 
-    max_payload = 1024
-
     def __init__(self, ip_addr='192.168.10.1', mask="255.255.255.0", payload=()):
         self.payload = payload
         self.ip_addr = ip_addr
@@ -25,10 +23,3 @@ print(addr_bytes)
 # Convert bytes to IP address in dot notation
 addr_dot = Packet.bytes_to_dot(addr_bytes)
 print(addr_dot)
-
-
-
-
-
-
-

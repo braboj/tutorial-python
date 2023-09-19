@@ -4,7 +4,7 @@ class A(object):
 
     @staticmethod
     def process():
-        print("Class A  is processing... ")
+        print("Class A is processing... ")
 
 
 class B(object):

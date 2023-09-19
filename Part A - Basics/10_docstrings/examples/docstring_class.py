@@ -10,8 +10,8 @@ class TestClass(object):
     Example:
 
         >>> test_class = TestClass(1)
-        >>> test_class.test_function()
-        This is a test function
+        >>> test_class.test_function(1)
+        'This is a test function with argument 1'
 
     """
 
