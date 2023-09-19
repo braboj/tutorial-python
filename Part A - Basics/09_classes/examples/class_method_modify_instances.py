@@ -2,18 +2,18 @@
 
 class Person(object):
 
-    name_prefix = "Mr."
+    NAME_PREFIX = "Mr."
 
     def __init__(self, name):
         self.name = name
 
     @classmethod
     def set_prefix(cls, prefix):
-        cls.name_prefix = prefix
+        cls.NAME_PREFIX = prefix
 
     @classmethod
     def add_prefix(cls, person):
-        person.name = "{} {}".format(cls.name_prefix, person.name)
+        person.name = "{} {}".format(cls.NAME_PREFIX, person.name)
 
 
 p = Person("John")

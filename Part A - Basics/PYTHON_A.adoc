@@ -1319,7 +1319,7 @@ special method `\\__init__`.
 include::09_classes/examples/class_constructors.py[]
 ----
 
-The `\\__new__` used rarely as Python handles the construction of the object automatically. Some
+The method `\\__new__` is used rarely as Python handles the construction of the object automatically. Some
 of the most common use cases for the `\\__new__` method are:
 
 - Create a class that inherits from a different class depending on some condition
@@ -1523,7 +1523,7 @@ parent class.
 
 The subclass inherits the attributes and methods of the superclass. It can also override the
 attributes and methods of the superclass. Class inheritance is used to reuse code and to
-represent an is-a relationship. The subclass is a specialized version of the superclass.
+represent an _is-a_ relationship. The subclass is a specialized version of the superclass.
 
 Python supports single inheritance and multiple inheritance. Some of the most common use cases for
 inheritance are:

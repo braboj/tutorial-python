@@ -2,7 +2,7 @@
 
 class Person(object):
 
-    name_prefix = "Mr."
+    NAME_PREFIX = "Mr."
 
     def __init__(self, name):
         self.name = name
