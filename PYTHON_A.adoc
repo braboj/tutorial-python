@@ -6,93 +6,95 @@
 :imagesdir: ./Assets/images
 
 == Requirements
+
 The following pre-requisites are required to complete this module:
 
 === Python Installation
+
 - https://www.python.org/downloads[Python 3.7 or higher] (*_recommended_*)
 - https://www.python.org/downloads/release/python-2718[Python 2.7.18]
 
-
 === Python IDE
+
 - https://www.jetbrains.com/pycharm/[PyCharm] (*_recommended_*)
 - https://code.visualstudio.com/[Visual Studio Code]
 
-
 === Version Control
+
 - https://git-scm.com/[Git Client] (*_recommended_*)
 - https://github.com[GitHub Account] (*_recommended_*)
 - https://tortoisesvn.net/[SVN Client]
 
 === Style Guide
+
 - https://peps.python.org/pep-0008/[PEP-08] (*_mandatory_*)
 - https://google.github.io/styleguide/pyguide.html[Google Style Guide] (*_mandatory_*)
 
 == Introduction
-Python is a high-level, interpreted, interactive, and object-oriented scripting language. Python
-is designed to be highly readable. It uses English keywords frequently where other languages use
-punctuation. It has fewer syntactical constructions than other languages.
+
+Python is a high-level, interpreted, interactive, and object-oriented scripting language.
+Python is designed to be highly readable.
+It uses English keywords frequently where other languages use punctuation.
+It has fewer syntactical constructions than other languages.
 
 Some key features of Python are:
 
-- Python is a dynamically typed language. This means that you do not need to declare variables
-before using them, or declare their type. Every variable in Python is an object.
-- Python is well suited to object-oriented programming in that it allows the definition of classes
-along with composition and inheritance. Python does not have access specifiers (like C++'s public,
-private).
-- In Python, functions are first-class objects. This means that they can be assigned to variables,
-returned from other functions, and passed into functions as arguments.
+- Python is a dynamically typed language.
+This means that you do not need to declare variables before using them, or declare their type.
+Every variable in Python is an object.
+- Python is well suited to object-oriented programming in that it allows the definition of classes along with composition and inheritance.
+Python does not have access specifiers (like C++'s public, private).
+- In Python, functions are first-class objects.
+This means that they can be assigned to variables, returned from other functions, and passed into functions as arguments.
 - Python has a large and comprehensive standard library.
-- Python supports multiple programming paradigms, including procedural, object-oriented, and
-functional programming. It features a fully dynamic type system and automatic memory management,
-similar to that of Scheme, Ruby, Perl, and Tcl.
+- Python supports multiple programming paradigms, including procedural, object-oriented, and functional programming.
+It features a fully dynamic type system and automatic memory management, similar to that of Scheme, Ruby, Perl, and Tcl.
 
 === History
-Python was conceived in the late 1980s by Guido van Rossum at Centrum Wiskunde & Informatica
-(CWI) in the Netherlands as a successor to the ABC language (itself inspired by SETL), capable of
-exception handling and interfacing with the Amoeba operating system. Python itself is written in C,
-Cython, and the Python programming language. Python was named after the BBC TV show Monty Python's
-Flying Circus.
 
-Python 2 and Python 3 are two different versions of the Python programming language. Python 3 was
-released in 2008 and Python 2 was released in 2000. Python 3 is not backward compatible with
-Python 2. This means that code written in Python 2 may not work in Python 3 and vice versa.
-Python 2 reached its end of life on January 1, 2020. Python 2 should only be used if you need to
-maintain legacy code written in Python 2.
+Python was conceived in the late 1980s by Guido van Rossum at Centrum Wiskunde & Informatica (CWI) in the Netherlands as a successor to the ABC language (itself inspired by SETL), capable of exception handling and interfacing with the Amoeba operating system.
+Python itself is written in C, Cython, and the Python programming language.
+Python was named after the BBC TV show Monty Python's Flying Circus.
 
-Python ranks consistently as one of the most popular programming languages. In January 2021 it
-ranked third in the TIOBE index, a measure of popularity of programming languages, behind C and
-Java. It was selected Programming Language of the Year in 2007, 2010, and 2018. Python is used in
-many application domains. It is used extensively in the scientific and financial industry, and for
-web development and software development. Python is also used in artificial intelligence and data
-science.
+Python 2 and Python 3 are two different versions of the Python programming language.
+Python 3 was released in 2008 and Python 2 was released in 2000. Python 3 is not backward compatible with Python 2. This means that code written in Python 2 may not work in Python 3 and vice versa.
+Python 2 reached its end of life on January 1, 2020. Python 2 should only be used if you need to maintain legacy code written in Python 2.
+
+Python ranks consistently as one of the most popular programming languages.
+In January 2021 it ranked third in the TIOBE index, a measure of popularity of programming languages, behind C and Java.
+It was selected Programming Language of the Year in 2007, 2010, and 2018. Python is used in many application domains.
+It is used extensively in the scientific and financial industry, and for web development and software development.
+Python is also used in artificial intelligence and data science.
 
 === Characteristics
 
-- Python is a *general-purpose language*. This means that you can use Python to write any type of
-program, from simple command-line scripts to complex web applications.
+- Python is a *general-purpose language*.
+This means that you can use Python to write any type of program, from simple command-line scripts to complex web applications.
 
-- Python is an *interpreted language*. This means that you do not need to compile your program
-before executing it. The Python interpreter reads your program and executes it one line at a time
-until the end of the file. This makes it easier to test your code and debug it.
+- Python is an *interpreted language*.
+This means that you do not need to compile your program before executing it.
+The Python interpreter reads your program and executes it one line at a time until the end of the file.
+This makes it easier to test your code and debug it.
 
-- Python is a *high-level language*. When you write programs in Python, you do not need to worry
-about the low-level details such as managing the memory used by your program. This makes it easier
-to focus on the solution to the problem you are trying to solve.
+- Python is a *high-level language*.
+When you write programs in Python, you do not need to worry about the low-level details such as managing the memory used by your program.
+This makes it easier to focus on the solution to the problem you are trying to solve.
 
-- Python is an *object-oriented language*. This means that you can define classes and create
-objects that encapsulate data and functionality. This makes it easier to write reusable code.
+- Python is an *object-oriented language*.
+This means that you can define classes and create objects that encapsulate data and functionality.
+This makes it easier to write reusable code.
 
-- Python is a *dynamically typed language*. This means that you do not need to declare variables
-before using them, or declare their type. Every variable in Python is an object.
+- Python is a *dynamically typed language*.
+This means that you do not need to declare variables before using them, or declare their type.
+Every variable in Python is an object.
 
-- Python is a *multi-paradigm language*. This means that it supports multiple programming paradigms,
-including procedural, object-oriented, and functional programming. It features a fully dynamic type
-system and automatic memory management, similar to that of Scheme, Ruby, Perl, and Tcl.
+- Python is a *multi-paradigm language*.
+This means that it supports multiple programming paradigms, including procedural, object-oriented, and functional programming.
+It features a fully dynamic type system and automatic memory management, similar to that of Scheme, Ruby, Perl, and Tcl.
 
-- Python is a *cross-platform language*. This means that you can write Python code on one platform
-and run it on any other platform without making any changes to the code. This makes it easier to
-develop and deploy your code on multiple platforms.
-
+- Python is a *cross-platform language*.
+This means that you can write Python code on one platform and run it on any other platform without making any changes to the code.
+This makes it easier to develop and deploy your code on multiple platforms.
 
 === Use Cases
 
@@ -136,7 +138,6 @@ Our first program will greet us and tell us the result of the operation 1+1 .
 include::Part A - Basics/02_introduction/examples/intro_hello_world.py[]
 ----
 
-
 Now if after evaluation of the code, we will see that...
 
 - we tell the computer what to do
@@ -147,14 +148,14 @@ Now if after evaluation of the code, we will see that...
 
 If we elaborate further we will see that a program generally is a...
 
- - A sequence of instructions called statements
- - Each statement might have expressions that return results
- - Each statement might use pre-defined code blocks called functions
+- A sequence of instructions called statements
+- Each statement might have expressions that return results
+- Each statement might use pre-defined code blocks called functions
 
 === print() under the hood
 
-The print() function is used to print a value to the screen. The print() function is a built-in
-function, which means that it is available by default.
+The print() function is used to print a value to the screen.
+The print() function is a built-in function, which means that it is available by default.
 
 [source,python]
 ----
@@ -163,39 +164,39 @@ include::Part A - Basics/02_introduction/examples/intro_print.py[]
 
 === Statements
 
-Statements are instructions that perform an action. It is executed for its side effects, such as
-modifying variables, controlling the flow of execution, or producing output. Statements do not
-have a value or result that can be used further in the code.
+Statements are instructions that perform an action.
+It is executed for its side effects, such as modifying variables, controlling the flow of execution, or producing output.
+Statements do not have a value or result that can be used further in the code.
 
 [source,python]
 ----
 include::Part A - Basics/02_introduction/examples/intro_statements.py[]
 ----
 
-In the above example, we have two statements. The first statement assigns the value 5 to the
-variable x. The second statement prints the value of x to the screen. The first statement does
-not produce any output, but it does have a side effect of changing the value of x. The second
-statement produces output, but it does not have a side effect.
+In the above example, we have two statements.
+The first statement assigns the value 5 to the variable x.
+The second statement prints the value of x to the screen.
+The first statement does not produce any output, but it does have a side effect of changing the value of x.
+The second statement produces output, but it does not have a side effect.
 
 === Expressions
-Expressions are a combination of values, variables, operators, and function calls that produce a
-value when evaluated. Expressions can be used wherever a value is expected in Python, such as
-assigning a value, passing arguments to a function, or printing a value.
+
+Expressions are a combination of values, variables, operators, and function calls that produce a value when evaluated.
+Expressions can be used wherever a value is expected in Python, such as assigning a value, passing arguments to a function, or printing a value.
 
 [source,python]
 ----
 include::Part A - Basics/02_introduction/examples/intro_expressions.py[]
 ----
 
-In the above example, the first line is an expression that evaluates to the value 6. The second
-line is a statement that assigns the value of the expression 1 + 2 + 3 to the variable result.
+In the above example, the first line is an expression that evaluates to the value 6. The second line is a statement that assigns the value of the expression 1 + 2 + 3 to the variable result.
 
 === Zen of Python
 
-The Zen of Python is a collection of 19 "guiding principles" for writing computer programs that
-influence the design of the Python programming language. It is written as a poem, with each line
-of the poem corresponding to one of the principles. The Zen of Python is included in the Python
-interpreter as an Easter egg. You can view it by typing `import this` in the Python interpreter.
+The Zen of Python is a collection of 19 "guiding principles" for writing computer programs that influence the design of the Python programming language.
+It is written as a poem, with each line of the poem corresponding to one of the principles.
+The Zen of Python is included in the Python interpreter as an Easter egg.
+You can view it by typing `import this` in the Python interpreter.
 
 [source,python]
 ----
@@ -236,26 +237,25 @@ Namespaces are one honking great idea -- let's do more of those!
 
 === Importing Modules
 
-Python modules are files that contain Python code. They can be used to organize code into logical
-units.
+Python modules are files that contain Python code.
+They can be used to organize code into logical units.
 
-Each module has its own namespace - a region of code where the defined objects can access the given values using
-their names. Python can run multiple namespaces simultaneously, so objects with the same name from different
-namespaces (modules) do not influence each other.
+Each module has its own namespace - a region of code where the defined objects can access the given values using their names.
+Python can run multiple namespaces simultaneously, so objects with the same name from different namespaces (modules) do not influence each other.
 
-Modules can be imported into other modules using the `import` statement. The `import`
+Modules can be imported into other modules using the `import` statement.
+The `import`
 statement takes the name of the module to import as an argument.
 
-Using `import` statement still does not import the names of the objects in the importing module namespace,
-but makes them accessible calling them via their module name.
+Using `import` statement still does not import the names of the objects in the importing module namespace, but makes them accessible calling them via their module name.
 
-Another way to import modules is to use the `from <module> import <object>` statement. This allows
-you to import specific objects from a module into the current namespace. You can also import all
-objects from a module into the current namespace using the `from <module> import *` statement.
+Another way to import modules is to use the `from <module> import <object>` statement.
+This allows you to import specific objects from a module into the current namespace.
+You can also import all objects from a module into the current namespace using the `from <module> import *` statement.
 
 For example, if you have a module named `math.py`, you can import it using the statement `import
-math`. You can also import specific objects from a module using the `from` statement.
-
+math`.
+You can also import specific objects from a module using the `from` statement.
 
 [source,python]
 ----
@@ -271,60 +271,64 @@ Let’s print the same text 5 times on the screen using the print function.
 include::Part A - Basics/03_variables/examples/var_preconditions.py[]
 ----
 
-Now if we want to modify the text, we have to change all five lines. Let’s modify our program a
-little bit to be more reusable. Now we make the function print to work with any text possible.
-For this purpose, we will use a variable. A variable is a data container that can be reused many
-times in the program.
+Now if we want to modify the text, we have to change all five lines.
+Let’s modify our program a little bit to be more reusable.
+Now we make the function print to work with any text possible.
+For this purpose, we will use a variable.
+A variable is a data container that can be reused many times in the program.
 
 [source,python]
 ----
 include::Part A - Basics/03_variables/examples/var_as_container.py[]
 ----
 
-In the code above the variable text is declared and initialized. After this, it may be used many
-times in the program. Now we have to change only one line of code in case we need to change the
-message printed on the screen.
+In the code above the variable text is declared and initialized.
+After this, it may be used many times in the program.
+Now we have to change only one line of code in case we need to change the message printed on the screen.
 
-Python has several pre-defined variable types. Let’s use a more complex example with the print
-function and see how it works:
+Python has several pre-defined variable types.
+Let’s use a more complex example with the print function and see how it works:
 
 [source,python]
 ----
 include::Part A - Basics/03_variables/examples/var_types.py[]
 ----
 
-We see that the variable is from type integer, but they are preceded by the word class. The class
-tells Python what type of data the variable stores and how Python can operate with the data. This
-can be demonstrated by using numbers of different types.
+We see that the variable is from type integer, but they are preceded by the word class.
+The class tells Python what type of data the variable stores and how Python can operate with the data.
+This can be demonstrated by using numbers of different types.
 
 [source,python]
 ----
 include::Part A - Basics/03_variables/examples/var_float_sum.py[]
 ----
 
-In the example above Python analyses the code and deducts that a and b are floating point numbers and uses the
-float class to check how to add them. Now let’s change the variable types to complex:
+In the example above Python analyses the code and deducts that a and b are floating point numbers and uses the float class to check how to add them.
+Now let’s change the variable types to complex:
 
 [source,python]
 ----
 include::Part A - Basics/03_variables/examples/var_complex_sum.py[]
 ----
 
-The code is analyzed and Python deducts that now a and b are complex numbers and thus another
-type of data. In this case, Python will use the addition operation for this data class.
+The code is analyzed and Python deducts that now a and b are complex numbers and thus another type of data.
+In this case, Python will use the addition operation for this data class.
 
 === Numerics
 
-Numeric variables are variables that hold numeric values. Python supports three types of numeric
-values:
+Numeric variables are variables that hold numeric values.
+Python supports three types of numeric values:
 
 - Integer numbers
 - Floating-point numbers
 - Complex numbers
 
 ==== Integers
-Integers are whole numbers, such as 1, 2, 3, 4, 5, etc. They can be positive or negative. They
-can also be written in binary, octal, or hexadecimal notation. Binary numbers are prefixed with
+
+Integers are whole numbers, such as 1, 2, 3, 4, 5, etc.
+They can be positive or negative.
+They can also be written in binary, octal, or hexadecimal notation.
+Binary numbers are prefixed with
 `0b`, octal numbers are prefixed with `0o`, and hexadecimal numbers are prefixed with `0x`.
 
 [source,python]
@@ -333,8 +337,9 @@ include::Part A - Basics/03_variables/examples/var_integer_type.py[]
 ----
 
 ==== Floating-point numbers
-Floating-point numbers are numbers with a fractional part, such as 1.0, 2.0, 3.0, etc. They can
-also be written in scientific notation, with `e` indicating the power of 10.
+
+Floating-point numbers are numbers with a fractional part, such as 1.0, 2.0, 3.0, etc.
+They can also be written in scientific notation, with `e` indicating the power of 10.
 
 [source,python]
 ----
@@ -342,6 +347,7 @@ include::Part A - Basics/03_variables/examples/var_float_type.py[]
 ----
 
 ==== Complex numbers
+
 Complex numbers are numbers with a real and imaginary part, such as 1+2j, 2+4j, 3+6j, etc.
 
 [source,python]
@@ -350,9 +356,10 @@ include::Part A - Basics/03_variables/examples/var_complex_type.py[]
 ----
 
 === Booleans
-The boolean type is a special type that can only have two values: `True` and `False`. It is used
-to represent the truth values of logic and comparison operations. In Python, boolean values are
-written as `True` and `False` (the first letter is capitalized).
+
+The boolean type is a special type that can only have two values: `True` and `False`.
+It is used to represent the truth values of logic and comparison operations.
+In Python, boolean values are written as `True` and `False` (the first letter is capitalized).
 
 [source,python]
 ----
@@ -360,11 +367,14 @@ include::Part A - Basics/03_variables/examples/var_bool_type.py[]
 ----
 
 === Lists
-A list is a collection of items that are ordered and changeable. Lists are written with square
-brackets `[]`. Each item in a list is separated by a comma `,`. Lists can contain items of any
-data type, including other lists. Lists are mutable, meaning that you can change the values of
-items in a list. You can also add and remove items from a list. Lists are zero-indexed, meaning
-that the first item in a list has index 0.
+
+A list is a collection of items that are ordered and changeable.
+Lists are written with square brackets `[]`.
+Each item in a list is separated by a comma `,`.
+Lists can contain items of any data type, including other lists.
+Lists are mutable, meaning that you can change the values of items in a list.
+You can also add and remove items from a list.
+Lists are zero-indexed, meaning that the first item in a list has index 0.
 
 [source,python]
 ----
@@ -372,11 +382,13 @@ include::Part A - Basics/03_variables/examples/var_list_type.py[]
 ----
 
 === Tuples
-A tuple is a collection of items that are ordered and unchangeable. Tuples are written with
-parentheses `()`. Each item in a tuple is separated by a comma `,`. Tuples can contain items of
-any data type, including other tuples. Tuples are immutable, meaning that you cannot change the
-values of items in a tuple. Tuples are zero-indexed, meaning that the first item in a tuple has
-index 0.
+
+A tuple is a collection of items that are ordered and unchangeable.
+Tuples are written with parentheses `()`.
+Each item in a tuple is separated by a comma `,`.
+Tuples can contain items of any data type, including other tuples.
+Tuples are immutable, meaning that you cannot change the values of items in a tuple.
+Tuples are zero-indexed, meaning that the first item in a tuple has index 0.
 
 [source,python]
 ----
@@ -384,10 +396,12 @@ include::Part A - Basics/03_variables/examples/var_tuple_type.py[]
 ----
 
 === Sets
-A set is a collection of items that are unordered and unindexed. Sets are written with curly
-braces `{}`. Each item in a set is separated by a comma `,`. Sets can contain items of any data
-type, but they cannot contain duplicate items. Sets are mutable, meaning that you can change the
-values of items in a set.
+
+A set is a collection of items that are unordered and unindexed.
+Sets are written with curly braces `{}`.
+Each item in a set is separated by a comma `,`.
+Sets can contain items of any data type, but they cannot contain duplicate items.
+Sets are mutable, meaning that you can change the values of items in a set.
 
 [source,python]
 ----
@@ -395,11 +409,13 @@ include::Part A - Basics/03_variables/examples/var_set_type.py[]
 ----
 
 === Dictionaries
-A dictionary is a collection of items that are unordered, changeable, and indexed. Dictionaries
-are written with curly braces `{}`. Each item in a dictionary is written as a key-value pair,
-separated by a colon `:`. Each key-value pair is separated by a comma `,`. Dictionaries can
-contain items of any data type, but they cannot contain duplicate keys. Dictionaries are mutable,
-meaning that you can change the values of items in a dictionary.
+
+A dictionary is a collection of items that are unordered, changeable, and indexed.
+Dictionaries are written with curly braces `{}`.
+Each item in a dictionary is written as a key-value pair, separated by a colon `:`.
+Each key-value pair is separated by a comma `,`.
+Dictionaries can contain items of any data type, but they cannot contain duplicate keys.
+Dictionaries are mutable, meaning that you can change the values of items in a dictionary.
 
 [source,python]
 ----
@@ -408,8 +424,8 @@ include::Part A - Basics/03_variables/examples/var_dict_types.py[]
 
 === Strings
 
-String variables are variables that hold string values. A string is a sequence of characters
-enclosed in single quotes ' or double quotes ".
+String variables are variables that hold string values.
+A string is a sequence of characters enclosed in single quotes ' or double quotes ".
 
 [source,python]
 ----
@@ -417,6 +433,7 @@ include::Part A - Basics/03_variables/examples/var_string_type.py[]
 ----
 
 ==== Concatenation
+
 String concatenation refers to the process of combining two or more strings into a single string.
 
 [source,python]
@@ -425,8 +442,9 @@ include::Part A - Basics/03_variables/examples/string_concatenation.py[]
 ----
 
 ==== Interpolation
-String interpolation refers to the process of embedding expressions or variables within string
-literals to create formatted strings. It allows you to dynamically insert values into a string.
+
+String interpolation refers to the process of embedding expressions or variables within string literals to create formatted strings.
+It allows you to dynamically insert values into a string.
 
 [source,python]
 ----
@@ -434,9 +452,9 @@ include::Part A - Basics/03_variables/examples/string_interpolation.py[]
 ----
 
 ==== Escaping
-Escaping refers to the process of inserting a special character into a string to change the
-meaning of the string literal (usually reserved by the language itself). It is done by prefixing
-the special character with a backslash `\`.
+
+Escaping refers to the process of inserting a special character into a string to change the meaning of the string literal (usually reserved by the language itself).
+It is done by prefixing the special character with a backslash `\`.
 
 [source,python]
 ----
@@ -450,11 +468,11 @@ Some of the most common escape sequences are:
 - \' - single quote
 - \" - double quote
 
-
 ==== Indexing
+
 Indexing refers to the process of accessing individual characters in a string by their position.
-The position of a character in a string is called its index. The first character in a string has
-index 0, the second character has index 1, and so on.
+The position of a character in a string is called its index.
+The first character in a string has index 0, the second character has index 1, and so on.
 
 [source,python]
 ----
@@ -462,13 +480,14 @@ include::Part A - Basics/03_variables/examples/string_indexing.py[]
 ----
 
 ==== Slicing
-String slicing in Python allows you to extract a portion of a string by specifying a range of
-indices. The format of the slice operator is `[<start>: <end>: <step>]`.
 
-In slicing, the start index is inclusive, and the end index is exclusive. If the start index is
-not specified, it defaults to the beginning of the string. If the end index is not specified, it
-defaults to the end of the string. The step value indicates the stride or the number of
-characters to skip between each character in the slice.
+String slicing in Python allows you to extract a portion of a string by specifying a range of indices.
+The format of the slice operator is `[<start>: <end>: <step>]`.
+
+In slicing, the start index is inclusive, and the end index is exclusive.
+If the start index is not specified, it defaults to the beginning of the string.
+If the end index is not specified, it defaults to the end of the string.
+The step value indicates the stride or the number of characters to skip between each character in the slice.
 
 [source,python]
 ----
@@ -476,7 +495,9 @@ include::Part A - Basics/03_variables/examples/string_slicing.py[]
 ----
 
 ==== Case
-Python provides several methods for changing the case of a string. The most common ones are:
+
+Python provides several methods for changing the case of a string.
+The most common ones are:
 
 - `upper()` - converts all characters to uppercase
 - `lower()` - converts all characters to lowercase
@@ -490,8 +511,9 @@ include::Part A - Basics/03_variables/examples/string_cases.py[]
 ----
 
 ==== Length
-The length of a string is the number of characters in the string. You can use the `len()` function
-to get the length of a string.
+
+The length of a string is the number of characters in the string.
+You can use the `len()` function to get the length of a string.
 
 [source,python]
 ----
@@ -499,10 +521,11 @@ include::Part A - Basics/03_variables/examples/string_length.py[]
 ----
 
 ==== Splitting
-The `split()` method splits a string into a list of strings based on a delimiter. The delimiter
-is a string that separates the individual strings in the list. If no delimiter is specified, the
-string is split on whitespace. The `splitlines()` method splits a string into a list of strings
-based on the line break character `\n`.
+
+The `split()` method splits a string into a list of strings based on a delimiter.
+The delimiter is a string that separates the individual strings in the list.
+If no delimiter is specified, the string is split on whitespace.
+The `splitlines()` method splits a string into a list of strings based on the line break character `\n`.
 
 [source,python]
 ----
@@ -510,9 +533,10 @@ include::Part A - Basics/03_variables/examples/string_splitting.py[]
 ----
 
 ==== Joining
-The `join()` method joins a list of strings into a single string using the specified delimiter. It
-is the inverse of the `split()` method. The `join()` method is called on the delimiter and takes
-the list of strings as an argument.
+
+The `join()` method joins a list of strings into a single string using the specified delimiter.
+It is the inverse of the `split()` method.
+The `join()` method is called on the delimiter and takes the list of strings as an argument.
 
 [source,python]
 ----
@@ -520,10 +544,12 @@ include::Part A - Basics/03_variables/examples/string_joining.py[]
 ----
 
 === None
-The None type is a special type that can only have one value: `None`. It is used to represent
-the absence of a value. None is often used as a placeholder value when you need to initialize a
-variable but don't have a value for it yet. None is also returned by functions that don't explicitly
-return a value. For example, the `print()` function returns None.
+
+The None type is a special type that can only have one value: `None`.
+It is used to represent the absence of a value.
+None is often used as a placeholder value when you need to initialize a variable but don't have a value for it yet.
+None is also returned by functions that don't explicitly return a value.
+For example, the `print()` function returns None.
 
 [source,python]
 ----
@@ -532,7 +558,8 @@ include::Part A - Basics/03_variables/examples/var_none_type.py[]
 
 === Mutable
 
-Mutable variables are objects whose values can be changed after they are created. In Python, the following types are mutable:
+Mutable variables are objects whose values can be changed after they are created.
+In Python, the following types are mutable:
 
 - Lists
 - Sets
@@ -543,10 +570,10 @@ Mutable variables are objects whose values can be changed after they are created
 include::Part A - Basics/03_variables/examples/var_mutable.py[]
 ----
 
-
 === Immutable
 
-Immutable objects are objects whose values cannot be changed after they are created. In Python, the following types are immutable:
+Immutable objects are objects whose values cannot be changed after they are created.
+In Python, the following types are immutable:
 
 - Integers
 - Floating-point numbers
@@ -561,10 +588,12 @@ include::Part A - Basics/03_variables/examples/var_immutable.py[]
 ----
 
 == Comments
-Comments are lines of text that are ignored by the Python interpreter. They are used to document
-code and make it easier to understand. Comments can be single-line or multi-line. Single-line
-comments start with a hash `#` and continue until the end of the line. Multi-line comments start
-and end with three quotes `"""`.
+
+Comments are lines of text that are ignored by the Python interpreter.
+They are used to document code and make it easier to understand.
+Comments can be single-line or multi-line.
+Single-line comments start with a hash `#` and continue until the end of the line.
+Multi-line comments start and end with three quotes `"""`.
 
 === Single-line Comments
 
@@ -581,8 +610,9 @@ include::Part A - Basics/04_comments/examples/comment_multi_line.py[]
 ----
 
 == Operators
-Operators are special symbols that perform operations on one or more operands. Python supports
-the following types of operators:
+
+Operators are special symbols that perform operations on one or more operands.
+Python supports the following types of operators:
 
 - Arithmetic operators
 - Assignment operators
@@ -593,10 +623,12 @@ the following types of operators:
 - Bitwise operators
 
 === Arithmetic Operators
-Arithmetic operators are used to perform arithmetic operations on numeric operands. Bear in mind
-that different major versions of Python may have different operators. For example, Python 2 uses
-`/` for integer division, while Python 3 uses `//` for integer division. For simplicity, we will
-only use Python 3 operators in this book.
+
+Arithmetic operators are used to perform arithmetic operations on numeric operands.
+Bear in mind that different major versions of Python may have different operators.
+For example, Python 2 uses
+`/` for integer division, while Python 3 uses `//` for integer division.
+For simplicity, we will only use Python 3 operators in this book.
 
 - `+`   - addition
 - `-`   - subtraction
@@ -611,11 +643,11 @@ only use Python 3 operators in this book.
 include::Part A - Basics/05_operators/examples/operators_arithmetic.py[]
 ----
 
-
 === Comparison Operators
-Comparison operators are used to compare the values of two operands. They return a boolean value
-(`True` or `False`) depending on whether the comparison is true or false. The following comparison
-operators are supported in Python:
+
+Comparison operators are used to compare the values of two operands.
+They return a boolean value (`True` or `False`) depending on whether the comparison is true or false.
+The following comparison operators are supported in Python:
 
 - `==` - equal to
 - `!=` - not equal to
@@ -629,11 +661,11 @@ operators are supported in Python:
 include::Part A - Basics/05_operators/examples/operators_comparison.py[]
 ----
 
-
 === Logical Operators
-Logical operators are used to combine the results of two or more comparison operations. They
-return a boolean value (`True` or `False`) depending on whether the result of the logical
-operation is true or false. The following logical operators are supported in Python:
+
+Logical operators are used to combine the results of two or more comparison operations.
+They return a boolean value (`True` or `False`) depending on whether the result of the logical operation is true or false.
+The following logical operators are supported in Python:
 
 - `and` - logical AND
 - `or`  - logical OR
@@ -644,10 +676,10 @@ operation is true or false. The following logical operators are supported in Pyt
 include::Part A - Basics/05_operators/examples/operators_logical.py[]
 ----
 
-
 === Identity Operators
-Identity operators are used to compare the memory addresses of two operands. They return a
-boolean value (`True` or `False`) depending on whether the memory addresses are equal or not.
+
+Identity operators are used to compare the memory addresses of two operands.
+They return a boolean value (`True` or `False`) depending on whether the memory addresses are equal or not.
 The following identity operators are supported in Python:
 
 - `is`  - is equal to
@@ -659,9 +691,10 @@ include::Part A - Basics/05_operators/examples/operators_identity.py[]
 ----
 
 === Membership Operators
-Membership operators are used to check whether a value is a member of a collection. They return
-a boolean value (`True` or `False`) depending on whether the value is a member of the collection
-or not. The following membership operators are supported in Python:
+
+Membership operators are used to check whether a value is a member of a collection.
+They return a boolean value (`True` or `False`) depending on whether the value is a member of the collection or not.
+The following membership operators are supported in Python:
 
 - `in`     - is a member of
 - `not in` - is not a member of
@@ -671,11 +704,11 @@ or not. The following membership operators are supported in Python:
 include::Part A - Basics/05_operators/examples/operators_membership.py[]
 ----
 
-
 === Bitwise Operators
-Bitwise operators are used to perform bitwise operations on the binary representations of integer
-operands. They return an integer value depending on the result of the bitwise operation. The
-following bitwise operators are supported in Python:
+
+Bitwise operators are used to perform bitwise operations on the binary representations of integer operands.
+They return an integer value depending on the result of the bitwise operation.
+The following bitwise operators are supported in Python:
 
 - `&`  - bitwise AND
 - `|`  - bitwise OR
@@ -689,12 +722,11 @@ following bitwise operators are supported in Python:
 include::Part A - Basics/05_operators/examples/operators_bitwise.py[]
 ----
 
-
 === Assignment Operators
-Assignment operators are used in programming languages, including Python, to assign values to
-variables. They combine the assignment operation with an arithmetic or logical operation, making
-it possible to perform an operation and assign the result to a variable in a single statement. The
-following assignment operators are supported in Python:
+
+Assignment operators are used in programming languages, including Python, to assign values to variables.
+They combine the assignment operation with an arithmetic or logical operation, making it possible to perform an operation and assign the result to a variable in a single statement.
+The following assignment operators are supported in Python:
 
 - `=`   - assign
 - `+=`  - add and assign
@@ -715,12 +747,10 @@ following assignment operators are supported in Python:
 include::Part A - Basics/05_operators/examples/operators_assignment.py[]
 ----
 
-
-
 === Conditional Operators
-Conditional operators or also ternary operators are used to evaluate a condition and return one
-of two values depending on whether the condition is true or false. The following conditional
-operators are supported in Python:
+
+Conditional operators or also ternary operators are used to evaluate a condition and return one of two values depending on whether the condition is true or false.
+The following conditional operators are supported in Python:
 
 - `a if condition else b` - if condition is true, return a, otherwise return b
 
@@ -731,10 +761,10 @@ include::Part A - Basics/05_operators/examples/operators_conditional.py[]
 
 === Operator Precedence
 
-Expressions in Python can make use of multiple operators. The order in which the separate operations are executed
-is defined by the level of precedence for the operator. Operators with higher level are executed first. If operators
-have the same level of precedence the associated operations are executed from left to right as they appear in the
-expression.
+Expressions in Python can make use of multiple operators.
+The order in which the separate operations are executed is defined by the level of precedence for the operator.
+Operators with higher level are executed first.
+If operators have the same level of precedence the associated operations are executed from left to right as they appear in the expression.
 
 image::part_a/ch_05/operator_precedence.png[]
 
@@ -750,7 +780,6 @@ image::part_a/ch_05//operator_precedence_example.png[]
 include::Part A - Basics/05_operators/examples/operators_precedence_boolean.py[]
 ----
 
-
 The order of precedence can be manipulated using `()`.
 
 [source,python]
@@ -758,17 +787,19 @@ The order of precedence can be manipulated using `()`.
 include::Part A - Basics/05_operators/examples/operators_precedence_parantheses.py[]
 ----
 
-
 == User Input
-The `input()` function is used to get user input from the keyboard. It takes a single argument,
-which is the prompt to display to the user. The prompt is optional. If no prompt is specified,
-the user will not see anything when they are prompted to enter input.
+
+The `input()` function is used to get user input from the keyboard.
+It takes a single argument, which is the prompt to display to the user.
+The prompt is optional.
+If no prompt is specified, the user will not see anything when they are prompted to enter input.
 
 === User Input in Python 2
-In Python 2, the `input()` function evaluates the user input as a Python expression and returns
-the result. This is a security risk because it allows the user to execute arbitrary Python code.
-To avoid this, use the `raw_input()` function instead. The `raw_input()` function returns the
-user input as a string.
+
+In Python 2, the `input()` function evaluates the user input as a Python expression and returns the result.
+This is a security risk because it allows the user to execute arbitrary Python code.
+To avoid this, use the `raw_input()` function instead.
+The `raw_input()` function returns the user input as a string.
 
 [source,python]
 ----
@@ -776,21 +807,24 @@ include::Part A - Basics/06_user_input/examples/user_input_python2.py[]
 ----
 
 === User Input in Python 3
-In Python 3, the `input()` function returns the user input as a string. To evaluate the user
-input as a Python expression, use the `eval()` function. The `eval()` function takes a string
-as an argument and evaluates it as a Python expression. It returns the result of the expression.
+
+In Python 3, the `input()` function returns the user input as a string.
+To evaluate the user input as a Python expression, use the `eval()` function.
+The `eval()` function takes a string as an argument and evaluates it as a Python expression.
+It returns the result of the expression.
 
 [source,python]
 ----
 include::Part A - Basics/06_user_input/examples/user_input_python3.py[]
 ----
 
-
 === Writing Compatible Code
-To write code that is compatible with both Python 2 and Python 3, use the `six` module. The
-`six` module provides a function called `input()` that works the same way in both Python 2 and
-Python 3. The `six` module is not part of the Python standard library. It must be installed
-separately. To install the `six` module, run the following command:
+
+To write code that is compatible with both Python 2 and Python 3, use the `six` module.
+The
+`six` module provides a function called `input()` that works the same way in both Python 2 and Python 3. The `six` module is not part of the Python standard library.
+It must be installed separately.
+To install the `six` module, run the following command:
 
 [source,bash]
 ----
@@ -804,11 +838,11 @@ An example of using the `six` module to get user input is shown below.
 include::Part A - Basics/06_user_input/examples/user_input_with_six.py[]
 ----
 
-
 == Control Flow
-Control flow statements are used to control the order in which statements are executed in a
-program. They are used to make decisions and repeat statements. Python supports the following
-types of control flow statements:
+
+Control flow statements are used to control the order in which statements are executed in a program.
+They are used to make decisions and repeat statements.
+Python supports the following types of control flow statements:
 
 - `if` statement
 - `for` statement
@@ -818,12 +852,13 @@ types of control flow statements:
 - `pass` statement
 
 === if Statement
-The `if` statement is used to make decisions in a program. It evaluates a condition and executes
-a block of code if the condition is true. The `if` statement can also be combined with an `elif`
-statement to execute a block of code if  the condition is false and another condition is true.
-The `elif` statement can be used multiple times to check multiple conditions. The `if` statement
-can also be combined with an `else` statement to execute a block of code if all conditions are
-false.
+
+The `if` statement is used to make decisions in a program.
+It evaluates a condition and executes a block of code if the condition is true.
+The `if` statement can also be combined with an `elif`
+statement to execute a block of code if the condition is false and another condition is true.
+The `elif` statement can be used multiple times to check multiple conditions.
+The `if` statement can also be combined with an `else` statement to execute a block of code if all conditions are false.
 
 [source,python]
 ----
@@ -831,9 +866,10 @@ include::Part A - Basics/07_control_flow/examples/control_with_if_statement.py[]
 ----
 
 === for Statement
-The `for` statement is used to iterate over the items in a collection. It can also be used to
-iterate over a range of numbers. The `for` statement can be combined with an `else` statement to
-execute a block of code when the loop is finished without breaking out of the loop.
+
+The `for` statement is used to iterate over the items in a collection.
+It can also be used to iterate over a range of numbers.
+The `for` statement can be combined with an `else` statement to execute a block of code when the loop is finished without breaking out of the loop.
 
 [source,python]
 ----
@@ -841,9 +877,10 @@ include::Part A - Basics/07_control_flow/examples/control_with_for_statement.py[
 ----
 
 === while Statement
-The `while` statement is used to execute a block of code while a condition is true. The `while`
-statement can be combined with an `else` statement to execute a block of code when the loop is
-finished without breaking out of the loop.
+
+The `while` statement is used to execute a block of code while a condition is true.
+The `while`
+statement can be combined with an `else` statement to execute a block of code when the loop is finished without breaking out of the loop.
 
 [source,python]
 ----
@@ -851,7 +888,9 @@ include::Part A - Basics/07_control_flow/examples/control_with_while_statement.p
 ----
 
 === break Statement
-The `break` statement is used inside a loop to stop the loop from executing any further. The `break`
+
+The `break` statement is used inside a loop to stop the loop from executing any further.
+The `break`
 statement can be used inside a `for` or `while` loop.
 
 [source,python]
@@ -860,8 +899,9 @@ include::Part A - Basics/07_control_flow/examples/control_with_break_statement.p
 ----
 
 === continue Statement
-Use the `continue` statement inside a loop to skip the rest of the statements in the loop and proceed
-with the next iteration of the loop. The `continue` statement can be used inside a `for` or
+
+Use the `continue` statement inside a loop to skip the rest of the statements in the loop and proceed with the next iteration of the loop.
+The `continue` statement can be used inside a `for` or
 `while` loop.
 
 [source,python]
@@ -870,9 +910,9 @@ include::Part A - Basics/07_control_flow/examples/control_with_continue_statemen
 ----
 
 === pass Statement
-The `pass` statement is used as a placeholder for code that has not been implemented yet. It is
-used to prevent a syntax error when a statement is required syntactically, but you do not want to
-execute any code.
+
+The `pass` statement is used as a placeholder for code that has not been implemented yet.
+It is used to prevent a syntax error when a statement is required syntactically, but you do not want to execute any code.
 
 [source,python]
 ----
@@ -880,10 +920,12 @@ include::Part A - Basics/07_control_flow/examples/control_with_pass_statement.py
 ----
 
 == Functions
-Functions are used to group statements together and give them a name. They are used to make code
-more readable and reusable. Functions are defined using the `def` keyword. The `def` keyword is
-followed by the name of the function, a list of parameters in parentheses, and a colon. The
-statements that make up the body of the function are indented.
+
+Functions are used to group statements together and give them a name.
+They are used to make code more readable and reusable.
+Functions are defined using the `def` keyword.
+The `def` keyword is followed by the name of the function, a list of parameters in parentheses, and a colon.
+The statements that make up the body of the function are indented.
 
 [source,python]
 ----
@@ -892,29 +934,29 @@ include::Part A - Basics/08_functions/examples/func_structure.py[]
 
 Let's break down the different components of a function:
 
-- *Function name*: This is the name you give to your function. It should be descriptive and
-follow the Python naming conventions (lowercase with words separated by underscores).
+- *Function name*: This is the name you give to your function.
+It should be descriptive and follow the Python naming conventions (lowercase with words separated by underscores).
 
 - *Parameters*: These are optional input variables that you can define in the function signature.
-They act as placeholders for values that will be passed into the function when it is called. You
-can have multiple parameters separated by commas.
+They act as placeholders for values that will be passed into the function when it is called.
+You can have multiple parameters separated by commas.
 
-- *Docstring*: This is an optional string enclosed in triple quotes immediately after the function
-definition. It provides a description of the function's purpose, parameters, and return value.
+- *Docstring*: This is an optional string enclosed in triple quotes immediately after the function definition.
+It provides a description of the function's purpose, parameters, and return value.
 It is good practice to include docstrings to document your functions.
 
-- *Function body*: This is the block of code that gets executed when the function is called. It can
-contain any valid Python code, such as variable assignments, conditional statements, loops, and
-other function calls.
+- *Function body*: This is the block of code that gets executed when the function is called.
+It can contain any valid Python code, such as variable assignments, conditional statements, loops, and other function calls.
 
-- *Return statement*: This is an optional statement that specifies the value or values that the
-function should return when it finishes executing. If no return statement is provided, the
-function returns None by default. You can return a single value or multiple values as a tuple.
+- *Return statement*: This is an optional statement that specifies the value or values that the function should return when it finishes executing.
+If no return statement is provided, the function returns None by default.
+You can return a single value or multiple values as a tuple.
 
 === Positional Arguments
-Positional arguments are arguments that are passed to a function by position. The first argument
-is assigned to the first parameter, the second argument is assigned to the second parameter, and
-so on. Positional arguments are the default type of arguments in Python.
+
+Positional arguments are arguments that are passed to a function by position.
+The first argument is assigned to the first parameter, the second argument is assigned to the second parameter, and so on.
+Positional arguments are the default type of arguments in Python.
 
 [source,python]
 ----
@@ -922,10 +964,11 @@ include::Part A - Basics/08_functions/examples/func_positional_arguments.py[]
 ----
 
 === Named Arguments
-Named or also keyword arguments are arguments that are passed to a function by name. They are used
-to specify which parameter each argument should be assigned to. Keyword arguments are optional
-and can be specified in any order. They are useful when a function has many parameters and you
-want to specify only a few of them.
+
+Named or also keyword arguments are arguments that are passed to a function by name.
+They are used to specify which parameter each argument should be assigned to.
+Keyword arguments are optional and can be specified in any order.
+They are useful when a function has many parameters and you want to specify only a few of them.
 
 [source,python]
 ----
@@ -933,10 +976,11 @@ include::Part A - Basics/08_functions/examples/func_keyword_arguments.py[]
 ----
 
 === Default Arguments
+
 Default arguments are arguments that have a default value specified in the function signature.
-They are used when a function has optional parameters. If a default argument is not specified
-when the function is called, the default value is used instead. Default arguments must be
-specified after all the required arguments.
+They are used when a function has optional parameters.
+If a default argument is not specified when the function is called, the default value is used instead.
+Default arguments must be specified after all the required arguments.
 
 [source,python]
 ----
@@ -944,11 +988,12 @@ include::Part A - Basics/08_functions/examples/func_default_arguments.py[]
 ----
 
 === Variable Arguments
-Variable number of arguments are arguments that can take a variable number of values. They are
-used when you do not know how many arguments will be passed to a function. Variable number of
-arguments are specified using the `\*` operator in the function signature. The arguments are
-collected into a tuple. You can also use the `**` operator to collect keyword arguments into a
-dictionary.
+
+Variable number of arguments are arguments that can take a variable number of values.
+They are used when you do not know how many arguments will be passed to a function.
+Variable number of arguments are specified using the `\*` operator in the function signature.
+The arguments are collected into a tuple.
+You can also use the `**` operator to collect keyword arguments into a dictionary.
 
 **Python 2**
 
@@ -964,11 +1009,11 @@ include::Part A - Basics/08_functions/examples/func_variable_arguments_python2.p
 include::Part A - Basics/08_functions/examples/func_variable_arguments_python3.py[]
 ----
 
-
 === Unpacking Arguments
-Arguments that are unpacked from a list or tuple are used when you
-want to pass the elements of a list or tuple as arguments to a function. Unpacking arguments is done using the `*` operator in the function call. The elements of the list or tuple are
-assigned to the parameters in the function signature.
+
+Arguments that are unpacked from a list or tuple are used when you want to pass the elements of a list or tuple as arguments to a function.
+Unpacking arguments is done using the `*` operator in the function call.
+The elements of the list or tuple are assigned to the parameters in the function signature.
 
 [source,python]
 ----
@@ -977,16 +1022,17 @@ include::Part A - Basics/08_functions/examples/func_unpacking_arguments.py[]
 
 === Variable Scope
 
-The scope of a variable is the region of the program where the variable can be accessed. Python has
-two types of variables: global variables and local variables.
+The scope of a variable is the region of the program where the variable can be accessed.
+Python has two types of variables: global variables and local variables.
 
-Variables defined inside a function are local to that function. They can only be accessed inside
-the function. Variables defined outside a function are  global to the entire program. They can be
-accessed anywhere in the program.
+Variables defined inside a function are local to that function.
+They can only be accessed inside the function.
+Variables defined outside a function are global to the entire program.
+They can be accessed anywhere in the program.
 
-Local variables can have the same name as global variables. However, they are completely separate
-variables and are not related in any way. Local variables take precedence over global variables
-inside a function.
+Local variables can have the same name as global variables.
+However, they are completely separate variables and are not related in any way.
+Local variables take precedence over global variables inside a function.
 
 [source,python]
 ----
@@ -994,10 +1040,12 @@ include::Part A - Basics/08_functions/examples/func_scope.py[]
 ----
 
 === Nested Functions
-Nested functions are functions that are defined inside another function. They are used to
-encapsulate functionality that is only used inside the function. Nested functions can access
-variables defined in the enclosing function. However, they cannot modify them. If you want to
-modify a variable defined in the enclosing function, you must use the `nonlocal` keyword.
+
+Nested functions are functions that are defined inside another function.
+They are used to encapsulate functionality that is only used inside the function.
+Nested functions can access variables defined in the enclosing function.
+However, they cannot modify them.
+If you want to modify a variable defined in the enclosing function, you must use the `nonlocal` keyword.
 
 [source,python]
 ----
@@ -1006,10 +1054,11 @@ include::Part A - Basics/08_functions/examples/func_nested.py[]
 
 === Closures
 
-Closures are functions that return another function. They are used to create functions that can
-access variables defined in the enclosing function. The enclosing function must return the nested
-function. The nested function can access variables defined in the enclosing function. However, it
-cannot modify them.
+Closures are functions that return another function.
+They are used to create functions that can access variables defined in the enclosing function.
+The enclosing function must return the nested function.
+The nested function can access variables defined in the enclosing function.
+However, it cannot modify them.
 
 [source,python]
 ----
@@ -1018,12 +1067,11 @@ include::Part A - Basics/08_functions/examples/func_closures.py[]
 
 === Decorator Functions
 
-Function decorators are functions that take a function as an argument and return a modified
-version of the function. They are used to modify the behavior of a function without changing the
-function itself.
+Function decorators are functions that take a function as an argument and return a modified version of the function.
+They are used to modify the behavior of a function without changing the function itself.
 
-Function decorators are specified using the `@` operator before the function definition. The
-function decorator is called when the function is defined.
+Function decorators are specified using the `@` operator before the function definition.
+The function decorator is called when the function is defined.
 
 *Example: Simple decorator function*
 
@@ -1046,26 +1094,23 @@ include::Part A - Basics/08_functions/examples/func_decorator_with_arguments.py[
 include::Part A - Basics/08_functions/examples/func_decorator_for_classes.py[]
 ----
 
-
 === Factory Functions
-The function factory pattern is a special function used to create other functions dynamically.
-Typically, a factory function takes a set of parameters and returns a function that uses those
-parameters. The returned function can then be called with different arguments to get different
-results.
 
+The function factory pattern is a special function used to create other functions dynamically.
+Typically, a factory function takes a set of parameters and returns a function that uses those parameters.
+The returned function can then be called with different arguments to get different results.
 
 [source,python]
 ----
 include::Part A - Basics/08_functions/examples/func_factory.py[]
 ----
 
-
 === Memoization
-Memoization is a technique used to optimize function calls by caching the results of expensive
-computations and reusing them when the same inputs occur again. Closures can be used to
-implement memoization by creating a wrapper function that encapsulates the memoization logic. It
-is important to note that memoization can lead to memory leaks if not implemented correctly. You
-must ensure that the cache is cleared when it is no longer needed.
+
+Memoization is a technique used to optimize function calls by caching the results of expensive computations and reusing them when the same inputs occur again.
+Closures can be used to implement memoization by creating a wrapper function that encapsulates the memoization logic.
+It is important to note that memoization can lead to memory leaks if not implemented correctly.
+You must ensure that the cache is cleared when it is no longer needed.
 
 [source,python]
 ----
@@ -1073,9 +1118,9 @@ include::Part A - Basics/08_functions/examples/func_memoization.py[]
 ----
 
 === Function Annotations
-For Python 3.0 and above, you can specify the types of the parameters and return value of a function
-using annotations. Function annotations are optional type hints that can be added to function
-parameters and the return value.
+
+For Python 3.0 and above, you can specify the types of the parameters and return value of a function using annotations.
+Function annotations are optional type hints that can be added to function parameters and the return value.
 
 - Use the `:` operator to specify the type of a parameter
 - Use the `\->` operator to specify the type of the return value
@@ -1086,58 +1131,63 @@ include::Part A - Basics/08_functions/examples/func_annotations.py[]
 ----
 
 === Function Attributes
-In Python everything is an object, including functions. This means that functions can have
-attributes just like any other object. Function attributes are used to store information about a
-function. Some typical use cases for function attributes are:
+
+In Python everything is an object, including functions.
+This means that functions can have attributes just like any other object.
+Function attributes are used to store information about a function.
+Some typical use cases for function attributes are:
 
 - Storing metadata about a function (e.g name, author, version, etc.)
 - Conditional execution of a function (e.g. `__test__` attribute in the `unittest` module)
 - Storing cached results of a function (e.g. `__cache__` attribute in the `functools` module)
 - Multiple forms of documentation with a method optimized for various platforms
 
-Typically the attributes will be added by a decorator. However, you can also add them manually
-using the `setattr()` function or directly on the function object.
+Typically the attributes will be added by a decorator.
+However, you can also add them manually using the `setattr()` function or directly on the function object.
 
 [source,python]
 ----
 include::Part A - Basics/08_functions/examples/func_attributes.py[]
 ----
 
-CAUTION: It is not recommended to add attributes to functions manually because it can lead to
-unexpected behavior. It is better to use a decorator to add the attributes or use a class instead.
+CAUTION: It is not recommended to add attributes to functions manually because it can lead to unexpected behavior.
+It is better to use a decorator to add the attributes or use a class instead.
 
 === Callback Functions
-Callback functions are functions that are passed as arguments to other functions. They are used
-to implement event handlers and asynchronous callbacks. Callback functions are specified using
-the function name without the parentheses. The function is called when the callback is executed.
 
+Callback functions are functions that are passed as arguments to other functions.
+They are used to implement event handlers and asynchronous callbacks.
+Callback functions are specified using the function name without the parentheses.
+The function is called when the callback is executed.
 
 [source,python]
 ----
 include::Part A - Basics/08_functions/examples/func_callback.py[]
 ----
 
-
 === Recursive Functions
-Recursion is the process of calling a function from within itself. It is used to solve problems
-that can be broken down into smaller problems of the same type. It is important to note that
-recursion can lead to infinite loops if not implemented correctly. You must ensure that the base
-case is reached at some point. The base case is the case where the function does not call itself.
-It is used to stop the recursion. The base case is usually the simplest case that can be solved
-without recursion. The recursive case is the case where the function calls itself.
+
+Recursion is the process of calling a function from within itself.
+It is used to solve problems that can be broken down into smaller problems of the same type.
+It is important to note that recursion can lead to infinite loops if not implemented correctly.
+You must ensure that the base case is reached at some point.
+The base case is the case where the function does not call itself.
+It is used to stop the recursion.
+The base case is usually the simplest case that can be solved without recursion.
+The recursive case is the case where the function calls itself.
 
 [source,python]
 ----
 include::Part A - Basics/08_functions/examples/func_recursion.py[]
 ----
 
-
 === Lambda Functions
-Lambda functions are anonymous functions that are defined using the `lambda` keyword. They are
-used when you need a temporary function during the program execution. Lambda functions can only
-contain a single expression. The expression is evaluated and the result is returned when the
-function is called. Lambda functions can be assigned to a variable or passed as an argument to
-another function.
+
+Lambda functions are anonymous functions that are defined using the `lambda` keyword.
+They are used when you need a temporary function during the program execution.
+Lambda functions can only contain a single expression.
+The expression is evaluated and the result is returned when the function is called.
+Lambda functions can be assigned to a variable or passed as an argument to another function.
 
 [source,python]
 ----
@@ -1174,10 +1224,10 @@ include::Part A - Basics/08_functions/examples/func_lambda_nested_conditions.py[
 include::Part A - Basics/08_functions/examples/func_lambda_recursive.py[]
 ----
 
-
 === Positional-Only Arguments
-Positional-only arguments are arguments that can only be passed by position and not by name. They
-are used when you want to prevent users from passing arguments by name.
+
+Positional-only arguments are arguments that can only be passed by position and not by name.
+They are used when you want to prevent users from passing arguments by name.
 
 - Positional-only arguments are specified using the `/` operator in the function signature.
 - The arguments before the `/` operator are positional-only arguments.
@@ -1190,8 +1240,9 @@ include::Part A - Basics/08_functions/examples/func_positional_only_arguments.py
 ----
 
 === Keyword-Only Arguments
-Keyword-only arguments are arguments that can only be passed by name and not by position. They
-are used when you want to prevent users from passing arguments by position.
+
+Keyword-only arguments are arguments that can only be passed by name and not by position.
+They are used when you want to prevent users from passing arguments by position.
 
 - Keyword-only arguments are specified using the `*` operator in the function signature.
 - The arguments after the `*` operator are keyword-only arguments.
@@ -1204,10 +1255,9 @@ include::Part A - Basics/08_functions/examples/func_keyword_only_arguments.py[]
 
 === Function Introspection
 
-Function introspection is the process of examining a function's attributes. It is used to get
-information about the state variables and code of a function after it is created and initialized.
-In Python a function is a first class object, which means that it can be handled and manipulated
-like any other object.
+Function introspection is the process of examining a function's attributes.
+It is used to get information about the state variables and code of a function after it is created and initialized.
+In Python a function is a first class object, which means that it can be handled and manipulated like any other object.
 
 - use `\\__name__` to get the name of a function
 - use `\\__doc__`  to get the docstring of a function
@@ -1223,37 +1273,41 @@ like any other object.
 include::Part A - Basics/08_functions/examples/func_introspection.py[]
 ----
 
-
 == Classes
 
-A class is a blueprint for creating objects. It defines the properties and methods that all
-objects of the class will have. An object is an instance of a class. It is a concrete realization
-of the class. It has well-defined values or all the properties defined in the class.
+A class is a blueprint for creating objects.
+It defines the properties and methods that all objects of the class will have.
+An object is an instance of a class.
+It is a concrete realization of the class.
+It has well-defined values or all the properties defined in the class.
 
 The class answers the following questions:
 
-- What parts does the object HAVE? (HAVE WHAT?)
-- What does the object DO? (DO WHAT?)
+- What parts does the object HAVE?
+(HAVE WHAT?)
+- What does the object DO?
+(DO WHAT?)
 
 The object answers the following questions:
 
-- What is the object? (WHAT IS IT?)
-- What is the object's state? (WHAT IS IT LIKE?)
+- What is the object?
+(WHAT IS IT?)
+- What is the object's state?
+(WHAT IS IT LIKE?)
 
-Let's take a look at an example of a class and an object. The class is called `Person` and it
-defines the properties and methods that all people have. The class answers the question "What
-does a person have?" and in this case the answer is "A person has a name and an age". The class
-also answers the question "What does a person do?" and in this case the answer is "A person can
-say hello".
+Let's take a look at an example of a class and an object.
+The class is called `Person` and it defines the properties and methods that all people have.
+The class answers the question "What does a person have?" and in this case the answer is "A person has a name and an age".
+The class also answers the question "What does a person do?" and in this case the answer is "A person can say hello".
 
 [source,python]
 ----
 include::Part A - Basics/09_classes/examples/class_as_blueprint.py[]
 ----
 
-The object is called `John` and it is an instance of the `Person` class. It answers the question
-"What is John?" and in this case the answer is "John is a person". It also answers the question
-"What is John's state?" and in this case the answer is "John is 30 years old and his name is John".
+The object is called `John` and it is an instance of the `Person` class.
+It answers the question "What is John?" and in this case the answer is "John is a person".
+It also answers the question "What is John's state?" and in this case the answer is "John is 30 years old and his name is John".
 
 [source,python]
 ----
@@ -1262,37 +1316,33 @@ include::Part A - Basics/09_classes/examples/class_as_concrete_object.py[]
 
 === Class structure
 
-The class is defined using the `class` keyword and the name of the class. The class name should
-follow the Python naming conventions (CamelCase with the first letter capitalized). It shall always
-inherit from the `object` or a class that inherits from the `object` due to reasons explained in
-later chapters.
+The class is defined using the `class` keyword and the name of the class.
+The class name should follow the Python naming conventions (CamelCase with the first letter capitalized).
+It shall always inherit from the `object` or a class that inherits from the `object` due to reasons explained in later chapters.
 
-- Initializer           (`\\__init__`)
-- Constructor           (`\\__new__`)
-- Instance variables    (inside `\\__init__`)
-- Instance methods      (inside class body)
-- Class attributes      (outside any method)
-- Class methods         (`@classmethod`)
-- Static methods        (`@staticmethod`)
+- Initializer (`\\__init__`)
+- Constructor (`\\__new__`)
+- Instance variables (inside `\\__init__`)
+- Instance methods (inside class body)
+- Class attributes (outside any method)
+- Class methods (`@classmethod`)
+- Static methods (`@staticmethod`)
 
 [source,python]
 ----
 include::Part A - Basics/09_classes/examples/class_structure.py[]
 ----
 
-
-
 === Initializer
 
-The `\\__init__` method is called automatically when the instance is created. It is used to
-initialize the instance state. It is also sometimes wrongly called the constructor method as it
-is the most commonly used method when declaring the class. Some of the most common use cases or
-the `\\__init__` method are:
+The `\\__init__` method is called automatically when the instance is created.
+It is used to initialize the instance state.
+It is also sometimes wrongly called the constructor method as it is the most commonly used method when declaring the class.
+Some of the most common use cases or the `\\__init__` method are:
 
 - Initialize the instance variables of the class
 - Validate the values of the instance variables
 - Perform any other initialization steps
-
 
 [source,python]
 ----
@@ -1309,25 +1359,22 @@ include::Part A - Basics/09_classes/examples/class_init_validate.py[]
 include::Part A - Basics/09_classes/examples/class_init_steps.py[]
 ----
 
-
 === Constructor
 
 Constructors are special methods inside a class that create and initialize the objects of a class.
-In Python the object is created wih the special method `\\__new__` and then initialized with the
-special method `\\__init__`.
+In Python the object is created wih the special method `\\__new__` and then initialized with the special method `\\__init__`.
 
 [source,python]
 ----
 include::Part A - Basics/09_classes/examples/class_constructors.py[]
 ----
 
-The method `\\__new__` is used rarely as Python handles the construction of the object automatically. Some
-of the most common use cases for the `\\__new__` method are:
+The method `\\__new__` is used rarely as Python handles the construction of the object automatically.
+Some of the most common use cases for the `\\__new__` method are:
 
 - Create a class that inherits from a different class depending on some condition
 - Limit the number of instances that can be created for this class (e.g. Singleton)
 - Create a class factory
-
 
 [source,python]
 ----
@@ -1339,19 +1386,16 @@ include::Part A - Basics/09_classes/examples/class_constructor_singleton.py[]
 include::Part A - Basics/09_classes/examples/class_constructor_factory.py[]
 ----
 
-
 [source,python]
 ----
 include::Part A - Basics/09_classes/examples/class_constructor_conditional_inheritance.py[]
 ----
 
-
-
 === Class instance
 
-The constructor returns a class instance (object) as a concrete realization of the class. This
-means that the object has well-defined values for all the instance variables. Each instance is
-unique and has its own identity.
+The constructor returns a class instance (object) as a concrete realization of the class.
+This means that the object has well-defined values for all the instance variables.
+Each instance is unique and has its own identity.
 
 Some of the most common use cases for the class instance are:
 
@@ -1361,20 +1405,24 @@ Some of the most common use cases for the class instance are:
 
 
 ==== Instance identity
-The identity is a unique number that is assigned to the object when it is created. The identity
-of an object never changes during its lifetime. It is used mainly to compare objects using the
-`is` operator. The `is` operator returns `True` if the identity of the two objects is the same
-and `False` otherwise. The identity of an object is obtained by the `id()` function.
+
+The identity is a unique number that is assigned to the object when it is created.
+The identity of an object never changes during its lifetime.
+It is used mainly to compare objects using the
+`is` operator.
+The `is` operator returns `True` if the identity of the two objects is the same and `False` otherwise.
+The identity of an object is obtained by the `id()` function.
 
 [source,python]
 ----
 include::Part A - Basics/09_classes/examples/class_instance.py[]
 ----
 
-
 ==== Instance variables
-The instance has its own set of variables called also attributes. They represent the internal
-state of the object. The instance variables are defined inside `\\__init__` method.
+
+The instance has its own set of variables called also attributes.
+They represent the internal state of the object.
+The instance variables are defined inside `\\__init__` method.
 
 [source,python]
 ----
@@ -1382,21 +1430,25 @@ include::Part A - Basics/09_classes/examples/class_instance_attributes.py[]
 ----
 
 ==== Instance methods
-Instance methods are functions that are part of the instance of a class. The first parameter of
-an instance method is always a reference to the current instance. It is usually called `self`.
-Instance methods can  only be used when the instance of the class has been created.
+
+Instance methods are functions that are part of the instance of a class.
+The first parameter of an instance method is always a reference to the current instance.
+It is usually called `self`.
+Instance methods can only be used when the instance of the class has been created.
 
 [source,python]
 ----
 include::Part A - Basics/09_classes/examples/class_instance_methods.py[]
 ----
 
-
 === Class as an object
-In Python, everything is an object. This means that classes are also objects. They are instances
-of the `type` class. This means that classes can be assigned to variables, passed as arguments to
-functions, and returned from functions. This is a very powerful feature of Python that allows you
-to write very flexible code. Some of the most common use cases for classes as objects are:
+
+In Python, everything is an object.
+This means that classes are also objects.
+They are instances of the `type` class.
+This means that classes can be assigned to variables, passed as arguments to functions, and returned from functions.
+This is a very powerful feature of Python that allows you to write very flexible code.
+Some of the most common use cases for classes as objects are:
 
 - Assign a class to a variable
 - Pass a class as an argument to a function
@@ -1404,42 +1456,44 @@ to write very flexible code. Some of the most common use cases for classes as ob
 
 
 ==== Class variables
-Class attributes are variables that are defined inside a class. They represent the internal state
-of the class. Class attributes are shared by all instances of the class. They are defined outside
-the `\\__init__` method. If you try to access a class attribute that does not exist, Python will
-look for it in the parent classes until it reaches the top of the inheritance tree. Some of the
-most common use cases for class attributes are:
+
+Class attributes are variables that are defined inside a class.
+They represent the internal state of the class.
+Class attributes are shared by all instances of the class.
+They are defined outside the `\\__init__` method.
+If you try to access a class attribute that does not exist, Python will look for it in the parent classes until it reaches the top of the inheritance tree.
+Some of the most common use cases for class attributes are:
 
 - Constants
 - Default values for class attributes
 - Class attributes that are shared by all instances of the class
-
 
 [source,python]
 ----
 include::Part A - Basics/09_classes/examples/class_variables.py[]
 ----
 
-It is important to note that if the class attribute is used with self in any of the instance methods,
-it will be treated as an instance attribute and will be accessible only from the instance of the
-class. This might introduce bugs in your code if you are not careful.
+It is important to note that if the class attribute is used with self in any of the instance methods, it will be treated as an instance attribute and will be accessible only from the instance of the class.
+This might introduce bugs in your code if you are not careful.
 
 [source,python]
 ----
 include::Part A - Basics/09_classes/examples/class_variables_pitfalls.py[]
 ----
 
-
 ==== Class methods
-Class methods are functions that are defined inside a class. The first parameter of a class method
-is always a reference to the class. It is usually called `cls`. Class methods can be used before
-the instance of the class has been created. Class methods are defined using the `@classmethod`
-decorator. Some of the most common use cases for class methods are:
+
+Class methods are functions that are defined inside a class.
+The first parameter of a class method is always a reference to the class.
+It is usually called `cls`.
+Class methods can be used before the instance of the class has been created.
+Class methods are defined using the `@classmethod`
+decorator.
+Some of the most common use cases for class methods are:
 
 - Create new instances of the class
 - Modify existing instances of the class
 - Modify the class itself
-
 
 [source,python]
 ----
@@ -1451,40 +1505,40 @@ include::Part A - Basics/09_classes/examples/class_method_create_instance.py[]
 include::Part A - Basics/09_classes/examples/class_method_modify_itself.py[]
 ----
 
-
 [source,python]
 ----
 include::Part A - Basics/09_classes/examples/class_method_modify_instances.py[]
 ----
 
-
 === Class as a namespace
 
-A namespace is a mapping from names to objects. It is used to avoid name collisions and to make
-it easier to find the names you are looking for. In Python, classes are namespaces. This means
-that you can define variables and functions inside a class. They will be accessible using the
-class name. Some of the most common use cases for classes as namespaces are:
+A namespace is a mapping from names to objects.
+It is used to avoid name collisions and to make it easier to find the names you are looking for.
+In Python, classes are namespaces.
+This means that you can define variables and functions inside a class.
+They will be accessible using the class name.
+Some of the most common use cases for classes as namespaces are:
 
 - Group related variables and functions together
 - Avoid name collisions
 - Make it easier to find the names you are looking for
 
-Static methods are functions that are defined inside a class. They are not bound to the class or
-any instances of the class and use the class name as a namespace to be accessed. They are defined
-using the `@staticmethod` decorator. Static methods can be used before the instance of the class
-has been created.
+Static methods are functions that are defined inside a class.
+They are not bound to the class or any instances of the class and use the class name as a namespace to be accessed.
+They are defined using the `@staticmethod` decorator.
+Static methods can be used before the instance of the class has been created.
 
 [source,python]
 ----
 include::Part A - Basics/09_classes/examples/class_static_methods.py[]
 ----
 
-
 === Properties
-The properties are special methods that are used to access and modify the instance attributes of
-a class. They are defined using the `@property` decorator. The properties enapsulate the internal
-state of the object and provide a public interface for accessing and modifying it. For example,
-the setter property can be used to validate the value of an instance attribute before setting it.
+
+The properties are special methods that are used to access and modify the instance attributes of a class.
+They are defined using the `@property` decorator.
+The properties enapsulate the internal state of the object and provide a public interface for accessing and modifying it.
+For example, the setter property can be used to validate the value of an instance attribute before setting it.
 
 When to use properties:
 
@@ -1492,15 +1546,16 @@ When to use properties:
 - When you want to compute the value of an instance attribute when it is accessed
 - When you want to hide the internal implementation details of an instance attribute
 
-
 [source,python]
 ----
 include::Part A - Basics/09_classes/examples/class_properties.py[]
 ----
 
 === Superclass
-A superclass in Python is a reference to the parent class of a class. It is used to access the
-attributes and methods of the parent class. The superclass is specified using the `super()`.
+
+A superclass in Python is a reference to the parent class of a class.
+It is used to access the attributes and methods of the parent class.
+The superclass is specified using the `super()`.
 
 When to use super:
 
@@ -1517,18 +1572,19 @@ include::Part A - Basics/09_classes/examples/class_superclass_attributes.py[]
 include::Part A - Basics/09_classes/examples/class_superclass_constructor.py[]
 ----
 
-
 === Class inheritance
-Class inheritance is the process of creating a new class from one or more base classes. The new
-class is called the subclass or the derived class. The base class is called the superclass or the
-parent class.
 
-The subclass inherits the attributes and methods of the superclass. It can also override the
-attributes and methods of the superclass. Class inheritance is used to reuse code and to
-represent an _is-a_ relationship. The subclass is a specialized version of the superclass.
+Class inheritance is the process of creating a new class from one or more base classes.
+The new class is called the subclass or the derived class.
+The base class is called the superclass or the parent class.
 
-Python supports single inheritance and multiple inheritance. Some of the most common use cases for
-inheritance are:
+The subclass inherits the attributes and methods of the superclass.
+It can also override the attributes and methods of the superclass.
+Class inheritance is used to reuse code and to represent an _is-a_ relationship.
+The subclass is a specialized version of the superclass.
+
+Python supports single inheritance and multiple inheritance.
+Some of the most common use cases for inheritance are:
 
 - Reuse code (a student inherits name and age from a person)
 - Represent an is-a relationship (a student is a person)
@@ -1543,39 +1599,31 @@ include::Part A - Basics/09_classes/examples/class_single_inheritance.py[]
 include::Part A - Basics/09_classes/examples/class_multiple_inheritance.py[]
 ----
 
-
-
 === Method resolution order
 
-Method Resolution Order (MRO) is a critical concept in Python's object-oriented programming,
-especially when dealing with inheritance and classes. It defines the order in which methods are
-searched and executed in a class hierarchy. The MRO ensures that when you call a method on an
-object, Python knows which method to execute.
+Method Resolution Order (MRO) is a critical concept in Python's object-oriented programming, especially when dealing with inheritance and classes.
+It defines the order in which methods are searched and executed in a class hierarchy.
+The MRO ensures that when you call a method on an object, Python knows which method to execute.
 
-The algorithm used to determine the MRO of a class is called the C3 linearization algorithm. It
-searches the class hierarchy depth first and for  each depth level it searches from left to right
-. The MRO of a class can be accessed using the `mro()` method.
+The algorithm used to determine the MRO of a class is called the C3 linearization algorithm.
+It searches the class hierarchy depth first and for each depth level it searches from left to right . The MRO of a class can be accessed using the `mro()` method.
 
 The MRO algorithm is the unique algorithm that achieves several desirable properties:
 
 1. Each ancestor class appears exactly once
 2. A derived class always appears before its ancestor ("monotonicity")
-3. Direct parents of the same class should appear in the same order as they are listed in class
-definition ("consistent local precedence order")
-4. If children of class A always appear before children of class B, then A should appear before B
-("consistent extended precedence order")
+3. Direct parents of the same class should appear in the same order as they are listed in class definition ("consistent local precedence order")
+4. If children of class A always appear before children of class B, then A should appear before B ("consistent extended precedence order")
 
 For more information about the C3 linearization algorithm, see the following resources:
 
 - https://en.wikipedia.org/wiki/C3_linearization
 - https://www.python.org/download/releases/2.3/mro/
 
-
 [source,python]
 ----
 include::Part A - Basics/09_classes/examples/class_mro_bottom_first.py[]
 ----
-
 
 [source,python]
 ----
@@ -1598,29 +1646,29 @@ include::Part A - Basics/09_classes/examples/class_mro_unresolved.py[]
 ----
 
 === Abstract class
-In Python, an abstract class is a class that cannot be instantiated directly. It is meant to
-serve as a blueprint for other classes and is designed to be subclassed. Abstract classes often
-contain abstract methods, which are methods declared but not implemented in the abstract class.
-Subclasses of the abstract class are then required to provide concrete implementations for these
-abstract methods.
 
-It is also possible for an abstract class to have concrete methods that are implemented in the
-abstract class itself. This is useful when you want to provide a default implementation that can
-be overridden by subclasses. In this case, the abstract class can be instantiated directly and
-the class is also called a *template class*.
+In Python, an abstract class is a class that cannot be instantiated directly.
+It is meant to serve as a blueprint for other classes and is designed to be subclassed.
+Abstract classes often contain abstract methods, which are methods declared but not implemented in the abstract class.
+Subclasses of the abstract class are then required to provide concrete implementations for these abstract methods.
 
-Python does not have a built-in abstract class keyword. However, you can create an abstract class
-using the `abc` module. The `abc` module provides a metaclass called `ABCMeta` that allows you to
-create abstract classes. An abstract class is created by inheriting from the `ABCMeta` metaclass
-and specifying one or more abstract methods using the `@abstractmethod` decorator.
+It is also possible for an abstract class to have concrete methods that are implemented in the abstract class itself.
+This is useful when you want to provide a default implementation that can be overridden by subclasses.
+In this case, the abstract class can be instantiated directly and the class is also called a *template class*.
+
+Python does not have a built-in abstract class keyword.
+However, you can create an abstract class using the `abc` module.
+The `abc` module provides a metaclass called `ABCMeta` that allows you to create abstract classes.
+An abstract class is created by inheriting from the `ABCMeta` metaclass and specifying one or more abstract methods using the `@abstractmethod` decorator.
 
 The `@abstractmethod` decorator can be stacked with other decorators, such as `@classmethod` and
 `@staticmethod`, on the abstract method.
 
 In case you have to write code that is compatible with both Python 2 and Python 3, you can use the
-`six` module. The `six` module provides all the functionality of the `abc` module in a way that
-is compatible with both Python 2 and Python 3. The `six` module is not part of the Python standard
-library. It must be installed separately. To install the `six` module, run the following command:
+`six` module.
+The `six` module provides all the functionality of the `abc` module in a way that is compatible with both Python 2 and Python 3. The `six` module is not part of the Python standard library.
+It must be installed separately.
+To install the `six` module, run the following command:
 
 [source,bash]
 ----
@@ -1645,18 +1693,21 @@ include::Part A - Basics/09_classes/examples/class_abstract_properties.py[]
 ----
 
 === Interface class
-An interface is a class that contains only abstract methods. It is used to define the interface
-of a class without providing an implementation. An interface is a contract that a class must
-implement. Python does not offer direct support for interfaces. However, you can create an
-abstract class that emulates an interface (see the previous section for more information).
 
+An interface is a class that contains only abstract methods.
+It is used to define the interface of a class without providing an implementation.
+An interface is a contract that a class must implement.
+Python does not offer direct support for interfaces.
+However, you can create an abstract class that emulates an interface (see the previous section for more information).
 
 === Mixin class
-A mixin is a class that contains methods that can be used by other classes without having to be
-the parent class of those classes. It is used to provide a common set of methods to multiple
-classes. Mixins are not meant to be instantiated directly. They are meant to be inherited by
-other classes. Mixins are usually named with the suffix "Mixin" to indicate that they are not
-meant to be instantiated directly. Some examples of mixins are shown below.
+
+A mixin is a class that contains methods that can be used by other classes without having to be the parent class of those classes.
+It is used to provide a common set of methods to multiple classes.
+Mixins are not meant to be instantiated directly.
+They are meant to be inherited by other classes.
+Mixins are usually named with the suffix "Mixin" to indicate that they are not meant to be instantiated directly.
+Some examples of mixins are shown below.
 
 [source,python]
 ----
@@ -1665,9 +1716,9 @@ include::Part A - Basics/09_classes/examples/class_mixin.py[]
 
 === Class as a decorator
 
-A class can be used to decorate a function or a class. It is used to add functionality to an
-existing function or class without modifying the function or class itself. A class decorator is
-specified using the `@` operator before the function or class definition.
+A class can be used to decorate a function or a class.
+It is used to add functionality to an existing function or class without modifying the function or class itself.
+A class decorator is specified using the `@` operator before the function or class definition.
 
 [source,python]
 ----
@@ -1696,25 +1747,22 @@ include::Part A - Basics/09_classes/examples/class_decorator_for_functions.py[]
 include::Part A - Basics/09_classes/examples/class_decorator_for_classes.py[]
 ----
 
-
 === Nested classes
 
-In Python, you can define a class inside another class, creating what's known as a nested or
-inner class. Nested classes can be a useful way to organize and encapsulate related functionality
-and it is very often used to create namespaces for constants, settings and helper classes. A
-namespace is a dictionary that maps names to objects. It is used to avoid name collisions and to
-make it easier to find the names you are looking for.
+In Python, you can define a class inside another class, creating what's known as a nested or inner class.
+Nested classes can be a useful way to organize and encapsulate related functionality and it is very often used to create namespaces for constants, settings and helper classes.
+A namespace is a dictionary that maps names to objects.
+It is used to avoid name collisions and to make it easier to find the names you are looking for.
 
 [source,python]
 ----
 include::Part A - Basics/09_classes/examples/class_nested.py[]
 ----
 
-
-
 === Introspection
-The class introspection is the process of examining a class's attributes. It is used to get
-information about a class.
+
+The class introspection is the process of examining a class's attributes.
+It is used to get information about a class.
 
 - use `\\__doc__`  to get the docstring of a class
 - use `\\__class__` to get the class of an object
@@ -1729,10 +1777,10 @@ information about a class.
 
 == Docstrings
 
-Docstrings are optional strings enclosed in triple quotes immediately after the class, function,
-or method definition. They provide a description of the class, function, or method. Docstrings are
-used to document your code. They can be accessed using the `\\__doc__` attribute of the class,
-function, or method.
+Docstrings are optional strings enclosed in triple quotes immediately after the class, function, or method definition.
+They provide a description of the class, function, or method.
+Docstrings are used to document your code.
+They can be accessed using the `\\__doc__` attribute of the class, function, or method.
 
 === Class docstrings
 
@@ -1740,7 +1788,6 @@ function, or method.
 ----
 include::Part A - Basics/10_docstrings/examples/docstring_class.py[]
 ----
-
 
 === Function docstrings
 
@@ -1750,15 +1797,16 @@ include::Part A - Basics/10_docstrings/examples/docstring_function.py[]
 ----
 
 === Module docstrings
-A python module is a file that contains python code. It is used to organize related code into a
-single file. A module typically contains classes, functions, and variables. The
-docstring of a module is the first string in the module.
+
+A python module is a file that contains python code.
+It is used to organize related code into a single file.
+A module typically contains classes, functions, and variables.
+The docstring of a module is the first string in the module.
 
 [source,python]
 ----
 include::Part A - Basics/10_docstrings/examples/docstring_module.py[]
 ----
-
 
 == Debugging
 
@@ -1766,9 +1814,11 @@ include::Part A - Basics/10_docstrings/examples/docstring_module.py[]
 
 image::part_a/ch_11/breakpoint.png[]
 
-A breakpoint is a point in the program where the execution stops. It is used to pause the program
-and inspect the state of the program at that point. Breakpoints are used to debug programs. They
-are used to find bugs in the program. Breakpoints can be set in the following ways:
+A breakpoint is a point in the program where the execution stops.
+It is used to pause the program and inspect the state of the program at that point.
+Breakpoints are used to debug programs.
+They are used to find bugs in the program.
+Breakpoints can be set in the following ways:
 
 - Using any IDE (see red dot in the image above)
 - Using the `breakpoint()` function (only in Python 3.7 and above)
@@ -1778,10 +1828,11 @@ are used to find bugs in the program. Breakpoints can be set in the following wa
 
 image::part_a/ch_11/conditional_breakpoint.png[]
 
-A conditional breakpoint is a breakpoint that is only triggered when a condition is met. It is
-used to pause the program and inspect the state of the program when a condition is met. Conditional
-breakpoints are used to debug programs. They are used to find bugs in the program. Conditional
-breakpoints can be set in the following ways:
+A conditional breakpoint is a breakpoint that is only triggered when a condition is met.
+It is used to pause the program and inspect the state of the program when a condition is met.
+Conditional breakpoints are used to debug programs.
+They are used to find bugs in the program.
+Conditional breakpoints can be set in the following ways:
 
 - Using an IDE (right click on the breakpoint and edit the conditions)
 - Using the `breakpoint()` function (only in Python 3.7 and above)
@@ -1791,19 +1842,20 @@ breakpoints can be set in the following ways:
 
 image::part_a/ch_11/watchlist.png[]
 
-A watchlist is a list of variables that are monitored while the program is running. It is used to
-inspect the values of variables while the program is running. Watchlists are used to debug programs.
-They are used to find bugs in the program. Watchlists can be set in the following ways:
+A watchlist is a list of variables that are monitored while the program is running.
+It is used to inspect the values of variables while the program is running.
+Watchlists are used to debug programs.
+They are used to find bugs in the program.
+Watchlists can be set in the following ways:
 
 - Using any IDE (while in debug mode)
 - Using the `pdb` module
 
 == Linting
 
-The static code analysis process (linting for short) is the process of checking the source code for
-type errors, syntax errors, and styling errors. It is used to ensure that the code is correct
-and follows the Python style guide. In this tutorial we will use the integrated tools in PyCharm
-but further reading is recommended on the topic.
+The static code analysis process (linting for short) is the process of checking the source code for type errors, syntax errors, and styling errors.
+It is used to ensure that the code is correct and follows the Python style guide.
+In this tutorial we will use the integrated tools in PyCharm but further reading is recommended on the topic.
 
 The following resources are a good starting point:
 
