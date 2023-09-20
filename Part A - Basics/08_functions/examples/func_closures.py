@@ -1,17 +1,17 @@
-def greet():
-    # Message variable
-    text = "Welcome my dear!"
+def greet(message):
 
-    def inner_function():
-        # The text variable is captured
-        return text
+    def inner_function(name):
 
-    # Returns the inner function
+        # The message variable is stored in the inner function context
+        return "{} {}".format(message, name)
+
+    # Returns a closure (function object with `message` as part of the inner function context)
     return inner_function
 
 
-# Execute greet to return the reference to the inner function
-message = greet()
+# Store the closure function object into a variable
+welcome = greet("Welcome")
 
-# Greet is no longer active, but the inner function has access to `text`
-print(message())
+# Use the concrete closure function object
+print(welcome('Branko'))    # Welcome Branko
+print(welcome('John'))      # Welcome John

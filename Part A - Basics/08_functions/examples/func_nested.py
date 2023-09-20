@@ -1,8 +1,20 @@
 def outer_function():
+    # This is the outer function scope
+
     def inner_function():
-        print('Hello')
+        # This is the inner function scope
 
-    inner_function()
+        print('This is the inner function')
+
+    return inner_function
 
 
-outer_function()
+# Call the inner function directly
+outer_function()()
+
+# Store the inner function object into a variable
+func = outer_function()
+
+# Now call the inner function using the variable
+func()
+print()
