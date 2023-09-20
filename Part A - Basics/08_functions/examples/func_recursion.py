@@ -7,3 +7,7 @@ def factorial(n):
     # Recursive case
     else:
         return n * factorial(n - 1)
+
+
+test_function = factorial(5)
+print(test_function)
