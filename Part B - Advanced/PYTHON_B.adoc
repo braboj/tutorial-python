@@ -64,7 +64,7 @@ include::02_oop/examples/inheritance.py[]
 
 === Encapsulation (Data Hiding)
 
-This is a fundamental concept in object-oriented programming (OOP) that refers to the hinding of
+This is a fundamental concept in object-oriented programming (OOP) that refers to the hiding of
 data through the use of access modifiers and special methods called getters and setters. It is
 used to protect the internal state of an object from the outside world.
 

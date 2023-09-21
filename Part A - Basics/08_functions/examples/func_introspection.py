@@ -1,10 +1,10 @@
-def foo(a, b=10, *args, c=20, **kwargs):
-    """This is a function that does nothing."""
+def foo(a, b=10, c=20, *args, **kwargs):
+    """This is 'foo' function that does nothing."""
 
     pi = 3.14
 
-    def bar(a=1, b=2, *args, c=3, **kwargs):
-        """This is a function that does nothing."""
+    def bar(a=1, b=2, c=3, *args, **kwargs):
+        """This is 'bar' function that does nothing."""
 
         print(pi)
 
@@ -14,43 +14,37 @@ def foo(a, b=10, *args, c=20, **kwargs):
             '__doc__': bar.__doc__,
             '__code__': bar.__code__,
             '__defaults__': bar.__defaults__,
-            '__kwdefaults__': bar.__kwdefaults__,
             '__closure__': bar.__closure__,
-            '__annotations__': bar.__annotations__,
             '__dict__': bar.__dict__,
         }
 
         # A function has a name
         test = introspections['__name__']
-        print(test)
+        print("Getting function attribute __name__ -> {} ".format(test))
 
         # A function has a docstring
         test = introspections['__doc__']
-        print(test)
+        print("Getting function attribute __doc__ -> {} ".format(test))
 
         # A function has default arguments
         test = introspections['__defaults__']
-        print(test)
-
-        # A function has keyword-only arguments
-        test = introspections['__kwdefaults__']
-        print(test)
+        print("Getting function attribute __defaults__ -> {} ".format(test))
 
         # A function has access to the global namespace
         test = introspections['__globals__']
-        print(test)
+        print("Getting function attribute __globals__ -> {} ".format(test))
 
         # A function has a closure
         test = introspections['__closure__']
-        print(test)
+        print("Getting function attribute __closure__ -> {} ".format(test))
 
         # A function has a variables dictionary
         test = introspections['__dict__']
-        print(test)
+        print("Getting function attribute __dict__ -> {} ".format(test))
 
         # A function has a code object
         test = introspections['__code__']
-        print(test)
+        print("Getting function attribute __code__ -> {} ".format(test))
 
         # A code object has name
         print(test.co_name)
@@ -58,4 +52,5 @@ def foo(a, b=10, *args, c=20, **kwargs):
     bar()
 
 
-foo(1, 2, 3, 4, 5, c=30, d=40, e=50)
+# foo(1, 2, 3, 4, 5, c=30, d=40, e=50)
+foo(a=1, d=40, e=50)
