@@ -1,11 +1,11 @@
 def greet(message):
+    # Enclosing function
 
     def inner_function(name):
-
         # The message variable is stored in the inner function context
         return "{} {}".format(message, name)
 
-    # Returns a closure (function object with `message` as part of the inner function context)
+    # Return a closure (a function object)
     return inner_function
 
 
@@ -13,5 +13,7 @@ def greet(message):
 welcome = greet("Welcome")
 
 # Use the concrete closure function object
-print(welcome('Branko'))    # Welcome Branko
-print(welcome('John'))      # Welcome John
+print(welcome('Branko'))  # Welcome Branko
+
+# Now call the inner function directly
+print(greet("Hello")('John'))  # Hello John

@@ -1,20 +1,19 @@
-def outer_function():
-    # This is the outer function scope
+def absolute_value(x):
+    # Emulate the built-in abs() function, e.g. abs(-1) == 1 and abs(1) == 1
 
-    def inner_function():
-        # This is the inner function scope
+    def negative_value():
+        # An inner function can access the variables of the outer function
 
-        print('This is the inner function')
+        return -x
 
-    return inner_function
+    def positive_value():
+        # An inner function can also access the variables of the outer function
+
+        return x
+
+    # Use the inner functions to return the correct value
+    return negative_value() if x < 0 else positive_value()
 
 
-# Call the inner function directly
-outer_function()()
-
-# Store the inner function object into a variable
-func = outer_function()
-
-# Now call the inner function using the variable
-func()
-print()
+print(absolute_value(-1))  # 1
+print(absolute_value(1))   # 1

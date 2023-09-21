@@ -1041,11 +1041,9 @@ include::Part A - Basics/08_functions/examples/func_scope.py[]
 
 === Nested Functions
 
-Nested functions are functions that are defined inside another function.
-They are used to encapsulate functionality that is only used inside the function.
-Nested functions can access variables defined in the enclosing function.
-However, they cannot modify them.
-If you want to modify a variable defined in the enclosing function, you must use the `nonlocal` keyword.
+Nested functions are functions that are defined inside another function. They can access
+variables from the enclosing function and are used to implement helper functions that
+are used mainly inside the enclosing function.
 
 [source,python]
 ----
@@ -1054,11 +1052,9 @@ include::Part A - Basics/08_functions/examples/func_nested.py[]
 
 === Closures
 
-Closures are functions that return another function.
-They are used to create functions that can access variables defined in the enclosing function.
-The enclosing function must return the nested function.
-The nested function can access variables defined in the enclosing function.
-However, it cannot modify them.
+A closure is a function object that remembers the values of the variables that were present in the
+enclosing function when it was defined. The closure can then access and modify the values of those
+variables. Closures are used to implement data hiding and encapsulation.
 
 [source,python]
 ----
