@@ -1,7 +1,9 @@
 # Example: Encapsulation with getters and setters
 
 class Person(object):
-    """ The abstract base class for a person answers what a person shall be able to do. """
+    """ The abstract base class for a person answers
+        what a person shall be able to do.
+    """
 
     def __init__(self, name, age):
 

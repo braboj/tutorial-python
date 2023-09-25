@@ -61,7 +61,7 @@ class MyPizzaBuilder(object):
 pizza = (
     MyPizzaBuilder()
     .set_crust("thin")
-    .add_cheese("mozarella")
+    .add_cheese("mozzarella")
     .add_topping("pepperoni")
     .add_topping("mushrooms")
     .build()
