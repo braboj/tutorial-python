@@ -1,9 +1,10 @@
 # Example: Abstraction with abstract classes
 
-from abc import ABC, abstractmethod
+from abc import ABCMeta, abstractmethod
+from six import with_metaclass
 
 
-class PersonAbc(ABC):
+class PersonAbc(with_metaclass(ABCMeta)):
     """ The abstract base class for a person answers what a person shall be able to do. """
 
     def __init__(self):
