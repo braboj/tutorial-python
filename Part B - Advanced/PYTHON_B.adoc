@@ -55,7 +55,7 @@ Key points about inheritance:
 
 - Reuses code from an existing class
 - Represents an is-a relationship
-- Focuses on the "what" an object is and does
+- Focuses on the "what" an object is and how it behaves
 
 [source,python]
 ----
@@ -84,15 +84,15 @@ include::02_oop/examples/encapsulation.py[]
 ----
 
 
-Public attributes and methods are accessible from outside the class. They are used to define the
+*Public* attributes and methods are accessible from outside the class. They are used to define the
 interface of the class. Typcially all getter and setter methods are public. Public attributes and
 methods are not prefixed with an underscore.
 
-Protected attributes and methods are accessible from outside the class but only in a subclass. They
+*Protected* attributes and methods are accessible from outside the class but only in a subclass. They
 may or may not have a getter or setter method. Protected attributes and methods are prefixed with
 a single underscore.
 
-Private attributes and methods are not accessible from outside the class. They are used to hide the
+*Private* attributes and methods are not accessible from outside the class. They are used to hide the
 internal implementation details of a class. Private attributes and methods are prefixed with a
 double underscore.
 
@@ -206,33 +206,42 @@ exist independently.
 
 The SOLID principles are a set of design principles for software development that aim to improve
 the quality of software by making it more maintainable, flexible, understandable and scalable.
-They were introduced by Robert C. Martin (Uncle Bob) in his 2000 paper, Design Principles and
-Design Patterns. The SOLID acronym was introduced later by Michael Feathers.
+They were introduced by Robert C. Martin (Uncle Bob) in his 2000 paper, "Design Principles and
+Design Patterns". The SOLID acronym was introduced later by Michael Feathers.
 
 The SOLID principles are:
 
-- Single Responsibility Principle
-- Open/Closed Principle
-- Liskov Substitution Principle
-- Interface Segregation Principle
-- Dependency Inversion Principle
+- Single Responsibility Principle (focus one thing at a time)
+- Open/Closed Principle (extend instead of modify)
+- Liskov Substitution Principle (children shall not break on using parents behavior)
+- Interface Segregation Principle (many small interfaces are better than one big interface)
+- Dependency Inversion Principle (depend on abstract interfaces, not on concrete objects)
 
 
 === Single Responsibility Principle
+
 The single responsibility principle states that a class or function should have a single reason
 to change. In simpler terms, it should do one job and do it well.
 
-For example, instead of creating a single class to handle all possible protocol packet types, with
-their associated parsing, validation, and serialization logic, you can create a separate class for
-each packet type. This makes it easier to understand and maintain the code.
+Let's take an example where we are required to build a software that can handle packets for a
+specific network protocol. A quick a dirty approach is to write a class that can handle all possible
+packet types.
 
-Unfortunately the level of granularity is not always clear. For example, you may have a class that
-handles both the parsing and building for a set of protocol packet types. Now the question is how
-to split the class into several classes, each of which has a single responsibility.
+Of course we can do better and instead of creating a single class to handle all possible protocol
+packet types you can create a separate class for each packet type. This makes it easier to
+understand and maintain the code.
 
-One way to do his is to split the class into two classes, one for parsing and one for building.
-Another way is to split the class into several classes, each of which handles a single packet
-type. The best way to do this depends on the specific requirements of the application.
+Despite being one of the easiest principles to understand, the single responsibility principle is
+also one of the most difficult to apply. The reason for this is that it is not always clear what
+constitutes a single responsibility.
+
+For example, you may have a class for each packet type that handles the packet serialization and
+deserialization. Or you may have two classes, one for the packet serialization and one for the
+packet deserialization.
+
+In both cases, the classes have a single responsibility, but the responsibilities are different.
+Choosing the right level of granularity for a class is a matter of experience and judgement.
+
 
 [source,python]
 ----
@@ -250,21 +259,26 @@ include::03_solid/examples/single_responsibility_good.py[]
 
 === Open/Closed Principle
 
-A module, class or function should be open for extension but closed for modification. In Python, you
-can use inheritance and composition to achieve this principle.
+A module, class or function should be open for extension but closed for modification. This means
+that a module, class or function should be extendable without having to modify its source code,
+except in cases where you need to fix bugs.
 
-This can be achiieved through:
+In Python, you can use inheritance and composition to achieve this principle. This can be achiieved
+through:
 
 - Subclassing (extending existing functionality of a parent class)
 - Mixin (adding new functionality to a class through multiple inheritance)
 - Polymorphism (overriding existing functionality)
 - Monkey patching (adding new functionality at runtime)
 
+
+*Example: Breaking the open/closed principle*
 [source,python]
 ----
 include::03_solid/examples/open_closed_bad.py[]
 ----
 
+*Example: Following the open/closed principle*
 [source,python]
 ----
 include::03_solid/examples/open_closed_good.py[]
@@ -273,24 +287,35 @@ include::03_solid/examples/open_closed_good.py[]
 
 === Liskov Substitution Principle
 
-The derived classes must be substitutable for their base classes. Derived classes only extend the
-functionality of base classes, they do not remove any functionality. A method that behaves in a
-different way for a parent class and its child classes violates this principle.
+In simple words the principle states that children shall not break by using the parents behavior.
+This means that a subclass should be able to replace its parent class without breaking the code that
+uses the parent class.
+
+In a more formal way the derived classes must be substitutable for their base classes. Derived
+classes only extend the functionality of base classes, they do not remove any functionality. A
+method that behaves in a different way for a parent class and its child classes violates this
+principle.
+
+A very common example of violating this principle is when a subclass overrides a method of its
+parent class to do nothing. Or when the parent class has to check the type of an object before
+using it. This is a clear violation of the Liskov substitution principle.
 
 The Liskov substitution is used to ensure that class hierarchies are well designed and to prevent
 unexpected behavior when using polymorphism. Some bad examples of violating this principle are:
 
-- The code has to check the type of an object before using it
+- The parent has to check the type of the child before using it
 - Override a method of a base class to do nothing
-- Overriden methods change their behavior
+- Overriden methods change their behavior (e.g. different return type)
 
 
+*Example: Violating the Liskov substitution principle*
 [source,python]
 ----
 include::03_solid/examples/liskov_substitution_bad.py[]
 ----
 
 
+*Example: Following the Liskov substitution principle*
 [source,python]
 ----
 include::03_solid/examples/liskov_substitution_good.py[]
@@ -298,20 +323,38 @@ include::03_solid/examples/liskov_substitution_good.py[]
 
 
 === Interface Segregation Principle
-The seggregation principles is applied when a class has many subtypes and sometimes only a few
-of them need to use a particular method. In this case, it is better to split the interface into
-several smaller interfaces so that each subtype only implements the methods that it needs.
 
-Code smells that indicate that the interface segregation principle is being violated:
+The interface segregation principle states that many small interfaces are better than one big
+interface. This means that a class should not be forced to implement methods that it does not
+need.
 
-- A class has a large number of methods
-- A class has a large number of methods that are not used by all subtypes
+This principles is applied when a class has many subtypes and sometimes only a few of them need to
+use a particular method. In this case, it is better to split the interface into several smaller
+interfaces so that each subtype only implements the methods that it needs.
+
+Let's say we have an abstract class for a vehicle that has a method for driving and a method for
+flying. We also have a class for a car that implements the driving method and a class for a plane
+that implements the flying method. This is a clear violation of the interface segregation principle
+because the car class does not need to implement the flying method and the plane class does not
+need to implement the driving method.
+
+In this case, it is better to split the vehicle interface into two smaller interfaces, one for
+driving and one for flying. This way, the car class only needs to implement the driving interface
+and the plane class only needs to implement the flying interface.
+
+Some common examples of violating this principle are:
+
+- A class implements a large number of methods that are not used by all subtypes
+- A class has many abstract methods that are shall not be implemented by all subtypes
+
+*Example: Violating the interface segregation principle*
 
 [source,python]
 ----
 include::03_solid/examples/interface_segregation_bad.py[]
 ----
 
+*Example: Following the interface segregation principle*
 
 [source,python]
 ----
@@ -321,14 +364,25 @@ include::03_solid/examples/interface_segregation_good.py[]
 
 === Dependency Inversion Principle
 
-High-level modules should not depend on low-level modules. Both should depend
-on abstractions. Abstractions should not depend on details. Details should
-depend on abstractions.
+High-level modules should not depend on low-level modules. Both should depend on abstractions.
+Abstractions should not depend on details. Details should depend on abstractions. The dependency
+inversion principle is used to decouple high-level modules from low-level modules. It is used to
+reduce the coupling between modules and to make them more reusable. It is also used to make modules
+more testable.
+
+As an example, let's say you have a class that depends on a database. You can decouple the two
+classes by using an interface or an abstract class to access the database. The concrete
+implementation will be injected with a constructor or a setter method. This way, the two classes
+are decoupled from each other and can be used independently.
+
+*Example: Violating the dependency inversion principle*
 
 [source,python]
 ----
 include::03_solid/examples/dependency_inversion_bad.py[]
 ----
+
+*Example: Following the dependency inversion principle*
 
 [source,python]
 ----
