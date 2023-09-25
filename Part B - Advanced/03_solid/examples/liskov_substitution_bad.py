@@ -7,7 +7,6 @@ class Human(object):
         self.age = age
 
     def eat(self):
-        """ Speak """
         print("{} eating".format(self.name))
 
     def sleep(self):
@@ -28,10 +27,5 @@ class Human(object):
 
 class Baby(Human):
 
-
     def suckle(self):
         print("{} suckling".format(self.name))
-
-
-
-

@@ -10,6 +10,9 @@
 
 == OOP
 
+Object-oriented programming is a programming paradigm of organizing the software around objects that can contain data.
+It is based on four major principles: abstraction, inheritance, encapsulation, polymorphism.
+
 === Abstraction (Modeling)
 
 Abstraction is a fundamental concept in object-oriented programming (OOP) that refers to the
@@ -49,12 +52,14 @@ include::02_oop/examples/abstraction.py[]
 === Inheritance (Code Reuse)
 
 Inheritance is the process of creating a new class from an existing class. The subclass inherits
-the attributes and methods of the superclass and can add its own attributes and methods. The inheritance is the opposite process of abstraction and is used to represent an is-a relationship, e.g a student is a person.
+the attributes and methods of the superclass and can add its own attributes and methods.
+The inheritance is the opposite process of abstraction and is used to represent an _is-a_ relationship,
+e.g a student is a person.
 
 Key points about inheritance:
 
 - Reuses code from an existing class
-- Represents an is-a relationship
+- Represents an _is-a_ relationship
 - Focuses on the "what" an object is and how it behaves
 
 [source,python]
@@ -69,7 +74,7 @@ data through the use of access modifiers and special methods called getters and 
 used to protect the internal state of an object from the outside world.
 
 Python offers no mechanism for making attributes private and relies on naming conventions to
-distinguish between public and private attributes. Protected attributes are prefixed with a single
+distinguish between public, protected and private attributes. Protected attributes are prefixed with a single
 underscore and private attributes are prefixed with a double underscore.
 
 Key points about encapsulation:
@@ -104,7 +109,7 @@ include::02_oop/examples/access_modifiers.py[]
 
 === Polymorphism (Flexibility)
 
-*Polymorphism* is the ability of an object to take on many forms. It is used to represent an is-a
+*Polymorphism* is the ability of an object to take on many forms. It is used to represent an _is-a_
 relationship. Polymorphism is achieved by using inheritance and overriding or overloading the
 methods of the superclass.
 
@@ -469,13 +474,13 @@ The prototype pattern is a creational pattern that is used to create objects by 
 objects. The new object will have the same properties as the cloned object but will be a separate
 instance. It provides a way to hide the creation logic of an object.
 
-In Python the prototype may be implemented using the copy module or the copy() and deepcopy()
-methods. The copy() method creates a shallow copy of an object. A shallow copy of an object is a
+In Python the prototype may be implemented using the copy module or the `copy()` and `deepcopy()`
+methods. The `copy()` method creates a shallow copy of an object. A *shallow copy* of an object is a
 copy of the object without cloning any of its internal references. The deepcopy() method creates a
-deep copy of an object. A deep copy of an object is a copy of the object that clones all of its
+deep copy of an object. A *deep copy* of an object is a copy of the object that clones all of its
 internal references.
 
-For simplicity the following will not use the copy methods and instead will show the logic of the
+For simplicity the following example will not use the copy methods and instead will show the logic of the
 prototype pattern.
 
 [source,python]
