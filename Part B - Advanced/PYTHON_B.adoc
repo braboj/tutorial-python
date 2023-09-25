@@ -883,100 +883,36 @@ software, ensuring that it meets its functional and non-functional requirements 
 defines also the technologies and programming languages that are used to build and distribute the
 software.
 
-Here's a short explanation of the key concepts and components of software architecture:
+Here is a typical software architecture workflow:
 
-- Deployment and Infrastructure
-- Development Guidelines
-- Software Components
-- Component Connectors
-- Data Structures and Formats
-- Quality Attributes
-- Testing and Quality Assurance
-- Architectural Patterns
+. Development Infrastructure (e.g version control, issue tracking, CI/CD, IDE, etc.)
+. Development Guidelines (Coding Standards, Release Management, etc.)
+. Architectural Patterns (e.g. Monolithic, Microservices, etc.)
+. Functional Requirements (Use Cases, User Stories, Components, Class Diagrams, etc.)
+. Non-Functional Requirements (e.g. Performance, Scalability, etc.)
+. Testing and Quality Assurance (Test Automation)
+. Deployment and Infrastructure (e.g. Standalone, Cloud, etc.)
 
-=== Deployment and Infrastructure
+=== Development Infrastructure
 
-The deployment and infrastructure are the processes and tools that are used to develop, deploy and
-run the software system. For example a web application may be developed using the Agile methodology
-and deployed on a cloud infrastructure.
+The development infrastructure is the set of tools and processes that are used to develop and
+maintain the software system. For example a web application may use the following tools and
+processes:
 
-=== Components
+- Version control (e.g. Git)
+- Issue tracking (e.g. Jira)
+- Continuous integration and deployment (e.g. Jenkins)
+- Integrated development environment (e.g. PyCharm)
 
-The components are the building blocks of a software system. For example a web application may
-have components for handling HTTP requests, authenticating users, and storing data in a database.
+=== Development Guidelines
 
-=== Connectors
+The development guidelines are the rules and conventions that are used to develop and maintain
+'the software system. For example a web application may use the following guidelines:
 
-In software architecture, connectors play a crucial role in defining and managing the
-interactions between different components or modules within a system. Connectors facilitate
-communication, data transfer, and coordination between various architectural elements.
-
-They can take various forms, each with its characteristics and purposes. Here are some common
-types of software architecture connectors:
-
-- Procedure calls (e.g. function call from one module to another)
-- Shared memory (e.g. global variables in inter-process communication)
-- Message passing (e.g. pipes, sockets and message queues)
-
-
-=== Data
-
-The data is the information that is processed by the software system. This involves the data
-structures, data formats, and data flows. For example a web application may use a relational
-database to store data in tables. The data may be converted in JSON format and transferred over
-the network using the HTTP protocol.
-
-=== Quality Attributes
-
-The quality attributes are typically the non-functional requirements of a software system. They
-define the quality characteristics of the software system. For example a web application may have
-the following quality attributes:
-
-- *Performance*: the responsiveness of the system under various workloads and data volumes (e.g.
-response time, throughput, latency, resource usage)
-
-- *Scalability*: the ability of the system to handle increasing workloads and data volumes. Scaling
-can be done by adding more resources such as CPU or memory (vertical scaling) or by adding more
-instances of the system (horizontal scaling).
-
-- *Security*: the ability of the system to protect data and resources from unauthorized access
-(e.g. authentication, authorization, encryption, auditing)
-
-- *Reliability*: the ability of the system to perform its functions under abormal conditions
-(e.g. error handling, fault tolerance, failure recovery)
-
-- *Availability*: the ability of the system to be operational and accessible when needed (e.g.
-uptime, downtime, mean time between failures)
-
-- *Maintainability*: the ability of the system to be modified and extended (e.g. loose coupling,
-modular design, technical documentation)
-
-- *Usability*: the ability of the system to be used by users (e.g. easy of use, learning curve,
-user documentation)
-
-- *Testability*: the ability of the system to be tested frequenlty and automatically (e.g with
-a regression test suite that can be run after each software change)
-
-- *Compatibility*: the ability of the system to be compatible with other systems (e.g. backward
-compatibility, forward compatibility)
-
-- *Compliance*: the ability of the system to comply with laws, regulations, and standards (e.g.
-GDPR, PCI DSS, HIPAA, ISO 27001)
-
-
-=== Testing
-
-The testing is the process of verifying that a software system meets its functional
-and non-functional requirements. Typically the testing is done by writing automated tests that
-can be run after each software change. The testing process can be divided in two big groups:
-
-- *Functional* tests are used to verify that the software runs as expected and answers the question
-"*Is the software working?*"
-
-- *Non-functional* tests tests are used to verify that the software meets its quality attributes.
-It answers the question "*Is the software working well?*"
-
-
+- Coding standards (e.g. PEP 8, Google Python Style Guide)
+- Release management (e.g. semantic versioning)
+- Training and onboarding (e.g. onboarding documentation)
+- Technical documentation (e.g. Sphinx)
 
 === Architectural Patterns
 
@@ -1121,6 +1057,110 @@ Links:
 - https://en.wikipedia.org/wiki/Event_stream_processing[Event stream processing]
 - https://en.wikipedia.org/wiki/Event-driven_SOA[Event-driven SOA]
 - https://luckyresistor.me/2019/07/05/event-based-firmware-1/[Event-driven firmware]
+
+=== Functional Requirements
+
+==== Software Components
+
+The components are the building blocks of a software system. For example as a very broad example
+a web application may have the following components:
+
+- Frontend (e.g. HTML, CSS, JavaScript)
+- Backend (e.g. Python, Django, PostgreSQL)
+- Database (e.g. PostgreSQL, MongoDB, Redis)
+
+The components may be further divided into modules. For example the backend of a web application
+may have the following modules:
+
+- Authentication (e.g. login, logout, password reset)
+- Authorization (e.g. user roles, permissions)
+- User management (e.g. user registration, user profile)
+- Content management (e.g. create, read, update, delete)
+- Search (e.g. search by keyword, filter by category)
+- Reporting (e.g. generate reports, export data)
+
+
+==== Component Connectors
+
+In software architecture, connectors play a crucial role in defining and managing the
+interactions between different components or modules within a system. Connectors facilitate
+communication, data transfer, and coordination between various architectural elements.
+
+They can take various forms, each with its characteristics and purposes. Here are some common
+types of software architecture connectors:
+
+- Procedure calls (e.g. function call from one module to another, class relationships)
+- Shared resources (e.g. global variables, semaphores, mutexes, etc.)
+- Message passing (e.g. pipes, sockets and message queues)
+
+
+==== Data Structures and Formats
+
+The data is the information that is processed by the software system. This involves the data
+structures, data formats, and data flows. For example a web application may use a relational
+database to store data in tables. The data may be converted in JSON format and transferred over
+the network using the HTTP protocol.
+
+=== Non-Functional Requirements
+
+The quality attributes are typically the non-functional requirements of a software system. They
+define the quality characteristics of the software system. For example a web application may have
+the following quality attributes:
+
+- *Performance*: the responsiveness of the system under various workloads and data volumes (e.g.
+response time, throughput, latency, resource usage)
+
+- *Scalability*: the ability of the system to handle increasing workloads and data volumes. Scaling
+can be done by adding more resources such as CPU or memory (vertical scaling) or by adding more
+instances of the system (horizontal scaling).
+
+- *Security*: the ability of the system to protect data and resources from unauthorized access
+(e.g. authentication, authorization, encryption, auditing)
+
+- *Reliability*: the ability of the system to perform its functions under abormal conditions
+(e.g. error handling, fault tolerance, failure recovery)
+
+- *Availability*: the ability of the system to be operational and accessible when needed (e.g.
+uptime, downtime, mean time between failures)
+
+- *Maintainability*: the ability of the system to be modified and extended (e.g. loose coupling,
+modular design, technical documentation)
+
+- *Usability*: the ability of the system to be used by users (e.g. easy of use, learning curve,
+user documentation)
+
+- *Testability*: the ability of the system to be tested frequenlty and automatically (e.g with
+a regression test suite that can be run after each software change)
+
+- *Compatibility*: the ability of the system to be compatible with other systems (e.g. backward
+compatibility, forward compatibility)
+
+- *Compliance*: the ability of the system to comply with laws, regulations, and standards (e.g.
+GDPR, PCI DSS, HIPAA, ISO 27001)
+
+
+=== Testing
+
+The testing is the process of verifying that a software system meets its functional
+and non-functional requirements. Typically the testing is done by writing automated tests that
+can be run after each software change. The testing process can be divided in two big groups:
+
+- *Functional* tests are used to verify that the software runs as expected and answers the question
+"*Is the software working?*"
+
+- *Non-functional* tests tests are used to verify that the software meets its quality attributes.
+It answers the question "*Is the software working well?*"
+
+
+
+=== Deployment and Infrastructure
+
+The deployment and infrastructure are the processes and tools that are used to deploy and run the
+software system. For example a web application may be deployed:
+
+- as a standalone application on a server or a virtual machine.
+- as a container in a container orchestration platform such as Kubernetes.
+- on a cloud platform such as AWS, Azure, or Google Cloud.
 
 == Logging
 
