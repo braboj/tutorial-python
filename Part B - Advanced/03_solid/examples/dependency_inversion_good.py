@@ -1,6 +1,7 @@
 # Example : A good example that follows the Dependency Inversion Principle
 
 class IMath(object):
+    """ Simplified interface for a math class """
 
     # GOOD: IMath is an abstraction that defines the contract for Math and
     # Calculator (the interface). It has no implementation details.
@@ -27,9 +28,15 @@ class Math(IMath):
 
 
 class Calculator(object):
-    # GOOD: Both Math and Calculator depend on abstraction (MathAbc)
+    """A simple calculator class
 
-    def __init__(self, math: IMath):
+    Args:
+        math (IMath): An object that implements the IMath interface
+
+    """
+
+    def __init__(self, math):
+        # GOOD: Both Math and Calculator depend on abstraction (MathAbc)
         self.math = math
 
     def add(self, a, b):
