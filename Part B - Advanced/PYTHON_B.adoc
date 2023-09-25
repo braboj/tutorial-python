@@ -223,33 +223,31 @@ The SOLID principles are:
 The single responsibility principle states that a class or function should have a single reason
 to change. In simpler terms, it should do one job and do it well.
 
-Let's take an example where we are required to build a software that can handle packets for a
-specific network protocol. A quick a dirty approach is to write a class that can handle all possible
-packet types.
-
-Of course we can do better and instead of creating a single class to handle all possible protocol
-packet types you can create a separate class for each packet type. This makes it easier to
-understand and maintain the code.
-
 Despite being one of the easiest principles to understand, the single responsibility principle is
 also one of the most difficult to apply. The reason for this is that it is not always clear what
-constitutes a single responsibility.
+constitutes a single responsibility and how feasible it is to split a class or function into
+several classes or functions.
 
-For example, you may have a class for each packet type that handles the packet serialization and
-deserialization. Or you may have two classes, one for the packet serialization and one for the
-packet deserialization.
 
-In both cases, the classes have a single responsibility, but the responsibilities are different.
-Choosing the right level of granularity for a class is a matter of experience and judgement.
+*Example: Breaking the single responsibility principle*
 
+This is a simple example of a class that violates the single responsibility principle. The class
+too many responsibilities and a change might break the code that uses it. For example, if you
+change the data format from JSON to XML, you will have to modify the class to handle the new data
+format. This is a clear violation of the single responsibility principle.
 
 [source,python]
 ----
 include::03_solid/examples/single_responsibility_bad.py[]
 ----
 
-With some refactoring, you can split the class into several classes, each of which has a single
-responsibility.
+*Example: Following the single responsibility principle*
+
+This is am implementation of the single responsibility principle. The class has been split
+into three classes, one for reading data from a file, one for processing the data, and one for
+writing the data to a file. This way, each class has a single responsibility and a change will
+not break the code that uses it. This way we can easily read from a file, process the data, and
+write the data to another file.
 
 [source,python]
 ----
@@ -266,9 +264,9 @@ except in cases where you need to fix bugs.
 In Python, you can use inheritance and composition to achieve this principle. This can be achiieved
 through:
 
-- Subclassing (extending existing functionality of a parent class)
-- Mixin (adding new functionality to a class through multiple inheritance)
-- Polymorphism (overriding existing functionality)
+- Composition (adding new functionality through composition)
+- Subclassing and Polymorphism (extending existing functionality of a parent class)
+- Mixins (adding new functionality to a class through multiple inheritance)
 - Monkey patching (adding new functionality at runtime)
 
 
@@ -287,25 +285,21 @@ include::03_solid/examples/open_closed_good.py[]
 
 === Liskov Substitution Principle
 
-In simple words the principle states that children shall not break by using the parents behavior.
-This means that a subclass should be able to replace its parent class without breaking the code that
-uses the parent class.
-
-In a more formal way the derived classes must be substitutable for their base classes. Derived
-classes only extend the functionality of base classes, they do not remove any functionality. A
-method that behaves in a different way for a parent class and its child classes violates this
-principle.
+In simple words this principle states that children shall not break on using parents behavior.
+If you have a class hierarchy, then you should be able to use any subclass in place of its parent
+class without any unexpected behavior. If this is not the case, then you are violating the Liskov
+substitution principle.
 
 A very common example of violating this principle is when a subclass overrides a method of its
-parent class to do nothing. Or when the parent class has to check the type of an object before
-using it. This is a clear violation of the Liskov substitution principle.
+parent class to do nothing. Or when the method has to check the type of an object to determine
+what to do with it.
 
 The Liskov substitution is used to ensure that class hierarchies are well designed and to prevent
 unexpected behavior when using polymorphism. Some bad examples of violating this principle are:
 
-- The parent has to check the type of the child before using it
 - Override a method of a base class to do nothing
-- Overriden methods change their behavior (e.g. different return type)
+- Overriden methods change their behavior (e.g. return type, arguments, exceptions, etc.)
+- The parent or the child has to check the type of an object to determine what to do with it
 
 
 *Example: Violating the Liskov substitution principle*
@@ -877,7 +871,115 @@ include::04_patterns/examples/interpreter.py[]
 
 == Software Architecture
 
-=== Multi-Layered
+
+Software architecture is a high-level design that defines the structure, components, and
+interactions of a software system. It serves as a blueprint for building and maintaining the
+software, ensuring that it meets its functional and non-functional requirements effectively. It
+defines also the technologies and programming languages that are used to build and distribute the
+software.
+
+Here's a short explanation of the key concepts and components of software architecture:
+
+- Deployment and Infrastructure
+- Development Guidelines
+- Software Components
+- Component Connectors
+- Data Structures and Formats
+- Quality Attributes
+- Testing and Quality Assurance
+- Architectural Patterns
+
+=== Deployment and Infrastructure
+
+The deployment and infrastructure are the processes and tools that are used to develop, deploy and
+run the software system. For example a web application may be developed using the Agile methodology
+and deployed on a cloud infrastructure.
+
+=== Components
+
+The components are the building blocks of a software system. For example a web application may
+have components for handling HTTP requests, authenticating users, and storing data in a database.
+
+=== Connectors
+
+In software architecture, connectors play a crucial role in defining and managing the
+interactions between different components or modules within a system. Connectors facilitate
+communication, data transfer, and coordination between various architectural elements.
+
+They can take various forms, each with its characteristics and purposes. Here are some common
+types of software architecture connectors:
+
+- Procedure calls (e.g. function call from one module to another)
+- Shared memory (e.g. global variables in inter-process communication)
+- Message passing (e.g. pipes, sockets and message queues)
+
+
+=== Data
+
+The data is the information that is processed by the software system. This involves the data
+structures, data formats, and data flows. For example a web application may use a relational
+database to store data in tables. The data may be converted in JSON format and transferred over
+the network using the HTTP protocol.
+
+=== Quality Attributes
+
+The quality attributes are typically the non-functional requirements of a software system. They
+define the quality characteristics of the software system. For example a web application may have
+the following quality attributes:
+
+- *Performance*: the responsiveness of the system under various workloads and data volumes (e.g.
+response time, throughput, latency, resource usage)
+
+- *Scalability*: the ability of the system to handle increasing workloads and data volumes. Scaling
+can be done by adding more resources such as CPU or memory (vertical scaling) or by adding more
+instances of the system (horizontal scaling).
+
+- *Security*: the ability of the system to protect data and resources from unauthorized access
+(e.g. authentication, authorization, encryption, auditing)
+
+- *Reliability*: the ability of the system to perform its functions under abormal conditions
+(e.g. error handling, fault tolerance, failure recovery)
+
+- *Availability*: the ability of the system to be operational and accessible when needed (e.g.
+uptime, downtime, mean time between failures)
+
+- *Maintainability*: the ability of the system to be modified and extended (e.g. loose coupling,
+modular design, technical documentation)
+
+- *Usability*: the ability of the system to be used by users (e.g. easy of use, learning curve,
+user documentation)
+
+- *Testability*: the ability of the system to be tested frequenlty and automatically (e.g with
+a regression test suite that can be run after each software change)
+
+- *Compatibility*: the ability of the system to be compatible with other systems (e.g. backward
+compatibility, forward compatibility)
+
+- *Compliance*: the ability of the system to comply with laws, regulations, and standards (e.g.
+GDPR, PCI DSS, HIPAA, ISO 27001)
+
+
+=== Testing
+
+The testing is the process of verifying that a software system meets its functional
+and non-functional requirements. Typically the testing is done by writing automated tests that
+can be run after each software change. The testing process can be divided in two big groups:
+
+- *Functional* tests are used to verify that the software runs as expected and answers the question
+"*Is the software working?*"
+
+- *Non-functional* tests tests are used to verify that the software meets its quality attributes.
+It answers the question "*Is the software working well?*"
+
+
+
+=== Architectural Patterns
+
+The architectural patterns are recurring styles that are used to structure asoftware system. For
+example a web application may use the MVC pattern to structure the frontend, and the microservices
+pattern to structure the backend of the application.
+
+==== Multi-Layered
 
 A multi-layered can be used to structure programs that can be decomposed into groups of subtasks,
 each of which is at a particular level of abstraction. Each layer provides services to the next
@@ -902,7 +1004,7 @@ Protocols are also a form of multi-layered architecture. The OSI model is a seve
 that describes the different layers of a network protocol stack. The TCP/IP model is a four-layered
 model that describes the different layers of the Internet protocol suite.
 
-=== Monolithic
+==== Monolithic
 
 A monolithic architecture is a traditional software architecture where all components and
 functionalities of an application are tightly integrated into a single codebase and executed as
@@ -924,7 +1026,7 @@ Links:
 - https://en.wikipedia.org/wiki/Monolithic_kernel[Monolithic kernel]
 
 
-=== Service-Oriented
+==== Service-Oriented
 
 A service-oriented architecture can be used to structure programs that can be decomposed into a set
 of services that are independently deployable and scalable. Each service is self-contained and
@@ -950,7 +1052,7 @@ Examples:
 - https://www.nginx.com/products/nginx/kubernetes-ingress-controller/[NGINX Kubernetes Ingress Controller]
 
 
-=== Client-Server
+==== Client-Server
 
 This pattern can be used to structure programs that can be decomposed into two parts: a server
 that provides a service, and a client that requests services from the server. The client and
@@ -963,7 +1065,7 @@ Examples:
 - Remote procedure call (RPC)
 
 
-=== Peer-to-Peer
+==== Peer-to-Peer
 
 This pattern can be used to structure programs that can be decomposed into a set of peers
 that are symmetric in terms of their functionality, and each peer may act as both a client
@@ -975,7 +1077,7 @@ Examples:
 - BitTorrent
 
 
-=== Pipe-Filter
+==== Pipe-Filter
 
 This pattern can be used to structure programs that can be decomposed into a set of filters that
 process a stream of data, and a set of pipes that connect the filters together. Each filter has a
@@ -988,7 +1090,7 @@ Examples:
 - https://en.wikipedia.org/wiki/Pipeline_(Unix)[Unix pipelines]
 - https://beam.apache.org/documentation/programming-guide/[Apache Beam]
 
-=== Publish-Subscribe
+==== Publish-Subscribe
 
 This pattern can be used to structure programs that can be decomposed into a set of publishers
 and subscribers that communicate with each other using a message broker. Publishers publish events

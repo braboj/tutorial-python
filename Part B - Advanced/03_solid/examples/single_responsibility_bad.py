@@ -1,65 +1,42 @@
-# Example : A bad example that violates the Single Responsibility Principle
+# Example : An example that violates the Single Responsibility Principle
 
-CONNECT_CMD = 1
-SUBSCRIBE_CMD = 2
+class MyCustomFileFormat(object):
+    """ This class violates the Single Responsibility Principle because:
 
+        1. It reads the file and stores the data
+        2. It writes data to the file
+        3. It processes the stored data
 
-class Packet(object):
+    """
 
-    # Code smell: The has too many methods that are not related to each other
-    # and that can be grouped into different classes. For example we can either
-    # have a class for parsing and another for building or we can have a class
-    # for each packet type.
+    def __init__(self, filename):
+        self.filename = filename
+        self.data = ""
 
-    def __init__(self, packet_type, data):
-        self.packet_type = packet_type
-        self.data = data
+    def read(self):
+        # Responsibility: Read the file
+        with open(self.filename, "r") as f:
+            self.data = f.read()
+            return self.data
 
-    def parse(self, stream):
+    def write(self, text):
+        # Responsibility: Write to the file
+        with open(self.filename, "w") as f:
+            f.write(text)
 
-        packet_type = stream[0]
-
-        if packet_type == CONNECT_CMD:
-            self.parse_connect(stream[1:])
-
-        elif packet_type == SUBSCRIBE_CMD:
-            self.parse_subscribe(stream[1:])
-
-        else:
-            print("Invalid packet type")
-
-    def build(self):
-
-        if self.packet_type == CONNECT_CMD:
-            return self.build_connect()
-
-        elif self.packet_type == SUBSCRIBE_CMD:
-            return self.build_subscribe(topics=self.data)
-
-        else:
-            print("Invalid packet type")
-
-    @staticmethod
-    def build_connect():
-        return [CONNECT_CMD]
-
-    def parse_connect(self, stream):
-        self.packet_type = stream[0]
-        self.data = stream[1:]
-
-    @staticmethod
-    def build_subscribe(topics):
-        stream = [SUBSCRIBE_CMD]
-        for topic in topics:
-            stream.extend(topic.encode("utf-8"))
-
-        return stream
-
-    def parse_subscribe(self, stream):
-        self.packet_type = stream[0]
-        self.data = stream[1:]
-        return stream
+    def process(self):
+        # Responsibility: Process the data
+        self.data = self.data.upper()
+        return self.data
 
 
-packet = Packet(packet_type=SUBSCRIBE_CMD, data=["topic1", "topic2"])
-request = packet.build()
+# Create the file reader
+reader = MyCustomFileFormat("test_input.myformat")
+print(reader.read())
+
+# Process the data
+print(reader.process())
+
+# Create the file writer
+writer = MyCustomFileFormat("test_output.myformat")
+writer.write(reader.data)

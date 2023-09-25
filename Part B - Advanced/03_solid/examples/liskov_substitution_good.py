@@ -16,7 +16,8 @@ class Human(object):
 class Adult(Human):
 
     # GOOD: Adult can be substituted for Human because it implements all the
-    # methods of the Human class and it does not violate the Liskov Substitution.
+    # methods of the Human class and it does not violate the Liskov
+    # Substitution Principle.
 
     def work(self):
         print("{} working".format(self.name))
@@ -25,7 +26,8 @@ class Adult(Human):
 class Baby(Human):
 
     # GOOD: Baby can be substituted for Human because it implements all the
-    # methods of the Human class and it does not violate the Liskov Substitution.
+    # methods of the Human class and it does not violate the Liskov
+    # Substitution Principle.
 
     def suckle(self):
         print("{} suckling".format(self.name))

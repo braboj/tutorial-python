@@ -1,63 +1,52 @@
-# Example : A good example that follows the Single Responsibility Principle
+# Example : An example that follows the Single Responsibility Principle
 
-from abc import ABC, abstractmethod
+# By splitting the class into three classes, we can now reuse the classes in
+# other parts of the program. A change in one class will not affect the other
+# classes. This makes the code more maintainable and easier to understand.
 
-CONNECT_CMD = 1
-SUBSCRIBE_CMD = 2
+class MyCustomFileFormatReader(object):
+    # Responsibility: Read the file
 
+    def __init__(self, filename):
+        self.filename = filename
 
-class PacketABC(ABC):
-
-    # GOOD: Each class has a single responsibility. The ConnectPacket class
-    # is responsible for parsing and building CONNECT packets. This class
-    # ensures that each packet class will have the same interface.
-
-    @abstractmethod
-    def parse(self, stream):
-        pass
-
-    @abstractmethod
-    def build(self):
-        pass
+    def read(self):
+        with open(self.filename, "r") as f:
+            return f.read()
 
 
-class ConnectPacket(PacketABC):
+class MyCustomFileFormatWriter(object):
+    # Responsibility: Write to the file
 
-    # GOOD: The ConnectPacket classi is responsible for parsing and building
-    # CONNECT packets.
+    def __init__(self, filename):
+        self.filename = filename
+
+    def write(self, text):
+        with open(self.filename, "w") as f:
+            f.write(text)
+
+
+class FileProcessor(object):
+    # Responsibility: Process the data
 
     def __init__(self):
-        super(ConnectPacket, self).__init__(packet_type=1)
-        self.packet_type = 1
+        self.data = ""
 
-    def parse(self, stream):
-        self.packet_type = stream[0]
-
-    def build(self):
-        return [self.packet_type]
+    def process(self, data):
+        self.data = data.lower()
+        return self.data
 
 
-class SubscribePacket(PacketABC):
+# Create the file reader
+reader = MyCustomFileFormatReader("test_input.myformat")
+content = reader.read()
+print(content)
 
-    # GOOD: The SubscribePacket classi is responsible for parsing and building
-    # CONNECT packets.
+# Process the data
+processor = FileProcessor()
+new_content = processor.process(content)
+print(new_content)
 
-    def __init__(self, topics):
-        super(SubscribePacket, self).__init__()
-        self.packet_type = 2
-        self.topics = topics
-
-    def parse(self, stream):
-        self.packet_type = stream[0]
-        self.topics = stream[1:]
-
-    def build(self):
-        stream = [2]
-        for topic in self.topics:
-            stream.extend(topic.encode("utf-8"))
-
-        return stream
-
-
-packet = SubscribePacket(topics=["topic1", "topic2"])
-request = packet.build()
+# Create the file writer
+writer = MyCustomFileFormatWriter("test_output.myformat")
+writer.write(new_content)
