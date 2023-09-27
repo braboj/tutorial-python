@@ -70,6 +70,7 @@ Python using proven design patterns
 - https://python-future.org/compatible_idioms.html
 - https://realpython.com/python-import/
 - https://peps.python.org/pep-0366/
+- https://www.stakater.com/post/a-practical-introduction-to-ci-cd-ct-in-devopscontinuous-integration-ci-continuous-deployment
 
 === Expert
 
