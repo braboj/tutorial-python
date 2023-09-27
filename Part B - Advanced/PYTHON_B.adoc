@@ -535,6 +535,13 @@ The object adapter uses composition to adapt one interface to another. It is imp
 creating a class that contains an instance of the adaptee class. It provides a way to adapt the
 interface of the adaptee class to the interface of the target class.
 
+
+[source,python]
+----
+include::04_patterns/examples/adapter_with_inheritance.py[]
+----
+
+
 [source,python]
 ----
 include::04_patterns/examples/adapter_with_composition.py[]
