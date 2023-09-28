@@ -36,16 +36,16 @@ def operate_pump(time_on):
     except OverheatError as e:
         print(e)
 
-    # Last check unexcpected errors
+    # Last check unexpected errors
     except Exception as e:
         # Forward to the caller, maybe it knows what to do with it
-        raise
+        print("Caught exception {}".format(e))
 
     # What to do in case no error occurred
     else:
         print("STOP")
 
-    # Cleanup operations
+    # Cleanup operations, executed in all cases
     finally:
         print("CLEANUP")
 

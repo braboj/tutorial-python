@@ -7,30 +7,30 @@ class MyException(Exception):
 def main():
     try:
         print("main")
-        func_A()
+        func_a()
     except Exception as e:
         print(e)
 
 
-def func_A():
+def func_a():
     # Explicit chaining using `raise`
     try:
-        print("func A")
-        func_B()
+        print("func_a")
+        func_b()
     except Exception as e:
         # Convert to another exception type
         raise MyException(e)
 
 
-def func_B():
+def func_b():
     # Unhandled exceptions sent to the caller by default
-    print("func B")
+    print("func_b")
     read_file()
 
 
 def read_file():
     print("read_file")
-    raise Exception("Error raised in readFile()")
+    raise Exception("Error raised in read_file()")
 
 
 main()
