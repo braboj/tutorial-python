@@ -72,6 +72,8 @@ Python using proven design patterns
 - https://peps.python.org/pep-0366/
 - https://www.stakater.com/post/a-practical-introduction-to-ci-cd-ct-in-devopscontinuous-integration-ci-continuous-deployment
 - https://kruschecompany.com/v-model-software-development-methodology/
+- https://www.softsuave.com/blog/spiral-model-in-sdlc/
+- https://www.youtube.com/watch?v=mp22SDTnsQQ
 
 === Expert
 
