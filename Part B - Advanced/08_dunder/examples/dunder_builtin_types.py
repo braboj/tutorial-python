@@ -3,6 +3,7 @@
 import struct
 import math
 
+
 class Point(object):
 
     def __init__(self, x, y):
@@ -25,10 +26,12 @@ class Point(object):
     def __complex__(self):
         return complex(self.x, self.y)
 
+    def __bytes__(self):
+        return bytes(int(self.__length))
+
 
 c = Point(1, 2)
 print("Point({}, {})".format(c.x, c.y))
-
 print("bool(c)    : {}".format(bool(c)))
 print("int(c)     : {}".format(int(c)))
 print("float(c)   : {}".format(float(c)))

@@ -4,7 +4,7 @@
 # Mediator interface
 class Mediator(object):
 
-    def forward(self, message, colleague):
+    def forward(self, message, component):
         raise NotImplementedError
 
 
@@ -12,7 +12,7 @@ class Mediator(object):
 class Dialog(Mediator):
 
     def __init__(self):
-       self.components = []
+        self.components = []
 
     def set_component(self, component):
         self.components.append(component)
@@ -23,7 +23,7 @@ class Dialog(Mediator):
                 component.receive(message)
 
 
-# Colleague interface
+# Component interface
 class Component(object):
 
     def __init__(self, mediator):
@@ -47,7 +47,7 @@ class Button(Component):
         print(f"Button receives: {message}")
 
 
-# Concrete Colleague
+# Concrete Component
 class Textbox(Component):
 
     def send(self, message):
@@ -58,7 +58,7 @@ class Textbox(Component):
         print(f"Textbox receives: {message}")
 
 
-# Concrete Colleague
+# Concrete Component
 class Checkbox(Component):
 
     def send(self, message):

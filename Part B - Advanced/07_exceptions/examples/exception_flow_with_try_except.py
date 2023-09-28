@@ -1,5 +1,5 @@
 # Example: Exception Flow with try-except statements
-def func_A(x):
+def func_a(x):
     # Function uses and returns only positive values
     if x < 0:
         # Simulate error condition
@@ -8,7 +8,7 @@ def func_A(x):
         return 1
 
 
-def func_B(x):
+def func_b(x):
     # Functions uses and returns only negative values
     if x > 0:
         # Simulate error condition
@@ -19,10 +19,10 @@ def func_B(x):
 
 def app(value):
 
-    # Try to execute STEP B
+    # Try to execute STEP A and STEP B
     try:
-        func_A(value)
-        func_B(value)
+        func_a(value)
+        func_b(value)
 
     # On error print something
     except ValueError as e:
@@ -30,7 +30,7 @@ def app(value):
 
     # Try to execute STEP B
     try:
-        func_B(value)
+        func_b(value)
         print("STEP B: OK")
 
     # On error print something

@@ -601,7 +601,7 @@ include::04_patterns/examples/decorator.py[]
 
 ==== Facade
 
-The facade pattern is a structural pattern that is used to It is used to create a simplified
+The facade pattern is a structural pattern that is used to create a simplified
 interface to a complex system. It provides a way to hide the complexity of a system and provide
 clients with a simple interface to it.
 
@@ -956,7 +956,7 @@ instances of the system (horizontal scaling).
 - *Security*: the ability of the system to protect data and resources from unauthorized access
 (e.g. authentication, authorization, encryption, auditing)
 
-- *Reliability*: the ability of the system to perform its functions under abormal conditions
+- *Reliability*: the ability of the system to perform its functions under abnormal conditions
 (e.g. error handling, fault tolerance, failure recovery)
 
 - *Availability*: the ability of the system to be operational and accessible when needed (e.g.
@@ -968,7 +968,7 @@ modular design, technical documentation)
 - *Usability*: the ability of the system to be used by users (e.g. easy of use, learning curve,
 user documentation)
 
-- *Testability*: the ability of the system to be tested frequenlty and automatically (e.g with
+- *Testability*: the ability of the system to be tested frequently and automatically (e.g with
 a regression test suite that can be run after each software change)
 
 - *Compatibility*: the ability of the system to be compatible with other systems (e.g. backward
@@ -978,15 +978,29 @@ compatibility, forward compatibility)
 GDPR, PCI DSS, HIPAA, ISO 27001)
 
 
+=== Testing
+
+The testing is the process of verifying that a software system meets its functional
+and non-functional requirements. Typically the testing is done by writing automated tests that
+can be run after each software change. The testing process can be divided in two big groups:
+
+- *Functional* tests are used to verify that the software runs as expected and answers the question
+"*Is the software working?*"
+
+- *Non-functional* tests are used to verify that the software meets its quality attributes.
+It answers the question "*Is the software working well?*"
+
+
+
 === Architectural Patterns
 
-The architectural patterns are recurring styles that are used to structure asoftware system. For
+The architectural patterns are recurring styles that are used to structure a software system. For
 example a web application may use the MVC pattern to structure the frontend, and the microservices
 pattern to structure the backend of the application.
 
 ==== Multi-Layered
 
-A multi-layered can be used to structure programs that can be decomposed into groups of subtasks,
+A multi-layered pattern can be used to structure programs that can be decomposed into groups of subtasks,
 each of which is at a particular level of abstraction. Each layer provides services to the next
 higher layer.
 
@@ -1230,14 +1244,14 @@ is the main class that is used to log messages. It provides methods for logging 
 different log levels. The LoggerAdapter class is used to add contextual information to log messages.
 
 The logging is implemented using a hierarchy of loggers. Each logger has a name and a level. At the
-top of the hierarchy is the root logger. The root logger is implemented as a singleton and all
+top of the hierarchy is the root logger. The *root logger* is implemented as a singleton and all
 loggers inherit their properties from the root logger.
 
 The basic configuration is done using the `basicConfig()` function. It is used to configure the
 root logger. It should be called before any other logging calls are made. It is typically called
 in the main module of an application.
 
-The user has access to the logging hierarchy through the class variable `manager` that is and
+The user has access to the logging hierarchy through the class variable `manager` that is an
 instance of the `Manager()` class. The `Manager()` class is a singleton that provides access to
 the logging hierarchy and shows all the children of the root logger. It also provides methods for
 creating and retrieving loggers.
@@ -1408,7 +1422,7 @@ requests. It is useful when you want to send log messages to a web server when a
 
 ==== Logging Exceptions
 
-When an exception occurrs it is a good practice to log some additional information about the
+When an exception occurs it is a good practice to log some additional information about the
 error and provide a suggestion on how to resolve it.
 
 [source,python]
@@ -1419,7 +1433,7 @@ include::06_logging/examples/logging_exceptions.py[]
 
 ==== Configuration File
 
-Typically the logging module is configured using the provides API. However, it can also be
+Typically the logging module is configured using the provided API. However, it can also be
 configured using a configuration file.
 
 The configuration file MUST follow a specific format. It is divided into sections, with each
@@ -1496,9 +1510,9 @@ Key points:
 
 === Handling Exceptions
 
-The try-except statement is used to handle exceptions. It is used to catch and handle exceptions
-that occur in a block of code. The try-except statement consists of a try block and one or more
-except blocks. The try block contains the code that may raise an exception. The except blocks
+The _try-except_ statement is used to handle exceptions. It is used to catch and handle exceptions
+that occur in a block of code. The _try-except_ statement consists of a _try_ block and one or more
+_except_ blocks. The _try_ block contains the code that may raise an exception. The _except_ blocks
 contain the code that handles the exception.
 
 The following table shows all the possible statements that can be used in a try-except statement:
@@ -1514,11 +1528,10 @@ least one except block.
 a try block.
 
 |else | The else block contains the code that is executed if no exception is raised in the try block.
-It must be preceded by a try block and must be followed by at least one except block.
+It must be preceded by a try-except block.
 
 |finally | The finally block contains the code that is always executed, regardless of whether an
-exception is raised in the try block. It must be preceded by a try block and must be followed by
-at least one except block.
+exception is raised in the try block. It must be preceded by a try-except block.
 
 |raise | The raise statement is used to raise an exception. It must be followed by an exception
 object or an exception class.
@@ -1552,11 +1565,11 @@ implement the same program flow using exceptions:
 
 [source,python]
 ----
-include::07_exceptions/examples/exception_flow_without_try_except.py[]
+include::07_exceptions/examples/exception_flow_with_try_except.py[]
 ----
 
 The advantage of the exceptions is that the program flow is not interrupted or polluted with
-if-else statements. The program flow is more readable and maintainable as the exceptions are
+_if-else_ statements. The program flow is more readable and maintainable as the exceptions are
 handled in a separate block of code.
 
 === Chaining Exceptions
@@ -1648,10 +1661,10 @@ all other exception classes.
 |AssertionError | The exception that is raised when an assert statement fails. It is inherited
 from the Exception class.
 
-|StopIteration | The exception that is raised when the next() method of an iterator does not
+|StopIteration | The exception that is raised when the `next()` method of an iterator does not
 return any more values. It is inherited from the Exception class.
 
-|StopAsyncIteration | The exception that is raised when the __anext__() method of an asynchronous
+|StopAsyncIteration | The exception that is raised when the `anext()` method of an asynchronous
 iterator does not return any more values. It is inherited from the Exception class.
 
 |AttributeError | The exception that is raised when an attribute reference or assignment fails.
@@ -1660,7 +1673,7 @@ It is inherited from the Exception class.
 |BufferError | The exception that is raised when a buffer related operation fails. It is
 inherited from the Exception class.
 
-|EOFError | The exception that is raised when the input() function hits an end-of-file condition
+|EOFError | The exception that is raised when the `input()` function hits an end-of-file condition
 (e.g. CTRL+D). It is inherited from the Exception class.
 
 |MemoryError | The exception that is raised when an operation runs out of memory. It is inherited
@@ -1708,7 +1721,7 @@ operation is zero. It is inherited from the ArithmeticError class.
 |====
 |Class | Description
 
-|ImportError | The exception that is raised when an import statement fails. It is inherited from
+|ImportError | The exception that is raised when an `import` statement fails. It is inherited from
 the Exception class.
 
 |ModuleNotFoundError | The exception that is raised when a module could not be found. It is
@@ -1770,10 +1783,10 @@ inherited from the OSError class.
 |InterruptedError | The exception that is raised when a system call is interrupted by an incoming
 signal. It is inherited from the OSError class.
 
-|IsADirectoryError | The exception that is raised when a file operation (e.g. os.remove()) is
+|IsADirectoryError | The exception that is raised when a file operation (e.g. `os.remove()`) is
 requested on a directory. It is inherited from the OSError class.
 
-|NotADirectoryError | The exception that is raised when a directory operation (e.g. os.listdir()).
+|NotADirectoryError | The exception that is raised when a directory operation (e.g. `os.listdir()`).
 It is inherited from the OSError class.
 
 |PermissionError | The exception that is raised when a file operation is not permitted. It is
@@ -1948,11 +1961,11 @@ according to the format specification.
 
 |Raw byte string | `\\__bytes__` | If you want to provide a raw byte string representation of an
 object, use the `\\__bytes__` method. This method should return a byte string that can be used to
-recreate the object. This method is used by the bytes() function.
+recreate the object. This method is used by the `bytes()` function.
 
 |Unique | `\\__hash__` | If you want to compute the hash of an object, use the `\\__hash__` method.
 This method should return an integer that is used to compare objects in dictionaries and sets.
-This method is used by the hash() function.
+This method is used by the `hash()` function.
 
 |====
 
@@ -2000,17 +2013,20 @@ include::08_dunder/examples/dunder_customize_behavior.py[]
 |Built-in type | Dunder method | Notes
 
 |`int()` | `\\__int__` | If you want to convert an object to an integer, use the `\\__int__`
-method. This method should return an integer. It is used by the int() function.
+method. This method should return an integer. It is used by the `int()` function.
 
 |`float()` | `\\__float__` | If you want to convert an object to a float, use the `\\__float__`
-method. This method should return a float. It is used by the float() function.
+method. This method should return a float. It is used by the `float()` function.
 
 |`complex()` | `\\__complex__` | If you want to convert an object to a complex number, use the
-`\\__complex__` method. This method should return a complex number. It is used by the complex()
+`\\__complex__` method. This method should return a complex number. It is used by the `complex()`
 function.
 
 |`bool()` | `\\__bool__` | If you want to evaluate the truth value of an object, use the
-`\\__bool__` method. This method should return a boolean. It is used by the bool() function.
+`\\__bool__` method. This method should return a boolean. It is used by the `bool()` function.
+
+|`bytes()` | `\\__bytes__` | If you want to convert an object into bytes object use the `\\__bytes__`
+method. It is used by the `bytes()` function.
 
 |====
 
@@ -2030,7 +2046,7 @@ include::08_dunder/examples/dunder_builtin_types.py[]
 |`==` | `\\__eq__`
 |`!=` | `\\__ne__`
 |`<` | `\\__lt__`
-|`<=` | `\\__le__`
+|`\<=` | `\\__le__`
 |`>` | `\\__gt__`
 |`>=` | `\\__ge__`
 |`+` | `\\__add__`
@@ -2041,7 +2057,7 @@ include::08_dunder/examples/dunder_builtin_types.py[]
 |`%` | `\\__mod__`
 |`**` | `\\__pow__`
 |`&` | `\\__and__`
-|`|` | `\\__or__`
+|`\|` | `\\__or__`
 |`^` | `\\__xor__`
 |`<<` | `\\__lshift__`
 |`>>` | `\\__rshift__`
@@ -2053,9 +2069,9 @@ include::08_dunder/examples/dunder_builtin_types.py[]
 |`%=` | `\\__imod__`
 |`**=` | `\\__ipow__`
 |`&=` | `\\__iand__`
-|`|=` | `\\__ior__`
+|`\|=` | `\\__ior__`
 |`^=` | `\\__ixor__`
-|`<<=` | `\\__ilshift__`
+|`<\<=` | `\\__ilshift__`
 |`>>=` | `\\__irshift__`
 |`-` | `\\__neg__`
 |`+` | `\\__pos__`
@@ -2074,11 +2090,11 @@ include::08_dunder/examples/dunder_operator_overloading.py[]
 |Function | Dunder method | Notes
 
 |Create iterator | `\\__iter__` | If you want to iterate over an object, use the `\\__iter__` method.
-This method should return an iterator. It is used by the iter() function.
+This method should return an iterator. It is used by the `iter()` function.
 
 |Get next item  | `\\__next__` | If you want to get the next value of an iterator, use the
 `\\__next__`
-method. This method should return the next value of the iterator. It is used by the next().
+method. This method should return the next value of the iterator. It is used by the `next()`.
 
 |====
 

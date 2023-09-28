@@ -55,6 +55,9 @@ if __name__ == "__main__":
 
     text_editor.show_content()
 
+    text_editor.write(" Hello, hello!")
+    text_editor.show_content()
+
     # Undo the last action
     last_state = history.pop()
     if last_state:

@@ -39,7 +39,7 @@ class Composite(IComponent):
     def get_children(self):
         return self.components
 
-    def execute(self, parent="Root"):
+    def execute(self):
 
         # Delegate work to all the children
         for child in self.components:

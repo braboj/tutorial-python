@@ -3,7 +3,8 @@
 class ChannelV1(object):
 
     @staticmethod
-    def apply_config():
+    def applyConfig():
+        # method name from actual legacy code in the company
         print('Configuration method of the old device class!')
 
 
@@ -20,12 +21,12 @@ class ChannelAdapter(ChannelV1):
     def __init__(self, adaptee):
         self.adaptee = adaptee
 
-    def apply_config(self):
+    def applyConfig(self):
         self.adaptee.configure()
 
 
 def host_app(channel):
-    channel.apply_config()
+    channel.applyConfig()
 
 
 if __name__ == "__main__":
