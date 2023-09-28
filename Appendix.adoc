@@ -1,0 +1,129 @@
+= Appendix
+
+== Soft Development Models ==
+
+A typical project will combine one or more of these models. For example a project may use the
+Agile Model for the frontend and the DevOps Model for the backend. The following table shows the
+different development models and their characteristics:
+
+[options="header", cols="1,3", width="100%"]
+|====
+
+|Model | Characteristics
+
+|Waterfall a| The Waterfall Model is a sequential development process where the steps of the
+development process are performed one after the other.
+
+*Advantages*
+
+- Easy to understand and use
+- Each step can be planned in advance
+- Each step must be completed before the next step can begin
+
+*Disadvantages*
+
+- One of the first models and thus in many cases outdated
+- Difficult to go back to a previous step once it is completed
+- Difficult to estimate the time and cost of each step
+- Long development time that might lead to outdated requirements
+- Testing is not emphasized
+
+*Usecases*
+
+- Fail-safe systems with human lives at stake where cost is not an issue
+- Small projects with well-defined requirements where the cost is an issue
+
+
+|V-Model
+a|
+The V-Model is a sequential development process where the steps of the development process are
+performed one after the other. It is an extension of the Waterfall Model where each step of the
+development process must have a fully planned and defined corresponding testing step. Without it
+the development process cannot continue.
+
+*Advantages*
+
+- Easy to understand and use
+- Each step can be planned in advance
+- Each step must be completed before the next step can begin
+- Testing is a part of the process
+
+*Disadvantages*
+
+- The test planning for each step delays the development process
+- A change in the requirements requires a change in the test plan
+- Long development time that might lead to outdated requirements
+- Difficult to go back to a previous step once it is completed
+- Difficult to estimate the time and cost of each step
+- Very rigid and inflexible
+
+*When to use*
+
+- Small projects
+- Well defined and stable requirements
+- Technology used is well known and understood
+- Free resources with the required expertise
+- Projects with strict requirements and regulations
+
+
+
+
+|Spiral
+a| The Spiral Model is an iterative development process where а pre-defined set of steps are
+performed periodically until a stable release is achieved. The final prototype is used as the
+basis for the final system.
+
+*Advantages*
+
+- Prototyping in each iteration
+- Each iteration delivers a fully working and tested prototype
+- High risk features might be implemented first
+- After each iteration the customer can provide feedback
+- Better cost estimation
+
+*Disadvantages*
+
+- Costly due to the risk analysis and prototyping in each iteration
+- Requires a high level of expertise to perform the risk analysis
+- Indefinite spiral that might never end if the customer is not satisfied
+
+*When to use*
+
+- Large and complex projects with long-term commitments
+- Features that migth introduce high risk and break the system
+- Customer is not sure about the requirements
+- Projects with strict conformity requirements
+- Industries: Aerospace, Defense, Government, Gaming, etc.
+
+
+|Agile | The Agile Model is an iterative development process where the same steps of the
+development process are performed periodically. It is an extension of the Spiral Model where
+each iteration is a fully working system.
+
+
+|Prototyping | The Prototyping Model is an iterative development process where the same steps of
+the development process are performed periodically. It is an extension of the Spiral Model where
+each iteration is a fully working system. It is suitable for projects with changing requirements.
+
+|DevOps | The DevOps Model is an iterative development process where
+the same steps of the development process are performed periodically. It is an extension of the
+Agile Model where each iteration is a fully working system. It is suitable for projects with
+changing requirements.
+
+|====
+
+== Software Development Checklist ==
+
+[otions, header]
+|===
+| Artifact | Description | Status
+
+| Development Infrastructure | | [ ]
+| Deployment Infrastructure | | [ ]
+| Functional Requirements |  | [ ]
+| Non-Functional Requirements |  | [ ]
+| Architecture |  | [ ]
+| Quality Assurance |  | [ ]
+| Developent Cycle |  | [ ]
+
+|===
