@@ -6,7 +6,27 @@
 
 == Requirements
 
-// TODO: Add requirements
+=== Python Installation
+
+- https://www.python.org/downloads[Python 3.7 or higher] (*_recommended_*)
+- https://www.python.org/downloads/release/python-2718[Python 2.7.18]
+
+=== Python IDE
+
+- https://www.jetbrains.com/pycharm/[PyCharm] (*_recommended_*)
+- https://code.visualstudio.com/[Visual Studio Code]
+
+=== Version Control
+
+- https://git-scm.com/[Git Client] (*_recommended_*)
+- https://github.com[GitHub Account] (*_recommended_*)
+- https://tortoisesvn.net/[SVN Client]
+
+=== Style Guide
+
+- https://peps.python.org/pep-0008/[PEP-08] (*_mandatory_*)
+- https://google.github.io/styleguide/pyguide.html[Google Style Guide] (*_mandatory_*)
+
 
 == OOP Principles
 
