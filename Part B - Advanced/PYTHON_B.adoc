@@ -1183,28 +1183,29 @@ used by software development teams to design, develop, test, and deploy software
 Depening on how the steps of the development process are performed, the development process may
 be classified as follows:
 
-- *Sequential development* is a development process where the steps of the development process are
-performed sequentially.
+- *Sequential development* is a process where the steps of the development process are performed
+strictly one after the other.
 
-- *Iterative development* is a development process where the same steps of the development process
-are performed periodically. The iterative approach will be to build and release the system in
-multiple iterations (releases). Each iteration will add more features to the system. It is very
-suitable for monotlithic applications.
+- *Iterative development* is a process where the system is typically developed in
+multiple iterations. Each iteration involves the steps of the development process performed
+sequentially, builds on the previous iteration and refines the product until it meets the
+customer requirements. It is also know as the horizontal development process and it is the
+preferred process for monotlithic and high-risk applications.
 
-- *Incremental development* is an extension of the iterative development approach where the
-system can be sliced into fully working systems that can undergo the iterative development process.
-Each of these systems is called an *increment* and can be released independently. It is very
-suitable for microservices applications.
+- *Incremental development* is a process where each component is developed independently
+and then integrated into the system. The component is divided into multiple `slices`, called also
+`increments`. Each new increment builds on top of the existing released functionality. It is also
+know as the vertical development process and it is the preferred process for distributed or
+applications with strict time constraints.
 
-The last two approaches are also part of the agile development process. The reader is required to
-read further about the SDLC and the different development processes, such as:
+Depending on how the steps of the development process are performed, the development process may
+be classified as follows:
 
 - Waterfall Model (sequential)
 - V-Model Model (sequential)
 - Prototyping Model (iterative)
 - Spiral Model (iterative)
-- Agile Model (iterative)
-- DevOps Model (iterative)
+- Agile Model (iterative, incremental)
 
 
 == Logging
