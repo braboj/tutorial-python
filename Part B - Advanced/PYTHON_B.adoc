@@ -993,7 +993,7 @@ compatibility, forward compatibility)
 GDPR, PCI DSS, HIPAA, ISO 27001)
 
 
-=== Architectural Style
+=== Architecte and Design
 
 The architectural patterns are recurring styles that are used to structure a software system. For
 example a web application may use the MVC pattern to structure the frontend, and the microservices
