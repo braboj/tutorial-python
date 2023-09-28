@@ -999,7 +999,9 @@ The architectural patterns are recurring styles that are used to structure a sof
 example a web application may use the MVC pattern to structure the frontend, and the microservices
 pattern to structure the backend of the application.
 
-==== Multi-Layered
+==== Architecture Styles
+
+===== Multi-Layered
 
 A multi-layered pattern can be used to structure programs that can be decomposed into groups of subtasks,
 each of which is at a particular level of abstraction. Each layer provides services to the next
@@ -1024,7 +1026,7 @@ Protocols are also a form of multi-layered architecture. The OSI model is a seve
 that describes the different layers of a network protocol stack. The TCP/IP model is a four-layered
 model that describes the different layers of the Internet protocol suite.
 
-==== Monolithic
+===== Monolithic
 
 A monolithic architecture is a traditional software architecture where all components and
 functionalities of an application are tightly integrated into a single codebase and executed as
@@ -1046,7 +1048,7 @@ Links:
 - https://en.wikipedia.org/wiki/Monolithic_kernel[Monolithic kernel]
 
 
-==== Service-Oriented
+===== Service-Oriented
 
 A service-oriented architecture can be used to structure programs that can be decomposed into a set
 of services that are independently deployable and scalable. Each service is self-contained and
@@ -1072,7 +1074,7 @@ Examples:
 - https://www.nginx.com/products/nginx/kubernetes-ingress-controller/[NGINX Kubernetes Ingress Controller]
 
 
-==== Client-Server
+===== Client-Server
 
 This pattern can be used to structure programs that can be decomposed into two parts: a server
 that provides a service, and a client that requests services from the server. The client and
@@ -1085,7 +1087,7 @@ Examples:
 - Remote procedure call (RPC)
 
 
-==== Peer-to-Peer
+===== Peer-to-Peer
 
 This pattern can be used to structure programs that can be decomposed into a set of peers
 that are symmetric in terms of their functionality, and each peer may act as both a client
@@ -1097,7 +1099,7 @@ Examples:
 - BitTorrent
 
 
-==== Pipe-Filter
+===== Pipe-Filter
 
 This pattern can be used to structure programs that can be decomposed into a set of filters that
 process a stream of data, and a set of pipes that connect the filters together. Each filter has a
@@ -1110,7 +1112,7 @@ Examples:
 - https://en.wikipedia.org/wiki/Pipeline_(Unix)[Unix pipelines]
 - https://beam.apache.org/documentation/programming-guide/[Apache Beam]
 
-==== Publish-Subscribe
+===== Publish-Subscribe
 
 This pattern can be used to structure programs that can be decomposed into a set of publishers
 and subscribers that communicate with each other using a message broker. Publishers publish events
@@ -1136,6 +1138,34 @@ Links:
 - https://en.wikipedia.org/wiki/Event_stream_processing[Event stream processing]
 - https://en.wikipedia.org/wiki/Event-driven_SOA[Event-driven SOA]
 - https://luckyresistor.me/2019/07/05/event-based-firmware-1/[Event-driven firmware]
+
+==== Design
+
+===== Backend
+
+- API
+- Component Diagram
+- Class Diagram
+- Other diagrams
+
+
+===== Frontend
+
+- Wireframe
+- Mockup
+- Component Diagram
+- Class Diagram
+- Other diagrams
+
+
+===== Data Access
+
+- Data Structure
+- Data Model
+- Data Flow Diagram
+- Entity-Relationship Diagram
+- Other diagrams
+
 
 === Development Process
 
