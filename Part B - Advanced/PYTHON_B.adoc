@@ -8,7 +8,7 @@
 
 // TODO: Add requirements
 
-== OOP
+== OOP Principles
 
 Object-oriented programming is a programming paradigm of organizing the software around objects that can contain data.
 It is based on four major principles: abstraction, inheritance, encapsulation, polymorphism.
@@ -207,7 +207,7 @@ exist independently.
 
 
 
-== SOLID
+== SOLID Design
 
 The SOLID principles are a set of design principles for software development that aim to improve
 the quality of software by making it more maintainable, flexible, understandable and scalable.
