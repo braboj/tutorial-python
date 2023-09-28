@@ -1015,13 +1015,6 @@ layers are:
 - Application layer (the backend layer)
 - Data layer (the data access layer)
 
-Examples:
-
-- Model-View-Controller (MVC)
-- Model-View-ViewModel (MVVM)
-- Model-View-Presenter (MVP)
-- Model-View-Intent (MVI)
-
 Protocols are also a form of multi-layered architecture. The OSI model is a seven-layered model
 that describes the different layers of a network protocol stack. The TCP/IP model is a four-layered
 model that describes the different layers of the Internet protocol suite.
@@ -1042,13 +1035,7 @@ new technologies and programming languages. This means that all of the component
 in the same programming language.
 
 
-Links:
-
-- https://en.wikipedia.org/wiki/Monolithic_application[Monolithic application]
-- https://en.wikipedia.org/wiki/Monolithic_kernel[Monolithic kernel]
-
-
-===== Service-Oriented
+===== Microservices
 
 A service-oriented architecture can be used to structure programs that can be decomposed into a set
 of services that are independently deployable and scalable. Each service is self-contained and
@@ -1060,19 +1047,6 @@ Services communicate with each other using a protocol such as HTTP/HTTPS or gRPC
 deployed as containers in a container orchestration platform such as Kubernetes. Microservices
 are typically implemented using a framework such as Spring Boot.
 
-The https://microservices.io/[microservices.io] website provides a good overview of microservices.
-
-Examples:
-
-- https://spring.io/projects/spring-boot[Spring Boot]
-- https://quarkus.io/[Quarkus]
-- https://micronaut.io/[Micronaut]
-- https://helidon.io/[Helidon]
-- https://www.mulesoft.com/platform/mule[MuleSoft]
-- https://www.ibm.com/cloud/microservices[IBM Cloud Microservices]
-- https://www.redhat.com/en/technologies/jboss-middleware/microservices[Red Hat JBoss Middleware]
-- https://www.nginx.com/products/nginx/kubernetes-ingress-controller/[NGINX Kubernetes Ingress Controller]
-
 
 ===== Client-Server
 
@@ -1081,22 +1055,12 @@ that provides a service, and a client that requests services from the server. Th
 server communicate with each other using a dedicated protocol. The client and server may be
 implemented using different programming languages and technology stacks.
 
-Examples:
-
-- Web service (HTTP/HTTPS)
-- Remote procedure call (RPC)
-
 
 ===== Peer-to-Peer
 
 This pattern can be used to structure programs that can be decomposed into a set of peers
 that are symmetric in terms of their functionality, and each peer may act as both a client
 and a server. Blockchains or torrents are examples of peer-to-peer networks.
-
-Examples:
-
-- Blockchain
-- BitTorrent
 
 
 ===== Pipe-Filter
@@ -1107,64 +1071,44 @@ single input and a single output. Pipes can be used to connect the filters toget
 connect a filter to a data source or data sink. This allows the filters to be developed, tested,
 deployed, scaled and maintained independently, without affecting each other.
 
-Examples:
 
-- https://en.wikipedia.org/wiki/Pipeline_(Unix)[Unix pipelines]
-- https://beam.apache.org/documentation/programming-guide/[Apache Beam]
+===== Message Queue
+
+- Asynchronous point-to-poin communication
+- Only one consumer can process the message (whoever consumes it first)
+- Allows the consumer to process the messages at its own pace (decoupling)
+- The data is ordered (FIFO) and stored until it is processed (persistence)
+- Not scalable for large number of consumers (e.g. millions of users)
+- Useful for spike protection (e.g. when the producer is faster than the consumer)
+
 
 ===== Publish-Subscribe
 
-This pattern can be used to structure programs that can be decomposed into a set of publishers
-and subscribers that communicate with each other using a message broker. Publishers publish events
-to the message broker, and subscribers subscribe to events of interest to them. The message broker
-acts as an intermediary between publishers and subscribers.
+- Asynchronous broadcast communication
+- A client must subscribe to a topic to receive messages from it
+- Publishers send messages to an intermediary called a message broker
+- The message broker forwards the messages to the subscribers instantly
+- Ordering and persitance are not guaranteed
+- Better scalability than message queues (e.g. millions of users)
 
-Examples:
+===== Message Stream
 
-- https://kafka.apache.org/[Apache Kafka] (event streaming platform)
-- https://pulsar.apache.org/[Apache Pulsar] (event streaming platform)
-- https://www.confluent.io/[Confluent] (event streaming platform)
-- https://nats.io/[NATS] (event streaming platform)
-- https://www.rabbitmq.com/[RabbitMQ] (message broker)
-- https://mosquitto.org/[Mosquitto] (message broker)
-- https://zeromq.org/[ZeroMQ] (messaging library)
-- https://redis.io/[Redis] (in-memory data structure store)
+Similar to the publish-subscribe pattern with the following differences:
 
-Links:
+- The messages are published to a topic
+- The messages are stored in a log
+- The messages are delivered to the subscribers in the same order as they were published
+- The subscribers can consume the messages at their own pace
+- The subscribers can rewind the log and reprocess the messages
+- Suitable for real-time data processing (e.g. analytics, monitoring, etc.)
 
-- https://en.wikipedia.org/wiki/Event_loop[Event loop]
-- https://en.wikipedia.org/wiki/Event-driven_architecture[Event-driven architecture]
-- https://en.wikipedia.org/wiki/Event-driven_programming[Event-driven programming]
-- https://en.wikipedia.org/wiki/Event_stream_processing[Event stream processing]
-- https://en.wikipedia.org/wiki/Event-driven_SOA[Event-driven SOA]
-- https://luckyresistor.me/2019/07/05/event-based-firmware-1/[Event-driven firmware]
 
 ==== Design
 
-===== Backend
-
-- API
-- Component Diagram
-- Class Diagram
-- Other diagrams
-
-
-===== Frontend
-
-- Wireframe
-- Mockup
-- Component Diagram
-- Class Diagram
-- Other diagrams
-
-
-===== Data Access
-
-- Data Structure
-- Data Model
-- Data Flow Diagram
-- Entity-Relationship Diagram
-- Other diagrams
+- API Design
+- UML Diagrams
+- Wireframes (Mockup)
+- Database Schema
 
 
 === Development Process
