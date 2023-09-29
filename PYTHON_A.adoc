@@ -89,12 +89,12 @@ This means that you do not need to declare variables before using them, or decla
 Every variable in Python is an object.
 
 - Python is a *multi-paradigm language*.
-This means that it supports multiple programming paradigms, including procedural, object-oriented, and functional programming.
-It features a fully dynamic type system and automatic memory management, similar to that of Scheme, Ruby, Perl, and Tcl.
+This means that it supports multiple programming paradigms, including procedural,
+object-oriented, and functional programming. It features a fully dynamic type system and automatic memory management, similar to that of Scheme, Ruby, Perl, and Tcl.
 
 - Python is a *cross-platform language*.
-This means that you can write Python code on one platform and run it on any other platform without making any changes to the code.
-This makes it easier to develop and deploy your code on multiple platforms.
+This means that you can write Python code on one platform and run it on any other platform
+without making any changes to the code. This makes it easier to develop and deploy your code on multiple platforms.
 
 === Use Cases
 
@@ -154,8 +154,8 @@ If we elaborate further we will see that a program generally is a...
 
 === print() under the hood
 
-The print() function is used to print a value to the screen.
-The print() function is a built-in function, which means that it is available by default.
+- The print() function is used to print a value to the screen.
+- The print() function is a built-in function, which means that it is available by default.
 
 [source,python]
 ----
@@ -1365,8 +1365,8 @@ In Python the object is created wih the special method `\\__new__` and then init
 include::Part A - Basics/09_classes/examples/class_constructors.py[]
 ----
 
-The method `\\__new__` is used rarely as Python handles the construction of the object automatically.
-Some of the most common use cases for the `\\__new__` method are:
+The method `\\__new__` is used rarely as Python handles the construction of the object
+utomatically. Some of the most common use cases for the `\\__new__` method are:
 
 - Create a class that inherits from a different class depending on some condition
 - Limit the number of instances that can be created for this class (e.g. Singleton)
@@ -1479,13 +1479,10 @@ include::Part A - Basics/09_classes/examples/class_variables_pitfalls.py[]
 
 ==== Class methods
 
-Class methods are functions that are defined inside a class.
-The first parameter of a class method is always a reference to the class.
-It is usually called `cls`.
-Class methods can be used before the instance of the class has been created.
-Class methods are defined using the `@classmethod`
-decorator.
-Some of the most common use cases for class methods are:
+Class methods are functions that are defined inside a class. The first parameter of a class
+method is always a reference to the class. It is usually called `cls`. Class methods can be used
+before the instance of the class has been created. Class methods are defined using the
+`@classmethod` decorator. Some of the most common use cases for class methods are:
 
 - Create new instances of the class
 - Modify existing instances of the class
@@ -1508,12 +1505,10 @@ include::Part A - Basics/09_classes/examples/class_method_modify_instances.py[]
 
 === Class as a namespace
 
-A namespace is a mapping from names to objects.
-It is used to avoid name collisions and to make it easier to find the names you are looking for.
-In Python, classes are namespaces.
-This means that you can define variables and functions inside a class.
-They will be accessible using the class name.
-Some of the most common use cases for classes as namespaces are:
+A namespace is a mapping from names to objects. It is used to avoid name collisions and to make
+it easier to find the names you are looking for. In Python, classes are namespaces. This means
+that you can define variables and functions inside a class. They will be accessible using the
+class name. Some of the most common use cases for classes as namespaces are:
 
 - Group related variables and functions together
 - Avoid name collisions
@@ -1754,6 +1749,58 @@ It is used to avoid name collisions and to make it easier to find the names you 
 ----
 include::Part A - Basics/09_classes/examples/class_nested.py[]
 ----
+
+=== Named Constructors
+
+Named constructors are special methods inside a class that create and initialize the objects of a
+the class. They are implemented either using the `@classmethod` decorator or using the `@staticmethod` decorator.
+
+[source,python]
+----
+class MyClass(object):
+
+    @classmethod
+    def named_constructor(cls, arg1, arg2, ...):
+        return cls(arg1, arg2, ...)
+
+    @staticmethod
+    def named_constructor(arg1, arg2, ...):
+        MyClass(arg1, arg2, ...)
+----
+
+Named constructors are a popular choice for creating objects in Python because they are more
+descriptive than the default constructor and they can be used to create objects in different ways.
+
+*Example: Create object with an alternative constructor*
+
+[source,python]
+----
+include::Part A - Basics/09_classes/examples/class_named_constructor_different_params.py[]
+----
+
+*Example: Reduce the number of parameters of the default constructor*
+
+[source,python]
+----
+include::Part A - Basics/09_classes/examples/class_named_constructor_reduce_params.py[]
+----
+
+
+*Example: Create objects from different sources (file, database, etc.)*
+
+[source,python]
+----
+include::Part A - Basics/09_classes/examples/class_named_constructor_init_sources.py[]
+----
+
+
+*Example: Create objects with different representations (e.g. JSON, XML, etc.)*
+
+[source,python]
+----
+include::Part A - Basics/09_classes/examples/class_named_constructor_representation.py[]
+----
+
 
 === Introspection
 
