@@ -1,55 +1,79 @@
-# Python Tutorial
+# Awesome Python!
 
-Awesome Python!
+by Branimir Georgiev, Vasil Andreev, Yorden Dragnev, Hristyan Grigorov, and others.
 
-## Common Guidelines
+## 1. Project Description
 
-- Use CamelCase syntaxis
+This tutorial offers a comprehensive tutorial for the Python programming language. The 
+tutorial is divided into five parts:
 
-## Commit Rules
+* Part A - Basic Python Programming
+* Part B - Advanced Python Programming
+* Part C - Expert Python Programming
+* Part D - Roadmaps for further learning
+* Part E - Snippets for common libraries and frameworks
+
+Each part is based on the previous one. The first three parts are covering the Python Programming
+language. The last two parts are covering the Python ecosystem. The tutorial is designed to be
+read in order. However, each part is self-contained and can be read separately.
+ 
+## 2. Project Structure
+
+```
+ROOT
+  ├───Assets
+  │   ├───audio
+  │   ├───images
+  │   └───videos
+  │  
+  ├───Part A - Basics
+  │   └───Chapter 01 - ...
+  │       ├───assets
+  │       ├───exercises
+  │       ├───examples
+  │       └───snippets
+  │
+  ├───Part B - Advanced
+  ├───Part C - Expert
+  ├───Part D - Roadmaps
+  └───Part E - Libraries
+
+```
+
+## 3. Project Conventions
+
+### 3.1. File Naming
+
+* `PART_<letter>.adoc` - Part file
+* `CH_<number>.adoc` - Chapter file
+
+### 3.2. Commit Messages
 
 * (`#<id>`) - Use as a reference to a concrete issue number (either GitHub or JIRA)
-* [`#####`] - No issue or ticket defined for this commit  
-* Use a concrete reference of the issue whenever possible (see common guidelines)
+* [`#####`] - No issue or ticket defined for this commit
 
-Examples:
+**Examples**:
+```
 * (`#19`) - Add the operator precedence examples
 * [`#####`] - Move the image assets to a dedicated folder
+```
 
-## Issue Rules
+### 3.3. Issue Naming
 
 * [`<part>, <chapter>`] - <message>
 * The square brackets define the context (optional)
 * The context is connected to a place in the document
-* If no context is desired then the prefix with the square brackets is omitted altogether
+* The square brackets are omitted if no context is needed
 
-Examples:
+**Examples**:
+```
 * [Part A, Ch. 1] - Do this (with context)
 * Do that (without context)
-
-## Pull Request Rules
-
-- Follow the guidelines on [https://blog.montrealanalytics.com/4-tips-for-effective-pull-request-naming-f60793998f04]
-
-
-## Folder structure
-
 ```
-ROOT
 
-  Part A
-    Chapter 01 - ...
-      assets
-      exercises
-      examples
-      snippets
+### 3.4. Pull Requests
 
-  Part B
-    Chapter 01 - ...
-      assets
-      exercises
-      examples
-      snippets
+- The requester is free to follow any style guide
+- Preferably use https://blog.montrealanalytics.com/4-tips-for-effective-pull-request-naming-f60793998f04]
 
-```
 
