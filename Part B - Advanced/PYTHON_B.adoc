@@ -922,9 +922,9 @@ include::04_patterns/examples/interpreter.py[]
 ----
 
 
-== Software Development
+== System Architecture
 
-The Software Architecture defines the framework on how to manage the software development process
+The System Architecture defines the framework on how to manage the software development process
 and organize the software system. It provides a set of guidelines and best practices for building
 and maintaining the software system.
 
