@@ -1,4 +1,10 @@
 = References
+:doctype: book
+:sectnums:
+:toc:
+:imagesdir: ./Assets/images
+:chapter-number: 0
+
 
 == Bibliography
 

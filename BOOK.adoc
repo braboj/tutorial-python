@@ -1,0 +1,9 @@
+:doctype: book
+:toc:
+:imagesdir: ./Assets/images
+
+= Python Training
+
+include::PYTHON_A.adoc[]
+include::PYTHON_B.adoc[]
+include::REFERENCES.adoc[]

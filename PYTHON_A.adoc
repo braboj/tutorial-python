@@ -1,9 +1,9 @@
 = PART A: Basic Python
 :doctype: book
-:sectnums:
-:docinfo:
 :toc:
+:sectnums:
 :imagesdir: ./Assets/images
+:chapter-number: 0
 
 == Requirements
 
