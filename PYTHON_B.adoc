@@ -32,8 +32,8 @@
 == OOP Principles
 
 > The OOP principles are a set of principles that are used to maximize the quality of the
-software codebase. They are used to make software more flexible, maintainable, and reusable.
-
+software codebase. Using OOP proramming will result in a more  flexible, maintainable, and reusable
+code.
 
 === Abstraction (Modeling)
 
@@ -238,8 +238,8 @@ exist independently.
 
 == SOLID Design
 
-> The SOLID principles are a set of design principles that are used to minimize the change
-in the software codebase.
+> The SOLID principles enhance the OOP programming by defining a set of design principles that
+are used to minimize the change in the software codebase.
 
 They were introduced by Robert C. Martin (Uncle Bob) in his 2000 paper, "Design Principles and
 Design Patterns". The SOLID acronym was introduced later by Michael Feathers.
@@ -469,6 +469,10 @@ include::Part B - Advanced/03_solid/examples/dependency_inversion_good.py[]
 ----
 
 == Design Patterns
+
+> The design patterns are a set of patterns that are used to solve common problems in software
+development. They are used minimize the time and effort required to develop software based a good
+quality codebase combining SOLID and best practices based on the experience of other developers.
 
 === Creational Patterns
 
@@ -963,6 +967,11 @@ include::Part B - Advanced/04_patterns/examples/interpreter.py[]
 
 
 == System Architecture
+
+> The system architecture defines the framework on how to manage the software development process
+and organize the software system. It provides a set of guidelines and best practices for building
+and maintaining the software system. This helps to minimize the overall costs and risks of the
+software development process.
 
 The System Architecture defines the framework on how to manage the software development process
 and organize the software system. It provides a set of guidelines and best practices for building
