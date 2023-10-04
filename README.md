@@ -2,10 +2,49 @@
 
 by Branimir Georgiev, Vasil Andreev, Yorden Dragnev, Hristyan Grigorov, and others.
 
-## 1. Project Description
+## 1. Getting Started
 
-This tutorial offers a comprehensive tutorial for the Python programming language. The 
-tutorial is divided into five parts:
+### 1.1. Install the prerequisites
+
+* [Python 3.10 or higher](https://www.python.org/downloads/)
+* [PyCharm Community Edition](https://www.jetbrains.com/pycharm/)
+
+### 1.2. Clone the repository
+
+```
+git clone https://github.com/braboj/tutorial-python.git
+```
+
+### 1.3. Open the project in PyCharm
+
+1. Open PyCharm
+2. Select `File` -> `Open`
+3. Navigate to the project folder
+4. Select the `tutorial-python` folder
+
+### 1.4. Install the AsciiDoc plugin
+
+1. Click `Open`
+2. Select `File` -> `Settings`
+3. Select `Plugins`
+4. Click `Marketplace`
+5. Search for `AsciiDoc`
+6. Click `Install`
+7. Click `Restart IDE`
+
+### 1.5. Install asciidoctor (optional)
+
+1. Install Chocolatey (https://chocolatey.org/install)
+2. Install ruby with `choco install ruby`
+3. Install asciidoctor with `gem install asciidoctor`
+4. Test with `asciidoctor --version`
+
+## 2. Project Description
+
+### 2.1. Project Purpose
+
+This tutorial offers a comprehensive tutorial for the Python programming language. The tutorial is
+written in the **AsciiDoc** format. The tutorial is divided into five parts:
 
 * Part A - Basic Python Programming
 * Part B - Advanced Python Programming
@@ -13,11 +52,11 @@ tutorial is divided into five parts:
 * Part D - Roadmaps for further learning
 * Part E - Snippets for common libraries and frameworks
 
-Each part is based on the previous one. The first three parts are covering the Python Programming
-language. The last two parts are covering the Python ecosystem. The tutorial is designed to be
-read in order. However, each part is self-contained and can be read separately.
+The first three parts are covering the Python Programming language. The last two parts are 
+covering the Python ecosystem. The tutorial is designed to be read in order. However, each part 
+is self-contained and can be read separately.
  
-## 2. Project Structure
+### 2.2. Project Structure
 
 ```
 ROOT
@@ -40,14 +79,14 @@ ROOT
 
 ```
 
-## 3. Project Conventions
+## 4. Project Conventions
 
-### 3.1. File Naming
+### 4.1. File Naming
 
 * `PART_<letter>.adoc` - Part file
 * `CH_<number>.adoc` - Chapter file
 
-### 3.2. Commit Messages
+### 4.2. Commit Messages
 
 * (`#<id>`) - Use as a reference to a concrete issue number (either GitHub or JIRA)
 * [`#####`] - No issue or ticket defined for this commit
@@ -58,7 +97,7 @@ ROOT
 * [`#####`] - Move the image assets to a dedicated folder
 ```
 
-### 3.3. Issue Naming
+### 4.3. Issue Naming
 
 * [`<part>, <chapter>`] - <message>
 * The square brackets define the context (optional)
@@ -71,7 +110,7 @@ ROOT
 * Do that (without context)
 ```
 
-### 3.4. Pull Requests
+### 4.4. Pull Requests
 
 - The requester is free to follow any style guide
 - Preferably use https://blog.montrealanalytics.com/4-tips-for-effective-pull-request-naming-f60793998f04]

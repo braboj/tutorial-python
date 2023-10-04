@@ -31,8 +31,9 @@
 
 == OOP Principles
 
-Object-oriented programming is a programming paradigm of organizing the software around objects that can contain data.
-It is based on four major principles: abstraction, inheritance, encapsulation, polymorphism.
+> The OOP principles are a set of principles that are used to maximize the quality of the
+software codebase. Using OOP proramming will result in a more  flexible, maintainable, and reusable
+code.
 
 === Abstraction (Modeling)
 
@@ -237,8 +238,9 @@ exist independently.
 
 == SOLID Design
 
-The SOLID principles are a set of design principles for software development that aim to improve
-the quality of software by making it more maintainable, flexible, understandable and scalable.
+> The SOLID principles enhance the OOP programming by defining a set of design principles that
+are used to minimize the change in the software codebase.
+
 They were introduced by Robert C. Martin (Uncle Bob) in his 2000 paper, "Design Principles and
 Design Patterns". The SOLID acronym was introduced later by Michael Feathers.
 
@@ -253,7 +255,9 @@ The SOLID principles are:
 
 === Single Responsibility Principle
 
-> There should never be more than one reason for a class to change.
+> Reduce the interdependencies by reducing the number of attributes and methods in the class. A
+change in one class shall not break the code in another class. This minimizes the number of reasons
+to change a class.
 
 The single responsibility principle states that a class or function should have a single reason
 to change. By splitting a class or function into several classes or functions, you can reduce the
@@ -297,8 +301,8 @@ include::Part B - Advanced/03_solid/examples/single_responsibility_good.py[]
 
 === Open/Closed Principle
 
-> Software entities (classes, modules, functions, etc.) should be open for extension but closed
-for modification.
+> Never touch a working system unless it is to fix a bug. Replace or extend the existing
+functionality without modifying the existing code. This minimizes the change in the old codebase.
 
 A module, class or function should be open for extension but closed for modification. This means
 that a module, class or function shall be extended without having to modify its source code,
@@ -334,8 +338,8 @@ include::Part B - Advanced/03_solid/examples/open_closed_good.py[]
 
 === Liskov Substitution Principle
 
-> Objects in a program should be replaceable with instances of their subtypes without altering
-the correctness of that program.
+> A method shall be implemented and used only there where it makes sense. This minimizes changes
+accross the class hierarchy.
 
 This principle states that children shall not break on using the parents behavior. If you have a
 class hierarchy, then you should be able to use any subclass in place of its parent class without
@@ -347,7 +351,8 @@ parent class to do nothing. Or when the method has to check the type of an objec
 what to do with it.
 
 The Liskov substitution is used to ensure that class hierarchies are well designed and to prevent
-unexpected behavior when using polymorphism.
+unexpected behavior when using polymorphism. A single method should be implemented only there where
+it makes sense.
 
 Some code smells showing the violation of this principle:
 
@@ -378,7 +383,10 @@ include::Part B - Advanced/03_solid/examples/liskov_substitution_good.py[]
 
 === Interface Segregation Principle
 
-> Clients should not be forced to depend on methods that they do not use.
+> A method that is used by several but not all subclases shall be in a separate interface or class
+and be used or implemented only by the subclases that need it. This minimizes changes accross
+the class hierarchy.
+
 
 The interface segregation principle states that many small interfaces are better than one big
 interface. This means that a class should not be forced to implement methods that it does not
@@ -424,9 +432,8 @@ include::Part B - Advanced/03_solid/examples/interface_segregation_good.py[]
 
 === Dependency Inversion Principle
 
-> High-level modules should not depend on low-level modules. Both should depend on abstractions.
-
-> Abstractions should not depend on details. Details should depend on abstractions.
+> Define an agreement between the client and the server. The client is obliged to use the agreement
+and the server is obliged to implement it. This minimizes changes accross the product layers.
 
 The dependency inversion principle is used to decouple high-level modules from low-level modules.
 It is used to reduce the coupling between modules and to make them more reusable. It is also used
@@ -462,6 +469,10 @@ include::Part B - Advanced/03_solid/examples/dependency_inversion_good.py[]
 ----
 
 == Design Patterns
+
+> The design patterns are a set of patterns that are used to solve common problems in software
+development. They are used minimize the time and effort required to develop software based a good
+quality codebase combining SOLID and best practices based on the experience of other developers.
 
 === Creational Patterns
 
@@ -956,6 +967,11 @@ include::Part B - Advanced/04_patterns/examples/interpreter.py[]
 
 
 == System Architecture
+
+> The system architecture defines the framework on how to manage the software development process
+and organize the software system. It provides a set of guidelines and best practices for building
+and maintaining the software system. This helps to minimize the overall costs and risks of the
+software development process.
 
 The System Architecture defines the framework on how to manage the software development process
 and organize the software system. It provides a set of guidelines and best practices for building
