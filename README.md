@@ -4,8 +4,8 @@ by Branimir Georgiev, Vasil Andreev, Yorden Dragnev, Hristyan Grigorov, and othe
 
 ## 1. Project Description
 
-This tutorial offers a comprehensive tutorial for the Python programming language. The 
-tutorial is divided into five parts:
+This tutorial offers a comprehensive tutorial for the Python programming language. The tutorial is
+written in the **AsciiDoc** format. The tutorial is divided into five parts:
 
 * Part A - Basic Python Programming
 * Part B - Advanced Python Programming
@@ -13,9 +13,9 @@ tutorial is divided into five parts:
 * Part D - Roadmaps for further learning
 * Part E - Snippets for common libraries and frameworks
 
-Each part is based on the previous one. The first three parts are covering the Python Programming
-language. The last two parts are covering the Python ecosystem. The tutorial is designed to be
-read in order. However, each part is self-contained and can be read separately.
+The first three parts are covering the Python Programming language. The last two parts are 
+covering the Python ecosystem. The tutorial is designed to be read in order. However, each part 
+is self-contained and can be read separately.
  
 ## 2. Project Structure
 
