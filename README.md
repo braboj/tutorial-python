@@ -3,8 +3,6 @@
 by Branimir Georgiev, Vasil Andreev, Yorden Dragnev, Hristyan Grigorov, and others.
 
 
-_______________________________________________________________________________
-
 ## 1. Getting Started
 
 ### 1.1. Install the prerequisites
