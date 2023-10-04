@@ -65,6 +65,7 @@ They key points about abstraction are:
 - Uses abstract classes or interfaces provide a blueprint for other classes to follow
 - Manages complexity and enhances code readability
 
+image::part_b/ch_02/uml_abstraction.png[500,500,align="center"]
 
 [source,python]
 ----
@@ -83,6 +84,8 @@ Key points about inheritance:
 - Reuses code from an existing class
 - Represents an _is-a_ relationship
 - Focuses on the "what" an object is and how it behaves
+
+image::part_b/ch_02/uml_inheritance.png[500,500,align="center"]
 
 [source,python]
 ----
@@ -104,6 +107,8 @@ Key points about encapsulation:
 - Uses access modifiers to hide the internal state of an object
 - Provides getters and setters to access and modify the internal state of an object
 - Defines protection logic for invalid values in the setters
+
+image::part_b/ch_02/uml_encapsulation.png[200,200,align="center"]
 
 [source,python]
 ----
@@ -141,6 +146,8 @@ the same name and signature as the method in the superclass.
 *Overloading* is the process of defining multiple methods with the same name but different
 signatures in the same class.
 
+image::part_b/ch_02/uml_polymorphism.png[500,500,align="center"]
+
 [source,python]
 ----
 include::Part B - Advanced/02_oop/examples/polymorphism.py[]
@@ -153,7 +160,7 @@ Association represents a relationship between classes. It describes how objects 
 classes interact and collaborate to achieve a certain functionality. Associations define the ways
 in which objects can relate to each other and exchange information.
 
-Associations may have also have a direction. For example, a car has an engine, but an engine does
+Associations may have also a direction. For example, a car has an engine, but an engine does
 not have a car. This is a unidirectional association. Possible directions for associations are:
 
 - non-directional
@@ -269,6 +276,8 @@ too many responsibilities and a change might break the code that uses it. For ex
 change the data format from JSON to XML, you will have to modify the class to handle the new data
 format. This is a clear violation of the single responsibility principle.
 
+image::part_b/ch_03/uml_single_responsibility_bad.png[200,200,align="center"]
+
 [source,python]
 ----
 include::Part B - Advanced/03_solid/examples/single_responsibility_bad.py[]
@@ -281,6 +290,8 @@ into three classes, one for reading data from a file, one for processing the dat
 writing the data to a file. This way, each class has a single responsibility and a change will
 not break the code using the other classes. Each class can be developed, enhanced, and tested
 independently.
+
+image::part_b/ch_03/uml_single_responsibility_good.png[500,500,align="center"]
 
 [source,python]
 ----
@@ -307,12 +318,18 @@ through:
 
 
 *Example: Breaking the open/closed principle*
+
+image::part_b/ch_03/uml_open_closed_bad.png[200,200,align="center"]
+
 [source,python]
 ----
 include::Part B - Advanced/03_solid/examples/open_closed_bad.py[]
 ----
 
 *Example: Following the open/closed principle*
+
+image::part_b/ch_03/uml_open_closed_good.png[500,500,align="center"]
+
 [source,python]
 ----
 include::Part B - Advanced/03_solid/examples/open_closed_good.py[]
@@ -345,6 +362,9 @@ Some code smells showing the violation of this principle:
 
 
 *Example: Violating the Liskov substitution principle*
+
+image::part_b/ch_03/uml_liskov_substitution_bad.png[500,500,align="center"]
+
 [source,python]
 ----
 include::Part B - Advanced/03_solid/examples/liskov_substitution_bad.py[]
@@ -352,6 +372,9 @@ include::Part B - Advanced/03_solid/examples/liskov_substitution_bad.py[]
 
 
 *Example: Following the Liskov substitution principle*
+
+image::part_b/ch_03/uml_liskov_substitution_good.png[500,500,align="center"]
+
 [source,python]
 ----
 include::Part B - Advanced/03_solid/examples/liskov_substitution_good.py[]
@@ -390,12 +413,16 @@ Some common examples of violating this principle are:
 
 *Example: Violating the interface segregation principle*
 
+image::part_b/ch_03/uml_interface_segregation_bad.png[500,500,align="center"]
+
 [source,python]
 ----
 include::Part B - Advanced/03_solid/examples/interface_segregation_bad.py[]
 ----
 
 *Example: Following the interface segregation principle*
+
+image::part_b/ch_03/uml_interface_segregation_good.png[500,500,align="center"]
 
 [source,python]
 ----
@@ -425,12 +452,16 @@ returns an object of a class and can be called at runtime.
 
 *Example: Violating the dependency inversion principle*
 
+image::part_b/ch_03/uml_dependency_inversion_bad.png[500,500,align="center"]
+
 [source,python]
 ----
 include::Part B - Advanced/03_solid/examples/dependency_inversion_bad.py[]
 ----
 
 *Example: Following the dependency inversion principle*
+
+image::part_b/ch_03/uml_dependency_inversion_good.png[500,500,align="center"]
 
 [source,python]
 ----
@@ -609,13 +640,13 @@ example, you can create a subclass for drawing a red circle, a red square, a blu
 blue square. This approach works well if you have a small number of shapes and colors. However, it
 becomes difficult to manage when you have a large number of shapes and colors.
 
-image::04_patterns/assets/shapes_and_colors_with_inheritance.png[]
+image::part_b/ch_04/shapes_and_colors_with_inheritance.png[]
 
 The bridge pattern can be used to solve this problem. It provides a way to separate the interface
 of a class from its implementation. It allows you to create a class that can draw shapes with
 different colors without having to create a subclass for each shape and color combination.
 
-image::04_patterns/assets/shapes_and_colors_with_composition.png[]
+image::part_b/ch_04/shapes_and_colors_with_composition.png[]
 
 
 [source,python]
@@ -714,6 +745,7 @@ are:
 - Strategy
 - Template Method
 - Visitor
+- Interpreter
 
 ==== Chain of Responsibility
 
@@ -846,7 +878,7 @@ should behave according to the current values of the class’s fields.
 - Use the pattern when you have a lot of duplicate code across similar states and transitions of a
 condition-based state machine.
 
-image::04_patterns/assets/finite_state_machine.png[]
+image::part_b/ch_04/finite_state_machine.png[]
 
 [source,python]
 ----
@@ -2150,7 +2182,7 @@ cases for equality (__eq__) and string representation (__str__) are commonly use
 
 ==== filter
 
-The filter() function returns an iterator that contains the elements of an iterable for which a
+The `filter()` function returns an iterator that contains the elements of an iterable for which a
 given function returns true. For example the following code returns an iterator that contains the
 even numbers of a list:
 
@@ -2161,7 +2193,7 @@ include::Part B - Advanced/09_data/examples/data_filtering.py[]
 
 ==== map
 
-The map() function returns an iterator that contains the results of applying a given function to
+The `map()` function returns an iterator that contains the results of applying a given function to
 each element of an iterable.
 
 [source,python]
@@ -2171,9 +2203,9 @@ include::Part B - Advanced/09_data/examples/data_mapping.py[]
 
 ==== reduce
 
-The reduce() function returns a single value that is the result of applying a given function to
+The `reduce()` function returns a single value that is the result of applying a given function to
 each element of an iterable. This function is useful when you want to reduce a list of values to
-a single value. You have to import the reduce() function from the functools module in order to use
+a single value. You have to import the `reduce()` function from the functools module in order to use
 it.
 
 [source,python]
@@ -2185,9 +2217,9 @@ In the example above the reduce() function is used to calculate the sum of a lis
 reduce function will take the current and next element and apply the function to them. The result
 of the function will be used as the current element for the next iteration.
 
-==== reverse
+==== reversed
 
-The reverse() function returns an iterator that contains the elements of an iterable in reverse
+The `reversed()` function returns an iterator that contains the elements of an iterable in reverse
 order (i.e. from last to first).
 
 [source,python]
@@ -2196,10 +2228,11 @@ include::Part B - Advanced/09_data/examples/data_reversing.py[]
 ----
 
 
-==== sort
+==== sorted
 
-The sort() function returns an iterator that contains the elements of an iterable in sorted order.
-The sample can be sorted in ascending or descending order.
+The `sorted()` function returns an iterator that contains the elements of an iterable in sorted order.
+The sample can be sorted in ascending or descending order. Not to be mistaken with the `sort()`
+method of the list class.
 
 [source,python]
 ----
@@ -2208,7 +2241,7 @@ include::Part B - Advanced/09_data/examples/data_sorting.py[]
 
 ==== zip
 
-The zip() function returns an iterator that contains tuples of elements from each of the iterables
+The `zip()` function returns an iterator that contains tuples of elements from each of the iterables
 passed as arguments. The pairing is done in order, so the first element of the first iterable is
 paired with the first element of the second iterable, and so on.
 
@@ -2223,7 +2256,7 @@ include::Part B - Advanced/09_data/examples/data_zipping.py[]
 
 ==== unpack
 
-The unpacking is done by using the `*` operator. The `*` operator is used to unpack an iterable into
+The unpacking is done by using the `\*` operator. The `*` operator is used to unpack an iterable into
 a sequence of arguments. Typically this is used on a list or tuple to unpack it into a sequence of
 arguments for a function call.
 
@@ -2233,7 +2266,7 @@ include::Part B - Advanced/09_data/examples/data_unpacking.py[]
 ----
 
 ==== copy
-The copy module provides two functions for copying objects: copy() and deepcopy(). The copy()
+The `copy` module provides two functions for copying objects: `copy()` and `deepcopy()`. The `copy()`
 function returns a shallow copy of an object. A shallow copy will only copy the top-level object
 elements and keep the references to the nested objects. A deep copy will copy all the elements of
 an object, including the nested objects.
@@ -2247,7 +2280,7 @@ include::Part B - Advanced/09_data/examples/data_copying.py[]
 === Binary Serialization
 
 Serialization is the process of converting a Python object (lists, dict, tuples, etc.) into byte
-streams (*_machine-readable format_*). The byte streams can be saved to disks or can be that can be
+streams (*_machine-readable format_*). The byte streams can be than
 saved to disks or can be transferred over the network. The byte streams saved on the file
 contains the necessary information to reconstruct the original python object. The process of
 converting byte streams back to python objects is called de-serialization.
@@ -2264,10 +2297,10 @@ popular serialization modules in Python and is part of the standard library.
 
 The main methods of the pickle module are:
 
-- dump() - Serialize an object to a file
-- dumps() - Serialize an object to a string
-- load() - Deserialize an object from a file
-- loads() - Deserialize an object from a string
+- `dump()` - Serialize an object to a file
+- `dumps()` - Serialize an object to a string
+- `load()` - Deserialize an object from a file
+- `loads()` - Deserialize an object from a string
 
 The following example shows how to serialize and deserialize a Python object using the pickle
 module:
@@ -2279,26 +2312,26 @@ include::Part B - Advanced/09_data/examples/data_pickle.py[]
 
 ==== dill
 
-Dill is a fork of the pickle module that provides additional features such as support for more
+Dill is a fork of the `pickle` module that provides additional features such as support for more
 data types and support for more Python versions. It is used to serialize and deserialize any
 Python objects.
 
-Unfortunately, dill is not part of the standard library and needs to be installed separately. It
+Unfortunately, `dill` is not part of the standard library and needs to be installed separately. It
 can be installed using the following command:
 
 [source,console]
 ----
-$ pip install dill
+pip install dill
 ----
 
-Dill exhibits the same behavior as pickle when serializing and deserializing Python objects and
+Dill exhibits the same behavior as `pickle` when serializing and deserializing Python objects and
 uses the same syntax. Just replace `pickle` with `dill` in the code and it will work the same. The
 main methods of the dill module are:
 
-- dump() - Serialize an object to a file
-- dumps() - Serialize an object to a string
-- load() - Deserialize an object from a file
-- loads() - Deserialize an object from a string
+- `dump()` - Serialize an object to a file
+- `dumps()` - Serialize an object to a string
+- `load()` - Deserialize an object from a file
+- `loads()` - Deserialize an object from a string
 
 [source,python]
 ----
@@ -2324,16 +2357,16 @@ formats:
 
 ==== struct
 
-Struct is a module that provides functions for converting between strings and binary data. It is
+The module `struct` provides functions for converting between strings and binary data. It is
 used to define custom binary data formats. This module is particularly useful when you need to
 interact with binary data formats such as those found in network protocols, file formats, or
 low-level system interactions.
 
 The main methods of the struct module are:
 
-- pack() - Convert a Python object to a string
-- unpack() - Convert a string to a Python object
-- calcsize() - Calculate the size of a string based on a format string
+- `pack()` - Convert a Python object to a string
+- `unpack()` - Convert a string to a Python object
+- `calcsize()` - Calculate the size of a string based on a format string
 
 // Make an asciidoc table with the format string and the corresponding data type
 
@@ -2341,45 +2374,45 @@ The main methods of the struct module are:
 |====
 |Format | Data type | Python type | Size
 
-|`x` | pad byte | no value | 1
+a|`x` | pad byte | no value | 1
 
-|`c` | char | string of length 1 | 1
+a|`c` | char | string of length 1 | 1
 
-|`b` | signed char | integer | 1
+a|`b` | signed char | integer | 1
 
-|`B` | unsigned char
+a|`B` | unsigned char | integer | 1
 
-|`?` | _Bool | bool | 1
+a|`?` | Bool | bool | 1
 
-|`h` | short | integer | 2
+a|`h` | short | integer | 2
 
-|`H` | unsigned short | integer | 2
+a|`H` | unsigned short | integer | 2
 
-|`i` | int | integer | 4
+a|`i` | int | integer | 4
 
-|`I` | unsigned int | integer | 4
+a|`I` | unsigned int | integer | 4
 
-|`l` | long | integer | 4
+a|`l` | long | integer | 4
 
-|`L` | unsigned long | integer | 4
+a|`L` | unsigned long | integer | 4
 
-|`q` | long long | integer | 8
+a|`q` | long long | integer | 8
 
-|`Q` | unsigned long long | integer | 8
+a|`Q` | unsigned long long | integer | 8
 
-|`f` | float | float | 4
+a|`f` | float | float | 4
 
-|`d` | double | float | 8
+a|`d` | double | float | 8
 
-|`s` | char[] | string | 1
+a|`s` | char[] | string | 1
 
-|`p` | char[] | string | 1
+a|`p` | char[] | string | 1
 
-|`P` | void * | integer | 4
+a|`P` | void * | integer | 4
 
 |====
 
-Additinally struct module supports the following format alignment characters:
+Additionally `struct` module supports the following format alignment characters:
 
 - `=` - native byte order
 - `<` - little-endian
@@ -2388,7 +2421,7 @@ Additinally struct module supports the following format alignment characters:
 
 
 The following example shows how to convert a Python object to a string and vice versa using the
-struct module:
+`struct` module:
 
 [source,python]
 ----
@@ -2411,9 +2444,9 @@ format. It is commonly used in computer systems to encode binary data, such as i
 files, and other non-text data, into a format that can be safely transmitted over text-based
 protocols, like email or HTTP.
 
-Each symbol in the Base64 encoding represents 6 bits long. The 6 bits are used to represent 64
+Each symbol in the Base64 encoding is represented by 6 bits. The 6 bits are used to represent 64
 different values, which is why it is called Base64. The 64 values are the 26 uppercase letters,
-the 26 lowercase letters, the 10 digits, and the symbols + and /.
+the 26 lowercase letters, the 10 digits, and the symbols `+` and `/`.
 
 The conversion from binary to Base64 is done by dividing the binary data into 6-bit chunks and
 converting each chunk to a Base64 symbol. If the binary data is not divisible by 6, then the
@@ -2456,33 +2489,33 @@ include::Part B - Advanced/09_data/examples/data_binascii.py[]
 
 ==== codecs
 
-The codecs module in Python provides a framework for encoding and decoding data using various
+The `codecs` module in Python provides a framework for encoding and decoding data using various
 character encodings, including ASCII, UTF-8, UTF-16, and more. It's a powerful module for
 handling different character encodings when reading from or writing to files, sockets, or other
 data sources. The module also allows you to define custom codecs if needed.
 
 The codecs module provides the following functions for encoding and decoding data:
 
-- lookup() - Lookup a codec by name
-- encode() - Encode a string to bytes
-- decode() - Decode bytes to a string
-- open() - Open a file using a specific encoding
-- register() - Register a custom codec
-- getencoder() - Get an encoder function
-- getdecoder() - Get a decoder function
+- `lookup()` - Lookup a codec by name
+- `encode()` - Encode a string to bytes
+- `decode()` - Decode bytes to a string
+- `open()` - Open a file using a specific encoding
+- `register()` - Register a custom codec
+- `getencoder()` - Get an encoder function
+- `getdecoder()` - Get a decoder function
 
-The following example demonstrates the use of the codecs module to encode and decode data:
+The following example demonstrates the use of the `codecs` module to encode and decode data:
 
 [source, python]
 ----
 include::Part B - Advanced/09_data/examples/data_codecs.py[]
 ----
 
-If a custom codec is needed, the codecs module provides the register() function to register a
-Codec() object. The Codec() object must implement the encode() and decode() methods and a search
-function that returns a CodecInfo() object or None if the encoding is not supported.
+If a custom codec is needed, the `codecs` module provides the `register()` function to register a
+`Codec()` object. The `Codec()` object must implement the `encode()` and `decode()` methods and a search
+function that returns a `CodecInfo()` object or `None` if the encoding is not supported.
 
-The following example demonstrates the use of the codecs module to register a custom codec:
+The following example demonstrates the use of the `codecs` module to register a custom codec:
 
 [source, python]
 ----
@@ -2494,7 +2527,7 @@ include::Part B - Advanced/09_data/examples/data_codecs_custom.py[]
 
 ==== array
 
-An array is a data structure that stores a collection of elements of the same type. It is similar
+An `array` is a data structure that stores a collection of elements of the same type. It is similar
 to a list, but it is more efficient for storing and peforming mathematical operations on large sets
 of numerical data. It is often used as a lightweight alternative to a list.
 
@@ -2505,8 +2538,8 @@ include::Part B - Advanced/09_data/examples/data_array.py[]
 
 ==== namedtuple
 
-A namedtuple is a tuple that has a name for each field. It is similar to a tuple, but it is more
-readable and easier to use and it is often used as a lightweight alternative to a class.
+A `namedtuple` is a tuple that has a name for each field. It is similar to a tuple, but it is more
+readable and easier to use. It is often used as a lightweight alternative to a class.
 
 [source,python]
 ----
@@ -2515,7 +2548,7 @@ include::Part B - Advanced/09_data/examples/data_namedtuple.py[]
 
 ==== defaultdict
 
-A defaultdict is a dictionary that has a default value for each key. It is used in cases where
+A `defaultdict` is a dictionary that has a default value for each key. It is used in cases where
 the default value is the same for all keys or when the default value is a function that returns
 the default value for a key.
 
@@ -2531,8 +2564,8 @@ include::Part B - Advanced/09_data/examples/data_defaultdict.py[]
 
 ==== queue
 
-A queue is a special data structure that stores a collection of elements. It is similar to a list,
-but it is more efficient for storing and retrieving elements. The queue can be implemented as a
+A `queue` is a special data structure that stores a collection of elements. It is similar to a list,
+but it is more efficient for storing and retrieving elements. The `queue` can be implemented as a
 FIFO (first in first out) or LIFO (last in first out) data structure.
 
 A real-world example of a FIFO queue is a queue of customers at a checkout counter. The customer
@@ -2543,7 +2576,7 @@ that comes first is served first.
 include::Part B - Advanced/09_data/examples/data_queue_fifo.py[]
 ----
 
- An example of a LIFO queue is a stack of plates. The plate that is placed last is removed first.
+An example of a LIFO queue is a stack of plates. The plate that is placed last is removed first.
 
 [source,python]
 ----
@@ -2561,22 +2594,20 @@ include::Part B - Advanced/09_data/examples/data_queue_priority.py[]
 
 ==== deque
 
-The deque is a special data structure that stores a collection of elements and as the name
+The `deque` is a special data structure that stores a collection of elements and as the name
 suggests it is a double-ended queue. It is similar to a list, but it is more efficient for storing
 and retrieving elements.
 
 As both ends can be used to store elements, the deque can be implemented as a FIFO (first in
 first out) or LIFO (last in first out) data structure.
-[source,python]
 
 CAUTION: Use this module mainly in single-threaded applications. For multi-threaded applications,
 use the queue module.
 
-
+[source,python]
 ----
 include::Part B - Advanced/09_data/examples/data_deque_fifo.py[]
 ----
-
 
 [source,python]
 ----
@@ -2585,16 +2616,16 @@ include::Part B - Advanced/09_data/examples/data_deque_lifo.py[]
 
 ==== heapq
 
-The heapq is a Python module in the standard library that provides functions for implementing a
+The `heapq` is a Python module in the standard library that provides functions for implementing a
 binary heap queue (min-heap) algorithm. A binary heap is a specialized tree-based data structure
 that satisfies the heap property. In a min-heap, the parent nodes have values smaller than or
 equal to those of their children, making it efficient to retrieve and remove the smallest element
 from the heap.
 
 CAUTION: Use this module mainly in single-threaded applications. For multi-threaded applications,
-use PriorityQueue from the queue module.
+use PriorityQueue from the `queue` module.
 
-Some real-world examples of heapq are:
+Some real-world examples of `heapq` are:
 
 - Finding the top N elements in a collection
 - Implementing priority queues
@@ -2603,7 +2634,7 @@ Some real-world examples of heapq are:
 - Graph algorithms, such as Dijkstra's algorithm for finding the shortest path
 - Priority based task scheduling
 
-For addition information about heapq, see the following resources:
+For addition information about `heapq`, see the following resources:
 
 - https://docs.python.org/3/library/heapq.html[heapq]
 - https://en.wikipedia.org/wiki/Heap_(data_structure)[Heap (data structure)]
@@ -2618,13 +2649,16 @@ include::Part B - Advanced/09_data/examples/data_heapq.py[]
 
 ==== dataclasses
 
-dataclasses is a module introduced in Python 3.7 that provides a decorator and functions for
-utomatically adding special methods to user-defined classes. It simplifies the creation of classes primarily used to store data, making your code more concise and readable.
+The `dataclasses` is a module introduced in Python 3.7 that provides a decorator and functions for
+automatically adding special methods to user-defined classes. It simplifies the creation of classes primarily used to
+store data, making your code more concise and readable.
 
-Data classes are typically used when you want to create simple classes that mainly serve as data containers, and you want to avoid writing boilerplate code for common methods like __init__(), __repr__(), and __eq__().
+Data classes are typically used when you want to create simple classes that mainly serve as data containers, and you
+want to avoid writing boilerplate code for common methods like `\\__init__()`, `\\__repr__()`,
+and `\\__eq__()`.
 
-By default data classes are mutable, but you can make them immutable by adding the frozen=True
-keyword argument to the @dataclass decorator. This will make the class immutable and hashable,
+By default data classes are mutable, but you can make them immutable by adding the `frozen=True`
+keyword argument to the `@dataclass` decorator. This will make the class immutable and hashable,
 which means it can be used as a dictionary key or as an element in a set.
 
 Data classes can also be inherited from other data classes, and you can add a post-init method
@@ -2638,9 +2672,9 @@ include::Part B - Advanced/09_data/examples/data_dataclass.py[]
 
 ==== Counter
 
-The Counter class is part of the Python collections module and is used to count the frequency of
+The `Counter` class is part of the Python `collections` module and is used to count the frequency of
 elements in an iterable. It's particularly useful when you need to tally the occurrences of items
-in a list, tuple, or any other iterable object. Counter returns a dictionary-like object where
+in a list, tuple, or any other iterable object. `Counter` returns a dictionary-like object where
 elements are keys, and their counts are the corresponding values.
 
 The `Counter()` class can be used in a variety of situations, such as:
@@ -2649,7 +2683,9 @@ The `Counter()` class can be used in a variety of situations, such as:
 - Counting the most common words in a text file
 - Checking for duplicate elements
 
-A real-world example of using the Counter class can be found in text analysis and natural language processing. Let's say you're analyzing a large body of text, such as a collection of articles, tweets, or customer reviews, and you want to extract insights about word frequency.
+A real-world example of using the `Counter` class can be found in text analysis and natural language processing.
+Let's say you're analyzing a large body of text, such as a collection of articles, tweets, or customer reviews,
+and you want to extract insights about word frequency.
 
 
 [source,python]
@@ -2659,13 +2695,13 @@ include::Part B - Advanced/09_data/examples/data_counter_class.py[]
 
 ==== OrderedDict
 
-OrderedDict is useful when you need to maintain the order of elements in a dictionary, which is
+The `OrderedDict` is useful when you need to maintain the order of elements in a dictionary, which is
 valuable in scenarios like configuration files, where the order of settings matters, or when you
 want to implement data structures like ordered queues with key-value pairs.It ensures predictable
 and consistent ordering when you iterate over the dictionary, which is not guaranteed with the
 standard dict type.
 
-A real-world example of using the OrderedDict class can be found in many frameworks and libraries
+A real-world example of using the `OrderedDict` class can be found in many frameworks and libraries
 that use it to store the order of configuration settings. Command line parsers also need to store
 the order of command line arguments, and they use OrderedDict to do so.
 
@@ -2677,15 +2713,15 @@ include::Part B - Advanced/09_data/examples/data_ordered_dict.py[]
 
 ==== ChainMap
 
-ChainMap is a class in Python's collections module that provides a way to combine multiple
+`ChainMap` is a class in Python's collections module that provides a way to combine multiple
 dictionaries or mappings into a single, unified view. It allows you to access the keys and values
-from all the underlying dictionaries as if they were merged into one. ChainMap is particularly
+from all the underlying dictionaries as if they were merged into one. `ChainMap` is particularly
 useful when you want to create a chain of dictionaries and perform lookups or updates across them
 efficiently without having to merge the dictionaries physically.
 
-A real-world example of using the ChainMap class can be found in web frameworks like Django and
-Flask. These frameworks use ChainMap to manage the configuration settings for an application. The
-settings are stored in multiple dictionaries, and ChainMap is used to combine them into a single
+A real-world example of using the `ChainMap` class can be found in web frameworks like Django and
+Flask. These frameworks use `ChainMap` to manage the configuration settings for an application. The
+settings are stored in multiple dictionaries, and `ChainMap` is used to combine them into a single
 view.
 
 [source,python]
