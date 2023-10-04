@@ -2,10 +2,29 @@
 
 by Branimir Georgiev, Vasil Andreev, Yorden Dragnev, Hristyan Grigorov, and others.
 
+## Table of Contents
+
+- [1. Getting Started](#getting-started)
+    - [1.1. Install the prerequisites](#install-the-prerequisites)
+    - [1.2. Clone the repository](#clone-the-repository)
+    - [1.3. Open the project in PyCharm ](#open-the-project-in-pycharm)
+    - [1.4. Install the AsciiDoc plugin](#install-the-asciidoc-plugin)
+    - [1.5. Install asciidoctor (optional)](#install-asciidoctor-optional)
+
+- [2. Project Description](#project-description)
+    - [2.1. Project Purpose](#project-purpose)
+    - [2.2. Project Structure](#project-structure)
+
+- [3. Project Conventions](#project-conventions)
+    - [3.1. File Naming](#file-naming)
+    - [3.2. Commit Messages](#commit-messages)
+    - [3.3. Issue Naming](#issue-naming)
+    - [3.4. Pull Requests](#pull-requests)
 
 ## 1. Getting Started
 
 ### 1.1. Install the prerequisites
+<a id='install-the-prerequisites'></a>
 
 * [Python 3.10 or higher](https://www.python.org/downloads/)
 * [PyCharm Community Edition](https://www.jetbrains.com/pycharm/)
@@ -16,7 +35,7 @@ by Branimir Georgiev, Vasil Andreev, Yorden Dragnev, Hristyan Grigorov, and othe
 git clone https://github.com/braboj/tutorial-python.git
 ```
 
-### 1.3. Open the project in PyCharm or and IDE of your choice
+### 1.3. Open the project in PyCharm
 
 1. Open PyCharm
 2. Select `File` -> `Open`
@@ -41,6 +60,9 @@ git clone https://github.com/braboj/tutorial-python.git
 4. Test with `asciidoctor --version`
 
 ## 2. Project Description
+<a id="project-description"></a>
+
+### 2.1. Project Purpose
 
 This tutorial offers a comprehensive tutorial for the Python programming language. The tutorial is
 written in the **AsciiDoc** format. The tutorial is divided into five parts:
@@ -55,7 +77,8 @@ The first three parts are covering the Python Programming language. The last two
 covering the Python ecosystem. The tutorial is designed to be read in order. However, each part 
 is self-contained and can be read separately.
  
-## 3. Project Structure
+### 2.2. Project Structure
+<a id="project-structure"></a>
 
 ```
 ROOT
@@ -79,6 +102,7 @@ ROOT
 ```
 
 ## 4. Project Conventions
+<a id="project-conventions"></a>
 
 ### 4.1. File Naming
 
