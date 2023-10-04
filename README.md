@@ -30,12 +30,14 @@ by Branimir Georgiev, Vasil Andreev, Yorden Dragnev, Hristyan Grigorov, and othe
 * [PyCharm Community Edition](https://www.jetbrains.com/pycharm/)
 
 ### 1.2. Clone the repository
+<a id='clone-the-repository'></a>
 
 ```
 git clone https://github.com/braboj/tutorial-python.git
 ```
 
 ### 1.3. Open the project in PyCharm
+<a id='open-the-project-in-pycharm'></a>
 
 1. Open PyCharm
 2. Select `File` -> `Open`
@@ -43,6 +45,7 @@ git clone https://github.com/braboj/tutorial-python.git
 4. Select the `tutorial-python` folder
 
 ### 1.4. Install the AsciiDoc plugin
+<a id='install-the-asciidoc-plugin'></a>
 
 1. Click `Open`
 2. Select `File` -> `Settings`
@@ -53,6 +56,7 @@ git clone https://github.com/braboj/tutorial-python.git
 7. Click `Restart IDE`
 
 ### 1.5. Install asciidoctor (optional)
+<a id='install-asciidoctor-optional'></a>
 
 1. Install Chocolatey (https://chocolatey.org/install)
 2. Install ruby with `choco install ruby`
@@ -63,6 +67,7 @@ git clone https://github.com/braboj/tutorial-python.git
 <a id="project-description"></a>
 
 ### 2.1. Project Purpose
+<a id="project-purpose"></a>
 
 This tutorial offers a comprehensive tutorial for the Python programming language. The tutorial is
 written in the **AsciiDoc** format. The tutorial is divided into five parts:
@@ -105,11 +110,13 @@ ROOT
 <a id="project-conventions"></a>
 
 ### 4.1. File Naming
+<a id="file-naming"></a>
 
 * `PART_<letter>.adoc` - Part file
 * `CH_<number>.adoc` - Chapter file
 
 ### 4.2. Commit Messages
+<a id="commit-messages"></a>
 
 * (`#<id>`) - Use as a reference to a concrete issue number (either GitHub or JIRA)
 * [`#####`] - No issue or ticket defined for this commit
@@ -121,6 +128,7 @@ ROOT
 ```
 
 ### 4.3. Issue Naming
+<a id="issue-naming"></a>
 
 * [`<part>, <chapter>`] - <message>
 * The square brackets define the context (optional)
@@ -134,6 +142,7 @@ ROOT
 ```
 
 ### 4.4. Pull Requests
+<a id="pull-requests"></a>
 
 - The requester is free to follow any style guide
 - Preferably use https://blog.montrealanalytics.com/4-tips-for-effective-pull-request-naming-f60793998f04]
