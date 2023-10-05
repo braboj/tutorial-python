@@ -32,12 +32,21 @@ git clone https://github.com/braboj/tutorial-python.git
 6. Click `Install`
 7. Click `Restart IDE`
 
-### 1.5. Install asciidoctor (optional)
+
+### 1.5. Install ruby
 
 1. Install Chocolatey (https://chocolatey.org/install)
 2. Install ruby with `choco install ruby`
+
+### 1.6. Install asciidoctor
+
 3. Install asciidoctor with `gem install asciidoctor`
 4. Test with `asciidoctor --version`
+
+### 1.7. Install ascidoctor-pdf
+
+1. Install asciidoctor-pdf with `gem install asciidoctor-pdf --pre`
+2. Test with `asciidoctor-pdf --version`
 
 ## 2. Project Description
 
@@ -114,5 +123,4 @@ ROOT
 
 - The requester is free to follow any style guide
 - Preferably use https://blog.montrealanalytics.com/4-tips-for-effective-pull-request-naming-f60793998f04]
-
 
