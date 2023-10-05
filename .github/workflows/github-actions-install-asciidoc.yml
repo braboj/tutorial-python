@@ -1,5 +1,5 @@
-name: Install asciidoctor
-run-name: ${{ github.actor }} is installing asciidoctor
+name: Generate PDF with asciidoctor
+run-name: ${{ github.actor }} is creating the pdf document
 
 on:
   push:
