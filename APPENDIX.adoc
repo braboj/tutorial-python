@@ -1,6 +1,7 @@
 = Appendix
+:imagesdir: ./Assets/images
 
-== Soft Development Models ==
+== Software Development Models ==
 
 A typical project will combine one or more of these models. For example a project may use the
 Agile Model for the frontend and the DevOps Model for the backend. The following table shows the
@@ -124,6 +125,10 @@ changing requirements.
 | Non-Functional Requirements |  | [ ]
 | Architecture |  | [ ]
 | Quality Assurance |  | [ ]
-| Developent Cycle |  | [ ]
+| Development Cycle |  | [ ]
 
 |===
+
+
+== UML ==
+image::appendix/uml_reference_sheet.png[align="center"]
