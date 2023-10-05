@@ -644,13 +644,13 @@ example, you can create a subclass for drawing a red circle, a red square, a blu
 blue square. This approach works well if you have a small number of shapes and colors. However, it
 becomes difficult to manage when you have a large number of shapes and colors.
 
-image::part_b/ch_04/shapes_and_colors_with_inheritance.png[]
+image::part_b/ch_04/shapes_and_colors_inheritance.png[]
 
 The bridge pattern can be used to solve this problem. It provides a way to separate the interface
 of a class from its implementation. It allows you to create a class that can draw shapes with
 different colors without having to create a subclass for each shape and color combination.
 
-image::part_b/ch_04/shapes_and_colors_with_composition.png[]
+image::part_b/ch_04/shapes_and_colors_composition.png[]
 
 
 [source,python]
