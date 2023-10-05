@@ -6,6 +6,7 @@ on:
     branches:
     - main
 
+
 jobs:
   Install-asciidoctor:
 
@@ -30,3 +31,6 @@ jobs:
       # Install asciidoctor-pdf
       - run: gem install asciidoctor-pdf
       - run: asciidoctor-pdf --version
+
+      # Generate the PDF
+      - run: asciidoctor-pdf --theme my-theme.yml BOOK.adoc ./Build/BOOK.pdf
