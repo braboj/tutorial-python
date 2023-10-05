@@ -26,11 +26,9 @@ jobs:
 
       # Install asciidoctor
       - run: gem install asciidoctor
-      - run: asciidoctor --version
 
       # Install asciidoctor-pdf
       - run: gem install asciidoctor-pdf
-      - run: asciidoctor-pdf --version
 
       # Generate the PDF
-      - run: asciidoctor-pdf --theme my-theme.yml BOOK.adoc ./Build/BOOK.pdf
+      - run: asciidoctor-pdf --theme my-theme.yml BOOK.adoc -o ./Build/PYTHON_BIBLE.pdf
