@@ -1,0 +1,34 @@
+name: Install asciidoctor
+run-name: ${{ github.actor }} is installing asciidoctor
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  Install-asciidoctor:
+
+    # Set the job to run on Ubuntu
+    runs-on: ubuntu-latest
+
+    # Set up the job environment
+    steps:
+
+      # Checkout the repository
+      - uses: actions/checkout@v3
+
+      # Set up Ruby
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+
+    # Run the job
+    steps:
+      # Install asciidoctor
+      - run: gem install asciidoctor
+      - run: asciidoctor --version
+
+      # Install asciidoctor-pdf
+      - run: gem install asciidoctor-pdf
+      - run: asciidoctor-pdf --version
