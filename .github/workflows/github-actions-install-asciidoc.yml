@@ -23,8 +23,6 @@ jobs:
         with:
           ruby-version: 2.7
 
-    # Run the job
-    steps:
       # Install asciidoctor
       - run: gem install asciidoctor
       - run: asciidoctor --version
