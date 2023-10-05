@@ -1,12 +1,8 @@
-name: Install Ascii Doctor
-
-on:
-  push:
-    branches:
-      - master
-
+name: Install asciidoctor
+run-name: ${{ github.actor }} is installing asciidoctor
+on: [push]
 jobs:
-  example:
+  Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
