@@ -8,7 +8,7 @@ on:
 
 
 jobs:
-  Install-asciidoctor and generate the PDF:
+  Generate-PDF-file:
 
     # Set the job to run on Ubuntu
     runs-on: ubuntu-latest
