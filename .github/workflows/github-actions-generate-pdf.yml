@@ -45,7 +45,7 @@ jobs:
         run: asciidoctor-pdf --theme ./Assets/pdf/themes/my-theme.yml BOOK.adoc -o ./Build/AWESOME_PYTHON.pdf
 
       # Commit the PDF file
-      - name: Commit the generate PDF file
+      - name: Commit the generated PDF file
         run: |
           git add .
           git commit -m "[#####] - ${{ github.actor }} published the pdf document"
