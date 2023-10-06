@@ -54,4 +54,4 @@ if __name__ == "__main__":
     )
 
     result = expression.interpret(context)
-    print(f"Result: {result}")
+    print("Result: {}".format(result))

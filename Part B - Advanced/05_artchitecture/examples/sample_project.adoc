@@ -4,9 +4,9 @@
 :toc:
 :toclevels: 3
 
-== Development Environment
+== System Architecture
 
-=== Technogies
+=== Technologies
  - Python 3.11
 
 === IDE
