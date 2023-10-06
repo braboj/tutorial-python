@@ -882,7 +882,7 @@ should behave according to the current values of the class’s fields.
 - Use the pattern when you have a lot of duplicate code across similar states and transitions of a
 condition-based state machine.
 
-image::part_b/ch_04/finite_state_machine.png[]
+// image::part_b/ch_04/finite_state_machine.png[]
 
 [source,python]
 ----
