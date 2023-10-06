@@ -315,11 +315,11 @@ core application logic. AOP frameworks can inject these concerns into your code 
 // - Code generation tools such as ANTLR and Yacc.
 // - Static analysis tools such as pylint and mypy.
 
-=== types
+=== Creating classes using type()
 
 
 
-=== Metaclasses
+=== Metaclasses in Python
 
 A metaclass is a class whose instances are classes. A metaclass is used to customize the creation
 of classes. A metaclass is defined by inheriting from the type metaclass. The type metaclass is a
@@ -335,7 +335,10 @@ __new__() method takes the following arguments:
 
 Use cases:
 
+Sources: Mastering Python,
+
 - Registering classes at creation time
+- Automatically registering a plugin system
 - Automatically adding new methods
 - Automatic property creation
 - Logging and profiling
@@ -343,6 +346,11 @@ Use cases:
 - Proxies
 - Automatic resource locking/synchronization.
 - Declarative API
+- Abstract classes
+- Order of operations when instantiating a class
+- Singleton pattern
+- Storing class attributes in definition order
+
 
 == Aspect Oriented Programming
 https://softwareengineering.stackexchange.com/questions/99433/aop-concepts-explained-for-the-dummy
