@@ -2738,6 +2738,39 @@ view.
 include::Part B - Advanced/09_data/examples/data_chainmap.py[]
 ----
 
+=== Comprehensions
+Comprehensions are used to create a new sequence from existing one.
+The elements of the existing sequence can be directly adopted,
+manipulated or skipped entirely based on a set criteria. In case of complicated manipulations using a for loop
+is preferred as it easier to read.
+
+==== List Comprehensions
+The syntax of a list comprehension follows the pattern :
+
+`new_list = [expression *for* item *in* iterable *if* condition == True]`
+
+For each item in the existing iterable, where the condition is true,
+the expression will take the item and append the result in the new list.
+
+[source,python]
+----
+include::Part B - Advanced/09_data/examples/comprehension_list.py[]
+----
+
+==== Dictionary Comprehensions
+The syntax of a dictionary comprehension follows the pattern :
+
+`new_dictionary = {expression:expression *for* item *in* iterable *if* condition == True}`
+
+In the case of dictionary comprehension the item can be a key-value pair provided by the iterable,
+which can be already existing dictionary. Optional separate conditional statements for key and value are possible.
+Two expressions separated by colon in the beginning of the comprehension define the
+key-value pair for the new dictionary.
+
+[source,python]
+----
+include::Part B - Advanced/09_data/examples/comprehension_dictionary.py[]
+----
 
 == Import System
 
