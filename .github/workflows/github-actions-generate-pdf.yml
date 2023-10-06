@@ -17,27 +17,32 @@ jobs:
     steps:
 
       # Checkout the repository
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
 
       # Set up git user name and email to match the committer
-      - name: Setup git user
+      - name: Setup the git admin with push access
         run: |
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
 
       # Set up Ruby
-      - uses: ruby/setup-ruby@v1
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.7
 
       # Install asciidoctor
-      - run: gem install asciidoctor
+      - name: Install asciidoctor
+        run: gem install asciidoctor
 
       # Install asciidoctor-pdf
-      - run: gem install asciidoctor-pdf
+      - name: Install asciidoctor-pdf
+        run: gem install asciidoctor-pdf
 
       # Generate the PDF
-      - run: asciidoctor-pdf --theme ./Assets/pdf/themes/my-theme.yml BOOK.adoc -o ./Build/AWESOME_PYTHON.pdf
+      - name: Generate the PDF
+        run: asciidoctor-pdf --theme ./Assets/pdf/themes/my-theme.yml BOOK.adoc -o ./Build/AWESOME_PYTHON.pdf
 
       # Commit the PDF file
       - name: Commit files
