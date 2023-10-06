@@ -37,5 +37,5 @@ jobs:
       - name: Commit files
         run: |
           git add .
-          git commit -m ${{ github.actor }} published the pdf document
+          git commit -m "${{ github.actor }} published the pdf document"
           git push
