@@ -20,13 +20,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      # Set up git user name and email to match the committer
+      # Set up git user that will push the PDF file
       - name: Setup the git admin with push access
         run: |
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
 
-      # Set up Ruby
+      # Set up the Ruby environment
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -40,13 +40,13 @@ jobs:
       - name: Install asciidoctor-pdf
         run: gem install asciidoctor-pdf
 
-      # Generate the PDF
-      - name: Generate the PDF
+      # Generate the PDF file
+      - name: Generate the PDF file
         run: asciidoctor-pdf --theme ./Assets/pdf/themes/my-theme.yml BOOK.adoc -o ./Build/AWESOME_PYTHON.pdf
 
       # Commit the PDF file
-      - name: Commit files
+      - name: Commit the generate PDF file
         run: |
           git add .
-          git commit -m "${{ github.actor }} published the pdf document"
+          git commit -m "[#####] - ${{ github.actor }} published the pdf document"
           git push
