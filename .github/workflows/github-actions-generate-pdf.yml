@@ -31,4 +31,11 @@ jobs:
       - run: gem install asciidoctor-pdf
 
       # Generate the PDF
-      - run: asciidoctor-pdf --theme my-theme.yml BOOK.adoc -o PYTHON_BIBLE.pdf
+      - run: asciidoctor-pdf --theme ./Assets/pdf/themes/my-theme.yml BOOK.adoc -o ./Build/AWESOME_PYTHON.pdf
+
+      # Commit the PDF file
+      - name: Commit files
+        run: |
+          git add .
+          git commit -m ${{ github.actor }} published the pdf document
+          git push
