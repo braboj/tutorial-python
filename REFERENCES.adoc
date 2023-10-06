@@ -1,6 +1,5 @@
 = References
 :doctype: book
-:sectnums:
 :toc:
 :imagesdir: ./Assets/images
 :chapter-number: 0
@@ -8,30 +7,36 @@
 
 == Bibliography
 
-- Clean Code: A Handbook of Agile Software Craftsmanship
-- Fundamentals of Software Architecture: An Engineering Approach
-- Dive into Design Patterns
-- The Complete Python Manual: Learn how to master Python and expand your programming skills
-- Python Pocket Reference
-- Mastering Python
+=== Learning Python
+
+- Mastering Python, Rick Van Hattem
+- Learning Python, Mark Lutz
+- The big book of small Python projects, Al Sweigart
+- Effective Python: 59 Specific Ways to Write Better Python, Brett Slatkin
 - Fluent Python: Clear, Concise, and Effective Programming
-- Python Cookbook: Recipes for Mastering Python 3
-- Python Tricks: A Buffet of Awesome Python Features
+
+=== Design Patterns
+- Clean Code: A Handbook of Agile Software Craftsmanship
+- Dive into Design Patterns
 - Advanced Python Programming: Build high performance, concurrent, and multi-threaded apps with
 Python using proven design patterns
-- Learn Python 3 the Hard Way: A Very Simple Introduction to the Terrifyingly Beautiful World of Computers and Code
-- Advanced Python Programming: Build high performance, concurrent, and multi-threaded apps with
-Python using proven design patterns
-- Effective Python: 59 Specific Ways to Write Better Python
-- Python Tricks: A Buffet of Awesome Python Features
-- Effective Computation in Physics: Field Guide to Research with Python
-- The big book of small Python projects
+
+
+=== System Architecture
+
+- Fundamentals of Software Architecture: An Engineering Approach
+
+=== Data Science
+
 - Competetive Programming in Python
-- Python Penetration Testing Essentials
-- Learning Penertration Testing with Python
 - Python Data Analytics
 - Numerical Python: A Practical Techniques Approach for Industry
+- Effective Computation in Physics: Field Guide to Research with Python
 
+=== Cyber Security
+
+- Python Penetration Testing Essentials
+- Learning Penertration Testing with Python
 
 == Links
 

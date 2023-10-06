@@ -75,8 +75,8 @@ include::Part B - Advanced/02_oop/examples/abstraction.py[]
 === Inheritance (Code Reuse)
 
 Inheritance is the process of creating a new class from an existing class. The subclass inherits
-the attributes and methods of the superclass and can add its own attributes and methods.
-The inheritance is the opposite process of abstraction and is used to represent an _is-a_ relationship,
+the attributes and methods of the superclass and can add its own attributes and methods. The
+inheritance is the opposite process of abstraction and is used to represent an _is-a_ relationship,
 e.g a student is a person.
 
 Key points about inheritance:
@@ -99,8 +99,8 @@ data through the use of access modifiers and special methods called getters and 
 used to protect the internal state of an object from the outside world.
 
 Python offers no mechanism for making attributes private and relies on naming conventions to
-distinguish between public, protected and private attributes. Protected attributes are prefixed with a single
-underscore and private attributes are prefixed with a double underscore.
+distinguish between public, protected and private attributes. Protected attributes are prefixe
+with a single underscore and private attributes are prefixed with a double underscore.
 
 Key points about encapsulation:
 
@@ -120,12 +120,12 @@ include::Part B - Advanced/02_oop/examples/encapsulation.py[]
 interface of the class. Typcially all getter and setter methods are public. Public attributes and
 methods are not prefixed with an underscore.
 
-*Protected* attributes and methods are accessible from outside the class but only in a subclass. They
-may or may not have a getter or setter method. Protected attributes and methods are prefixed with
-a single underscore.
+*Protected* attributes and methods are accessible from outside the class but only in a subclass.
+They may or may not have a getter or setter method. Protected attributes and methods are prefixed
+with a single underscore.
 
-*Private* attributes and methods are not accessible from outside the class. They are used to hide the
-internal implementation details of a class. Private attributes and methods are prefixed with a
+*Private* attributes and methods are not accessible from outside the class. They are used to hide
+the internal implementation details of a class. Private attributes and methods are prefixed with a
 double underscore.
 
 [source,python]
@@ -564,8 +564,8 @@ copy of the object without cloning any of its internal references. The deepcopy(
 deep copy of an object. A *deep copy* of an object is a copy of the object that clones all of its
 internal references.
 
-For simplicity the following example will not use the copy methods and instead will show the logic of the
-prototype pattern.
+For simplicity the following example will not use the copy methods and instead will show the
+logic of the prototype pattern.
 
 [source,python]
 ----
@@ -919,7 +919,8 @@ When to use the template method pattern:
 - Use the Template Method pattern when you want to let clients extend only particular steps of an
 algorithm, but not the whole algorithm or its structure.
 - Use the pattern when you have several classes that contain almost identical algorithms with
-some minor differences. As a result, you might need to modify both classes when the algorithm changes.
+some minor differences. As a result, you might need to modify both classes when the algorithm
+changes.
 
 [source,python]
 ----
@@ -1073,9 +1074,9 @@ pattern to structure the backend of the application.
 
 ===== Multi-Layered
 
-A multi-layered pattern can be used to structure programs that can be decomposed into groups of subtasks,
-each of which is at a particular level of abstraction. Each layer provides services to the next
-higher layer.
+A multi-layered pattern can be used to structure programs that can be decomposed into groups of
+subtasks, each of which is at a particular level of abstraction. Each layer provides services to
+the next higher layer.
 
 Typically the layers are organized in a hierarchical manner, with each layer providing services
 to the next higher layer. Almost all software applications are multi-layered. The most common
@@ -1539,7 +1540,8 @@ The following list is a set of best practices for using the logging module:
 - Never hardcode sensitive data (e.g., passwords, API keys) in log messages
 - Use log rotation to manage log file sizes and prevent disk space issues
 - On errors log the stack trace to help with debugging and if possible, suggest resolutions
-- Logging is thread-safe and thus can slow down the application if used excessively in a multi-threaded application
+- Logging is thread-safe and thus can slow down the application if used excessivelyin a
+multi-threaded application
 - Use a logging framework that supports structured logging (e.g. JSON, XML, etc.)
 
 == Exceptions
@@ -1574,8 +1576,8 @@ least one except block.
 |except | The except block contains the code that handles the exception. It must be preceded by
 a try block.
 
-|else | The else block contains the code that is executed if no exception is raised in the try block.
-It must be preceded by a try-except block.
+|else | The else block contains the code that is executed if no exception is raised in the try
+block. It must be preceded by a try-except block.
 
 |finally | The finally block contains the code that is always executed, regardless of whether an
 exception is raised in the try block. It must be preceded by a try-except block.
@@ -2175,14 +2177,17 @@ include::Part B - Advanced/08_dunder/examples/dunder_context_manager.py[]
 
 - Document what dunder methods do and what they are expected to return. This helps other developers understand the purpose and behavior of these methods.
 
-- Dunder methods should be simple and focused. If a dunder method becomes too complex, consider refactoring it into smaller, more manageable methods.
+- Dunder methods should be simple and focused. If a dunder method becomes too complex, consider
+refactoring it into smaller, more manageable methods.
 
-- Avoid overloading too many dunder methods in a single class. Overloading too many can make your code complex and less maintainable.
+- Avoid overloading too many dunder methods in a single class. Overloading too many can make your
+code complex and less maintainable.
 
 - Include tests for dunder methods in your test suite to ensure they behave as expected. Test
 cases for equality (__eq__) and string representation (__str__) are commonly used.
 
-- Overload dunder methods for common operators (e.g., +, -, *) when it makes sense for the class. This allows objects of the class to be used in intuitive ways.
+- Overload dunder methods for common operators (e.g., +, -, *) when it makes sense for the class.
+This allows objects of the class to be used in intuitive ways.
 
 
 == Advanced Data
@@ -2265,9 +2270,9 @@ include::Part B - Advanced/09_data/examples/data_zipping.py[]
 
 ==== unpack
 
-The unpacking is done by using the `\*` operator. The `*` operator is used to unpack an iterable into
-a sequence of arguments. Typically this is used on a list or tuple to unpack it into a sequence of
-arguments for a function call.
+The unpacking is done by using the `\*` operator. The `*` operator is used to unpack an iterable
+into a sequence of arguments. Typically this is used on a list or tuple to unpack it into a
+sequence of arguments for a function call.
 
 [source,python]
 ----
@@ -2662,9 +2667,9 @@ The `dataclasses` is a module introduced in Python 3.7 that provides a decorator
 automatically adding special methods to user-defined classes. It simplifies the creation of classes primarily used to
 store data, making your code more concise and readable.
 
-Data classes are typically used when you want to create simple classes that mainly serve as data containers, and you
-want to avoid writing boilerplate code for common methods like `\\__init__()`, `\\__repr__()`,
-and `\\__eq__()`.
+Data classes are typically used when you want to create simple classes that mainly serve as data
+containers, and you want to avoid writing boilerplate code for common methods like `\\__init__()
+`, `\\__repr__()`, and `\\__eq__()`.
 
 By default data classes are mutable, but you can make them immutable by adding the `frozen=True`
 keyword argument to the `@dataclass` decorator. This will make the class immutable and hashable,
@@ -2692,9 +2697,9 @@ The `Counter()` class can be used in a variety of situations, such as:
 - Counting the most common words in a text file
 - Checking for duplicate elements
 
-A real-world example of using the `Counter` class can be found in text analysis and natural language processing.
-Let's say you're analyzing a large body of text, such as a collection of articles, tweets, or customer reviews,
-and you want to extract insights about word frequency.
+A real-world example of using the `Counter` class can be found in text analysis and natural
+language processing. Let's say you're analyzing a large body of text, such as a collection of
+articles, tweets, or customer reviews, and you want to extract insights about word frequency.
 
 
 [source,python]
@@ -2704,11 +2709,11 @@ include::Part B - Advanced/09_data/examples/data_counter_class.py[]
 
 ==== OrderedDict
 
-The `OrderedDict` is useful when you need to maintain the order of elements in a dictionary, which is
-valuable in scenarios like configuration files, where the order of settings matters, or when you
-want to implement data structures like ordered queues with key-value pairs.It ensures predictable
-and consistent ordering when you iterate over the dictionary, which is not guaranteed with the
-standard dict type.
+The `OrderedDict` is useful when you need to maintain the order of elements in a dictionary,
+which is valuable in scenarios like configuration files, where the order of settings matters, or
+when you want to implement data structures like ordered queues with key-value pairs.It ensures
+predictable and consistent ordering when you iterate over the dictionary, which is not guaranteed
+with the standard dict type.
 
 A real-world example of using the `OrderedDict` class can be found in many frameworks and libraries
 that use it to store the order of configuration settings. Command line parsers also need to store
@@ -2741,8 +2746,8 @@ include::Part B - Advanced/09_data/examples/data_chainmap.py[]
 === Comprehensions
 Comprehensions are used to create a new sequence from existing one.
 The elements of the existing sequence can be directly adopted,
-manipulated or skipped entirely based on a set criteria. In case of complicated manipulations using a for loop
-is preferred as it easier to read.
+manipulated or skipped entirely based on a set criteria. In case of complicated manipulations
+using a for loop is preferred as it easier to read.
 
 ==== List Comprehensions
 The syntax of a list comprehension follows the pattern :
@@ -2763,9 +2768,9 @@ The syntax of a dictionary comprehension follows the pattern :
 `new_dictionary = {expression:expression *for* item *in* iterable *if* condition == True}`
 
 In the case of dictionary comprehension the item can be a key-value pair provided by the iterable,
-which can be already existing dictionary. Optional separate conditional statements for key and value are possible.
-Two expressions separated by colon in the beginning of the comprehension define the
-key-value pair for the new dictionary.
+which can be already existing dictionary. Optional separate conditional statements for key and
+value are possible. Two expressions separated by colon in the beginning of the comprehension
+define the key-value pair for the new dictionary.
 
 [source,python]
 ----
@@ -3053,13 +3058,15 @@ The following are some of the most common compatibility rules and tools:
 
 === Syntax
 
-Python 2 and Python 3 have different syntaxes for some features. When writing code that shloud be compatible with both Python 2 and Python 3, you should follow the following rules:
+Python 2 and Python 3 have different syntaxes for some features. When writing code that shloud be
+compatible with both Python 2 and Python 3, you should follow the following rules:
 
 - Use only *explicit relative imports* or *absolute imports*
 - Use only the `print()` function
 - Use `raise exception` instead of `raise exception as e`
 - Use `except Exception as e` instead of `except Exception, e`
-- Be careful with the division operator (/). In Python 2 it is an integer division operator, in Python 3 it is a float division operator
+- Be careful with the division operator (/). In Python 2 it is an integer division operator, in
+Python 3 it is a float division operator
 
 Some changes require more than just a simple syntax change. For example the following changes
 require additinal tools to make the code compatible:
@@ -3068,7 +3075,8 @@ require additinal tools to make the code compatible:
 The same behavior can be achieved in Python 2 by using the xrange() function.
 
 - **unicode vs str** : In Python 2, the str type represents a byte string, and the unicode type
-represents a Unicode string. In Python 3, the str type represents a Unicode string, and the bytes type represents a byte string.
+represents a Unicode string. In Python 3, the str type represents a Unicode string, and the bytes
+type represents a byte string.
 
 - *raw_input() vs input()* : The `input` in Python 3 is equivalent to `raw_input` in Python 2
 
@@ -3136,13 +3144,15 @@ Key features of unittest:
 scans modules and packages for test cases, making it easy to organize and execute tests.
 
 - *Test Fixtures*: unittest provides methods for setting up and tearing down test fixtures. You can
-use setUp() to prepare the environment before a test and tearDown() to clean up afterward. This ensures that tests are isolated and repeatable.
+use setUp() to prepare the environment before a test and tearDown() to clean up afterward. This
+ensures that tests are isolated and repeatable.
 
 - *Test Case Classes*: Test cases are organized into classes derived from unittest.TestCase. Each
 method in the class whose name starts with "test" is treated as an individual test case.
 
 - *Assertions*: unittest offers a variety of assertion methods (e.g., assertEqual(), assertTrue(),
-assertRaises()) to check expected outcomes in your tests. These assertions help you validate that your code is functioning correctly.
+assertRaises()) to check expected outcomes in your tests. These assertions help you validate that
+your code is functioning correctly.
 
 - *Test Discovery*: You can use test loaders to customize how tests are discovered and loaded.
 This is useful for selecting specific test cases or running tests with different patterns.
@@ -3151,13 +3161,15 @@ This is useful for selecting specific test cases or running tests with different
 about passed, failed, and skipped tests. This helps you identify and address issues quickly.
 
 - *Test Skipping*: You can skip specific tests using the @unittest.skip decorator or conditional
-skipping with @unittest.skipIf and @unittest.skipUnless. This is useful for excluding tests under certain conditions.
+skipping with @unittest.skipIf and @unittest.skipUnless. This is useful for excluding tests unde
+certain conditions.
 
 - *Parameterized Tests*: unittest allows you to create parameterized tests using test data provided
 in iterable forms. This enables you to test a function or method with multiple input values easily.
 
 - *Test Suites*: You can group related test cases into test suites using unittest.TestSuite. Test
-suites enable you to run a collection of tests as a single unit, making it easier to organize and execute tests.
+suites enable you to run a collection of tests as a single unit, making it easier to organize and
+execute tests.
 
 - *Custom Test Loaders and Result Classes*: You can create custom test loaders to discover tests
 in unconventional ways and customize test result classes to modify result reporting.
@@ -3188,7 +3200,8 @@ Key features of pytest:
 modules. You don't need to manually specify each test to run, which simplifies test management.
 
 - *Fixture Support*: Pytest provides a robust fixture mechanism, allowing you to set up and tear
-down resources needed for your tests. Fixtures enhance code reuse and ensure that setup and teardown logic is clean and maintainable.
+down resources needed for your tests. Fixtures enhance code reuse and ensure that setup and
+teardown logic is clean and maintainable.
 
 - *Parameterized Testing*: You can use the @pytest.mark.parametrize decorator to run the same test
 function with multiple sets of input data, simplifying the testing of various scenarios.
@@ -3200,7 +3213,8 @@ provides detailed failure information, making it easy to diagnose issues in fail
 --pdb option to drop into a debugger when a test fails, making debugging straightforward.
 
 - *Plugins and Extensibility*: Pytest has a rich ecosystem of plugins that extend its functionality.
-You can write your custom plugins or use existing ones to tailor pytest to your specific testing needs.
+You can write your custom plugins or use existing ones to tailor pytest to your specific testing
+needs.
 
 - *Test Markers and Custom Labels*: You can use custom markers to label and categorize tests. This
 allows you to run specific groups of tests based on their labels, improving test organization.
@@ -3212,10 +3226,12 @@ cores for faster test runs. This is particularly useful for large test suites.
 transition to pytest without rewriting all your tests.
 
 - *Rich Reporting*: Pytest generates informative test reports in various formats, including console,
-JUnit XML, and HTML. These reports provide a summary of test results and help identify issues quickly.
+JUnit XML, and HTML. These reports provide a summary of test results and help identify issues
+quickly.
 
 - *Flexible Test Discovery*: Pytest allows you to customize test discovery by specifying naming
-conventions, directories, and filtering options. You can also exclude certain tests or modules from execution.
+conventions, directories, and filtering options. You can also exclude certain tests or modules
+from execution.
 
 - *Fixture Scopes*: Fixtures can have different scopes (function, class, module, session), allowing
 you to control how long a resource is used and shared among tests.
@@ -3243,7 +3259,8 @@ percentage of decision branches taken), and more. These metrics provide insights
 thoroughness of your testing.
 
 - *Integration*: coverage seamlessly integrates with popular Python testing
-frameworks like pytest, unittest, and nose. It can be used with these frameworks to measure code coverage during test execution.
+frameworks like pytest, unittest, and nose. It can be used with these frameworks to measure code
+coverage during test execution.
 
 - *Tracking Executed Code*: coverage works by tracking which lines of code are executed during test
 runs. It instruments your Python code to collect this information.
@@ -3253,7 +3270,8 @@ formats. These reports show which lines of code were covered by tests and which 
 reports are particularly useful for visualizing coverage data.
 
 - *Branch Coverage*: In addition to statement coverage, coverage can also track branch coverage.
-Branch coverage measures whether both true and false branches of conditional statements have been executed.
+Branch coverage measures whether both true and false branches of conditional statements have been
+executed.
 
 - *Selective Coverage*: You can use coverage to measure coverage for specific parts of your code by
 including or excluding modules, packages, or specific files from analysis. This allows you to
@@ -3304,15 +3322,19 @@ issues quickly.
 
 === tox
 
-The Tox library is a popular tool in the Python ecosystem for managing and automating the testing of Python packages across multiple environments. It helps ensure that your Python package works correctly across various Python versions, interpreters, and configurations.
+The Tox library is a popular tool in the Python ecosystem for managing and automating the testing
+of Python packages across multiple environments. It helps ensure that your Python package works
+correctly across various Python versions, interpreters, and configurations.
 
 Key features of Tox:
 
 - *Cross-Environment Testing*: Tox allows you to define multiple testing environments, each with a
-specific Python version, interpreter, and configuration. This enables you to test your code across a wide range of scenarios.
+specific Python version, interpreter, and configuration. This enables you to test your code
+across a wide range of scenarios.
 
 - *Isolated Virtual Environments*: Tox creates isolated virtual environments for each testing
-environment you specify. This ensures that your tests run in clean, reproducible environments, avoiding conflicts with system-wide Python installations.
+environment you specify. This ensures that your tests run in clean, reproducible environments,
+avoiding conflicts with system-wide Python installations.
 
 - *Automated Testing*: Tox automates the entire testing process. You can run all tests for your
 project, including unit tests, integration tests, and more, with a single command: tox.
@@ -3324,7 +3346,8 @@ dependencies. This ensures that the correct dependencies are installed in each v
 processors to speed up testing, making it suitable for large projects.
 
 - *Integration with Testing Frameworks*: Tox integrates seamlessly with popular testing frameworks
-like pytest, nose, unittest, and more. You can specify your preferred testing framework in the configuration.
+like pytest, nose, unittest, and more. You can specify your preferred testing framework in the
+configuration.
 
 - *Continuous Integration (CI) Integration*: Tox is commonly used in CI/CD (Continuous
 Integration/Continuous Deployment) pipelines. It ensures that your code passes tests in various environments, helping you catch issues early.
