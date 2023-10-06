@@ -32,25 +32,45 @@ git clone https://github.com/braboj/tutorial-python.git
 6. Click `Install`
 7. Click `Restart IDE`
 
+## 2. Deploying the PDF file
 
-### 1.5. Install ruby
+### 2.1. Install ruby on Windows
 
-1. Install Chocolatey (https://chocolatey.org/install)
-2. Install ruby with `choco install ruby`
+1. Open a new terminal as administrator
+2. Install Chocolatey (https://chocolatey.org/install)
+3. Install ruby with `choco install ruby`
 
-### 1.6. Install asciidoctor
+### 2.2. Install ruby on Linux
 
-3. Install asciidoctor with `gem install asciidoctor`
-4. Test with `asciidoctor --version`
+1. Install ruby with `sudo apt install ruby-full`
+2. Test with `ruby --version`
 
-### 1.7. Install ascidoctor-pdf
+### 2.3. Install asciidoctor
 
-1. Install asciidoctor-pdf with `gem install asciidoctor-pdf --pre`
-2. Test with `asciidoctor-pdf --version`
+1. Restart or open a new terminal as administrator
+2. Install asciidoctor with `gem install asciidoctor`
+3. Test with `asciidoctor --version`
 
-## 2. Project Description
+### 2.4. Install ascidoctor-pdf
 
-### 2.1. Project Purpose
+1. Restart or open a new terminal as administrator
+2. Install asciidoctor-pdf with `gem install asciidoctor-pdf --pre`
+3. Test with `asciidoctor-pdf --version`
+
+### 2.5. Generate the PDF file
+
+1. Open a terminal
+2. Navigate to the project folder
+3. Run `asciidoctor-pdf --theme ./Assets/pdf/themes/my-theme.yml BOOK.adoc -o ./Build/AWESOME_PYTHON.pdf`
+4. The PDF file is located in the root folder
+5. Commit and tag the commit with the version number
+5. Push the commit and the tag to GitHub
+6. Create a release on GitHub
+
+
+## 3. Project Description
+
+### 3.1. Project Purpose
 
 This tutorial offers a comprehensive tutorial for the Python programming language. The tutorial is
 written in the **AsciiDoc** format. The tutorial is divided into five parts:
@@ -65,7 +85,7 @@ The first three parts are covering the Python Programming language. The last two
 covering the Python ecosystem. The tutorial is designed to be read in order. However, each part 
 is self-contained and can be read separately.
  
-### 2.2. Project Structure
+### 3.2. Project Structure
 
 ```
 ROOT
