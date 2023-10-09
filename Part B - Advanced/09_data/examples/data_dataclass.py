@@ -25,7 +25,7 @@ class DataClassWithDefaults(DataClass):
     data: List[int] = field(default_factory=list)
 
     def add_value(self, value):
-        self.values.append(value)
+        self.data.append(value)
 
     def __str__(self):
         return f"{self.name}: {self.value}, {self.data}"
@@ -37,4 +37,5 @@ if __name__ == "__main__":
     print(my_data)
 
     my_data = DataClassWithDefaults()
+    my_data.add_value(1)
     print(my_data)

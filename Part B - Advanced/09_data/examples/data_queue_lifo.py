@@ -1,4 +1,4 @@
-# Example: FIFO queue data structure
+# Example: LIFO queue data structure
 
 from six.moves import queue
 
@@ -31,7 +31,7 @@ def fill_queue(customers):
 
 if __name__ == "__main__":
 
-    # Create a FIFO queue
+    # Create a LIFO queue
     d = queue.LifoQueue()
 
     # Fill the queue

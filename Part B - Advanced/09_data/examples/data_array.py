@@ -23,10 +23,10 @@ def test_int():
 def test_unicode():
 
     # Use unicode characters
-    unucode_array = array.array('u', "Здравейте, хора!")
+    unicode_array = array.array('u', "Здравейте, хора!")
 
     # Convert the array to a bytes object (useful for binary data)
-    bytes_data = unucode_array.tobytes()
+    bytes_data = unicode_array.tobytes()
     print(bytes_data)
 
     # Convert a bytes object back to an array

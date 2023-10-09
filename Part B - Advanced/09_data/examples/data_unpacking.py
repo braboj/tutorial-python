@@ -25,6 +25,6 @@ func1(*pos_args)
 func2(*pos_args)
 func3(**keyword_args)
 
-# test = "PYTHON"
-# unpacked = [*test]
-# print(unpacked)
+test = "PYTHON"
+unpacked = [*test]
+print(unpacked)

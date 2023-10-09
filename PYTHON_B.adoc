@@ -2779,19 +2779,19 @@ include::Part B - Advanced/09_data/examples/comprehension_dictionary.py[]
 
 == Import System
 
-The import system is a mechanism for loading modules and packages. It allows the resuse of code
+The import system is a mechanism for loading modules and packages. It allows the reuse of code
 defined in other python files. Each python file defines a module with a unique name. When imported
 the module is executed and the functions and classes defined in the module are made available to
 the caller of the import statement.
 
-The following are some of the most common import statements:
+Some of the most common import rules are as follows:
 
 - Every python file is a *module*
 - Each module lives in its own world called *namespace*
-- Each folder containing python file with `__init__`.py is a *package*
-- *Nested packages* are possible and must contain the `__init__.py` file
-- Use `import` to import a module and have access through the module name (e.g. module.function())
-- Use `import as` to import a module and have access through the alias (e.g. alias.function())
+- Each folder containing `\\__init__.py` file is a *package*
+- *Nested packages* are possible and must contain the `\\__init__.py` file
+- Use `import` to import a module and have access through the module name (e.g. `module.function()`)
+- Use `import as` to import a module and have access through the alias (e.g. `alias.function()`)
 - Use `from` to import a specific function or class from a module to access it directly
 
 [source,python]
@@ -2826,10 +2826,10 @@ print(random.randint(1, 10))
 
 In a Python program, there are four types of namespaces:
 
-- Built-In  (accessed using vars(`\\__builtins__`) or dir(`\\__builtins__`))
-- Class     (accessed using vars(<class_name>) or dir(<class_name>)
-- Global    (accessed using globals())
-- Local     (accessed using locals())
+- Built-In  (accessed using `vars(\\__builtins__)` or `dir(\\__builtins__)`)
+- Class     (accessed using `vars(<class_name>)` or `dir(<class_name>)`
+- Global    (accessed using `globals()`)
+- Local     (accessed using `locals()`)
 
 [source,python]
 ----
@@ -2863,7 +2863,7 @@ The search path is constructed in the following order:
 === Packages
 
 A package is a collection of modules that are grouped together in a directory. A package should have
-a `\\__init__`.py file in the directory. The `\\__init__.py` file is executed when the package is
+a `\\__init__.py` file in the directory. The `\\__init__.py` file is executed when the package is
 imported. It can be empty or can contain code that initializes the package.
 
 [source, console]
@@ -2871,7 +2871,7 @@ imported. It can be empty or can contain code that initializes the package.
 include::Part B - Advanced/10_imports/examples/import_packages.txt[]
 ----
 
-The __init__ file can be used to aggregate the contents of the package. For example, the
+The `\\__init__.py` file can be used to aggregate the contents of the package. For example, the
 following code imports the modules in the package and makes them available to the user using the
 package name. From the outside the package looks like a single module and thus encapsulates the
 implementation details of the package.
@@ -2963,7 +2963,7 @@ include::Part B - Advanced/10_imports/examples/import_absolute.py[]
 
 A main module is a module that is executed directly by the Python interpreter. The main module
 is the first module that is executed in a Python program. The attribute `\\__name__` from the
-globals dictionary is set to `__main__`.
+globals dictionary is set to `\\__main__`.
 
 [source,python]
 ----
@@ -2981,7 +2981,7 @@ include::Part B - Advanced/10_imports/examples/import_skip_execution.py[]
 
 === Main Packages
 
-A main package is a package that has the file `__main__.py` in the package directory. This makes
+A main package is a package that has the file `\\__main__.py` in the package directory. This makes
 the package directory executable and marks explicitly the entry point of the package. This is very
 useful in case the package offers a command-line interface that can be implemented in this file.
 
@@ -3002,7 +3002,7 @@ include::Part B - Advanced/10_imports/examples/import_module_objects.py[]
 ----
 
 A package in this context is just a module object whose `\\__path__` attribute is set to a list of
-directory names and the `\\__package_` attribute is set to the name of the package.
+directory names and the `\\__package__` attribute is set to the name of the package.
 
 The import statement actually creates a module object and assigns it to a variable. The module
 object can then be used to access the functions and classes defined in the module.
@@ -3027,7 +3027,7 @@ include::Part B - Advanced/10_imports/examples/import_process.py[]
 === Importlib
 
 The importlib module provides functions for programmatically importing modules. The importlib
-module also provides functions for creating custom importers. An importer is an object that is
+module also provides functions for creating custom importers. An *importer* is an object that is
 responsible for finding and loading modules.
 
 === Naming Conventions
@@ -3071,21 +3071,21 @@ Python 3 it is a float division operator
 Some changes require more than just a simple syntax change. For example the following changes
 require additinal tools to make the code compatible:
 
-- *xrange() vs range()*: In Python 3 the range() function returns an iterator instead of a list.
-The same behavior can be achieved in Python 2 by using the xrange() function.
+- *xrange() vs range()*: In Python 3 the `range()` function returns an iterator instead of a list.
+The same behavior can be achieved in Python 2 by using the `xrange()` function.
 
 - **unicode vs str** : In Python 2, the str type represents a byte string, and the unicode type
 represents a Unicode string. In Python 3, the str type represents a Unicode string, and the bytes
 type represents a byte string.
 
-- *raw_input() vs input()* : The `input` in Python 3 is equivalent to `raw_input` in Python 2
+- *raw_input() vs input()* : The `input()` in Python 3 is equivalent to `raw_input()` in Python 2
 
 - *\\__metaclass__ vs metaclass=*  : Python 3 uses the metaclass keyword argument instead of the
 `\\__metaclass__` attribute
 
 - *map, filter, reduce, zip*: These built-in functions return iterators in Python 3 instead of lists
 
-=== Using `\\__futures__`
+=== Using `\\__future__`
 
 The most common way to write code that is compatible with Python 2 and Python 3 is to use the
 `\\__future__` library. It provides backwards compatibility for features that have changed in
@@ -3094,7 +3094,7 @@ Python 3.
 The most commonly used features are:
 
 - division          (division is float division)
-- print_function    (ensure that print() is a function)
+- print_function    (ensure that `print()` is a function)
 - unicode_literals  (all string literals are unicode strings)
 
 [source,python]
@@ -3104,7 +3104,7 @@ include::Part B - Advanced/11_compatibility/examples/compatibility_future.py[]
 
 === Using `six`
 
-The "six" library in Python is a compatibility library that helps you write Python 2 and Python
+The `six` library in Python is a compatibility library that helps you write Python 2 and Python
 3 compatible code. It's mainly used when you need your code to work across both Python 2 and
 Python 3 versions, which is less common now because Python 2 reached its end of life on January
 1, 2020, and Python 3 is the standard.
@@ -3136,7 +3136,8 @@ above.
 
 unittest is a testing framework that is part of the Python standard library. It provides a rich
 set of features for writing and running tests, including: fixtures, parameterized tests, test
-discovery, test collection, test execution, test reporting, and test debugging. See https://docs.python.org/3/library/unittest.html[unittest] for more information.
+discovery, test collection, test execution, test reporting, and test debugging.
+See https://docs.python.org/3/library/unittest.html[unittest] for more information.
 
 Key features of unittest:
 
@@ -3147,7 +3148,7 @@ scans modules and packages for test cases, making it easy to organize and execut
 use setUp() to prepare the environment before a test and tearDown() to clean up afterward. This
 ensures that tests are isolated and repeatable.
 
-- *Test Case Classes*: Test cases are organized into classes derived from unittest.TestCase. Each
+- *Test Case Classes*: Test cases are organized into classes derived from `unittest.TestCase`. Each
 method in the class whose name starts with "test" is treated as an individual test case.
 
 - *Assertions*: unittest offers a variety of assertion methods (e.g., assertEqual(), assertTrue(),
@@ -3177,20 +3178,21 @@ in unconventional ways and customize test result classes to modify result report
 - *Subtest Support*: Python's unittest supports subtests, allowing you to run multiple assertions
 within a single test function. This is useful for tracking multiple conditions in a single test case.
 
-- *Skipping Test Classes*: You can skip entire test classes by decorating the class with @unittest
-.skip or skipping them conditionally with @unittest.skipIf and @unittest.skipUnless.
+- *Skipping Test Classes*: You can skip entire test classes by decorating the class with `@unittest
+.skip` or skipping them conditionally with `@unittest.skipIf` and `@unittest.skipUnless`.
 
 - *Test Timeouts*: You can set a timeout for individual test cases to ensure they don't run
 indefinitely. This is helpful for detecting test cases that get stuck.
 
-- *Mocking*: unittest.mock is a testing framework that is part of the Python standard library. It
+- *Mocking*: `unittest.mock` is a testing framework that is part of the Python standard library. It
 provides a rich set of features for mocking objects and functions, including: mocking, patching,
-stubbing, spying, and faking. See https://docs.python.org/3/library/unittest.mock.html[unittest.mock] for more information.
+stubbing, spying, and faking.
+See https://docs.python.org/3/library/unittest.mock.html[unittest.mock] for more information.
 
 
 === pytest
 
-pytest is a popular testing framework that makes it easy to write simple and scalable tests. It
+`pytest` is a popular testing framework that makes it easy to write simple and scalable tests. It
 provides a rich set of features for writing and running tests, including: fixtures, parameterized
 tests, test discovery, test collection, test execution, test reporting, and test debugging.
 
@@ -3203,7 +3205,7 @@ modules. You don't need to manually specify each test to run, which simplifies t
 down resources needed for your tests. Fixtures enhance code reuse and ensure that setup and
 teardown logic is clean and maintainable.
 
-- *Parameterized Testing*: You can use the @pytest.mark.parametrize decorator to run the same test
+- *Parameterized Testing*: You can use the `@pytest.mark.parametrize` decorator to run the same test
 function with multiple sets of input data, simplifying the testing of various scenarios.
 
 - *Powerful Assertions*: Pytest uses Python's assert statement for making assertions, and it
@@ -3301,7 +3303,7 @@ hold true. See https://hypothesis.readthedocs.io/[Hypothesis] for more informati
 
 Key features of Hypothesis:
 
-- *Generative*:  Hypthesis generates input data for your tests. It explores a range of
+- *Generative*:  Hypothesis generates input data for your tests. It explores a range of
 input values to discover edge cases and unusual scenarios that you might not have considered
 
 - *Properties*: Instead of writing specific test cases with known inputs and expected outputs, you
@@ -3337,7 +3339,7 @@ environment you specify. This ensures that your tests run in clean, reproducible
 avoiding conflicts with system-wide Python installations.
 
 - *Automated Testing*: Tox automates the entire testing process. You can run all tests for your
-project, including unit tests, integration tests, and more, with a single command: tox.
+project, including unit tests, integration tests, and more, with a single command: `tox`.
 
 - *Dependency Management*: Tox can handle the installation of project dependencies and testing
 dependencies. This ensures that the correct dependencies are installed in each virtual environment.
@@ -3350,7 +3352,8 @@ like pytest, nose, unittest, and more. You can specify your preferred testing fr
 configuration.
 
 - *Continuous Integration (CI) Integration*: Tox is commonly used in CI/CD (Continuous
-Integration/Continuous Deployment) pipelines. It ensures that your code passes tests in various environments, helping you catch issues early.
+Integration/Continuous Deployment) pipelines. It ensures that your code passes tests in various environments,
+helping you catch issues early.
 
 - *Custom Environments*: Besides standard Python versions and interpreters, Tox allows you to define
 custom testing environments, making it versatile for different project requirements.
@@ -3363,7 +3366,3 @@ your development environment. This isolation helps maintain consistent testing r
 
 - *Documentation and Reporting*: Tox provides documentation and reporting features that help you
 understand the test results across different environments and configurations.
-
-
-
-
