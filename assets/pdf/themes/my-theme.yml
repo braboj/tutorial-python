@@ -1,7 +1,0 @@
-extends: default
-codespan:
-  font-color: #000000
-  background-color: #F5F5F5
-  border_radius: 2
-  border_width: 1
-  border_offset: 2
