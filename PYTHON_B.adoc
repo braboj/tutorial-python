@@ -69,7 +69,7 @@ image::part_b/ch_02/uml_abstraction.png[500,500,align="center"]
 
 [source,python]
 ----
-include::examples/b/02_oop/examples/abstraction.py[]
+include::examples/b/02_oop_principles/examples/abstraction.py[]
 ----
 
 === Inheritance (Code Reuse)
@@ -89,7 +89,7 @@ image::part_b/ch_02/uml_inheritance.png[500,500,align="center"]
 
 [source,python]
 ----
-include::examples/b/02_oop/examples/inheritance.py[]
+include::examples/b/02_oop_principles/examples/inheritance.py[]
 ----
 
 === Encapsulation (Data Hiding)
@@ -112,7 +112,7 @@ image::part_b/ch_02/uml_encapsulation.png[200,200,align="center"]
 
 [source,python]
 ----
-include::examples/b/02_oop/examples/encapsulation.py[]
+include::examples/b/02_oop_principles/examples/encapsulation.py[]
 ----
 
 
@@ -130,7 +130,7 @@ double underscore.
 
 [source,python]
 ----
-include::examples/b/02_oop/examples/access_modifiers.py[]
+include::examples/b/02_oop_principles/examples/access_modifiers.py[]
 ----
 
 
@@ -150,7 +150,7 @@ image::part_b/ch_02/uml_polymorphism.png[500,500,align="center"]
 
 [source,python]
 ----
-include::examples/b/02_oop/examples/polymorphism.py[]
+include::examples/b/02_oop_principles/examples/polymorphism.py[]
 ----
 
 
@@ -280,7 +280,7 @@ image::part_b/ch_03/uml_single_responsibility_bad.png[200,200,align="center"]
 
 [source,python]
 ----
-include::examples/b/03_solid/examples/single_responsibility_bad.py[]
+include::examples/b/03_solid_rules/examples/single_responsibility_bad.py[]
 ----
 
 *Example: Following the single responsibility principle*
@@ -295,7 +295,7 @@ image::part_b/ch_03/uml_single_responsibility_good.png[500,500,align="center"]
 
 [source,python]
 ----
-include::examples/b/03_solid/examples/single_responsibility_good.py[]
+include::examples/b/03_solid_rules/examples/single_responsibility_good.py[]
 ----
 
 
@@ -323,7 +323,7 @@ image::part_b/ch_03/uml_open_closed_bad.png[200,200,align="center"]
 
 [source,python]
 ----
-include::examples/b/03_solid/examples/open_closed_bad.py[]
+include::examples/b/03_solid_rules/examples/open_closed_bad.py[]
 ----
 
 *Example: Following the open/closed principle*
@@ -332,7 +332,7 @@ image::part_b/ch_03/uml_open_closed_good.png[500,500,align="center"]
 
 [source,python]
 ----
-include::examples/b/03_solid/examples/open_closed_good.py[]
+include::examples/b/03_solid_rules/examples/open_closed_good.py[]
 ----
 
 
@@ -367,7 +367,7 @@ image::part_b/ch_03/uml_liskov_substitution_bad.png[500,500,align="center"]
 
 [source,python]
 ----
-include::examples/b/03_solid/examples/liskov_substitution_bad.py[]
+include::examples/b/03_solid_rules/examples/liskov_substitution_bad.py[]
 ----
 
 
@@ -377,7 +377,7 @@ image::part_b/ch_03/uml_liskov_substitution_good.png[500,500,align="center"]
 
 [source,python]
 ----
-include::examples/b/03_solid/examples/liskov_substitution_good.py[]
+include::examples/b/03_solid_rules/examples/liskov_substitution_good.py[]
 ----
 
 
@@ -417,7 +417,7 @@ image::part_b/ch_03/uml_interface_segregation_bad.png[500,500,align="center"]
 
 [source,python]
 ----
-include::examples/b/03_solid/examples/interface_segregation_bad.py[]
+include::examples/b/03_solid_rules/examples/interface_segregation_bad.py[]
 ----
 
 *Example: Following the interface segregation principle*
@@ -426,7 +426,7 @@ image::part_b/ch_03/uml_interface_segregation_good.png[500,500,align="center"]
 
 [source,python]
 ----
-include::examples/b/03_solid/examples/interface_segregation_good.py[]
+include::examples/b/03_solid_rules/examples/interface_segregation_good.py[]
 ----
 
 
@@ -456,7 +456,7 @@ image::part_b/ch_03/uml_dependency_inversion_bad.png[500,500,align="center"]
 
 [source,python]
 ----
-include::examples/b/03_solid/examples/dependency_inversion_bad.py[]
+include::examples/b/03_solid_rules/examples/dependency_inversion_bad.py[]
 ----
 
 *Example: Following the dependency inversion principle*
@@ -465,7 +465,7 @@ image::part_b/ch_03/uml_dependency_inversion_good.png[500,500,align="center"]
 
 [source,python]
 ----
-include::examples/b/03_solid/examples/dependency_inversion_good.py[]
+include::examples/b/03_solid_rules/examples/dependency_inversion_good.py[]
 ----
 
 == Design Patterns
@@ -497,12 +497,12 @@ implemented as a static method or a class method.
 
 [source,python]
 ----
-include::examples/b/04_patterns/examples/factory_static_method.py[]
+include::examples/b/04_design_patterns/examples/factory_static_method.py[]
 ----
 
 [source,python]
 ----
-include::examples/b/04_patterns/examples/factory_class_method.py[]
+include::examples/b/04_design_patterns/examples/factory_class_method.py[]
 ----
 
 
@@ -516,7 +516,7 @@ abstract objects.
 
 [source,python]
 ----
-include::examples/b/04_patterns/examples/abstract_factory.py[]
+include::examples/b/04_design_patterns/examples/abstract_factory.py[]
 ----
 
 ==== Builder
@@ -555,7 +555,7 @@ statement.
 
 [source,python]
 ----
-include::examples/b/04_patterns/examples/builder.py[]
+include::examples/b/04_design_patterns/examples/builder.py[]
 ----
 
 
@@ -575,7 +575,7 @@ logic of the prototype pattern.
 
 [source,python]
 ----
-include::examples/b/04_patterns/examples/prototype.py[]
+include::examples/b/04_design_patterns/examples/prototype.py[]
 ----
 
 
@@ -588,7 +588,7 @@ method.
 
 [source,python]
 ----
-include::examples/b/04_patterns/examples/singleton.py[]
+include::examples/b/04_design_patterns/examples/singleton.py[]
 ----
 
 
@@ -628,13 +628,13 @@ interface of the adaptee class to the interface of the target class.
 
 [source,python]
 ----
-include::examples/b/04_patterns/examples/adapter_with_inheritance.py[]
+include::examples/b/04_design_patterns/examples/adapter_with_inheritance.py[]
 ----
 
 
 [source,python]
 ----
-include::examples/b/04_patterns/examples/adapter_with_composition.py[]
+include::examples/b/04_design_patterns/examples/adapter_with_composition.py[]
 ----
 
 
@@ -661,7 +661,7 @@ image::part_b/ch_04/shapes_and_colors_composition.png[]
 
 [source,python]
 ----
-include::examples/b/04_patterns/examples/bridge.py[]
+include::examples/b/04_design_patterns/examples/bridge.py[]
 ----
 
 
@@ -674,7 +674,7 @@ the tree structure can be either an individual object or a group of objects.
 
 [source,python]
 ----
-include::examples/b/04_patterns/examples/composite.py[]
+include::examples/b/04_design_patterns/examples/composite.py[]
 ----
 
 ==== Decorator
@@ -685,7 +685,7 @@ at runtime.
 
 [source,python]
 ----
-include::examples/b/04_patterns/examples/decorator.py[]
+include::examples/b/04_design_patterns/examples/decorator.py[]
 ----
 
 
@@ -697,7 +697,7 @@ clients with a simple interface to it.
 
 [source,python]
 ----
-include::examples/b/04_patterns/examples/facade.py[]
+include::examples/b/04_design_patterns/examples/facade.py[]
 ----
 
 
@@ -723,7 +723,7 @@ Some typical use cases for the flyweight pattern are:
 
 [source, python]
 ----
-include::examples/b/04_patterns/examples/flyweight.py[]
+include::examples/b/04_design_patterns/examples/flyweight.py[]
 ----
 
 
@@ -734,7 +734,7 @@ without changing its structure.
 
 [source,python]
 ----
-include::examples/b/04_patterns/examples/proxy.py[]
+include::examples/b/04_design_patterns/examples/proxy.py[]
 ----
 
 
@@ -776,7 +776,7 @@ When to use the chain of responsibility pattern:
 
 [source,python]
 ----
-include::examples/b/04_patterns/examples/chain_of_responsibility.py[]
+include::examples/b/04_design_patterns/examples/chain_of_responsibility.py[]
 ----
 
 
@@ -794,7 +794,7 @@ When to use the command pattern:
 
 [source, python]
 ----
-include::examples/b/04_patterns/examples/command.py[]
+include::examples/b/04_design_patterns/examples/command.py[]
 ----
 
 ==== Iterator
@@ -817,7 +817,7 @@ representation
 
 [source,python]
 ----
-include::examples/b/04_patterns/examples/iterator.py[]
+include::examples/b/04_design_patterns/examples/iterator.py[]
 ----
 
 ==== Mediator
@@ -833,7 +833,7 @@ When to use the mediator pattern:
 
 [source,python]
 ----
-include::examples/b/04_patterns/examples/mediator.py[]
+include::examples/b/04_design_patterns/examples/mediator.py[]
 ----
 
 ==== Memento
@@ -852,7 +852,7 @@ execute, restore)
 
 [source,python]
 ----
-include::examples/b/04_patterns/examples/memento.py[]
+include::examples/b/04_design_patterns/examples/memento.py[]
 ----
 
 ==== Observer
@@ -870,7 +870,7 @@ or in specific cases.
 
 [source,python]
 ----
-include::examples/b/04_patterns/examples/observer.py[]
+include::examples/b/04_design_patterns/examples/observer.py[]
 ----
 
 
@@ -892,7 +892,7 @@ condition-based state machine.
 
 [source,python]
 ----
-include::examples/b/04_patterns/examples/state.py[]
+include::examples/b/04_design_patterns/examples/state.py[]
 ----
 
 
@@ -911,7 +911,7 @@ some behavior.
 
 [source,python]
 ----
-include::examples/b/04_patterns/examples/strategy.py[]
+include::examples/b/04_design_patterns/examples/strategy.py[]
 ----
 
 
@@ -930,7 +930,7 @@ changes.
 
 [source,python]
 ----
-include::examples/b/04_patterns/examples/template_method.py[]
+include::examples/b/04_design_patterns/examples/template_method.py[]
 ----
 
 
@@ -951,7 +951,7 @@ in others.
 
 [source,python]
 ----
-include::examples/b/04_patterns/examples/visitor.py[]
+include::examples/b/04_design_patterns/examples/visitor.py[]
 ----
 
 
@@ -969,315 +969,8 @@ When to use the interpreter pattern:
 
 [source,python]
 ----
-include::examples/b/04_patterns/examples/interpreter.py[]
+include::examples/b/04_design_patterns/examples/interpreter.py[]
 ----
-
-
-== System Architecture
-
-> The system architecture defines the framework on how to manage the software development process
-and organize the software system. It provides a set of guidelines and best practices for building
-and maintaining the software system. This helps to minimize the overall costs and risks of the
-software development process.
-
-The System Architecture defines the framework on how to manage the software development process
-and organize the software system. It provides a set of guidelines and best practices for building
-and maintaining the software system.
-
-Here is a typical set of architectural artifacts that are used to define the software architecture
-of a software system:
-
-. Development Environment (e.g version control, issue tracking, CI/CD, IDE, etc.)
-. Deployment Strategy (e.g. Standalone, Cloud, etc.)
-. Functional Requirements (Use Cases, User Stories, Components, Class Diagrams, etc.)
-. Non-Functional Requirements (e.g. Performance, Scalability, etc.)
-. Architectural Style (e.g. Monolithic, Microservices, etc.)
-- Development Process (e.g. Waterfall, Agile, etc.)
-. Quality Assurance (Test Automation)
-
-=== Development Environment
-
-The development infrastructure is the set of tools and processes that are used to develop and
-maintain the software system. For example a web application may use the following tools and
-processes:
-
-- Technogies (e.g. Python, Django, PostgreSQL, Redis, etc.)
-- Integrated Development Environment (e.g. PyCharm, Eclipse, Github Codespaces)
-- Coding standards (e.g. PEP 8, Google Python Style Guide)
-- Version control (e.g. Git, SVN, Mercurial)
-- Release system (e.g. semantic versioning)
-- Issue tracking (e.g. Jira, Github Issues)
-
-
-=== Deployment Strategy
-
-The deployment and infrastructure are the processes and tools that are used to deploy and run the
-software system. This could also define the infrastructure requirements such as the operating
-system, the database, the web server, etc. For example a web application may use the following
-deployment infrastructure:
-
-- as a standalone application on a server or a virtual machine.
-- as a container in a container orchestration platform such as Kubernetes.
-- on a cloud platform such as AWS, Azure, or Google Cloud.
-- on a serverless platform such as AWS Lambda or Google Cloud Functions.
-- continuous integration and continuous deployment (CI/CD) tools
-
-=== Functional Requirements
-
-The functional requirements define the functions and features of the software system. For example
-a web application may have the following functional requirements:
-
-- User management (e.g. login, logout, register, forgot password)
-- User profile management (e.g. update profile, change password)
-- Product management (e.g. list products, add product to cart, checkout)
-- Order management (e.g. list orders, cancel order, return order)
-
-=== Non-Functional Requirements
-
-The quality attributes are typically the non-functional requirements of a software system. They
-define the quality characteristics of the software system. For example a web application may have
-the following quality attributes:
-
-- *Performance*: the responsiveness of the system under various workloads and data volumes (e.g.
-response time, throughput, latency, resource usage)
-
-- *Scalability*: the ability of the system to handle increasing workloads and data volumes. Scaling
-can be done by adding more resources such as CPU or memory (vertical scaling) or by adding more
-instances of the system (horizontal scaling).
-
-- *Security*: the ability of the system to protect data and resources from unauthorized access
-(e.g. authentication, authorization, encryption, auditing)
-
-- *Reliability*: the ability of the system to perform its functions under abnormal conditions
-(e.g. error handling, fault tolerance, failure recovery)
-
-- *Availability*: the ability of the system to be operational and accessible when needed (e.g.
-uptime, downtime, mean time between failures)
-
-- *Maintainability*: the ability of the system to be modified and extended (e.g. loose coupling,
-modular design, technical documentation)
-
-- *Usability*: the ability of the system to be used by users (e.g. easy of use, learning curve,
-user documentation)
-
-- *Testability*: the ability of the system to be tested frequently and automatically (e.g with
-a regression test suite that can be run after each software change)
-
-- *Compatibility*: the ability of the system to be compatible with other systems (e.g. backward
-compatibility, forward compatibility)
-
-- *Compliance*: the ability of the system to comply with laws, regulations, and standards (e.g.
-GDPR, PCI DSS, HIPAA, ISO 27001)
-
-
-=== Architecture and Design
-
-The architectural patterns are recurring styles that are used to structure a software system. For
-example a web application may use the MVC pattern to structure the frontend, and the microservices
-pattern to structure the backend of the application.
-
-==== Architecture Styles
-
-===== Multi-Layered
-
-A multi-layered pattern can be used to structure programs that can be decomposed into groups of
-subtasks, each of which is at a particular level of abstraction. Each layer provides services to
-the next higher layer.
-
-Typically the layers are organized in a hierarchical manner, with each layer providing services
-to the next higher layer. Almost all software applications are multi-layered. The most common
-layers are:
-
-- Presentation layer (the frontend layer)
-- Application layer (the backend layer)
-- Data layer (the data access layer)
-
-Protocols are also a form of multi-layered architecture. The OSI model is a seven-layered model
-that describes the different layers of a network protocol stack. The TCP/IP model is a four-layered
-model that describes the different layers of the Internet protocol suite.
-
-===== Monolithic
-
-A monolithic architecture is a traditional software architecture where all components and
-functionalities of an application are tightly integrated into a single codebase and executed as
-a single process.
-
-The process may be further divided into multiple threads. The monolithic architecture is the
-traditional architecture used by most software applications. It is the opposite of a distributed
-architecture. It is also called a monolithic application or a monolithic kernel.
-
-One of the main advantages of a monolithic architecture is that it is simple to develop, test and
-deploy. However, it is difficult to scale and maintain. It is also difficult to adopt
-new technologies and programming languages. This means that all of the components must be written
-in the same programming language.
-
-
-===== Microservices
-
-A service-oriented architecture can be used to structure programs that can be decomposed into a set
-of services that are independently deployable and scalable. Each service is self-contained and
-implements a single business capability. This allows each service to be developed, tested, deployed,
-scaled and maintained independently, without affecting the other services. Each service can be
-implemented using a different programming language and technology stack.
-
-Services communicate with each other using a protocol such as HTTP/HTTPS or gRPC. Services can be
-deployed as containers in a container orchestration platform such as Kubernetes. Microservices
-are typically implemented using a framework such as Spring Boot.
-
-
-===== Client-Server
-
-This pattern can be used to structure programs that can be decomposed into two parts: a server
-that provides a service, and a client that requests services from the server. The client and
-server communicate with each other using a dedicated protocol. The client and server may be
-implemented using different programming languages and technology stacks.
-
-
-===== Peer-to-Peer
-
-This pattern can be used to structure programs that can be decomposed into a set of peers
-that are symmetric in terms of their functionality, and each peer may act as both a client
-and a server. Blockchains or torrents are examples of peer-to-peer networks.
-
-
-===== Pipe-Filter
-
-This pattern can be used to structure programs that can be decomposed into a set of filters that
-process a stream of data, and a set of pipes that connect the filters together. Each filter has a
-single input and a single output. Pipes can be used to connect the filters together and to
-connect a filter to a data source or data sink. This allows the filters to be developed, tested,
-deployed, scaled and maintained independently, without affecting each other.
-
-
-===== Message Queue
-
-- Asynchronous point-to-poin communication
-- Only one consumer can process the message (whoever consumes it first)
-- Allows the consumer to process the messages at its own pace (decoupling)
-- The data is ordered (FIFO) and stored until it is processed (persistence)
-- Not scalable for large number of consumers (e.g. millions of users)
-- Useful for spike protection (e.g. when the producer is faster than the consumer)
-
-
-===== Publish-Subscribe
-
-- Asynchronous broadcast communication
-- A client must subscribe to a topic to receive messages from it
-- Publishers send messages to an intermediary called a message broker
-- The message broker forwards the messages to the subscribers instantly
-- Ordering and persitance are not guaranteed
-- Better scalability than message queues (e.g. millions of users)
-
-===== Message Stream
-
-Similar to the publish-subscribe pattern with the following differences:
-
-- The messages are published to a topic
-- The messages are stored in a log
-- The messages are delivered to the subscribers in the same order as they were published
-- The subscribers can consume the messages at their own pace
-- The subscribers can rewind the log and reprocess the messages
-- Suitable for real-time data processing (e.g. analytics, monitoring, etc.)
-
-
-==== System Design
-
-- API Design
-- Data Model
-- UML Diagrams
-- Wireframes (Mockup)
-
-
-=== Development Process
-
-The development process is the set of activities that are used to develop and maintain the
-software system. For example almost all software applications undergo the following development
-steps:
-
-- Requirements analysis
-- Design
-- Implementation
-- Testing
-- Deployment
-- Maintenance
-
-These steps are also known as the software development life cycle (SDLC). The SDLC is a process
-used by software development teams to design, develop, test, and deploy software applications.
-
-Depening on how the steps of the development process are performed, the development process may
-be classified as follows:
-
-- *Sequential development* is a process where the steps of the development process are performed
-strictly one after the other.
-
-- *Iterative development* is a process where the system is typically developed in
-multiple iterations. Each iteration involves the steps of the development process performed
-sequentially, builds on the previous iteration and refines the product until it meets the
-customer requirements. It is also know as the horizontal development process and it is the
-preferred process for monotlithic and high-risk applications.
-
-- *Incremental development* is a process where each component is developed independently
-and then integrated into the system. The component is divided into multiple `slices`, called also
-`increments`. Each new increment builds on top of the existing released functionality. It is also
-know as the vertical development process and it is the preferred process for distributed or
-applications with strict time constraints.
-
-Depending on how the steps of the development process are performed, the development process may
-be classified as follows:
-
-- Waterfall Model (sequential)
-- V-Model Model (sequential)
-- Prototyping Model (iterative)
-- Spiral Model (iterative)
-- Agile Model (iterative, incremental)
-
-
-=== Quality Assurance
-
-This section describes the quality assurance process. It involves the practice of verifying that
-the software meets its *functional* and *non-functional* requirements. It is typically done by
-writing automated tests that can be run frequently and automatically.
-
-The quality assurance process is typically implemented by the quality assurance team. It involves
-the following activities:
-
-- Tesring strategy selection
-- Testing tools selection
-- Documentation
-
-
-==== Testing Strategy
-
-The testing strategy defines the approach that will be used to test the software system and
-typically will require a tight communication between the development and quality assurance teams.
-
-- What to test? (e.g. unit, integration, end-to-end, etc.)
-- How to test? (e.g. manual, automated, etc.)
-- When to test? (e.g. continuous, discrete, etc.)
-- Who will test? (e.g. QA engineers, developers, etc.)
-
-
-==== Testing Tools
-
-After the testing strategy is defined, the testing tools can be selected. The testing tools are
-the tools that are used to implement the testing strategy. They can be divided into the following
-categories:
-
-- Test frameworks (e.g. pytest, unittest, nose, etc.)
-- Test coverage tools (e.g. coverage.py, pytest-cov, etc.)
-- Test reporting tools (e.g. pytest-html, pytest-json, etc.)
-
-
-==== Documentation
-
-The documentation is an important part of the quality assurance process. It involves the practice
-of writing documentation that describes the testing strategy and the testing tools. It is typically
-done by the quality assurance team. It involves the following activities:
-
-- Test plan
-- Test cases
-- Test reports
-
 
 == Logging
 
@@ -2210,7 +1903,7 @@ even numbers of a list:
 
 [source,python]
 ----
-include::examples/b/09_data/examples/data_filtering.py[]
+include::examples/b/09_data_types/examples/data_filtering.py[]
 ----
 
 ==== map
@@ -2220,7 +1913,7 @@ each element of an iterable.
 
 [source,python]
 ----
-include::examples/b/09_data/examples/data_mapping.py[]
+include::examples/b/09_data_types/examples/data_mapping.py[]
 ----
 
 ==== reduce
@@ -2232,7 +1925,7 @@ it.
 
 [source,python]
 ----
-include::examples/b/09_data/examples/data_reducing.py[]
+include::examples/b/09_data_types/examples/data_reducing.py[]
 ----
 
 In the example above the reduce() function is used to calculate the sum of a list of numbers. The
@@ -2246,7 +1939,7 @@ order (i.e. from last to first).
 
 [source,python]
 ----
-include::examples/b/09_data/examples/data_reversing.py[]
+include::examples/b/09_data_types/examples/data_reversing.py[]
 ----
 
 
@@ -2258,7 +1951,7 @@ method of the list class.
 
 [source,python]
 ----
-include::examples/b/09_data/examples/data_sorting.py[]
+include::examples/b/09_data_types/examples/data_sorting.py[]
 ----
 
 ==== zip
@@ -2272,7 +1965,7 @@ tuples of the shortest length.
 
 [source,python]
 ----
-include::examples/b/09_data/examples/data_zipping.py[]
+include::examples/b/09_data_types/examples/data_zipping.py[]
 ----
 
 
@@ -2284,7 +1977,7 @@ sequence of arguments for a function call.
 
 [source,python]
 ----
-include::examples/b/09_data/examples/data_unpacking.py[]
+include::examples/b/09_data_types/examples/data_unpacking.py[]
 ----
 
 ==== copy
@@ -2295,7 +1988,7 @@ an object, including the nested objects.
 
 [source,python]
 ----
-include::examples/b/09_data/examples/data_copying.py[]
+include::examples/b/09_data_types/examples/data_copying.py[]
 ----
 
 
@@ -2329,7 +2022,7 @@ module:
 
 [source,python]
 ----
-include::examples/b/09_data/examples/data_pickle.py[]
+include::examples/b/09_data_types/examples/data_pickle.py[]
 ----
 
 ==== dill
@@ -2357,7 +2050,7 @@ main methods of the dill module are:
 
 [source,python]
 ----
-include::examples/b/09_data/examples/data_dill.py[]
+include::examples/b/09_data_types/examples/data_dill.py[]
 ----
 
 
@@ -2447,7 +2140,7 @@ The following example shows how to convert a Python object to a string and vice 
 
 [source,python]
 ----
-include::examples/b/09_data/examples/data_struct.py[]
+include::examples/b/09_data_types/examples/data_struct.py[]
 ----
 
 And the following example shows how to convert a Python object to a string and vice versa using
@@ -2455,7 +2148,7 @@ the struct module and buffers:
 
 [source,python]
 ----
-include::examples/b/09_data/examples/data_struct_with_buffer.py[]
+include::examples/b/09_data_types/examples/data_struct_with_buffer.py[]
 ----
 
 
@@ -2477,7 +2170,7 @@ remaining bits are padded with zeros.
 
 [source,python]
 ----
-include::examples/b/09_data/examples/data_base64.py[]
+include::examples/b/09_data_types/examples/data_base64.py[]
 ----
 
 
@@ -2505,7 +2198,7 @@ specify the format of non-text data in email messages and other Internet protoco
 
 [source, python]
 ----
-include::examples/b/09_data/examples/data_binascii.py[]
+include::examples/b/09_data_types/examples/data_binascii.py[]
 ----
 
 
@@ -2530,7 +2223,7 @@ The following example demonstrates the use of the `codecs` module to encode and 
 
 [source, python]
 ----
-include::examples/b/09_data/examples/data_codecs.py[]
+include::examples/b/09_data_types/examples/data_codecs.py[]
 ----
 
 If a custom codec is needed, the `codecs` module provides the `register()` function to register a
@@ -2541,7 +2234,7 @@ The following example demonstrates the use of the `codecs` module to register a 
 
 [source, python]
 ----
-include::examples/b/09_data/examples/data_codecs_custom.py[]
+include::examples/b/09_data_types/examples/data_codecs_custom.py[]
 ----
 
 
@@ -2555,7 +2248,7 @@ of numerical data. It is often used as a lightweight alternative to a list.
 
 [source,python]
 ----
-include::examples/b/09_data/examples/data_array.py[]
+include::examples/b/09_data_types/examples/data_array.py[]
 ----
 
 ==== namedtuple
@@ -2565,7 +2258,7 @@ readable and easier to use. It is often used as a lightweight alternative to a c
 
 [source,python]
 ----
-include::examples/b/09_data/examples/data_namedtuple.py[]
+include::examples/b/09_data_types/examples/data_namedtuple.py[]
 ----
 
 ==== defaultdict
@@ -2580,7 +2273,7 @@ not exist yet and want to provide default values for these keys.
 
 [source,python]
 ----
-include::examples/b/09_data/examples/data_defaultdict.py[]
+include::examples/b/09_data_types/examples/data_defaultdict.py[]
 ----
 
 
@@ -2595,14 +2288,14 @@ that comes first is served first.
 
 [source,python]
 ----
-include::examples/b/09_data/examples/data_queue_fifo.py[]
+include::examples/b/09_data_types/examples/data_queue_fifo.py[]
 ----
 
 An example of a LIFO queue is a stack of plates. The plate that is placed last is removed first.
 
 [source,python]
 ----
-include::examples/b/09_data/examples/data_queue_lifo.py[]
+include::examples/b/09_data_types/examples/data_queue_lifo.py[]
 ----
 
 Another type of queue is the priority queue. A priority queue is a queue that stores elements
@@ -2611,7 +2304,7 @@ are removed from the queue. The element with the highest priority is removed fir
 
 [source,python]
 ----
-include::examples/b/09_data/examples/data_queue_priority.py[]
+include::examples/b/09_data_types/examples/data_queue_priority.py[]
 ----
 
 ==== deque
@@ -2628,12 +2321,12 @@ use the queue module.
 
 [source,python]
 ----
-include::examples/b/09_data/examples/data_deque_fifo.py[]
+include::examples/b/09_data_types/examples/data_deque_fifo.py[]
 ----
 
 [source,python]
 ----
-include::examples/b/09_data/examples/data_deque_lifo.py[]
+include::examples/b/09_data_types/examples/data_deque_lifo.py[]
 ----
 
 ==== heapq
@@ -2666,7 +2359,7 @@ For addition information about `heapq`, see the following resources:
 
 [source,python]
 ----
-include::examples/b/09_data/examples/data_heapq.py[]
+include::examples/b/09_data_types/examples/data_heapq.py[]
 ----
 
 ==== dataclasses
@@ -2688,7 +2381,7 @@ that is called after the object has been initialized.
 
 [source,python]
 ----
-include::examples/b/09_data/examples/data_dataclass.py[]
+include::examples/b/09_data_types/examples/data_dataclass.py[]
 ----
 
 
@@ -2712,7 +2405,7 @@ articles, tweets, or customer reviews, and you want to extract insights about wo
 
 [source,python]
 ----
-include::examples/b/09_data/examples/data_counter_class.py[]
+include::examples/b/09_data_types/examples/data_counter_class.py[]
 ----
 
 ==== OrderedDict
@@ -2729,7 +2422,7 @@ the order of command line arguments, and they use OrderedDict to do so.
 
 [source,python]
 ----
-include::examples/b/09_data/examples/data_ordered_dict.py[]
+include::examples/b/09_data_types/examples/data_ordered_dict.py[]
 ----
 
 
@@ -2748,7 +2441,7 @@ view.
 
 [source,python]
 ----
-include::examples/b/09_data/examples/data_chainmap.py[]
+include::examples/b/09_data_types/examples/data_chainmap.py[]
 ----
 
 === Comprehensions
@@ -2767,7 +2460,7 @@ the expression will take the item and append the result in the new list.
 
 [source,python]
 ----
-include::examples/b/09_data/examples/comprehension_list.py[]
+include::examples/b/09_data_types/examples/comprehension_list.py[]
 ----
 
 ==== Dictionary Comprehensions
@@ -2782,7 +2475,7 @@ define the key-value pair for the new dictionary.
 
 [source,python]
 ----
-include::examples/b/09_data/examples/comprehension_dictionary.py[]
+include::examples/b/09_data_types/examples/comprehension_dictionary.py[]
 ----
 
 == Import System
@@ -2804,7 +2497,7 @@ Some of the most common import rules are as follows:
 
 [source,python]
 ----
-include::examples/b/10_imports/examples/import_statements.py[]
+include::examples/b/10_import_system/examples/import_statements.py[]
 ----
 
 === Namespace
@@ -2841,7 +2534,7 @@ In a Python program, there are four types of namespaces:
 
 [source,python]
 ----
-include::examples/b/10_imports/examples/import_namespaces.py[]
+include::examples/b/10_import_system/examples/import_namespaces.py[]
 ----
 
 === Module Search Path
@@ -2851,7 +2544,7 @@ path can be inspected or extended by using the `sys.path` list.
 
 [source,python]
 ----
-include::examples/b/10_imports/examples/import_search_path.py[]
+include::examples/b/10_import_system/examples/import_search_path.py[]
 ----
 
 Typically, Python will start at the beginning of the list of locations and look for a given
@@ -2876,7 +2569,7 @@ imported. It can be empty or can contain code that initializes the package.
 
 [source, console]
 ----
-include::examples/b/10_imports/examples/import_packages.txt[]
+include::examples/b/10_import_system/examples/import_packages.txt[]
 ----
 
 The `\\__init__.py` file can be used to aggregate the contents of the package. For example, the
@@ -2886,7 +2579,7 @@ implementation details of the package.
 
 [source,python]
 ----
-include::examples/b/10_imports/examples/product/__init__.py[]
+include::examples/b/10_import_system/examples/product/__init__.py[]
 ----
 
 The `\\__init__.py` file is also used to define the API of the package. The API is the set of
@@ -2964,7 +2657,7 @@ expected to be moved around.
 
 [source,python]
 ----
-include::examples/b/10_imports/examples/import_absolute.py[]
+include::examples/b/10_import_system/examples/import_absolute.py[]
 ----
 
 === Main Modules
@@ -2975,7 +2668,7 @@ globals dictionary is set to `\\__main__`.
 
 [source,python]
 ----
-include::examples/b/10_imports/examples/import_main_module.py[]
+include::examples/b/10_import_system/examples/import_main_module.py[]
 ----
 
 If a module is imported and executed, the attribute `\\__name__` is set to the name of the module.
@@ -2984,7 +2677,7 @@ you want to execute code only when the module is executed directly by the Python
 
 [source,python]
 ----
-include::examples/b/10_imports/examples/import_skip_execution.py[]
+include::examples/b/10_import_system/examples/import_skip_execution.py[]
 ----
 
 === Main Packages
@@ -2995,7 +2688,7 @@ useful in case the package offers a command-line interface that can be implement
 
 [source,python]
 ----
-include::examples/b/10_imports/examples/product/__main__.py[]
+include::examples/b/10_import_system/examples/product/__main__.py[]
 ----
 
 === Import Process
@@ -3006,7 +2699,7 @@ you want to dynamically import a module or when you want to import a module cond
 
 [source,python]
 ----
-include::examples/b/10_imports/examples/import_module_objects.py[]
+include::examples/b/10_import_system/examples/import_module_objects.py[]
 ----
 
 A package in this context is just a module object whose `\\__path__` attribute is set to a list of
@@ -3027,7 +2720,7 @@ The import process can be summarized in the following steps:
 
 [source,python]
 ----
-include::examples/b/10_imports/examples/import_process.py[]
+include::examples/b/10_import_system/examples/import_process.py[]
 ----
 
 
