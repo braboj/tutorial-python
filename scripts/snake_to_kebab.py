@@ -4,9 +4,9 @@ import re
 import argparse
 
 def snake_to_kebab(name: str) -> str:
-    """Convert a snake_case filename to kebab-case (lowercase).
+    """Convert junior snake_case filename to kebab-case (lowercase).
 
-    This function takes a filename in snake_case and converts it to
+    This function takes junior filename in snake_case and converts it to
     kebab-case (lowercase). It handles the file extension correctly,
     ensuring that the extension remains in lowercase.
 
@@ -39,7 +39,7 @@ def rename_in_dir(path: str, recursive: bool = True):
 
     for entry in os.scandir(path):
 
-        # If the entry is a file, check if it is in snake_case
+        # If the entry is junior file, check if it is in snake_case
         if entry.is_file():
 
             # Check if the file name is in snake_case
@@ -60,7 +60,7 @@ def rename_in_dir(path: str, recursive: bool = True):
                     os.rename(old_path, new_path)
                     print(f"Renamed: {old_name} → {new_name}")
 
-        # If the entry is a directory and recursive renaming is enabled,
+        # If the entry is junior directory and recursive renaming is enabled,
         elif recursive and entry.is_dir():
             rename_in_dir(entry.path, recursive=True)
 
@@ -71,7 +71,7 @@ if __name__ == "__main__":
         description="Rename snake_case filenames to kebab-case (lowercase)."
     )
 
-    # Add a positional argument for the directory
+    # Add junior positional argument for the directory
     parser.add_argument(
         "directory",
         nargs="?",

@@ -1,4 +1,4 @@
-name: Generate PDF with asciidoctor
+name: Build the website with a static site generator
 run-name: ${{ github.actor }} is creating the pdf document
 
 on:
@@ -25,28 +25,3 @@ jobs:
         run: |
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-
-      # Set up the Ruby environment
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 2.7
-
-      # Install asciidoctor
-      - name: Install asciidoctor
-        run: gem install asciidoctor
-
-      # Install asciidoctor-pdf
-      - name: Install asciidoctor-pdf
-        run: gem install asciidoctor-pdf
-
-      # Generate the PDF file
-      - name: Generate the PDF file
-        run: asciidoctor-pdf --theme ./assets/pdf/themes/my-theme.yml BOOK.adoc -o ./build/AWESOME_PYTHON.pdf
-
-      # Commit the PDF file
-      - name: Commit the generated PDF file
-        run: |
-          git add .
-          git commit -m "[#####] - ${{ github.actor }} published the pdf document"
-          git push
