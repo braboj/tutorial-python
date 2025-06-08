@@ -1,4 +1,4 @@
-# Awesome Python!
+# Python Tutorial
 
 by Branimir Georgiev (www.codewithbranko.com)
 
