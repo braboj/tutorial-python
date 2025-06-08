@@ -1,6 +1,0 @@
-https://docs.python.org/2.7/library/threading.html
-https://pymotw.com/2/threading/index.html
-https://github.com/PacktPublishing/Learning-Concurrency-in-Python
-https://www.programcreek.com/python/?project_name=PacktPublishing%2FLearning-Concurrency-in-Python
-https://superfastpython.com/threading-in-python/
-https://www.youtube.com/playlist?list=PL30NBs02RsiUbmXVPDo56APsU0xa6gfL2

@@ -69,7 +69,7 @@ image::part_b/ch_02/uml_abstraction.png[500,500,align="center"]
 
 [source,python]
 ----
-include::Part B - Advanced/02_oop/examples/abstraction.py[]
+include::examples/b/02_oop/examples/abstraction.py[]
 ----
 
 === Inheritance (Code Reuse)
@@ -89,7 +89,7 @@ image::part_b/ch_02/uml_inheritance.png[500,500,align="center"]
 
 [source,python]
 ----
-include::Part B - Advanced/02_oop/examples/inheritance.py[]
+include::examples/b/02_oop/examples/inheritance.py[]
 ----
 
 === Encapsulation (Data Hiding)
@@ -112,7 +112,7 @@ image::part_b/ch_02/uml_encapsulation.png[200,200,align="center"]
 
 [source,python]
 ----
-include::Part B - Advanced/02_oop/examples/encapsulation.py[]
+include::examples/b/02_oop/examples/encapsulation.py[]
 ----
 
 
@@ -130,7 +130,7 @@ double underscore.
 
 [source,python]
 ----
-include::Part B - Advanced/02_oop/examples/access_modifiers.py[]
+include::examples/b/02_oop/examples/access_modifiers.py[]
 ----
 
 
@@ -150,7 +150,7 @@ image::part_b/ch_02/uml_polymorphism.png[500,500,align="center"]
 
 [source,python]
 ----
-include::Part B - Advanced/02_oop/examples/polymorphism.py[]
+include::examples/b/02_oop/examples/polymorphism.py[]
 ----
 
 
@@ -280,7 +280,7 @@ image::part_b/ch_03/uml_single_responsibility_bad.png[200,200,align="center"]
 
 [source,python]
 ----
-include::Part B - Advanced/03_solid/examples/single_responsibility_bad.py[]
+include::examples/b/03_solid/examples/single_responsibility_bad.py[]
 ----
 
 *Example: Following the single responsibility principle*
@@ -295,7 +295,7 @@ image::part_b/ch_03/uml_single_responsibility_good.png[500,500,align="center"]
 
 [source,python]
 ----
-include::Part B - Advanced/03_solid/examples/single_responsibility_good.py[]
+include::examples/b/03_solid/examples/single_responsibility_good.py[]
 ----
 
 
@@ -323,7 +323,7 @@ image::part_b/ch_03/uml_open_closed_bad.png[200,200,align="center"]
 
 [source,python]
 ----
-include::Part B - Advanced/03_solid/examples/open_closed_bad.py[]
+include::examples/b/03_solid/examples/open_closed_bad.py[]
 ----
 
 *Example: Following the open/closed principle*
@@ -332,7 +332,7 @@ image::part_b/ch_03/uml_open_closed_good.png[500,500,align="center"]
 
 [source,python]
 ----
-include::Part B - Advanced/03_solid/examples/open_closed_good.py[]
+include::examples/b/03_solid/examples/open_closed_good.py[]
 ----
 
 
@@ -367,7 +367,7 @@ image::part_b/ch_03/uml_liskov_substitution_bad.png[500,500,align="center"]
 
 [source,python]
 ----
-include::Part B - Advanced/03_solid/examples/liskov_substitution_bad.py[]
+include::examples/b/03_solid/examples/liskov_substitution_bad.py[]
 ----
 
 
@@ -377,7 +377,7 @@ image::part_b/ch_03/uml_liskov_substitution_good.png[500,500,align="center"]
 
 [source,python]
 ----
-include::Part B - Advanced/03_solid/examples/liskov_substitution_good.py[]
+include::examples/b/03_solid/examples/liskov_substitution_good.py[]
 ----
 
 
@@ -417,7 +417,7 @@ image::part_b/ch_03/uml_interface_segregation_bad.png[500,500,align="center"]
 
 [source,python]
 ----
-include::Part B - Advanced/03_solid/examples/interface_segregation_bad.py[]
+include::examples/b/03_solid/examples/interface_segregation_bad.py[]
 ----
 
 *Example: Following the interface segregation principle*
@@ -426,7 +426,7 @@ image::part_b/ch_03/uml_interface_segregation_good.png[500,500,align="center"]
 
 [source,python]
 ----
-include::Part B - Advanced/03_solid/examples/interface_segregation_good.py[]
+include::examples/b/03_solid/examples/interface_segregation_good.py[]
 ----
 
 
@@ -456,7 +456,7 @@ image::part_b/ch_03/uml_dependency_inversion_bad.png[500,500,align="center"]
 
 [source,python]
 ----
-include::Part B - Advanced/03_solid/examples/dependency_inversion_bad.py[]
+include::examples/b/03_solid/examples/dependency_inversion_bad.py[]
 ----
 
 *Example: Following the dependency inversion principle*
@@ -465,7 +465,7 @@ image::part_b/ch_03/uml_dependency_inversion_good.png[500,500,align="center"]
 
 [source,python]
 ----
-include::Part B - Advanced/03_solid/examples/dependency_inversion_good.py[]
+include::examples/b/03_solid/examples/dependency_inversion_good.py[]
 ----
 
 == Design Patterns
@@ -497,12 +497,12 @@ implemented as a static method or a class method.
 
 [source,python]
 ----
-include::Part B - Advanced/04_patterns/examples/factory_static_method.py[]
+include::examples/b/04_patterns/examples/factory_static_method.py[]
 ----
 
 [source,python]
 ----
-include::Part B - Advanced/04_patterns/examples/factory_class_method.py[]
+include::examples/b/04_patterns/examples/factory_class_method.py[]
 ----
 
 
@@ -516,7 +516,7 @@ abstract objects.
 
 [source,python]
 ----
-include::Part B - Advanced/04_patterns/examples/abstract_factory.py[]
+include::examples/b/04_patterns/examples/abstract_factory.py[]
 ----
 
 ==== Builder
@@ -533,6 +533,12 @@ constructors, with multiple methods that each take a single parameter.
 
 [source,python]
 ----
+
+class Person(object):
+    def __init__(self, age, name):
+        self.age = age
+        self.name = name
+
 # Complex constructor
 person = Person(
     age = 40,
@@ -549,7 +555,7 @@ statement.
 
 [source,python]
 ----
-include::Part B - Advanced/04_patterns/examples/builder.py[]
+include::examples/b/04_patterns/examples/builder.py[]
 ----
 
 
@@ -569,7 +575,7 @@ logic of the prototype pattern.
 
 [source,python]
 ----
-include::Part B - Advanced/04_patterns/examples/prototype.py[]
+include::examples/b/04_patterns/examples/prototype.py[]
 ----
 
 
@@ -582,7 +588,7 @@ method.
 
 [source,python]
 ----
-include::Part B - Advanced/04_patterns/examples/singleton.py[]
+include::examples/b/04_patterns/examples/singleton.py[]
 ----
 
 
@@ -622,13 +628,13 @@ interface of the adaptee class to the interface of the target class.
 
 [source,python]
 ----
-include::Part B - Advanced/04_patterns/examples/adapter_with_inheritance.py[]
+include::examples/b/04_patterns/examples/adapter_with_inheritance.py[]
 ----
 
 
 [source,python]
 ----
-include::Part B - Advanced/04_patterns/examples/adapter_with_composition.py[]
+include::examples/b/04_patterns/examples/adapter_with_composition.py[]
 ----
 
 
@@ -655,7 +661,7 @@ image::part_b/ch_04/shapes_and_colors_composition.png[]
 
 [source,python]
 ----
-include::Part B - Advanced/04_patterns/examples/bridge.py[]
+include::examples/b/04_patterns/examples/bridge.py[]
 ----
 
 
@@ -668,7 +674,7 @@ the tree structure can be either an individual object or a group of objects.
 
 [source,python]
 ----
-include::Part B - Advanced/04_patterns/examples/composite.py[]
+include::examples/b/04_patterns/examples/composite.py[]
 ----
 
 ==== Decorator
@@ -679,7 +685,7 @@ at runtime.
 
 [source,python]
 ----
-include::Part B - Advanced/04_patterns/examples/decorator.py[]
+include::examples/b/04_patterns/examples/decorator.py[]
 ----
 
 
@@ -691,7 +697,7 @@ clients with a simple interface to it.
 
 [source,python]
 ----
-include::Part B - Advanced/04_patterns/examples/facade.py[]
+include::examples/b/04_patterns/examples/facade.py[]
 ----
 
 
@@ -717,7 +723,7 @@ Some typical use cases for the flyweight pattern are:
 
 [source, python]
 ----
-include::Part B - Advanced/04_patterns/examples/flyweight.py[]
+include::examples/b/04_patterns/examples/flyweight.py[]
 ----
 
 
@@ -728,7 +734,7 @@ without changing its structure.
 
 [source,python]
 ----
-include::Part B - Advanced/04_patterns/examples/proxy.py[]
+include::examples/b/04_patterns/examples/proxy.py[]
 ----
 
 
@@ -770,7 +776,7 @@ When to use the chain of responsibility pattern:
 
 [source,python]
 ----
-include::Part B - Advanced/04_patterns/examples/chain_of_responsibility.py[]
+include::examples/b/04_patterns/examples/chain_of_responsibility.py[]
 ----
 
 
@@ -788,7 +794,7 @@ When to use the command pattern:
 
 [source, python]
 ----
-include::Part B - Advanced/04_patterns/examples/command.py[]
+include::examples/b/04_patterns/examples/command.py[]
 ----
 
 ==== Iterator
@@ -811,7 +817,7 @@ representation
 
 [source,python]
 ----
-include::Part B - Advanced/04_patterns/examples/iterator.py[]
+include::examples/b/04_patterns/examples/iterator.py[]
 ----
 
 ==== Mediator
@@ -827,7 +833,7 @@ When to use the mediator pattern:
 
 [source,python]
 ----
-include::Part B - Advanced/04_patterns/examples/mediator.py[]
+include::examples/b/04_patterns/examples/mediator.py[]
 ----
 
 ==== Memento
@@ -846,7 +852,7 @@ execute, restore)
 
 [source,python]
 ----
-include::Part B - Advanced/04_patterns/examples/memento.py[]
+include::examples/b/04_patterns/examples/memento.py[]
 ----
 
 ==== Observer
@@ -864,7 +870,7 @@ or in specific cases.
 
 [source,python]
 ----
-include::Part B - Advanced/04_patterns/examples/observer.py[]
+include::examples/b/04_patterns/examples/observer.py[]
 ----
 
 
@@ -886,7 +892,7 @@ condition-based state machine.
 
 [source,python]
 ----
-include::Part B - Advanced/04_patterns/examples/state.py[]
+include::examples/b/04_patterns/examples/state.py[]
 ----
 
 
@@ -905,7 +911,7 @@ some behavior.
 
 [source,python]
 ----
-include::Part B - Advanced/04_patterns/examples/strategy.py[]
+include::examples/b/04_patterns/examples/strategy.py[]
 ----
 
 
@@ -924,7 +930,7 @@ changes.
 
 [source,python]
 ----
-include::Part B - Advanced/04_patterns/examples/template_method.py[]
+include::examples/b/04_patterns/examples/template_method.py[]
 ----
 
 
@@ -945,7 +951,7 @@ in others.
 
 [source,python]
 ----
-include::Part B - Advanced/04_patterns/examples/visitor.py[]
+include::examples/b/04_patterns/examples/visitor.py[]
 ----
 
 
@@ -963,7 +969,7 @@ When to use the interpreter pattern:
 
 [source,python]
 ----
-include::Part B - Advanced/04_patterns/examples/interpreter.py[]
+include::examples/b/04_patterns/examples/interpreter.py[]
 ----
 
 
@@ -1307,7 +1313,7 @@ creating and retrieving loggers.
 
 [source,python]
 ----
-include::Part B - Advanced/06_logging/examples/logging_hierarchy.py[]
+include::examples/b/06_logging/examples/logging_hierarchy.py[]
 ----
 
 
@@ -1327,7 +1333,7 @@ and numeric values:
 
 [source, python]
 ----
-include::Part B - Advanced/06_logging/examples/logging_levels.py[]
+include::examples/b/06_logging/examples/logging_levels.py[]
 ----
 
 
@@ -1351,7 +1357,7 @@ The following example shows how to configure the root logger using the `basicCon
 
 [source,python]
 ----
-include::Part B - Advanced/06_logging/examples/logging_basic_config.py[]
+include::examples/b/06_logging/examples/logging_basic_config.py[]
 ----
 
 
@@ -1411,6 +1417,8 @@ For example the root logger can be configured to use the following format string
 
 [source,python]
 ----
+import logging
+
 # Configure the root logger
 logging.basicConfig(
     level = logging.DEBUG,
@@ -1475,7 +1483,7 @@ error and provide a suggestion on how to resolve it.
 
 [source,python]
 ----
-include::Part B - Advanced/06_logging/examples/logging_exceptions.py[]
+include::examples/b/06_logging/examples/logging_exceptions.py[]
 ----
 
 
@@ -1504,7 +1512,7 @@ modify the source code of the application.
 
 [source,python]
 ----
-include::Part B - Advanced/06_logging/examples/logging_config_file.py[]
+include::examples/b/06_logging/examples/logging_config_file.py[]
 ----
 
 
@@ -1521,7 +1529,7 @@ YAML, or TOML configuration file that can be easily parsed into a dictionary.
 
 [source,python]
 ----
-include::Part B - Advanced/06_logging/examples/logging_config_dict.py[]
+include::examples/b/06_logging/examples/logging_config_dict.py[]
 ----
 
 
@@ -1590,7 +1598,7 @@ object or an exception class.
 
 [source,python]
 ----
-include::Part B - Advanced/07_exceptions/examples/exception_handling.py[]
+include::examples/b/07_exceptions/examples/exception_handling.py[]
 ----
 
 === Program Flow
@@ -1606,7 +1614,7 @@ shows how to check the result of a function call and handle the different errors
 
 [source,python]
 ----
-include::Part B - Advanced/07_exceptions/examples/exception_flow_without_try_except.py[]
+include::examples/b/07_exceptions/examples/exception_flow_without_try_except.py[]
 ----
 
 The same program flow can be implemented using exceptions. The following example shows how to
@@ -1614,7 +1622,7 @@ implement the same program flow using exceptions:
 
 [source,python]
 ----
-include::Part B - Advanced/07_exceptions/examples/exception_flow_with_try_except.py[]
+include::examples/b/07_exceptions/examples/exception_flow_with_try_except.py[]
 ----
 
 The advantage of the exceptions is that the program flow is not interrupted or polluted with
@@ -1631,7 +1639,7 @@ exceptions together:
 
 [source,python]
 ----
-include::Part B - Advanced/07_exceptions/examples/exception_chaining.py[]
+include::examples/b/07_exceptions/examples/exception_chaining.py[]
 ----
 
 === Organizing Exceptions
@@ -1649,7 +1657,7 @@ example:
 
 [source, console]
 ----
-include::Part B - Advanced/07_exceptions/examples/exception_files.txt[]
+include::examples/b/07_exceptions/examples/exception_files.txt[]
 ----
 
 Each of the exception files in a package should contain the exception class hierarchy. The
@@ -1659,14 +1667,14 @@ following example shows the exception definitions for the `core` package:
 
 [source,python]
 ----
-include::Part B - Advanced/07_exceptions/examples/exception_hierarchy.py[]
+include::examples/b/07_exceptions/examples/exception_hierarchy.py[]
 ----
 
 The following examples shows how to catch multiple exceptions with a single except block:
 
 [source,python]
 ----
-include::Part B - Advanced/07_exceptions/examples/exception_catch_multiple.py[]
+include::examples/b/07_exceptions/examples/exception_catch_multiple.py[]
 ----
 
 === Built-in Exceptions
@@ -2021,7 +2029,7 @@ This method is used by the `hash()` function.
 
 [source,python]
 ----
-include::Part B - Advanced/08_dunder/examples/dunder_object_representation.py[]
+include::examples/b/08_dunder/examples/dunder_object_representation.py[]
 ----
 
 
@@ -2051,7 +2059,7 @@ statement.
 
 [source,python]
 ----
-include::Part B - Advanced/08_dunder/examples/dunder_customize_behavior.py[]
+include::examples/b/08_dunder/examples/dunder_customize_behavior.py[]
 ----
 
 
@@ -2082,7 +2090,7 @@ method. It is used by the `bytes()` function.
 
 [source,python]
 ----
-include::Part B - Advanced/08_dunder/examples/dunder_builtin_types.py[]
+include::examples/b/08_dunder/examples/dunder_builtin_types.py[]
 ----
 
 
@@ -2129,7 +2137,7 @@ include::Part B - Advanced/08_dunder/examples/dunder_builtin_types.py[]
 
 [source,python]
 ----
-include::Part B - Advanced/08_dunder/examples/dunder_operator_overloading.py[]
+include::examples/b/08_dunder/examples/dunder_operator_overloading.py[]
 ----
 
 === Iterator protocol
@@ -2149,7 +2157,7 @@ method. This method should return the next value of the iterator. It is used by 
 
 [source,python]
 ----
-include::Part B - Advanced/08_dunder/examples/dunder_iterator_protocol.py[]
+include::examples/b/08_dunder/examples/dunder_iterator_protocol.py[]
 ----
 
 === Context manager protocol
@@ -2170,7 +2178,7 @@ indicates whether the exception was handled or not.
 
 [source,python]
 ----
-include::Part B - Advanced/08_dunder/examples/dunder_context_manager.py[]
+include::examples/b/08_dunder/examples/dunder_context_manager.py[]
 ----
 
 === Best Practices
@@ -2202,7 +2210,7 @@ even numbers of a list:
 
 [source,python]
 ----
-include::Part B - Advanced/09_data/examples/data_filtering.py[]
+include::examples/b/09_data/examples/data_filtering.py[]
 ----
 
 ==== map
@@ -2212,7 +2220,7 @@ each element of an iterable.
 
 [source,python]
 ----
-include::Part B - Advanced/09_data/examples/data_mapping.py[]
+include::examples/b/09_data/examples/data_mapping.py[]
 ----
 
 ==== reduce
@@ -2224,7 +2232,7 @@ it.
 
 [source,python]
 ----
-include::Part B - Advanced/09_data/examples/data_reducing.py[]
+include::examples/b/09_data/examples/data_reducing.py[]
 ----
 
 In the example above the reduce() function is used to calculate the sum of a list of numbers. The
@@ -2238,7 +2246,7 @@ order (i.e. from last to first).
 
 [source,python]
 ----
-include::Part B - Advanced/09_data/examples/data_reversing.py[]
+include::examples/b/09_data/examples/data_reversing.py[]
 ----
 
 
@@ -2250,7 +2258,7 @@ method of the list class.
 
 [source,python]
 ----
-include::Part B - Advanced/09_data/examples/data_sorting.py[]
+include::examples/b/09_data/examples/data_sorting.py[]
 ----
 
 ==== zip
@@ -2264,7 +2272,7 @@ tuples of the shortest length.
 
 [source,python]
 ----
-include::Part B - Advanced/09_data/examples/data_zipping.py[]
+include::examples/b/09_data/examples/data_zipping.py[]
 ----
 
 
@@ -2276,7 +2284,7 @@ sequence of arguments for a function call.
 
 [source,python]
 ----
-include::Part B - Advanced/09_data/examples/data_unpacking.py[]
+include::examples/b/09_data/examples/data_unpacking.py[]
 ----
 
 ==== copy
@@ -2287,7 +2295,7 @@ an object, including the nested objects.
 
 [source,python]
 ----
-include::Part B - Advanced/09_data/examples/data_copying.py[]
+include::examples/b/09_data/examples/data_copying.py[]
 ----
 
 
@@ -2321,7 +2329,7 @@ module:
 
 [source,python]
 ----
-include::Part B - Advanced/09_data/examples/data_pickle.py[]
+include::examples/b/09_data/examples/data_pickle.py[]
 ----
 
 ==== dill
@@ -2349,7 +2357,7 @@ main methods of the dill module are:
 
 [source,python]
 ----
-include::Part B - Advanced/09_data/examples/data_dill.py[]
+include::examples/b/09_data/examples/data_dill.py[]
 ----
 
 
@@ -2439,7 +2447,7 @@ The following example shows how to convert a Python object to a string and vice 
 
 [source,python]
 ----
-include::Part B - Advanced/09_data/examples/data_struct.py[]
+include::examples/b/09_data/examples/data_struct.py[]
 ----
 
 And the following example shows how to convert a Python object to a string and vice versa using
@@ -2447,7 +2455,7 @@ the struct module and buffers:
 
 [source,python]
 ----
-include::Part B - Advanced/09_data/examples/data_struct_with_buffer.py[]
+include::examples/b/09_data/examples/data_struct_with_buffer.py[]
 ----
 
 
@@ -2469,7 +2477,7 @@ remaining bits are padded with zeros.
 
 [source,python]
 ----
-include::Part B - Advanced/09_data/examples/data_base64.py[]
+include::examples/b/09_data/examples/data_base64.py[]
 ----
 
 
@@ -2497,7 +2505,7 @@ specify the format of non-text data in email messages and other Internet protoco
 
 [source, python]
 ----
-include::Part B - Advanced/09_data/examples/data_binascii.py[]
+include::examples/b/09_data/examples/data_binascii.py[]
 ----
 
 
@@ -2522,7 +2530,7 @@ The following example demonstrates the use of the `codecs` module to encode and 
 
 [source, python]
 ----
-include::Part B - Advanced/09_data/examples/data_codecs.py[]
+include::examples/b/09_data/examples/data_codecs.py[]
 ----
 
 If a custom codec is needed, the `codecs` module provides the `register()` function to register a
@@ -2533,7 +2541,7 @@ The following example demonstrates the use of the `codecs` module to register a 
 
 [source, python]
 ----
-include::Part B - Advanced/09_data/examples/data_codecs_custom.py[]
+include::examples/b/09_data/examples/data_codecs_custom.py[]
 ----
 
 
@@ -2547,7 +2555,7 @@ of numerical data. It is often used as a lightweight alternative to a list.
 
 [source,python]
 ----
-include::Part B - Advanced/09_data/examples/data_array.py[]
+include::examples/b/09_data/examples/data_array.py[]
 ----
 
 ==== namedtuple
@@ -2557,7 +2565,7 @@ readable and easier to use. It is often used as a lightweight alternative to a c
 
 [source,python]
 ----
-include::Part B - Advanced/09_data/examples/data_namedtuple.py[]
+include::examples/b/09_data/examples/data_namedtuple.py[]
 ----
 
 ==== defaultdict
@@ -2572,7 +2580,7 @@ not exist yet and want to provide default values for these keys.
 
 [source,python]
 ----
-include::Part B - Advanced/09_data/examples/data_defaultdict.py[]
+include::examples/b/09_data/examples/data_defaultdict.py[]
 ----
 
 
@@ -2587,14 +2595,14 @@ that comes first is served first.
 
 [source,python]
 ----
-include::Part B - Advanced/09_data/examples/data_queue_fifo.py[]
+include::examples/b/09_data/examples/data_queue_fifo.py[]
 ----
 
 An example of a LIFO queue is a stack of plates. The plate that is placed last is removed first.
 
 [source,python]
 ----
-include::Part B - Advanced/09_data/examples/data_queue_lifo.py[]
+include::examples/b/09_data/examples/data_queue_lifo.py[]
 ----
 
 Another type of queue is the priority queue. A priority queue is a queue that stores elements
@@ -2603,7 +2611,7 @@ are removed from the queue. The element with the highest priority is removed fir
 
 [source,python]
 ----
-include::Part B - Advanced/09_data/examples/data_queue_priority.py[]
+include::examples/b/09_data/examples/data_queue_priority.py[]
 ----
 
 ==== deque
@@ -2620,12 +2628,12 @@ use the queue module.
 
 [source,python]
 ----
-include::Part B - Advanced/09_data/examples/data_deque_fifo.py[]
+include::examples/b/09_data/examples/data_deque_fifo.py[]
 ----
 
 [source,python]
 ----
-include::Part B - Advanced/09_data/examples/data_deque_lifo.py[]
+include::examples/b/09_data/examples/data_deque_lifo.py[]
 ----
 
 ==== heapq
@@ -2658,7 +2666,7 @@ For addition information about `heapq`, see the following resources:
 
 [source,python]
 ----
-include::Part B - Advanced/09_data/examples/data_heapq.py[]
+include::examples/b/09_data/examples/data_heapq.py[]
 ----
 
 ==== dataclasses
@@ -2680,7 +2688,7 @@ that is called after the object has been initialized.
 
 [source,python]
 ----
-include::Part B - Advanced/09_data/examples/data_dataclass.py[]
+include::examples/b/09_data/examples/data_dataclass.py[]
 ----
 
 
@@ -2704,7 +2712,7 @@ articles, tweets, or customer reviews, and you want to extract insights about wo
 
 [source,python]
 ----
-include::Part B - Advanced/09_data/examples/data_counter_class.py[]
+include::examples/b/09_data/examples/data_counter_class.py[]
 ----
 
 ==== OrderedDict
@@ -2721,7 +2729,7 @@ the order of command line arguments, and they use OrderedDict to do so.
 
 [source,python]
 ----
-include::Part B - Advanced/09_data/examples/data_ordered_dict.py[]
+include::examples/b/09_data/examples/data_ordered_dict.py[]
 ----
 
 
@@ -2740,7 +2748,7 @@ view.
 
 [source,python]
 ----
-include::Part B - Advanced/09_data/examples/data_chainmap.py[]
+include::examples/b/09_data/examples/data_chainmap.py[]
 ----
 
 === Comprehensions
@@ -2759,7 +2767,7 @@ the expression will take the item and append the result in the new list.
 
 [source,python]
 ----
-include::Part B - Advanced/09_data/examples/comprehension_list.py[]
+include::examples/b/09_data/examples/comprehension_list.py[]
 ----
 
 ==== Dictionary Comprehensions
@@ -2774,7 +2782,7 @@ define the key-value pair for the new dictionary.
 
 [source,python]
 ----
-include::Part B - Advanced/09_data/examples/comprehension_dictionary.py[]
+include::examples/b/09_data/examples/comprehension_dictionary.py[]
 ----
 
 == Import System
@@ -2796,7 +2804,7 @@ Some of the most common import rules are as follows:
 
 [source,python]
 ----
-include::Part B - Advanced/10_imports/examples/import_statements.py[]
+include::examples/b/10_imports/examples/import_statements.py[]
 ----
 
 === Namespace
@@ -2833,7 +2841,7 @@ In a Python program, there are four types of namespaces:
 
 [source,python]
 ----
-include::Part B - Advanced/10_imports/examples/import_namespaces.py[]
+include::examples/b/10_imports/examples/import_namespaces.py[]
 ----
 
 === Module Search Path
@@ -2843,7 +2851,7 @@ path can be inspected or extended by using the `sys.path` list.
 
 [source,python]
 ----
-include::Part B - Advanced/10_imports/examples/import_search_path.py[]
+include::examples/b/10_imports/examples/import_search_path.py[]
 ----
 
 Typically, Python will start at the beginning of the list of locations and look for a given
@@ -2868,7 +2876,7 @@ imported. It can be empty or can contain code that initializes the package.
 
 [source, console]
 ----
-include::Part B - Advanced/10_imports/examples/import_packages.txt[]
+include::examples/b/10_imports/examples/import_packages.txt[]
 ----
 
 The `\\__init__.py` file can be used to aggregate the contents of the package. For example, the
@@ -2878,7 +2886,7 @@ implementation details of the package.
 
 [source,python]
 ----
-include::Part B - Advanced/10_imports/examples/product/__init__.py[]
+include::examples/b/10_imports/examples/product/__init__.py[]
 ----
 
 The `\\__init__.py` file is also used to define the API of the package. The API is the set of
@@ -2956,7 +2964,7 @@ expected to be moved around.
 
 [source,python]
 ----
-include::Part B - Advanced/10_imports/examples/import_absolute.py[]
+include::examples/b/10_imports/examples/import_absolute.py[]
 ----
 
 === Main Modules
@@ -2967,7 +2975,7 @@ globals dictionary is set to `\\__main__`.
 
 [source,python]
 ----
-include::Part B - Advanced/10_imports/examples/import_main_module.py[]
+include::examples/b/10_imports/examples/import_main_module.py[]
 ----
 
 If a module is imported and executed, the attribute `\\__name__` is set to the name of the module.
@@ -2976,7 +2984,7 @@ you want to execute code only when the module is executed directly by the Python
 
 [source,python]
 ----
-include::Part B - Advanced/10_imports/examples/import_skip_execution.py[]
+include::examples/b/10_imports/examples/import_skip_execution.py[]
 ----
 
 === Main Packages
@@ -2987,7 +2995,7 @@ useful in case the package offers a command-line interface that can be implement
 
 [source,python]
 ----
-include::Part B - Advanced/10_imports/examples/product/__main__.py[]
+include::examples/b/10_imports/examples/product/__main__.py[]
 ----
 
 === Import Process
@@ -2998,7 +3006,7 @@ you want to dynamically import a module or when you want to import a module cond
 
 [source,python]
 ----
-include::Part B - Advanced/10_imports/examples/import_module_objects.py[]
+include::examples/b/10_imports/examples/import_module_objects.py[]
 ----
 
 A package in this context is just a module object whose `\\__path__` attribute is set to a list of
@@ -3019,7 +3027,7 @@ The import process can be summarized in the following steps:
 
 [source,python]
 ----
-include::Part B - Advanced/10_imports/examples/import_process.py[]
+include::examples/b/10_imports/examples/import_process.py[]
 ----
 
 
@@ -3099,7 +3107,7 @@ The most commonly used features are:
 
 [source,python]
 ----
-include::Part B - Advanced/11_compatibility/examples/compatibility_future.py[]
+include::examples/b/11_compatibility/examples/compatibility_future.py[]
 ----
 
 === Using `six`
@@ -3111,7 +3119,7 @@ Python 3 versions, which is less common now because Python 2 reached its end of 
 
 [source, python]
 ----
-include::Part B - Advanced/11_compatibility/examples/compatibility_six.py[]
+include::examples/b/11_compatibility/examples/compatibility_six.py[]
 ----
 
 == Testing
