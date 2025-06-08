@@ -42,7 +42,7 @@ jobs:
 
       # Generate the PDF file
       - name: Generate the PDF file
-        run: asciidoctor-pdf --theme ./Assets/pdf/themes/my-theme.yml BOOK.adoc -o ./Build/AWESOME_PYTHON.pdf
+        run: asciidoctor-pdf --theme ./assets/pdf/themes/my-theme.yml BOOK.adoc -o ./build/AWESOME_PYTHON.pdf
 
       # Commit the PDF file
       - name: Commit the generated PDF file
