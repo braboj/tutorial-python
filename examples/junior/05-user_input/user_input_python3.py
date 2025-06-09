@@ -1,6 +1,7 @@
-# Use input() to get input from the user
-prompt = input()
-print(prompt)
+# User Input in Python 3
+# -----------------------------------------------------------------------------
+# Use `input()` to get input from the user, which returns a string.
 
-# Use eval() to evaluate the input as junior Python expression
-print(eval(prompt))
+prompt = input('Enter something: ')
+print(prompt)
+# Output: <user input>
