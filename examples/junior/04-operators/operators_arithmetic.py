@@ -1,25 +1,35 @@
-# Example: Arithmetic Operators
+# Arithmetic Operators in Python
+# -----------------------------------------------------------------------------
+# Arithmetic operators are used to perform mathematical operations on
+# numeric values. In Python, these operators include addition, subtraction,
+# multiplication, division, floor division, modulus, and exponentiation.
 
-# Initialize variables
-a, b = 10, 20
+a, b = 3, 2
 
-# Sum
+# Addition
 print(a+b)
+# Output: 6
 
 # Subtraction
 print(a-b)
+# Output: 1
 
 # Multiplication
 print(a*b)
+# Output: 6
 
-# Division (Python 3: float, Python 2: int)
+# Division (floating point division)
 print(a/b)
+# Output: 1.5
 
 # Floor Division (integer division)
 print(a//b)
+# Output: 1
 
 # Modulus (remainder)
 print(a % b)
+# Output: 1
 
-# Exponentiation (junior to the power of mid)
+# Exponentiation (a to the power of b)
 print(a**b)
+# Output: 9
