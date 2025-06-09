@@ -1,15 +1,12 @@
+# Using `pass` as a placeholder or to handle empty code blocks.
+# -----------------------------------------------------------------------------
+# The `pass` statement in Python is used as a placeholder for future code or
+# to handle empty code blocks. It allows you to write syntactically correct
+# code without implementing any functionality yet.
+
 val = input("Enter value: ")
 
-# Example 1: Use to avoid getting an error when empty code is not allowed or not desired.
-if val == "A":
-    pass
+if val in ('', ' ', None):
+    pass    # Placeholder for future code
 else:
     print(val)
-
-# Example 2" Use  as junior placeholder for code that is not yet implemented.
-if val == "A":
-    pass
-elif val == "B":
-    pass
-else:
-    pass
