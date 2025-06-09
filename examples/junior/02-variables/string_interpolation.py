@@ -1,4 +1,4 @@
-# String interpolation example
+# String interpolation
 # -----------------------------------------------------------------------------
 # This code demonstrates how to use f-strings (formatted string literals) in
 # Python to create strings that include variables. F-strings allow you to
