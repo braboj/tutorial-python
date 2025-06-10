@@ -2,8 +2,7 @@
 
 ### 4.1. File Naming
 
-* Kebab-case for file names and directories (e.g., `part-a-basics.adoc`)
-* Snake-case for Python files (e.g., `part_a_basics.py`)
+* Snake-case for all files and folders (e.g., `my_file.py`, `my_folder`)
 
 ### 4.2. Commit Messages
 
