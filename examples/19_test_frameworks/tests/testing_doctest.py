@@ -1,3 +1,8 @@
+# Framework: doctest
+# --------------------
+#
+# Demonstrate doctest by verifying simple distance conversions.
+
 # Example: doctest test cases
 
 """ Example: doctest test cases

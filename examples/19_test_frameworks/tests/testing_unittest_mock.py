@@ -1,3 +1,8 @@
+# Framework: unittest (with mocks)
+# ----------------------------------
+#
+# Mock HTTP calls while testing payment processing logic.
+
 # Example: unittest mock test cases
 
 import unittest
