@@ -1,9 +1,9 @@
 # Dictionary types in Python
 # -----------------------------------------------------------------------------
-# This code demonstrates how to create and manipulate dictionaries in Python.
-# Dictionaries are collections of key-value pairs, where each key is unique.
-# If a key is repeated, then the last value assigned to that key will be
-# retained. The dictionary variable has the following properties:
+# This code creates and manipulates dictionaries in Python. A dictionary is
+# a collection of key–value pairs where each key is unique. If a key
+# appears more than once, the last assigned value is retained. The
+# dictionary variable has the following properties:
 #
 # - Key access: You can access values using their keys
 # - Unique keys: Each key must be unique within the dictionary

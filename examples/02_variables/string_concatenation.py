@@ -1,9 +1,8 @@
 # String concatenation example
 # -----------------------------------------------------------------------------
-# This code demonstrates how to concatenate (join) strings in Python. The
-# `+` operator is used to combine multiple strings into one. This is a common
-# operation in Python, especially when constructing messages or combining
-# text from different sources.
+# This code concatenates (joins) strings using the `+` operator. This
+# technique is common when constructing messages or combining text from
+# different sources.
 
 
 string1 = 'Hello'

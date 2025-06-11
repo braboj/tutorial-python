@@ -1,10 +1,8 @@
 # String indexing
 # -----------------------------------------------------------------------------
-# This code demonstrates how to access individual characters in a string using
-# indexing. In Python, strings are sequences of characters, and you can access
-# each character by its index. The index starts at 0 for the first character,
-# and you can also use negative indices to access characters from the end
-# of the string.
+# This code accesses individual characters in a string by index. Strings are
+# sequences of characters, so index 0 refers to the first character, and
+# negative indices let you read characters from the end of the string.
 
 string = "Hello, world!"
 

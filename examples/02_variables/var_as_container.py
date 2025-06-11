@@ -1,9 +1,8 @@
 # Variable as a container
 # -----------------------------------------------------------------------------
-# This code demonstrates how a variable can be used as a container for data.
-# In this case, the variable `text` is used to store a string value, which can
-# be reused multiple times in the code. The variable is a fundamental concept in
-# programming, allowing you to store and manipulate data efficiently.
+# This code uses a variable as a container for data. The variable `text`
+# stores a string value that can be reused multiple times, illustrating how
+# variables allow you to store and manipulate data efficiently.
 
 text = 'Hello world!'
 print(text)

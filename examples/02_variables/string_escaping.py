@@ -1,8 +1,8 @@
 # Escape sequences in Python strings
 # -----------------------------------------------------------------------------
-# This code demonstrates how to use escape sequences in Python strings. Escape
-# sequences are special characters that allow you to include characters in a
-# string that would otherwise be difficult or impossible to include directly.
+# This example uses escape sequences in strings so you can include
+# characters that would otherwise be difficult or impossible to type
+# directly.
 #
 # Special characters:
 # - `\n` for new line
