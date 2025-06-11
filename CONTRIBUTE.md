@@ -1,13 +1,19 @@
-## Contributing Guide
-
-### File Naming
+## File Naming
 
 * Snake-case for all files and folders (e.g., `my_file.py`, `my_folder`)
 
-### Commit Messages
+## Commit Messages
 
-* (`#<id>`) - Use as a reference to a concrete issue number (either GitHub or JIRA)
-* [`#####`] - No issue or ticket defined for this commit
+```
+[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+* [`#<id>`]: Use as a reference to a concrete issue number (either GitHub or JIRA)
+* [`#####`]: No issue or ticket defined for this commit
 
 **Examples**:
 ```
@@ -15,7 +21,7 @@
 * [`#####`] - Move the image assets to a dedicated folder
 ```
 
-### Issues Titles
+## Issues Titles
 
 [`<part>, <chapter>`] - \<message>
 
