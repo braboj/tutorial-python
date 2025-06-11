@@ -1,4 +1,6 @@
-# Example: LIFO queue data structure
+# LIFO queue with LifoQueue
+# -----------------------------------------------------------------------------
+# LifoQueue behaves like a stack while remaining safe for use with multiple threads.
 
 from six.moves import queue
 

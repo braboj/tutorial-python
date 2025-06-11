@@ -1,4 +1,6 @@
-# Example: LIFO deque data structure
+# Deque as LIFO stack
+# -----------------------------------------------------------------------------
+# Using deque as a stack provides efficient push and pop operations.
 
 from collections import deque
 

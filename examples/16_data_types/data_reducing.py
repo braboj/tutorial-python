@@ -1,4 +1,6 @@
-# Example: Reduce Data using the reduce() function
+# Aggregating with reduce()
+# -----------------------------------------------------------------------------
+# reduce() repeatedly applies a function to items, collapsing them into a single result.
 
 from functools import reduce
 

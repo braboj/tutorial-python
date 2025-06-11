@@ -1,4 +1,6 @@
-# Example: Serializing and Deserializing Objects with Pickle
+# Struct packing into buffers
+# -----------------------------------------------------------------------------
+# Packing directly into an existing buffer lets you build binary data without intermediate strings.
 
 import struct
 

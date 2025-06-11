@@ -1,4 +1,6 @@
-# Example: heapq as a priority queue
+# heapq priority queue
+# -----------------------------------------------------------------------------
+# A heap lets you maintain a priority queue with O(log n) push/pop operations.
 
 import heapq
 

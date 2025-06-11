@@ -1,4 +1,6 @@
-# Example: FIFO queue data structure
+# Priority queues
+# -----------------------------------------------------------------------------
+# PriorityQueue orders tasks by priority, letting the smallest value be retrieved first.
 
 from six.moves import queue
 

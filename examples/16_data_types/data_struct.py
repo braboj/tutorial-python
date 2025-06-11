@@ -1,4 +1,6 @@
-# Example: Serializing and Deserializing Objects with Pickle
+# Working with struct
+# -----------------------------------------------------------------------------
+# The struct module packs and unpacks binary data to interact with C-style structs.
 
 import struct
 

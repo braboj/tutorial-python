@@ -1,4 +1,6 @@
-# Example: Counter class
+# Counting with Counter
+# -----------------------------------------------------------------------------
+# A Counter is a dictionary subclass for tallying hashable objects quickly.
 
 from collections import Counter
 

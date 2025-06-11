@@ -1,4 +1,6 @@
-# Example: Sort Data using the sorted() function
+# Sorting with sorted()
+# -----------------------------------------------------------------------------
+# sorted() creates a new sorted list from any iterable, optionally using a key function.
 
 class Book(object):
 

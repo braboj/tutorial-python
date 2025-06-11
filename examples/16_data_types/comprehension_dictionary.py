@@ -1,4 +1,6 @@
-# Example dictionary comprehension
+# Dictionary comprehensions
+# -----------------------------------------------------------------------------
+# Dictionary comprehensions let you construct mappings concisely. They are ideal for transforming one form of data into key/value pairs.
 
 existing_list = [1, 2, 3, 4, 5]
 existing_dictionary = {1: "junior", 2: "mid", 3: "c", 4: "d", 5: "e"}

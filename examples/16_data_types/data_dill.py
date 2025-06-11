@@ -1,4 +1,6 @@
-# Example: Serializing and Deserializing Objects with Pickle
+# Serializing with dill
+# -----------------------------------------------------------------------------
+# dill extends pickle and can serialize a wider range of Python objects.
 
 import dill
 import sys

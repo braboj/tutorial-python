@@ -1,4 +1,6 @@
-# Example: Packing Data using the * and ** operators
+# Packing *args and **kwargs
+# -----------------------------------------------------------------------------
+# Packing arguments allows functions to accept an arbitrary number of positional or keyword parameters.
 
 def func1(*args):
 

@@ -1,4 +1,6 @@
-# Example: FIFO queue data structure
+# FIFO queue with Queue
+# -----------------------------------------------------------------------------
+# queue.Queue provides a thread-safe FIFO structure for coordinating producer/consumer workloads.
 
 from six.moves import queue
 

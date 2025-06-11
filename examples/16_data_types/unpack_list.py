@@ -1,3 +1,6 @@
+# List unpacking
+# -----------------------------------------------------------------------------
+# Using * with a list expands its items when calling a function.
 """
 https://realpython.com/python-kwargs-and-args/#unpacking-with-the-asterisk-operators
 """

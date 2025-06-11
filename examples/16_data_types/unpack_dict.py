@@ -1,3 +1,6 @@
+# Dictionary unpacking
+# -----------------------------------------------------------------------------
+# The * operator can expand a mapping's items into function arguments or into new dictionaries.
 """
 https://realpython.com/python-kwargs-and-args/#unpacking-with-the-asterisk-operators
 """

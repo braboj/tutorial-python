@@ -1,4 +1,6 @@
-# Example: FIFO deque data structure
+# Deque as FIFO queue
+# -----------------------------------------------------------------------------
+# Deque offers fast O(1) operations at both ends, making it ideal for implementing queues.
 
 from collections import deque
 
