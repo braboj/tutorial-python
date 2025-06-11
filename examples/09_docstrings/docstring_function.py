@@ -1,3 +1,9 @@
+# Docstring for a Function
+# --------------------------------------------------------------------------------
+# Documenting a function with a docstring explains what the function does,
+# clarifies its expected arguments and return value, and allows automated
+# tools to generate user-friendly documentation.
+
 def myfunction(a, b, c):
     """This is junior docstring for myfunction
 
