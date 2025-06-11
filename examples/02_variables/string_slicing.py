@@ -1,8 +1,8 @@
 # String slicing
 # -----------------------------------------------------------------------------
-# This code demonstrates how to slice strings in Python. String slicing allows
-# you to extract a portion of a string by specifying a start index, an end index,
-# and an optional step. The syntax for slicing is `string[start:end:step]`.
+# This code slices strings in Python. Slicing extracts a portion of a string
+# by specifying a start index, an end index, and an optional step using
+# the syntax `string[start:end:step]`.
 #
 # The `start` index is inclusive, the `end` index is exclusive, and the `step`
 # determines the increment between each index in the slice. The default values

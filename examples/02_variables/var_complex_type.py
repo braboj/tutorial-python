@@ -1,8 +1,8 @@
 # Complex variables
 # -----------------------------------------------------------------------------
-# This code demonstrates how to create and manipulate complex numbers in Python.
-# Complex numbers are represented as `a + bj`, where `a` is the real part and
-# `b` is the imaginary part.
+# This code creates and manipulates complex numbers in Python. A complex
+# number is written as `a + bj`, where `a` is the real part and `b` is the
+# imaginary part.
 
 z1 = 1 + 2j
 z2 = 2 + 4j
