@@ -1,4 +1,8 @@
-# Example: Dunder methods for object representation
+# Dunder methods for object representation
+# ---------------------------------------------------------------------------
+# Built-in type conversion functions like bool(), int() and bytes() call
+# corresponding dunder methods on objects. Implementing these hooks lets a
+# class define how it converts to fundamental Python types.
 
 import struct
 import math

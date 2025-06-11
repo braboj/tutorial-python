@@ -1,4 +1,9 @@
-# Example: Dunder methods for the iterator protocol
+# Dunder methods for the iterator protocol
+# ---------------------------------------------------------------------------
+# Special (dunder) methods allow objects to integrate with Python features.
+# By implementing __iter__ and __next__, this class customizes iteration
+# behavior so that instances work seamlessly in for-loops and other iterable
+# contexts.
 
 class Stack(object):
 

@@ -1,4 +1,8 @@
-# Example: Dunder methods for object representation
+# Dunder methods for object representation
+# ---------------------------------------------------------------------------
+# Special representation methods like __repr__ and __str__ let objects control
+# how they are displayed. This example highlights how these hooks customize the
+# string and byte output of a class.
 
 import struct
 
