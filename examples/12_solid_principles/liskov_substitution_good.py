@@ -1,4 +1,9 @@
-# Example:  A good example that follows the Liskov Substitution Principle
+# Liskov Substitution Principle - Good Example
+# -------------------------------------------------------------------------------
+# The Liskov Substitution Principle (LSP) means that objects of a
+# superclass should be replaceable with objects of its subclasses
+# without breaking the program. Each subclass here simply extends
+# Human without special checks.
 
 class Human(object):
 

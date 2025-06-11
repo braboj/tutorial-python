@@ -1,4 +1,8 @@
-# Example: A good example that follows the Interface Segregation Principle
+# Interface Segregation Principle - Good Example
+# -------------------------------------------------------------------------------
+# The Interface Segregation Principle (ISP) breaks large interfaces
+# into focused ones. Mixins here provide only the operations each
+# device actually needs.
 
 class Device(object):
     # Defines only the common methods for all devices
