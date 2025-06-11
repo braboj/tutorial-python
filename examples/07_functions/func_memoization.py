@@ -1,3 +1,10 @@
+# Demonstrates memoization with an inner function that caches results.
+# --------------------------------------------------------------------------------
+# The inner ``memoized_fibonacci`` function stores each computed Fibonacci
+# number in the ``cache`` dictionary. On subsequent calls with the same
+# argument, the cached value is returned instead of recalculating it. This
+# avoids redundant work and illustrates the principle of memoization.
+
 def fibonacci(n):
     cache = {}
 
