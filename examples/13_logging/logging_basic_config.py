@@ -1,4 +1,6 @@
-# Example: Basic and Advanced Logging Configuration
+# Basic Logging Configuration
+# --------------------------------------------------------------------------------
+# Uses basicConfig for the root logger and a named child logger.
 
 import logging
 
