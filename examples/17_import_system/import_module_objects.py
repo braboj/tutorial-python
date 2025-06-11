@@ -1,3 +1,4 @@
+"""Shows manual creation of ModuleType objects to demonstrate import internals."""
 from types import ModuleType
 
 # Create a new module object

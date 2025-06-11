@@ -1,3 +1,4 @@
+"""First module in a circular import chain."""
 from . import submodule2
 
 

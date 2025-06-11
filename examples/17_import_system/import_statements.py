@@ -1,3 +1,4 @@
+"""Illustrates various forms of the import statement."""
 # Example: Import Statements
 
 # Importing the package
