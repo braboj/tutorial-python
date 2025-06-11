@@ -1,4 +1,6 @@
-# Example: Data Classes (only Python 3.7+)
+# Lightweight data classes
+# -----------------------------------------------------------------------------
+# Dataclasses eliminate boilerplate when defining classes meant primarily to store data.
 
 import dataclasses
 from dataclasses import dataclass, field

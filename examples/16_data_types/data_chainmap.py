@@ -1,4 +1,6 @@
-# Example: ChainMap
+# Combining dictionaries with ChainMap
+# -----------------------------------------------------------------------------
+# ChainMap lets you combine several dictionaries into a single view without copying them.
 
 from collections import ChainMap
 

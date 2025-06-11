@@ -1,4 +1,6 @@
-# Example: defaultdict data structure
+# Automatic keys with defaultdict
+# -----------------------------------------------------------------------------
+# defaultdict automatically creates missing keys so your code doesn't need explicit checks.
 
 from collections import defaultdict
 

@@ -1,4 +1,6 @@
-# Example: namedtuple data structure
+# Named tuples
+# -----------------------------------------------------------------------------
+# namedtuples give tuple-like objects readable field names without extra overhead.
 
 from collections import namedtuple
 

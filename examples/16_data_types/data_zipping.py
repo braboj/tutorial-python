@@ -1,4 +1,6 @@
-# Example: Zipping Data using the zip() function
+# Pairing items with zip()
+# -----------------------------------------------------------------------------
+# zip() pairs elements from multiple iterables so you can iterate over them in lockstep.
 
 # Sample data
 numbers = [1, 2, 3]

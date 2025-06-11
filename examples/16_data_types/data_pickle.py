@@ -1,4 +1,6 @@
-# Example: Serializing and Deserializing Objects with Pickle
+# Object serialization with pickle
+# -----------------------------------------------------------------------------
+# pickle serializes and deserializes Python objects so they can be saved and restored later.
 
 import pickle
 import sys

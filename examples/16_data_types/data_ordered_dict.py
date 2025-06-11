@@ -1,4 +1,6 @@
-# Example: OrderedDict
+# Ordered dictionaries
+# -----------------------------------------------------------------------------
+# OrderedDict remembers the insertion order of keys, which can be useful for reproducible iteration.
 
 from collections import OrderedDict
 
