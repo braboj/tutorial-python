@@ -1,3 +1,8 @@
+# Framework: pytest
+# --------------------
+#
+# Test App conversion methods and error handling using pytest assertions.
+
 # Example: pytest test cases
 
 import pytest
