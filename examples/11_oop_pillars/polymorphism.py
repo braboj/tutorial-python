@@ -1,4 +1,9 @@
-# Example: Polymorphism
+# Polymorphism: shared interface, different implementations
+# -----------------------------------------------------------------------------
+#
+# Polymorphism lets different classes implement the same interface in
+# their own way.  Subclasses of `Animal` provide specific versions of
+# `talk` and `eat` while client code can treat them uniformly.
 
 class Animal(object):
     def __init__(self, name):

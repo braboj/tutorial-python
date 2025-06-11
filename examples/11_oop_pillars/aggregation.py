@@ -1,4 +1,10 @@
-# Example : Composition with classes
+# Aggregation: objects hold references to independent parts
+# -----------------------------------------------------------------------------
+#
+# Aggregation occurs when one object keeps references to other, independent
+# objects.  The referenced parts can exist on their own and are not owned by
+# the aggregator.  Here the `Rocket` receives an `Engine` instance that can
+# outlive the rocket itself.
 
 class Engine(object):
 
@@ -13,10 +19,10 @@ class Engine(object):
         print("{} engine stopped".format(self.engine_type))
 
 
-class SoliddFuelEngine(Engine):
+class SolidFuelEngine(Engine):
 
     def __init__(self, engine_model):
-        super(SoliddFuelEngine, self).__init__("solid fuel", engine_model)
+        super(SolidFuelEngine, self).__init__("solid fuel", engine_model)
 
 
 class LiquidFuelEngine(Engine):
@@ -28,16 +34,16 @@ class LiquidFuelEngine(Engine):
 class Rocket(object):
 
     def __init__(self, engine):
-
-        # This is aggregation: The rocket instance has an engine instance
-        # but the engine instance can exist without the rocket instance
+        # This is aggregation: the Rocket keeps a reference to an Engine
+        # that was created outside. The engine is not owned by the Rocket
+        # and could be reused elsewhere or exist on its own.
         self.engine = engine
 
     def launch(self):
         self.engine.start()
 
 
-rocket1 = Rocket(SoliddFuelEngine("model 1"))
+rocket1 = Rocket(SolidFuelEngine("model 1"))
 rocket1.launch()
 
 rocket2 = Rocket(LiquidFuelEngine("model 2"))

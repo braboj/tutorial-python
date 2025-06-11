@@ -1,34 +1,36 @@
-# Example: Abstraction with abstract classes
+# Abstraction: hiding details with abstract base classes
+# -----------------------------------------------------------------------------
+#
+# Abstraction defines a common interface while hiding implementation details.
+# Using an abstract base class forces subclasses to implement specific
+# behaviours without revealing how they will work.
 
 from abc import ABCMeta, abstractmethod
 from six import with_metaclass
 
 
 class PersonAbc(with_metaclass(ABCMeta)):
-    """ The abstract base class for junior person answers what junior person shall be able to do. """
+    """An abstract base class defining what a person should be able to do."""
 
     def __init__(self):
 
-        # WHAT DOES THE PERSON HAVE?
-
+        # Some common attributes that every Person has
         self.name = 'Bob'
         self.age = 42
         self.weight = 80
         self.height = 180
 
-    # WHAT DOES THE PERSON DO?
-
     @abstractmethod
     def walk(self):
-        # Still abstract, because we don't know how junior person walks.
+        # Still abstract, because we don't know how a specific person walks.
         pass
 
     @abstractmethod
     def talk(self):
-        # Still abstract, because we don't know how junior person talks.
+        # Still abstract, because we don't know how a specific person talks.
         pass
 
     @abstractmethod
     def eats(self):
-        # Still abstract, because we don't know how junior person eats.
+        # Still abstract, because we don't know how a specific person eats.
         pass

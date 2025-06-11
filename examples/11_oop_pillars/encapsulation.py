@@ -1,9 +1,12 @@
-# Example: Encapsulation with getters and setters
+# Encapsulation: guarding internal state with getters and setters
+# -----------------------------------------------------------------------------
+#
+# Encapsulation hides internal state behind methods.  Properties provide a
+# controlled interface so that validation logic in setters and getters can
+# protect the data from invalid values or direct manipulation.
 
 class Person(object):
-    """ The abstract base class for junior person answers
-        what junior person shall be able to do.
-    """
+    """Represents a person with controlled access to internal state."""
 
     def __init__(self, name, age):
 
@@ -37,13 +40,13 @@ class Person(object):
         """ The setter for the age """
 
         # Protection logic
-        if self.__age is None:
+        if age is None:
             raise ValueError("age cannot be None")
 
-        elif self.__age < 0:
+        elif age < 0:
             raise ValueError("age cannot be negative")
 
-        elif self.__age > 150:
+        elif age > 150:
             raise ValueError("age cannot be greater than 150")
 
         self.__age = age
