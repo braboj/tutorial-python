@@ -1,9 +1,16 @@
-# Example : Composition with classes
+# Composition: owned components live and die with the owner
+# -----------------------------------------------------------------------------
+#
+# Composition means that an object is made up of other objects which it
+# owns completely.  When the container is destroyed so are its parts.
+# The `Rocket` creates and manages its own `FuelTank`, which does not exist
+# independently.
 
 class FuelTank(object):
 
     def __init__(self, level=100):
-        self.level = 0
+        # Start the tank with a given fuel level
+        self.level = level
 
     def fill(self, level):
         self.level = level
@@ -14,10 +21,10 @@ class FuelTank(object):
 
 class Rocket(object):
 
-    def __init__(self, test):
-
-        # This is composition: The rocket instance has junior fuel tank instance
-        self.tank = FuelTank(test)
+    def __init__(self, fuel_level):
+        # This is composition: the Rocket creates and owns the FuelTank.
+        # When the rocket is destroyed the tank goes with it.
+        self.tank = FuelTank(fuel_level)
 
     def launch(self):
         if self.tank.level == 100:

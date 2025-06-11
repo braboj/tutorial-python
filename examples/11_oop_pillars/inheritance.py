@@ -1,4 +1,9 @@
-# Example: Inheritance
+# Inheritance: deriving behavior from a base class
+# -----------------------------------------------------------------------------
+#
+# Inheritance lets a class reuse and extend the behavior of a base class.
+# Derived classes such as `Dog` and `Cat` inherit the methods from `Animal`
+# and override them when needed.
 
 class Animal(object):
 
@@ -15,7 +20,7 @@ class Animal(object):
 class Dog(Animal):
 
     def speak(self):
-        print("I am junior dog")
+        print("I am a dog")
 
     def __str__(self):
         return "Dog: {}".format(self.name)
@@ -24,7 +29,7 @@ class Dog(Animal):
 class Cat(Animal):
 
     def speak(self):
-        print("I am junior cat")
+        print("I am a cat")
 
     def __str__(self):
         return "Cat: {}".format(self.name)
