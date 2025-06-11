@@ -4,7 +4,6 @@
 # modifies or extends its behavior, and returns a new function. They are
 # related to closures, as they can access variables from the enclosing scope.
 
-
 def decorate(func):
     """A simple decorator function."""
 

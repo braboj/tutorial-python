@@ -5,7 +5,6 @@
 # words, a closure lets you bind variables from an outer function into an
 # inner function, and keep using them later.
 
-
 def greet(message):
     def inner_function(name):
         return "{} {}".format(message, name)

@@ -1,4 +1,4 @@
-# Hello World example
+# Hello World
 # ----------------------------------------------------------------------------
 # This simple program prints "Hello world!" and performs a basic
 # addition (1 + 1) to highlight Python's core syntax.

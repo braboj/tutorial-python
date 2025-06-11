@@ -11,7 +11,6 @@
 # The decorator function will then take the original function as an argument
 # and return a wrapper function modifying the behavior of the original function.
 
-
 def log(message="Operation"):
     def decorator(func):
         def wrapper(*args, **kwargs):

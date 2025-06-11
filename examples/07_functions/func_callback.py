@@ -6,7 +6,6 @@
 
 _listeners = {}
 
-
 def on(event_name, callback):
     _listeners.setdefault(event_name, []).append(callback)
 
