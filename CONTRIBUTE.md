@@ -1,10 +1,10 @@
-## 4. Project Conventions
+## Contributing Guide
 
-### 4.1. File Naming
+### File Naming
 
 * Snake-case for all files and folders (e.g., `my_file.py`, `my_folder`)
 
-### 4.2. Commit Messages
+### Commit Messages
 
 * (`#<id>`) - Use as a reference to a concrete issue number (either GitHub or JIRA)
 * [`#####`] - No issue or ticket defined for this commit
@@ -15,7 +15,7 @@
 * [`#####`] - Move the image assets to a dedicated folder
 ```
 
-### 4.3. Issues Titles
+### Issues Titles
 
 [`<part>, <chapter>`] - \<message>
 
@@ -29,6 +29,6 @@
 * Do that (without context)
 ```
 
-### 4.4. Pull Requests
+### Pull Requests
 
 - https://blog.montrealanalytics.com/4-tips-for-effective-pull-request-naming-f60793998f04]
