@@ -1,4 +1,4 @@
-# Python Tutorial
+# Learn by Example with Python
 
 by Branimir Georgiev (www.codewithbranko.com)
 
