@@ -1,3 +1,8 @@
+# Inspect function attributes
+# --------------------------------------------------------------------------------
+# Explore attributes such as __name__, __doc__, __code__, etc., to see
+# where Python stores metadata for functions.
+
 def foo(a, b=10, c=20, *args, **kwargs):
     """This is 'foo' function that does nothing."""
 
