@@ -1,3 +1,7 @@
+# Demonstration of special methods
+# ---------------------------------------------------------------------------
+# Various dunder methods show how objects integrate with Python features
+
 class DunderClass(object):
 
     def __init__(self):

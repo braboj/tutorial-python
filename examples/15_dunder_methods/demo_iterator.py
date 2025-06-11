@@ -1,11 +1,10 @@
-"""
-* An iterable is an object that implements the __iter__ method which returns an iterator.
-* An iterator is an object that implements the __iter__ method which returns itself and the __next__ method which
-returns the next element.
-
-https://www.pythontutorial.net/advanced-python/python-iterator-vs-iterable/
-
-"""
+# Dunder methods and iteration
+# ---------------------------------------------------------------------------
+# Demonstrates how special methods customize iteration behavior.
+# * An iterable implements __iter__ returning an iterator.
+# * An iterator implements __iter__ returning itself and __next__ returning
+#   the next element.
+# https://www.pythontutorial.net/advanced-python/python-iterator-vs-iterable/
 
 
 ##################################################################################################

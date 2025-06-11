@@ -1,4 +1,8 @@
-# Example: Dunder methods for context manager
+# Dunder methods for context manager
+# ---------------------------------------------------------------------------
+# The __enter__ and __exit__ methods allow an object to define its own
+# setup and teardown logic when used in a with-statement. This example shows
+# how implementing these hooks customizes resource management behavior.
 
 class Complex(object):
 
