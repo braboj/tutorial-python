@@ -1,4 +1,6 @@
-# Example of exception flow without try/except statements
+# Control Flow without try/except
+# --------------------------------------------------------------------------------
+# Illustrates manual error checking when no exception handlers are used.
 
 def func_a(x):
     # Function uses and returns only positive values

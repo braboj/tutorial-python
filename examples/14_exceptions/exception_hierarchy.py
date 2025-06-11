@@ -1,4 +1,7 @@
-# Example: Exception Hierarchy in junior Package
+# Custom Exception Hierarchy
+# --------------------------------------------------------------------------------
+# Defines a family of related custom exceptions and demonstrates raising each
+# member of the hierarchy.
 
 class SocketError(Exception):
 

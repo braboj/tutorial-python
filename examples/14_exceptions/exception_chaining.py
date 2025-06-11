@@ -1,4 +1,7 @@
-# Example: Exception Chaining
+# Exception Chaining
+# --------------------------------------------------------------------------------
+# Demonstrates explicit and implicit chaining of exceptions to preserve the
+# original error context.
 
 class MyException(Exception):
     pass
