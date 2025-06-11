@@ -1,8 +1,8 @@
-# Handling a variable number of arguments in Python 3
+# Mixing positional arguments with keyword-only arguments
 # -----------------------------------------------------------------------------
-# Keyword-only arguments come after `*` so there is less need to use
-# `**kwargs` for optional named parameters.  Compare with the Python 2 version
-# in `func_variable_arguments_python2.py`.
+# Python 3 lets you combine regular positional parameters with ``*args`` and
+# keyword-only parameters that have default values. The `*` separator defines
+# that the positional parameters until a key-value pair is encountered.
 
 def variable_number_of_arguments(a, *args, b=1, **kwargs):
     print(f"a: {a}")
