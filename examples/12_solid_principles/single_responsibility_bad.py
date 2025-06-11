@@ -1,4 +1,8 @@
-# Example : An example that violates the Single Responsibility Principle
+# Single Responsibility Principle - Bad Example
+# -------------------------------------------------------------------------------
+# The Single Responsibility Principle (SRP) says that a class should
+# have only one reason to change. This example bundles reading,
+# writing and processing into one class, so it breaks SRP.
 
 class MyCustomFileFormat(object):
     """ This class violates the Single Responsibility Principle because:
