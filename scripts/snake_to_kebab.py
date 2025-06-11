@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+"""Command-line script to rename snake_case filenames to kebab-case.
+
+The optional ``directory`` argument defaults to the current working
+directory when not specified.
+"""
+
 import os
 import re
 import argparse
@@ -75,8 +81,8 @@ if __name__ == "__main__":
     parser.add_argument(
         "directory",
         nargs="?",
-        default="C:\Workspace\tutorial-python",
-        help="Target directory (default: current directory)"
+        default=os.getcwd(),
+        help="Target directory (default: current working directory)"
     )
 
     # Add an optional argument for recursive renaming
