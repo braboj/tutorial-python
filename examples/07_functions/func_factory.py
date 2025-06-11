@@ -1,6 +1,7 @@
 # Function factories to create specialized functions
 # -----------------------------------------------------------------------------
-# Shows how to use higher-order functions to generate customized functions.
+# This example uses higher-order functions to generate customized
+# functions.
 
 def power_of(n):
     def power(x):
