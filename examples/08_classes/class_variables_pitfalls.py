@@ -1,12 +1,28 @@
-"""
-The statement self.<variable> may refer to two things at different times. When no instance
-variable exists for a name, Python will look up the variable in the class. So the value retrieved
-for self.<variable> will be the class variable.
+"""Class vs. Instance Variables
+--------------------------------
+Class variables are shared by all instances, while instance variables belong
+to each object. Assigning to ``self.variable`` creates an instance attribute.
+If a class attribute with the same name exists, the instance attribute hides it
+and later reads through ``self`` return the instance value. Mixing them can be
+confusing because updates seem to apply only to some objects.
 
-But when setting an attribute via self, Python will always set an instance variable. So now
-self.<variable> is a new instance variable whose value is equal to the class variable + 1. This
-attribute shadows the class attribute, which you can no longer access via self but only via the
-class.
+When you read ``self.value`` and ``value`` is not defined on the instance,
+Python falls back to the class attribute:
+
+    class A:
+        value = 1
+
+    obj = A()
+    print(obj.value)  # 1 from the class
+
+Any assignment using ``self`` stores a value on the instance:
+
+    obj.value = 2
+    print(A.value)   # 1
+    print(obj.value) # 2
+
+Here ``obj.value`` now shadows ``A.value``. To access the class attribute
+explicitly you must use ``A.value``.
 """
 
 

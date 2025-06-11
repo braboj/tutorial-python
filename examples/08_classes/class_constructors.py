@@ -1,3 +1,7 @@
+# How __new__ and __init__ cooperate in object creation
+# ------------------------------------------------------------------------------
+# __new__ creates and returns the instance, while __init__
+# receives that instance and initializes its state.
 
 class Calculator(object):
 

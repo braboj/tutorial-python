@@ -1,4 +1,7 @@
-# Example: Class attributes
+# Working with class attributes
+# -----------------------------------------------------------------------------
+# This script uses class-level variables that apply to every instance
+# of the Person class.
 
 class Person(object):
 
@@ -11,7 +14,7 @@ class Person(object):
         self.sex = sex
 
     def get_prefix(self):
-        """ Demonstrate how to access class attributes from instance methods """
+        """Return the appropriate prefix using class attributes."""
 
         # The person is male
         if self.sex == "male":

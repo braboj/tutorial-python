@@ -1,4 +1,8 @@
-# Example : Demonstrate that both lamda and def return the same result when compiled
+# Lambda and def produce the same bytecode
+# -----------------------------------------------------------------------------
+# This script compiles a lambda expression and a regular function to compare
+# their bytecode output.
+
 import dis
 
 func1 = lambda x: x * x

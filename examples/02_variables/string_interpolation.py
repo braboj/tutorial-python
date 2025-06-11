@@ -1,8 +1,8 @@
 # String interpolation
 # -----------------------------------------------------------------------------
-# This code demonstrates how to use f-strings (formatted string literals) in
-# Python to create strings that include variables. F-strings allow you to
-# embed expressions inside string literals, using curly braces `{}`.
+# This code uses f-strings (formatted string literals) to create strings
+# that include variables. Expressions inside curly braces `{}` are
+# evaluated in place.
 
 first_name = "Branimir"
 last_name = "Georgiev"
