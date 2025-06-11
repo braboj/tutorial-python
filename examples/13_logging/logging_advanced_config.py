@@ -1,4 +1,6 @@
-# Example: Basic and Advanced Logging Configuration
+# Advanced Logging Configuration
+# --------------------------------------------------------------------------------
+# Demonstrates custom handlers, a formatter, and propagation control.
 
 import logging
 
