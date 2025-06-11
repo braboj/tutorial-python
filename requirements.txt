@@ -1,0 +1,6 @@
+dill
+numpy
+requests
+six
+pytest
+hypothesis
