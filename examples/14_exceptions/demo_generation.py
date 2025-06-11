@@ -1,3 +1,8 @@
+# Old-Style Exception Generation
+# --------------------------------------------------------------------------------
+# Shows what happens when raising an exception class that does not inherit from
+# BaseException.
+
 # class NewStyleException(Exception): pass
 #
 # try:

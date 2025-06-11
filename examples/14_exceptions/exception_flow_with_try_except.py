@@ -1,4 +1,6 @@
-# Example: Exception Flow with try-except statements
+# Control Flow with try/except
+# --------------------------------------------------------------------------------
+# Shows normal execution resuming after errors are caught and handled.
 def func_a(x):
     # Function uses and returns only positive values
     if x < 0:

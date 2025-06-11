@@ -1,4 +1,7 @@
-# Example: Catch Multiple Exceptions with junior Single Except Block
+# Grouped Exception Handling
+# --------------------------------------------------------------------------------
+# Illustrates catching different members of an exception hierarchy with one
+# except block.
 
 
 from exception_hierarchy import *
