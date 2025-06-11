@@ -1,8 +1,14 @@
-"""
-type(object)
-type(name, bases, dict)
-
-"""
+# Using ``type`` to inspect objects and create classes
+# -----------------------------------------------------------------------------
+# ``type(object)``
+# ``type(name, bases, dict)``
+#
+# The built-in ``type`` function has two distinct behaviors in Python:
+# 1. ``type(obj)`` returns the type of ``obj``. This is useful when
+#    inspecting existing objects to see what class they belong to.
+# 2. ``type(name, bases, dict)`` dynamically creates a new class with the
+#    specified name, base classes and attributes. Using this form allows
+#    programs to build classes at runtime.
 
 ##############################################################################
 # USECASE A : Get object type
