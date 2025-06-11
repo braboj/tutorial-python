@@ -1,3 +1,4 @@
+"""Submodule used by GUI package import examples."""
 # Define a constant
 my_id = 3
 

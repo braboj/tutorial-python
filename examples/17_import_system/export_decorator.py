@@ -1,3 +1,4 @@
+"""Defines an export decorator for populating a package's __all__."""
 # Example of the export decorator that shall be placed in the __init__.py file of the package
 
 # Export decorator

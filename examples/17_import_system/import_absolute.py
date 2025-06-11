@@ -1,3 +1,4 @@
+"""Shows how to enforce and use absolute imports."""
 # Example: Absolute imports
 import asyncio
 

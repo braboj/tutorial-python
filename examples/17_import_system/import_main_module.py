@@ -1,3 +1,4 @@
+"""Demonstrates __main__ name when executing a module as a script."""
 # Example: Main program
 
 import pprint

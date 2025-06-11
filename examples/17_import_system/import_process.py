@@ -1,3 +1,4 @@
+"""Implements a minimal importer to show how Python loads modules."""
 # Example: Very naive implementation of the import statement
 
 import marshal

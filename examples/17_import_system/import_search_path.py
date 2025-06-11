@@ -1,3 +1,4 @@
+"""Displays and modifies sys.path to demonstrate search paths."""
 # Example: Import Search Path
 
 import sys

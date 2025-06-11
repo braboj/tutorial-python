@@ -1,3 +1,4 @@
+"""Submodule used in absolute import demonstrations."""
 # Define a constant
 my_id = 2
 

@@ -1,3 +1,4 @@
+"""Entry point executed when running the package with -m."""
 import sys
 import os.path
 
