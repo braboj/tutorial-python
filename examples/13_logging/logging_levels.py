@@ -1,4 +1,6 @@
-# Example: Logging Levels
+# Logging Levels
+# --------------------------------------------------------------------------------
+# Demonstrates how to emit messages for each severity level.
 
 import logging
 

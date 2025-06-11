@@ -1,4 +1,8 @@
-# Example: Dunder methods for operator overloading
+# Dunder methods for operator overloading
+# ---------------------------------------------------------------------------
+# Overloading arithmetic operators with dunder methods allows custom classes
+# to behave like built-in numeric types. The following Point class defines
+# how instances react to +, -, * and other operations.
 
 class Point(object):
 

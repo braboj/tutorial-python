@@ -1,4 +1,9 @@
-# Example: A bad example that violates the Interface Segregation Principle
+# Interface Segregation Principle - Bad Example
+# -------------------------------------------------------------------------------
+# The Interface Segregation Principle (ISP) advises that clients
+# should not be forced to depend on methods they do not use. The
+# Device class defines unrelated operations that specific devices
+# need to ignore.
 
 class Device(object):
 

@@ -1,4 +1,6 @@
-# Example: codecs module
+# Encoding text with codecs
+# -----------------------------------------------------------------------------
+# The codecs module provides tools for encoding and decoding streams of text in different character sets.
 
 import codecs
 import pprint

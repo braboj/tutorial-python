@@ -1,4 +1,8 @@
-# Example: Dunder methods for context manager
+# Dunder methods for attribute access
+# ---------------------------------------------------------------------------
+# Attribute related dunder methods such as __getattr__, __setattr__ and
+# __delattr__ give objects dynamic control over attribute access. They enable
+# customized lookup, assignment and deletion behavior.
 
 class Complex(object):
 

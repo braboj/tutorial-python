@@ -1,4 +1,6 @@
-# Example list comprehension
+# List comprehensions
+# -----------------------------------------------------------------------------
+# List comprehensions allow you to create or filter lists concisely without explicit loops.
 
 existing_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 

@@ -1,4 +1,6 @@
-# Example: Filter Data using the filter() function
+# Filtering with filter()
+# -----------------------------------------------------------------------------
+# The built-in filter() returns elements for which a function returns True.
 
 
 def is_even(x):

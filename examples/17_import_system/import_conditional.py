@@ -1,3 +1,4 @@
+"""Shows conditional imports based on Python version."""
 import sys
 
 # Option 1

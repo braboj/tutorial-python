@@ -1,4 +1,6 @@
-# Example: Data Copying
+# Deep and shallow copying
+# -----------------------------------------------------------------------------
+# Shallow and deep copying let you duplicate complex objects without affecting the originals.
 
 import copy
 

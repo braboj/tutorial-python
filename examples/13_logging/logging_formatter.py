@@ -1,4 +1,6 @@
-# Example: Basic and Advanced Logging Configuration
+# Custom Logging Formatter
+# --------------------------------------------------------------------------------
+# Configures a formatter for a named logger.
 
 import logging
 

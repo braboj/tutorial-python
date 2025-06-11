@@ -1,4 +1,6 @@
-# Example: Filter Data using the filter() function
+# Mapping with map()
+# -----------------------------------------------------------------------------
+# map() applies a function to every element of an iterable, returning the results.
 
 
 def sqr(x):

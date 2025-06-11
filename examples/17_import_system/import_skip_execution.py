@@ -1,3 +1,4 @@
+"""Demonstrates guarding code with __name__ to skip execution on import."""
 # Example: Main program
 
 

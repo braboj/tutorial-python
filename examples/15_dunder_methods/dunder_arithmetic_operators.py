@@ -1,4 +1,8 @@
-# Example: Dunder methods for arithmetic operators
+# Dunder methods for arithmetic operators
+# ---------------------------------------------------------------------------
+# By defining special arithmetic methods, objects can participate in Python's
+# numeric operations. These dunder hooks let a class customize how instances
+# respond to +, -, *, and other operators.
 
 class Complex(object):
 

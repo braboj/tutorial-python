@@ -1,4 +1,6 @@
-# Example: Custom Codec
+# Custom codecs
+# -----------------------------------------------------------------------------
+# Registering a custom codec allows you to handle data stored in a specialized encoding.
 
 import codecs
 

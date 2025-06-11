@@ -1,3 +1,7 @@
+# Logging Exceptions
+# --------------------------------------------------------------------------------
+# Captures an exception and logs the full stack trace.
+
 import logging
 
 a = 5

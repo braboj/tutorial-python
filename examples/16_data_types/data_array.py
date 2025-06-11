@@ -1,4 +1,6 @@
-# Example: Array of data
+# Efficient arrays
+# -----------------------------------------------------------------------------
+# The array module stores numeric values more efficiently than lists because all elements share the same type.
 
 import array
 

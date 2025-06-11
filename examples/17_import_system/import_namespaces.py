@@ -1,3 +1,4 @@
+"""Explores namespaces at different scopes using builtins and custom classes."""
 # Example: Namespace of the builtins module
 
 import pprint

@@ -1,4 +1,6 @@
-# Example: Filter Data using the filter() function
+# Reverse iteration
+# -----------------------------------------------------------------------------
+# The reversed() built-in returns an iterator that yields items from the end to the start.
 
 # Sample data
 sample_1 = [1, 2, 5, 4, 3]

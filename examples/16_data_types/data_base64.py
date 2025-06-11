@@ -1,4 +1,6 @@
-# Example: Base64 Encoding and Decoding
+# Base64 encoding
+# -----------------------------------------------------------------------------
+# Base64 converts binary data to ASCII text. This is handy when transmitting bytes over text-based protocols.
 
 import base64
 

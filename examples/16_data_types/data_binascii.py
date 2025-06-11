@@ -1,4 +1,6 @@
-# Example: binascii module
+# Binary-to-ASCII conversions
+# -----------------------------------------------------------------------------
+# The binascii module exposes low-level routines for converting between binary data and various ASCII encodings.
 
 
 import binascii

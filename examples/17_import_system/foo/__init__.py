@@ -1,3 +1,4 @@
+"""Demo package with relative imports and an export decorator."""
 # Define the packet API
 __version__ = '1.0.0'
 

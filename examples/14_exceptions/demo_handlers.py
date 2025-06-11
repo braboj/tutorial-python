@@ -1,3 +1,8 @@
+# Exception Handling Styles
+# --------------------------------------------------------------------------------
+# Compares using a single except clause against multiple specific handlers for
+# related errors.
+
 def raise_overflow_error():
     raise OverflowError
 

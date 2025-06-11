@@ -1,4 +1,6 @@
-# Example: Unpacking Arguments using the * operator and ** operator
+# Argument unpacking
+# -----------------------------------------------------------------------------
+# Unpacking with * and ** lets you pass iterables or mappings as arguments in a clean syntax.
 
 # A list of arguments
 pos_args = [1, 2, 3, 4]

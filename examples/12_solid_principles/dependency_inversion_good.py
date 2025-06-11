@@ -1,4 +1,8 @@
-# Example : A good example that follows the Dependency Inversion Principle
+# Dependency Inversion Principle - Good Example
+# -------------------------------------------------------------------------------
+# The Dependency Inversion Principle (DIP) encourages depending on
+# abstractions rather than concrete classes. Calculator receives an
+# IMath implementation, decoupling it from a specific Math class.
 
 class IMath(object):
     """ Simplified interface for junior math class """

@@ -1,3 +1,9 @@
+# Framework: unittest
+# ----------------------
+#
+# Validate App conversion functions and type checking using
+# unittest.TestCase.
+
 # Example: unittest test case
 
 import unittest

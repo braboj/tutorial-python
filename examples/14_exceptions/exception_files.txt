@@ -1,3 +1,7 @@
+# Exception Files Layout
+# --------------------------------------------------------------------------------
+# Displays a sample directory tree for keeping custom error definitions organized.
+
 src/
  ├─ socket
  │  ├─ __init__.py

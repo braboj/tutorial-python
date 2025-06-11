@@ -1,4 +1,8 @@
-# Example: Dunder methods for customizing object behavior
+# Dunder methods for customizing object behavior
+# ---------------------------------------------------------------------------
+# This script demonstrates several special methods that hook into object
+# creation, calling and destruction. Implementing these dunder methods lets a
+# class take control over how instances are created, invoked and cleaned up.
 
 class TestClass(object):
 
