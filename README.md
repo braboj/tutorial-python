@@ -34,5 +34,26 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
+## Generating a Markdown page from examples
+
+Use the `examples_to_markdown` script to collect all example files and render
+them via a Mustache template. The command below writes the output to
+`examples.md`:
+
+```bash
+python .scripts/examples_to_markdown.py \
+    --examples-dir examples \
+    --template templates/examples_page.mustache \
+    --output examples.md
+```
+
+Files named `__init__.py` are automatically ignored when collecting examples.
+
+Each file's contents are included verbatim as a code block in the generated
+page; no attempt is made to parse comments or headings from the code.
+
+The script requires the `pystache` package which is listed in
+`requirements.txt`.
+
 ## License
 This project is licensed under the [MIT License](LICENSE).
