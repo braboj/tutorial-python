@@ -1,11 +1,11 @@
 # Building the Site
 
-This project uses [MkDocs](https://www.mkdocs.org/) to build the static documentation site. After installing the dependencies, regenerate the navigation menu and then run:
+This project uses [MkDocs](https://www.mkdocs.org/) to build the static documentation site. After installing the dependencies, generate a `nav.yml` file containing the navigation mapping and then run:
 
 ```bash
-python .scripts/update_mkdocs_nav.py
+python .scripts/update_mkdocs_nav.py --nav-file nav.yml
 
-mkdocs build
+mkdocs build -f mkdocs.yml -f nav.yml
 ```
 
 The generated HTML will be placed inside the `site/` directory.
