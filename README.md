@@ -70,5 +70,22 @@ The script mirrors the directory layout under `examples` inside `docs`.
 Each `foo.py` becomes `foo.md` containing the source code in a single code
 block. Any `__init__.py` files are ignored.
 
+## Building the documentation site
+
+This project can publish its Markdown files as a static website using
+[MkDocs](https://www.mkdocs.org/). After installing the dependencies listed in
+`requirements.txt` (which now include `mkdocs`). Regenerate the navigation menu and build the site with:
+
+```bash
+python .scripts/update_mkdocs_nav.py
+mkdocs build
+```
+
+
+
+Preview the pages locally by running `mkdocs serve` and opening the displayed
+URL in your browser. The generated HTML files are written to the `site/`
+directory.
+
 ## License
 This project is licensed under the [MIT License](LICENSE).
