@@ -1,4 +1,6 @@
-"""Demo package with relative imports and an export decorator."""
+# Package demonstrating relative imports and an export decorator.
+# ------------------------------------------------------------------------------
+# Shows relative imports and how to define __all__.
 # Define the packet API
 __version__ = '1.0.0'
 
@@ -29,7 +31,7 @@ def export(defn):
     return defn
 
 
-# Example of the export decorator
+# Demonstration of the export decorator
 @export
 def func4():
     print('func4')

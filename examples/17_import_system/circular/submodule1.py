@@ -1,4 +1,6 @@
-"""First module in a circular import chain."""
+# First module in a circular import chain.
+# ------------------------------------------------------------------------------
+# Imports submodule2 and exposes a function.
 from . import submodule2
 
 

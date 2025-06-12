@@ -1,4 +1,6 @@
-"""Submodule used by GUI package import examples."""
+# Submodule used by the GUI package for import demonstrations.
+# ------------------------------------------------------------------------------
+# Contains a GUI-specific function and constant.
 # Define a constant
 my_id = 3
 

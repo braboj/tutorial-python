@@ -1,5 +1,7 @@
-"""Shows how to enforce and use absolute imports."""
-# Example: Absolute imports
+# Shows how to enforce and use absolute imports.
+# ------------------------------------------------------------------------------
+# Example script demonstrating absolute imports.
+# Using absolute imports
 import asyncio
 
 # Enforce absolute imports

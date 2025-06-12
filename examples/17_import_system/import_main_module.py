@@ -1,5 +1,7 @@
-"""Demonstrates __main__ name when executing a module as a script."""
-# Example: Main program
+# Demonstrates __main__ name when executing a module as a script.
+# ------------------------------------------------------------------------------
+# Shows module __name__ when executed directly.
+# Main program entry point
 
 import pprint
 

@@ -1,5 +1,7 @@
-"""Defines an export decorator for populating a package's __all__."""
-# Example of the export decorator that shall be placed in the __init__.py file of the package
+# Defines an export decorator for populating a package's __all__.
+# ------------------------------------------------------------------------------
+# Utility that adds functions to a package's __all__.
+# Demonstrates placing the export decorator in a package's __init__ file
 
 # Export decorator
 def export(defn):
@@ -13,7 +15,7 @@ def export(defn):
     return defn
 
 
-# Example of the export decorator
+# Demonstration of the export decorator
 @export
 def func4():
     print('func4')

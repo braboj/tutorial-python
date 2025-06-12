@@ -1,4 +1,6 @@
-"""Submodule used to demonstrate absolute and relative imports."""
+# Submodule used to demonstrate absolute and relative imports.
+# ------------------------------------------------------------------------------
+# Provides a function and constant for tests.
 # Define a constant
 my_id = 1
 

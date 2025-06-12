@@ -1,5 +1,7 @@
-"""Displays and modifies sys.path to demonstrate search paths."""
-# Example: Import Search Path
+# Displays and modifies sys.path to demonstrate search paths.
+# ------------------------------------------------------------------------------
+# Displays and alters sys.path for searching modules.
+# Demonstrates the import search path
 
 import sys
 import pprint

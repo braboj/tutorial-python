@@ -1,1 +1,3 @@
-"""Core subpackage used in import examples."""
+# Core subpackage used in import demonstrations.
+# ------------------------------------------------------------------------------
+# Core components used by the package.

@@ -1,5 +1,7 @@
-"""Implements a minimal importer to show how Python loads modules."""
-# Example: Very naive implementation of the import statement
+# Implements a minimal importer to show how Python loads modules.
+# ------------------------------------------------------------------------------
+# Minimal demonstration of how the import statement works.
+# A naive implementation of the import statement
 
 import marshal
 import os
@@ -37,7 +39,9 @@ def _import(module_name):
 
 
 def _compile(sourcecode, sourcepath, module_name):
-    """ Compile the source code of a module to bytecode. """
+    # Compile the source code of a module to bytecode.
+    # --------------------------------------------------------------------------------
+    # Compiles the code and optionally writes a .pyc file.
 
     MAGIC_NUMBER = (3439).to_bytes(2, 'little') + b'\r\n'
 

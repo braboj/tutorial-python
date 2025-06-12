@@ -1,5 +1,7 @@
-"""Illustrates various forms of the import statement."""
-# Example: Import Statements
+# Illustrates various forms of the import statement.
+# ------------------------------------------------------------------------------
+# Shows many forms of the import statement in use.
+# Import statements in action.
 
 # Importing the package
 import foo
