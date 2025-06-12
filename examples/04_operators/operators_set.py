@@ -29,3 +29,16 @@ print("Is set3 a subset of set4?", is_subset)  # Output: True
 # Superset
 is_superset = set4 >= set3
 print("Is set4 a superset of set3?", is_superset)  # Output: True
+
+# Proper subset
+is_proper_subset = set3 < set4
+print("Is set3 a proper subset of set4?", is_proper_subset)  # Output: True
+
+# Proper superset
+is_proper_superset = set4 > set3
+print("Is set4 a proper superset of set3?", is_proper_superset)  # Output: True
+
+# Disjoint
+set5 = {6, 7}
+is_disjoint = set1.isdisjoint(set5)
+print("Are set1 and set5 disjoint?", is_disjoint)  # Output: True
