@@ -1,6 +1,8 @@
 # Class method used to modify existing instances of the class
 # --------------------------------------------------------------------------------
-# Demonstrates class method used to modify existing instances of the class.
+# Class methods can operate on a collection of instances maintained by the
+# class. The method updates every stored object in a single call. Centralizing
+# the logic keeps modifications consistent across all instances.
 
 class Person(object):
 

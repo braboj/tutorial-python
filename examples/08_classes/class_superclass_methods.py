@@ -1,6 +1,8 @@
 # Call super class methods
 # --------------------------------------------------------------------------------
-# Demonstrates call super class methods.
+# Methods in a subclass can extend behavior defined in a parent. By calling the
+# superclass implementation first, the subclass adds functionality without
+# rewriting the original logic.
 
 class Person(object):
 

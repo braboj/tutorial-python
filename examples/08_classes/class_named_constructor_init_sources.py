@@ -1,6 +1,8 @@
 # Different sources to create and initialize objects
 # --------------------------------------------------------------------------------
-# Demonstrates different sources to create and initialize objects.
+# Objects may be constructed from data stored in several locations such as
+# files or environment variables. Named constructors gather that information and
+# return fully initialized instances.
 import os
 
 

@@ -1,7 +1,7 @@
 # Working with class attributes
 # --------------------------------------------------------------------------------
-# This script uses class-level variables that apply to every instance
-# of the Person class.
+# Class attributes are shared across all instances of a class. They store values
+# that should remain consistent, such as prefixes used by each Person object.
 
 class Person(object):
 

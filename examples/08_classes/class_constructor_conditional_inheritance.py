@@ -1,6 +1,9 @@
 # Conditional inheritance using the __new__ method
 # --------------------------------------------------------------------------------
-# Demonstrates conditional inheritance using the __new__ method.
+# The __new__ method can decide which subclass to instantiate. By inspecting
+# runtime conditions it returns objects of different types from a single
+# factory class. This approach allows conditional inheritance without altering
+# the class hierarchy.
 
 class WindowsCalculator(object):
     """ Windows calculator class operations """

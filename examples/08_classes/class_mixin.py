@@ -1,6 +1,8 @@
 # Mixin class
 # --------------------------------------------------------------------------------
-# Demonstrates mixin class.
+# A mixin provides extra methods that can be shared across multiple unrelated
+# classes. It relies on cooperative multiple inheritance to join its behavior
+# with that of the main class hierarchy.
 
 class RemoteMixin(object):
 

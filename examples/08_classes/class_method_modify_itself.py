@@ -1,6 +1,8 @@
 # Class method used to modify the class itself
 # --------------------------------------------------------------------------------
-# Demonstrates class method used to modify the class itself.
+# Because class methods receive the class as the first argument, they can change
+# class-level attributes. This file modifies a shared value that affects all
+# future instances.
 
 class Person(object):
 

@@ -1,6 +1,8 @@
 # Class instance with instance methods
 # --------------------------------------------------------------------------------
-# Demonstrates class instance with instance methods.
+# Instance methods operate on a particular object and have access to its state.
+# They typically receive the instance as the first parameter. Calling these
+# methods affects only the object that invoked them.
 
 class Person(object):
 

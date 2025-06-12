@@ -1,6 +1,8 @@
 # Reduce the number of parameters
 # --------------------------------------------------------------------------------
-# Demonstrates reduce the number of parameters.
+# When an initializer requires many arguments, a named constructor can provide a
+# simpler interface. It bundles related values together before delegating to
+# __init__.
 
 class Rectangle(object):
     def __init__(self, width, height):

@@ -1,6 +1,8 @@
 # Stacking decorators
 # --------------------------------------------------------------------------------
-# Demonstrates stacking decorators.
+# Multiple decorators can be stacked on a single attribute. In this file a
+# property is defined using @property together with @abstractmethod. Derived
+# classes must supply the concrete implementation for this decorated property.
 
 from abc import ABCMeta, abstractmethod
 from six import with_metaclass

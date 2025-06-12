@@ -1,6 +1,8 @@
 # Class factory using the __new__ method
 # --------------------------------------------------------------------------------
-# Demonstrates class factory using the __new__ method.
+# Overriding __new__ allows a class to act as a factory. The method returns an
+# instance of a specific subclass based on the provided parameters. This
+# separates the decision about which object to create from the calling code.
 
 class WindowsCalculator(object):
 

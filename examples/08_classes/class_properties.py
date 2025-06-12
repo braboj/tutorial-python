@@ -1,6 +1,8 @@
 # Property used to encapsulate an instance variable
 # --------------------------------------------------------------------------------
-# Demonstrates property used to encapsulate an instance variable.
+# The property decorator exposes getter and setter functions as attribute
+# access. This allows validation or computation while keeping the public
+# interface simple.
 
 class Person(object):
 

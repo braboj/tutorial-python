@@ -1,6 +1,8 @@
 # Class instance with concrete values
 # --------------------------------------------------------------------------------
-# Demonstrates class instance with concrete values.
+# After defining the Person class, an instance is created with explicit values.
+# The object stores these attributes as part of its state. Accessing them later
+# confirms that the information persists on the instance.
 
 class Person(object):
 

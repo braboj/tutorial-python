@@ -1,6 +1,7 @@
 # Mro (method resolution order) - left first
 # --------------------------------------------------------------------------------
-# Demonstrates mro (method resolution order) - left first.
+# With multiple inheritance Python consults base classes from left to right. The
+# hierarchy in this file highlights how that ordering affects method lookup.
 
 class A(object):
 

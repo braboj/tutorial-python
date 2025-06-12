@@ -1,7 +1,9 @@
 # How __new__ and __init__ cooperate in object creation
 # --------------------------------------------------------------------------------
-# __new__ creates and returns the instance, while __init__
-# receives that instance and initializes its state.
+# Object creation begins with __new__, which allocates the instance. The fresh
+# object is then passed to __init__ for further initialization. Separating these
+# steps gives developers flexibility to customize how objects come into
+# existence.
 
 class Calculator(object):
 

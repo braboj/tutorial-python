@@ -1,6 +1,8 @@
 # Object as concrete realization of a class
 # --------------------------------------------------------------------------------
-# Demonstrates object as concrete realization of a class.
+# The code creates an instance of the Person class as a tangible object.
+# The constructor assigns initial values to the instance. After creation, the
+# object can call its methods and access stored data.
 from class_as_blueprint import Person
 
 

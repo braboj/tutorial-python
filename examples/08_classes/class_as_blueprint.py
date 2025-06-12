@@ -1,6 +1,8 @@
 # Class as template
 # --------------------------------------------------------------------------------
-# Demonstrates class as template.
+# A class can act as a template from which many objects are built. This file
+# defines a Person blueprint containing attributes and methods that every
+# instance will share.
 
 class Person(object):
 

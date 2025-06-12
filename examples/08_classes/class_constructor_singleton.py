@@ -1,6 +1,8 @@
 # Singleton using the __new__ method
 # --------------------------------------------------------------------------------
-# Demonstrates singleton using the __new__ method.
+# By overriding __new__, this class ensures that only one instance ever exists.
+# The method stores the created object and returns it on subsequent calls.
+# Such control over object creation implements the singleton pattern.
 
 class Singleton(object):
 

@@ -1,6 +1,8 @@
 # Different internal representations of the same object
 # --------------------------------------------------------------------------------
-# Demonstrates different internal representations of the same object.
+# A class may provide alternate constructors that store data in various formats.
+# Each representation exposes the same behavior to callers. Selecting one or
+# another depends on the needs of the application.
 
 class Person(object):
 

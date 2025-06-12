@@ -1,6 +1,8 @@
 # Named constructors as alternative constructors
 # --------------------------------------------------------------------------------
-# Demonstrates named constructors as alternative constructors.
+# A class can offer several named constructors for convenience. Each one accepts
+# parameters tailored for a specific situation and returns a configured
+# instance.
 
 class Rectangle(object):
     def __init__(self, width, height):

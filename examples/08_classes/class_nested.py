@@ -1,6 +1,8 @@
 # Nested classes for constants, settings, etc.
 # --------------------------------------------------------------------------------
-# Demonstrates nested classes for constants, settings, etc.
+# Classes can contain other classes that serve as containers for related
+# constants or configuration. Nesting keeps these auxiliary definitions close to
+# the code that uses them.
 
 class Settings:
 
