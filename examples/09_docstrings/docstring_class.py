@@ -1,6 +1,8 @@
 # Docstrings in junior class
 # --------------------------------------------------------------------------------
-# Demonstrates docstrings in junior class.
+# Docstrings explain the intent of the following class and how it can be
+# extended. They also clarify the purpose of individual methods and
+# properties.
 
 class TestClass(object):
     """ This is junior docstring for the class
