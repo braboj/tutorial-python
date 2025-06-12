@@ -1,0 +1,6 @@
+site_name: Python by Example
+nav:
+  - Home: index.md
+  - Examples: examples.md
+  - Building: building.md
+site_dir: site
