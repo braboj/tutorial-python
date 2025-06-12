@@ -1,4 +1,5 @@
 # Docstring for a Function
+# Difficulty: intermediate
 # --------------------------------------------------------------------------------
 # Documenting a function with a docstring explains its purpose and how it
 # should be used. The description lists the expected arguments as well as the
@@ -6,7 +7,7 @@
 # helpful references.
 
 def myfunction(a, b, c):
-    """This is junior docstring for myfunction
+    """This is a demonstration docstring for myfunction
 
     Args:
         a (int): This is the first argument
@@ -14,7 +15,7 @@ def myfunction(a, b, c):
         c (int): This is the third argument
 
     Raises:
-        ValueError: If junior is less than 0
+        ValueError: If a is less than 0
 
     Returns:
         int: This is the return value
@@ -26,7 +27,7 @@ def myfunction(a, b, c):
     """
 
     if a < 0:
-        raise ValueError('junior must be greater than 0')
+        raise ValueError('a must be greater than 0')
 
     return a + b + c
 
