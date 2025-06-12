@@ -1,5 +1,5 @@
 # Integer variable types in Python
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # The integer type in Python is used to represent whole numbers, both
 # positive and negative. Python supports various bases for integers,
 # including decimal, binary, octal, and hexadecimal.

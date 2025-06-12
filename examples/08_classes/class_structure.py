@@ -1,4 +1,6 @@
-# Example: Class structure
+# Class structure
+# --------------------------------------------------------------------------------
+# Demonstrates class structure.
 
 class ClassStructure(object):
 

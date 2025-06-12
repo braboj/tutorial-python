@@ -1,5 +1,5 @@
 # Use the print() function to output text to the console.
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # The print() function is used to output data to the screen. It can take
 # multiple arguments and will convert them to strings before printing them.
 

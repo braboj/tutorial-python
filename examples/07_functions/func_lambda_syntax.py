@@ -1,4 +1,6 @@
-# Example : Lambda functions
+# Lambda functions
+# --------------------------------------------------------------------------------
+# Demonstrates lambda functions.
 
 """
 lambda [param1, param2, ..]: expression

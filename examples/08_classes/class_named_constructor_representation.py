@@ -1,4 +1,6 @@
-# Example: Different internal representations of the same object
+# Different internal representations of the same object
+# --------------------------------------------------------------------------------
+# Demonstrates different internal representations of the same object.
 
 class Person(object):
 

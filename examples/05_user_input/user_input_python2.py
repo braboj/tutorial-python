@@ -1,5 +1,5 @@
 # User Input in Python 2
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # Use `input()` to execute the input as Python code, or `raw_input()` to get a
 # string input. Please not that this example works in Python 2.x only.
 

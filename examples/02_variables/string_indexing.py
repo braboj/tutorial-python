@@ -1,5 +1,5 @@
 # String indexing
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # This code accesses individual characters in a string by index. Strings are
 # sequences of characters, so index 0 refers to the first character, and
 # negative indices let you read characters from the end of the string.

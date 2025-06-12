@@ -1,4 +1,6 @@
-# Example: Initialization in multiple steps
+# Initialization in multiple steps
+# --------------------------------------------------------------------------------
+# Demonstrates initialization in multiple steps.
 
 class Person(object):
     def __init__(self):

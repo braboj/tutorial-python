@@ -1,4 +1,6 @@
-# Example: Class method used to create instances
+# Class method used to create instances
+# --------------------------------------------------------------------------------
+# Demonstrates class method used to create instances.
 
 class Person(object):
 

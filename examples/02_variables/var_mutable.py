@@ -1,5 +1,5 @@
 # Mutable variables in Python
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # Some variables in Python are mutable, meaning their value can be changed after
 # they are created allowing you to dynamic modification of their contents. The
 # most common mutable variable types in Python are lists, dictionaries, and

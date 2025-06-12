@@ -1,4 +1,6 @@
-# Example: Docstrings in junior class
+# Docstrings in junior class
+# --------------------------------------------------------------------------------
+# Demonstrates docstrings in junior class.
 
 class TestClass(object):
     """ This is junior docstring for the class

@@ -1,4 +1,6 @@
-# Example: Reduce the number of parameters
+# Reduce the number of parameters
+# --------------------------------------------------------------------------------
+# Demonstrates reduce the number of parameters.
 
 class Rectangle(object):
     def __init__(self, width, height):

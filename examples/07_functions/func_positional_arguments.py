@@ -1,5 +1,5 @@
 # Demonstrates how functions receive arguments by their position
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # Each value is matched to a parameter based on where it appears,
 # so the order of the provided arguments matters.
 

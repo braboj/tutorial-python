@@ -1,4 +1,6 @@
-# Example: Keyword-only arguments
+# Keyword-only arguments
+# --------------------------------------------------------------------------------
+# Demonstrates keyword-only arguments.
 
 # The arguments a and b are keyword-only
 def keyword_only_arguments(*, a, b):

@@ -1,5 +1,5 @@
 # Use expressions to evaluate values in Python.
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # An expression is anything that evaluates to a value. The following is true
 # for all expressions:
 #

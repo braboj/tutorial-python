@@ -1,4 +1,6 @@
-# Example: MRO (Method Resolution Order) - Diamond problem
+# Mro (method resolution order) - diamond problem
+# --------------------------------------------------------------------------------
+# Demonstrates mro (method resolution order) - diamond problem.
 
 class A(object):
     @staticmethod

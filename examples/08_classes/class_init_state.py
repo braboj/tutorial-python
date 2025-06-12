@@ -1,4 +1,6 @@
-# Example: Initialization with the __init__ method
+# Initialization with the __init__ method
+# --------------------------------------------------------------------------------
+# Demonstrates initialization with the __init__ method.
 
 class Person(object):
 

@@ -1,5 +1,5 @@
 # Splitting Strings
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # The `split()` method is used to split a string into a list of tokens based
 # on a specified separator. If no separator is provided, it defaults to
 # whitespace. The `splitlines()` method is used to split a string into a

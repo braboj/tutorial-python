@@ -1,5 +1,5 @@
 # Define and access instance attributes
-# ------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # Instance attributes are defined in the __init__ method. They store data
 # unique to each object and can be accessed through the instance of the class.
 

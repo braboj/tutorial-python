@@ -1,5 +1,5 @@
 # String concatenation example
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # This code concatenates (joins) strings using the `+` operator. This
 # technique is common when constructing messages or combining text from
 # different sources.

@@ -1,4 +1,6 @@
-# Example: Different sources to create and initialize objects
+# Different sources to create and initialize objects
+# --------------------------------------------------------------------------------
+# Demonstrates different sources to create and initialize objects.
 import os
 
 

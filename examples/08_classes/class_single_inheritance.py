@@ -1,4 +1,6 @@
-# Example: Multilevel inheritance
+# Multilevel inheritance
+# --------------------------------------------------------------------------------
+# Demonstrates multilevel inheritance.
 
 class A(object):
 

@@ -1,4 +1,6 @@
-# Example: Class as template
+# Class as template
+# --------------------------------------------------------------------------------
+# Demonstrates class as template.
 
 class Person(object):
 

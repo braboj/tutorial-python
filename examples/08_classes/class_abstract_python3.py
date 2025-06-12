@@ -1,4 +1,6 @@
-# Example: Abstract class in Python 3+
+# Abstract class in python 3+
+# --------------------------------------------------------------------------------
+# Demonstrates abstract class in python 3+.
 
 from abc import ABC, abstractmethod
 

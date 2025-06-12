@@ -1,5 +1,5 @@
 # Arithmetic Operators in Python
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # Arithmetic operators are used to perform mathematical operations on
 # numeric values. In Python, these operators include addition, subtraction,
 # multiplication, division, floor division, modulus, and exponentiation.

@@ -1,5 +1,5 @@
 # Complex numbers arithmetics
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # The operator + can be used to add complex numbers in Python, similar to
 # how it is used for integers and floats and is an example of operators
 # overloading in Python. Complex numbers are represented as `a + bj`, where `a`

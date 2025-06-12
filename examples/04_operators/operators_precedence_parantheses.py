@@ -1,5 +1,5 @@
 # Parentheses to control operator precedence
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # The parentheses in Python can be used to control the precedence of
 # operators in expressions.
 

@@ -1,5 +1,5 @@
 # Adding attributes to functions using decorators
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # Sometimes you may want to add metadata to a function, such as an author
 # name or version without modifying the function's code directly. A good way
 # to do this is by using a decorator. Decorators are functions that modify

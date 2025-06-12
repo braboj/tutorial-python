@@ -1,4 +1,6 @@
-# Example: Abstract class using the six library for Python 2
+# Abstract class using the six library for python 2
+# --------------------------------------------------------------------------------
+# Demonstrates abstract class using the six library for python 2.
 
 from six import with_metaclass
 from abc import ABCMeta, abstractmethod

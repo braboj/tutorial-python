@@ -1,5 +1,5 @@
 # Reason of having variables in Python
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # This example explains why variables are useful. Without them we would
 # repeat the same value throughout the code and update each occurrence
 # manually. Imagine printing "Hello world" 1000 times and later wanting

@@ -1,5 +1,5 @@
 # Exiting loops prematurely with the `break` statement.
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # The `break` statement is used to exit a loop prematurely. It can be used in
 # both `for` and `while` loops. When the `break` statement is encountered,
 # the loop is terminated immediately, and control is transferred to the next

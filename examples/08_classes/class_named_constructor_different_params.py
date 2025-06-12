@@ -1,4 +1,6 @@
-# Example: Named constructors as alternative constructors
+# Named constructors as alternative constructors
+# --------------------------------------------------------------------------------
+# Demonstrates named constructors as alternative constructors.
 
 class Rectangle(object):
     def __init__(self, width, height):

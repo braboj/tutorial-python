@@ -1,5 +1,5 @@
 # String interpolation
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # This code uses f-strings (formatted string literals) to create strings
 # that include variables. Expressions inside curly braces `{}` are
 # evaluated in place.

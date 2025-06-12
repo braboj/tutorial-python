@@ -1,4 +1,6 @@
-# Example: Call __new__ method of super class
+# Call __new__ method of super class
+# --------------------------------------------------------------------------------
+# Demonstrates call __new__ method of super class.
 
 class Person(object):
 

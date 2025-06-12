@@ -1,5 +1,5 @@
 # Mathematical Operator Precedence in Python
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # Mathematical operators include addition, subtraction, multiplication, and
 # division, and their precedence determines the order in which they are e
 # valuated.

@@ -1,5 +1,5 @@
 # Import the `this` module to print the Zen of Python
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # This is a fun Easter egg in Python that prints the Zen of Python, the
 # guiding principles for writing computer programs in Python. It emphasizes
 # simplicity, readability, and the importance of explicitness in code design.

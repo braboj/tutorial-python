@@ -1,4 +1,6 @@
-# Example: Static method are not bound to the class and can be used as utility functions
+# Static method are not bound to the class and can be used as utility functions
+# --------------------------------------------------------------------------------
+# Demonstrates static method are not bound to the class and can be used as utility functions.
 
 class Packet(object):
 

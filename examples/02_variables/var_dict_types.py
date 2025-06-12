@@ -1,5 +1,5 @@
 # Dictionary types in Python
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # This code creates and manipulates dictionaries in Python. A dictionary is
 # a collection of key–value pairs where each key is unique. If a key
 # appears more than once, the last assigned value is retained. The

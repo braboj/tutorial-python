@@ -1,4 +1,6 @@
-# Example: Class method used to modify the class itself
+# Class method used to modify the class itself
+# --------------------------------------------------------------------------------
+# Demonstrates class method used to modify the class itself.
 
 class Person(object):
 

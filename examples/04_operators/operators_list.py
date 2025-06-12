@@ -1,5 +1,5 @@
 # Common list operators in Python
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # This file contains examples of the most commonly used operators on lists,
 # including indexing, slicing, concatenation, repetition, and membership tests.
 
