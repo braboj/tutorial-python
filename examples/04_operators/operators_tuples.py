@@ -1,30 +1,23 @@
 # Tuple Operators in Python
-# --------------------------------------------------------------------------------
-# Showcases how tuple-like operations can be emulated using sets for simplicity.
+# -------------------------------------------------------------------------------
+# This example demonstrates common tuple operations including indexing,
+# slicing, concatenation, repetition, and membership tests.
 
-set1 = {1, 2, 3}
-set2 = {3, 4, 5}
-set_union = set1 | set2
-print("Union:", set_union)  # Output: {1, 2, 3, 4, 5}
+my_tuple = (1, 2, 3, 4, 5)
 
-# Intersection
-set_intersection = set1 & set2
-print("Intersection:", set_intersection)  # Output: {3}
+# Indexing
+print(my_tuple[0])   # Output: 1
+print(my_tuple[-1])  # Output: 5
 
-# Difference
-set_difference = set1 - set2
-print("Difference:", set_difference)  # Output: {1, 2}
+# Slicing
+print(my_tuple[1:4])  # Output: (2, 3, 4)
 
-# Symmetric Difference
-set_symmetric_difference = set1 ^ set2
-print("Symmetric Difference:", set_symmetric_difference)  # Output: {1, 2, 4, 5}
+# Concatenation
+print(my_tuple + (6, 7))  # Output: (1, 2, 3, 4, 5, 6, 7)
 
-# Subset
-set3 = {1, 2}
-set4 = {1, 2, 3, 4, 5}
-is_subset = set3 <= set4
-print("Is set3 a subset of set4?", is_subset)  # Output: True
+# Repetition
+print(my_tuple * 2)  # Output: (1, 2, 3, 4, 5, 1, 2, 3, 4, 5)
 
-# Superset
-is_superset = set4 >= set3
-print("Is set4 a superset of set3?", is_superset)  # Output: True
+# Membership
+print(3 in my_tuple)  # Output: True
+print(9 in my_tuple)  # Output: False
