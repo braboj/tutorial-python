@@ -74,7 +74,8 @@ block. Any `__init__.py` files are ignored.
 
 This project can publish its Markdown files as a static website using
 [MkDocs](https://www.mkdocs.org/). After installing the dependencies listed in
-`requirements.txt` (which now include `mkdocs`). Regenerate the navigation menu 
+`requirements.txt` (which now include `mkdocs`). The navigation menu in
+`mkdocs.yml` mirrors the directory layout under `docs/`. Regenerate the menu
 and build the site with:
 
 ```bash

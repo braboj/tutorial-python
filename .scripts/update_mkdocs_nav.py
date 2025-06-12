@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Update the navigation section in mkdocs.yml automatically.
+"""Update the navigation section in ``mkdocs.yml``.
 
-The script scans the docs directory for ``*.md`` files and rewrites the
-``nav`` section of ``mkdocs.yml`` so each file appears in the menu. Run it
-whenever pages are added, renamed or removed.
+The script mirrors the layout of the ``docs/`` directory so that every
+Markdown file is reachable from the MkDocs navigation. It should be run
+whenever pages are added, renamed or removed so the menu stays in sync.
+
 """
 
 import argparse
@@ -16,12 +17,20 @@ def title_from_path(path: Path) -> str:
     return path.stem.replace("_", " ").title()
 
 
-def build_nav(docs_dir: Path) -> list:
+def build_nav(base: Path, current: Path | None = None) -> list:
     """Return a list suitable for the MkDocs ``nav`` config."""
+    if current is None:
+        current = base
+
     entries = []
-    for md_file in sorted(docs_dir.rglob("*.md")):
-        rel = md_file.relative_to(docs_dir)
-        entries.append({title_from_path(rel): str(rel.as_posix())})
+    for item in sorted(current.iterdir()):
+        if item.is_dir():
+            sub_nav = build_nav(base, item)
+            if sub_nav:
+                entries.append({title_from_path(item): sub_nav})
+        elif item.suffix.lower() == ".md":
+            rel = item.relative_to(base)
+            entries.append({title_from_path(item): str(rel.as_posix())})
     return entries
 
 
