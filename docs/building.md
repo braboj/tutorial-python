@@ -17,3 +17,18 @@ You can preview the documentation locally with:
 mkdocs serve
 ```
 
+## Using Hugo
+
+If you prefer [Hugo](https://gohugo.io/) for static site generation, create a
+menu configuration based on the `docs/` directory with:
+
+```bash
+python .scripts/generate_hugo_menu.py --docs-dir docs --output hugo_menu.yml
+```
+
+Include the resulting `hugo_menu.yml` in your Hugo configuration to mirror the
+documentation structure.
+
+This script requires the `pyyaml` package which is already listed in
+`requirements.txt`.
+
