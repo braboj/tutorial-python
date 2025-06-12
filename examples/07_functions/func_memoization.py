@@ -5,6 +5,7 @@
 # argument, the cached value is returned instead of recalculating it. This
 # avoids redundant work and illustrates the principle of memoization.
 
+# Explicit memoization using a dictionary
 def fibonacci(n):
     cache = {}
 
@@ -23,3 +24,16 @@ def fibonacci(n):
 
 print(fibonacci(5))
 print(fibonacci(10))
+
+
+# Memoization using a decorator (the internal cache is a dictionary)
+from functools import lru_cache
+
+@lru_cache(maxsize=None)
+def fib(n):
+    if n < 2:
+        return n
+    return fib(n-1) + fib(n-2)
+
+print(fib(5))
+print(fib(10))
