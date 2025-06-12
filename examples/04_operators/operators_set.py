@@ -1,4 +1,8 @@
-# Union
+# Set Operators in Python
+# --------------------------------------------------------------------------------
+# Demonstrates fundamental set operations including union, intersection,
+# difference, symmetric difference, and subset/superset checks.
+
 set1 = {1, 2, 3}
 set2 = {3, 4, 5}
 set_union = set1 | set2
