@@ -1,0 +1,10 @@
+# tell Hugo where to look for data files
+dataDir: data
+
+baseURL: "https://example.com/"
+languageCode: "en-us"
+title: "Python by Example"
+theme: "hugo-theme-learn"
+
+menu:
+  main: []

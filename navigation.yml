@@ -1,0 +1,1684 @@
+menu:
+  main:
+  - identifier: 01_hello_world/expressions
+    name: Expressions
+    url: /01_hello_world/expressions/
+    weight: 1
+    parent: 01_hello_world
+  - identifier: 01_hello_world/hello_world
+    name: Hello World
+    url: /01_hello_world/hello_world/
+    weight: 2
+    parent: 01_hello_world
+  - identifier: 01_hello_world/modules
+    name: Modules
+    url: /01_hello_world/modules/
+    weight: 3
+    parent: 01_hello_world
+  - identifier: 01_hello_world/print_statement
+    name: Print Statement
+    url: /01_hello_world/print_statement/
+    weight: 4
+    parent: 01_hello_world
+  - identifier: 01_hello_world/statements
+    name: Statements
+    url: /01_hello_world/statements/
+    weight: 5
+    parent: 01_hello_world
+  - identifier: 01_hello_world/zen_of_python
+    name: Zen Of Python
+    url: /01_hello_world/zen_of_python/
+    weight: 6
+    parent: 01_hello_world
+  - identifier: 02_variables/string_cases
+    name: String Cases
+    url: /02_variables/string_cases/
+    weight: 7
+    parent: 02_variables
+  - identifier: 02_variables/string_concatenation
+    name: String Concatenation
+    url: /02_variables/string_concatenation/
+    weight: 8
+    parent: 02_variables
+  - identifier: 02_variables/string_escaping
+    name: String Escaping
+    url: /02_variables/string_escaping/
+    weight: 9
+    parent: 02_variables
+  - identifier: 02_variables/string_indexing
+    name: String Indexing
+    url: /02_variables/string_indexing/
+    weight: 10
+    parent: 02_variables
+  - identifier: 02_variables/string_interpolation
+    name: String Interpolation
+    url: /02_variables/string_interpolation/
+    weight: 11
+    parent: 02_variables
+  - identifier: 02_variables/string_joining
+    name: String Joining
+    url: /02_variables/string_joining/
+    weight: 12
+    parent: 02_variables
+  - identifier: 02_variables/string_length
+    name: String Length
+    url: /02_variables/string_length/
+    weight: 13
+    parent: 02_variables
+  - identifier: 02_variables/string_slicing
+    name: String Slicing
+    url: /02_variables/string_slicing/
+    weight: 14
+    parent: 02_variables
+  - identifier: 02_variables/string_splitting
+    name: String Splitting
+    url: /02_variables/string_splitting/
+    weight: 15
+    parent: 02_variables
+  - identifier: 02_variables/var_as_container
+    name: Var As Container
+    url: /02_variables/var_as_container/
+    weight: 16
+    parent: 02_variables
+  - identifier: 02_variables/var_bool_type
+    name: Var Bool Type
+    url: /02_variables/var_bool_type/
+    weight: 17
+    parent: 02_variables
+  - identifier: 02_variables/var_complex_sum
+    name: Var Complex Sum
+    url: /02_variables/var_complex_sum/
+    weight: 18
+    parent: 02_variables
+  - identifier: 02_variables/var_complex_type
+    name: Var Complex Type
+    url: /02_variables/var_complex_type/
+    weight: 19
+    parent: 02_variables
+  - identifier: 02_variables/var_dict_types
+    name: Var Dict Types
+    url: /02_variables/var_dict_types/
+    weight: 20
+    parent: 02_variables
+  - identifier: 02_variables/var_float_sum
+    name: Var Float Sum
+    url: /02_variables/var_float_sum/
+    weight: 21
+    parent: 02_variables
+  - identifier: 02_variables/var_float_type
+    name: Var Float Type
+    url: /02_variables/var_float_type/
+    weight: 22
+    parent: 02_variables
+  - identifier: 02_variables/var_immutable
+    name: Var Immutable
+    url: /02_variables/var_immutable/
+    weight: 23
+    parent: 02_variables
+  - identifier: 02_variables/var_integer_type
+    name: Var Integer Type
+    url: /02_variables/var_integer_type/
+    weight: 24
+    parent: 02_variables
+  - identifier: 02_variables/var_list_type
+    name: Var List Type
+    url: /02_variables/var_list_type/
+    weight: 25
+    parent: 02_variables
+  - identifier: 02_variables/var_mutable
+    name: Var Mutable
+    url: /02_variables/var_mutable/
+    weight: 26
+    parent: 02_variables
+  - identifier: 02_variables/var_none_type
+    name: Var None Type
+    url: /02_variables/var_none_type/
+    weight: 27
+    parent: 02_variables
+  - identifier: 02_variables/var_reason
+    name: Var Reason
+    url: /02_variables/var_reason/
+    weight: 28
+    parent: 02_variables
+  - identifier: 02_variables/var_set_type
+    name: Var Set Type
+    url: /02_variables/var_set_type/
+    weight: 29
+    parent: 02_variables
+  - identifier: 02_variables/var_string_type
+    name: Var String Type
+    url: /02_variables/var_string_type/
+    weight: 30
+    parent: 02_variables
+  - identifier: 02_variables/var_tuple_type
+    name: Var Tuple Type
+    url: /02_variables/var_tuple_type/
+    weight: 31
+    parent: 02_variables
+  - identifier: 02_variables/var_types
+    name: Var Types
+    url: /02_variables/var_types/
+    weight: 32
+    parent: 02_variables
+  - identifier: 03_comments/comment_multi_line
+    name: Comment Multi Line
+    url: /03_comments/comment_multi_line/
+    weight: 33
+    parent: 03_comments
+  - identifier: 03_comments/comment_single_line
+    name: Comment Single Line
+    url: /03_comments/comment_single_line/
+    weight: 34
+    parent: 03_comments
+  - identifier: 04_operators/operators_arithmetic
+    name: Operators Arithmetic
+    url: /04_operators/operators_arithmetic/
+    weight: 35
+    parent: 04_operators
+  - identifier: 04_operators/operators_assignment
+    name: Operators Assignment
+    url: /04_operators/operators_assignment/
+    weight: 36
+    parent: 04_operators
+  - identifier: 04_operators/operators_bitwise
+    name: Operators Bitwise
+    url: /04_operators/operators_bitwise/
+    weight: 37
+    parent: 04_operators
+  - identifier: 04_operators/operators_comparison
+    name: Operators Comparison
+    url: /04_operators/operators_comparison/
+    weight: 38
+    parent: 04_operators
+  - identifier: 04_operators/operators_conditional
+    name: Operators Conditional
+    url: /04_operators/operators_conditional/
+    weight: 39
+    parent: 04_operators
+  - identifier: 04_operators/operators_dict
+    name: Operators Dict
+    url: /04_operators/operators_dict/
+    weight: 40
+    parent: 04_operators
+  - identifier: 04_operators/operators_identity
+    name: Operators Identity
+    url: /04_operators/operators_identity/
+    weight: 41
+    parent: 04_operators
+  - identifier: 04_operators/operators_list
+    name: Operators List
+    url: /04_operators/operators_list/
+    weight: 42
+    parent: 04_operators
+  - identifier: 04_operators/operators_logical
+    name: Operators Logical
+    url: /04_operators/operators_logical/
+    weight: 43
+    parent: 04_operators
+  - identifier: 04_operators/operators_membership
+    name: Operators Membership
+    url: /04_operators/operators_membership/
+    weight: 44
+    parent: 04_operators
+  - identifier: 04_operators/operators_precedence_boolean
+    name: Operators Precedence Boolean
+    url: /04_operators/operators_precedence_boolean/
+    weight: 45
+    parent: 04_operators
+  - identifier: 04_operators/operators_precedence_math
+    name: Operators Precedence Math
+    url: /04_operators/operators_precedence_math/
+    weight: 46
+    parent: 04_operators
+  - identifier: 04_operators/operators_precedence_parantheses
+    name: Operators Precedence Parantheses
+    url: /04_operators/operators_precedence_parantheses/
+    weight: 47
+    parent: 04_operators
+  - identifier: 04_operators/operators_set
+    name: Operators Set
+    url: /04_operators/operators_set/
+    weight: 48
+    parent: 04_operators
+  - identifier: 04_operators/operators_tuples
+    name: Operators Tuples
+    url: /04_operators/operators_tuples/
+    weight: 49
+    parent: 04_operators
+  - identifier: 05_user_input/user_input_python2
+    name: User Input Python2
+    url: /05_user_input/user_input_python2/
+    weight: 50
+    parent: 05_user_input
+  - identifier: 05_user_input/user_input_python3
+    name: User Input Python3
+    url: /05_user_input/user_input_python3/
+    weight: 51
+    parent: 05_user_input
+  - identifier: 05_user_input/user_input_with_six
+    name: User Input With Six
+    url: /05_user_input/user_input_with_six/
+    weight: 52
+    parent: 05_user_input
+  - identifier: 06_control_flow/control_with_break_statement
+    name: Control With Break Statement
+    url: /06_control_flow/control_with_break_statement/
+    weight: 53
+    parent: 06_control_flow
+  - identifier: 06_control_flow/control_with_continue_statement
+    name: Control With Continue Statement
+    url: /06_control_flow/control_with_continue_statement/
+    weight: 54
+    parent: 06_control_flow
+  - identifier: 06_control_flow/control_with_for_statement
+    name: Control With For Statement
+    url: /06_control_flow/control_with_for_statement/
+    weight: 55
+    parent: 06_control_flow
+  - identifier: 06_control_flow/control_with_if_statement
+    name: Control With If Statement
+    url: /06_control_flow/control_with_if_statement/
+    weight: 56
+    parent: 06_control_flow
+  - identifier: 06_control_flow/control_with_pass_statement
+    name: Control With Pass Statement
+    url: /06_control_flow/control_with_pass_statement/
+    weight: 57
+    parent: 06_control_flow
+  - identifier: 06_control_flow/control_with_while_statement
+    name: Control With While Statement
+    url: /06_control_flow/control_with_while_statement/
+    weight: 58
+    parent: 06_control_flow
+  - identifier: 07_functions/func_annotations
+    name: Func Annotations
+    url: /07_functions/func_annotations/
+    weight: 59
+    parent: 07_functions
+  - identifier: 07_functions/func_attributes
+    name: Func Attributes
+    url: /07_functions/func_attributes/
+    weight: 60
+    parent: 07_functions
+  - identifier: 07_functions/func_attributes_decorator
+    name: Func Attributes Decorator
+    url: /07_functions/func_attributes_decorator/
+    weight: 61
+    parent: 07_functions
+  - identifier: 07_functions/func_callback
+    name: Func Callback
+    url: /07_functions/func_callback/
+    weight: 62
+    parent: 07_functions
+  - identifier: 07_functions/func_closures
+    name: Func Closures
+    url: /07_functions/func_closures/
+    weight: 63
+    parent: 07_functions
+  - identifier: 07_functions/func_decorator
+    name: Func Decorator
+    url: /07_functions/func_decorator/
+    weight: 64
+    parent: 07_functions
+  - identifier: 07_functions/func_decorator_with_args
+    name: Func Decorator With Args
+    url: /07_functions/func_decorator_with_args/
+    weight: 65
+    parent: 07_functions
+  - identifier: 07_functions/func_default_arguments
+    name: Func Default Arguments
+    url: /07_functions/func_default_arguments/
+    weight: 66
+    parent: 07_functions
+  - identifier: 07_functions/func_factory
+    name: Func Factory
+    url: /07_functions/func_factory/
+    weight: 67
+    parent: 07_functions
+  - identifier: 07_functions/func_introspection
+    name: Func Introspection
+    url: /07_functions/func_introspection/
+    weight: 68
+    parent: 07_functions
+  - identifier: 07_functions/func_keyword_arguments
+    name: Func Keyword Arguments
+    url: /07_functions/func_keyword_arguments/
+    weight: 69
+    parent: 07_functions
+  - identifier: 07_functions/func_keyword_only_arguments
+    name: Func Keyword Only Arguments
+    url: /07_functions/func_keyword_only_arguments/
+    weight: 70
+    parent: 07_functions
+  - identifier: 07_functions/func_lambda_arguments
+    name: Func Lambda Arguments
+    url: /07_functions/func_lambda_arguments/
+    weight: 71
+    parent: 07_functions
+  - identifier: 07_functions/func_lambda_assignment
+    name: Func Lambda Assignment
+    url: /07_functions/func_lambda_assignment/
+    weight: 72
+    parent: 07_functions
+  - identifier: 07_functions/func_lambda_bytecodes
+    name: Func Lambda Bytecodes
+    url: /07_functions/func_lambda_bytecodes/
+    weight: 73
+    parent: 07_functions
+  - identifier: 07_functions/func_lambda_conditional
+    name: Func Lambda Conditional
+    url: /07_functions/func_lambda_conditional/
+    weight: 74
+    parent: 07_functions
+  - identifier: 07_functions/func_lambda_nested_conditions
+    name: Func Lambda Nested Conditions
+    url: /07_functions/func_lambda_nested_conditions/
+    weight: 75
+    parent: 07_functions
+  - identifier: 07_functions/func_lambda_recursive
+    name: Func Lambda Recursive
+    url: /07_functions/func_lambda_recursive/
+    weight: 76
+    parent: 07_functions
+  - identifier: 07_functions/func_lambda_syntax
+    name: Func Lambda Syntax
+    url: /07_functions/func_lambda_syntax/
+    weight: 77
+    parent: 07_functions
+  - identifier: 07_functions/func_memoization
+    name: Func Memoization
+    url: /07_functions/func_memoization/
+    weight: 78
+    parent: 07_functions
+  - identifier: 07_functions/func_nested
+    name: Func Nested
+    url: /07_functions/func_nested/
+    weight: 79
+    parent: 07_functions
+  - identifier: 07_functions/func_positional_arguments
+    name: Func Positional Arguments
+    url: /07_functions/func_positional_arguments/
+    weight: 80
+    parent: 07_functions
+  - identifier: 07_functions/func_positional_only_arguments
+    name: Func Positional Only Arguments
+    url: /07_functions/func_positional_only_arguments/
+    weight: 81
+    parent: 07_functions
+  - identifier: 07_functions/func_recursion
+    name: Func Recursion
+    url: /07_functions/func_recursion/
+    weight: 82
+    parent: 07_functions
+  - identifier: 07_functions/func_scope
+    name: Func Scope
+    url: /07_functions/func_scope/
+    weight: 83
+    parent: 07_functions
+  - identifier: 07_functions/func_structure
+    name: Func Structure
+    url: /07_functions/func_structure/
+    weight: 84
+    parent: 07_functions
+  - identifier: 07_functions/func_unpacking_arguments
+    name: Func Unpacking Arguments
+    url: /07_functions/func_unpacking_arguments/
+    weight: 85
+    parent: 07_functions
+  - identifier: 07_functions/func_variable_arguments_python2
+    name: Func Variable Arguments Python2
+    url: /07_functions/func_variable_arguments_python2/
+    weight: 86
+    parent: 07_functions
+  - identifier: 07_functions/func_variable_arguments_python3
+    name: Func Variable Arguments Python3
+    url: /07_functions/func_variable_arguments_python3/
+    weight: 87
+    parent: 07_functions
+  - identifier: 08_classes/class_abstract_properties
+    name: Class Abstract Properties
+    url: /08_classes/class_abstract_properties/
+    weight: 88
+    parent: 08_classes
+  - identifier: 08_classes/class_abstract_python2
+    name: Class Abstract Python2
+    url: /08_classes/class_abstract_python2/
+    weight: 89
+    parent: 08_classes
+  - identifier: 08_classes/class_abstract_python3
+    name: Class Abstract Python3
+    url: /08_classes/class_abstract_python3/
+    weight: 90
+    parent: 08_classes
+  - identifier: 08_classes/class_as_blueprint
+    name: Class As Blueprint
+    url: /08_classes/class_as_blueprint/
+    weight: 91
+    parent: 08_classes
+  - identifier: 08_classes/class_as_concrete_object
+    name: Class As Concrete Object
+    url: /08_classes/class_as_concrete_object/
+    weight: 92
+    parent: 08_classes
+  - identifier: 08_classes/class_constructor_conditional_inheritance
+    name: Class Constructor Conditional Inheritance
+    url: /08_classes/class_constructor_conditional_inheritance/
+    weight: 93
+    parent: 08_classes
+  - identifier: 08_classes/class_constructor_factory
+    name: Class Constructor Factory
+    url: /08_classes/class_constructor_factory/
+    weight: 94
+    parent: 08_classes
+  - identifier: 08_classes/class_constructor_singleton
+    name: Class Constructor Singleton
+    url: /08_classes/class_constructor_singleton/
+    weight: 95
+    parent: 08_classes
+  - identifier: 08_classes/class_constructors
+    name: Class Constructors
+    url: /08_classes/class_constructors/
+    weight: 96
+    parent: 08_classes
+  - identifier: 08_classes/class_create_with_type
+    name: Class Create With Type
+    url: /08_classes/class_create_with_type/
+    weight: 97
+    parent: 08_classes
+  - identifier: 08_classes/class_decorator_for_classes
+    name: Class Decorator For Classes
+    url: /08_classes/class_decorator_for_classes/
+    weight: 98
+    parent: 08_classes
+  - identifier: 08_classes/class_decorator_for_functions
+    name: Class Decorator For Functions
+    url: /08_classes/class_decorator_for_functions/
+    weight: 99
+    parent: 08_classes
+  - identifier: 08_classes/class_init_state
+    name: Class Init State
+    url: /08_classes/class_init_state/
+    weight: 100
+    parent: 08_classes
+  - identifier: 08_classes/class_init_steps
+    name: Class Init Steps
+    url: /08_classes/class_init_steps/
+    weight: 101
+    parent: 08_classes
+  - identifier: 08_classes/class_init_validate
+    name: Class Init Validate
+    url: /08_classes/class_init_validate/
+    weight: 102
+    parent: 08_classes
+  - identifier: 08_classes/class_instance
+    name: Class Instance
+    url: /08_classes/class_instance/
+    weight: 103
+    parent: 08_classes
+  - identifier: 08_classes/class_instance_attributes
+    name: Class Instance Attributes
+    url: /08_classes/class_instance_attributes/
+    weight: 104
+    parent: 08_classes
+  - identifier: 08_classes/class_instance_methods
+    name: Class Instance Methods
+    url: /08_classes/class_instance_methods/
+    weight: 105
+    parent: 08_classes
+  - identifier: 08_classes/class_method_create_instance
+    name: Class Method Create Instance
+    url: /08_classes/class_method_create_instance/
+    weight: 106
+    parent: 08_classes
+  - identifier: 08_classes/class_method_modify_instances
+    name: Class Method Modify Instances
+    url: /08_classes/class_method_modify_instances/
+    weight: 107
+    parent: 08_classes
+  - identifier: 08_classes/class_method_modify_itself
+    name: Class Method Modify Itself
+    url: /08_classes/class_method_modify_itself/
+    weight: 108
+    parent: 08_classes
+  - identifier: 08_classes/class_mixin
+    name: Class Mixin
+    url: /08_classes/class_mixin/
+    weight: 109
+    parent: 08_classes
+  - identifier: 08_classes/class_mro_bottom_first
+    name: Class Mro Bottom First
+    url: /08_classes/class_mro_bottom_first/
+    weight: 110
+    parent: 08_classes
+  - identifier: 08_classes/class_mro_complex
+    name: Class Mro Complex
+    url: /08_classes/class_mro_complex/
+    weight: 111
+    parent: 08_classes
+  - identifier: 08_classes/class_mro_diamond
+    name: Class Mro Diamond
+    url: /08_classes/class_mro_diamond/
+    weight: 112
+    parent: 08_classes
+  - identifier: 08_classes/class_mro_left_first
+    name: Class Mro Left First
+    url: /08_classes/class_mro_left_first/
+    weight: 113
+    parent: 08_classes
+  - identifier: 08_classes/class_mro_unresolved
+    name: Class Mro Unresolved
+    url: /08_classes/class_mro_unresolved/
+    weight: 114
+    parent: 08_classes
+  - identifier: 08_classes/class_multiple_inheritance
+    name: Class Multiple Inheritance
+    url: /08_classes/class_multiple_inheritance/
+    weight: 115
+    parent: 08_classes
+  - identifier: 08_classes/class_named_constructor_different_params
+    name: Class Named Constructor Different Params
+    url: /08_classes/class_named_constructor_different_params/
+    weight: 116
+    parent: 08_classes
+  - identifier: 08_classes/class_named_constructor_init_sources
+    name: Class Named Constructor Init Sources
+    url: /08_classes/class_named_constructor_init_sources/
+    weight: 117
+    parent: 08_classes
+  - identifier: 08_classes/class_named_constructor_reduce_params
+    name: Class Named Constructor Reduce Params
+    url: /08_classes/class_named_constructor_reduce_params/
+    weight: 118
+    parent: 08_classes
+  - identifier: 08_classes/class_named_constructor_representation
+    name: Class Named Constructor Representation
+    url: /08_classes/class_named_constructor_representation/
+    weight: 119
+    parent: 08_classes
+  - identifier: 08_classes/class_nested
+    name: Class Nested
+    url: /08_classes/class_nested/
+    weight: 120
+    parent: 08_classes
+  - identifier: 08_classes/class_properties
+    name: Class Properties
+    url: /08_classes/class_properties/
+    weight: 121
+    parent: 08_classes
+  - identifier: 08_classes/class_single_inheritance
+    name: Class Single Inheritance
+    url: /08_classes/class_single_inheritance/
+    weight: 122
+    parent: 08_classes
+  - identifier: 08_classes/class_static_methods
+    name: Class Static Methods
+    url: /08_classes/class_static_methods/
+    weight: 123
+    parent: 08_classes
+  - identifier: 08_classes/class_structure
+    name: Class Structure
+    url: /08_classes/class_structure/
+    weight: 124
+    parent: 08_classes
+  - identifier: 08_classes/class_superclass_attributes
+    name: Class Superclass Attributes
+    url: /08_classes/class_superclass_attributes/
+    weight: 125
+    parent: 08_classes
+  - identifier: 08_classes/class_superclass_constructor
+    name: Class Superclass Constructor
+    url: /08_classes/class_superclass_constructor/
+    weight: 126
+    parent: 08_classes
+  - identifier: 08_classes/class_superclass_methods
+    name: Class Superclass Methods
+    url: /08_classes/class_superclass_methods/
+    weight: 127
+    parent: 08_classes
+  - identifier: 08_classes/class_variables
+    name: Class Variables
+    url: /08_classes/class_variables/
+    weight: 128
+    parent: 08_classes
+  - identifier: 08_classes/class_variables_pitfalls
+    name: Class Variables Pitfalls
+    url: /08_classes/class_variables_pitfalls/
+    weight: 129
+    parent: 08_classes
+  - identifier: 09_docstrings/docstring_class
+    name: Docstring Class
+    url: /09_docstrings/docstring_class/
+    weight: 130
+    parent: 09_docstrings
+  - identifier: 09_docstrings/docstring_function
+    name: Docstring Function
+    url: /09_docstrings/docstring_function/
+    weight: 131
+    parent: 09_docstrings
+  - identifier: 09_docstrings/docstring_module
+    name: Docstring Module
+    url: /09_docstrings/docstring_module/
+    weight: 132
+    parent: 09_docstrings
+  - identifier: 10_debugging/debug_breakpoints_complex
+    name: Debug Breakpoints Complex
+    url: /10_debugging/debug_breakpoints_complex/
+    weight: 133
+    parent: 10_debugging
+  - identifier: 10_debugging/debug_pdb
+    name: Debug Pdb
+    url: /10_debugging/debug_pdb/
+    weight: 134
+    parent: 10_debugging
+  - identifier: 10_debugging/debug_print
+    name: Debug Print
+    url: /10_debugging/debug_print/
+    weight: 135
+    parent: 10_debugging
+  - identifier: 11_oop_pillars/abstraction
+    name: Abstraction
+    url: /11_oop_pillars/abstraction/
+    weight: 136
+    parent: 11_oop_pillars
+  - identifier: 11_oop_pillars/access_modifiers
+    name: Access Modifiers
+    url: /11_oop_pillars/access_modifiers/
+    weight: 137
+    parent: 11_oop_pillars
+  - identifier: 11_oop_pillars/aggregation
+    name: Aggregation
+    url: /11_oop_pillars/aggregation/
+    weight: 138
+    parent: 11_oop_pillars
+  - identifier: 11_oop_pillars/association
+    name: Association
+    url: /11_oop_pillars/association/
+    weight: 139
+    parent: 11_oop_pillars
+  - identifier: 11_oop_pillars/composition
+    name: Composition
+    url: /11_oop_pillars/composition/
+    weight: 140
+    parent: 11_oop_pillars
+  - identifier: 11_oop_pillars/dependency
+    name: Dependency
+    url: /11_oop_pillars/dependency/
+    weight: 141
+    parent: 11_oop_pillars
+  - identifier: 11_oop_pillars/encapsulation
+    name: Encapsulation
+    url: /11_oop_pillars/encapsulation/
+    weight: 142
+    parent: 11_oop_pillars
+  - identifier: 11_oop_pillars/inheritance
+    name: Inheritance
+    url: /11_oop_pillars/inheritance/
+    weight: 143
+    parent: 11_oop_pillars
+  - identifier: 11_oop_pillars/polymorphism
+    name: Polymorphism
+    url: /11_oop_pillars/polymorphism/
+    weight: 144
+    parent: 11_oop_pillars
+  - identifier: 12_solid_principles/dependency_inversion_bad
+    name: Dependency Inversion Bad
+    url: /12_solid_principles/dependency_inversion_bad/
+    weight: 145
+    parent: 12_solid_principles
+  - identifier: 12_solid_principles/dependency_inversion_good
+    name: Dependency Inversion Good
+    url: /12_solid_principles/dependency_inversion_good/
+    weight: 146
+    parent: 12_solid_principles
+  - identifier: 12_solid_principles/interface_segregation_bad
+    name: Interface Segregation Bad
+    url: /12_solid_principles/interface_segregation_bad/
+    weight: 147
+    parent: 12_solid_principles
+  - identifier: 12_solid_principles/interface_segregation_good
+    name: Interface Segregation Good
+    url: /12_solid_principles/interface_segregation_good/
+    weight: 148
+    parent: 12_solid_principles
+  - identifier: 12_solid_principles/liskov_substitution_bad
+    name: Liskov Substitution Bad
+    url: /12_solid_principles/liskov_substitution_bad/
+    weight: 149
+    parent: 12_solid_principles
+  - identifier: 12_solid_principles/liskov_substitution_good
+    name: Liskov Substitution Good
+    url: /12_solid_principles/liskov_substitution_good/
+    weight: 150
+    parent: 12_solid_principles
+  - identifier: 12_solid_principles/open_closed_bad
+    name: Open Closed Bad
+    url: /12_solid_principles/open_closed_bad/
+    weight: 151
+    parent: 12_solid_principles
+  - identifier: 12_solid_principles/open_closed_good
+    name: Open Closed Good
+    url: /12_solid_principles/open_closed_good/
+    weight: 152
+    parent: 12_solid_principles
+  - identifier: 12_solid_principles/single_responsibility_bad
+    name: Single Responsibility Bad
+    url: /12_solid_principles/single_responsibility_bad/
+    weight: 153
+    parent: 12_solid_principles
+  - identifier: 12_solid_principles/single_responsibility_good
+    name: Single Responsibility Good
+    url: /12_solid_principles/single_responsibility_good/
+    weight: 154
+    parent: 12_solid_principles
+  - identifier: 13_logging/logging_advanced_config
+    name: Logging Advanced Config
+    url: /13_logging/logging_advanced_config/
+    weight: 155
+    parent: 13_logging
+  - identifier: 13_logging/logging_basic_config
+    name: Logging Basic Config
+    url: /13_logging/logging_basic_config/
+    weight: 156
+    parent: 13_logging
+  - identifier: 13_logging/logging_config_dict
+    name: Logging Config Dict
+    url: /13_logging/logging_config_dict/
+    weight: 157
+    parent: 13_logging
+  - identifier: 13_logging/logging_config_file
+    name: Logging Config File
+    url: /13_logging/logging_config_file/
+    weight: 158
+    parent: 13_logging
+  - identifier: 13_logging/logging_exceptions
+    name: Logging Exceptions
+    url: /13_logging/logging_exceptions/
+    weight: 159
+    parent: 13_logging
+  - identifier: 13_logging/logging_formatter
+    name: Logging Formatter
+    url: /13_logging/logging_formatter/
+    weight: 160
+    parent: 13_logging
+  - identifier: 13_logging/logging_handlers
+    name: Logging Handlers
+    url: /13_logging/logging_handlers/
+    weight: 161
+    parent: 13_logging
+  - identifier: 13_logging/logging_hierarchy
+    name: Logging Hierarchy
+    url: /13_logging/logging_hierarchy/
+    weight: 162
+    parent: 13_logging
+  - identifier: 13_logging/logging_levels
+    name: Logging Levels
+    url: /13_logging/logging_levels/
+    weight: 163
+    parent: 13_logging
+  - identifier: 14_exceptions/demo_generation
+    name: Demo Generation
+    url: /14_exceptions/demo_generation/
+    weight: 164
+    parent: 14_exceptions
+  - identifier: 14_exceptions/demo_handlers
+    name: Demo Handlers
+    url: /14_exceptions/demo_handlers/
+    weight: 165
+    parent: 14_exceptions
+  - identifier: 14_exceptions/exception_catch_multiple
+    name: Exception Catch Multiple
+    url: /14_exceptions/exception_catch_multiple/
+    weight: 166
+    parent: 14_exceptions
+  - identifier: 14_exceptions/exception_chaining
+    name: Exception Chaining
+    url: /14_exceptions/exception_chaining/
+    weight: 167
+    parent: 14_exceptions
+  - identifier: 14_exceptions/exception_flow_with_try_except
+    name: Exception Flow With Try Except
+    url: /14_exceptions/exception_flow_with_try_except/
+    weight: 168
+    parent: 14_exceptions
+  - identifier: 14_exceptions/exception_flow_without_try_except
+    name: Exception Flow Without Try Except
+    url: /14_exceptions/exception_flow_without_try_except/
+    weight: 169
+    parent: 14_exceptions
+  - identifier: 14_exceptions/exception_handling
+    name: Exception Handling
+    url: /14_exceptions/exception_handling/
+    weight: 170
+    parent: 14_exceptions
+  - identifier: 14_exceptions/exception_hierarchy
+    name: Exception Hierarchy
+    url: /14_exceptions/exception_hierarchy/
+    weight: 171
+    parent: 14_exceptions
+  - identifier: 15_dunder_methods/demo_iterator
+    name: Demo Iterator
+    url: /15_dunder_methods/demo_iterator/
+    weight: 172
+    parent: 15_dunder_methods
+  - identifier: 15_dunder_methods/dunder_arithmetic_operators
+    name: Dunder Arithmetic Operators
+    url: /15_dunder_methods/dunder_arithmetic_operators/
+    weight: 173
+    parent: 15_dunder_methods
+  - identifier: 15_dunder_methods/dunder_attributes
+    name: Dunder Attributes
+    url: /15_dunder_methods/dunder_attributes/
+    weight: 174
+    parent: 15_dunder_methods
+  - identifier: 15_dunder_methods/dunder_builtin_types
+    name: Dunder Builtin Types
+    url: /15_dunder_methods/dunder_builtin_types/
+    weight: 175
+    parent: 15_dunder_methods
+  - identifier: 15_dunder_methods/dunder_context_manager
+    name: Dunder Context Manager
+    url: /15_dunder_methods/dunder_context_manager/
+    weight: 176
+    parent: 15_dunder_methods
+  - identifier: 15_dunder_methods/dunder_customize_behavior
+    name: Dunder Customize Behavior
+    url: /15_dunder_methods/dunder_customize_behavior/
+    weight: 177
+    parent: 15_dunder_methods
+  - identifier: 15_dunder_methods/dunder_iterator_protocol
+    name: Dunder Iterator Protocol
+    url: /15_dunder_methods/dunder_iterator_protocol/
+    weight: 178
+    parent: 15_dunder_methods
+  - identifier: 15_dunder_methods/dunder_object_representation
+    name: Dunder Object Representation
+    url: /15_dunder_methods/dunder_object_representation/
+    weight: 179
+    parent: 15_dunder_methods
+  - identifier: 15_dunder_methods/dunder_operator_overloading
+    name: Dunder Operator Overloading
+    url: /15_dunder_methods/dunder_operator_overloading/
+    weight: 180
+    parent: 15_dunder_methods
+  - identifier: 15_dunder_methods/snippets
+    name: Snippets
+    url: /15_dunder_methods/snippets/
+    weight: 181
+    parent: 15_dunder_methods
+  - identifier: 16_data_types/comprehension_dictionary
+    name: Comprehension Dictionary
+    url: /16_data_types/comprehension_dictionary/
+    weight: 182
+    parent: 16_data_types
+  - identifier: 16_data_types/comprehension_list
+    name: Comprehension List
+    url: /16_data_types/comprehension_list/
+    weight: 183
+    parent: 16_data_types
+  - identifier: 16_data_types/data_array
+    name: Data Array
+    url: /16_data_types/data_array/
+    weight: 184
+    parent: 16_data_types
+  - identifier: 16_data_types/data_base64
+    name: Data Base64
+    url: /16_data_types/data_base64/
+    weight: 185
+    parent: 16_data_types
+  - identifier: 16_data_types/data_binascii
+    name: Data Binascii
+    url: /16_data_types/data_binascii/
+    weight: 186
+    parent: 16_data_types
+  - identifier: 16_data_types/data_chainmap
+    name: Data Chainmap
+    url: /16_data_types/data_chainmap/
+    weight: 187
+    parent: 16_data_types
+  - identifier: 16_data_types/data_codecs
+    name: Data Codecs
+    url: /16_data_types/data_codecs/
+    weight: 188
+    parent: 16_data_types
+  - identifier: 16_data_types/data_codecs_custom
+    name: Data Codecs Custom
+    url: /16_data_types/data_codecs_custom/
+    weight: 189
+    parent: 16_data_types
+  - identifier: 16_data_types/data_copying
+    name: Data Copying
+    url: /16_data_types/data_copying/
+    weight: 190
+    parent: 16_data_types
+  - identifier: 16_data_types/data_counter_class
+    name: Data Counter Class
+    url: /16_data_types/data_counter_class/
+    weight: 191
+    parent: 16_data_types
+  - identifier: 16_data_types/data_dataclass
+    name: Data Dataclass
+    url: /16_data_types/data_dataclass/
+    weight: 192
+    parent: 16_data_types
+  - identifier: 16_data_types/data_defaultdict
+    name: Data Defaultdict
+    url: /16_data_types/data_defaultdict/
+    weight: 193
+    parent: 16_data_types
+  - identifier: 16_data_types/data_deque_fifo
+    name: Data Deque Fifo
+    url: /16_data_types/data_deque_fifo/
+    weight: 194
+    parent: 16_data_types
+  - identifier: 16_data_types/data_deque_lifo
+    name: Data Deque Lifo
+    url: /16_data_types/data_deque_lifo/
+    weight: 195
+    parent: 16_data_types
+  - identifier: 16_data_types/data_dill
+    name: Data Dill
+    url: /16_data_types/data_dill/
+    weight: 196
+    parent: 16_data_types
+  - identifier: 16_data_types/data_filtering
+    name: Data Filtering
+    url: /16_data_types/data_filtering/
+    weight: 197
+    parent: 16_data_types
+  - identifier: 16_data_types/data_heapq
+    name: Data Heapq
+    url: /16_data_types/data_heapq/
+    weight: 198
+    parent: 16_data_types
+  - identifier: 16_data_types/data_mapping
+    name: Data Mapping
+    url: /16_data_types/data_mapping/
+    weight: 199
+    parent: 16_data_types
+  - identifier: 16_data_types/data_namedtuple
+    name: Data Namedtuple
+    url: /16_data_types/data_namedtuple/
+    weight: 200
+    parent: 16_data_types
+  - identifier: 16_data_types/data_ordered_dict
+    name: Data Ordered Dict
+    url: /16_data_types/data_ordered_dict/
+    weight: 201
+    parent: 16_data_types
+  - identifier: 16_data_types/data_packing
+    name: Data Packing
+    url: /16_data_types/data_packing/
+    weight: 202
+    parent: 16_data_types
+  - identifier: 16_data_types/data_pickle
+    name: Data Pickle
+    url: /16_data_types/data_pickle/
+    weight: 203
+    parent: 16_data_types
+  - identifier: 16_data_types/data_queue_fifo
+    name: Data Queue Fifo
+    url: /16_data_types/data_queue_fifo/
+    weight: 204
+    parent: 16_data_types
+  - identifier: 16_data_types/data_queue_lifo
+    name: Data Queue Lifo
+    url: /16_data_types/data_queue_lifo/
+    weight: 205
+    parent: 16_data_types
+  - identifier: 16_data_types/data_queue_priority
+    name: Data Queue Priority
+    url: /16_data_types/data_queue_priority/
+    weight: 206
+    parent: 16_data_types
+  - identifier: 16_data_types/data_reducing
+    name: Data Reducing
+    url: /16_data_types/data_reducing/
+    weight: 207
+    parent: 16_data_types
+  - identifier: 16_data_types/data_reversing
+    name: Data Reversing
+    url: /16_data_types/data_reversing/
+    weight: 208
+    parent: 16_data_types
+  - identifier: 16_data_types/data_sorting
+    name: Data Sorting
+    url: /16_data_types/data_sorting/
+    weight: 209
+    parent: 16_data_types
+  - identifier: 16_data_types/data_struct
+    name: Data Struct
+    url: /16_data_types/data_struct/
+    weight: 210
+    parent: 16_data_types
+  - identifier: 16_data_types/data_struct_with_buffer
+    name: Data Struct With Buffer
+    url: /16_data_types/data_struct_with_buffer/
+    weight: 211
+    parent: 16_data_types
+  - identifier: 16_data_types/data_unpacking
+    name: Data Unpacking
+    url: /16_data_types/data_unpacking/
+    weight: 212
+    parent: 16_data_types
+  - identifier: 16_data_types/data_zipping
+    name: Data Zipping
+    url: /16_data_types/data_zipping/
+    weight: 213
+    parent: 16_data_types
+  - identifier: 16_data_types/unpack_dict
+    name: Unpack Dict
+    url: /16_data_types/unpack_dict/
+    weight: 214
+    parent: 16_data_types
+  - identifier: 16_data_types/unpack_list
+    name: Unpack List
+    url: /16_data_types/unpack_list/
+    weight: 215
+    parent: 16_data_types
+  - identifier: 16_data_types/unpack_snippets
+    name: Unpack Snippets
+    url: /16_data_types/unpack_snippets/
+    weight: 216
+    parent: 16_data_types
+  - identifier: 17_import_system/circular/submodule1
+    name: Submodule1
+    url: /17_import_system/circular/submodule1/
+    weight: 217
+    parent: 17_import_system/circular
+  - identifier: 17_import_system/circular/submodule2
+    name: Submodule2
+    url: /17_import_system/circular/submodule2/
+    weight: 218
+    parent: 17_import_system/circular
+  - identifier: 17_import_system/export_decorator
+    name: Export Decorator
+    url: /17_import_system/export_decorator/
+    weight: 219
+    parent: 17_import_system
+  - identifier: 17_import_system/foo/__main__
+    name: '  Main  '
+    url: /17_import_system/foo/__main__/
+    weight: 220
+    parent: 17_import_system/foo
+  - identifier: 17_import_system/foo/api/submodule1
+    name: Submodule1
+    url: /17_import_system/foo/api/submodule1/
+    weight: 221
+    parent: 17_import_system/foo/api
+  - identifier: 17_import_system/foo/core/submodule2
+    name: Submodule2
+    url: /17_import_system/foo/core/submodule2/
+    weight: 222
+    parent: 17_import_system/foo/core
+  - identifier: 17_import_system/foo/gui/submodule3
+    name: Submodule3
+    url: /17_import_system/foo/gui/submodule3/
+    weight: 223
+    parent: 17_import_system/foo/gui
+  - identifier: 17_import_system/import_absolute
+    name: Import Absolute
+    url: /17_import_system/import_absolute/
+    weight: 224
+    parent: 17_import_system
+  - identifier: 17_import_system/import_circular
+    name: Import Circular
+    url: /17_import_system/import_circular/
+    weight: 225
+    parent: 17_import_system
+  - identifier: 17_import_system/import_conditional
+    name: Import Conditional
+    url: /17_import_system/import_conditional/
+    weight: 226
+    parent: 17_import_system
+  - identifier: 17_import_system/import_main_module
+    name: Import Main Module
+    url: /17_import_system/import_main_module/
+    weight: 227
+    parent: 17_import_system
+  - identifier: 17_import_system/import_module_objects
+    name: Import Module Objects
+    url: /17_import_system/import_module_objects/
+    weight: 228
+    parent: 17_import_system
+  - identifier: 17_import_system/import_namespaces
+    name: Import Namespaces
+    url: /17_import_system/import_namespaces/
+    weight: 229
+    parent: 17_import_system
+  - identifier: 17_import_system/import_packages
+    name: Import Packages
+    url: /17_import_system/import_packages/
+    weight: 230
+    parent: 17_import_system
+  - identifier: 17_import_system/import_process
+    name: Import Process
+    url: /17_import_system/import_process/
+    weight: 231
+    parent: 17_import_system
+  - identifier: 17_import_system/import_search_path
+    name: Import Search Path
+    url: /17_import_system/import_search_path/
+    weight: 232
+    parent: 17_import_system
+  - identifier: 17_import_system/import_skip_execution
+    name: Import Skip Execution
+    url: /17_import_system/import_skip_execution/
+    weight: 233
+    parent: 17_import_system
+  - identifier: 17_import_system/import_statements
+    name: Import Statements
+    url: /17_import_system/import_statements/
+    weight: 234
+    parent: 17_import_system
+  - identifier: 17_import_system/import_sys_path
+    name: Import Sys Path
+    url: /17_import_system/import_sys_path/
+    weight: 235
+    parent: 17_import_system
+  - identifier: 17_import_system/import_tracking
+    name: Import Tracking
+    url: /17_import_system/import_tracking/
+    weight: 236
+    parent: 17_import_system
+  - identifier: 17_import_system/rootdir
+    name: Rootdir
+    url: /17_import_system/rootdir/
+    weight: 237
+    parent: 17_import_system
+  - identifier: 18_linting_tools/lint_black
+    name: Lint Black
+    url: /18_linting_tools/lint_black/
+    weight: 238
+    parent: 18_linting_tools
+  - identifier: 18_linting_tools/lint_flake8
+    name: Lint Flake8
+    url: /18_linting_tools/lint_flake8/
+    weight: 239
+    parent: 18_linting_tools
+  - identifier: 18_linting_tools/lint_pylint
+    name: Lint Pylint
+    url: /18_linting_tools/lint_pylint/
+    weight: 240
+    parent: 18_linting_tools
+  - identifier: 19_test_frameworks/app
+    name: App
+    url: /19_test_frameworks/app/
+    weight: 241
+    parent: 19_test_frameworks
+  - identifier: 19_test_frameworks/tests/testing_doctest
+    name: Testing Doctest
+    url: /19_test_frameworks/tests/testing_doctest/
+    weight: 242
+    parent: 19_test_frameworks/tests
+  - identifier: 19_test_frameworks/tests/testing_hypothesis
+    name: Testing Hypothesis
+    url: /19_test_frameworks/tests/testing_hypothesis/
+    weight: 243
+    parent: 19_test_frameworks/tests
+  - identifier: 19_test_frameworks/tests/testing_pytest
+    name: Testing Pytest
+    url: /19_test_frameworks/tests/testing_pytest/
+    weight: 244
+    parent: 19_test_frameworks/tests
+  - identifier: 19_test_frameworks/tests/testing_unittest
+    name: Testing Unittest
+    url: /19_test_frameworks/tests/testing_unittest/
+    weight: 245
+    parent: 19_test_frameworks/tests
+  - identifier: 19_test_frameworks/tests/testing_unittest_mock
+    name: Testing Unittest Mock
+    url: /19_test_frameworks/tests/testing_unittest_mock/
+    weight: 246
+    parent: 19_test_frameworks/tests
+  - identifier: 20_package_managers/package_list
+    name: Package List
+    url: /20_package_managers/package_list/
+    weight: 247
+    parent: 20_package_managers
+  - identifier: 20_package_managers/package_pip_install
+    name: Package Pip Install
+    url: /20_package_managers/package_pip_install/
+    weight: 248
+    parent: 20_package_managers
+  - identifier: 20_package_managers/package_pipenv
+    name: Package Pipenv
+    url: /20_package_managers/package_pipenv/
+    weight: 249
+    parent: 20_package_managers
+  - identifier: 20_package_managers/package_poetry
+    name: Package Poetry
+    url: /20_package_managers/package_poetry/
+    weight: 250
+    parent: 20_package_managers
+  - identifier: 20_package_managers/package_uv
+    name: Package Uv
+    url: /20_package_managers/package_uv/
+    weight: 251
+    parent: 20_package_managers
+  - identifier: 20_package_managers/package_virtualenv
+    name: Package Virtualenv
+    url: /20_package_managers/package_virtualenv/
+    weight: 252
+    parent: 20_package_managers
+  - identifier: 21_design_patterns/abstract_factory
+    name: Abstract Factory
+    url: /21_design_patterns/abstract_factory/
+    weight: 253
+    parent: 21_design_patterns
+  - identifier: 21_design_patterns/adapter_with_composition
+    name: Adapter With Composition
+    url: /21_design_patterns/adapter_with_composition/
+    weight: 254
+    parent: 21_design_patterns
+  - identifier: 21_design_patterns/adapter_with_inheritance
+    name: Adapter With Inheritance
+    url: /21_design_patterns/adapter_with_inheritance/
+    weight: 255
+    parent: 21_design_patterns
+  - identifier: 21_design_patterns/bridge
+    name: Bridge
+    url: /21_design_patterns/bridge/
+    weight: 256
+    parent: 21_design_patterns
+  - identifier: 21_design_patterns/builder
+    name: Builder
+    url: /21_design_patterns/builder/
+    weight: 257
+    parent: 21_design_patterns
+  - identifier: 21_design_patterns/chain
+    name: Chain
+    url: /21_design_patterns/chain/
+    weight: 258
+    parent: 21_design_patterns
+  - identifier: 21_design_patterns/chain_of_responsibility
+    name: Chain Of Responsibility
+    url: /21_design_patterns/chain_of_responsibility/
+    weight: 259
+    parent: 21_design_patterns
+  - identifier: 21_design_patterns/command
+    name: Command
+    url: /21_design_patterns/command/
+    weight: 260
+    parent: 21_design_patterns
+  - identifier: 21_design_patterns/composite
+    name: Composite
+    url: /21_design_patterns/composite/
+    weight: 261
+    parent: 21_design_patterns
+  - identifier: 21_design_patterns/decorator
+    name: Decorator
+    url: /21_design_patterns/decorator/
+    weight: 262
+    parent: 21_design_patterns
+  - identifier: 21_design_patterns/facade
+    name: Facade
+    url: /21_design_patterns/facade/
+    weight: 263
+    parent: 21_design_patterns
+  - identifier: 21_design_patterns/factory_class_method
+    name: Factory Class Method
+    url: /21_design_patterns/factory_class_method/
+    weight: 264
+    parent: 21_design_patterns
+  - identifier: 21_design_patterns/factory_static_method
+    name: Factory Static Method
+    url: /21_design_patterns/factory_static_method/
+    weight: 265
+    parent: 21_design_patterns
+  - identifier: 21_design_patterns/flyweight
+    name: Flyweight
+    url: /21_design_patterns/flyweight/
+    weight: 266
+    parent: 21_design_patterns
+  - identifier: 21_design_patterns/interpreter
+    name: Interpreter
+    url: /21_design_patterns/interpreter/
+    weight: 267
+    parent: 21_design_patterns
+  - identifier: 21_design_patterns/iterator
+    name: Iterator
+    url: /21_design_patterns/iterator/
+    weight: 268
+    parent: 21_design_patterns
+  - identifier: 21_design_patterns/mediator
+    name: Mediator
+    url: /21_design_patterns/mediator/
+    weight: 269
+    parent: 21_design_patterns
+  - identifier: 21_design_patterns/memento
+    name: Memento
+    url: /21_design_patterns/memento/
+    weight: 270
+    parent: 21_design_patterns
+  - identifier: 21_design_patterns/observer
+    name: Observer
+    url: /21_design_patterns/observer/
+    weight: 271
+    parent: 21_design_patterns
+  - identifier: 21_design_patterns/prototype
+    name: Prototype
+    url: /21_design_patterns/prototype/
+    weight: 272
+    parent: 21_design_patterns
+  - identifier: 21_design_patterns/proxy
+    name: Proxy
+    url: /21_design_patterns/proxy/
+    weight: 273
+    parent: 21_design_patterns
+  - identifier: 21_design_patterns/singleton
+    name: Singleton
+    url: /21_design_patterns/singleton/
+    weight: 274
+    parent: 21_design_patterns
+  - identifier: 21_design_patterns/state
+    name: State
+    url: /21_design_patterns/state/
+    weight: 275
+    parent: 21_design_patterns
+  - identifier: 21_design_patterns/strategy
+    name: Strategy
+    url: /21_design_patterns/strategy/
+    weight: 276
+    parent: 21_design_patterns
+  - identifier: 21_design_patterns/template_method
+    name: Template Method
+    url: /21_design_patterns/template_method/
+    weight: 277
+    parent: 21_design_patterns
+  - identifier: 21_design_patterns/visitor
+    name: Visitor
+    url: /21_design_patterns/visitor/
+    weight: 278
+    parent: 21_design_patterns
+  - identifier: 23_meta_classes/demo_abstract
+    name: Demo Abstract
+    url: /23_meta_classes/demo_abstract/
+    weight: 279
+    parent: 23_meta_classes
+  - identifier: 23_meta_classes/demo_basic
+    name: Demo Basic
+    url: /23_meta_classes/demo_basic/
+    weight: 280
+    parent: 23_meta_classes
+  - identifier: 23_meta_classes/demo_conflict
+    name: Demo Conflict
+    url: /23_meta_classes/demo_conflict/
+    weight: 281
+    parent: 23_meta_classes
+  - identifier: 23_meta_classes/demo_debug
+    name: Demo Debug
+    url: /23_meta_classes/demo_debug/
+    weight: 282
+    parent: 23_meta_classes
+  - identifier: 23_meta_classes/demo_declarative_api
+    name: Demo Declarative Api
+    url: /23_meta_classes/demo_declarative_api/
+    weight: 283
+    parent: 23_meta_classes
+  - identifier: 23_meta_classes/demo_decorator
+    name: Demo Decorator
+    url: /23_meta_classes/demo_decorator/
+    weight: 284
+    parent: 23_meta_classes
+  - identifier: 23_meta_classes/demo_final
+    name: Demo Final
+    url: /23_meta_classes/demo_final/
+    weight: 285
+    parent: 23_meta_classes
+  - identifier: 23_meta_classes/demo_gui
+    name: Demo Gui
+    url: /23_meta_classes/demo_gui/
+    weight: 286
+    parent: 23_meta_classes
+  - identifier: 23_meta_classes/demo_indexing
+    name: Demo Indexing
+    url: /23_meta_classes/demo_indexing/
+    weight: 287
+    parent: 23_meta_classes
+  - identifier: 23_meta_classes/demo_registrar
+    name: Demo Registrar
+    url: /23_meta_classes/demo_registrar/
+    weight: 288
+    parent: 23_meta_classes
+  - identifier: 23_meta_classes/demo_reloading
+    name: Demo Reloading
+    url: /23_meta_classes/demo_reloading/
+    weight: 289
+    parent: 23_meta_classes
+  - identifier: 23_meta_classes/demo_singleton
+    name: Demo Singleton
+    url: /23_meta_classes/demo_singleton/
+    weight: 290
+    parent: 23_meta_classes
+  - identifier: 23_meta_classes/demo_typed
+    name: Demo Typed
+    url: /23_meta_classes/demo_typed/
+    weight: 291
+    parent: 23_meta_classes
+  - identifier: 23_meta_classes/snippets
+    name: Snippets
+    url: /23_meta_classes/snippets/
+    weight: 292
+    parent: 23_meta_classes
+  - identifier: 24_generators/1_counter
+    name: 1 Counter
+    url: /24_generators/1_counter/
+    weight: 293
+    parent: 24_generators
+  - identifier: 24_generators/2_memory_footprint
+    name: 2 Memory Footprint
+    url: /24_generators/2_memory_footprint/
+    weight: 294
+    parent: 24_generators
+  - identifier: 24_generators/3_fibonacci
+    name: 3 Fibonacci
+    url: /24_generators/3_fibonacci/
+    weight: 295
+    parent: 24_generators
+  - identifier: 24_generators/4_delegation
+    name: 4 Delegation
+    url: /24_generators/4_delegation/
+    weight: 296
+    parent: 24_generators
+  - identifier: 24_generators/5_recursive
+    name: 5 Recursive
+    url: /24_generators/5_recursive/
+    weight: 297
+    parent: 24_generators
+  - identifier: 24_generators/generator_concept
+    name: Generator Concept
+    url: /24_generators/generator_concept/
+    weight: 298
+    parent: 24_generators
+  - identifier: 24_generators/generator_delegation
+    name: Generator Delegation
+    url: /24_generators/generator_delegation/
+    weight: 299
+    parent: 24_generators
+  - identifier: 24_generators/generator_expression
+    name: Generator Expression
+    url: /24_generators/generator_expression/
+    weight: 300
+    parent: 24_generators
+  - identifier: 24_generators/generator_expression_complex
+    name: Generator Expression Complex
+    url: /24_generators/generator_expression_complex/
+    weight: 301
+    parent: 24_generators
+  - identifier: 24_generators/generator_expression_equivalent
+    name: Generator Expression Equivalent
+    url: /24_generators/generator_expression_equivalent/
+    weight: 302
+    parent: 24_generators
+  - identifier: 24_generators/generator_expression_walrus
+    name: Generator Expression Walrus
+    url: /24_generators/generator_expression_walrus/
+    weight: 303
+    parent: 24_generators
+  - identifier: 24_generators/generator_infinite
+    name: Generator Infinite
+    url: /24_generators/generator_infinite/
+    weight: 304
+    parent: 24_generators
+  - identifier: 24_generators/generator_nested
+    name: Generator Nested
+    url: /24_generators/generator_nested/
+    weight: 305
+    parent: 24_generators
+  - identifier: 24_generators/generator_passing
+    name: Generator Passing
+    url: /24_generators/generator_passing/
+    weight: 306
+    parent: 24_generators
+  - identifier: 24_generators/generator_recursive
+    name: Generator Recursive
+    url: /24_generators/generator_recursive/
+    weight: 307
+    parent: 24_generators
+  - identifier: 24_generators/letter_generator
+    name: Letter Generator
+    url: /24_generators/letter_generator/
+    weight: 308
+    parent: 24_generators
+  - identifier: 25_coroutines/1_decorate
+    name: 1 Decorate
+    url: /25_coroutines/1_decorate/
+    weight: 309
+    parent: 25_coroutines
+  - identifier: 25_coroutines/2_average
+    name: 2 Average
+    url: /25_coroutines/2_average/
+    weight: 310
+    parent: 25_coroutines
+  - identifier: 25_coroutines/3_bytestream
+    name: 3 Bytestream
+    url: /25_coroutines/3_bytestream/
+    weight: 311
+    parent: 25_coroutines
+  - identifier: 25_coroutines/4_pipeline
+    name: 4 Pipeline
+    url: /25_coroutines/4_pipeline/
+    weight: 312
+    parent: 25_coroutines
+  - identifier: 25_coroutines/5_fsm
+    name: 5 Fsm
+    url: /25_coroutines/5_fsm/
+    weight: 313
+    parent: 25_coroutines
+  - identifier: 25_coroutines/6_recursion
+    name: 6 Recursion
+    url: /25_coroutines/6_recursion/
+    weight: 314
+    parent: 25_coroutines
+  - identifier: 25_coroutines/coroutine_chaining
+    name: Coroutine Chaining
+    url: /25_coroutines/coroutine_chaining/
+    weight: 315
+    parent: 25_coroutines
+  - identifier: 25_coroutines/coroutine_execution
+    name: Coroutine Execution
+    url: /25_coroutines/coroutine_execution/
+    weight: 316
+    parent: 25_coroutines
+  - identifier: 25_coroutines/coroutine_interface
+    name: Coroutine Interface
+    url: /25_coroutines/coroutine_interface/
+    weight: 317
+    parent: 25_coroutines
+  - identifier: 28_optimization/function_caching
+    name: Function Caching
+    url: /28_optimization/function_caching/
+    weight: 318
+    parent: 28_optimization
+  - identifier: 28_optimization/loop_fusion
+    name: Loop Fusion
+    url: /28_optimization/loop_fusion/
+    weight: 319
+    parent: 28_optimization
+  - identifier: 28_optimization/loop_with_invariant_code
+    name: Loop With Invariant Code
+    url: /28_optimization/loop_with_invariant_code/
+    weight: 320
+    parent: 28_optimization
+  - identifier: 28_optimization/loop_with_list_comprehension
+    name: Loop With List Comprehension
+    url: /28_optimization/loop_with_list_comprehension/
+    weight: 321
+    parent: 28_optimization
+  - identifier: 28_optimization/loop_with_unrolling
+    name: Loop With Unrolling
+    url: /28_optimization/loop_with_unrolling/
+    weight: 322
+    parent: 28_optimization
+  - identifier: 28_optimization/peephole_constant_folding
+    name: Peephole Constant Folding
+    url: /28_optimization/peephole_constant_folding/
+    weight: 323
+    parent: 28_optimization
+  - identifier: 28_optimization/peephole_constant_propagation
+    name: Peephole Constant Propagation
+    url: /28_optimization/peephole_constant_propagation/
+    weight: 324
+    parent: 28_optimization
+  - identifier: 28_optimization/peephole_membership
+    name: Peephole Membership
+    url: /28_optimization/peephole_membership/
+    weight: 325
+    parent: 28_optimization
+  - identifier: 28_optimization/string_interning
+    name: String Interning
+    url: /28_optimization/string_interning/
+    weight: 326
+    parent: 28_optimization
+  - identifier: 28_optimization/use_arrays
+    name: Use Arrays
+    url: /28_optimization/use_arrays/
+    weight: 327
+    parent: 28_optimization
+  - identifier: 28_optimization/use_comprehension
+    name: Use Comprehension
+    url: /28_optimization/use_comprehension/
+    weight: 328
+    parent: 28_optimization
+  - identifier: 28_optimization/use_jit_compilers
+    name: Use Jit Compilers
+    url: /28_optimization/use_jit_compilers/
+    weight: 329
+    parent: 28_optimization
+  - identifier: 29_packaging/import_namespace_package
+    name: Import Namespace Package
+    url: /29_packaging/import_namespace_package/
+    weight: 330
+    parent: 29_packaging
+  - identifier: 29_packaging/namespace_pkg/core/plugin/usb
+    name: Usb
+    url: /29_packaging/namespace_pkg/core/plugin/usb/
+    weight: 331
+    parent: 29_packaging/namespace_pkg/core/plugin
+  - identifier: 29_packaging/namespace_pkg/user/plugin/serial
+    name: Serial
+    url: /29_packaging/namespace_pkg/user/plugin/serial/
+    weight: 332
+    parent: 29_packaging/namespace_pkg/user/plugin
+  - identifier: 30_compatibility/compatibility_future
+    name: Compatibility Future
+    url: /30_compatibility/compatibility_future/
+    weight: 333
+    parent: 30_compatibility
+  - identifier: 30_compatibility/compatibility_six
+    name: Compatibility Six
+    url: /30_compatibility/compatibility_six/
+    weight: 334
+    parent: 30_compatibility
+  - identifier: building
+    name: Building
+    url: /building/
+    weight: 335
+  - identifier: examples
+    name: Examples
+    url: /examples/
+    weight: 336
+  - identifier: index
+    name: Index
+    url: /index/
+    weight: 337
