@@ -1,4 +1,6 @@
-# Example: Singleton using the __new__ method
+# Singleton using the __new__ method
+# --------------------------------------------------------------------------------
+# Demonstrates singleton using the __new__ method.
 
 class Singleton(object):
 

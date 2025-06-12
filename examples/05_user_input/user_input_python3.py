@@ -1,5 +1,5 @@
 # User Input in Python 3
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # Use `input()` to get input from the user, which returns a string. Use `eval()`
 # to evaluate the input as a Python expression, or `int()` to convert it to
 # an integer.

@@ -1,4 +1,6 @@
-# Example: Call super class method and access super class attributes
+# Call super class method and access super class attributes
+# --------------------------------------------------------------------------------
+# Demonstrates call super class method and access super class attributes.
 
 class Person(object):
 

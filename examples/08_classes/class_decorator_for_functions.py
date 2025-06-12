@@ -1,4 +1,6 @@
-# Example: Class as a decorator for functions and methods
+# Class as a decorator for functions and methods
+# --------------------------------------------------------------------------------
+# Demonstrates class as a decorator for functions and methods.
 
 
 class Counter(object):

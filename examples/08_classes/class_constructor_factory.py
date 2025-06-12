@@ -1,4 +1,6 @@
-# Example: Class factory using the __new__ method
+# Class factory using the __new__ method
+# --------------------------------------------------------------------------------
+# Demonstrates class factory using the __new__ method.
 
 class WindowsCalculator(object):
 

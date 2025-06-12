@@ -1,3 +1,6 @@
+# Class Variables Pitfalls
+# --------------------------------------------------------------------------------
+# Demonstrates class variables pitfalls.
 """Class vs. Instance Variables
 --------------------------------
 Class variables are shared by all instances, while instance variables belong

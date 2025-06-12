@@ -1,4 +1,6 @@
-# Example: Initialization and validation
+# Initialization and validation
+# --------------------------------------------------------------------------------
+# Demonstrates initialization and validation.
 
 class Person(object):
 

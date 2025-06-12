@@ -1,5 +1,5 @@
 # Calling functions with keyword arguments
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # Describe how naming parameters improves readability and allows optional
 # argument ordering.
 

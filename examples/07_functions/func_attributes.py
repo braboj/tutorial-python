@@ -1,5 +1,5 @@
 # Adding attributes to functions
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # Functions in Python are first-class objects, which means they can have
 # attributes just like any other object. Attributes are accessed using
 # the dot notation (e.g. `foo.name`), and can be used to store metadata

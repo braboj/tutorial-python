@@ -1,5 +1,5 @@
 # Recursive functions in Python
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # Explains how functions can call themselves to solve problems recursively.
 
 def factorial(n):

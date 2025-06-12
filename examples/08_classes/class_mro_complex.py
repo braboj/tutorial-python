@@ -1,4 +1,6 @@
-# Example: MRO (Method Resolution Order) - Combined bottom first and left first
+# Mro (method resolution order) - combined bottom first and left first
+# --------------------------------------------------------------------------------
+# Demonstrates mro (method resolution order) - combined bottom first and left first.
 
 class A(object):
     @staticmethod

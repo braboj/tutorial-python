@@ -1,5 +1,5 @@
 # Default arguments in functions
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # Each function can have default arguments, which are used if the caller does
 # not provide a value for that argument.
 

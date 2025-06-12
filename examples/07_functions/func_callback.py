@@ -1,5 +1,5 @@
 # Using callback functions to handle events
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # A callback function is a function that is passed as an argument to another
 # function and is executed at the appropriate time, often in response to an
 # event.

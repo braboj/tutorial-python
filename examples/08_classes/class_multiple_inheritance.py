@@ -1,4 +1,6 @@
-# Example: Multiple inheritance
+# Multiple inheritance
+# --------------------------------------------------------------------------------
+# Demonstrates multiple inheritance.
 
 class A(object):
 

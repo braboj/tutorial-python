@@ -1,4 +1,6 @@
-# Example: Class instance with instance methods
+# Class instance with instance methods
+# --------------------------------------------------------------------------------
+# Demonstrates class instance with instance methods.
 
 class Person(object):
 

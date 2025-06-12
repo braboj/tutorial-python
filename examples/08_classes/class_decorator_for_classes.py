@@ -1,4 +1,6 @@
-# Example: Class as a decorator for a class
+# Class as a decorator for a class
+# --------------------------------------------------------------------------------
+# Demonstrates class as a decorator for a class.
 class Counter(object):
 
     # The constructor accepts the parameter passed to the decorator

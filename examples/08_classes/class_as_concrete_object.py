@@ -1,4 +1,6 @@
-# Example: Object as concrete realization of a class
+# Object as concrete realization of a class
+# --------------------------------------------------------------------------------
+# Demonstrates object as concrete realization of a class.
 from class_as_blueprint import Person
 
 

@@ -1,5 +1,5 @@
 # Function annotations for parameters and return values
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # Annotations in Python functions allow you to specify the expected types of
 # parameters and the return type of the function. This can help with code
 # readability and static type checking.

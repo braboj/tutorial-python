@@ -1,5 +1,5 @@
 # Function factories to create specialized functions
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # This example uses higher-order functions to generate customized
 # functions.
 

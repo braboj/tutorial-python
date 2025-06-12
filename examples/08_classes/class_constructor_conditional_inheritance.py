@@ -1,4 +1,6 @@
-# Example: Conditional inheritance using the __new__ method
+# Conditional inheritance using the __new__ method
+# --------------------------------------------------------------------------------
+# Demonstrates conditional inheritance using the __new__ method.
 
 class WindowsCalculator(object):
     """ Windows calculator class operations """

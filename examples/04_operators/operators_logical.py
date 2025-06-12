@@ -1,5 +1,5 @@
 # Logical Operators in Python
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # Logical operators are used to combine conditional statements. They allow you
 # to evaluate multiple conditions and return a boolean value (True or False)
 # based on the evaluation.

@@ -1,5 +1,5 @@
 # Explore the precedence of boolean operators
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # Boolean operators include `not`, `and`, and `or`, and their precedence
 # determines the order in which they are evaluated. The precedence order is:
 #

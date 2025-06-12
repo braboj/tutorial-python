@@ -1,4 +1,6 @@
-# Example: Nested classes for constants, settings, etc.
+# Nested classes for constants, settings, etc.
+# --------------------------------------------------------------------------------
+# Demonstrates nested classes for constants, settings, etc.
 
 class Settings:
 

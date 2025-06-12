@@ -1,4 +1,6 @@
-# Example: Call super class methods
+# Call super class methods
+# --------------------------------------------------------------------------------
+# Demonstrates call super class methods.
 
 class Person(object):
 
@@ -22,4 +24,3 @@ class Employee(Person):
 e = Employee("John", 1234)
 print(e.get_name())
 print(e.get_id_number())
-

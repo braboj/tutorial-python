@@ -1,5 +1,5 @@
 # Identity Operators in Python
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # Identity operators are used to compare the memory locations of two objects.
 # If two variables point to the same object in memory, they are considered
 # identical.

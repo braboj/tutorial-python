@@ -1,5 +1,5 @@
 # Floating point numbers arithmetics
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # The `+` operator can be used to add float numbers in Python, similar to how
 # it is used for integers, strings and complex numbers (operators overloading).
 

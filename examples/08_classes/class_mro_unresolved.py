@@ -1,4 +1,6 @@
-# Example: MRO (Method Resolution Order) - Unresolved
+# Mro (method resolution order) - unresolved
+# --------------------------------------------------------------------------------
+# Demonstrates mro (method resolution order) - unresolved.
 
 class Player(object):
     pass

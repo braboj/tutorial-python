@@ -1,4 +1,6 @@
-# Example: Mixin class
+# Mixin class
+# --------------------------------------------------------------------------------
+# Demonstrates mixin class.
 
 class RemoteMixin(object):
 

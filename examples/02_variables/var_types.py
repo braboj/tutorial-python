@@ -1,5 +1,5 @@
 # Get the type of a variable
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # Python offers a way to inspect the type of a variable using `type()`. Type
 # is a special class in Python that servers many purposes, including
 # determining the type of a variable. When invoked on a variable, it returns

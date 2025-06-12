@@ -1,5 +1,5 @@
-# Example: Docstrings for modules
-# ======================================================================
+# Docstrings for modules
+# --------------------------------------------------------------------------------
 # Copyright 2023 by <Author>
 #
 #                         All Rights Reserved

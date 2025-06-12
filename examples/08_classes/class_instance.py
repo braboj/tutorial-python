@@ -1,4 +1,6 @@
-# Example: Class instance with concrete values
+# Class instance with concrete values
+# --------------------------------------------------------------------------------
+# Demonstrates class instance with concrete values.
 
 class Person(object):
 

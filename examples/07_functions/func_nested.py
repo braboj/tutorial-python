@@ -1,5 +1,5 @@
 # Nested functions and their access to enclosing variables
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # Explains how inner functions can access variables from their enclosing functions.
 
 def absolute_value(x):

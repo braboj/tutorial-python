@@ -1,5 +1,5 @@
 # Tuple Operators in Python
-# -------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # This example demonstrates common tuple operations including indexing,
 # slicing, concatenation, repetition, and membership tests.
 

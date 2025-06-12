@@ -1,4 +1,6 @@
-# Example: Property used to encapsulate an instance variable
+# Property used to encapsulate an instance variable
+# --------------------------------------------------------------------------------
+# Demonstrates property used to encapsulate an instance variable.
 
 class Person(object):
 

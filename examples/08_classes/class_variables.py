@@ -1,5 +1,5 @@
 # Working with class attributes
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # This script uses class-level variables that apply to every instance
 # of the Person class.
 

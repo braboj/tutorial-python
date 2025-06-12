@@ -1,5 +1,5 @@
 # Assignment Operators
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # Assignment operators are used to assign values to variables and can also
 # perform operations on those values.
 #

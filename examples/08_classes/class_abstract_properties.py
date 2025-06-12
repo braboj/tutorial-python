@@ -1,4 +1,6 @@
-# Example: Stacking decorators
+# Stacking decorators
+# --------------------------------------------------------------------------------
+# Demonstrates stacking decorators.
 
 from abc import ABCMeta, abstractmethod
 from six import with_metaclass

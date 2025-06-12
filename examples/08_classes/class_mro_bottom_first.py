@@ -1,4 +1,6 @@
-# Example: MRO (Method Resolution Order) - Bottom first
+# Mro (method resolution order) - bottom first
+# --------------------------------------------------------------------------------
+# Demonstrates mro (method resolution order) - bottom first.
 
 class A(object):
 

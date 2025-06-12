@@ -1,5 +1,5 @@
 # Use statements to perform actions in Python.
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # A statement is a piece of code that performs an action. It can be as simple
 # as a single line or a more complex block of code. The following is true
 # for all statements:

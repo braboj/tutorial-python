@@ -1,4 +1,6 @@
-# Example: Positional-only arguments
+# Positional-only arguments
+# --------------------------------------------------------------------------------
+# Demonstrates positional-only arguments.
 
 # The arguments a and b are positional-only
 def positional_only_arguments(a, b, /):

@@ -1,5 +1,5 @@
 # Conditional Expressions in Python
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # Conditional expressions allow you to evaluate a condition and return one
 # of two values based on the result of the condition.
 #

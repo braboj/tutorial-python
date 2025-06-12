@@ -1,4 +1,6 @@
-# Example: Class method used to modify existing instances of the class
+# Class method used to modify existing instances of the class
+# --------------------------------------------------------------------------------
+# Demonstrates class method used to modify existing instances of the class.
 
 class Person(object):
 
