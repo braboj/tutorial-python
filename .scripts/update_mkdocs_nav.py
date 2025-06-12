@@ -55,8 +55,10 @@ def main() -> None:
 
     if args.nav_file:
         nav_path = Path(args.nav_file)
+        # ``mkdocs build -f nav.yml`` expects a mapping, so wrap the nav
+        # list in a dictionary to avoid configuration errors.
         with nav_path.open("w", encoding="utf-8") as f:
-            yaml.dump(nav, f, sort_keys=False)
+            yaml.dump({"nav": nav}, f, sort_keys=False)
 
     if args.mkdocs_file:
         mkdocs_file = Path(args.mkdocs_file)
