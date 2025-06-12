@@ -1,6 +1,8 @@
 # Abstract class using the six library for python 2
 # --------------------------------------------------------------------------------
-# Demonstrates abstract class using the six library for python 2.
+# The six library helps define abstract base classes that remain compatible with
+# Python 2. The metaclass provided by six works with decorators such as
+# @abstractmethod so subclasses must implement the required methods.
 
 from six import with_metaclass
 from abc import ABCMeta, abstractmethod

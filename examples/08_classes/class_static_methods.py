@@ -1,6 +1,8 @@
 # Static method are not bound to the class and can be used as utility functions
 # --------------------------------------------------------------------------------
-# Demonstrates static method are not bound to the class and can be used as utility functions.
+# Static methods operate without reference to a particular instance or class.
+# They behave like regular functions that happen to live in the class's
+# namespace and are often used for related utility tasks.
 
 class Packet(object):
 

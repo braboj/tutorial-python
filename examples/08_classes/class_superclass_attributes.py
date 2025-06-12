@@ -1,6 +1,8 @@
 # Call super class method and access super class attributes
 # --------------------------------------------------------------------------------
-# Demonstrates call super class method and access super class attributes.
+# Subclasses can call methods defined on their parent and access inherited
+# attributes. Using ``super`` keeps the code maintainable when the hierarchy
+# changes.
 
 class Person(object):
 

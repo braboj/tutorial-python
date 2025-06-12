@@ -1,6 +1,8 @@
 # Initialization and validation
 # --------------------------------------------------------------------------------
-# Demonstrates initialization and validation.
+# Initialization may involve checking that provided values meet certain rules.
+# The constructor validates input before assigning it to attributes. Invalid
+# data is rejected to keep the object's state consistent.
 
 class Person(object):
 

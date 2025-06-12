@@ -1,6 +1,8 @@
 # Class as a decorator for functions and methods
 # --------------------------------------------------------------------------------
-# Demonstrates class as a decorator for functions and methods.
+# Defining the __call__ method allows a class to wrap functions or methods.
+# The decorator can maintain state between invocations and perform actions
+# before or after calling the original function.
 
 
 class Counter(object):

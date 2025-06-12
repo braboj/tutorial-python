@@ -1,6 +1,8 @@
 # Class Variables Pitfalls
 # --------------------------------------------------------------------------------
-# Demonstrates class variables pitfalls.
+# Sharing state at the class level can introduce subtle bugs when instances
+# modify that state. This section discusses common mistakes and how to avoid
+# them.
 """Class vs. Instance Variables
 --------------------------------
 Class variables are shared by all instances, while instance variables belong

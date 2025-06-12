@@ -1,6 +1,9 @@
 # Mro (method resolution order) - unresolved
 # --------------------------------------------------------------------------------
-# Demonstrates mro (method resolution order) - unresolved.
+# Some inheritance graphs produce conflicting search orders that Python cannot
+# resolve. This file sets up such a conflict and triggers an error when the
+# interpreter tries to build the method resolution order. Understanding this
+# failure helps diagnose complex inheritance issues.
 
 class Player(object):
     pass

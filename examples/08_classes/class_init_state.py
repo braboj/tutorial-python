@@ -1,6 +1,7 @@
 # Initialization with the __init__ method
 # --------------------------------------------------------------------------------
-# Demonstrates initialization with the __init__ method.
+# The __init__ method runs immediately after an object is created. It assigns
+# the initial values for the instance and prepares it for use.
 
 class Person(object):
 

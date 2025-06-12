@@ -1,6 +1,8 @@
 # Initialization in multiple steps
 # --------------------------------------------------------------------------------
-# Demonstrates initialization in multiple steps.
+# Some objects gather their initial data through a sequence of operations. This
+# file breaks the process into helper methods that collect the values one by
+# one. Each step can perform validation before returning its result.
 
 class Person(object):
     def __init__(self):

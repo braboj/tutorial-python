@@ -1,6 +1,8 @@
 # Class as a decorator for a class
 # --------------------------------------------------------------------------------
-# Demonstrates class as a decorator for a class.
+# A class can implement the __call__ method and be applied as a decorator to
+# another class. When used this way it may attach attributes or modify the
+# decorated class at definition time.
 class Counter(object):
 
     # The constructor accepts the parameter passed to the decorator
