@@ -87,5 +87,19 @@ Preview the pages locally by running `mkdocs serve` and opening the displayed
 URL in your browser. The generated HTML files are written to the `site/`
 directory.
 
+### Generating menus for Hugo
+
+For a Hugo based site the navigation can be created automatically using
+`.scripts/generate_hugo_menu.py`. This script mirrors the folder structure
+under `docs/` and writes a YAML snippet that you can include in your Hugo
+configuration.
+
+```bash
+python .scripts/generate_hugo_menu.py --output hugo_menu.yml
+```
+
+The resulting `hugo_menu.yml` contains a `menu.main` definition with entries
+for each Markdown file.
+
 ## License
 This project is licensed under the [MIT License](LICENSE).
