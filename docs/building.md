@@ -1,8 +1,10 @@
 # Building the Site
 
-This project uses [MkDocs](https://www.mkdocs.org/) to build the static documentation site. After installing the dependencies, run:
+This project uses [MkDocs](https://www.mkdocs.org/) to build the static documentation site. After installing the dependencies, regenerate the navigation menu and then run:
 
 ```bash
+python .scripts/update_mkdocs_nav.py
+
 mkdocs build
 ```
 
