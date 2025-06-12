@@ -1,0 +1,6 @@
+baseURL: "https://example.com/"
+languageCode: "en-us"
+title: "Python by Example"
+theme: "your-theme"
+
+# Menu definitions may be merged from hugo_menu.yml
