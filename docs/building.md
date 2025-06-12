@@ -26,8 +26,15 @@ menu configuration based on the `docs/` directory with:
 python .scripts/generate_hugo_menu.py --docs-dir docs --output hugo_menu.yml
 ```
 
-Include the resulting `hugo_menu.yml` in your Hugo configuration to mirror the
-documentation structure.
+Run Hugo with both configuration files to merge the generated menu with the
+main settings:
+
+```bash
+hugo --config config.yaml,hugo_menu.yml
+```
+
+The `hugo_menu.yml` file mirrors the documentation structure and must be
+included so the navigation is rendered correctly.
 
 This script requires the `pyyaml` package which is already listed in
 `requirements.txt`.
