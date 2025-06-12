@@ -42,7 +42,7 @@ capabilities using Scintilla or Tkinter text widgets.
 
 ### Batch Processing Utilities  
 Design GUIs or CLI tools to process large sets of images, documents or data  
-files in bulk with pillow, OpenCV or pandas.
+files in bulk with Pillow, OpenCV or pandas.
 
 ### Desktop Notifications & Reminders  
 Implement system notifications, pop-ups, and scheduled alerts using plyer  
