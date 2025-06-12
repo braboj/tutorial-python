@@ -4,6 +4,7 @@ This project uses [MkDocs](https://www.mkdocs.org/) to build the static document
 
 ```bash
 python .scripts/update_mkdocs_nav.py
+
 mkdocs build
 ```
 

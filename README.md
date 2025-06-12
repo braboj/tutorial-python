@@ -83,8 +83,6 @@ python .scripts/update_mkdocs_nav.py
 mkdocs build
 ```
 
-
-
 Preview the pages locally by running `mkdocs serve` and opening the displayed
 URL in your browser. The generated HTML files are written to the `site/`
 directory.

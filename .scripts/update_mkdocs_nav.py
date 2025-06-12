@@ -4,6 +4,7 @@
 The script mirrors the layout of the ``docs/`` directory so that every
 Markdown file is reachable from the MkDocs navigation. It should be run
 whenever pages are added, renamed or removed so the menu stays in sync.
+
 """
 
 import argparse
