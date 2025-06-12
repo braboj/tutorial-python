@@ -36,8 +36,7 @@ Implement MQTT, CoAP, or WebSocket protocols using `paho-mqtt` and `aiocoap` for
 ### Network Security Testing
 Write vulnerability scanners, brute-force tools, and fuzzers leveraging Python security libraries for pentesting and hardening.
 
-Examples pentesting tools include:
-
+Examples of pentesting tools include:
 - Scapy
 - Impacket
 - python-nmap
