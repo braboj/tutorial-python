@@ -1,6 +1,9 @@
 # Recursive functions in Python
 # --------------------------------------------------------------------------------
-# Explains how functions can call themselves to solve problems recursively.
+# A recursive function repeatedly calls itself with a simpler version of the
+# original problem. Each call works toward a base case that stops the recursion.
+# This technique is often used for tasks that can be defined in terms of similar
+# subproblems.
 
 def factorial(n):
     # Base case

@@ -1,6 +1,9 @@
 # Nested functions and their access to enclosing variables
 # --------------------------------------------------------------------------------
-# Explains how inner functions can access variables from their enclosing functions.
+# Inner functions can access variables from the outer function that defines
+# them. This ability creates a closure which preserves the environment even
+# after the outer function has finished executing. It allows the inner function
+# to operate using data that would otherwise be out of scope.
 
 def absolute_value(x):
     # Emulate the built-in abs() function, e.g. abs(-1) == 1 and abs(1) == 1

@@ -1,7 +1,8 @@
 # Lambda and def produce the same bytecode
 # --------------------------------------------------------------------------------
 # This script compiles a lambda expression and a regular function to compare
-# their bytecode output.
+# their bytecode output. Both forms compile into nearly identical instructions.
+# Using ``lambda`` therefore carries no extra runtime cost compared to ``def``.
 
 import dis
 

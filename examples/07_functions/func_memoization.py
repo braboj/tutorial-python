@@ -1,4 +1,4 @@
-# Demonstrates memoization with an inner function that caches results.
+# Memoization with an inner function that caches results
 # --------------------------------------------------------------------------------
 # The inner ``memoized_fibonacci`` function stores each computed Fibonacci
 # number in the ``cache`` dictionary. On subsequent calls with the same
