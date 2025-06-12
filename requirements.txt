@@ -4,5 +4,5 @@ six
 pytest
 hypothesis
 pystache
-
 mkdocs
+pyyaml
