@@ -4,3 +4,5 @@ requests
 six
 pytest
 hypothesis
+pystache
+
