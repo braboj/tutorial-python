@@ -1,44 +1,44 @@
 #!/usr/bin/env python3
 """Generate a Markdown page from Python example files.
 
-Usage:
+Usage::
     python .scripts/examples_to_markdown.py \
         --examples-dir examples \
         --template templates/examples_page.mustache \
         --output examples.md
+
+Each file's content is inserted verbatim as a code block in the output.  Files
+named ``__init__.py`` are ignored.
 """
 
 import argparse
 from pathlib import Path
-import pystache
+
+try:
+    import pystache
+except ModuleNotFoundError as exc:  # pragma: no cover - import guard
+    raise SystemExit(
+        "pystache is required to run this script. Install it via `pip install pystache`."
+    ) from exc
 
 
 def parse_example(path: Path) -> dict:
-    """Extract description and code from a Python example file."""
-    description_lines = []
-    code_lines = []
+    """Return the file name and its entire contents."""
     with path.open("r", encoding="utf-8") as f:
-        lines = f.readlines()
-
-    in_description = True
-    for line in lines:
-        if in_description and line.startswith("#"):
-            description_lines.append(line.lstrip("# ").rstrip())
-        else:
-            in_description = False
-            code_lines.append(line.rstrip())
+        code = f.read()
 
     return {
         "name": path.stem,
-        "description": "\n".join(description_lines).strip(),
-        "code": "\n".join(code_lines).strip(),
+        "code": code.rstrip(),
     }
 
 
 def gather_examples(directory: Path) -> list:
-    """Collect all examples from the directory recursively."""
+    """Collect all ``*.py`` files from the directory recursively."""
     examples = []
     for file in sorted(directory.rglob("*.py")):
+        if file.name == "__init__.py":
+            continue
         examples.append(parse_example(file))
     return examples
 
