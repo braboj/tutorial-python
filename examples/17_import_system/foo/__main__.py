@@ -1,4 +1,6 @@
-"""Entry point executed when running the package with -m."""
+# Entry point executed when running the package with -m.
+# ------------------------------------------------------------------------------
+# Allows running the package directly as a script.
 import sys
 import os.path
 

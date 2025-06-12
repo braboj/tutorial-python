@@ -1,4 +1,6 @@
-"""Shows conditional imports based on Python version."""
+# Shows conditional imports based on Python version.
+# ------------------------------------------------------------------------------
+# Uses different imports depending on Python version.
 import sys
 
 # Option 1

@@ -1,5 +1,7 @@
-"""Demonstrates guarding code with __name__ to skip execution on import."""
-# Example: Main program
+# Demonstrates guarding code with __name__ to skip execution on import.
+# ------------------------------------------------------------------------------
+# Guard code to avoid running on import.
+# Main program entry point
 
 
 def func1():

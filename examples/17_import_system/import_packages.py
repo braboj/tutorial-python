@@ -1,4 +1,6 @@
-"""Demonstrates importing a package and using its public API."""
+# Demonstrates importing a package and using its public API.
+# ------------------------------------------------------------------------------
+# Imports the foo package and uses its API.
 import product
 
 # Use the public API defined in __init__.py
