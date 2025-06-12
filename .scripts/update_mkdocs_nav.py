@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Update the navigation section in ``mkdocs.yml``.
+"""Generate the MkDocs navigation structure.
 
 The script mirrors the layout of the ``docs/`` directory so that every
-Markdown file is reachable from the MkDocs navigation. It should be run
-whenever pages are added, renamed or removed so the menu stays in sync.
+Markdown file is reachable from the MkDocs navigation. It can update a
+``mkdocs.yml`` file directly or write the navigation to a separate YAML file
+so that the configuration can be assembled without modifying the original file.
 
 """
 
@@ -37,25 +38,38 @@ def build_nav(base: Path, current: Path | None = None) -> list:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Update mkdocs navigation")
     parser.add_argument("--docs-dir", default="docs", help="Directory with markdown files")
-    parser.add_argument("--mkdocs-file", default="mkdocs.yml", help="Path to mkdocs.yml")
+    parser.add_argument("--mkdocs-file", help="Path to mkdocs.yml to update")
+    parser.add_argument(
+        "--nav-file",
+        default="nav.yml",
+        help="Write navigation structure as YAML (default: nav.yml)",
+    )
     args = parser.parse_args()
 
     docs_dir = Path(args.docs_dir)
-    mkdocs_file = Path(args.mkdocs_file)
 
     if not docs_dir.is_dir():
         raise SystemExit(f"Docs directory {docs_dir} not found")
 
-    if not mkdocs_file.is_file():
-        raise SystemExit(f"MkDocs configuration {mkdocs_file} not found")
+    nav = build_nav(docs_dir)
 
-    with mkdocs_file.open("r", encoding="utf-8") as f:
-        config = yaml.safe_load(f)
+    if args.nav_file:
+        nav_path = Path(args.nav_file)
+        with nav_path.open("w", encoding="utf-8") as f:
+            yaml.dump(nav, f, sort_keys=False)
 
-    config["nav"] = build_nav(docs_dir)
+    if args.mkdocs_file:
+        mkdocs_file = Path(args.mkdocs_file)
+        if not mkdocs_file.is_file():
+            raise SystemExit(f"MkDocs configuration {mkdocs_file} not found")
 
-    with mkdocs_file.open("w", encoding="utf-8") as f:
-        yaml.dump(config, f, sort_keys=False)
+        with mkdocs_file.open("r", encoding="utf-8") as f:
+            config = yaml.safe_load(f)
+
+        config["nav"] = nav
+
+        with mkdocs_file.open("w", encoding="utf-8") as f:
+            yaml.dump(config, f, sort_keys=False)
 
 
 if __name__ == "__main__":
