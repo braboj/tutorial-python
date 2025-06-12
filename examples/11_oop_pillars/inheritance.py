@@ -1,6 +1,5 @@
 # Inheritance: deriving behavior from a base class
 # -----------------------------------------------------------------------------
-#
 # Inheritance lets a class reuse and extend the behavior of a base class.
 # Derived classes such as `Dog` and `Cat` inherit the methods from `Animal`
 # and override them when needed.

@@ -1,6 +1,5 @@
 # Abstraction: hiding details with abstract base classes
 # -----------------------------------------------------------------------------
-#
 # Abstraction defines a common interface while hiding implementation details.
 # Using an abstract base class forces subclasses to implement specific
 # behaviours without revealing how they will work.

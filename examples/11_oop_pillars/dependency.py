@@ -1,6 +1,5 @@
 # Dependency: relying on other classes to get work done
 # -----------------------------------------------------------------------------
-#
 # A dependency is when a class uses another class to get its job done. The
 # dependent class doesn't own the other object, it simply relies on it at
 # runtime. Here the `Calculator` depends on the `Math` helper to perform the

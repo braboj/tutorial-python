@@ -1,6 +1,5 @@
 # Association: cooperating without ownership
 # -----------------------------------------------------------------------------
-#
 # Association is a loose coupling between otherwise independent objects. They
 # collaborate to accomplish a task but neither owns the lifetime of the other.
 # In this example the `Calculator` uses a `Battery`, a `Display`, and the

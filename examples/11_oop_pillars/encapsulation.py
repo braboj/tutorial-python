@@ -1,6 +1,5 @@
 # Encapsulation: guarding internal state with getters and setters
 # -----------------------------------------------------------------------------
-#
 # Encapsulation hides internal state behind methods.  Properties provide a
 # controlled interface so that validation logic in setters and getters can
 # protect the data from invalid values or direct manipulation.

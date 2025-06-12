@@ -1,6 +1,5 @@
 # Access modifiers and name mangling
 # -----------------------------------------------------------------------------
-#
 # Public attributes have no leading underscores and can be accessed from
 # anywhere.  A single leading underscore marks an attribute as "protected" by
 # convention, signalling it should only be used by the class and its

@@ -1,6 +1,5 @@
 # Aggregation: objects hold references to independent parts
 # -----------------------------------------------------------------------------
-#
 # Aggregation occurs when one object keeps references to other, independent
 # objects.  The referenced parts can exist on their own and are not owned by
 # the aggregator.  Here the `Rocket` receives an `Engine` instance that can
@@ -48,4 +47,3 @@ rocket1.launch()
 
 rocket2 = Rocket(LiquidFuelEngine("model 2"))
 rocket2.launch()
-

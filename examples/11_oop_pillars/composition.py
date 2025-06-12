@@ -1,6 +1,5 @@
 # Composition: owned components live and die with the owner
 # -----------------------------------------------------------------------------
-#
 # Composition means that an object is made up of other objects which it
 # owns completely.  When the container is destroyed so are its parts.
 # The `Rocket` creates and manages its own `FuelTank`, which does not exist
