@@ -22,7 +22,7 @@ databases or data lakes using tools like Apache Airflow or Prefect.
 
 ### Real-Time Data Processing
 Handle streaming data, live notifications, or real-time analytics with
-asyncio, WebSockets, or frameworks like Sanic and AIOHTTP.
+asyncio, WebSockets, or frameworks like Sanic and aiohttp.
 
 ### Message-Driven & Event-Driven Systems
 React to events by publishing and consuming messages with Redis Streams,
