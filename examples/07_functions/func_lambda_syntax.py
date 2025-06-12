@@ -1,6 +1,9 @@
 # Lambda functions
 # --------------------------------------------------------------------------------
-# Demonstrates lambda functions.
+# Lambda expressions provide a compact way to create anonymous functions.
+# They consist of a parameter list, a colon and a single expression that becomes
+# the return value. Because they are limited to one expression, lambdas are best
+# suited for small operations.
 
 """
 lambda [param1, param2, ..]: expression

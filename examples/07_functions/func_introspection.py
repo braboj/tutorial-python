@@ -1,7 +1,10 @@
 # Inspect function attributes
 # --------------------------------------------------------------------------------
-# Explore attributes such as __name__, __doc__, __code__, etc., to see
-# where Python stores metadata for functions.
+# Python stores a variety of metadata about functions on the function object
+# itself. Attributes such as ``__name__``, ``__doc__`` and ``__code__`` can be
+# inspected at runtime to learn more about a function's definition. This
+# introspection ability is useful for debugging and for frameworks that
+# manipulate functions.
 
 def foo(a, b=10, c=20, *args, **kwargs):
     """This is 'foo' function that does nothing."""

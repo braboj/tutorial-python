@@ -1,6 +1,9 @@
 # Anatomy of a Python function
 # --------------------------------------------------------------------------------
-# Describes the structure of a Python function, including parameters, docstrings, and return values.
+# A function definition begins with the ``def`` keyword followed by its name and
+# parameters. The body can perform operations using those parameters and return
+# a value. Well-documented functions include a docstring that briefly states
+# their purpose.
 
 def function_name(parameter1, parameter2):
     """ Docstring: description of the function """

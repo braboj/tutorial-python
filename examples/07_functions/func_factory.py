@@ -1,7 +1,8 @@
 # Function factories to create specialized functions
 # --------------------------------------------------------------------------------
-# This example uses higher-order functions to generate customized
-# functions.
+# A function factory returns a new function tailored to the argument it
+# receives. It enables creation of many small functions without repeating code.
+# Each generated function captures the parameters provided to the factory.
 
 def power_of(n):
     def power(x):

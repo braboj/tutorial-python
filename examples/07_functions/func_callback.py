@@ -1,8 +1,9 @@
 # Using callback functions to handle events
 # --------------------------------------------------------------------------------
-# A callback function is a function that is passed as an argument to another
-# function and is executed at the appropriate time, often in response to an
-# event.
+# A callback function is passed as an argument to another function and executed
+# when a particular event occurs. This technique lets the caller customize
+# behavior without changing the callee. Callbacks are common in event-driven
+# architectures and asynchronous code.
 
 _listeners = {}
 
