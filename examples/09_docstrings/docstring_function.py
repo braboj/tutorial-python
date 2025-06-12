@@ -1,8 +1,9 @@
 # Docstring for a Function
 # --------------------------------------------------------------------------------
-# Documenting a function with a docstring explains what the function does,
-# clarifies its expected arguments and return value, and allows automated
-# tools to generate user-friendly documentation.
+# Documenting a function with a docstring explains its purpose and how it
+# should be used. The description lists the expected arguments as well as the
+# return value. Such documentation also enables automated tools to generate
+# helpful references.
 
 def myfunction(a, b, c):
     """This is junior docstring for myfunction
