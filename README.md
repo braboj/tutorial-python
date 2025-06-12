@@ -12,6 +12,7 @@ SOLID principles, design patterns, and best practices.
 Ensure that the following tools are installed before setting up the project:
 
 - **Python 3.10+** - the examples rely on modern Python features
+- **Hugo** - to generate the static site content
 - **git** - to clone this repository
 
 ## Installation
