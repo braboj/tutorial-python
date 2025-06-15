@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Generators - Python by Example</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Generators";
+        var mkdocs_page_input_path = "examples\\24_generators.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Python by Example
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Examples</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../01_hello_world/">Hello World</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../02_variables/">Variables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../03_comments/">Comments</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../04_operators/">Operators</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_user_input/">User Input</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_control_flow/">Control Flow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_functions/">Functions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_classes/">Classes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_docstrings/">Docstrings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_debugging/">Debugging</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_oop_pillars/">OOP Pillars</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../12_solid_principles/">SOLID Principles</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../13_logging/">Logging</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../14_exceptions/">Exceptions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../15_dunder_methods/">Dunder Methods</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../16_data_types/">Data Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../17_import_system/">Import System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../18_linting_tools/">Linting Tools</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../19_test_frameworks/">Test Frameworks</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../20_package_managers/">Package Managers</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../21_design_patterns/">Design Patterns</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../23_meta_classes/">Meta Classes</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Generators</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#counter">Counter</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#memory-footprint">Memory Footprint</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fibonacci">Fibonacci</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#delegation">Delegation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#recursive">Recursive</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#generator-concept">Generator Concept</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#generator-delegation">Generator Delegation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#generator-expression">Generator Expression</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#generator-expression-complex">Generator Expression Complex</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#generator-expression-equivalent">Generator Expression Equivalent</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#generator-expression-walrus">Generator Expression Walrus</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#generator-infinite">Generator Infinite</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#generator-nested">Generator Nested</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#generator-passing">Generator Passing</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#generator-recursive">Generator Recursive</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#letter-generator">Letter Generator</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../25_coroutines/">Coroutines</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../28_optimization/">Optimization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../29_packaging/">Packaging</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../30_compatibility/">Compatibility</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Project</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project/">Python by Example Documentation</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Python by Example</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Examples</li>
+      <li class="breadcrumb-item active">Generators</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/braboj/tutorial-python/edit/master/docs/examples/24_generators.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="generators">Generators</h1>
+<h2 id="counter">Counter</h2>
+<pre><code class="language-python">def counter(offset):
+
+    # Execution starts
+    while True:
+
+        # Execution is halted
+        yield offset
+
+        # Execution resumption with next()
+        offset += 1
+
+
+# Get the iterator object by calling the generator function
+gen = counter(1)
+
+# Get next element using next() as function and object method
+print(next(gen))
+
+# Print the rest
+for x in gen:
+    print(x)
+
+##################################################################################################
+# Python 3.3+ : yield from
+##################################################################################################
+# def gen2():
+#     yield from &quot;Python&quot;
+#     yield from range(5)
+#
+# print(&quot;\ng2: &quot;, end=&quot;, &quot;)
+# g2 = gen2()
+# for x in g2:
+#     print(x, end=&quot;, &quot;)
+# print()
+</code></pre>
+<h2 id="memory-footprint">Memory Footprint</h2>
+<pre><code class="language-python">import sys
+
+# Create list comprehension and print size
+l = [i for i in range(10)]
+print(&quot;List size is {0}&quot;.format(sys.getsizeof(l)))
+
+# Print items
+for x in l:
+    print(x)
+
+# Create generator expression and print size
+g = (k for k in range(10))
+print(&quot;&quot;)
+print(&quot;Generator expression size is {0}&quot;.format(sys.getsizeof(g)))
+
+# Print items
+for x in g:
+    print(x)
+</code></pre>
+<h2 id="fibonacci">Fibonacci</h2>
+<pre><code class="language-python">def fibonacci_number(f0=0, f1=1, limit=1):
+
+    # Initialize
+    a, b = f0, f1
+
+    # Loop
+    while True:
+        yield a
+
+        # Solution 01
+        # a, b = b, a + b
+
+        # Solution 02
+        b = a + b
+        a = b - a
+
+
+test = fibonacci_number(f0=2, f1=3)
+
+for i in range(10):
+    print(next(test))
+</code></pre>
+<h2 id="delegation">Delegation</h2>
+<pre><code class="language-python"># def city_generator():
+#     cities = ['Sofia', 'Plovdiv', 'Varna', 'Burgas', 'Ruse', 'Stara Zagora', 'Pleven', 'Sliven', 'Dobrich', 'Shumen']
+#     for x in cities:
+#         yield x
+
+
+def city_ranking(n=1):
+
+    def city_generator():
+        cities = ['Sofia', 'Plovdiv', 'Varna', 'Burgas', 'Ruse', 'Stara Zagora', 'Pleven', 'Sliven',
+                  'Dobrich', 'Shumen']
+        for x in cities:
+            yield x
+
+    g = city_generator()
+    for x in range(n):
+        yield next(g)
+
+
+for city in city_ranking(n=5):
+    print(city)
+</code></pre>
+<h2 id="recursive">Recursive</h2>
+<pre><code class="language-python">import sys
+import trace
+
+
+# Using recursion in generator function
+def oddnum(offset=1, limit=10):
+
+    if (offset % 2) == 0:
+        offset += 1
+
+    if offset &lt; limit:
+        yield offset
+    else:
+        return
+
+    for x in range(offset + 2, limit, 2):
+        yield next(oddnum(x, limit))
+
+
+def test():
+    # Using for loop to print odd numbers till 10 from 1
+    for nums in oddnum(limit=10):
+        print (nums)
+
+
+##################################################################################################
+# TRACING
+##################################################################################################
+
+ENABLE = 0
+
+tracer = trace.Trace(
+    ignoredirs=[sys.prefix, sys.exec_prefix],
+    trace=ENABLE,
+    count=0)
+
+# run the new command using the given tracer
+tracer.runfunc(test)
+</code></pre>
+<h2 id="generator-concept">Generator Concept</h2>
+<pre><code class="language-python"># Subroutine returning a collection object
+def sub_even_numbers(stream):
+    them = []
+    for n in stream:
+        if n % 2 == 0:
+            them.append(n)
+    return them
+
+
+# Generator function which generates a sequence of values
+def gen_even_numbers(stream):
+    for n in stream:
+        if n % 2 == 0:
+            yield n
+
+
+if __name__ == &quot;__main__&quot;:
+
+    # Get the even numbers using the subroutine
+    result = sub_even_numbers([1, 2, 3, 4, 5, 6, 7, 8, 9])
+    print(result)
+
+    # Get the even numbers using the generator function
+    result = gen_even_numbers([1, 2, 3, 4, 5, 6, 7, 8, 9])
+    for x in result:
+        print(x, end=&quot; &quot;)
+</code></pre>
+<h2 id="generator-delegation">Generator Delegation</h2>
+<pre><code class="language-python"># Example: Generator Delegation
+
+def sub_1():
+    yield 1
+
+
+def sub_2():
+    yield 2
+
+
+def sub_3():
+    yield 3
+
+
+def main_generator():
+    yield from sub_1()
+    yield from sub_2()
+    yield from sub_3()
+
+
+wrapper = main_generator()
+for x in wrapper:
+    print(x, end=&quot;, &quot;)
+</code></pre>
+<h2 id="generator-expression">Generator Expression</h2>
+<pre><code class="language-python"># Example: Generator expression
+
+num = (x for x in range(100) if x % 2 == 0)
+for x in num:
+    print(x)
+</code></pre>
+<h2 id="generator-expression-complex">Generator Expression Complex</h2>
+<pre><code class="language-python"># Example: Complex generator expression with the the ternary operator (if-else)
+
+# Yield &quot;apple&quot; if number is even else yield &quot;pie&quot;
+generator = ((&quot;apple&quot; if i % 2 == 0 else &quot;pie&quot;) for i in range(6))
+for x in generator:
+    print(x)
+</code></pre>
+<h2 id="generator-expression-equivalent">Generator Expression Equivalent</h2>
+<pre><code class="language-python"># Example: Generator expression equivalent
+
+def num():
+    for x in range(100):
+        if x % 2 == 0:
+            yield x
+
+
+num_generator = num()
+for x in num_generator:
+    print(x)
+</code></pre>
+<h2 id="generator-expression-walrus">Generator Expression Walrus</h2>
+<pre><code class="language-python"># Example: Walrus operator in a generator expression
+
+# The walrus operator (:=) assigns values to variables as part of a larger
+# expression. It is also known as the assignment expression and is supported
+# in Python 3.8 and above. It is useful for debugging, dictionary creation,
+# and more.
+
+gen = (x for x in range(10) if (y := x % 2) == 1)
+for x in gen:
+    print(x, y)
+</code></pre>
+<h2 id="generator-infinite">Generator Infinite</h2>
+<pre><code class="language-python"># Example: Infinite sequence
+
+def infinite_sequence():
+    i = 0
+    while True:
+        yield i
+        i += 1
+
+
+gen = infinite_sequence()
+
+# The generator is a type of iterator that implements the iterator protocol.
+
+print(next(gen))
+print(next(gen))
+print(next(gen))
+
+# ... and so on
+</code></pre>
+<h2 id="generator-nested">Generator Nested</h2>
+<pre><code class="language-python"># Example: Nested generator
+
+def inner_generator(n):
+    for j in range(n):
+        yield &quot;Inner Value {}&quot;.format(j)
+
+
+def outer_generator(n):
+    for i in range(n):
+        yield &quot;Outer Value {}&quot;.format(i)
+        for inner_value in inner_generator(i):
+            yield inner_value
+
+
+# Usage
+n = 3
+for value in outer_generator(n):
+    print(value)
+</code></pre>
+<h2 id="generator-passing">Generator Passing</h2>
+<pre><code class="language-python"># Example: Generator Passing
+
+def generator():
+    yield 1
+    yield 2
+    yield 3
+
+
+def wrapper(g):
+    yield from g
+
+
+for x in wrapper(generator()):
+    print(x, end=&quot;, &quot;)
+</code></pre>
+<h2 id="generator-recursive">Generator Recursive</h2>
+<pre><code class="language-python"># Example: Recursive generator for Fibonacci numbers
+
+def fibonacci(n):
+    if n &lt;= 0:
+        return
+    a, b = 0, 1
+    yield a  # Yield the first Fibonacci number
+    for _ in range(n - 1):
+        a, b = b, a + b
+        yield a
+
+
+# Usage
+n = 10  # Generate the first 10 Fibonacci numbers
+for number in fibonacci(n):
+    print(number)
+</code></pre>
+<h2 id="letter-generator">Letter Generator</h2>
+<pre><code class="language-python">def letter_generator(text):
+    print(&quot;Started&quot;)
+    position = 0
+    try:
+        while True:
+            try:
+                offset = yield text[position]
+
+                if offset is None:
+                    position += 1
+                else:
+                    position = offset
+
+            except ValueError:
+                print(&quot;Value error on position = &quot; + str(position))
+
+    except GeneratorExit:
+        print(&quot;Terminated&quot;)
+
+
+letter = letter_generator(&quot;abc&quot;)
+
+# Generate letters
+print(next(letter))
+print(next(letter))
+
+# Reset generator and generate letter
+print(letter.send(0))
+
+# Generate a next letter
+print(next(letter))
+
+# Throw an exception to the generator
+print(letter.throw(ValueError))
+
+# Throw GeneratorExit to the generator
+letter.close()
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../23_meta_classes/" class="btn btn-neutral float-left" title="Meta Classes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../25_coroutines/" class="btn btn-neutral float-right" title="Coroutines">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/braboj/tutorial-python" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../23_meta_classes/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../25_coroutines/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

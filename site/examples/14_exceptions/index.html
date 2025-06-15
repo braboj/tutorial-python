@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Exceptions - Python by Example</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Exceptions";
+        var mkdocs_page_input_path = "examples\\14_exceptions.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Python by Example
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Examples</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../01_hello_world/">Hello World</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../02_variables/">Variables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../03_comments/">Comments</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../04_operators/">Operators</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_user_input/">User Input</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_control_flow/">Control Flow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_functions/">Functions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_classes/">Classes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_docstrings/">Docstrings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_debugging/">Debugging</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_oop_pillars/">OOP Pillars</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../12_solid_principles/">SOLID Principles</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../13_logging/">Logging</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Exceptions</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#demo-generation">Demo Generation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#demo-handlers">Demo Handlers</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#exception-catch-multiple">Exception Catch Multiple</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#exception-chaining">Exception Chaining</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#exception-flow-with-try-except">Exception Flow With Try Except</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#exception-flow-without-try-except">Exception Flow Without Try Except</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#exception-handling">Exception Handling</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#exception-hierarchy">Exception Hierarchy</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../15_dunder_methods/">Dunder Methods</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../16_data_types/">Data Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../17_import_system/">Import System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../18_linting_tools/">Linting Tools</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../19_test_frameworks/">Test Frameworks</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../20_package_managers/">Package Managers</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../21_design_patterns/">Design Patterns</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../23_meta_classes/">Meta Classes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../24_generators/">Generators</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../25_coroutines/">Coroutines</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../28_optimization/">Optimization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../29_packaging/">Packaging</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../30_compatibility/">Compatibility</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Project</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project/">Python by Example Documentation</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Python by Example</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Examples</li>
+      <li class="breadcrumb-item active">Exceptions</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/braboj/tutorial-python/edit/master/docs/examples/14_exceptions.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="exceptions">Exceptions</h1>
+<h2 id="demo-generation">Demo Generation</h2>
+<pre><code class="language-python"># Old-Style Exception Generation
+# --------------------------------------------------------------------------------
+# Shows what happens when raising an exception class that does not inherit from
+# BaseException.
+
+# class NewStyleException(Exception): pass
+#
+# try:
+#    raise NewStyleException
+# except BaseException:
+#     print(&quot;Caught&quot;)
+
+
+class OldStyleException: pass
+
+try:
+   raise OldStyleException
+# except BaseException:
+#     print(&quot;BaseException caught when raising OldStyleException&quot;)
+except:
+   print(&quot;Caught&quot;)
+</code></pre>
+<h2 id="demo-handlers">Demo Handlers</h2>
+<pre><code class="language-python"># Exception Handling Styles
+# --------------------------------------------------------------------------------
+# Compares using a single except clause against multiple specific handlers for
+# related errors.
+
+def raise_overflow_error():
+    raise OverflowError
+
+
+def raise_floatingpoint_error():
+    raise FloatingPointError
+
+
+def raise_zero_division_error():
+    raise ZeroDivisionError
+
+
+def good_handler(err_func):
+
+    print(&quot;Start division...&quot;)
+
+    try:
+        err_func()
+
+    except ArithmeticError as err:
+        # Single exception
+        print(&quot;{0}&quot;.format(type(err).__name__))
+        pass
+
+    finally:
+        print(&quot;Cleanup...&quot;)
+
+
+def bad_handler(err_func):
+
+    print(&quot;Start division...&quot;)
+
+    try:
+        err_func()
+
+    except FloatingPointError:
+        print(&quot;Floating point error...&quot;)
+
+    except OverflowError:
+        print(&quot;Overflow error&quot;)
+
+    except ZeroDivisionError:
+        print(&quot;Zero division error&quot;)
+
+    finally:
+        print(&quot;Cleanup...&quot;)
+
+
+# A good handler would check the base class
+good_handler(err_func=raise_overflow_error)
+good_handler(err_func=raise_floatingpoint_error)
+good_handler(err_func=raise_zero_division_error)
+print()
+
+# A bad handler tries to act on each possible error
+bad_handler(err_func=raise_overflow_error)
+bad_handler(err_func=raise_floatingpoint_error)
+bad_handler(err_func=raise_zero_division_error)
+</code></pre>
+<h2 id="exception-catch-multiple">Exception Catch Multiple</h2>
+<pre><code class="language-python"># Grouped Exception Handling
+# --------------------------------------------------------------------------------
+# Illustrates catching different members of an exception hierarchy with one
+# except block.
+
+
+from exception_hierarchy import *
+
+
+def main():
+
+    # Example 1: Handling all exceptions inherited from SocketError
+    try:
+        raise ConnectError('Connection failed', 100)
+
+    except SocketError as e:
+        print(e)
+
+    # Example 2: Handling junior group of exceptions with junior single except block
+    try:
+        raise DisconnectError('Connection failed', 100)
+
+    except (ConnectError, DataTransferError, DisconnectError) as e:
+        print(e)
+
+
+main()
+</code></pre>
+<h2 id="exception-chaining">Exception Chaining</h2>
+<pre><code class="language-python"># Exception Chaining
+# --------------------------------------------------------------------------------
+# Demonstrates explicit and implicit chaining of exceptions to preserve the
+# original error context.
+
+class MyException(Exception):
+    pass
+
+
+def main():
+    try:
+        print(&quot;main&quot;)
+        func_a()
+    except Exception as e:
+        print(e)
+
+
+def func_a():
+    # Explicit chaining using `raise`
+    try:
+        print(&quot;func_a&quot;)
+        func_b()
+    except Exception as e:
+        # Convert to another exception type
+        raise MyException(e)
+
+
+def func_b():
+    # Unhandled exceptions sent to the caller by default
+    print(&quot;func_b&quot;)
+    read_file()
+
+
+def read_file():
+    print(&quot;read_file&quot;)
+    raise Exception(&quot;Error raised in read_file()&quot;)
+
+
+main()
+</code></pre>
+<h2 id="exception-flow-with-try-except">Exception Flow With Try Except</h2>
+<pre><code class="language-python"># Control Flow with try/except
+# --------------------------------------------------------------------------------
+# Shows normal execution resuming after errors are caught and handled.
+def func_a(x):
+    # Function uses and returns only positive values
+    if x &lt; 0:
+        # Simulate error condition
+        raise ValueError(&quot;STEP A: ERROR&quot;)
+    else:
+        return 1
+
+
+def func_b(x):
+    # Functions uses and returns only negative values
+    if x &gt; 0:
+        # Simulate error condition
+        raise ValueError(&quot;STEP B: ERROR&quot;)
+    else:
+        return -1
+
+
+def app(value):
+
+    # Try to execute STEP A and STEP B
+    try:
+        func_a(value)
+        func_b(value)
+
+    # On error print something
+    except ValueError as e:
+        print(e)
+
+    # Try to execute STEP B
+    try:
+        func_b(value)
+        print(&quot;STEP B: OK&quot;)
+
+    # On error print something
+    except ValueError as e:
+        print(e)
+
+
+app(1)
+app(0)
+app(-1)
+</code></pre>
+<h2 id="exception-flow-without-try-except">Exception Flow Without Try Except</h2>
+<pre><code class="language-python"># Control Flow without try/except
+# --------------------------------------------------------------------------------
+# Illustrates manual error checking when no exception handlers are used.
+
+def func_a(x):
+    # Function uses and returns only positive values
+    if x &lt; 0:
+        # Simulate error condition
+        return -1
+    else:
+        return 1
+
+
+def func_b(x):
+    # Functions uses and returns only negative values
+    if x &gt; 0:
+        # Simulate error condition
+        return 1
+    else:
+        return -1
+
+
+def app(value):
+
+    # Each function must have junior check of the error condition
+    # as there is no standard definition of an error
+
+    # Check A
+    error = func_a(value)
+    if error &lt; 0:
+        print(&quot;STEP A: ERROR&quot;)
+    else:
+        print(&quot;STEP A: OK&quot;)
+
+    # Check B
+    error = func_b(value)
+    if error &gt; 0:
+        print(&quot;STEP B: ERROR&quot;)
+    else:
+        print(&quot;STEP B: OK&quot;)
+
+
+app(1)
+app(0)
+app(-1)
+</code></pre>
+<h2 id="exception-handling">Exception Handling</h2>
+<pre><code class="language-python"># Structured Exception Handling
+# --------------------------------------------------------------------------------
+# Uses try/except/else/finally blocks to handle expected and unexpected errors.
+
+import time
+
+
+# Custom exception
+class OverheatError(Exception):
+    pass
+
+
+def pump(time_on):
+
+    if time_on &lt; 0:
+        # Raise builtin exception
+        raise ValueError(&quot;ERROR: Incorrect value for operation time...&quot;)
+
+    for i in range(time_on):
+        print(&quot;Pumping...&quot;)
+        if i &gt; 3:
+            # Raise custom exception
+            raise OverheatError(&quot;ERROR: The device overheated&quot;)
+        time.sleep(1)
+
+
+def operate_pump(time_on):
+
+    print(&quot;START&quot;)
+
+    try:
+        pump(time_on)
+
+    # First check expected errors
+    except ValueError as e:
+        print(e)
+
+    except OverheatError as e:
+        print(e)
+
+    # Last check unexpected errors
+    except Exception as e:
+        # Forward to the caller, maybe it knows what to do with it
+        print(&quot;Caught exception {}&quot;.format(e))
+
+    # What to do in case no error occurred
+    else:
+        print(&quot;STOP&quot;)
+
+    # Cleanup operations, executed in all cases
+    finally:
+        print(&quot;CLEANUP&quot;)
+
+
+# Test with negative values
+operate_pump(-1)
+print()
+
+# Test with valid values
+operate_pump(3)
+print()
+
+# Overheat the pump
+operate_pump(5)
+print()
+</code></pre>
+<h2 id="exception-hierarchy">Exception Hierarchy</h2>
+<pre><code class="language-python"># Custom Exception Hierarchy
+# --------------------------------------------------------------------------------
+# Defines a family of related custom exceptions and demonstrates raising each
+# member of the hierarchy.
+
+class SocketError(Exception):
+
+    def __init__(self, message):
+        self.message = message
+
+    def __str__(self):
+        return self.message
+
+
+class ConnectError(SocketError):
+
+    def __init__(self, message, status):
+        super(ConnectError, self).__init__(message)
+        self.status = status
+
+    def __str__(self):
+        return '{}: {}'.format(self.status, self.message)
+
+
+class DataTransferError(SocketError):
+
+    def __init__(self, message, status, source, destination):
+        super(DataTransferError, self).__init__(message)
+        self.status = status
+        self.source = source
+        self.destination = destination
+
+    def __str__(self):
+        return '{}: {} from {} to {}'.format(self.status, self.message, self.source,
+                                             self.destination)
+
+
+class DisconnectError(SocketError):
+
+    def __init__(self, message, status):
+        super(DisconnectError, self).__init__(message)
+        self.status = status
+
+    def __str__(self):
+        return '{}: {}'.format(self.status, self.message)
+
+
+if __name__ == &quot;__main__&quot;:
+
+    try:
+        raise ConnectError('Connection failed', 100)
+
+    except ConnectError as e:
+        print(e)
+
+    try:
+        raise DataTransferError(
+            message='Data transfer failed',
+            status=200,
+            source='myhost',
+            destination='remotehost',
+        )
+
+    except DataTransferError as e:
+        print(e)
+
+    try:
+        raise DisconnectError('Connection failed', 300)
+
+    except DisconnectError as e:
+        print(e)
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../13_logging/" class="btn btn-neutral float-left" title="Logging"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../15_dunder_methods/" class="btn btn-neutral float-right" title="Dunder Methods">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/braboj/tutorial-python" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../13_logging/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../15_dunder_methods/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>OOP Pillars - Python by Example</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "OOP Pillars";
+        var mkdocs_page_input_path = "examples\\11_oop_pillars.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Python by Example
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Examples</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../01_hello_world/">Hello World</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../02_variables/">Variables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../03_comments/">Comments</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../04_operators/">Operators</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_user_input/">User Input</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_control_flow/">Control Flow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_functions/">Functions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_classes/">Classes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_docstrings/">Docstrings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_debugging/">Debugging</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">OOP Pillars</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#abstraction">Abstraction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#access-modifiers">Access Modifiers</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aggregation">Aggregation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#association">Association</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#composition">Composition</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dependency">Dependency</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#encapsulation">Encapsulation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#inheritance">Inheritance</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#polymorphism">Polymorphism</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../12_solid_principles/">SOLID Principles</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../13_logging/">Logging</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../14_exceptions/">Exceptions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../15_dunder_methods/">Dunder Methods</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../16_data_types/">Data Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../17_import_system/">Import System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../18_linting_tools/">Linting Tools</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../19_test_frameworks/">Test Frameworks</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../20_package_managers/">Package Managers</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../21_design_patterns/">Design Patterns</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../23_meta_classes/">Meta Classes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../24_generators/">Generators</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../25_coroutines/">Coroutines</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../28_optimization/">Optimization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../29_packaging/">Packaging</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../30_compatibility/">Compatibility</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Project</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project/">Python by Example Documentation</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Python by Example</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Examples</li>
+      <li class="breadcrumb-item active">OOP Pillars</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/braboj/tutorial-python/edit/master/docs/examples/11_oop_pillars.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="oop-pillars">OOP Pillars</h1>
+<h2 id="abstraction">Abstraction</h2>
+<pre><code class="language-python"># Abstraction: hiding details with abstract base classes
+# -----------------------------------------------------------------------------
+# Abstraction defines a common interface while hiding implementation details.
+# Using an abstract base class forces subclasses to implement specific
+# behaviours without revealing how they will work.
+
+from abc import ABCMeta, abstractmethod
+from six import with_metaclass
+
+
+class PersonAbc(with_metaclass(ABCMeta)):
+    &quot;&quot;&quot;An abstract base class defining what a person should be able to do.&quot;&quot;&quot;
+
+    def __init__(self):
+
+        # Some common attributes that every Person has
+        self.name = 'Bob'
+        self.age = 42
+        self.weight = 80
+        self.height = 180
+
+    @abstractmethod
+    def walk(self):
+        # Still abstract, because we don't know how a specific person walks.
+        pass
+
+    @abstractmethod
+    def talk(self):
+        # Still abstract, because we don't know how a specific person talks.
+        pass
+
+    @abstractmethod
+    def eats(self):
+        # Still abstract, because we don't know how a specific person eats.
+        pass
+</code></pre>
+<h2 id="access-modifiers">Access Modifiers</h2>
+<pre><code class="language-python"># Access modifiers and name mangling
+# -----------------------------------------------------------------------------
+# Public attributes have no leading underscores and can be accessed from
+# anywhere.  A single leading underscore marks an attribute as &quot;protected&quot; by
+# convention, signalling it should only be used by the class and its
+# subclasses.  A double underscore triggers name mangling which makes the
+# attribute effectively private to the class.  This prevents accidental
+# access from subclasses or external code.
+
+class AccessModifiers(object):
+
+    def __init__(self):
+
+        # Public: Accessible from anywhere
+        self.public = &quot;public&quot;
+
+        # Protected: Accessible from the class and subclasses
+        self._protected = &quot;protected&quot;
+
+        # Private attribute -- the name will be mangled to _AccessModifiers__private
+        # and is intended for use only inside this class
+        self.__private = &quot;private&quot;
+
+
+class AccessModifiersChild(AccessModifiers):
+
+    def __init__(self):
+        super(AccessModifiersChild, self).__init__()
+
+        # Public: Accessible from anywhere
+        print(self.public)
+
+        # Protected: Accessible from the class and subclasses
+        print(self._protected)
+
+        # Private: name is mangled so direct access fails in the child class
+        try:
+            print(self.__private)
+
+        except AttributeError as e:
+            print(e)
+
+
+test = AccessModifiersChild()
+</code></pre>
+<h2 id="aggregation">Aggregation</h2>
+<pre><code class="language-python"># Aggregation: objects hold references to independent parts
+# -----------------------------------------------------------------------------
+# Aggregation occurs when one object keeps references to other, independent
+# objects.  The referenced parts can exist on their own and are not owned by
+# the aggregator.  Here the `Rocket` receives an `Engine` instance that can
+# outlive the rocket itself.
+
+class Engine(object):
+
+    def __init__(self, engine_type, engine_model):
+        self.engine_type = engine_type
+        self.engine_model = engine_model
+
+    def start(self):
+        print(&quot;{} engine started&quot;.format(self.engine_type))
+
+    def stop(self):
+        print(&quot;{} engine stopped&quot;.format(self.engine_type))
+
+
+class SolidFuelEngine(Engine):
+
+    def __init__(self, engine_model):
+        super(SolidFuelEngine, self).__init__(&quot;solid fuel&quot;, engine_model)
+
+
+class LiquidFuelEngine(Engine):
+
+    def __init__(self, engine_model):
+        super(LiquidFuelEngine, self).__init__(&quot;liquid fuel&quot;, engine_model)
+
+
+class Rocket(object):
+
+    def __init__(self, engine):
+        # This is aggregation: the Rocket keeps a reference to an Engine
+        # that was created outside. The engine is not owned by the Rocket
+        # and could be reused elsewhere or exist on its own.
+        self.engine = engine
+
+    def launch(self):
+        self.engine.start()
+
+
+rocket1 = Rocket(SolidFuelEngine(&quot;model 1&quot;))
+rocket1.launch()
+
+rocket2 = Rocket(LiquidFuelEngine(&quot;model 2&quot;))
+rocket2.launch()
+</code></pre>
+<h2 id="association">Association</h2>
+<pre><code class="language-python"># Association: cooperating without ownership
+# -----------------------------------------------------------------------------
+# Association is a loose coupling between otherwise independent objects. They
+# collaborate to accomplish a task but neither owns the lifetime of the other.
+# In this example the `Calculator` uses a `Battery`, a `Display`, and the
+# utility class `Math` without being responsible for their existence.
+
+class Math(object):
+
+    @staticmethod
+    def add(a, b):
+        return a + b
+
+
+class Battery(object):
+
+    def __init__(self, model):
+        self.model = model
+
+    def charge(self):
+        print(&quot;Battery {} charging&quot;.format(self.model))
+
+    def discharge(self):
+        print(&quot;Battery {} discharging&quot;.format(self.model))
+
+
+class FourLineDisplay(object):
+
+    def __init__(self, model):
+        self.model = model
+
+    def display(self):
+        print(&quot;Display {} displaying&quot;.format(self.model))
+
+    def turn_off(self):
+        print(&quot;Display {} turning off&quot;.format(self.model))
+
+    def turn_on(self):
+        print(&quot;Display {} turning on&quot;.format(self.model))
+
+
+class Calculator(object):
+
+    def __init__(self, display):
+        self.display = display
+        self.battery = Battery(&quot;default&quot;)
+
+    def add(self, a, b):
+        # The Calculator is associated with Math only to perform this
+        # calculation.  Neither object owns the other.
+        result = Math.add(a, b)
+        return result
+
+    def replace_battery(self, battery):
+        self.battery = battery
+
+
+calc = Calculator(display=FourLineDisplay(model=&quot;EL-W506T&quot;))
+calc.add(1, 1)
+</code></pre>
+<h2 id="composition">Composition</h2>
+<pre><code class="language-python"># Composition: owned components live and die with the owner
+# -----------------------------------------------------------------------------
+# Composition means that an object is made up of other objects which it
+# owns completely.  When the container is destroyed so are its parts.
+# The `Rocket` creates and manages its own `FuelTank`, which does not exist
+# independently.
+
+class FuelTank(object):
+
+    def __init__(self, level=100):
+        # Start the tank with a given fuel level
+        self.level = level
+
+    def fill(self, level):
+        self.level = level
+
+    def empty(self):
+        self.level = 0
+
+
+class Rocket(object):
+
+    def __init__(self, fuel_level):
+        # This is composition: the Rocket creates and owns the FuelTank.
+        # When the rocket is destroyed the tank goes with it.
+        self.tank = FuelTank(fuel_level)
+
+    def launch(self):
+        if self.tank.level == 100:
+            print(&quot;Fuel tank is full&quot;)
+        else:
+            raise ValueError(&quot;Fuel tank is not full&quot;)
+
+    def refill(self, level):
+        self.tank.fill(level)
+</code></pre>
+<h2 id="dependency">Dependency</h2>
+<pre><code class="language-python"># Dependency: relying on other classes to get work done
+# -----------------------------------------------------------------------------
+# A dependency is when a class uses another class to get its job done. The
+# dependent class doesn't own the other object, it simply relies on it at
+# runtime. Here the `Calculator` depends on the `Math` helper to perform the
+# actual addition.
+
+class Math(object):
+
+    @staticmethod
+    def add(a, b):
+        return a + b
+
+
+class Calculator(object):
+
+    def __init__(self, model=&quot;default&quot;):
+        self.model = model
+
+    def add(self, a, b):
+
+        # Dependency relationship
+        result = Math.add(a, b)
+        return result
+
+
+calc = Calculator()
+calc.add(1, 1)
+</code></pre>
+<h2 id="encapsulation">Encapsulation</h2>
+<pre><code class="language-python"># Encapsulation: guarding internal state with getters and setters
+# -----------------------------------------------------------------------------
+# Encapsulation hides internal state behind methods.  Properties provide a
+# controlled interface so that validation logic in setters and getters can
+# protect the data from invalid values or direct manipulation.
+
+class Person(object):
+    &quot;&quot;&quot;Represents a person with controlled access to internal state.&quot;&quot;&quot;
+
+    def __init__(self, name, age):
+
+        # Modify the access to the internal state
+        self.__name = name
+        self.__age = age
+
+    @property
+    def name(self):
+        &quot;&quot;&quot; The getter for the name &quot;&quot;&quot;
+        return self.__name
+
+    @name.setter
+    def name(self, name):
+        &quot;&quot;&quot; The setter for the name &quot;&quot;&quot;
+
+        # Protection logic
+        if name is None:
+            raise ValueError(&quot;name cannot be None&quot;)
+
+        self.__name = name
+
+    @property
+    def age(self):
+        &quot;&quot;&quot; The getter for the age &quot;&quot;&quot;
+
+        return self.__age
+
+    @age.setter
+    def age(self, age):
+        &quot;&quot;&quot; The setter for the age &quot;&quot;&quot;
+
+        # Protection logic
+        if age is None:
+            raise ValueError(&quot;age cannot be None&quot;)
+
+        elif age &lt; 0:
+            raise ValueError(&quot;age cannot be negative&quot;)
+
+        elif age &gt; 150:
+            raise ValueError(&quot;age cannot be greater than 150&quot;)
+
+        self.__age = age
+
+
+person = Person(&quot;John&quot;, 30)
+print(person.name)
+print(person.age)
+</code></pre>
+<h2 id="inheritance">Inheritance</h2>
+<pre><code class="language-python"># Inheritance: deriving behavior from a base class
+# -----------------------------------------------------------------------------
+# Inheritance lets a class reuse and extend the behavior of a base class.
+# Derived classes such as `Dog` and `Cat` inherit the methods from `Animal`
+# and override them when needed.
+
+class Animal(object):
+
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        print(&quot;I am an animal&quot;)
+
+    def __str__(self):
+        return &quot;Animal: {}&quot;.format(self.name)
+
+
+class Dog(Animal):
+
+    def speak(self):
+        print(&quot;I am a dog&quot;)
+
+    def __str__(self):
+        return &quot;Dog: {}&quot;.format(self.name)
+
+
+class Cat(Animal):
+
+    def speak(self):
+        print(&quot;I am a cat&quot;)
+
+    def __str__(self):
+        return &quot;Cat: {}&quot;.format(self.name)
+
+
+animal = Animal(&quot;Animal&quot;)
+animal.speak()
+
+dog = Dog(&quot;Dog&quot;)
+dog.speak()
+
+cat = Cat(&quot;Cat&quot;)
+cat.speak()
+</code></pre>
+<h2 id="polymorphism">Polymorphism</h2>
+<pre><code class="language-python"># Polymorphism: shared interface, different implementations
+# -----------------------------------------------------------------------------
+# Polymorphism lets different classes implement the same interface in
+# their own way.  Subclasses of `Animal` provide specific versions of
+# `talk` and `eat` while client code can treat them uniformly.
+
+class Animal(object):
+    def __init__(self, name):
+        self.name = name
+
+    # Abstract method that supports overriding, but the linter will complain on overloading
+    def talk(self):
+        raise NotImplementedError
+
+    # Abstract method that supports both overriding and overloading
+    def eat(self, *args, **kwargs):
+        raise NotImplementedError
+
+
+class Cat(Animal):
+
+    # Override the talk method
+    def talk(self):
+        print(&quot;Meow!&quot;)
+
+    def eat(self):
+        print(&quot;Cat is eating&quot;)
+
+
+class Dog(Animal):
+
+    # Overload the talk method
+    def talk(self, name):
+        print(&quot;Woof!&quot;)
+
+    def eat(self, what):
+        print(&quot;Dog is eating {}&quot;.format(what))
+
+
+cat = Cat(&quot;Kitty&quot;)
+cat.talk()
+cat.eat()
+
+dog = Dog(&quot;Doggy&quot;)
+dog.talk(&quot;Doggy&quot;)
+dog.eat(&quot;bone&quot;)
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../10_debugging/" class="btn btn-neutral float-left" title="Debugging"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../12_solid_principles/" class="btn btn-neutral float-right" title="SOLID Principles">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/braboj/tutorial-python" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../10_debugging/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../12_solid_principles/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

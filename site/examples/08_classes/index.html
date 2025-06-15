@@ -1,0 +1,1732 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Classes - Python by Example</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Classes";
+        var mkdocs_page_input_path = "examples\\08_classes.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Python by Example
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Examples</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../01_hello_world/">Hello World</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../02_variables/">Variables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../03_comments/">Comments</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../04_operators/">Operators</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_user_input/">User Input</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_control_flow/">Control Flow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_functions/">Functions</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Classes</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#class-abstract-properties">Class Abstract Properties</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-abstract-python2">Class Abstract Python2</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-abstract-python3">Class Abstract Python3</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-as-blueprint">Class As Blueprint</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-as-concrete-object">Class As Concrete Object</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-constructor-conditional-inheritance">Class Constructor Conditional Inheritance</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-constructor-factory">Class Constructor Factory</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-constructor-singleton">Class Constructor Singleton</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-constructors">Class Constructors</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-create-with-type">Class Create With Type</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-decorator-for-classes">Class Decorator For Classes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-decorator-for-functions">Class Decorator For Functions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-init-state">Class Init State</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-init-steps">Class Init Steps</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-init-validate">Class Init Validate</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-instance">Class Instance</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-instance-attributes">Class Instance Attributes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-instance-methods">Class Instance Methods</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-method-create-instance">Class Method Create Instance</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-method-modify-instances">Class Method Modify Instances</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-method-modify-itself">Class Method Modify Itself</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-mixin">Class Mixin</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-mro-bottom-first">Class Mro Bottom First</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-mro-complex">Class Mro Complex</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-mro-diamond">Class Mro Diamond</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-mro-left-first">Class Mro Left First</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-mro-unresolved">Class Mro Unresolved</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-multiple-inheritance">Class Multiple Inheritance</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-named-constructor-different-params">Class Named Constructor Different Params</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-named-constructor-init-sources">Class Named Constructor Init Sources</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-named-constructor-reduce-params">Class Named Constructor Reduce Params</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-named-constructor-representation">Class Named Constructor Representation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-nested">Class Nested</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-properties">Class Properties</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-single-inheritance">Class Single Inheritance</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-static-methods">Class Static Methods</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-structure">Class Structure</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-superclass-attributes">Class Superclass Attributes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-superclass-constructor">Class Superclass Constructor</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-superclass-methods">Class Superclass Methods</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-variables">Class Variables</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#class-variables-pitfalls">Class Variables Pitfalls</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_docstrings/">Docstrings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_debugging/">Debugging</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_oop_pillars/">OOP Pillars</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../12_solid_principles/">SOLID Principles</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../13_logging/">Logging</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../14_exceptions/">Exceptions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../15_dunder_methods/">Dunder Methods</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../16_data_types/">Data Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../17_import_system/">Import System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../18_linting_tools/">Linting Tools</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../19_test_frameworks/">Test Frameworks</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../20_package_managers/">Package Managers</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../21_design_patterns/">Design Patterns</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../23_meta_classes/">Meta Classes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../24_generators/">Generators</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../25_coroutines/">Coroutines</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../28_optimization/">Optimization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../29_packaging/">Packaging</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../30_compatibility/">Compatibility</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Project</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project/">Python by Example Documentation</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Python by Example</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Examples</li>
+      <li class="breadcrumb-item active">Classes</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/braboj/tutorial-python/edit/master/docs/examples/08_classes.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="classes">Classes</h1>
+<h2 id="class-abstract-properties">Class Abstract Properties</h2>
+<pre><code class="language-python"># Stacking decorators
+# --------------------------------------------------------------------------------
+# Multiple decorators can be stacked on a single attribute. In this file a
+# property is defined using @property together with @abstractmethod. Derived
+# classes must supply the concrete implementation for this decorated property.
+
+from abc import ABCMeta, abstractmethod
+from six import with_metaclass
+
+
+class DeviceAbc(with_metaclass(ABCMeta)):
+    &quot;&quot;&quot;Example abstract class
+
+    Usage:
+
+        # Optional
+        @property, @staticmethod, @classmethod
+
+        +
+
+        # Obligatory decorator
+        @abstractmethod
+
+    Example:
+
+        # Defines and abstract property
+        @property
+        @abstractmethod
+        def prop(self):
+            ...
+
+    &quot;&quot;&quot;
+
+    def __init__(self):
+        self._bar = &quot;bar&quot;
+
+    @property
+    @abstractmethod
+    def bar(self):
+        pass
+
+    @abstractmethod
+    def foo(self):
+        pass
+
+
+class Samsung(DeviceAbc):
+
+    @property
+    def bar(self):
+        return self._bar
+
+    def foo(self):
+        print('foo')
+
+
+test = Samsung()
+print(test.bar)
+test.foo()
+</code></pre>
+<h2 id="class-abstract-python2">Class Abstract Python2</h2>
+<pre><code class="language-python"># Abstract class using the six library for python 2
+# --------------------------------------------------------------------------------
+# The six library helps define abstract base classes that remain compatible with
+# Python 2. The metaclass provided by six works with decorators such as
+# @abstractmethod so subclasses must implement the required methods.
+
+from six import with_metaclass
+from abc import ABCMeta, abstractmethod
+
+
+class CalculatorAbc(with_metaclass(ABCMeta)):
+
+    def __init__(self, mode=&quot;basic&quot;):
+        self.mode = mode
+
+    @abstractmethod
+    def add(self, *args, **kwargs):
+        raise NotImplementedError
+
+    @abstractmethod
+    def subtract(self, *args, **kwargs):
+        raise NotImplementedError
+
+
+class Calculator(CalculatorAbc):
+
+    def add(self, a, b):
+        return a + b
+
+    def subtract(self, a, b):
+        return a - b
+
+
+calc = Calculator()
+print(calc.add(1, 2))
+print(calc.mode)
+</code></pre>
+<h2 id="class-abstract-python3">Class Abstract Python3</h2>
+<pre><code class="language-python"># Abstract class in python 3+
+# --------------------------------------------------------------------------------
+# Python 3 provides native support for abstract base classes. The ABC and
+# abstractmethod decorators ensure that child classes implement required
+# behavior. Instances cannot be created until the abstract methods are
+# overridden.
+
+from abc import ABC, abstractmethod
+
+
+class CalculatorAbc(ABC):
+
+    def __init__(self, mode=&quot;basic&quot;):
+        self.mode = mode
+
+    @abstractmethod
+    def add(self, *args, **kwargs):
+        raise NotImplementedError
+
+    @abstractmethod
+    def subtract(self, *args, **kwargs):
+        raise NotImplementedError
+
+
+class Calculator(CalculatorAbc):
+
+    def add(self, a, b):
+        return a + b
+
+    def subtract(self, a, b):
+        return a - b
+
+
+calc = Calculator()
+print(calc.add(1, 2))
+print(calc.mode)
+</code></pre>
+<h2 id="class-as-blueprint">Class As Blueprint</h2>
+<pre><code class="language-python"># Class as template
+# --------------------------------------------------------------------------------
+# A class can act as a template from which many objects are built. This file
+# defines a Person blueprint containing attributes and methods that every
+# instance will share.
+
+class Person(object):
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def say_hello(self):
+        print(&quot;Hello, my name is {} and my age is {}&quot;.format(self.name, self.age))
+</code></pre>
+<h2 id="class-as-concrete-object">Class As Concrete Object</h2>
+<pre><code class="language-python"># Object as concrete realization of a class
+# --------------------------------------------------------------------------------
+# The code creates an instance of the Person class as a tangible object.
+# The constructor assigns initial values to the instance. After creation, the
+# object can call its methods and access stored data.
+from class_as_blueprint import Person
+
+
+John = Person(&quot;John&quot;, 32)
+John.say_hello()
+</code></pre>
+<h2 id="class-constructor-conditional-inheritance">Class Constructor Conditional Inheritance</h2>
+<pre><code class="language-python"># Conditional inheritance using the __new__ method
+# --------------------------------------------------------------------------------
+# The __new__ method can decide which subclass to instantiate. By inspecting
+# runtime conditions it returns objects of different types from a single
+# factory class. This approach allows conditional inheritance without altering
+# the class hierarchy.
+
+class WindowsCalculator(object):
+    &quot;&quot;&quot; Windows calculator class operations &quot;&quot;&quot;
+
+    @staticmethod
+    def do():
+        print(&quot;Do in Windows Calculator&quot;)
+
+
+class LinuxCalculator(object):
+    &quot;&quot;&quot; Linux calculator class operations &quot;&quot;&quot;
+
+    @staticmethod
+    def do():
+        print(&quot;Do in Linux Calculator&quot;)
+
+
+class Calculator(object):
+
+    def __new__(cls, os=&quot;windows&quot;):
+
+        # Windows base class
+        if os == &quot;windows&quot;:
+            parents = (WindowsCalculator, )
+
+        # Linux base class
+        elif os == &quot;linux&quot;:
+            parents = (LinuxCalculator, )
+
+        # Invalid operating system
+        else:
+            raise ValueError(&quot;Invalid operating system&quot;)
+
+        # Create a new class with the given name and bases
+        cls = type(&quot;Calculator&quot;, parents, {})
+
+        # Return an instance of the new class
+        return cls()
+
+
+# Create a new instance of the Calculator class
+calc = Calculator(&quot;windows&quot;)
+
+# Check if the Calculator class is a subclass of the WindowsCalculator class
+test = issubclass(type(calc), WindowsCalculator)
+print(&quot;Is subclass of WindowsCalculator? [{}]&quot;.format(test))
+
+# Call the do method
+calc.do()
+</code></pre>
+<h2 id="class-constructor-factory">Class Constructor Factory</h2>
+<pre><code class="language-python"># Class factory using the __new__ method
+# --------------------------------------------------------------------------------
+# Overriding __new__ allows a class to act as a factory. The method returns an
+# instance of a specific subclass based on the provided parameters. This
+# separates the decision about which object to create from the calling code.
+
+class WindowsCalculator(object):
+
+    @staticmethod
+    def do():
+        print(&quot;Do in Windows Calculator&quot;)
+
+
+class LinuxCalculator(object):
+
+    @staticmethod
+    def do():
+        print(&quot;Do in Linux Calculator&quot;)
+
+
+class Calculator(object):
+
+    def __new__(cls, os=&quot;windows&quot;):
+
+        # An instance of the WindowsCalculator class is returned
+        if os == &quot;windows&quot;:
+            return object.__new__(WindowsCalculator)
+
+        # An instance of the LinuxCalculator class is returned
+        elif os == &quot;linux&quot;:
+            return object.__new__(LinuxCalculator)
+
+        # Invalid operating system
+        else:
+            raise ValueError(&quot;Invalid operating system&quot;)
+
+
+# Create a new instance of the Calculator class
+calc = Calculator(&quot;windows&quot;)
+
+# Check if the Calculator class is an instance of the WindowsCalculator class
+test = isinstance(calc, WindowsCalculator)
+print(&quot;Is instance of WindowsCalculator? [{}]&quot;.format(test))
+
+# Call the do method
+calc.do()
+</code></pre>
+<h2 id="class-constructor-singleton">Class Constructor Singleton</h2>
+<pre><code class="language-python"># Singleton using the __new__ method
+# --------------------------------------------------------------------------------
+# By overriding __new__, this class ensures that only one instance ever exists.
+# The method stores the created object and returns it on subsequent calls.
+# Such control over object creation implements the singleton pattern.
+
+class Singleton(object):
+
+    __instance = None
+
+    def __new__(cls):
+        if cls.__instance is None:
+            print(&quot;Creating singleton...&quot;)
+            cls.__instance = object.__new__(cls)
+
+        else:
+            print(&quot;Singleton already exists...&quot;)
+
+        return cls.__instance
+
+
+s1 = Singleton()
+s2 = Singleton()
+print(s1 == s2)
+print(s1 is s2)
+</code></pre>
+<h2 id="class-constructors">Class Constructors</h2>
+<pre><code class="language-python"># How __new__ and __init__ cooperate in object creation
+# --------------------------------------------------------------------------------
+# Object creation begins with __new__, which allocates the instance. The fresh
+# object is then passed to __init__ for further initialization. Separating these
+# steps gives developers flexibility to customize how objects come into
+# existence.
+
+class Calculator(object):
+
+    def __new__(cls):
+
+        # Use the parent class to create the object
+        obj = object.__new__(cls)
+
+        # Return the object
+        print(&quot;__new__ : Created object {}&quot;.format(obj))
+        return obj
+
+    def __init__(self):
+
+        # Self is the object that was created by __new__
+        print(&quot;__init__: Using object {}&quot;.format(self))
+
+        # Add attributes to the object
+        self.name = &quot;Cool Calculator&quot;
+
+
+calc = Calculator()
+print(calc.name)
+</code></pre>
+<h2 id="class-create-with-type">Class Create With Type</h2>
+<pre><code class="language-python"># Using ``type`` to inspect objects and create classes
+# --------------------------------------------------------------------------------
+# The built-in ``type`` function performs two unrelated tasks. When passed a
+# single object it returns that object's class, which can be handy for
+# inspection. When given a name, base classes and attributes it creates a new
+# class dynamically, allowing programs to define types at runtime.
+
+##############################################################################
+# USECASE A : Get object type
+##############################################################################
+numbers_list = [1, 2]
+print(type(numbers_list))
+
+numbers_dict = {1: 'one', 2: 'two'}
+print(type(numbers_dict))
+
+
+##############################################################################
+# USECASE B : Create class with base classes, attributes and methods
+##############################################################################
+
+def init(self, name):
+    self.name = name
+
+
+def say_hallo_b(self):
+    return &quot;Hi, my name is &quot; + self.name
+
+
+Robot2 = type(&quot;Robot2&quot;,
+              (),
+              {&quot;counter&quot;: 0,
+               &quot;__init__&quot;: init,
+               &quot;func&quot;: lambda self: &quot;Hi, I am &quot; + self.name,
+               &quot;say_hello_b&quot;: say_hallo_b
+               }
+)
+
+
+x = Robot2(&quot;Marvin&quot;)
+print(x.name)
+print(x.func())
+print(x.say_hello_b())
+</code></pre>
+<h2 id="class-decorator-for-classes">Class Decorator For Classes</h2>
+<pre><code class="language-python"># Class as a decorator for a class
+# --------------------------------------------------------------------------------
+# A class can implement the __call__ method and be applied as a decorator to
+# another class. When used this way it may attach attributes or modify the
+# decorated class at definition time.
+class Counter(object):
+
+    # The constructor accepts the parameter passed to the decorator
+    def __init__(self, start_value):
+        self.counter = start_value
+
+    # The __call__ method is called when the class is used as a decorator
+    def __call__(self, cls):
+
+        # Modify the class by adding an attribute with the specified value
+        cls.counter = self.counter
+
+        # Return the modified class
+        return cls
+
+
+# Apply the class decorator with a parameter
+@Counter(start_value=1)
+class DecoratedClass(object):
+    pass
+
+
+# Use the explicit decorator syntax
+DecoratedClass = Counter(start_value=1)(DecoratedClass)
+obj = DecoratedClass()
+print(obj.counter)  # Output: 1
+
+
+# Use Python's decorator syntax
+obj = DecoratedClass()
+print(obj.counter)  # Output: Custom Value
+</code></pre>
+<h2 id="class-decorator-for-functions">Class Decorator For Functions</h2>
+<pre><code class="language-python"># Class as a decorator for functions and methods
+# --------------------------------------------------------------------------------
+# Defining the __call__ method allows a class to wrap functions or methods.
+# The decorator can maintain state between invocations and perform actions
+# before or after calling the original function.
+
+
+class Counter(object):
+
+    def __init__(self, init_value=0):
+        &quot;&quot;&quot; Initialize counter.&quot;&quot;&quot;
+        self._counter = init_value
+
+    def __call__(self, function):
+        &quot;&quot;&quot; Wrapping call to original function. &quot;&quot;&quot;
+
+        def wrapper(*args, **kwargs):
+            &quot;&quot;&quot; Wrapper function.&quot;&quot;&quot;
+            try:
+                self._counter += 1
+                print(&quot;{}&quot;.format(self._counter))
+                return function(*args, **kwargs)
+
+            except Exception as e:
+                print(e)
+
+        return wrapper
+
+
+def f():
+    print(&quot;Hello World&quot;)
+
+
+@Counter(0)
+def g():
+    print(&quot;Hello World&quot;)
+
+
+print(&quot;#&quot; * 80)
+
+# Use the explicit decorator syntax
+f = Counter(0)(f)
+
+# Call the decorated functions
+for _ in range(10):
+    f()
+
+print(&quot;#&quot; * 80)
+
+# Use Python's decorator syntax
+for _ in range(10):
+    g()
+</code></pre>
+<h2 id="class-init-state">Class Init State</h2>
+<pre><code class="language-python"># Initialization with the __init__ method
+# --------------------------------------------------------------------------------
+# The __init__ method runs immediately after an object is created. It assigns
+# the initial values for the instance and prepares it for use.
+
+class Person(object):
+
+    def __init__(self, name=&quot;Branimir&quot;, age=40):
+        self.name = name
+        self.age = age
+
+        print(&quot;My name is {0} and I am {1} years old&quot;.format(self.name, self.age))
+
+
+p1 = Person()
+p2 = Person(&quot;John&quot;, 30)
+</code></pre>
+<h2 id="class-init-steps">Class Init Steps</h2>
+<pre><code class="language-python"># Initialization in multiple steps
+# --------------------------------------------------------------------------------
+# Some objects gather their initial data through a sequence of operations. This
+# file breaks the process into helper methods that collect the values one by
+# one. Each step can perform validation before returning its result.
+
+class Person(object):
+    def __init__(self):
+        self.name = self.step_1()
+        self.age = self.step_2()
+
+    @staticmethod
+    def step_1():
+        name = input(&quot;Step 1: Enter the person's name: &quot;)
+        return name
+
+    @staticmethod
+    def step_2():
+        age = input(&quot;Step 2: Enter the person's age: &quot;)
+        return age
+
+
+john = Person()
+print(john.name, john.age)
+</code></pre>
+<h2 id="class-init-validate">Class Init Validate</h2>
+<pre><code class="language-python"># Initialization and validation
+# --------------------------------------------------------------------------------
+# Initialization may involve checking that provided values meet certain rules.
+# The constructor validates input before assigning it to attributes. Invalid
+# data is rejected to keep the object's state consistent.
+
+class Person(object):
+
+        def __init__(self, name, age):
+            self.name = name
+            self.age = age
+
+            if not isinstance(self.name, str):
+                raise TypeError(&quot;Name must be a string&quot;)
+
+            if not isinstance(self.age, int):
+                raise TypeError(&quot;Age must be an integer&quot;)
+
+            if self.age &lt; 0:
+                raise ValueError(&quot;Age must be a positive integer&quot;)
+
+        def say_hello(self):
+            print(&quot;Hello, my name is {} and my age is {}&quot;.format(self.name, self.age))
+
+
+john = Person(&quot;John&quot;, 32)
+john.say_hello()
+</code></pre>
+<h2 id="class-instance">Class Instance</h2>
+<pre><code class="language-python"># Class instance with concrete values
+# --------------------------------------------------------------------------------
+# After defining the Person class, an instance is created with explicit values.
+# The object stores these attributes as part of its state. Accessing them later
+# confirms that the information persists on the instance.
+
+class Person(object):
+
+    def __init__(self):
+        print(&quot;Person has ID {}&quot;.format(id(self)))
+
+
+# The person object has a unique id
+p1 = Person()
+p2 = Person()
+</code></pre>
+<h2 id="class-instance-attributes">Class Instance Attributes</h2>
+<pre><code class="language-python"># Define and access instance attributes
+# --------------------------------------------------------------------------------
+# Instance attributes are defined in the __init__ method. They store data
+# unique to each object and can be accessed through the instance of the class.
+# Each instance may hold different values for these attributes.
+
+class Person(object):
+
+    def __init__(self):
+        self.name = &quot;Branimir&quot;
+        self.age = 40
+
+
+# Create the instance
+p = Person()
+
+# Access to the instance attributes
+print(p.name)
+print(p.age)
+</code></pre>
+<h2 id="class-instance-methods">Class Instance Methods</h2>
+<pre><code class="language-python"># Class instance with instance methods
+# --------------------------------------------------------------------------------
+# Instance methods operate on a particular object and have access to its state.
+# They typically receive the instance as the first parameter. Calling these
+# methods affects only the object that invoked them.
+
+class Person(object):
+
+    def do_something(self):
+        print(&quot;{} is doing something&quot;.format(self))
+
+    def do_something_with(self, something, someone):
+        print(&quot;{} is doing {} with {}&quot;.format(self, something, someone))
+
+
+# Create the instance
+p = Person()
+p.do_something()
+p.do_something_with(&quot;nothing&quot;, &quot;no one&quot;)
+</code></pre>
+<h2 id="class-method-create-instance">Class Method Create Instance</h2>
+<pre><code class="language-python"># Class method used to create instances
+# --------------------------------------------------------------------------------
+# A class method can serve as an alternative constructor. It receives the class
+# as the first argument and builds a new instance from provided data. This
+# approach collects creation logic in one place.
+
+class Person(object):
+
+    NAME_PREFIX = &quot;Mr.&quot;
+
+    def __init__(self, name):
+        self.name = name
+
+    @classmethod
+    def from_string(cls, name):
+        return cls(name)
+
+
+p = Person.from_string(&quot;John&quot;)
+print(p.name)
+</code></pre>
+<h2 id="class-method-modify-instances">Class Method Modify Instances</h2>
+<pre><code class="language-python"># Class method used to modify existing instances of the class
+# --------------------------------------------------------------------------------
+# Class methods can operate on a collection of instances maintained by the
+# class. The method updates every stored object in a single call. Centralizing
+# the logic keeps modifications consistent across all instances.
+
+class Person(object):
+
+    NAME_PREFIX = &quot;Mr.&quot;
+
+    def __init__(self, name):
+        self.name = name
+
+    @classmethod
+    def set_prefix(cls, prefix):
+        cls.NAME_PREFIX = prefix
+
+    @classmethod
+    def add_prefix(cls, person):
+        person.name = &quot;{} {}&quot;.format(cls.NAME_PREFIX, person.name)
+
+
+p = Person(&quot;John&quot;)
+Person.set_prefix(&quot;Dr.&quot;)
+Person.add_prefix(p)
+print(p.name)
+</code></pre>
+<h2 id="class-method-modify-itself">Class Method Modify Itself</h2>
+<pre><code class="language-python"># Class method used to modify the class itself
+# --------------------------------------------------------------------------------
+# Because class methods receive the class as the first argument, they can change
+# class-level attributes. This file modifies a shared value that affects all
+# future instances.
+
+class Person(object):
+
+    NAME_PREFIX = &quot;Mr.&quot;
+
+    def __init__(self, name):
+        self.name = name
+
+    @classmethod
+    def set_prefix(cls, prefix):
+        cls.NAME_PREFIX = prefix
+
+
+p = Person(&quot;John&quot;)
+Person.set_prefix(&quot;Dr.&quot;)
+print(p.NAME_PREFIX)
+</code></pre>
+<h2 id="class-mixin">Class Mixin</h2>
+<pre><code class="language-python"># Mixin class
+# --------------------------------------------------------------------------------
+# A mixin provides extra methods that can be shared across multiple unrelated
+# classes. It relies on cooperative multiple inheritance to join its behavior
+# with that of the main class hierarchy.
+
+class RemoteMixin(object):
+
+    def __init__(self, brand=None, volume=0, *args, **kwargs):
+
+        # This syntax is required in order to guarantee that the MRO is not broken
+        super(RemoteMixin, self).__init__(*args, **kwargs)
+
+        # Mixin specific attributes
+        self.brand = brand
+        self.volume = volume
+
+    def volume_up(self):
+        self.volume += 1
+
+    def volume_down(self):
+        self.volume -= 1
+
+    def status(self):
+        print(&quot;Brand: {}&quot;.format(self.brand))
+        print(&quot;Volume: {}&quot;.format(self.volume))
+
+
+class JvcRemote(RemoteMixin, object):
+    &quot;&quot;&quot; Mixins should be always inherited first &quot;&quot;&quot;
+
+    def __init__(self):
+        super(JvcRemote, self).__init__(brand=&quot;JVC&quot;, volume=10)
+
+    def status(self):
+        super(JvcRemote, self).status()
+
+    @staticmethod
+    def learn():
+        print(&quot;Learn button&quot;)
+
+
+class SonyRemote(RemoteMixin, object):
+    &quot;&quot;&quot; Mixins should be always inherited first &quot;&quot;&quot;
+
+    def __init__(self):
+        super(SonyRemote, self).__init__(brand=&quot;Sony&quot;, volume=5)
+
+    @staticmethod
+    def home():
+        print(&quot;Home button&quot;)
+
+
+remote = JvcRemote()
+actions = [&quot;volume_up&quot;, &quot;status&quot;, &quot;volume_down&quot;, &quot;status&quot;, &quot;learn&quot;, &quot;status&quot;]
+for action in actions:
+    print(&quot;Action: {}&quot;.format(action))
+    func = getattr(remote, action)
+    func()
+
+print(&quot;\n&quot;)
+
+remote = SonyRemote()
+actions = [&quot;volume_up&quot;, &quot;status&quot;, &quot;volume_down&quot;, &quot;status&quot;, &quot;home&quot;, &quot;status&quot;]
+for action in actions:
+    print(&quot;Action: {}&quot;.format(action))
+    func = getattr(remote, action)
+    func()
+</code></pre>
+<h2 id="class-mro-bottom-first">Class Mro Bottom First</h2>
+<pre><code class="language-python"># Mro (method resolution order) - bottom first
+# --------------------------------------------------------------------------------
+# In this layout the interpreter begins searching for methods in the most
+# derived class and moves upward through the hierarchy. The arrangement helps
+# clarify how attribute lookup progresses when multiple parents define the same
+# name.
+
+class A(object):
+
+    @staticmethod
+    def process():
+        print('A.process()')
+
+
+class B(object):
+    @staticmethod
+    def process():
+        print('B.process()')
+
+
+class C(A, B):
+
+    @staticmethod
+    def process():
+        print('C.process()')
+
+
+obj = C()
+obj.process()
+print(C.mro())
+</code></pre>
+<h2 id="class-mro-complex">Class Mro Complex</h2>
+<pre><code class="language-python"># Mro (method resolution order) - combined bottom first and left first
+# --------------------------------------------------------------------------------
+# Python resolves method names by considering both the depth of the inheritance
+# tree and the order in which bases are listed. This file sets up a hierarchy
+# that makes the combined bottom-first and left-first rules apparent.
+
+class A(object):
+    @staticmethod
+    def process():
+        print(&quot;A.process()&quot;)
+
+
+class B(object):
+    @staticmethod
+    def process():
+        print(&quot;B.process()&quot;)
+
+
+class C(A, B):
+    pass
+
+
+class D(C, B):
+    pass
+
+
+d = D()
+print(D.mro())
+d.process()
+</code></pre>
+<h2 id="class-mro-diamond">Class Mro Diamond</h2>
+<pre><code class="language-python"># Mro (method resolution order) - diamond problem
+# --------------------------------------------------------------------------------
+# A diamond inheritance pattern occurs when two classes share a common base
+# class. The method resolution order ensures that the base is initialized only
+# once. The classes here are organized so that each path to the base is
+# considered without duplication.
+
+class A(object):
+    @staticmethod
+    def process():
+        print(&quot;A.process()&quot;)
+
+
+class B(A):
+    @staticmethod
+    def process():
+        print(&quot;B.process()&quot;)
+
+
+class C(A):
+    @staticmethod
+    def process():
+        print(&quot;C.process()&quot;)
+
+
+class D(B, C):
+    pass
+
+
+d = D()
+print(D.mro())
+d.process()
+</code></pre>
+<h2 id="class-mro-left-first">Class Mro Left First</h2>
+<pre><code class="language-python"># Mro (method resolution order) - left first
+# --------------------------------------------------------------------------------
+# With multiple inheritance Python consults base classes from left to right. The
+# hierarchy in this file highlights how that ordering affects method lookup.
+
+class A(object):
+
+    @staticmethod
+    def process():
+        print('A.process()')
+
+
+class B(object):
+    @staticmethod
+    def process():
+        print('B.process()')
+
+
+class C(A, B):
+    pass
+
+
+class D(B, A):
+    pass
+
+
+# The method process is searched for until the first class having the method is found (here A)
+test = C()
+print(C.mro())
+test.process()
+
+# The method process is searched for until the first class having the method is found (here B)
+test = D()
+print(D.mro())
+test.process()
+</code></pre>
+<h2 id="class-mro-unresolved">Class Mro Unresolved</h2>
+<pre><code class="language-python"># Mro (method resolution order) - unresolved
+# --------------------------------------------------------------------------------
+# Some inheritance graphs produce conflicting search orders that Python cannot
+# resolve. This file sets up such a conflict and triggers an error when the
+# interpreter tries to build the method resolution order. Understanding this
+# failure helps diagnose complex inheritance issues.
+
+class Player(object):
+    pass
+
+
+class Enemy(Player):
+    pass
+
+
+class GameObject(Player, Enemy):
+    pass
+
+
+# Explanation (see MRO rules in the documentation):
+#
+# - MRO is GameObject -&gt; Player -&gt; Enemy -&gt; Player (not monotonic as Player appears twice)
+# - Rule 2 says Enemy should appear before Player
+# - Rule 3 says Player should appear before Enemy
+#
+# Rules 2 and 3 are in conflict, so the MRO algorithm cannot be applied. This is called an
+# &quot;unresolvable inheritance graph&quot; and Python will raise an exception in this case.
+
+g = GameObject()
+print(GameObject.mro())
+</code></pre>
+<h2 id="class-multiple-inheritance">Class Multiple Inheritance</h2>
+<pre><code class="language-python"># Multiple inheritance
+# --------------------------------------------------------------------------------
+# A single class may inherit behavior from several parents. Combining features
+# this way can reduce duplication but requires careful design to avoid
+# conflicts.
+
+class A(object):
+
+    @staticmethod
+    def process():
+        print(&quot;Class A is processing... &quot;)
+
+
+class B(object):
+
+    @staticmethod
+    def process():
+        print(&quot;Class B is processing... &quot;)
+
+
+class C(A, B):
+    pass
+
+
+class D(B, A):
+    pass
+
+
+# The method process is searched for until the first class having the method is found (here A)
+test = C()
+test.process()
+
+# The method process is searched for until the first class having the method is found (here B)
+test = D()
+test.process()
+</code></pre>
+<h2 id="class-named-constructor-different-params">Class Named Constructor Different Params</h2>
+<pre><code class="language-python"># Named constructors as alternative constructors
+# --------------------------------------------------------------------------------
+# A class can offer several named constructors for convenience. Each one accepts
+# parameters tailored for a specific situation and returns a configured
+# instance.
+
+class Rectangle(object):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    @classmethod
+    def from_diagonal(cls, x1, y1, x2, y2):
+        width = abs(x2 - x1)
+        height = abs(y2 - y1)
+        return cls(width, height)
+
+
+# Create a square using the default constructor
+rect1 = Rectangle(1, 1)
+print(rect1.width, rect1.height)
+
+# Create the same square using the named constructor
+rect2 = Rectangle.from_diagonal(1, 1, 2, 2)
+print(rect2.width, rect2.height)
+</code></pre>
+<h2 id="class-named-constructor-init-sources">Class Named Constructor Init Sources</h2>
+<pre><code class="language-python"># Different sources to create and initialize objects
+# --------------------------------------------------------------------------------
+# Objects may be constructed from data stored in several locations such as
+# files or environment variables. Named constructors gather that information and
+# return fully initialized instances.
+import os
+
+
+class Person(object):
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    @classmethod
+    def from_file(cls, file):
+
+        with open(file, 'r') as f:
+            data = f.read()
+            name, age = data.split(',')
+
+        return cls(name=name, age=age)
+
+
+# Create a file named profile.txt with the following contents:
+# mayank,27
+
+with open('profile.txt', 'w') as f:
+    f.write('mayank,27')
+
+person = Person.from_file('profile.txt')
+print(person.name, person.age)
+
+# Delete the file profile.txt
+os.remove('profile.txt')
+</code></pre>
+<h2 id="class-named-constructor-reduce-params">Class Named Constructor Reduce Params</h2>
+<pre><code class="language-python"># Reduce the number of parameters
+# --------------------------------------------------------------------------------
+# When an initializer requires many arguments, a named constructor can provide a
+# simpler interface. It bundles related values together before delegating to
+# __init__.
+
+class Rectangle(object):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    @classmethod
+    def square(cls, size):
+        return cls(size, size)
+
+
+# Create a square using the default constructor
+square1 = Rectangle(1, 1)
+print(square1.width, square1.height)
+
+# Create the same square using the named constructor
+square2 = Rectangle.square(size=1)
+print(square2.width, square2.height)
+</code></pre>
+<h2 id="class-named-constructor-representation">Class Named Constructor Representation</h2>
+<pre><code class="language-python"># Different internal representations of the same object
+# --------------------------------------------------------------------------------
+# A class may provide alternate constructors that store data in various formats.
+# Each representation exposes the same behavior to callers. Selecting one or
+# another depends on the needs of the application.
+
+class Person(object):
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    @classmethod
+    def from_json(cls, data):
+        return cls(**data)
+
+    @staticmethod
+    def from_csv(data):
+        name = data[0]
+        age = data[1]
+        return Person(name=name, age=age)
+
+
+# Mock data
+json_data = {'name': 'mayank', 'age': 27}
+csv_data = [('mayank', 27), ]
+
+person = Person.from_json(json_data)
+print(person.name, person.age)
+
+person = Person.from_csv(csv_data[0])
+print(person.name, person.age)
+</code></pre>
+<h2 id="class-nested">Class Nested</h2>
+<pre><code class="language-python"># Nested classes for constants, settings, etc.
+# --------------------------------------------------------------------------------
+# Classes can contain other classes that serve as containers for related
+# constants or configuration. Nesting keeps these auxiliary definitions close to
+# the code that uses them.
+
+class Settings:
+
+    LANG = &quot;English&quot;
+    THEME = &quot;Light&quot;
+    IP_ADDR = &quot;192.168.210.10&quot;
+    PORT = 8080
+
+    class AdvancedSettings:
+
+        ENABLE_LOGGING = False
+        MAX_CONNECTIONS = 10
+
+    class ExperimentalSettings:
+
+        ENABLE_NEW_FEATURE = False
+
+
+# Access the basic settings
+print(Settings.THEME)
+
+# Access the b settings
+print(Settings.AdvancedSettings.ENABLE_LOGGING)  # Output: False
+
+# Access the experimental settings
+print(Settings.ExperimentalSettings.ENABLE_NEW_FEATURE)  # Output: False
+</code></pre>
+<h2 id="class-properties">Class Properties</h2>
+<pre><code class="language-python"># Property used to encapsulate an instance variable
+# --------------------------------------------------------------------------------
+# The property decorator exposes getter and setter functions as attribute
+# access. This allows validation or computation while keeping the public
+# interface simple.
+
+class Person(object):
+
+    def __init__(self, name):
+        self.name = name
+
+    @property
+    def name(self):
+        return self.__name
+
+    @name.setter
+    def name(self, value):
+        if not isinstance(value, str):
+            raise TypeError(&quot;Expected a string&quot;)
+        self.__name = value
+
+
+p = Person(&quot;John&quot;)
+print(p.name)
+</code></pre>
+<h2 id="class-single-inheritance">Class Single Inheritance</h2>
+<pre><code class="language-python"># Multilevel inheritance
+# --------------------------------------------------------------------------------
+# Multilevel inheritance arranges classes in a linear hierarchy. Each
+# subsequent class extends the one above it, accumulating behavior down the
+# chain.
+
+class A(object):
+
+    @staticmethod
+    def process():
+        print(&quot;Root is processing... &quot;)
+
+
+class B(A):
+    pass
+
+
+class C(B):
+    pass
+
+
+# The method process is searched for until the first class having the method is found (here A)
+test = C()
+test.process()
+</code></pre>
+<h2 id="class-static-methods">Class Static Methods</h2>
+<pre><code class="language-python"># Static method are not bound to the class and can be used as utility functions
+# --------------------------------------------------------------------------------
+# Static methods operate without reference to a particular instance or class.
+# They behave like regular functions that happen to live in the class's
+# namespace and are often used for related utility tasks.
+
+class Packet(object):
+
+    def __init__(self, ip_addr='192.168.10.1', mask=&quot;255.255.255.0&quot;, payload=()):
+        self.payload = payload
+        self.ip_addr = ip_addr
+        self.mask = mask
+
+    @staticmethod
+    def dot_to_bytes(val):
+        return bytes(map(int, val.split('.')))
+
+    @staticmethod
+    def bytes_to_dot(val):
+        return '.'.join(map(str, val))
+
+
+# Convert IP address in dot notation to bytes
+addr_bytes = Packet.dot_to_bytes('192.168.1.1')
+print(addr_bytes)
+
+# Convert bytes to IP address in dot notation
+addr_dot = Packet.bytes_to_dot(addr_bytes)
+print(addr_dot)
+</code></pre>
+<h2 id="class-structure">Class Structure</h2>
+<pre><code class="language-python"># Class structure
+# --------------------------------------------------------------------------------
+# This file outlines common elements found in many classes such as attributes,
+# static methods and constructors. Organizing these pieces consistently makes
+# new classes easier to understand and maintain.
+
+class ClassStructure(object):
+
+    CLASS_VARIABLE = &quot;Hi, I am &quot;
+
+    def __new__(cls, *args, **kwargs):
+        print(&quot;This is the constructor method&quot;)
+        return object.__new__(cls)
+
+    def __init__(self):
+        print(&quot;This is the initialization method&quot;)
+        self.instance_variable = &quot;John&quot;
+
+    @classmethod
+    def class_method(cls):
+        print(&quot;This is a class method, the class prefix is: {}&quot;.format(cls.class_variable))
+
+    @staticmethod
+    def static_method():
+        print(&quot;This is a static method, the class prefix is: {}&quot;.format(ClassStructure.class_variable))
+
+    def instance_method(self):
+        print(&quot;This is an instance method, `{} {}`&quot;.format(self.class_variable, self.instance_variable))
+</code></pre>
+<h2 id="class-superclass-attributes">Class Superclass Attributes</h2>
+<pre><code class="language-python"># Call super class method and access super class attributes
+# --------------------------------------------------------------------------------
+# Subclasses can call methods defined on their parent and access inherited
+# attributes. Using ``super`` keeps the code maintainable when the hierarchy
+# changes.
+
+class Person(object):
+
+    def __init__(self, name):
+        self.name = name
+
+
+class Employee(Person):
+
+    def __init__(self, name, id_number):
+        super(Employee, self).__init__(name)
+        self.id_number = id_number
+
+
+e = Employee(&quot;John&quot;, 1234)
+print(e.name)
+print(e.id_number)
+</code></pre>
+<h2 id="class-superclass-constructor">Class Superclass Constructor</h2>
+<pre><code class="language-python"># Call __new__ method of super class
+# --------------------------------------------------------------------------------
+# A subclass can override __new__ while still delegating part of the creation
+# process to its parent. Calling the superclass method ensures base attributes
+# are initialized correctly.
+
+class Person(object):
+
+    def __new__(cls, name):
+        return super(Person, cls).__new__(cls)
+
+    def __init__(self, name):
+        self.name = name
+
+
+class Employee(Person):
+
+    def __new__(cls, name, id_number):
+        return super(Employee, cls).__new__(cls, name)
+
+    def __init__(self, name, id_number):
+        super(Employee, self).__init__(name)
+        self.id_number = id_number
+
+
+e = Employee(&quot;John&quot;, 1234)
+print(e.name)
+print(e.id_number)
+</code></pre>
+<h2 id="class-superclass-methods">Class Superclass Methods</h2>
+<pre><code class="language-python"># Call super class methods
+# --------------------------------------------------------------------------------
+# Methods in a subclass can extend behavior defined in a parent. By calling the
+# superclass implementation first, the subclass adds functionality without
+# rewriting the original logic.
+
+class Person(object):
+
+    def __init__(self, name):
+        self.name = name
+
+    def get_name(self):
+        return self.name
+
+
+class Employee(Person):
+
+    def __init__(self, name, id_number):
+        super(Employee, self).__init__(name)
+        self.id_number = id_number
+
+    def get_id_number(self):
+        return self.id_number
+
+
+e = Employee(&quot;John&quot;, 1234)
+print(e.get_name())
+print(e.get_id_number())
+</code></pre>
+<h2 id="class-variables">Class Variables</h2>
+<pre><code class="language-python"># Working with class attributes
+# --------------------------------------------------------------------------------
+# Class attributes are shared across all instances of a class. They store values
+# that should remain consistent, such as prefixes used by each Person object.
+
+class Person(object):
+
+    # Class attributes are defined outside of any method and are shared by all instances
+    MALE_PREFIX = &quot;Mr.&quot;
+    FEMALE_PREFIX = &quot;Ms.&quot;
+
+    def __init__(self, name, sex):
+        self.name = name
+        self.sex = sex
+
+    def get_prefix(self):
+        &quot;&quot;&quot;Return the appropriate prefix using class attributes.&quot;&quot;&quot;
+
+        # The person is male
+        if self.sex == &quot;male&quot;:
+            prefix = self.MALE_PREFIX
+
+        # The person is female
+        elif self.sex == &quot;female&quot;:
+            prefix = self.FEMALE_PREFIX
+
+        # Others
+        else:
+            prefix = &quot;&quot;
+
+        return prefix
+
+    def get_name(self):
+        &quot;&quot;&quot; Return the name with the appropriate prefix &quot;&quot;&quot;
+        return &quot;{} {}&quot;.format(self.get_prefix(), self.name)
+
+
+# Create the instances
+males = [Person(name=&quot;Branimir&quot;, sex=&quot;male&quot;), Person(&quot;Dimitar&quot;, sex=&quot;male&quot;)]
+
+# Class attributes are accessible from the instance methods
+print(&quot;Default prefix...&quot;)
+for male in males:
+    print(male.get_name())
+
+# Class attributes are accessible from the class itself and a change will affect all instances
+print(&quot;Prefix changed...&quot;)
+Person.MALE_PREFIX = &quot;Sir&quot;
+for male in males:
+    print(male.get_name())
+</code></pre>
+<h2 id="class-variables-pitfalls">Class Variables Pitfalls</h2>
+<pre><code class="language-python"># Class Variables Pitfalls
+# --------------------------------------------------------------------------------
+# Sharing state at the class level can introduce subtle bugs when instances
+# modify that state. This section discusses common mistakes and how to avoid
+# them.
+&quot;&quot;&quot;Class vs. Instance Variables
+--------------------------------
+Class variables are shared by all instances, while instance variables belong
+to each object. Assigning to ``self.variable`` creates an instance attribute.
+If a class attribute with the same name exists, the instance attribute hides it
+and later reads through ``self`` return the instance value. Mixing them can be
+confusing because updates seem to apply only to some objects.
+
+When you read ``self.value`` and ``value`` is not defined on the instance,
+Python falls back to the class attribute:
+
+    class A:
+        value = 1
+
+    obj = A()
+    print(obj.value)  # 1 from the class
+
+Any assignment using ``self`` stores a value on the instance:
+
+    obj.value = 2
+    print(A.value)   # 1
+    print(obj.value) # 2
+
+Here ``obj.value`` now shadows ``A.value``. To access the class attribute
+explicitly you must use ``A.value``.
+&quot;&quot;&quot;
+
+
+class TestOp(object):
+
+    immutable = 1
+    mutable = [1, ]
+
+
+class Test(TestOp):
+
+    def __init__(self):
+        super(Test, self).__init__()
+
+    def test_immutable(self):
+
+        print(&quot;#&quot; * 80)
+        print(&quot;Testing immutable class variable&quot;)
+        print(&quot;#&quot; * 80)
+
+        # self references to the class variable
+        print(&quot;&quot;)
+        print(&quot;Read value through class name and then self...&quot;)
+
+        print(&quot;CLS  =&gt; {0}:{1}&quot;.format(id(TestOp.immutable), TestOp.immutable))
+        print(&quot;SELF =&gt; {0}:{1}&quot;.format(id(self.immutable), self.immutable))
+
+        # self creates and references an instance variable (shadows the class variable)
+        print(&quot;&quot;)
+        print(&quot;Change immutable type using self...&quot;)
+
+        self.immutable = 2
+        print(&quot;CLS  =&gt; {0}:{1}&quot;.format(id(TestOp.immutable), TestOp.immutable))
+        print(&quot;SELF =&gt; {0}:{1}&quot;.format(id(self.immutable), self.immutable))
+
+        # Changing the value of immutable class variable will create a new object
+        print(&quot;&quot;)
+        print(&quot;Change the value of the class immutable variable...&quot;)
+
+        TestOp.immutable = 3
+        print(&quot;CLS  =&gt; {0}:{1}&quot;.format(id(TestOp.immutable), TestOp.immutable))
+        print(&quot;SELF =&gt; {0}:{1}&quot;.format(id(self.immutable), self.immutable))
+
+        print(&quot;&quot;)
+
+    def test_mutable(self):
+        print(&quot;#&quot; * 80)
+        print(&quot;Testing mutable class variable&quot;)
+        print(&quot;#&quot; * 80)
+
+        # self references to the class variable
+        print(&quot;&quot;)
+        print(&quot;Read value through class name and then self...&quot;)
+
+        print(&quot;CLS  =&gt; {0}:{1}&quot;.format(id(TestOp.mutable), TestOp.mutable))
+        print(&quot;SELF =&gt; {0}:{1}&quot;.format(id(self.mutable), self.mutable))
+
+        # self creates and references an instance variable (shadows the class variable)
+        print(&quot;&quot;)
+        print(&quot;Change mutable type using self...&quot;)
+
+        self.mutable.append(2)
+        print(&quot;CLS  =&gt; {0}:{1}&quot;.format(id(TestOp.mutable), TestOp.mutable))
+        print(&quot;SELF =&gt; {0}:{1}&quot;.format(id(self.mutable), self.mutable))
+
+        # self
+        print(&quot;&quot;)
+        print(&quot;Change the value of the class mutable variable...&quot;)
+
+        TestOp.mutable.append(3)
+        print(&quot;CLS  =&gt; {0}:{1}&quot;.format(id(TestOp.mutable), TestOp.mutable))
+        print(&quot;SELF =&gt; {0}:{1}&quot;.format(id(self.mutable), self.mutable))
+
+        print(&quot;&quot;)
+
+
+if __name__ == &quot;__main__&quot;:
+
+    test = Test()
+
+    test.test_mutable()
+    print(&quot;Final value of immutable class variable is {0}:{1}\n&quot;.format(id(Test.immutable), Test.immutable))
+
+    test.test_immutable()
+    print(&quot;Final value of mutable class variable is {0}:{1}\n&quot;.format(id(Test.mutable), Test.mutable))
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../07_functions/" class="btn btn-neutral float-left" title="Functions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../09_docstrings/" class="btn btn-neutral float-right" title="Docstrings">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/braboj/tutorial-python" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../07_functions/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../09_docstrings/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

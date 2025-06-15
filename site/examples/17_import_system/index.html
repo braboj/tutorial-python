@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Import System - Python by Example</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Import System";
+        var mkdocs_page_input_path = "examples\\17_import_system.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Python by Example
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Examples</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../01_hello_world/">Hello World</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../02_variables/">Variables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../03_comments/">Comments</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../04_operators/">Operators</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_user_input/">User Input</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_control_flow/">Control Flow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_functions/">Functions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_classes/">Classes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_docstrings/">Docstrings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_debugging/">Debugging</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_oop_pillars/">OOP Pillars</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../12_solid_principles/">SOLID Principles</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../13_logging/">Logging</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../14_exceptions/">Exceptions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../15_dunder_methods/">Dunder Methods</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../16_data_types/">Data Types</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Import System</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#export-decorator">Export Decorator</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#import-absolute">Import Absolute</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#import-circular">Import Circular</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#import-conditional">Import Conditional</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#import-main-module">Import Main Module</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#import-module-objects">Import Module Objects</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#import-namespaces">Import Namespaces</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#import-packages">Import Packages</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#import-process">Import Process</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#import-search-path">Import Search Path</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#import-skip-execution">Import Skip Execution</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#import-statements">Import Statements</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#import-sys-path">Import Sys Path</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#import-tracking">Import Tracking</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#rootdir">Rootdir</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../18_linting_tools/">Linting Tools</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../19_test_frameworks/">Test Frameworks</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../20_package_managers/">Package Managers</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../21_design_patterns/">Design Patterns</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../23_meta_classes/">Meta Classes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../24_generators/">Generators</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../25_coroutines/">Coroutines</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../28_optimization/">Optimization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../29_packaging/">Packaging</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../30_compatibility/">Compatibility</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Project</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project/">Python by Example Documentation</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Python by Example</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Examples</li>
+      <li class="breadcrumb-item active">Import System</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/braboj/tutorial-python/edit/master/docs/examples/17_import_system.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="import-system">Import System</h1>
+<h2 id="export-decorator">Export Decorator</h2>
+<pre><code class="language-python"># Defines an export decorator for populating a package's __all__.
+# ------------------------------------------------------------------------------
+# Utility that adds functions to a package's __all__.
+# Demonstrates placing the export decorator in a package's __init__ file
+
+# Export decorator
+def export(defn):
+    # Add the object to the global namespace
+    globals()[defn.__name__] = defn
+
+    # Set the object to be exported
+    __all__.append(defn.__name__)
+
+    # Return the object
+    return defn
+
+
+# Demonstration of the export decorator
+@export
+def func4():
+    print('func4')
+</code></pre>
+<h2 id="import-absolute">Import Absolute</h2>
+<pre><code class="language-python"># Shows how to enforce and use absolute imports.
+# ------------------------------------------------------------------------------
+# Example script demonstrating absolute imports.
+# Using absolute imports
+import asyncio
+
+# Enforce absolute imports
+from __future__ import absolute_import
+
+# Absolute imports
+from foo.api.submodule1 import func1
+from foo.core.submodule2 import func2
+from foo.gui.submodule3 import func3
+
+# Call all functions
+func1()
+func2()
+func3()
+</code></pre>
+<h2 id="import-circular">Import Circular</h2>
+<pre><code class="language-python"># Triggers a circular import between two submodules.
+# ------------------------------------------------------------------------------
+# Runs the circular import scenario.
+import circular.submodule1 as submodule1
+
+submodule1.func1()
+</code></pre>
+<h2 id="import-conditional">Import Conditional</h2>
+<pre><code class="language-python"># Shows conditional imports based on Python version.
+# ------------------------------------------------------------------------------
+# Uses different imports depending on Python version.
+import sys
+
+# Option 1
+try:
+    import Queue as queue
+except ImportError:
+    import queue
+
+q = queue.Queue()
+print(q)
+
+# Option 2
+is_py2 = sys.version[0] == '2'
+if is_py2:
+    import Queue as test2
+else:
+    import queue as test2
+
+q = test2.Queue()
+print(q)
+</code></pre>
+<h2 id="import-main-module">Import Main Module</h2>
+<pre><code class="language-python"># Demonstrates __main__ name when executing a module as a script.
+# ------------------------------------------------------------------------------
+# Shows module __name__ when executed directly.
+# Main program entry point
+
+import pprint
+
+# The module attribute __name__ is set to '__main__' when the module is run as the main program.
+print(globals()['__name__'])
+</code></pre>
+<h2 id="import-module-objects">Import Module Objects</h2>
+<pre><code class="language-python"># Shows manual creation of ModuleType objects to demonstrate import internals.
+# ------------------------------------------------------------------------------
+# Creates modules manually via ModuleType.
+from types import ModuleType
+
+# Create a new module object
+test = ModuleType('test')
+print(&quot;test.__dict__:&quot;, test.__dict__)
+
+# Add some attributes to the module
+test.__dict__['a'] = 1
+test.__dict__['b'] = 2
+test.__dict__['c'] = 3
+
+# Print the module's namespace
+print(&quot;test.__dict__:&quot;, test.__dict__)
+</code></pre>
+<h2 id="import-namespaces">Import Namespaces</h2>
+<pre><code class="language-python"># Explores namespaces at different scopes using builtins and custom classes.
+# ------------------------------------------------------------------------------
+# Traces namespace dictionaries at various scopes.
+# Namespace of the builtins module.
+
+import pprint
+
+
+class MyClass(object):
+
+    def __init__(self):
+        self.a = 1
+        self.b = 2
+
+    def instance_method(self):
+        pprint.pprint(&quot;INSTANCE GLOBALS: {}&quot;.format(globals().keys()))
+        pprint.pprint(&quot;INSTANCE LOCALS: {}&quot;.format(locals().keys()))
+        print()
+
+    @classmethod
+    def class_method(cls):
+        pprint.pprint(&quot;CLASS GLOBALS: {}&quot;.format(globals().keys()))
+        pprint.pprint(&quot;CLASS LOCALS: {}&quot;.format(locals().keys()))
+        print()
+
+    def func1(self):
+
+        print(&quot;@FUNC1: Before the assignment of a&quot;)
+        pprint.pprint(&quot;FUNC1 GLOBALS: {}&quot;.format(globals().keys()))
+        pprint.pprint(&quot;FUNC1 LOCALS: {}&quot;.format(locals().keys()))
+        print()
+
+        a = 1
+
+        print(&quot;@FUNC1: After the assignment of a&quot;)
+        pprint.pprint(&quot;FUNC1 GLOBALS: {}&quot;.format(globals().keys()))
+        pprint.pprint(&quot;FUNC1 LOCALS: {}&quot;.format(locals().keys()))
+        print()
+
+        def func2():
+
+            print(&quot;@FUNC2: Before the assignment of b&quot;)
+            pprint.pprint(&quot;FUNC2 GLOBALS: {}&quot;.format(globals().keys()))
+            pprint.pprint(&quot;FUNC2 LOCALS: {}&quot;.format(locals().keys()))
+            print()
+
+            b = a + 1
+
+            print(&quot;@FUNC2: After the assignment of b&quot;)
+            pprint.pprint(&quot;FUNC2 GLOBALS: {}&quot;.format(globals().keys()))
+            pprint.pprint(&quot;FUNC2 LOCALS: {}&quot;.format(locals().keys()))
+            print()
+
+        func2()
+
+        print(&quot;@FUNC1: After the call to func2&quot;)
+        pprint.pprint(&quot;FUNC1 GLOBALS: {}&quot;.format(globals().keys()))
+        pprint.pprint(&quot;FUNC1 LOCALS: {}&quot;.format(locals().keys()))
+        print()
+
+
+# Builtins level
+print(&quot;===== Builtins namespace =====&quot;)
+print()
+pprint.pprint(&quot;BUILTINS VARS: {}&quot;.format(vars(__builtins__).keys()))
+print()
+
+# Module level
+print(&quot;===== Module namespace =====&quot;)
+print()
+pprint.pprint(&quot;MODULE GLOBALS VARS: {}&quot;.format(globals().keys()))
+pprint.pprint(&quot;MODULE LOCALS VARS: {}&quot;.format(locals().keys()))
+print()
+
+# Class level
+print(&quot;===== Class namespace =====&quot;)
+print()
+pprint.pprint(&quot;CLASS VARS: {}&quot;.format(vars(MyClass).keys()))
+MyClass.class_method()
+print()
+
+# Instance level
+print(&quot;===== Instance namespace =====&quot;)
+print()
+my_instance = MyClass()
+print(vars(my_instance))
+my_instance.instance_method()
+print()
+
+# Function level
+print(&quot;===== Function namespace =====&quot;)
+print()
+my_instance.func1()
+print(vars(my_instance.func1))
+print()
+</code></pre>
+<h2 id="import-packages">Import Packages</h2>
+<pre><code class="language-python"># Demonstrates importing a package and using its public API.
+# ------------------------------------------------------------------------------
+# Imports the foo package and uses its API.
+import product
+
+# Use the public API defined in __init__.py
+product.func1()
+product.func2()
+product.func3()
+</code></pre>
+<h2 id="import-process">Import Process</h2>
+<pre><code class="language-python"># Implements a minimal importer to show how Python loads modules.
+# ------------------------------------------------------------------------------
+# Minimal demonstration of how the import statement works.
+# A naive implementation of the import statement
+
+import marshal
+import os
+import sys
+import types
+
+
+def _import(module_name):
+
+    # Check if the module is already imported
+    if module_name in sys.modules:
+        print('Module already imported')
+        return sys.modules[module_name]
+
+    # Read the source code from the file
+    sourcepath = module_name + '.py'
+    with open(sourcepath, 'r') as f:
+        sourcecode = f.read()
+
+    # Compile the source code to bytecode
+    code = _compile(sourcecode, sourcepath, module_name)
+
+    # Create a new module object
+    module = types.ModuleType(module_name)
+    module.__file__ = sourcepath
+
+    # Cache the module object in sys.modules
+    sys.modules[module_name] = module
+
+    # Execute the bytecode in the module's namespace
+    exec(code, module.__dict__)
+
+    # Return the module object
+    return sys.modules[module_name]
+
+
+def _compile(sourcecode, sourcepath, module_name):
+    # Compile the source code of a module to bytecode.
+    # --------------------------------------------------------------------------------
+    # Compiles the code and optionally writes a .pyc file.
+
+    MAGIC_NUMBER = (3439).to_bytes(2, 'little') + b'\r\n'
+
+    # Compile the source code to bytecode
+    code = compile(sourcecode, sourcepath, 'exec')
+
+    # The following code is optional
+
+    # Serialize the code object and write it to a .pyc file
+    with open(module_name + '.pyc', 'wb') as f:
+        mtime = os.path.getmtime(sourcepath)
+        size = os.path.getsize(sourcepath)
+        f.write(MAGIC_NUMBER)
+        f.write(int(mtime).to_bytes(4, sys.byteorder))
+        f.write(int(size).to_bytes(4, sys.byteorder))
+        marshal.dump(code, f)
+
+    return code
+
+
+if __name__ == '__main__':
+    s1 = _import('./foo/api/submodule1')
+    s2 = _import('./foo/api/submodule1')
+    print(s1.my_id, s2.my_id)
+</code></pre>
+<h2 id="import-search-path">Import Search Path</h2>
+<pre><code class="language-python"># Displays and modifies sys.path to demonstrate search paths.
+# ------------------------------------------------------------------------------
+# Displays and alters sys.path for searching modules.
+# Demonstrates the import search path
+
+import sys
+import pprint
+
+from api import submodule1
+print('submodule1.my_id =', submodule1.my_id)
+
+# Print the search path
+paths = sys.path
+for path in paths:
+    print(path)
+
+print()
+
+# Add the current directory to the search path
+sys.path.append('.')
+paths = sys.path
+for path in paths:
+    print(path)
+</code></pre>
+<h2 id="import-skip-execution">Import Skip Execution</h2>
+<pre><code class="language-python"># Demonstrates guarding code with __name__ to skip execution on import.
+# ------------------------------------------------------------------------------
+# Guard code to avoid running on import.
+# Main program entry point
+
+
+def func1():
+    return 1
+
+
+def func2():
+    return 2
+
+
+def func3():
+    return 3
+
+
+def test_module():
+    assert func1() == 1
+    assert func2() == 2
+    assert func3() == 3
+
+
+# The following code prevents the module to be executed when imported as a
+# module. It will be executed only when run as a script directly by the Python
+# interpreter. If omitted the module will be executed on each import.
+
+if __name__ == '__main__':
+    test_module()
+</code></pre>
+<h2 id="import-statements">Import Statements</h2>
+<pre><code class="language-python"># Illustrates various forms of the import statement.
+# ------------------------------------------------------------------------------
+# Shows many forms of the import statement in use.
+# Import statements in action.
+
+# Importing the package
+import foo
+print('version =', foo.__version__)
+
+# Importing a submodule
+import foo.api.submodule1
+print('api.submodule1.my_id =', foo.api.submodule1.my_id)
+
+# Importing the entire module with an alias
+import foo.api.submodule1 as sm1
+print('sm1.my_id =', sm1.my_id)
+
+from foo.api import submodule1
+print('submodule1.my_id =', submodule1.my_id)
+
+from foo.api.submodule1 import my_id
+print('my_id =', my_id)
+</code></pre>
+<h2 id="import-sys-path">Import Sys Path</h2>
+<pre><code class="language-python"># Shows sys.path details via prefix values.
+# ------------------------------------------------------------------------------
+# Prints prefix values from sys.path.
+import sys
+print(sys.prefix)
+print(sys.exec_prefix)
+</code></pre>
+<h2 id="import-tracking">Import Tracking</h2>
+<pre><code class="language-python"># Replaces builtins.__import__ to trace loaded modules.
+# ------------------------------------------------------------------------------
+# Wraps __import__ to log module names.
+def my_import(modname, *args, imp=__import__):
+    print('importing', modname)
+    return imp(modname, *args)
+
+
+import builtins
+builtins.__import__ = my_import
+import socket
+</code></pre>
+<h2 id="rootdir">Rootdir</h2>
+<pre><code class="language-python"># Absolute path to this directory for search path tests.
+# ------------------------------------------------------------------------------
+# Convenient variable for retrieving this directory.
+import os
+
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../16_data_types/" class="btn btn-neutral float-left" title="Data Types"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../18_linting_tools/" class="btn btn-neutral float-right" title="Linting Tools">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/braboj/tutorial-python" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../16_data_types/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../18_linting_tools/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

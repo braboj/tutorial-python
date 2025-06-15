@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Logging - Python by Example</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Logging";
+        var mkdocs_page_input_path = "examples\\13_logging.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Python by Example
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Examples</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../01_hello_world/">Hello World</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../02_variables/">Variables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../03_comments/">Comments</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../04_operators/">Operators</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_user_input/">User Input</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_control_flow/">Control Flow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_functions/">Functions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_classes/">Classes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_docstrings/">Docstrings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_debugging/">Debugging</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_oop_pillars/">OOP Pillars</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../12_solid_principles/">SOLID Principles</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Logging</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#logging-advanced-config">Logging Advanced Config</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#logging-basic-config">Logging Basic Config</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#logging-config-dict">Logging Config Dict</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#logging-config-file">Logging Config File</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#logging-exceptions">Logging Exceptions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#logging-formatter">Logging Formatter</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#logging-handlers">Logging Handlers</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#logging-hierarchy">Logging Hierarchy</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#logging-levels">Logging Levels</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../14_exceptions/">Exceptions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../15_dunder_methods/">Dunder Methods</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../16_data_types/">Data Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../17_import_system/">Import System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../18_linting_tools/">Linting Tools</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../19_test_frameworks/">Test Frameworks</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../20_package_managers/">Package Managers</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../21_design_patterns/">Design Patterns</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../23_meta_classes/">Meta Classes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../24_generators/">Generators</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../25_coroutines/">Coroutines</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../28_optimization/">Optimization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../29_packaging/">Packaging</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../30_compatibility/">Compatibility</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Project</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project/">Python by Example Documentation</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Python by Example</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Examples</li>
+      <li class="breadcrumb-item active">Logging</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/braboj/tutorial-python/edit/master/docs/examples/13_logging.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="logging">Logging</h1>
+<h2 id="logging-advanced-config">Logging Advanced Config</h2>
+<pre><code class="language-python"># Advanced Logging Configuration
+# --------------------------------------------------------------------------------
+# Demonstrates custom handlers, a formatter, and propagation control.
+
+import logging
+
+# Root logger configuration
+logging.basicConfig(level=logging.DEBUG)
+
+# Create the root logger (no name is provided)
+root = logging.getLogger()
+root.setLevel(logging.DEBUG)
+root.debug('DEBUG message from the root logger')
+
+# Create a child logger (name is provided)
+child = logging.getLogger('child')
+
+# Set the formatter for the child logger
+child_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+# Configure the child logger handlers (file and console)
+child_handlers = [
+    logging.FileHandler('child.log'),
+    logging.StreamHandler(),
+]
+
+# Configure the child logger handlers
+for handler in child_handlers:
+    handler.setLevel(logging.DEBUG)
+    handler.setFormatter(child_formatter)
+    child.addHandler(handler)
+
+# Enable/Diable propagation of the child logger messages to the root logger
+child.propagate = False
+
+# Log a message from the child logger
+child.info('INFO message from the child logger')
+</code></pre>
+<h2 id="logging-basic-config">Logging Basic Config</h2>
+<pre><code class="language-python"># Basic Logging Configuration
+# --------------------------------------------------------------------------------
+# Uses basicConfig for the root logger and a named child logger.
+
+import logging
+
+# Root logger configuration
+logging.basicConfig(level=logging.DEBUG)
+
+# Create the root logger (no name is provided)
+root = logging.getLogger()
+root.info('DEBUG message from the root logger')
+
+# Create a child logger (name is provided)
+child = logging.getLogger('child')
+child.info('INFO message from the child logger')
+</code></pre>
+<h2 id="logging-config-dict">Logging Config Dict</h2>
+<pre><code class="language-python"># Logging Configuration with a Dictionary
+# --------------------------------------------------------------------------------
+# Uses a dict to define formatters, handlers and loggers.
+
+import logging.config
+
+# Define the logging configuration as a dictionary
+config = {
+
+    # Version of the logging configuration
+    'version': 1,
+
+    # Define the formatters
+    'formatters': {
+
+        # Standard formatter
+        'standard': {
+            'format': '%(asctime)s [%(levelname)s] %(name)s: %(message)s',
+        },
+    },
+
+    # Define the handlers
+    'handlers': {
+
+        # Console handler
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'standard',
+        },
+
+    },
+
+    # Root logger configuration
+    'root': {
+        'handlers': ['console', ],
+        'level': 'DEBUG',
+    },
+
+    # User logger configuration
+    'loggers': {
+
+        # Logger myapp
+        'myapp': {
+            'handlers': ['console', ],
+            'level': 'INFO',
+            'propagate': False,
+        },
+    },
+}
+
+# Configure logging using the dictionary-based configuration
+logging.config.dictConfig(config)
+
+# Create loggers
+root_logger = logging.getLogger()
+app_logger = logging.getLogger('myapp')
+
+# Log messages
+root_logger.debug('This is a debug message from the root logger')
+app_logger.info('This is an info message from the app logger')
+</code></pre>
+<h2 id="logging-config-file">Logging Config File</h2>
+<pre><code class="language-python"># Configuring Logging from a File
+# --------------------------------------------------------------------------------
+# Loads logger settings from an external configuration file.
+
+import logging.config
+
+# Configure the logging module with a configuration file
+logging.config.fileConfig('logging.conf')
+
+# Get the root logger instance
+root = logging.getLogger()
+
+# Check the logger dictionary
+root.info(f&quot;After fileConfig(): {logging.Logger.manager.loggerDict} &quot;)
+
+# Get the test logger instance
+test = logging.getLogger('test')
+
+# Check the logger dictionary
+root.info(f&quot;After getLogger('test'): {logging.Logger.manager.loggerDict} &quot;)
+
+# Log a message from the test logger
+test.info('INFO message from the test logger')
+</code></pre>
+<h2 id="logging-exceptions">Logging Exceptions</h2>
+<pre><code class="language-python"># Logging Exceptions
+# --------------------------------------------------------------------------------
+# Captures an exception and logs the full stack trace.
+
+import logging
+
+a = 5
+b = 0
+
+try:
+    c = a / b
+except Exception as e:
+    logging.error(e, exc_info=True)
+    logging.error(&quot;Please check the values of a and b&quot;)
+</code></pre>
+<h2 id="logging-formatter">Logging Formatter</h2>
+<pre><code class="language-python"># Custom Logging Formatter
+# --------------------------------------------------------------------------------
+# Configures a formatter for a named logger.
+
+import logging
+
+
+# Create a logger
+logger = logging.getLogger('test')
+
+# Set the formatter for the child logger
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+# Log a message from the child logger
+logger.info('INFO message from the child logger')
+</code></pre>
+<h2 id="logging-handlers">Logging Handlers</h2>
+<pre><code class="language-python"># Multiple Logging Handlers
+# --------------------------------------------------------------------------------
+# Sets up stream, file and timed rotating handlers.
+
+import logging.handlers
+import time
+
+# Advanced Handlers
+handlers = [
+
+    # logging.handlers.RotatingFileHandler(
+    #     filename='test.log',
+    #     maxBytes=10,
+    #     backupCount=5
+    # ),
+
+    logging.StreamHandler(),
+    logging.FileHandler('child.log'),
+
+    logging.handlers.TimedRotatingFileHandler(
+        filename='test.log',
+        when='s',
+        interval=5,
+        backupCount=5
+    )
+]
+
+logger = logging.getLogger('advanced_logger')
+
+# Configure the child logger handlers
+for handler in handlers:
+    handler.setLevel(logging.DEBUG)
+    logger.addHandler(handler)
+
+for i in range(10):
+    logger.info('INFO message from the child logger')
+    time.sleep(1)
+</code></pre>
+<h2 id="logging-hierarchy">Logging Hierarchy</h2>
+<pre><code class="language-python"># Logger Hierarchy
+# --------------------------------------------------------------------------------
+# Shows parent, child and grandchild loggers working together.
+
+import logging
+
+# Basic logging configuration
+logging.basicConfig(level=logging.DEBUG)
+
+# Create the root logger (no name is provided)
+root = logging.getLogger()
+root.setLevel(logging.DEBUG)
+root.debug('DEBUG message from the root logger')
+
+# Create a child logger (name is provided)
+child = logging.getLogger('child')
+child.info('INFO message from the child logger')
+
+# Create a grandchild logger (parent and name are provided)
+grandchild = logging.getLogger('child.grandchild')
+grandchild.error('CRITICAL message from the grandchild logger')
+
+# Get the logging hierarchy
+root.info('Logger hierarchy: {}'.format(root.manager.loggerDict))
+</code></pre>
+<h2 id="logging-levels">Logging Levels</h2>
+<pre><code class="language-python"># Logging Levels
+# --------------------------------------------------------------------------------
+# Demonstrates how to emit messages for each severity level.
+
+import logging
+
+# Basic logging configuration
+logging.basicConfig(level=logging.DEBUG)
+
+# Logging levels
+logging.debug('Hello world!')
+logging.info('Hello world!')
+logging.warning('Hello world!')
+logging.error('Hello world!')
+logging.critical('Hello world!')
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../12_solid_principles/" class="btn btn-neutral float-left" title="SOLID Principles"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../14_exceptions/" class="btn btn-neutral float-right" title="Exceptions">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/braboj/tutorial-python" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../12_solid_principles/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../14_exceptions/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Coroutines - Python by Example</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Coroutines";
+        var mkdocs_page_input_path = "examples\\25_coroutines.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Python by Example
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Examples</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../01_hello_world/">Hello World</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../02_variables/">Variables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../03_comments/">Comments</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../04_operators/">Operators</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_user_input/">User Input</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_control_flow/">Control Flow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_functions/">Functions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_classes/">Classes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_docstrings/">Docstrings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_debugging/">Debugging</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_oop_pillars/">OOP Pillars</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../12_solid_principles/">SOLID Principles</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../13_logging/">Logging</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../14_exceptions/">Exceptions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../15_dunder_methods/">Dunder Methods</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../16_data_types/">Data Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../17_import_system/">Import System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../18_linting_tools/">Linting Tools</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../19_test_frameworks/">Test Frameworks</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../20_package_managers/">Package Managers</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../21_design_patterns/">Design Patterns</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../23_meta_classes/">Meta Classes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../24_generators/">Generators</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Coroutines</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#decorate">Decorate</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#average">Average</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#bytestream">Bytestream</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#pipeline">Pipeline</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fsm">Fsm</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#recursion">Recursion</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#coroutine-chaining">Coroutine Chaining</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#coroutine-execution">Coroutine Execution</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#coroutine-interface">Coroutine Interface</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../28_optimization/">Optimization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../29_packaging/">Packaging</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../30_compatibility/">Compatibility</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Project</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project/">Python by Example Documentation</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Python by Example</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Examples</li>
+      <li class="breadcrumb-item active">Coroutines</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/braboj/tutorial-python/edit/master/docs/examples/25_coroutines.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="coroutines">Coroutines</h1>
+<h2 id="decorate">Decorate</h2>
+<pre><code class="language-python">def prime(func):
+    def start(*args, **kwargs):
+        cr = func(*args, **kwargs)
+        next(cr)
+        return cr
+
+    return start
+
+
+def source(text, target):
+    tokens = text.split(&quot; &quot;)
+    for token in tokens:
+        target.send(token)
+    target.close()
+
+
+@prime
+def pattern_filter(pattern=&quot;ing&quot;, target=None):
+    print(&quot;Searching for {}&quot;.format(pattern))
+    try:
+        while True:
+            token = (yield)
+            if pattern in token:
+                target.send(token)
+    except GeneratorExit:
+        print(&quot;Done with filtering!!&quot;)
+
+
+@prime
+def sink():
+    print(&quot;I'm sink, i'll print tokens&quot;)
+    try:
+        while True:
+            token = (yield)
+            print(token)
+    except GeneratorExit:
+        print(&quot;Done with printing!&quot;)
+
+
+sentence = &quot;Bob is running behind junior fast moving car&quot;
+source(text=sentence,
+       target=pattern_filter(
+             target=sink()
+         )
+       )
+</code></pre>
+<h2 id="average">Average</h2>
+<pre><code class="language-python">def average(start_value=0):
+    avg = float(start_value)
+    counter = 1
+    while True:
+        new_value = yield avg
+        avg = avg + (new_value - avg) / counter
+        counter += 1
+
+
+test_avg = average(start_value=0)
+next(test_avg)
+
+assert(test_avg.send(1) == 1)
+assert(test_avg.send(2) == 1.5)
+assert(test_avg.send(3) == 2)
+assert(test_avg.send(4) == 2.5)
+assert(test_avg.send(4) == 2.8)
+assert(test_avg.send(4) == 3)
+</code></pre>
+<h2 id="bytestream">Bytestream</h2>
+<pre><code class="language-python">import random
+
+
+def byte_generator(limit=0, header=None):
+
+    # Initialize
+    print(&quot;Started&quot;)
+    counter = 0
+
+    # Iterator
+    try:
+        # Generate bytes from header
+        if header:
+            while counter &lt; len(header):
+                yield header[counter]
+                counter += 1
+
+        # Generate random bytes after header
+        output = random.randrange(start=0, stop=255, step=1)
+        while counter &lt; limit:
+            try:
+                yield output
+                output = random.randrange(start=0, stop=255, step=1)
+                counter += 1
+
+            except Exception as e:
+                print(e)
+
+    except GeneratorExit:
+        print(&quot;Terminated&quot;)
+
+
+stream = byte_generator(limit=10, header=[0xDE, 0xAD, 0xBE, 0xEF])
+
+for b in stream:
+    print(hex(b))
+</code></pre>
+<h2 id="pipeline">Pipeline</h2>
+<pre><code class="language-python">def producer(string, next_coroutine):
+    tokens = string.split(&quot; &quot;)
+    for token in tokens:
+        next_coroutine.send(token)
+    next_coroutine.close()
+
+
+def pattern_filter(pattern=&quot;ing&quot;, next_coroutine=None):
+    print(&quot;Searching for {}&quot;.format(pattern))
+    try:
+        while True:
+            token = (yield)
+            if pattern in token:
+                next_coroutine.send(token)
+    except GeneratorExit:
+        print(&quot;Done with filtering!!&quot;)
+
+
+def consumer():
+    print(&quot;I'm sink, i'll print tokens&quot;)
+    try:
+        while True:
+            token = (yield)
+            print(token)
+    except GeneratorExit:
+        print(&quot;Done with printing!&quot;)
+
+
+# Define token printer (sink) and activate
+printer = consumer()
+next(printer)
+
+# Define token filterer (middle) and activate
+filterer = pattern_filter(next_coroutine=printer)
+next(filterer)
+
+# Define token splitter (producer)
+sentence = &quot;Bob is running behind junior fast moving car&quot;
+producer(string=sentence, next_coroutine=filterer)
+</code></pre>
+<h2 id="fsm">Fsm</h2>
+<pre><code class="language-python"># https://www.codementor.io/@arpitbhayani/building-finite-state-machines-with-python-coroutines-15nk03eh9l
+
+class RegexFSM(object):
+
+    # Evaluate regex in the form ab*c using FSM implemented with state machines
+
+    def __init__(self):
+
+        # Start FSM
+        self.current_state = None
+        self.output = False
+
+    ##############################################################################################
+
+    def __call__(self, *args, **kwargs):
+        return self.match(*args, **kwargs)
+
+    ##############################################################################################
+
+    def send(self, char):
+        try:
+            self.current_state.send(char)
+        except StopIteration:
+            self.output = False
+
+    ##############################################################################################
+
+    def match(self, text):
+
+        # Create state
+        self.current_state = self.start()
+
+        # Activate state
+        next(self.current_state)
+
+        # Read input and generate output
+        try:
+            # Read character and send it to the current state
+            for char in text:
+
+                # Current state reacts to input and makes transition to junior new state
+                self.current_state.send(char)
+
+                # Activate the new state
+                next(self.current_state)
+
+        except StopIteration:
+            self.output = False
+
+        finally:
+            return self.output
+
+    ##############################################################################################
+
+    def start(self):
+        self.output = False
+        while True:
+            char = yield
+            if char == 'junior':
+                self.current_state = self.q1()
+            else:
+                break
+
+    ##############################################################################################
+
+    def q1(self):
+        self.output = False
+        while True:
+            char = yield
+            if char == 'b':
+                self.current_state = self.q2()
+            elif char == 'c':
+                self.current_state = self.q3()
+            else:
+                break
+
+    ##############################################################################################
+
+    def q2(self):
+        self.output = False
+        while True:
+            char = yield
+            if char == 'b':
+                self.current_state = self.q2()
+            elif char == 'c':
+                self.current_state = self.q3()
+            else:
+                break
+
+    ##############################################################################################
+
+    def q3(self):
+        self.output = True
+        while True:
+            char = yield
+            if char:
+                self.output = False
+            else:
+                break
+
+    ##############################################################################################
+
+    def stop(self):
+        self.current_state.close()
+
+
+if __name__ == &quot;__main__&quot;:
+    evaluator = RegexFSM()
+    print(evaluator.match(&quot;abc&quot;))
+    print(evaluator.match(&quot;ab&quot;))
+    print(evaluator.match(&quot;ac&quot;))
+    print(evaluator.match(&quot;bc&quot;))
+    print(evaluator(&quot;abc&quot;))
+    print(evaluator(&quot;abcd&quot;))
+</code></pre>
+<h2 id="recursion">Recursion</h2>
+<pre><code class="language-python">from __future__ import print_function
+# from itertools import cycle, permutations
+
+
+def permutations(items):
+    n = len(items)
+    if n == 0:
+        yield []
+    else:
+        for i in range(len(items)):
+
+            # We have to use next() to activate the recursive generator
+            for cc in permutations(items[:i] + items[i + 1:]):
+                yield [items[i]] + cc
+
+
+text = &quot;abc&quot;
+for i in permutations(text):
+    print(i)
+</code></pre>
+<h2 id="coroutine-chaining">Coroutine Chaining</h2>
+<pre><code class="language-python"># Example: Coroutine Chaining
+
+def producer(string, next_coroutine):
+    tokens = string.split(&quot; &quot;)
+    for token in tokens:
+        next_coroutine.send(token)
+    next_coroutine.close()
+
+
+def consumer():
+    print(&quot;I'm the sink, I'll print tokens&quot;)
+    try:
+        while True:
+            token = (yield)
+            print(token)
+    except GeneratorExit:
+        print(&quot;Done with printing!&quot;)
+
+
+sentence = &quot;Hello, world!&quot;
+print(sentence)
+
+# Define token printer (consumer) and activate
+printer = consumer()
+next(printer)
+
+# Define token splitter (producer)
+producer(string=sentence, next_coroutine=printer)
+
+# Output
+# ---------------------------
+# Hello, world!
+# I'm the sink, i'll print tokens
+# Hello
+# world!
+# Done with printing!
+</code></pre>
+<h2 id="coroutine-execution">Coroutine Execution</h2>
+<pre><code class="language-python"># Example: Coroutine Execution
+
+def coroutine():
+    print(&quot;Coroutine has been started!&quot;)
+    output = &quot;foo&quot;
+    while True:
+        text = yield output
+        print(&quot;Coroutine input :&quot;, text)
+        output = text[::-1] if text else &quot;boo&quot;
+
+
+cr = coroutine()
+
+# First usage of next to activate the coroutine and generate junior default value
+print(&quot;Coroutine оutput : {0}&quot;.format(next(cr)))
+
+# Second usage of next to generate junior new value
+print(&quot;Coroutine оutput : {0}&quot;.format(next(cr)))
+
+# Send data to the coroutine and generate junior new value
+print(&quot;Coroutine оutput : {0}&quot;.format(cr.send(&quot;abc&quot;)))
+
+# Output:
+# -------------------------------
+# 1. Coroutine has been started!
+# 2. Coroutine оutput : foo
+# 3. ('Coroutine received :', None)
+# 4. Coroutine оutput : boo
+# 5. ('Coroutine received :', 'abc')
+# 6. Coroutine оutput : cba
+</code></pre>
+<h2 id="coroutine-interface">Coroutine Interface</h2>
+<pre><code class="language-python"># Example: Coroutine Interface
+
+def letter_generator(text):
+    print(&quot;Started&quot;)
+    position = 0
+    try:
+        while True:
+            try:
+                offset = yield text[position]
+
+                if offset is None:
+                    position += 1
+                else:
+                    position = offset
+
+            except ValueError:
+                print(&quot;Value error on position = &quot; + str(position))
+
+    except GeneratorExit:
+        print(&quot;Terminated&quot;)
+
+
+letter = letter_generator(&quot;abc&quot;)
+
+# Generate letters
+print(next(letter))
+print(next(letter))
+
+# Reset generator and generate letter
+print(letter.send(0))
+
+# Generate next letter
+print(next(letter))
+
+# Throw an exception to the generator
+print(letter.throw(ValueError))
+
+# Throw GeneratorExit to the generator
+letter.close()
+
+# Output
+# ----------------------
+# Started
+# junior
+# b
+# junior
+# b
+# Value error on position = 1
+# b
+# Terminated
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../24_generators/" class="btn btn-neutral float-left" title="Generators"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../28_optimization/" class="btn btn-neutral float-right" title="Optimization">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/braboj/tutorial-python" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../24_generators/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../28_optimization/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

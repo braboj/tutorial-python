@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Meta Classes - Python by Example</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Meta Classes";
+        var mkdocs_page_input_path = "examples\\23_meta_classes.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Python by Example
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Examples</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../01_hello_world/">Hello World</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../02_variables/">Variables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../03_comments/">Comments</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../04_operators/">Operators</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_user_input/">User Input</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_control_flow/">Control Flow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_functions/">Functions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_classes/">Classes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_docstrings/">Docstrings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_debugging/">Debugging</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_oop_pillars/">OOP Pillars</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../12_solid_principles/">SOLID Principles</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../13_logging/">Logging</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../14_exceptions/">Exceptions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../15_dunder_methods/">Dunder Methods</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../16_data_types/">Data Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../17_import_system/">Import System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../18_linting_tools/">Linting Tools</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../19_test_frameworks/">Test Frameworks</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../20_package_managers/">Package Managers</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../21_design_patterns/">Design Patterns</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Meta Classes</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#demo-abstract">Demo Abstract</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#demo-basic">Demo Basic</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#demo-conflict">Demo Conflict</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#demo-debug">Demo Debug</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#demo-declarative-api">Demo Declarative API</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#demo-decorator">Demo Decorator</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#demo-final">Demo Final</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#demo-gui">Demo GUI</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#demo-indexing">Demo Indexing</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#demo-registrar">Demo Registrar</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#demo-reloading">Demo Reloading</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#demo-singleton">Demo Singleton</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#demo-typed">Demo Typed</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#snippets">Snippets</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../24_generators/">Generators</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../25_coroutines/">Coroutines</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../28_optimization/">Optimization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../29_packaging/">Packaging</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../30_compatibility/">Compatibility</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Project</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project/">Python by Example Documentation</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Python by Example</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Examples</li>
+      <li class="breadcrumb-item active">Meta Classes</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/braboj/tutorial-python/edit/master/docs/examples/23_meta_classes.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="meta-classes">Meta Classes</h1>
+<h2 id="demo-abstract">Demo Abstract</h2>
+<pre><code class="language-python">from abc import ABCMeta, abstractmethod
+from six import with_metaclass
+
+
+class DeviceAbc(with_metaclass(ABCMeta)):
+
+    @abstractmethod
+    def foo(self):
+        pass
+
+
+class Device(DeviceAbc):
+
+    def foo(self):
+        pass
+
+
+a = Device()
+</code></pre>
+<h2 id="demo-basic">Demo Basic</h2>
+<pre><code class="language-python"># Two-step metaclass creation in Python 3.x
+from six import with_metaclass
+
+
+class SimpleMeta1(type):
+    def __init__(cls, name, bases, namespace):
+        super(SimpleMeta1, cls).__init__(name, bases, namespace)
+
+        # Print the methods and attributes found at the parsing stage
+        print(name, bases, namespace)
+
+        # Create a method called uses_metaclass returning junior simple string object
+        cls.uses_metaclass = lambda self: 'Added by the meta-class'
+
+
+class Simple1(object, with_metaclass(SimpleMeta1)):
+
+    # Add junior instance method to the namespace
+    def foo(self):
+        pass
+
+    # Add junior static function to the namespace
+    @staticmethod
+    def bar():
+        pass
+
+
+# Create the class
+simple = Simple1()
+
+# Expect 3 methods after the meta-class was executed
+print([m for m in dir(simple) if not m.startswith('__')])
+
+# Execute the method added by the meta-class
+print(simple.uses_metaclass())
+</code></pre>
+<h2 id="demo-conflict">Demo Conflict</h2>
+<pre><code class="language-python">from six import with_metaclass
+
+
+class MetaClassA(type):
+    pass
+
+
+class MetaClassB(type):
+    pass
+
+
+class A(object, with_metaclass(MetaClassA)):
+    pass
+
+
+class B(object, with_metaclass(MetaClassB)):
+    pass
+
+
+try:
+    class C1(A, B):
+        pass
+
+except Exception as e:
+    print(e)
+
+
+class MetaClassC(MetaClassA, MetaClassB):
+    pass
+
+
+class C2(A, B, with_metaclass(MetaClassC)):
+    pass
+</code></pre>
+<h2 id="demo-debug">Demo Debug</h2>
+<pre><code class="language-python"># coding=utf-8
+
+&quot;&quot;&quot;
+__new__ is called for the creation of a new class, while __init__ is called
+after the class is created, to perform additional initialization before the
+class is handed to the caller.
+
+The primary difference is that when overriding __new__() you can change
+things like the ‘name’, ‘bases’ and ‘namespace’ arguments before you call
+the super constructor and it will have an effect, but doing the same thing
+in __init__() you won’t get any results from the constructor call.
+
+&quot;&quot;&quot;
+
+from collections import OrderedDict
+import time
+
+
+class DebugMeta(type):
+
+    @classmethod
+    def __prepare__(cls, name, bases):
+
+        namespace = OrderedDict()
+        namespace[&quot;owner&quot;] = &quot;Branimir Georgiev&quot;
+        print(&quot;Preparing namespace dictionary {0}&quot;.format(namespace))
+        return namespace
+
+    def __new__(mcs, name, bases, namespace):
+
+        x = super(DebugMeta, mcs).__new__(mcs, name, bases, namespace)
+        print(&quot;Creating new class {0}&quot;.format(x))
+        x.timestamp = time.time()
+        return x
+
+    def __init__(cls, name, bases, namespace):
+
+        print(&quot;Class initialization&quot;)
+        super(DebugMeta, cls).__init__(name, bases, namespace)
+        cls.access = &quot;rw&quot;
+
+    def __call__(cls, *args, **kwargs):
+
+        print(&quot;Class call&quot;)
+        return super(DebugMeta, cls).__call__(*args, **kwargs)
+
+    def __del__(self):
+        print(&quot;Class deleted&quot;)
+
+
+class Base(metaclass=DebugMeta):
+
+    def __init__(self, *args, **kwargs):
+        super(Base, self).__init__(*args, **kwargs)
+        print(&quot;Instance initialization {0}&quot;.format(vars(self)))
+
+    def __new__(cls, *args, **kwargs):
+        x = super(Base, cls).__new__(cls, *args, **kwargs)
+        print(&quot;Creating new instance {0}&quot;.format(x))
+        return x
+
+    def __call__(self, *args, **kwargs):
+        print(&quot;Instance called args={0} and kwargs={1}&quot;.format(args, kwargs))
+
+    def __del__(self):
+        print(&quot;Instance deleted&quot;)
+
+config = {&quot;a&quot;:1, &quot;b&quot;:2}
+test = Base()
+test(1, test=2)
+</code></pre>
+<h2 id="demo-declarative-api">Demo Declarative API</h2>
+<pre><code class="language-python"># https://developer.ibm.com/technologies/analytics/tutorials/ba-metaprogramming-python/
+#
+# &gt;&gt;&gt; from from django.db import models
+# &gt;&gt;&gt; class Vehicle(models.Model):
+# ...    color = models.CharField(max_length=10)
+# ...    wheels = models.IntegerField()
+# &gt;&gt;&gt; four_wheeler = Vehicle(color=&quot;Blue&quot;, wheels=&quot;Four&quot;)
+# Raises an error
+# &gt;&gt;&gt; four_wheeler = Vehicle(color=&quot;Blue&quot;, wheels=4)
+# &gt;&gt;&gt; four_wheeler.wheels
+# 4
+
+from collections import OrderedDict
+from six import with_metaclass
+
+
+class MyStore(object):
+    &quot;&quot;&quot;Store keeping track of singleton instances.&quot;&quot;&quot;
+
+    def __init__(self):
+        self.store = {}
+
+    def __str__(self):
+        return str({key: str(value) for key, value in self.store.items()})
+
+    def register(self, name, obj):
+        self.store[name] = obj
+
+
+store = MyStore()
+
+
+class MyField(str):
+    pass
+
+
+class MyMeta(type):
+    &quot;&quot;&quot;
+    Example of metaclass demonstrating some of the classical features that such
+    a construct can provide: class alteration and registration.
+    &quot;&quot;&quot;
+
+    @staticmethod
+    def __prepare__():
+        return OrderedDict()
+
+    def __new__(mcs, class_name, class_bases, class_attrs):
+
+        # Reorganizing attributes:
+        reorganized_attrs = OrderedDict([('_fields', OrderedDict()),
+                                         ('_constants', OrderedDict())])
+
+        for name, attr in class_attrs.items():
+            if isinstance(attr, MyField):
+                reorganized_attrs['_fields'][name] = attr
+            elif not name.startswith('__') and not callable(attr):
+                reorganized_attrs['_constants'][name] = attr
+            else:
+                reorganized_attrs[name] = attr
+
+        # Creating the class:
+        cls = type.__new__(mcs, class_name, class_bases, reorganized_attrs)
+
+        # Initializing the singleton pattern:
+        obj = cls()
+        cls._obj = obj
+
+        # Registering the new object:
+        store.register(class_name, obj)
+
+        # Displaying the results of the application of the metaclass:
+        print(&quot;Here is what {} contains:&quot;.format(cls.__name__))
+        for name, attr in cls.__dict__.items():
+            print(&quot;    . {}: {}&quot;.format(name, attr))
+        print(&quot;&quot;)
+
+        return cls
+
+    def __call__(cls, *args, **kwargs):
+        &quot;&quot;&quot;Implementing the singleton pattern at class call.&quot;&quot;&quot;
+
+        if not hasattr(cls, '_obj'):
+            obj = super(MyMeta, cls).__call__(*args, **kwargs)
+            obj.__init__(*args, **kwargs)
+            return obj
+        else:
+            return cls._obj
+
+
+class MyClass(with_metaclass(MyMeta)):
+    &quot;&quot;&quot;Example of a user-defined (client) class that makes use of MyMeta.&quot;&quot;&quot;
+
+    # Demo attributes (mixed fields and constants)
+    a = 42
+    b = MyField('foo')
+    c = MyField('bar')
+    d = 'Field' in globals()
+
+    def __str__(self):
+        &quot;&quot;&quot;Showing the memory address of self (proving it is junior singleton).&quot;&quot;&quot;
+        return &quot;I'm located at: {}&quot;.format(id(self))
+
+
+test_instance = MyClass()
+print(test_instance)
+other_instance = MyClass()
+print(&quot;Once again&quot;, other_instance)
+print(&quot;The store is:&quot;, store)
+</code></pre>
+<h2 id="demo-decorator">Demo Decorator</h2>
+<pre><code class="language-python"># https://cleverdevil.io/2009/python-metaclasses-demystified
+
+import inspect
+from six import with_metaclass
+
+
+class AutoDecorateMeta(type):
+
+    def __init__(cls, name, bases, namespace):
+        super(AutoDecorateMeta, cls).__init__(name, bases, namespace)
+
+        deco = namespace.get('decorator', lambda f: f)
+        for key, value in namespace.items():
+
+            # skip the decorator and constructor
+            if key in ('decorator', '__init__'):
+                continue
+
+            # skip objects in the namespace that aren't methods
+            if not inspect.isfunction(value):
+                continue
+
+            # apply the decorator
+            setattr(cls, key, deco(value))
+
+
+class Person(object, with_metaclass(AutoDecorateMeta)):
+
+    # Decorator selector
+    decorator = property
+
+    def __init__(self, first, middle, last):
+        self.first = first
+        self.middle = middle
+        self.last = last
+
+    # Will be decorated
+    def name(self):
+        return '%s %s' % (self.first, self.last)
+
+    # Will be decorated
+    def full_name(self):
+        return '%s %s %s' % (self.first, self.middle, self.last)
+
+    # Will be decorated
+    def initials(self):
+        return '%s%s%s' % (self.first[0], self.middle[0], self.last[0])
+
+
+mlk = Person('Martin', 'Luther', 'King')
+
+# Usual way to use name is as method
+# mlk.name()
+# Auto-decorated class converted method to property
+
+print(mlk.name)
+print(mlk.full_name)
+print(mlk.initials)
+</code></pre>
+<h2 id="demo-final">Demo Final</h2>
+<pre><code class="language-python">from six import with_metaclass
+
+
+class Final(type):
+    def __init__(cls, name, bases, namespace):
+        super(Final, cls).__init__(name, bases, namespace)
+
+        for klass in bases:
+            if isinstance(klass, Final):
+                raise TypeError(str(klass.__name__) + &quot; is final&quot;)
+
+
+class A(object, with_metaclass(Final)):
+    A = 1
+
+    def a(self):
+        pass
+
+
+class B(A):
+    B = 1
+
+    def b(self):
+        pass
+
+
+a = A()
+print(a)
+
+b = B()
+print(b)
+</code></pre>
+<h2 id="demo-gui">Demo GUI</h2>
+<pre><code class="language-python">##############################################################################
+# Window
+#   &gt; Box
+#       &gt; Label
+##############################################################################
+
+
+##############################################################################
+# Imperative programming
+##############################################################################
+class Box(object):
+
+    def add(self, what):
+        pass
+
+
+class Label(object):
+
+    def __init__(self, label=&quot;&quot;):
+        self.label = label
+
+    def add(self):
+        pass
+
+
+class Window(object):
+    def __init__(self, title=&quot;Window element&quot;):
+        self.title = title
+
+        self.box = Box()
+        self.add(self.box)
+        self.label = Label(label=&quot;Hello, label!&quot;)
+        self.box.add(self.label)
+
+    def add(self, what):
+        pass
+
+
+##############################################################################
+# Declarative programming
+##############################################################################
+class Top(Window):
+    title = &quot;Hello, window!&quot;
+
+    class Group(Box):
+        class Title(Label):
+            label = '&quot;Hello, label!&quot;'
+
+
+##############################################################################
+# Solution???
+##############################################################################
+</code></pre>
+<h2 id="demo-indexing">Demo Indexing</h2>
+<pre><code class="language-python">from six import with_metaclass
+
+
+##############################################################################
+# Metaclass definition
+##############################################################################
+
+class Indexer(type):
+    def __init__(cls, name, bases, namespace):
+        super(Indexer, cls).__init__(name, bases, namespace)
+
+        if not hasattr(cls, &quot;subclasses&quot;):
+            cls.subclasses = []
+
+        if not hasattr(cls, &quot;index&quot;):
+            cls.index = 0
+
+        # Index only subclasses
+        for b in bases:
+            if isinstance(b, Indexer):
+                cls.subclasses.append(1)
+
+        cls.index = len(cls.subclasses)
+
+
+##############################################################################
+# First base class and subclasses
+##############################################################################
+
+class A(with_metaclass(Indexer)):
+    pass
+
+
+class A1(A):
+    pass
+
+
+class A2(A):
+    pass
+
+
+print(A.index, A1.index, A2.index)
+
+
+##############################################################################
+# Second base class and subclasses
+##############################################################################
+
+class B(with_metaclass(Indexer)):
+    pass
+
+
+class B1(B):
+    pass
+
+
+class B2(B):
+    pass
+
+
+print(B.index, B1.index, B2.index)
+</code></pre>
+<h2 id="demo-registrar">Demo Registrar</h2>
+<pre><code class="language-python">from six import with_metaclass
+
+
+##############################################################################
+# EXAMPLE 1 : Register leaf classes and count them
+##############################################################################
+
+# 1. Metaclass definition
+class RegisterLeafClasses(type):
+    def __init__(cls, name, bases, namespace):
+        super(RegisterLeafClasses, cls).__init__(name, bases, namespace)
+
+        if not hasattr(cls, 'registry'):
+            cls.registry = set()
+
+        cls.registry.add(cls)
+        cls.registry -= set(bases)  # Remove base classes
+
+    # Class property
+    @property
+    def count(cls):
+        return len(cls.registry)
+
+    # Metamethods, called on class objects:
+    def __iter__(cls):
+        return iter(cls.registry)
+
+    def __str__(cls):
+        if cls in cls.registry:
+            return cls.__name__
+        return cls.__name__ + &quot;: &quot; + &quot;, &quot;.join([sc.__name__ for sc in cls])
+
+
+# 2. Custom root class
+class Color(object, with_metaclass(RegisterLeafClasses)):
+    pass
+
+
+# 3. Derived classes
+class Blue(Color):
+    pass
+
+
+class Red(Color):
+    pass
+
+
+class Green(Color):
+    pass
+
+
+class Yellow(Color):
+    pass
+
+
+print(Color)
+
+
+# 4. Tests
+class PhthaloBlue(Blue):
+    pass
+
+
+class CeruleanBlue(Blue):
+    pass
+
+
+print(Color)
+
+for c in Color:  # Iterate over subclasses
+    print(c)
+
+print(Color.count)
+
+
+##############################################################################
+# EXAMPLE 2 : Example from Hilscher Framework
+##############################################################################
+class Registrar(type):
+    &quot;&quot;&quot; A meta class used to generate a list of all subclasses of a class &quot;&quot;&quot;
+
+    def __init__(cls, name, bases, dct):
+        super(Registrar, cls).__init__(name, bases, dct)
+        cls.register(cls)
+
+    @classmethod
+    def list(mcs):
+        for attrib in getattr(mcs, 'classes', tuple()):
+            yield attrib
+
+    # Metamethod used to register classes
+    @classmethod
+    def register(mcs, cls):
+
+        try:
+            # Create reference to classes attribute
+            classes = mcs.classes
+
+        except AttributeError:
+            # Create classes attribute and create reference
+            classes = mcs.classes = []
+            mcs.count = 0
+
+        # Use reference to populate registry
+        classes.append(cls)
+
+
+class ClassToRegister1(object, with_metaclass(Registrar)):
+    pass
+
+
+class ClassToRegister2(ClassToRegister1):
+    pass
+
+
+a = ClassToRegister1()
+b = ClassToRegister2()
+
+for x in Registrar.list():
+    print(x)
+</code></pre>
+<h2 id="demo-reloading">Demo Reloading</h2>
+<pre><code class="language-python">from six import with_metaclass
+
+&quot;&quot;&quot;
+Scenario : At Hilscher the test framework uses meta-classes to scan for devices with open channels. If 2 or more
+device classes are found, then the network creates a new class with all device classes as base classes. This leads
+to a problem as the order the device classes are found is not always guaranteed.
+
+Solution: Use custom device class to ensure the right methods are used for the respective device
+
+&quot;&quot;&quot;
+
+
+class ReloadMeta(type):
+
+    registry = {}
+
+    def __new__(mcs, class_name, bases, namespace):
+
+        module_name = namespace['__module__']
+
+        try:
+            current = mcs.registry[module_name][class_name]
+        except KeyError:
+            current = None
+        if current:
+            mcs.regenerate(current, namespace)
+            return current
+
+        cls = type.__new__(mcs, class_name, bases, namespace)
+        mcs.registry.setdefault(module_name, {})[class_name] = cls
+
+        return cls
+
+    def regenerate(cls, namespace):
+
+        print(&quot;Reloading class %s&quot; % cls)
+
+        for name in list(cls.__dict__.keys()):
+            if name in ['__name__', '__metaclass__',
+                        '__module__', '__dict__',
+                        '__weakref__', '__bases__']:
+                continue
+            delattr(cls, name)
+
+        for name, value in namespace.items():
+            setattr(cls, name, value)
+
+        return cls
+
+
+if __name__ == '__main__':
+
+    # First class with method test
+    class C(object, with_metaclass(ReloadMeta)):
+
+        def test(self):
+            print('first {0}'.format(self))
+
+
+    c = C()
+    c.test()
+
+    # Second class with new method test
+    class C(object, with_metaclass(ReloadMeta)):
+
+        def test(self):
+            print('second {0}'.format(self))
+
+
+    c.test()
+</code></pre>
+<h2 id="demo-singleton">Demo Singleton</h2>
+<pre><code class="language-python"># coding=utf-8
+
+&quot;&quot;&quot;
+By overriding __call__() in the metaclass, the creation of instances are
+intercepted. Instance creation is bypassed if one already exists.
+
+Note the dependence upon the behavior of static class fields. When
+cls.instance is first read, it gets the static value of instance from the
+metaclass, which is None. However, when the assignment is made, Python
+creates a local version for the particular class, and the next time
+cls.instance is read, it sees that local version. Because of this behavior,
+each class ends up with its own class-specific instance field (thus instance
+is not somehow being “inherited” from the metaclass).
+
+&quot;&quot;&quot;
+
+
+class Singleton(type):
+
+    instance = None
+
+    def __call__(cls, *args, **kwargs):
+        if not cls.instance:
+            cls.instance = super(Singleton, cls).__call__(*args, **kwargs)
+        return cls.instance
+
+
+class ASingleton(object, metaclass=Singleton):
+    pass
+
+
+a = ASingleton()
+b = ASingleton()
+
+assert a is b
+print(a.__class__.__name__, b.__class__.__name__)
+print(id(a), id(b))
+</code></pre>
+<h2 id="demo-typed">Demo Typed</h2>
+<pre><code class="language-python">from six import with_metaclass
+
+
+# Create metaclass
+class MyMetaClass(type):
+    def __init__(cls, name, bases, namespace):
+        super(MyMetaClass, cls).__init__(name, bases, namespace)
+
+
+# Create first custom class from metaclass
+class A(object, with_metaclass(MyMetaClass)):
+    A = 1
+
+    def __init__(self, param=1):
+        self.a = param
+
+    @staticmethod
+    def configure():
+        print(&quot;A&quot;)
+
+
+# Create second custom class from metaclass
+class B(object, with_metaclass(MyMetaClass)):
+    B = 2
+
+    def __init__(self, param=1):
+        self.b = param
+
+    @staticmethod
+    def configure():
+        print(&quot;B&quot;)
+
+
+# Show that order of super classes determines class behavior
+
+# -&gt; Inherits combined class attributes but instance attrib/methods from A
+D = MyMetaClass('D', (A, B), {})
+test = D()
+print(vars(test))
+test.configure()
+
+# -&gt; Inherits combined class attributes but instance attrib/methods from B
+D = MyMetaClass('D', (B, A), {})
+test = D()
+print(vars(test))
+test.configure()
+
+# -&gt; Solution when multiple inheritance problems (due to bad design, etc.)
+
+# Recast class type
+test = B(test)
+pass
+</code></pre>
+<h2 id="snippets">Snippets</h2>
+<pre><code class="language-python">namespace = globals()
+
+abstracts = set(name for name, value in namespace.items() if getattr(value, &quot;__isabstractmethod__&quot;, False))
+print(abstracts)
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../21_design_patterns/" class="btn btn-neutral float-left" title="Design Patterns"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../24_generators/" class="btn btn-neutral float-right" title="Generators">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/braboj/tutorial-python" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../21_design_patterns/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../24_generators/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
