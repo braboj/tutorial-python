@@ -1,60 +1,70 @@
 #!/usr/bin/env python3
-"""Generate a Markdown file for each Python example.
+"""Generate aggregated Markdown files for each examples subfolder.
 
 Usage:
     python .scripts/examples_to_markdown_files.py \
         --examples-dir examples \
-        --template templates/example_file.mustache \
         --output-dir docs
 
-The directory structure under ``examples`` is mirrored under the output
-directory. Each ``.py`` file becomes a ``.md`` file with the same name and
-relative path. Files named ``__init__.py`` are ignored and skipped.
+For every immediate subfolder in ``examples`` a single ``.md`` file is created
+in the output directory. The file name matches the subfolder name and contains
+all example files from that folder. Folder and file names are converted to
+title format: CamelCase words are split with spaces and acronyms remain in
+uppercase.
 """
 
 import argparse
 import re
 from pathlib import Path
 
-try:
-    import pystache
-except ModuleNotFoundError as exc:  # pragma: no cover - import guard
-    raise SystemExit(
-        "pystache is required to run this script. Install it via `pip install pystache`."
-    ) from exc
 
 
-def parse_example(path: Path) -> dict:
-    """Return the file name and entire contents of the example."""
-    with path.open("r", encoding="utf-8") as f:
-        code = f.read()
-    return {"name": path.stem, "code": code.rstrip()}
-
-
-def render_markdown(template: str, context: dict) -> str:
-    """Render the Markdown using a Mustache template."""
-    renderer = pystache.Renderer()
-    return renderer.render(template, context)
-
-
-def to_camel_case(name: str) -> str:
-    """Return *name* converted to CamelCase without leading digits."""
-    # Strip leading numeric prefixes like ``01_``
-    name = re.sub(r"^\d+_?", "", name)
+def to_title(name: str) -> str:
+    """Return *name* in title format with spaces and preserved acronyms."""
+    # Remove numeric prefixes like ``01_``
+    name = re.sub(r"^\d+[_-]?", "", name)
     parts = re.split(r"[_\-\s]+", name)
-    return "".join(word.capitalize() for word in parts if word)
+    words = []
+    for part in parts:
+        if not part:
+            continue
+        if re.fullmatch(r"[A-Z0-9]+", part):
+            words.append(part)
+        elif re.fullmatch(r"[a-z]+", part) and len(part) <= 4:
+            words.append(part.upper())
+        else:
+            words.append(part.capitalize())
+    return " ".join(words)
 
 
-def process_file(py_path: Path, template: str, base_dir: Path, output_dir: Path) -> None:
-    """Write a Markdown version of *py_path* under *output_dir*."""
-    context = parse_example(py_path)
-    markdown = render_markdown(template, context)
 
-    relative = py_path.relative_to(base_dir).with_suffix(".md")
-    md_path = output_dir / relative
-    md_path.parent.mkdir(parents=True, exist_ok=True)
-    with md_path.open("w", encoding="utf-8") as f:
-        f.write(markdown)
+
+def generate_aggregate(folder: Path, output_dir: Path) -> None:
+    """Create a single Markdown file aggregating all examples in *folder*."""
+    examples = []
+    for py_file in sorted(folder.glob("*.py")):
+        if py_file.name == "__init__.py":
+            continue
+        with py_file.open("r", encoding="utf-8") as f:
+            code = f.read().rstrip()
+        examples.append((to_title(py_file.stem), code))
+
+    if not examples:
+        return
+
+    title = to_title(folder.name)
+    lines = [f"# {title}", ""]
+    for name, code in examples:
+        lines.append(f"## {name}")
+        lines.append("")
+        lines.append("```python")
+        lines.append(code)
+        lines.append("```")
+        lines.append("")
+
+    agg_path = output_dir / f"{folder.name}.md"
+    with agg_path.open("w", encoding="utf-8") as f:
+        f.write("\n".join(lines).rstrip() + "\n")
 
 
 def generate_aggregate(folder: Path, base_dir: Path, output_dir: Path) -> None:
@@ -87,17 +97,12 @@ def generate_aggregate(folder: Path, base_dir: Path, output_dir: Path) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Generate Markdown files mirroring the examples directory"
+        description="Generate aggregated Markdown files from the examples"
     )
     parser.add_argument(
         "--examples-dir",
         default="examples",
         help="Directory containing example .py files",
-    )
-    parser.add_argument(
-        "--template",
-        default="templates/example_file.mustache",
-        help="Mustache template file",
     )
     parser.add_argument(
         "--output-dir",
@@ -113,13 +118,11 @@ def main() -> None:
     # previously generated documentation.
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    with Path(args.template).open("r", encoding="utf-8") as f:
-        template = f.read()
 
-    for py_file in sorted(examples_dir.rglob("*.py")):
-        if py_file.name == "__init__.py":
-            continue
-        process_file(py_file, template, examples_dir, output_dir)
+
+    for folder in sorted(examples_dir.iterdir()):
+        if folder.is_dir():
+            generate_aggregate(folder, output_dir)
 
     for folder in sorted(examples_dir.iterdir()):
         if folder.is_dir():
