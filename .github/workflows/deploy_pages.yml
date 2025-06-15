@@ -6,9 +6,6 @@ on:
   push:
     branches:
       - "main"
-    paths:
-      - "docs/**"
-      - mkdocs.yml
 
 permissions:
   contents: read
@@ -32,7 +29,7 @@ jobs:
       - run: pip install mkdocs-section-index
       - run: mkdocs build --site-dir ./_site
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3.0.1
 
   # The deployment job
   deploy:
