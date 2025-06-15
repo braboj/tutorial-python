@@ -14,26 +14,46 @@ uppercase.
 """
 
 import argparse
+import json
 import re
 from pathlib import Path
 
-
-
 def to_title(name: str) -> str:
     """Return *name* in title format with spaces and preserved acronyms."""
+
     # Remove numeric prefixes like ``01_``
     name = re.sub(r"^\d+[_-]?", "", name)
+
+    # Split on underscores, dashes, or spaces
     parts = re.split(r"[_\-\s]+", name)
+
+    # Import JSON file containing user-defined acronyms
+    with open('acronyms.json') as json_data:
+        user_acronyms = json.load(json_data)
+
+    # Capitalize each part, preserving all-uppercase acronyms
     words = []
     for part in parts:
+
+        print(part)
+
+        # Skip empty parts that may result from leading/trailing separators
         if not part:
             continue
-        if re.fullmatch(r"[A-Z0-9]+", part):
-            words.append(part)
-        elif re.fullmatch(r"[a-z]+", part) and len(part) <= 4:
+
+        # Check user-defined acronyms from `docs/acronyms.txt`
+        if part.upper() in user_acronyms:
             words.append(part.upper())
+
+        # If the part is all uppercase and contains only alphanumeric characters,
+        # treat it as an acronym and keep it as is
+        elif re.fullmatch(r"[A-Z0-9]+", part):
+            words.append(part)
+
+        # Otherwise, capitalize the first letter and lowercase the rest
         else:
             words.append(part.capitalize())
+
     return " ".join(words)
 
 
@@ -83,7 +103,7 @@ def main() -> None:
     )
     parser.add_argument(
         "--output-dir",
-        default="../docs",
+        default="../docs/examples",
         help="Directory where Markdown files will be written",
     )
     args = parser.parse_args()

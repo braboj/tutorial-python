@@ -54,17 +54,17 @@ def main() -> None:
     )
     parser.add_argument(
         "--examples-dir",
-        default="examples",
+        default="../examples",
         help="Directory containing example .py files",
     )
     parser.add_argument(
         "--template",
-        default="templates/example_file.mustache",
+        default="../templates/example_file.mustache",
         help="Mustache template file",
     )
     parser.add_argument(
         "--output-dir",
-        default="docs",
+        default="../docs",
         help="Directory where Markdown files will be written",
     )
     args = parser.parse_args()

@@ -57,17 +57,17 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Generate examples markdown")
     parser.add_argument(
         "--examples-dir",
-        default="examples",
+        default="../examples",
         help="Directory containing example .py files",
     )
     parser.add_argument(
         "--template",
-        default="templates/examples_page.mustache",
+        default="../templates/examples_page.mustache",
         help="Mustache template file",
     )
     parser.add_argument(
         "--output",
-        default="examples.md",
+        default="../docs/examples.md",
         help="Output markdown file",
     )
     args = parser.parse_args()
