@@ -7,3 +7,4 @@ pystache
 
 mkdocs
 pyyaml
+mkdocs-awesome-pages-plugin
