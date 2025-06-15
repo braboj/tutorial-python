@@ -1,0 +1,10 @@
+site_name: Python by Example
+docs_dir: docs
+
+theme:
+  name: readthedocs
+  collapse_navigation: true
+
+plugins:
+  - search
+  - awesome-pages
