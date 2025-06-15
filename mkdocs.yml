@@ -1,4 +1,6 @@
 site_name: Python by Example
+repo_url: https://github.com/braboj/tutorial-python
+site_dir: site
 docs_dir: docs
 
 theme:
@@ -8,3 +10,44 @@ theme:
 plugins:
   - search
   - awesome-pages
+
+nav:
+  - Project:
+      - Home: project/index.md
+
+  - Examples:
+    - Introduction: examples/01_hello_world.md
+    - Variables: examples/02_variables.md
+    - Comments: examples/03_comments.md
+    - Operators: examples/04_operators.md
+    - User Input: examples/05_user_input.md
+    - Control Flow: examples/06_control_flow.md
+    - Functions: examples/07_functions.md
+    - Classes: examples/08_classes.md
+    - Docstrings: examples/09_docstrings.md
+    - Debugging: examples/10_debugging.md
+    - Logging: examples/13_logging.md
+    - OOP Pillars: examples/11_oop_pillars.md
+    - SOLID Principles: examples/12_solid_principles.md
+    - Design Patterns: examples/21_design_patterns.md
+    - Exceptions: examples/14_exceptions.md
+    - Dunder Methods: examples/15_dunder_methods.md
+    - Import System: examples/17_import_system.md
+    - Lintinig Tools: examples/18_linting_tools.md
+    - Test Frameworks: examples/19_test_frameworks.md
+    - Package Managers: examples/20_package_managers.md
+    - Data Structures: examples/16_data_structures.md
+    - Concurrency: examples/22_concurrency.md
+    - Meta Classes: examples/23_meta_classes.md
+    - Generators: examples/24_generators.md
+    - Coroutines: examples/25_coroutines.md
+    - Garbage Collection: examples/26_garbage_collector.md
+    - Weakref: examples/27_weakref.md
+    - Optimization: examples/28_optimization.md
+    - Packaging: examples/29_packaging.md
+    - Compatibility: examples/30_compatibility.md
+    - Tracing: examples/31_tracing.md
+    - Profiling: examples/32_profiling.md
+    - Inspections: examples/33_inspections.md
+    - Extensions: examples/34_extensions.md
+    - Security: examples/35_secure_desing.md
