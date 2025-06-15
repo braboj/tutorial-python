@@ -71,6 +71,11 @@ def main() -> None:
 
     examples_dir = Path(args.examples_dir)
     output_dir = Path(args.output_dir)
+    # Ensure the output directory exists but do not wipe it if it already
+    # contains files. ``exist_ok=True`` prevents accidental deletion of
+    # previously generated documentation.
+    output_dir.mkdir(parents=True, exist_ok=True)
+
     with Path(args.template).open("r", encoding="utf-8") as f:
         template = f.read()
 
