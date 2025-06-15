@@ -21,12 +21,11 @@ jobs:
       - run: ls -la
       - name: Setup Pages
         uses: actions/configure-pages@v2
-      - name: Setup Python, install plugins, and build site
+      - name: Setup Python environment
         uses: actions/setup-python@v4
         with:
-          python-version: 3.x
-      - run: pip install mkdocs
-      - run: pip install mkdocs-section-index
+          python-version: 3.12
+      - run: pip install -r requirements.txt
       - run: mkdocs build --site-dir ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3.0.1
