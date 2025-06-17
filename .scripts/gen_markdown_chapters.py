@@ -56,14 +56,6 @@ def to_title(name: str) -> str:
 
     return " ".join(words)
 
-
-def to_camel_case(name: str) -> str:
-    """Return *name* converted to CamelCase without leading digits."""
-    # Strip leading numeric prefixes like ``01_``
-    name = re.sub(r"^\d+_?", "", name)
-    parts = re.split(r"[_\-\s]+", name)
-    return " ".join(word.capitalize() for word in parts if word)
-
 def generate_aggregate(folder: Path, output_dir: Path) -> None:
     """Create a single Markdown file aggregating all examples in *folder*."""
     examples = []
