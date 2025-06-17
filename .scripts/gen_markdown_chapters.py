@@ -18,6 +18,11 @@ import json
 import re
 from pathlib import Path
 
+# Load user-defined acronyms once when the module is imported
+ACRONYMS_PATH = Path(__file__).resolve().parent / "acronyms.json"
+with ACRONYMS_PATH.open("r", encoding="utf-8") as json_data:
+    USER_ACRONYMS = json.load(json_data)
+
 def to_title(name: str) -> str:
     """Return *name* in title format with spaces and preserved acronyms."""
 
@@ -27,10 +32,6 @@ def to_title(name: str) -> str:
     # Split on underscores, dashes, or spaces
     parts = re.split(r"[_\-\s]+", name)
 
-    # Import JSON file containing user-defined acronyms
-    with open('acronyms.json') as json_data:
-        user_acronyms = json.load(json_data)
-
     # Capitalize each part, preserving all-uppercase acronyms
     words = []
     for part in parts:
@@ -38,8 +39,8 @@ def to_title(name: str) -> str:
         if not part:
             continue
 
-        # Check user-defined acronyms from `docs/acronyms.txt`
-        if part.upper() in user_acronyms:
+        # Check user-defined acronyms loaded from ``acronyms.json``
+        if part.upper() in USER_ACRONYMS:
             words.append(part.upper())
 
         # If the part is all uppercase and contains only alphanumeric characters,
