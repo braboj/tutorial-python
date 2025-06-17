@@ -2,7 +2,7 @@
 """Generate a Markdown page from Python example files.
 
 Usage::
-    python .scripts/examples_to_markdown.py \
+    python .scripts/gen_single_markdown.py \
         --examples-dir examples \
         --template templates/examples_page.mustache \
         --output examples.md

@@ -2,7 +2,7 @@
 """Generate aggregated Markdown files for each examples subfolder.
 
 Usage:
-    python .scripts/examples_to_markdown_files.py \
+    python .scripts/gen_markdown_chapters.py \
         --examples-dir examples \
         --output-dir docs
 
