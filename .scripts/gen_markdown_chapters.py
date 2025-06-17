@@ -34,9 +34,6 @@ def to_title(name: str) -> str:
     # Capitalize each part, preserving all-uppercase acronyms
     words = []
     for part in parts:
-
-        print(part)
-
         # Skip empty parts that may result from leading/trailing separators
         if not part:
             continue
