@@ -3,7 +3,7 @@
 ## String Cases
 
 ```python
-# String case manipulation examples
+# String case manipulation .examples
 # --------------------------------------------------------------------------------
 # This code applies various string case manipulation methods in Python.
 
@@ -464,7 +464,7 @@ print(hexadecimal_var)
 # --------------------------------------------------------------------------------
 # The list type in Python is used to represent a collection of items. It is
 # important to note that lists are passed by reference (see mutability in
-# examples). When you assign a list to another variable, both variables point
+# .examples). When you assign a list to another variable, both variables point
 # to the same list in memory. This means that changes made to one variable
 # will affect the other variable as well. To create a copy of a list, you can
 # use the `copy()` method or the slicing (e.g. `a = b[:]`). The list has the

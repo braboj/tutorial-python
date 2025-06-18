@@ -1,4 +1,4 @@
-# String case manipulation examples
+# String case manipulation .examples
 # --------------------------------------------------------------------------------
 # This code applies various string case manipulation methods in Python.
 

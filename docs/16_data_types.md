@@ -1363,7 +1363,7 @@ print(merged)
 ```python
 # Unpacking snippets
 # -----------------------------------------------------------------------------
-# These small examples show how the * operator can gather or scatter items from sequences.
+# These small .examples show how the * operator can gather or scatter items from sequences.
 test_string = "PYTHON"
 test_list = [1, 2, 3, 4]
 test_dict = {"A": 1, "B": 2}

@@ -12,7 +12,7 @@
 #
 # !!! WARNING !!!
 # Please always use parentheses to make the code more readable and
-# to avoid confusion with operator precedence. The examples below
+# to avoid confusion with operator precedence. The .examples below
 # are for educational purposes only and should not be used in production
 # code.
 

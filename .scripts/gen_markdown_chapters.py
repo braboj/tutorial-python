@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Generate aggregated Markdown files for each examples subfolder.
+"""Generate aggregated Markdown files for each .examples subfolder.
 
 Usage:
     python .scripts/gen_markdown_chapters.py \
-        --examples-dir examples \
+        --.examples-dir .examples \
         --output-dir docs
 
-For every immediate subfolder in ``examples`` a single ``.md`` file is created
+For every immediate subfolder in ``.examples`` a single ``.md`` file is created
 in the output directory. The file name matches the subfolder name and contains
 all example files from that folder. Folder and file names are converted to
 title format: CamelCase words are split with spaces and acronyms remain in
@@ -55,7 +55,7 @@ def to_title(name: str) -> str:
     return " ".join(words)
 
 def generate_aggregate(folder: Path, output_dir: Path) -> None:
-    """Create a single Markdown file aggregating all examples in *folder*."""
+    """Create a single Markdown file aggregating all .examples in *folder*."""
     examples = []
     for py_file in sorted(folder.glob("*.py")):
         if py_file.name == "__init__.py":
@@ -84,16 +84,16 @@ def generate_aggregate(folder: Path, output_dir: Path) -> None:
 def main() -> None:
 
     parser = argparse.ArgumentParser(
-        description="Generate aggregated Markdown files from the examples"
+        description="Generate aggregated Markdown files from the .examples"
     )
     parser.add_argument(
-        "--examples-dir",
-        default="../examples",
+        "--.examples-dir",
+        default="../.examples",
         help="Directory containing example .py files",
     )
     parser.add_argument(
         "--output-dir",
-        default="../docs/examples",
+        default="../docs/.examples",
         help="Directory where Markdown files will be written",
     )
     args = parser.parse_args()

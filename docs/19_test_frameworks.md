@@ -6,7 +6,7 @@
 # Framework: doctest
 # --------------------
 #
-# Provide usage examples that serve as doctests for the conversion
+# Provide usage .examples that serve as doctests for the conversion
 # functions.
 
 import logging

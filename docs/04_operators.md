@@ -220,7 +220,7 @@ print(a is c)
 ```python
 # Common list operators in Python
 # --------------------------------------------------------------------------------
-# This file contains examples of the most commonly used operators on lists,
+# This file contains .examples of the most commonly used operators on lists,
 # including indexing, slicing, concatenation, repetition, and membership tests.
 
 my_list = [1, 2, 3, 4, 5]
@@ -302,7 +302,7 @@ print(b not in test_list)
 #
 # !!! WARNING !!!
 # Please always use parentheses to make the code more readable and
-# to avoid confusion with operator precedence. The examples below
+# to avoid confusion with operator precedence. The .examples below
 # are for educational purposes only and should not be used in production
 # code.
 
