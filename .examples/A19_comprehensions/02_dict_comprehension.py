@@ -1,6 +1,6 @@
-# Dictionary 22_comprehensions
+# Dictionary A19_comprehensions
 # -----------------------------------------------------------------------------
-# Dictionary 22_comprehensions let you construct mappings concisely. They are
+# Dictionary A19_comprehensions let you construct mappings concisely. They are
 # ideal for transforming one form of data into key/value pairs.
 
 existing_list = [1, 2, 3, 4, 5]

@@ -15,12 +15,11 @@ nav:
   - Project:
       - Home: index.md
 
-  - Examples:
-    - Introduction: 01_introduction.md
-    - Variables: 02_variables.md
-    - Comments: 03_comments.md
-    - Operators: 04_operators.md
-    - User Input: 05_user_input.md
-    - Control Flow: 07_control_flow.md
-    - Functions: 08_functions.md
-    - Classes: 09_classes.md
+  - Language:
+    - Introduction: A01_introduction.md
+
+  - Design:
+    - OOP Basics: B01_oop_pillars.md
+
+  - Libraries:
+    - Logging: C01_logging.md

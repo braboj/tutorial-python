@@ -1,6 +1,6 @@
-# List 22_comprehensions
+# List A19_comprehensions
 # -----------------------------------------------------------------------------
-# List 22_comprehensions allow you to create or filter lists concisely without
+# List A19_comprehensions allow you to create or filter lists concisely without
 # explicit loops.
 
 existing_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]

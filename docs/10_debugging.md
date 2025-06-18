@@ -9,7 +9,7 @@
 # certain conditions are met. An if-statement can invoke the builtin breakpoint
 # function when values match specific criteria, and you can set a conditional
 # breakpoint in pdb with ``break my_script.py:20, x > 10``. Studying these
-# patterns helps you focus on the critical moments that reveal bugs.
+# C10_regex helps you focus on the critical moments that reveal bugs.
 
 
 def process_items(items):

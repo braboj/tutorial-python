@@ -19,7 +19,7 @@ for dist in sorted(pkg_resources.working_set, key=lambda d: d.project_name.lower
 ```python
 # Installing a package with pip
 # -----------------------------------------------------------------------------
-# This example invokes ``pip`` through ``subprocess`` to install the requested
+# This example invokes ``pip`` through ``C05_subprocess`` to install the requested
 # package. In real scenarios this requires network access.
 
 import subprocess

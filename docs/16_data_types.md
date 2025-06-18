@@ -3,9 +3,9 @@
 ## Comprehension Dictionary
 
 ```python
-# Dictionary 22_comprehensions
+# Dictionary A19_comprehensions
 # -----------------------------------------------------------------------------
-# Dictionary 22_comprehensions let you construct mappings concisely. They are ideal for transforming one form of data into key/value pairs.
+# Dictionary A19_comprehensions let you construct mappings concisely. They are ideal for transforming one form of data into key/value pairs.
 
 existing_list = [1, 2, 3, 4, 5]
 existing_dictionary = {1: "junior", 2: "mid", 3: "c", 4: "d", 5: "e"}
@@ -28,9 +28,9 @@ print(new_dictionary_3)
 ## Comprehension List
 
 ```python
-# List 22_comprehensions
+# List A19_comprehensions
 # -----------------------------------------------------------------------------
-# List 22_comprehensions allow you to create or filter lists concisely without explicit loops.
+# List A19_comprehensions allow you to create or filter lists concisely without explicit loops.
 
 existing_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
@@ -874,7 +874,7 @@ func1(1, 2, 3, 4)
 ## Data Pickle
 
 ```python
-# Object 31_serialization with pickle
+# Object C11_serialization with pickle
 # -----------------------------------------------------------------------------
 # pickle serializes and deserializes Python objects so they can be saved and restored later.
 
