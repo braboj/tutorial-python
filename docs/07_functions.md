@@ -3,15 +3,15 @@
 ## Func Annotations
 
 ```python
-# Function annotations for parameters and return values
+# Function 16_type_hints for parameters and return values
 # --------------------------------------------------------------------------------
 # Annotations in Python functions allow you to specify the expected types of
 # parameters and the return type of the function. This can help with code
 # readability and static type checking.
 #
-# There are no strict rules enforced by Python regarding these annotations,
+# There are no strict rules enforced by Python regarding these 16_type_hints,
 # but they serve as a guide for developers and can be used by tools like
-# type checkers, IDEs, and documentation generators.
+# type checkers, IDEs, and documentation 01_generators.
 
 def add(x: int, y: int) -> int:
     return x + y
@@ -262,7 +262,7 @@ print(sqr(10.0))
 # Python stores a variety of metadata about functions on the function object
 # itself. Attributes such as ``__name__``, ``__doc__`` and ``__code__`` can be
 # inspected at runtime to learn more about a function's definition. This
-# introspection ability is useful for debugging and for frameworks that
+# 33_introspection ability is useful for troubleshooting and for frameworks that
 # manipulate functions.
 
 def foo(a, b=10, c=20, *args, **kwargs):

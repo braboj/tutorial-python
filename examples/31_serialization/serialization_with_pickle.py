@@ -1,0 +1,39 @@
+# Object 31_serialization with pickle
+# -----------------------------------------------------------------------------
+# pickle serializes and deserializes Python objects so they can be saved and restored later.
+
+import pickle
+import sys
+
+
+class Book(object):
+
+    def __init__(self, title, author, price, year):
+        self.title = title
+        self.author = author
+        self.price = price
+        self.year = year
+
+
+if __name__ == "__main__":
+
+    # Create a book object
+    book = Book(title='Python for Dummies', author='John Smith', price=25.0, year=2014)
+
+    # Print the book object
+    print(book.__dict__)
+
+    # Serialize the book object
+    serialized_book = pickle.dumps(book)
+
+    # Print the size of the serialized object
+    print('Size of the serialized object: {} bytes'.format(sys.getsizeof(serialized_book)))
+
+    # Print the serialized object
+    print(serialized_book)
+
+    # Deserialize the book object
+    deserialized_book = pickle.loads(serialized_book)
+
+    # Print the book object
+    print(deserialized_book.__dict__)

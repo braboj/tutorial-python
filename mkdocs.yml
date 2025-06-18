@@ -16,38 +16,11 @@ nav:
       - Home: index.md
 
   - Examples:
-    - Introduction: 01_hello_world.md
+    - Introduction: 01_introduction.md
     - Variables: 02_variables.md
     - Comments: 03_comments.md
     - Operators: 04_operators.md
     - User Input: 05_user_input.md
-    - Control Flow: 06_control_flow.md
-    - Functions: 07_functions.md
-    - Classes: 08_classes.md
-    - Docstrings: 09_docstrings.md
-    - Debugging: 10_debugging.md
-    - Logging: 13_logging.md
-    - OOP Pillars: 11_oop_pillars.md
-    - SOLID Principles: 12_solid_principles.md
-    - Design Patterns: 21_design_patterns.md
-    - Exceptions: 14_exceptions.md
-    - Dunder Methods: 15_dunder_methods.md
-    - Import System: 17_import_system.md
-    - Lintinig Tools: 18_linting_tools.md
-    - Test Frameworks: 19_test_frameworks.md
-    - Package Managers: 20_package_managers.md
-    - Data Structures: 16_data_structures.md
-    - Concurrency: 22_concurrency.md
-    - Meta Classes: 23_meta_classes.md
-    - Generators: 24_generators.md
-    - Coroutines: 25_coroutines.md
-    - Garbage Collection: 26_garbage_collector.md
-    - Weakref: 27_weakref.md
-    - Optimization: 28_optimization.md
-    - Packaging: 29_packaging.md
-    - Compatibility: 30_compatibility.md
-    - Tracing: 31_tracing.md
-    - Profiling: 32_profiling.md
-    - Inspections: 33_inspections.md
-    - Extensions: 34_extensions.md
-    - Security: 35_secure_desing.md
+    - Control Flow: 07_control_flow.md
+    - Functions: 08_functions.md
+    - Classes: 09_classes.md

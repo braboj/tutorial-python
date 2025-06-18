@@ -56,7 +56,6 @@ def to_title(name: str) -> str:
 
     return " ".join(words)
 
-
 def to_camel_case(name: str) -> str:
     """Return *name* converted to CamelCase without leading digits."""
     # Strip leading numeric prefixes like ``01_``

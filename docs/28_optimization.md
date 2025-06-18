@@ -363,7 +363,7 @@ print(peephole_const.__code__.co_consts)
 """ Example: Peephole Optimization - Constant Propagation
 
 Replace variables with their values if they are constant. This is done at compile time. It seems
-that this 08-optimization is not implemented.
+that this 08-32_optimization is not implemented.
 
 """
 

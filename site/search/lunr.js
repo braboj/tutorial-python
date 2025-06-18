@@ -2242,7 +2242,7 @@ lunr.Index.prototype.query = function (fn) {
 }
 
 /**
- * Prepares the index for JSON serialization.
+ * Prepares the index for JSON 31_serialization.
  *
  * The schema for this JSON blob will be described in a
  * separate JSON schema file.
