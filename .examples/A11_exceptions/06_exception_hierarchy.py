@@ -2,6 +2,18 @@
 # --------------------------------------------------------------------------------
 # Defines a family of related custom exceptions and demonstrates raising each
 # member of the hierarchy.
+#
+# src/
+#  ├─ socket
+#  │  ├─ __init__.py
+#  │  ├─ settings.py
+#  │  └─ errors.py    # <-- Exceptions for the core package
+#  │
+#  └─ io
+#     ├─ __init__.py
+#     ├─ settings.py
+#     ├─ handlers.py
+#     └─ errors.py    # <-- Exceptions for the api package
 
 class SocketError(Exception):
 
