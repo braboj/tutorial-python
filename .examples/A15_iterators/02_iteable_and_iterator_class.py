@@ -1,32 +1,33 @@
-class Colors:
+class Fruits:
     def __init__(self):
-        self.rgb = ['red', 'green', 'blue']
+        self.names = ['apple', 'banana', 'cherry']
 
     def __len__(self):
-        return len(self.rgb)
+        return len(self.names)
 
     def __iter__(self):
-        return ColorIterator(self)
+        return FruitIterator(self)
 
-class ColorIterator:
-    def __init__(self, colors):
-        self.__colors = colors
+
+class FruitIterator:
+    def __init__(self, fruits):
+        self.__fruits = fruits
         self.__index = 0
 
     def __iter__(self):
         return self
 
     def __next__(self):
-        if self.__index >= len(self.__colors):
+        if self.__index >= len(self.__fruits):
             raise StopIteration
 
-        # return the next color
-        color = self.__colors.rgb[self.__index]
+        # return the next fruit
+        fruit = self.__fruits.names[self.__index]
         self.__index += 1
-        return color
+        return fruit
 
 
-colors = Colors()
+fruits = Fruits()
 
-for color in colors:
-    print(color)
+for fruit in fruits:
+    print(fruit)
