@@ -44,4 +44,5 @@ python path/to/example.py
 
 
 ## License
-This project is licensed under the [MIT License](LICENSE).
+
+This project is proprietary software. Copying or distribution is prohibited without express permission from the author.
