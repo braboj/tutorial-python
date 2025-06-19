@@ -12,14 +12,23 @@ plugins:
   - awesome-pages
 
 nav:
-  - Project:
-      - Home: index.md
-
   - Language:
     - Introduction: A01_introduction.md
+    - Variables: A02_variables.md
+    - Comments: A03_comments.md
+    - Operators: A04_operators.md
+    - User Input: A05_user_input.md
+    - Strings: A06_strings.md
+    - Control Flow: A07_control_flow.md
+    - Functions: A08_functions.md
+    - Classes: A09_classes.md
 
   - Design:
     - OOP Basics: B01_oop_pillars.md
+    - SOLID Principles: B02_solid_principles.md
+    - Design Patterns: B03_design_patterns.md
 
   - Libraries:
     - Logging: C01_logging.md
+    - Serialization: C11_serialization.md
+    - Data Structures: C12_data_structures.md

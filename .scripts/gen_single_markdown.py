@@ -3,9 +3,9 @@
 
 Usage::
     python .scripts/gen_single_markdown.py \
-        --.examples-dir .examples \
+        --examples-dir examples \
         --template templates/examples_page.mustache \
-        --output .examples.md
+        --output examples.md
 
 Each file's content is inserted verbatim as a code block in the output.  Files
 named ``__init__.py`` are ignored.
@@ -48,16 +48,16 @@ def render_markdown(template_path: Path, output_path: Path, examples: list) -> N
     with template_path.open("r", encoding="utf-8") as f:
         template = f.read()
     renderer = pystache.Renderer()
-    markdown = renderer.render(template, {".examples": examples})
+    markdown = renderer.render(template, {"examples": examples})
     with output_path.open("w", encoding="utf-8") as f:
         f.write(markdown)
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Generate .examples markdown")
+    parser = argparse.ArgumentParser(description="Generate examples markdown")
     parser.add_argument(
-        "--.examples-dir",
-        default="../.examples",
+        "--examples-dir",
+        default="../examples",
         help="Directory containing example .py files",
     )
     parser.add_argument(
@@ -67,7 +67,7 @@ def main() -> None:
     )
     parser.add_argument(
         "--output",
-        default="../docs/.examples.md",
+        default="../docs/examples.md",
         help="Output markdown file",
     )
     args = parser.parse_args()

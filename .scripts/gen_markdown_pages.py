@@ -3,11 +3,11 @@
 
 Usage:
     python .scripts/gen_markdown_pages.py \
-        --.examples-dir .examples \
+        --examples-dir examples \
         --template templates/example_file.mustache \
         --output-dir docs
 
-The directory structure under ``.examples`` is mirrored under the output
+The directory structure under ``examples`` is mirrored under the output
 directory. Each ``.py`` file becomes a ``.md`` file with the same name and
 relative path. Files named ``__init__.py`` are ignored and skipped.
 """
@@ -50,11 +50,11 @@ def process_file(py_path: Path, template: str, base_dir: Path, output_dir: Path)
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Generate Markdown files mirroring the .examples directory"
+        description="Generate Markdown files mirroring the examples directory"
     )
     parser.add_argument(
-        "--.examples-dir",
-        default="../.examples",
+        "--examples-dir",
+        default="../examples",
         help="Directory containing example .py files",
     )
     parser.add_argument(
