@@ -5,15 +5,20 @@
 # and performance benefits they provide over lists, especially when dealing
 # with large datasets. They also can be used as keys in dictionaries.
 #
-# - Immutable: Once created, the string cannot be changed.
-# - Ordered: The characters in the string maintain their order.
-# - Indexed: Each character in the string can be accessed by its index.
-# - Heterogeneous: Strings can contain characters of different types
+# - Immutable: Once created, the tuple cannot be changed.
+# - Ordered: The elements in the tuple maintain their order.
+# - Indexed: Each element in the tuple can be accessed by its index.
+# - Heterogeneous: Tuples can contain characters of different types
 
 # Immutable (a change creates a new object)
 tuple1 = (1, 2, 3)
-tuple2 = tuple1 + (4, 5)
-print(id(tuple1), id(tuple2))
+tuple2 = tuple1
+print(tuple2 is tuple1)     # Check if both variables point to the same object
+tuple2 += (4, 5)
+print(tuple2 is tuple1)     # After modification, they are different objects
+# Output:
+# False
+# True
 
 # Ordered (characters maintain their order)
 tuple3 = (1, 2, 3)

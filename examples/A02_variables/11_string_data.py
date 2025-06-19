@@ -12,7 +12,8 @@
 # Immutable (a change creates a new object)
 string1 = "Hello, world!"
 string2 = string1.replace("world", "Python")
-print(id(string1), id(string2))
+print(string2 is string1)
+# Output: False
 
 # Ordered (characters maintain their order)
 string3 = "Python"

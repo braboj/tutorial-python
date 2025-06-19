@@ -5,11 +5,19 @@
 # appears more than once, the last assigned value is retained. The
 # dictionary variable has the following properties:
 #
+# - Passed by reference: Changes to one variable affect all references
 # - Key access: You can access values using their keys
 # - Unique keys: Each key must be unique within the dictionary
 # - Mutable: Can be modified after creation
 # - Ordered: The order of inserted items is maintained (as of Python 3.7)
 # - Heterogeneous: Can contain keys and values of different types
+
+# Passed by reference (changes to one variable affect all references)
+d1 = {'junior': 1, 'mid': 2, 'senior': 3}
+d2 = d1
+d2['junior'] = 4
+print(d1, d2)
+# Output: {'junior': 4, 'mid': 2, 'senior': 3} {'junior': 4, 'mid': 2, 'senior': 3}
 
 # Key access
 a = {'junior': 1, 'mid': 2, 'senior': 3}

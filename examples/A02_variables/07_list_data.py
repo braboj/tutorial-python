@@ -12,37 +12,32 @@
 # - Mutable: Can be modified after creation
 # - Ordered: Order of elements is preserved
 # - Heterogeneous: Can contain elements of different types
+# - Passed by reference: Changes to one variable affect all references
 
-# Indexed
+# Indexed (elements can be accessed by their index)
 a = [1, 2, 3]
 print(a[0])
 # Output: 1
 
-# Mutable
+# Mutable (can be modified after creation)
 b = [1, 2, 3]
 b[0] = 4
 print(b)
 # Output: [4, 2, 3]
 
-# Ordered
+# Ordered (order of elements is preserved)
 c = [2, 1, 3]
 print(c)
 # Output: [2, 1, 3]
 
-# Heterogeneous
+# Heterogeneous (can contain elements of different types)
 d = [1, 'two', 3.0]
 print(d)
 # Output: [1, 'two', 3.0]
 
-# (!) Passing by reference (!)
+# Passed by reference (changes to one variable affect all references)
 l1 = [1, 2, 3]
 l2 = l1
 l2[0] = 4
 print(l1, l2)
-# Output: [4, 2, 3]
-
-# Copying a list
-l3 = l1.copy()
-l3[0] = 5
-print(l1, l3)
-# Output: [4, 2, 3] [5, 2, 3]
+# Output: [4, 2, 3] [4, 2, 3]

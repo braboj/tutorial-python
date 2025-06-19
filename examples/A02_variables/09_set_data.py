@@ -5,6 +5,7 @@
 # union, intersection, and difference. The set type has the following
 # characteristics:
 #
+# - Passed by reference: Changes to one variable affect all references
 # - Unique: A set cannot contain duplicate elements.
 # - Mutable: You can add or remove elements from a set.
 # - Unordered: The elements in a set do not have a specific order.
@@ -17,11 +18,6 @@ s2 = s1
 s2.add(4)
 print(s1, s2)
 # Output: {1, 2, 3, 4} {1, 2, 3, 4}
-
-# Copying a set
-s3 = s1.copy()
-s3.add(5)
-print(s1, s3)
 
 # All elements are unique
 a = {1, 1, 2, 2, 3, 3}
