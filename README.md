@@ -68,6 +68,12 @@ You can also run the examples from the command line. For example, to run the
 python examples/A01_introduction/hello_world.py
 ```
 
+To see how relative imports work within packages, run the `import_relative.py` example using the `-m` flag:
+
+```bash
+python -m examples.A21_import_system.import_relative
+```
+
 
 ## License
 
