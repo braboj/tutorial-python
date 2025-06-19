@@ -22,6 +22,7 @@ nav:
     - Control Flow: A07_control_flow.md
     - Functions: A08_functions.md
     - Classes: A09_classes.md
+    - Modules: A10_modules.md
 
   - Design:
     - OOP Basics: B01_oop_pillars.md
