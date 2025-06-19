@@ -72,5 +72,4 @@ python examples/A01_introduction/hello_world.py
 ## License
 
 This project is proprietary software. Copying or distribution is prohibited 
-without express permission from the author. See the [LICENSE](LICENSE) file for
-more details.
+without express permission from the author.
