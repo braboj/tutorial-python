@@ -7,7 +7,7 @@ language for junior, intermediate, and advanced programmers. It covers
 everything from the basics of Python syntax to advanced topics like
 SOLID principles, design patterns, and best practices.
 
-## Pre-requisites
+## Prerequisites
 
 Ensure that the following tools are installed before setting up the project:
 
@@ -29,9 +29,8 @@ Change into the project directory:
 cd python-by-example
 ```
 
-Create a virtual environment and install dependencies:
-
-- For Linx and macOS, use the following commands:
+For Linx and macOS, create a virtual environment and install the dependencies
+using the following commands:
 
 ```bash
 python -m venv .venv
@@ -39,7 +38,8 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-- For Windows, use the following commands:
+For Windows users, use the following commands to create a virtual environment
+and install the dependencies:
 
 ```cmd
 python -m venv .venv
