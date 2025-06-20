@@ -23,6 +23,17 @@ nav:
     - Functions: A08_functions.md
     - Classes: A09_classes.md
     - Modules: A10_modules.md
+#    - Exceptions: A11_exceptions.md
+#    - Decorators: A12_decorators.md
+#    - Iterators: A13_iterators.md
+#    - Context Managers: A14_context_managers.md
+#    - Dunder Methods: A15_dunder_methods.md
+#    - Lambda Functions: A16_lambda_functions.md
+#    - Generators: A17_generators.md
+#    - Metaclasses: A18_meta_classes.md
+#    - Comprehensions: A19_comprehensions.md
+#    - Data Handling: A23_data_handling.md
+#    - Type Hints: A20_type_hints.md
 
   - Design:
     - OOP Basics: B01_oop_pillars.md

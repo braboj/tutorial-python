@@ -2,10 +2,16 @@
 
 by Branimir Georgiev [(www.codewithbranko.com)](https://www.codewithbranko.com)
 
-This tutorial offers a comprehensive set of examples for the Python programming
-language for junior, intermediate, and advanced programmers. It covers
-everything from the basics of Python syntax to advanced topics like
-SOLID principles, design patterns, and best practices.
+This tutorial provides over 200 Python programming examples suitable for 
+junior, intermediate, and senior developers. It covers topics ranging from 
+basic Python syntax to advanced concepts such as SOLID principles, design 
+patterns, and best practices.
+
+Each example is designed to be self-contained and easy to understand, allowing 
+you to run and modify the code directly in your IDE. The examples are organized 
+into directories based on topics, making it easy to find what you're looking 
+for.
+
 
 ## Prerequisites
 
@@ -66,12 +72,6 @@ You can also run the examples from the command line. For example, to run the
 
 ```bash
 python examples/A01_introduction/hello_world.py
-```
-
-To see how relative imports work within packages, run the `import_relative.py` example using the `-m` flag:
-
-```bash
-python -m examples.A21_import_system.import_relative
 ```
 
 

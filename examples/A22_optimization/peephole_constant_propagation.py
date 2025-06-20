@@ -1,7 +1,7 @@
 """ Example: Peephole Optimization - Constant Propagation
 
 Replace variables with their values if they are constant. This is done at compile time. It seems
-that this 08-A24_optimization is not implemented.
+that this 08-A22_optimization is not implemented.
 
 """
 
