@@ -1,5 +1,5 @@
 # Using ``type`` to inspect objects and create classes
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # The built-in ``type`` function performs two unrelated tasks. When passed a
 # single object it returns that object's class, which can be handy for
 # inspection. When given a name, base classes and attributes it creates a new

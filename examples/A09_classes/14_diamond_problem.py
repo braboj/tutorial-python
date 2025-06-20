@@ -1,5 +1,5 @@
 # Mro (method resolution order) - diamond problem
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # A diamond inheritance pattern occurs when two classes share a common base
 # class. The method resolution order ensures that the base is initialized only
 # once. The classes here are organized so that each path to the base is

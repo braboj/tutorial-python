@@ -1,4 +1,4 @@
-# Object C11_serialization with pickle
+# Object C12_serialization with pickle
 # -----------------------------------------------------------------------------
 # pickle serializes and deserializes Python objects so they can be saved and restored later.
 

@@ -1,5 +1,5 @@
 # Lambda function with recursion
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Although lambdas are typically simple, they can also be used recursively.
 # The expression here computes factorial by calling itself for successive
 # decrements. Assigning the lambda to a variable is required so it can

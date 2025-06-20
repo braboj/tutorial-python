@@ -1,5 +1,5 @@
 # Calculate the length of a string
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # This snippet calculates the number of characters in a string. The
 # result differs from the byte length when the string contains UTF-8
 # characters that use multiple bytes.

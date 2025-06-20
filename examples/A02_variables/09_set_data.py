@@ -1,5 +1,5 @@
 # Set data
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # The set type in Python is a collection of elements with unique values. It
 # used to remove duplicates from a collection and to perform set operations like
 # union, intersection, and difference. The set type has the following

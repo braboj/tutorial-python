@@ -1,5 +1,5 @@
 # Conditional logic using `if`, `elif`, and `else` to handle different cases based on conditions.
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # The conditional statements in Python allow you to control the flow of your
 # program based on certain conditions. This way we can execute different
 # blocks of code depending on the condition that is met.

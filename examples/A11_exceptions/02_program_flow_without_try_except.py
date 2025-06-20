@@ -1,5 +1,5 @@
 # Control Flow without try/except
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Illustrates manual error checking when no exception handlers are used.
 
 def func_a(x):

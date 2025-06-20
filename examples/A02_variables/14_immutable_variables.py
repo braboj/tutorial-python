@@ -1,5 +1,5 @@
 # Immutable variables in Python
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Some variables in Python are immutable, meaning their value cannot be changed
 # after they are created. This is in contrast to mutable variables, which can
 # be modified after creation.

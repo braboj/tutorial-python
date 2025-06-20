@@ -1,5 +1,5 @@
 # Merging and updating dictionaries
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Python 3.9 introduced the | and |= operators to combine dictionaries. The | 
 # operator creates a new dictionary containing keys from both operands, while
 # |= updates the dictionary on the left in place. This provides a concise

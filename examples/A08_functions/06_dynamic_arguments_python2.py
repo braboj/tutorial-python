@@ -1,5 +1,5 @@
 # Handling a variable number of arguments in Python 2
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # This code captures extra positional arguments with ``*args`` and extra
 # keyword arguments with ``**kwargs`` when keyword-only parameters are
 # unavailable. In Python 3 you can declare keyword-only parameters using the

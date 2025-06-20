@@ -22,13 +22,15 @@ nav:
     - Control Flow: A07_control_flow.md
     - Functions: A08_functions.md
     - Classes: A09_classes.md
+    - Modules: A10_modules.md
 
   - Design:
     - OOP Basics: B01_oop_pillars.md
     - SOLID Principles: B02_solid_principles.md
     - Design Patterns: B03_design_patterns.md
+    - Secure Design: B04_secure_design.md
 
   - Libraries:
     - Logging: C01_logging.md
-    - Serialization: C11_serialization.md
-    - Data Structures: C12_data_structures.md
+    - Serialization: C12_serialization.md
+    - Data Structures: C13_data_structures.md

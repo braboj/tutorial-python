@@ -1,5 +1,5 @@
 # MRO (Method Resolution Order) - bottom first
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # The method resolution order (MRO) in Python is the order in which Python
 # looks for methods in a class hierarchy. It is particularly important in
 # multiple inheritance scenarios, where a class inherits from multiple parent

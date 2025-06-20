@@ -1,5 +1,5 @@
 # Nested functions and their access to enclosing variables
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Inner functions can access variables from the outer function that defines
 # them. This ability creates a closure which preserves the environment even
 # after the outer function has finished executing. It allows the inner function

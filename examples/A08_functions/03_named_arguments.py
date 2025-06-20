@@ -1,5 +1,5 @@
 # Calling functions with keyword arguments
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # When a function call includes parameter names, the order of those arguments no
 # longer matters. Keyword arguments make the call site clearer and allow some
 # parameters to be skipped if they have defaults. They also pair well with

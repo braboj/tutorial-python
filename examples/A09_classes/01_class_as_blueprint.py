@@ -1,5 +1,5 @@
 # Class as blueprint to create objects
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # A class can act as a template from which many objects are built. This file
 # defines a Person blueprint containing attributes and methods that every
 # instance MUST have when created. Each instance of the Person class

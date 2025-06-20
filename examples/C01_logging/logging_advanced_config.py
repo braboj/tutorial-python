@@ -1,5 +1,5 @@
 # Advanced Logging Configuration
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Demonstrates custom handlers, a formatter, and propagation control.
 
 import logging

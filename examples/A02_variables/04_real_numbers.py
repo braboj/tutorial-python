@@ -1,5 +1,5 @@
 # Real numbers
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Floating point numbers are used to represent real numbers and can be defined
 # in standard decimal format or scientific notation.  Python's `float` type is
 # based on the IEEE 754 double-precision floating-point format, which provides

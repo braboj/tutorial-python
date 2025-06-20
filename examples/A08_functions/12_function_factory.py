@@ -1,5 +1,5 @@
 # Function factories to create specialized functions
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # A function factory returns a new function tailored to the argument it
 # receives. It enables creation of many small functions without repeating code.
 # Each generated function captures the parameters provided to the factory.

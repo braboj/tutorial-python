@@ -1,5 +1,5 @@
 # Boolean Operators in Python
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Boolean operators evaluate expressions to produce a boolean value, meaning
 # either `True` or `False`.
 #

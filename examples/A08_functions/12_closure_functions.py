@@ -1,5 +1,5 @@
 # Closures in Python
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # A closure in Python is a function object that “remembers” values from its
 # enclosing scope even when that scope has finished execution. In other
 # words, a closure lets you bind variables from an outer function into an

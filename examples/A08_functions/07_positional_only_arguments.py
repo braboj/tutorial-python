@@ -1,5 +1,5 @@
 # Positional-only arguments
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Some parameters can be declared positional-only so they cannot be passed by
 # name. This keeps the API minimal and prevents accidental clashes with keyword
 # arguments. The syntax uses a ``/`` in the parameter list to mark the end of

@@ -1,5 +1,5 @@
 # Logger Hierarchy
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Shows parent, child and grandchild loggers working together.
 
 import logging
