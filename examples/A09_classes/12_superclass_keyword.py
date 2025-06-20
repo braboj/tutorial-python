@@ -1,5 +1,5 @@
 # Call __new__ method of super class
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # A subclass can override __new__ while still delegating part of the creation
 # process to its parent. Calling the superclass method ensures base attributes
 # are initialized correctly.

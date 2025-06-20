@@ -1,5 +1,5 @@
 # Tuple data
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # A tuple is very similar to a list that is immutable, meaning it cannot be
 # changed after creation. Their main advantage is the memory efficiency
 # and performance benefits they provide over lists, especially when dealing

@@ -1,5 +1,5 @@
 # Multilevel inheritance
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Multilevel inheritance arranges classes in a linear hierarchy. Each
 # subsequent class extends the one above it, accumulating behavior down the
 # chain.

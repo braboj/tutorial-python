@@ -1,5 +1,5 @@
 # Conditional lambda
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # A lambda can contain a conditional expression to produce different values
 # based on its input. This one returns ``1`` when the argument is positive and
 # ``0`` otherwise. Such compact expressions are useful for simple

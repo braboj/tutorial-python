@@ -1,5 +1,5 @@
 # Interface Segregation Principle - Good Example
-# -------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # The Interface Segregation Principle (ISP) breaks large interfaces
 # into focused ones. Mixins here provide only the operations each
 # device actually needs.

@@ -1,5 +1,5 @@
 # Structured Exception Handling
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Uses try/except/else/finally blocks to handle expected and unexpected errors.
 
 import time

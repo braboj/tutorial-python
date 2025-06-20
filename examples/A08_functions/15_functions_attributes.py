@@ -1,5 +1,5 @@
 # Adding attributes to functions
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Functions in Python are can have attributes. They are accessed using the dot
 # notation (e.g. `foo.name`), and can be used to store metadata about the
 # function, such as its name, description, or author.

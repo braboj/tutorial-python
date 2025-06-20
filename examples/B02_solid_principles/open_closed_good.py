@@ -1,5 +1,5 @@
 # Open/Closed Principle - Good Example
-# -------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # The Open/Closed Principle (OCP) says that classes should be
 # extendable without needing to modify their source. FileProcessor
 # composes formatter objects so new behaviour can be added safely.

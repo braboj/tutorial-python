@@ -1,5 +1,5 @@
 # Parameterized decorators in Python
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Unfortunately, Python does not support passing parameters to decorators
 # directly. A decorator of a function has always one argument, which is the
 # original function to be decorated.

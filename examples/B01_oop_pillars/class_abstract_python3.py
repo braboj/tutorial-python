@@ -1,5 +1,5 @@
 # Abstract class in python 3+
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Python 3 provides native support for abstract base classes. The ABC and
 # abstractmethod decorators ensure that child classes implement required
 # behavior. Instances cannot be created until the abstract methods are

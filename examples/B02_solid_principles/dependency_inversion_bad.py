@@ -1,5 +1,5 @@
 # Dependency Inversion Principle - Bad Example
-# -------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # The Dependency Inversion Principle (DIP) dictates that high level
 # modules should not depend on low level ones directly. Calculator
 # instantiates Math itself and so is tightly coupled to it.

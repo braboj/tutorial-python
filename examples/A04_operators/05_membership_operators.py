@@ -1,5 +1,5 @@
 # Membership Operators in Python
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Membership operators are used to test whether a value is a member of a
 # sequence (e.g., a list, tuple, or string).
 

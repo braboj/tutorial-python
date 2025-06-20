@@ -1,5 +1,5 @@
 # Multi-line comments in Python
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Multi-line comments in Python can be created using triple quotes.
 
 """

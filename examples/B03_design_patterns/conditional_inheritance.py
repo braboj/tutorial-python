@@ -1,5 +1,5 @@
 # Conditional inheritance using the __new__ method
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # The __new__ method can decide which subclass to instantiate. By inspecting
 # runtime conditions it returns objects of different types from a single
 # factory class. This approach allows conditional inheritance without altering

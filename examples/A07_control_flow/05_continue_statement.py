@@ -1,5 +1,5 @@
 # Skipping iterations in loops with the `continue` statement.
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # When the `continue` statement is encountered, the rest of the code
 # in the current iteration is skipped, and control is transferred to the next
 # iteration of the loop.

@@ -1,5 +1,5 @@
 # List data
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # The list type in Python is used to represent a collection of items. It is
 # important to note that lists are passed by reference (see mutability in
 # examples). When you assign a list to another variable, both variables point

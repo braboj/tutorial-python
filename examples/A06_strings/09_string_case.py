@@ -1,5 +1,5 @@
 # String case manipulation examples
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # This code applies various string case manipulation methods in Python.
 
 # Store the string to be manipulated

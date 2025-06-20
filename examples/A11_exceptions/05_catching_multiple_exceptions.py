@@ -1,5 +1,5 @@
 # Grouped Exception Handling
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Illustrates catching different members of an exception hierarchy with one
 # except block.
 

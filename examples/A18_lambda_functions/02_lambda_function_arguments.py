@@ -1,5 +1,5 @@
 # Lambda functions with multiple arguments
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # A lambda expression can accept several parameters just like a regular
 # function. It is useful for short, inline operations where defining a full
 # function would be excessive. Here we compute a simple expression using five

@@ -1,5 +1,5 @@
 # Anatomy of a Python function
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # A function definition begins with the ``def`` keyword followed by its name and
 # parameters. The body can perform operations using those parameters and return
 # a value. Well-documented functions include a docstring that briefly states

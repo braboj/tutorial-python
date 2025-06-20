@@ -1,5 +1,5 @@
 # Configuring Logging from a File
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Loads logger settings from an external configuration file.
 
 import logging.config

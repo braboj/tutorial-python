@@ -1,5 +1,5 @@
 # Using callback functions to handle events
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # A callback function is passed as an argument to another function and executed
 # when a particular event occurs. This technique lets the caller customize
 # behavior without changing the callee. Callbacks are common in event-driven

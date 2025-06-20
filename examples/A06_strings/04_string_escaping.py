@@ -1,5 +1,5 @@
 # Escape sequences in Python strings
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # This example uses escape sequences in strings so you can include
 # characters that would otherwise be difficult or impossible to type
 # directly.

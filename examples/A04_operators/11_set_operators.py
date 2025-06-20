@@ -1,5 +1,5 @@
 # Set Operators in Python
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Demonstrates fundamental set operations including union, intersection,
 # difference, symmetric difference, and subset/superset checks.
 

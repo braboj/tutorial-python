@@ -1,5 +1,5 @@
 # Bitwise Operators in Python
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Bitwise operators are used to perform bit-level operations on integers. These
 # operators directly manipulate the binary representations of numbers. Each bit
 # is calculated independently, based on the truth table of the operation.
