@@ -2,8 +2,11 @@
 # ------------------------------------------------------------------------------
 # The Liskov Substitution Principle (LSP) means that objects of a
 # superclass should be replaceable with objects of its subclasses
-# without breaking the program. Each subclass here simply extends
-# Human without special checks.
+# without breaking the program.
+#
+# In this example, we have a base class `Human` and two subclasses `Adult` and
+# `Baby`. Both subclasses implement all the methods of the `Human` class,
+# allowing them to be substituted for `Human` without violating the LSP.
 
 class Human(object):
 
@@ -36,7 +39,3 @@ class Baby(Human):
 
     def suckle(self):
         print("{} suckling".format(self.name))
-
-
-
-

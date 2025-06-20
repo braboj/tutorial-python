@@ -30,10 +30,10 @@ nav:
 #    - Dunder Methods: A15_dunder_methods.md
 #    - Lambda Functions: A16_lambda_functions.md
 #    - Generators: A17_generators.md
-#    - Metaclasses: A18_meta_classes.md
+#    - Coroutines: A18_coroutines.md
 #    - Comprehensions: A19_comprehensions.md
-#    - Data Handling: A23_data_handling.md
 #    - Type Hints: A20_type_hints.md
+#    - Metaclasses: A21_meta_classes.md
 
   - Design:
     - OOP Basics: B01_oop_pillars.md
@@ -43,5 +43,8 @@ nav:
 
   - Libraries:
     - Logging: C01_logging.md
+    - Threading: C02_threading.md
+    - Miltiprocessing: C03_multiprocessing.md
+    - concurrent: C04_concurrent.md
     - Serialization: C12_serialization.md
     - Data Structures: C13_data_structures.md

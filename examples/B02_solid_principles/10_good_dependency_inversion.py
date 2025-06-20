@@ -1,8 +1,13 @@
 # Dependency Inversion Principle - Good Example
 # ------------------------------------------------------------------------------
 # The Dependency Inversion Principle (DIP) encourages depending on
-# abstractions rather than concrete classes. Calculator receives an
-# IMath implementation, decoupling it from a specific Math class.
+# abstractions rather than concrete classes.
+#
+# This example demonstrates a simple math class that adheres to DIP. It defines
+# an interface (IMath) that specifies the contract for math operations,
+# allowing different implementations to be used without changing the
+# dependent code (Calculator).
+
 
 class IMath(object):
     """ Simplified interface for junior math class """

@@ -1,8 +1,13 @@
 # Liskov Substitution Principle - Bad Example
 # ------------------------------------------------------------------------------
 # The Liskov Substitution Principle (LSP) requires that subclasses
-# can stand in for their base class. Here the work method checks
-# for `Baby` explicitly, so `Baby` cannot substitute `Human`.
+# can stand in for their base class without altering the correctness of the
+# program.
+#
+# Here without the LSP, we have a situation where a subclass (Baby) cannot be
+# used in place of its superclass (Human). As a code smell, there is a
+# conditional check in the `work` method of the `Human` class that
+# checks the type of the object.
 
 class Human(object):
 

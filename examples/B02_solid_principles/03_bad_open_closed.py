@@ -1,8 +1,10 @@
 # Open/Closed Principle - Bad Example
 # ------------------------------------------------------------------------------
 # The Open/Closed Principle (OCP) states that code should be open for
-# extension but closed for modification. Adding a new format here
-# requires changing the FileProcessor class, so OCP is violated.
+# extension but closed for modification.
+#
+# Adding a new format here in the example below requires changing the
+# FileProcessor class, so the open/closed principle is violated.
 
 class FileProcessor(object):
 
