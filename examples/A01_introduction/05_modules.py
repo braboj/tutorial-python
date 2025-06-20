@@ -1,5 +1,5 @@
 # Use import to access Python code from other files.
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # A module is a file containing Python code. It can define functions,
 # classes, and variables that you can use in your code. You can import a
 # module using the `import` statement.

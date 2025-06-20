@@ -1,5 +1,5 @@
 # Single Responsibility Principle - Good Example
-# -------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # The Single Responsibility Principle (SRP) states that a class should
 # do only one thing. Here the reading, writing and processing logic
 # are split into separate classes.

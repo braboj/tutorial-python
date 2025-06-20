@@ -1,5 +1,5 @@
 # Using positional arguments
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Each value is matched to a parameter based on where it appears, so the order
 # of the provided arguments matters. Positional parameters correspond directly
 # to the order defined in the function signature. Mixing up the order can lead

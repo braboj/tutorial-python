@@ -1,5 +1,5 @@
 # Lambda function with nested conditionals
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # This lambda expression checks two ranges using nested conditional operators.
 # It returns ``1`` when the argument exceeds 10 or falls below -10 and ``0`` in
 # all other cases. The expression remains concise despite the multiple branches.

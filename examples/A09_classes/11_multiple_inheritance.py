@@ -1,5 +1,5 @@
 # Multiple inheritance
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # A single class may inherit behavior from several parents. Combining features
 # this way can reduce duplication but requires careful design to avoid
 # conflicts.

@@ -1,5 +1,5 @@
 # Class structure outline
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # This file outlines common elements found in many classes such as attributes,
 # static methods and constructors. Organizing these pieces consistently makes
 # new classes easier to understand and maintain.

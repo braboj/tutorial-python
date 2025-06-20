@@ -1,5 +1,5 @@
 # Class method used to modify the class itself
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # In Python, class methods can be used to modify the behavior of all instances
 # of a class by changing class-level attributes. Class methods are defined
 # using the `@classmethod` decorator and take the class itself as the first

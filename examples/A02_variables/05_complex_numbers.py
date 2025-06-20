@@ -1,5 +1,5 @@
 # Complex numbers
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # This code creates and manipulates complex numbers in Python. A complex
 # number is written as `a + bj`, where `a` is the real part and `b` is the
 # imaginary part.

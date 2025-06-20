@@ -1,5 +1,5 @@
 # Multiple Logging Handlers
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Sets up stream, file and timed rotating handlers.
 
 import logging.handlers

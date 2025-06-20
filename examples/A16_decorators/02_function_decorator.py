@@ -1,5 +1,5 @@
 # Decorators to modify or extend function behavior
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # A decorator is a function that takes another function as an argument,
 # modifies or extends its behavior, and returns a new function. They are
 # related to closures, as they can access variables from the enclosing scope.

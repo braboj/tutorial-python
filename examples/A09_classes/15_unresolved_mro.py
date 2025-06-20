@@ -1,5 +1,5 @@
 # Mro (method resolution order) - unresolved
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Some inheritance graphs produce conflicting search orders that Python cannot
 # resolve. This file sets up such a conflict and triggers an error when the
 # interpreter tries to build the method resolution order. Understanding this

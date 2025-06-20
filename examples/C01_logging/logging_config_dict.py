@@ -1,5 +1,5 @@
 # Logging Configuration with a Dictionary
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Uses a dict to define formatters, handlers and loggers.
 
 import logging.config

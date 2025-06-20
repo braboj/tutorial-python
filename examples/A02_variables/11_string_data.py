@@ -1,5 +1,5 @@
 # String data
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # String variables in Python can be defined using single or double quotes.
 # Both types of quotes are valid and can be used interchangeably. The string
 # has the following characteristics:

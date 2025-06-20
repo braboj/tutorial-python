@@ -1,5 +1,5 @@
 # Named constructors provide alternative ways to create instances of a class
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # A class can offer several named constructors for convenience. Each one accepts
 # parameters tailored for a specific situation and returns a configured
 # instance.

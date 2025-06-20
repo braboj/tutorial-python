@@ -1,5 +1,5 @@
 # Understanding variable scope in Python
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # There are two types of variable scope in Python: global and local. If a
 # local variable has the same name as a global variable, the local variable
 # will take precedence within the function.

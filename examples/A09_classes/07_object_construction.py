@@ -1,5 +1,5 @@
 # How __new__ and __init__ cooperate in object creation
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Object creation begins with __new__, which allocates the instance. The fresh
 # object is then passed to __init__ for further initialization. Separating these
 # steps gives developers flexibility to customize how objects come into
