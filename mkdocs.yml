@@ -28,6 +28,7 @@ nav:
     - OOP Basics: B01_oop_pillars.md
     - SOLID Principles: B02_solid_principles.md
     - Design Patterns: B03_design_patterns.md
+    - Secure Design: B04_secure_design.md
 
   - Libraries:
     - Logging: C01_logging.md
