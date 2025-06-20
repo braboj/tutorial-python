@@ -1,8 +1,9 @@
 # Shows how to enforce and use absolute imports.
 # ------------------------------------------------------------------------------
 # Example script demonstrating absolute imports.
-
 from __future__ import absolute_import
+# Using absolute imports
+import asyncio
 
 # Absolute imports
 from foo.api.submodule1 import func1
