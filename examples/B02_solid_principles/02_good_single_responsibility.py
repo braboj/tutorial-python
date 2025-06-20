@@ -3,7 +3,7 @@
 # The Single Responsibility Principle (SRP) states that a class should
 # do only one thing. Here the reading, writing and processing logic
 # are split into separate classes.
-
+#
 # By splitting the class into three classes, we can now reuse the classes in
 # other parts of the program. A change in one class will not affect the other
 # classes. This makes the code more maintainable and easier to understand.

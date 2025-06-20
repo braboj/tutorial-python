@@ -1,9 +1,12 @@
 # Interface Segregation Principle - Bad Example
 # ------------------------------------------------------------------------------
 # The Interface Segregation Principle (ISP) advises that clients
-# should not be forced to depend on methods they do not use. The
-# Device class defines unrelated operations that specific devices
-# need to ignore.
+# should not be forced to depend on methods they do not use.
+#
+# In this example, we have a base class `Device` that defines methods
+# for powering on, powering off, adjusting volume, and brightness. However,
+# the `HeadSet` and `Monitor` classes only use a subset of these methods,
+# leading to a violation of the ISP.
 
 class Device(object):
 

@@ -1,8 +1,11 @@
 # Open/Closed Principle - Good Example
 # ------------------------------------------------------------------------------
 # The Open/Closed Principle (OCP) says that classes should be
-# extendable without needing to modify their source. FileProcessor
-# composes formatter objects so new behaviour can be added safely.
+# extendable without needing to modify their source.
+#
+# By using composition, we can extend the functionality of the FileProcessor
+# class without changing its code. This allows us to add new file formats
+# without modifying the existing class, adhering to the OCP.
 
 class LowercaseFormat(object):
 

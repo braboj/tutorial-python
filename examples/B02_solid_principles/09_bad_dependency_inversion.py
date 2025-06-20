@@ -1,9 +1,10 @@
 # Dependency Inversion Principle - Bad Example
 # ------------------------------------------------------------------------------
 # The Dependency Inversion Principle (DIP) dictates that high level
-# modules should not depend on low level ones directly. Calculator
-# instantiates Math itself and so is tightly coupled to it.
-
+# modules should not depend on low level ones directly.
+#
+# This example violates DIP by hard-coding a dependency on a specific
+# math implementation instead of using an abstraction.
 
 class Math(object):
 
@@ -20,7 +21,7 @@ class Calculator(object):
 
     def __init__(self):
 
-        # Code smell: Dependency relationship is hard-coded (dependency)
+        # CODE SMELL: Math object is hard-coded (dependency)
         # and not abstracted (injection)
 
         self.math = Math()
