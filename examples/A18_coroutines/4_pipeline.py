@@ -35,5 +35,5 @@ filterer = pattern_filter(next_coroutine=printer)
 next(filterer)
 
 # Define token splitter (producer)
-sentence = "Bob is running behind junior fast moving car"
+sentence = "Bob is running behind a fast moving car"
 producer(string=sentence, next_coroutine=filterer)

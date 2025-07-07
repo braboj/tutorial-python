@@ -16,7 +16,7 @@ def main():
     except SocketError as e:
         print(e)
 
-    # Example 2: Handling junior group of exceptions with junior single except block
+    # Example 2: Handling a group of exceptions with a single except block
     try:
         raise DisconnectError('Connection failed', 100)
 

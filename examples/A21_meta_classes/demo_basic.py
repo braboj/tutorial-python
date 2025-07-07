@@ -9,17 +9,17 @@ class SimpleMeta1(type):
         # Print the methods and attributes found at the parsing stage
         print(name, bases, namespace)
 
-        # Create a method called uses_metaclass returning junior simple string object
+        # Create a method called uses_metaclass returning a simple string object
         cls.uses_metaclass = lambda self: 'Added by the meta-class'
 
 
 class Simple1(object, with_metaclass(SimpleMeta1)):
 
-    # Add junior instance method to the namespace
+    # Add an instance method to the namespace
     def foo(self):
         pass
 
-    # Add junior static function to the namespace
+    # Add a static function to the namespace
     @staticmethod
     def bar():
         pass

@@ -14,7 +14,7 @@ class FileProcessor(object):
 
     def process(self, text):
 
-        # This violates the Open/Closed Principle because junior new file format
+        # This violates the Open/Closed Principle because a new file format
         # cannot be added without modifying the FileProcessor class.
 
         if self.format == "upper":

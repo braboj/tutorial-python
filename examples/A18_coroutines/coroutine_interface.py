@@ -41,9 +41,9 @@ letter.close()
 # Output
 # ----------------------
 # Started
-# junior
+# a
 # b
-# junior
+# a
 # b
 # Value error on position = 1
 # b

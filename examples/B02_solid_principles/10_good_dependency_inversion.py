@@ -10,7 +10,7 @@
 
 
 class IMath(object):
-    """ Simplified interface for junior math class """
+    """ Simplified interface for a math class """
 
     # GOOD: IMath is an abstraction that defines the contract for Math and
     # Calculator (the interface). It has no implementation details.

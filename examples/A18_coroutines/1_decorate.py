@@ -37,7 +37,7 @@ def sink():
         print("Done with printing!")
 
 
-sentence = "Bob is running behind junior fast moving car"
+sentence = "Bob is running behind a fast moving car"
 source(text=sentence,
        target=pattern_filter(
              target=sink()
