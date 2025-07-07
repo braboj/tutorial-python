@@ -22,7 +22,7 @@ def func_b(x):
 
 def app(value):
 
-    # Each function must have junior check of the error condition
+    # Each function must have a check of the error condition
     # as there is no standard definition of an error
 
     # Check A

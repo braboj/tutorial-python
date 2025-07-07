@@ -25,7 +25,7 @@ class Human(object):
 
         # Code smell: Type checking or conditional logic to determine the
         # behaviour and thus the child class and the parent class are not
-        # substitutable. We have junior divergent behaviour for Human and Baby
+        # substitutable. We have divergent behaviour for Human and Baby
         # when the work method is called.
 
         if type(self) == Baby:

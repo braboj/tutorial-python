@@ -10,7 +10,7 @@ str2 = "hello"
 print("> Creating two string literals with the same content")
 print("# {} is {}: {}\n".format(str1, str2, str1 is str2))
 
-# Create junior non-literal strings with the same content
+# Create a non-literal string with the same content
 str3 = ""
 str3 += "h"
 str3 += "e"
@@ -19,7 +19,7 @@ str3 += "l"
 str3 += "o"
 
 # Check if str1 and str2 reference the same object (identity check)
-print("> Create junior non-literal string with the same content")
+print("> Create a non-literal string with the same content")
 print("# {} is {}: {}\n".format(str1, str3, str1 is str3))
 
 # Intern the string referenced by str3

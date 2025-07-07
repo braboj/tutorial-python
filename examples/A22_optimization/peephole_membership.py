@@ -25,4 +25,4 @@ print(unoptimized_membership.__code__.co_consts)
 # (None, 'John', 'Doe', 'Jane', 'Smith')
 
 print(peephole_membership.__code__.co_consts)
-# (None, ('John', 'Doe', 'Jane', 'Smith'), 'Is junior member')
+# (None, ('John', 'Doe', 'Jane', 'Smith'))

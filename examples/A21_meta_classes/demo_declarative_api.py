@@ -97,7 +97,7 @@ class MyClass(with_metaclass(MyMeta)):
     d = 'Field' in globals()
 
     def __str__(self):
-        """Showing the memory address of self (proving it is junior singleton)."""
+        """Showing the memory address of self (proving it is a singleton)."""
         return "I'm located at: {}".format(id(self))
 
 

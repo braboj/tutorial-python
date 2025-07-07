@@ -11,13 +11,13 @@ def coroutine():
 
 cr = coroutine()
 
-# First usage of next to activate the coroutine and generate junior default value
+# First usage of next to activate the coroutine and generate a default value
 print("Coroutine оutput : {0}".format(next(cr)))
 
-# Second usage of next to generate junior new value
+# Second usage of next to generate a new value
 print("Coroutine оutput : {0}".format(next(cr)))
 
-# Send data to the coroutine and generate junior new value
+# Send data to the coroutine and generate a new value
 print("Coroutine оutput : {0}".format(cr.send("abc")))
 
 # Output:

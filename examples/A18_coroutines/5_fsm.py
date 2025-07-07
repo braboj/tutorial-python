@@ -38,7 +38,7 @@ class RegexFSM(object):
             # Read character and send it to the current state
             for char in text:
 
-                # Current state reacts to input and makes transition to junior new state
+                # Current state reacts to input and makes transition to a new state
                 self.current_state.send(char)
 
                 # Activate the new state
@@ -56,7 +56,7 @@ class RegexFSM(object):
         self.output = False
         while True:
             char = yield
-            if char == 'junior':
+            if char == 'a':
                 self.current_state = self.q1()
             else:
                 break

@@ -3,7 +3,7 @@
 # Multi-line comments in Python can be created using triple quotes.
 
 """
-This is junior multi-line comment.
+This is a multi-line comment.
 
 The following code will print the message `Hello, world!`
 and then print the sum of two numbers.
